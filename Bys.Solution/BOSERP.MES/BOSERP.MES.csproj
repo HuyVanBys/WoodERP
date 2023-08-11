@@ -1,0 +1,2425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4A66AFF-24E9-4237-94CC-0700261CF76D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BOSERP.MES</RootNamespace>
+    <AssemblyName>BOSERP.MES</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\bin\Release\BOSERP.MES.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\libs\CrystalDecisions.Enterprise.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\libs\CrystalDecisions.Enterprise.InfoStore.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v20.2.UI, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Diagram.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Dialogs.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Images.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v20.2.Export, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.2.UI, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Debug\DevExpress.XtraRichEdit.v20.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <HintPath>..\..\libs\Interop.Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.MSTSCLib">
+      <HintPath>..\..\libs\Interop.MSTSCLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Outlook">
+      <HintPath>..\..\libs\Interop.Outlook.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.zkemkeeper">
+      <HintPath>..\..\libs\Interop.zkemkeeper.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\BOSERP\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>..\..\libs\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Replication, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Microsoft.SqlServer.Replication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Rmo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Microsoft.SqlServer.Rmo.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\libs\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenPop">
+      <HintPath>..\..\libs\OpenPop.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\libs\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SignTokenCore">
+      <HintPath>..\BOSERP\lib\SignTokenCore.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartSignSignFile">
+      <HintPath>..\BOSERP\lib\SmartSignSignFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Z.Expressions.Eval, Version=4.0.3.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Z.Expressions.Eval.4.0.3\lib\net45\Z.Expressions.Eval.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Localization\MESLocalizedResources.Designer.cs">
+      <DependentUpon>MESLocalizedResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\AllocationProposalEntities.cs" />
+    <Compile Include="Modules\AllocationProposal\AllocationProposalModule.cs" />
+    <Compile Include="Modules\AllocationProposal\UI\DMAPL100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\DMAPL100.designer.cs">
+      <DependentUpon>DMAPL100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\GridControl\MMAllocationPlanItemSearchResultGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\GridControl\MMAllocationPlanItemPaintsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\GridControl\MMAllocationPlanItemPackagingsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\GridControl\MMAllocationPlanItemInstrumentsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\GridControl\MMAllocationPlanItemSemiProductGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\GridControl\MMAllocationPlanItemSteelsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\GridControl\MMAllocationPlanItemHardwaresGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\GridControl\MMAllocationPlanItemWoodsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\guiZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\guiZoom.Designer.cs">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\SMAPL100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AllocationProposal\UI\SMAPL100.designer.cs">
+      <DependentUpon>SMAPL100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\BatchProductSheduleEntities.cs" />
+    <Compile Include="Modules\BatchProductShedule\BatchProductSheduleModule.cs" />
+    <Compile Include="Modules\BatchProductShedule\Localization\BatchProductScheduleLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\BatchProductShedule\UI\DMBPS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\DMBPS100.designer.cs">
+      <DependentUpon>DMBPS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\BatchProductSheduleSearchResultGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\ICAlternativeMaterialMultisGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\ICAlternativeMaterialsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPItemIngredientPaintGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPItemIngredientPackagingGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPItemGeneralMaterialGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPNormItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPProductionNormItemMaterialsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPItemHardwareGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBatchProductsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPNormItemSemiProductGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPNormItemSteelsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPNormItemInstrumentsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPNormItemPaintsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPNormItemPackagingsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPNormItemHardwaresGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMBPNormItemWoodsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\MMViewChangeSemiBOMsTreeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\PlanItemChildsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\PlanItemChildMaterialsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\GridControl\RowInfo.cs" />
+    <Compile Include="Modules\BatchProductShedule\UI\guiAddMaterialOverBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiAddMaterialOverBOM.Designer.cs">
+      <DependentUpon>guiAddMaterialOverBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiAllocationQty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiAllocationQty.Designer.cs">
+      <DependentUpon>guiAllocationQty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiAlternativeMulti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiAlternativeMulti.Designer.cs">
+      <DependentUpon>guiAlternativeMulti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiAlternative.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiAlternative.Designer.cs">
+      <DependentUpon>guiAlternative.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiShowOperationDetailPlanMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiShowOperationDetailPlanMaterial.Designer.cs">
+      <DependentUpon>guiShowOperationDetailPlanMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiChooseBatchProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiChooseBatchProduct.Designer.cs">
+      <DependentUpon>guiChooseBatchProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\guiZoom.Designer.cs">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\SMBPS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProductShedule\UI\SMBPS100.designer.cs">
+      <DependentUpon>SMBPS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\BatchProductEntities.cs" />
+    <Compile Include="Modules\BatchProduct\BatchProductModule.cs" />
+    <Compile Include="Modules\BatchProduct\Localization\BatchProductLocalizedResources1.Designer.cs" />
+    <Compile Include="Modules\BatchProduct\UI\DMBP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\DMBP100.designer.cs">
+      <DependentUpon>DMBP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\DMBP101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\DMBP101.designer.cs">
+      <DependentUpon>DMBP101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\DMBP102.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\DMBP102.designer.cs">
+      <DependentUpon>DMBP102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ARProductionPlanningItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ARSaleOrderItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\BatchProductHardwareDetailsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\BPProductionNormItemMeterialsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\BPProductionNormItemProcesssGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\BPProductionNormItemsShowGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ChooseOperationProcessInfosGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ChooseOperationProcessInfosGridControl.Designer.cs">
+      <DependentUpon>ChooseOperationProcessInfosGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMBatchProductGeneralPlanGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMBatchProductItemOutsourcingSearchGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMBatchProductItemOutsourcingsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMBatchProductItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMViewChangeGeneralsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMViewChangePacksGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMViewChangePaintsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMViewChangeHWsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMViewChangeProcesssGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMViewChangeMaterialsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMViewChangeSemiBOMsTreeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMDepartmentCapacityDetailsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMBatchProductMessagesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\MMProposalItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ProductionNormItemsGeneralMaterialTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ProductionNormItemsHardwareTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ProductionNormItemsPackagingTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ProductionNormItemsPaintTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ProductionNormItemsTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ProductionNormOperationProcessInfosGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\GridControl\ProductionNormOperationProcessInfosGridControl.Designer.cs">
+      <DependentUpon>ProductionNormOperationProcessInfosGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiBPProductionNormItemMeterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiBPProductionNormItemMeterials.Designer.cs">
+      <DependentUpon>guiBPProductionNormItemMeterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiBPProductionNormItemProcesss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiBPProductionNormItemProcesss.Designer.cs">
+      <DependentUpon>guiBPProductionNormItemProcesss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChangeToNeedMerge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChangeToNeedMerge.Designer.cs">
+      <DependentUpon>guiChangeToNeedMerge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChooseARSaleOrderItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChooseARSaleOrderItem.Designer.cs">
+      <DependentUpon>guiChooseARSaleOrderItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChooseBPItemOutSourcing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChooseBPItemOutSourcing.Designer.cs">
+      <DependentUpon>guiChooseBPItemOutSourcing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChooseProductionPlanningItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChooseProductionPlanningItem.Designer.cs">
+      <DependentUpon>guiChooseProductionPlanningItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChooseBatchProposalItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChooseBatchProposalItem.Designer.cs">
+      <DependentUpon>guiChooseBatchProposalItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChooseProductionNormOperationProcessInfos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiChooseProductionNormOperationProcessInfos.Designer.cs">
+      <DependentUpon>guiChooseProductionNormOperationProcessInfos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiShowBatchProductMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiShowBatchProductMessage.Designer.cs">
+      <DependentUpon>guiShowBatchProductMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiMMDepartmentCapacityDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiMMDepartmentCapacityDetails.Designer.cs">
+      <DependentUpon>guiMMDepartmentCapacityDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiProductionNormItemHardware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiProductionNormItemHardware.Designer.cs">
+      <DependentUpon>guiProductionNormItemHardware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiProductionNormOperationProcessInfos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiProductionNormOperationProcessInfos.Designer.cs">
+      <DependentUpon>guiProductionNormOperationProcessInfos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\guiZoom.Designer.cs">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\SMBP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProduct\UI\SMBP100.designer.cs">
+      <DependentUpon>SMBP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProposal\BatchProposalEntities.cs" />
+    <Compile Include="Modules\BatchProposal\BatchProposalModule.cs" />
+    <Compile Include="Modules\BatchProposal\Localization\BatchProposalLocalizeResources1.Designer.cs" />
+    <Compile Include="Modules\BatchProposal\UI\DMBP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProposal\UI\DMBP100.designer.cs">
+      <DependentUpon>DMBP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProposal\UI\DMBP101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProposal\UI\DMBP101.designer.cs">
+      <DependentUpon>DMBP101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProposal\UI\GridControl\MMProposalItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProposal\UI\GridControl\MMProposalTemplatesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProposal\UI\GridControl\MMProposalTemplatesGridControl.Designer.cs">
+      <DependentUpon>MMProposalTemplatesGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BatchProposal\UI\SMBP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BatchProposal\UI\SMBP100.designer.cs">
+      <DependentUpon>SMBP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\CalculatorProductionNormCostEntities.cs" />
+    <Compile Include="Modules\CalculatorProductionNormCost\CalculatorProductionNormCostModule.cs" />
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\DMCPNC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\DMCPNC100.designer.cs">
+      <DependentUpon>DMCPNC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\GridControl\GeneralMaterialsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\GridControl\MMCalculatorProductionNormCostItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\GridControl\MMCalculatorProductionNormItemMaterialsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\SMCPNC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\SMCPNC100.designer.cs">
+      <DependentUpon>SMCPNC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\TreeListControl\ProductionNormItemsHardwareTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\TreeListControl\ProductionNormItemsPackagingTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\TreeListControl\ProductionNormItemsPaintTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CalculatorProductionNormCost\UI\TreeListControl\ProductionNormItemsTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CanceledBatchProposal\CanceledBatchProposalEntities.cs" />
+    <Compile Include="Modules\CanceledBatchProposal\CanceledBatchProposalModule.cs" />
+    <Compile Include="Modules\CanceledBatchProposal\Localization\CanceledProposalLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\CanceledBatchProposal\UI\DMCBP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CanceledBatchProposal\UI\DMCBP100.designer.cs">
+      <DependentUpon>DMCBP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CanceledBatchProposal\UI\GridControl\MMCanceledProposalItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CanceledBatchProposal\UI\SMCBP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CanceledBatchProposal\UI\SMCBP100.designer.cs">
+      <DependentUpon>SMCBP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\CarcassBOMEntities.cs" />
+    <Compile Include="Modules\CarcassBOM\CarcassBOMModule.cs" />
+    <Compile Include="Modules\CarcassBOM\ImportInfo\IPMappingsInfo.cs" />
+    <Compile Include="Modules\CarcassBOM\ImportInfo\IPProductItemProcessInfo.cs" />
+    <Compile Include="Modules\CarcassBOM\ImportInfo\IPProductionItemsInfo.cs" />
+    <Compile Include="Modules\CarcassBOM\ImportInfo\IPProductItemMaterialsInfo.cs" />
+    <Compile Include="Modules\CarcassBOM\UI\DMCCB100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\DMCCB100.designer.cs">
+      <DependentUpon>DMCCB100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ChangeHardwaresGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\IPProductItemProcessGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\IPProductItemMaterialsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\IPProductionItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ChooseMaterialsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ChoosePackagingsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ICProductCarcasssGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ICProductItemProcesssGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ICProductPackagesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\MMProductionNormItemHavePaintGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\MMProductionNormItemPackagingComponentsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\MMProductionNormItemPackagingPopUpsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\MMProductionNormItemPackingsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\MMProductionNormItemPaintDetailsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\MMProductionNormItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ProductInProcesssGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ProductionNormItemHardwareDetailsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ProductionNormItemsHardwareTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ProductionNormItemsPackagingTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ProductionNormItemsPaintPopUpTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ProductionNormItemsPaintTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ProductionNormItemsTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ProductItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ProductItemsTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\ProfileManagementItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\GridControl\SemiProductsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiChooseBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiChooseBOM.Designer.cs">
+      <DependentUpon>guiChooseBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiCopyMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiCopyMaterial.Designer.cs">
+      <DependentUpon>guiCopyMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiImportBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiImportBOM.Designer.cs">
+      <DependentUpon>guiImportBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiShowDetailPaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiShowDetailPaint.Designer.cs">
+      <DependentUpon>guiShowDetailPaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiChangeHardware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiChangeHardware.Designer.cs">
+      <DependentUpon>guiChangeHardware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiChoosePackaging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiChoosePackaging.Designer.cs">
+      <DependentUpon>guiChoosePackaging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiCreateProductStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiCreateProductStructure.Designer.cs">
+      <DependentUpon>guiCreateProductStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiInputApproveDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiInputApproveDescription.Designer.cs">
+      <DependentUpon>guiInputApproveDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiPackagingComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiPackagingComponent.Designer.cs">
+      <DependentUpon>guiPackagingComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiPacking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiPacking.Designer.cs">
+      <DependentUpon>guiPacking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiPicture.Designer.cs">
+      <DependentUpon>guiPicture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiProcess.Designer.cs">
+      <DependentUpon>guiProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiProductionNormItemHardware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiProductionNormItemHardware.Designer.cs">
+      <DependentUpon>guiProductionNormItemHardware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiViewPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiViewPicture.Designer.cs">
+      <DependentUpon>guiViewPicture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiZoom.Designer.cs">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\ChangeBOMInformationEntities.cs" />
+    <Compile Include="Modules\ChangeBOMInformation\ChangeBOMInformationModule.cs" />
+    <Compile Include="Modules\ChangeBOMInformation\UI\DMCBI100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\UI\DMCBI100.designer.cs">
+      <DependentUpon>DMCBI100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\UI\GridControl\ChangeBOMInformationItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\UI\GridControl\ErrorGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\UI\GridControl\ProfileManagementHistoryGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\UI\guiChooseHistoryLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\UI\guiChooseHistoryLog.Designer.cs">
+      <DependentUpon>guiChooseHistoryLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\UI\guiShowError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\UI\guiShowError.Designer.cs">
+      <DependentUpon>guiShowError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\UI\SMCBI100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ChangeBOMInformation\UI\SMCBI100.designer.cs">
+      <DependentUpon>SMCBI100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\EndingInProgressStatistic\EndingInProgressStatisticEntities.cs" />
+    <Compile Include="Modules\EndingInProgressStatistic\EndingInProgressStatisticModule.cs" />
+    <Compile Include="Modules\EndingInProgressStatistic\UI\DMEIPS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\EndingInProgressStatistic\UI\DMEIPS100.designer.cs">
+      <DependentUpon>DMEIPS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\EndingInProgressStatistic\UI\GridControl\MMInProgressStatisticDetailsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\EndingInProgressStatistic\UI\guiClassifyType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\EndingInProgressStatistic\UI\guiClassifyType.Designer.cs">
+      <DependentUpon>guiClassifyType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\EndingInProgressStatistic\UI\SMEIPS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\EndingInProgressStatistic\UI\SMEIPS100.designer.cs">
+      <DependentUpon>SMEIPS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GeneralCostAllocation\GeneralCostAllocationEntities.cs" />
+    <Compile Include="Modules\GeneralCostAllocation\GeneralCostAllocationModule.cs" />
+    <Compile Include="Modules\GeneralCostAllocation\UI\DMGCA100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\GeneralCostAllocation\UI\DMGCA100.designer.cs">
+      <DependentUpon>DMGCA100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GeneralCostAllocation\UI\GridControl\MMProductionCostGeneralCostAllocationDetailsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\GeneralCostAllocation\UI\SMGCA100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\GeneralCostAllocation\UI\SMGCA100.designer.cs">
+      <DependentUpon>SMGCA100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\JobTicket\JobTicketEntities.cs" />
+    <Compile Include="Modules\JobTicket\JobTicketModule.cs" />
+    <Compile Include="Modules\JobTicket\UI\DMJT100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\DMJT100.designer.cs">
+      <DependentUpon>DMJT100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\GridControl\MMJobTicketItemSelectViewsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\GridControl\MMJobTicketItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\GridControl\MMOperationDetailPlanCapacityItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\GridControl\MMOperationDetailPlanItemChildsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\guiAddItemFromList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\guiAddItemFromList.Designer.cs">
+      <DependentUpon>guiAddItemFromList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\guiChooseDetailPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\guiChooseDetailPlan.designer.cs">
+      <DependentUpon>guiChooseDetailPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\guiSearchEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\guiSearchEmployee.Designer.cs">
+      <DependentUpon>guiSearchEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\guiZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\guiZoom.Designer.cs">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\SMJT100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\JobTicket\UI\SMJT100.designer.cs">
+      <DependentUpon>SMJT100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Line\LineEntities.cs" />
+    <Compile Include="Modules\Line\LineModule.cs" />
+    <Compile Include="Modules\Line\Localization\LineLocalizeResources.Designer.cs" />
+    <Compile Include="Modules\Line\UI\DMLM100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Line\UI\DMLM100.designer.cs">
+      <DependentUpon>DMLM100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Line\UI\DMLM101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Line\UI\DMLM101.designer.cs">
+      <DependentUpon>DMLM101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Line\UI\GridControl\MMLineOperationsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\Line\UI\SMLM100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Line\UI\SMLM100.designer.cs">
+      <DependentUpon>SMLM100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MachineConfig\UI\GridControl\SemisGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MachineUnit\UI\guiChooseOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MachineUnit\UI\guiChooseOperation.Designer.cs">
+      <DependentUpon>guiChooseOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\MergeBOMChangeEntities.cs" />
+    <Compile Include="Modules\MergeBOMChange\MergeBOMChangeModule.cs" />
+    <Compile Include="Modules\MergeBOMChange\UI\DMMBC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\UI\DMMBC100.designer.cs">
+      <DependentUpon>DMMBC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\UI\GridControl\MMMergeBOMChangeBatchProductsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\UI\GridControl\MMMergeBOMChangeItemBOMLogsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\UI\GridControl\MMMergeBOMChangeItemBPLogsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\UI\GridControl\MMMergeBOMChangeItemMaterialBOMLogsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\UI\GridControl\MMMergeBOMChangeItemMaterialBPLogsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\UI\GridControl\MMMergeBOMChangeItemProcessBOMLogsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\UI\GridControl\MMMergeBOMChangeItemProcessBPLogsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\UI\SMMBC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MergeBOMChange\UI\SMMBC100.designer.cs">
+      <DependentUpon>SMMBC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\NormTemplate\Localization\NormTemplateLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\NormTemplate\NormTemplateEntities.cs" />
+    <Compile Include="Modules\NormTemplate\NormTemplateModule.cs" />
+    <Compile Include="Modules\NormTemplate\UI\DMNTL100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\NormTemplate\UI\DMNTL100.designer.cs">
+      <DependentUpon>DMNTL100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\NormTemplate\UI\DMNTL101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\NormTemplate\UI\DMNTL101.designer.cs">
+      <DependentUpon>DMNTL101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\NormTemplate\UI\GridControl\MMNormTemplateProductsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\NormTemplate\UI\GridControl\NormTemplateItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\NormTemplate\UI\GridControl\NormTemplateItemsGridControl.Designer.cs">
+      <DependentUpon>NormTemplateItemsGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\NormTemplate\UI\SMNTL100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\NormTemplate\UI\SMNTL100.designer.cs">
+      <DependentUpon>SMNTL100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OpeningInProgressStatistic\OpeningInProgressStatisticEntities.cs" />
+    <Compile Include="Modules\OpeningInProgressStatistic\OpeningInProgressStatisticModule.cs" />
+    <Compile Include="Modules\OpeningInProgressStatistic\UI\DMOIPS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OpeningInProgressStatistic\UI\DMOIPS100.designer.cs">
+      <DependentUpon>DMOIPS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OpeningInProgressStatistic\UI\GridControl\MMInProgressStatisticDetailsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OpeningInProgressStatistic\UI\SMOIPS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OpeningInProgressStatistic\UI\SMOIPS100.designer.cs">
+      <DependentUpon>SMOIPS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MachineUnit\Localization\MachineUnitLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\MachineUnit\MachineUnitEntities.cs" />
+    <Compile Include="Modules\MachineUnit\MachineUnitModule.cs" />
+    <Compile Include="Modules\MachineUnit\UI\DMMU100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MachineUnit\UI\DMMU100.designer.cs">
+      <DependentUpon>DMMU100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MachineUnit\UI\GridControl\MMMachineItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MachineUnit\UI\SMMU100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MachineUnit\UI\SMMU100.designer.cs">
+      <DependentUpon>SMMU100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MachineUnit\UI\GridControl\MMMachineUnitOperationsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MachineUnit\UI\TreeListControl\MMMachineUnitsTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCancel\OperationDetailPlanCancelEntities.cs" />
+    <Compile Include="Modules\OperationDetailPlanCancel\OperationDetailPlanCancelModule.cs" />
+    <Compile Include="Modules\OperationDetailPlanCancel\UI\DMODPC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCancel\UI\DMODPC100.designer.cs">
+      <DependentUpon>DMODPC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCancel\UI\GridControl\MMOperationDetailPlanCancelItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCancel\UI\SMODPC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCancel\UI\SMODPC100.designer.cs">
+      <DependentUpon>SMODPC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCapacity\Localization\OperationDetailPlanCapacityLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\OperationDetailPlanCapacity\OperationDetailPlanCapacityEntities.cs" />
+    <Compile Include="Modules\OperationDetailPlanCapacity\OperationDetailPlanCapacityModule.cs" />
+    <Compile Include="Modules\OperationDetailPlanCapacity\UI\DMODPC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCapacity\UI\DMODPC100.designer.cs">
+      <DependentUpon>DMODPC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCapacity\UI\GridControl\MMOperationDetailPlanCapacityItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCapacity\UI\GridControl\MMOperationDetailPlanItemChildsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCapacity\UI\guiAddItemFromList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCapacity\UI\guiAddItemFromList.Designer.cs">
+      <DependentUpon>guiAddItemFromList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCapacity\UI\guiChooseOperationDetailPlanItemChildOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCapacity\UI\guiChooseOperationDetailPlanItemChildOperation.Designer.cs">
+      <DependentUpon>guiChooseOperationDetailPlanItemChildOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCapacity\UI\guiOperationPlanInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlanCapacity\UI\guiOperationPlanInfo.Designer.cs">
+      <DependentUpon>guiOperationPlanInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\Localization\OperationDetailPlanLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\OperationDetailPlan\OperationDetailPlanEntities.cs" />
+    <Compile Include="Modules\OperationDetailPlan\OperationDetailPlanModule.cs" />
+    <Compile Include="Modules\OperationDetailPlan\UI\DMODPS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\DMODPS100.designer.cs">
+      <DependentUpon>DMODPS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\EditHumansGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\EditMachinesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\MMBPPSelectNormItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\SelectMachineUnitGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\ChooseMachineUnitGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\ChooseMachineUnitTreeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\ChooseHumanUnitTreeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\ChooseHumanUnitGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\MMBatchProductItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\MMBPPNormItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\ChooseWeekGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\MMEditCapacityItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\MMCapacityItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\MMEquipmentPlanItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\MMTicketPlanItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\MMMachinePlanItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\MMHumanPlanItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\MMOperationDetailPlanItemChildsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\OperationDetailPlansSearchResultGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\DepGroupItemPopUpLookupEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\DepGroupItemPopUpLookupEdit.Designer.cs">
+      <DependentUpon>DepGroupItemPopUpLookupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\GridControl\ViewSyncInfoGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiChooseBPPINormOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiChooseBPPINormOperation.Designer.cs">
+      <DependentUpon>guiChooseBPPINormOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiChooseMachineUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiChooseMachineUnit.Designer.cs">
+      <DependentUpon>guiChooseMachineUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiChooseHumanUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiChooseHumanUnit.Designer.cs">
+      <DependentUpon>guiChooseHumanUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiChooseOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiChooseOperation.Designer.cs">
+      <DependentUpon>guiChooseOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiChooseWeek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiChooseWeek.Designer.cs">
+      <DependentUpon>guiChooseWeek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiEditHuman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiEditHuman.Designer.cs">
+      <DependentUpon>guiEditHuman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiEditMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiEditMachine.Designer.cs">
+      <DependentUpon>guiEditMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiPrintFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiPrintFilter.Designer.cs">
+      <DependentUpon>guiPrintFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiSearchMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiSearchMachine.Designer.cs">
+      <DependentUpon>guiSearchMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiSearchEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiSearchEmployee.Designer.cs">
+      <DependentUpon>guiSearchEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiViewEditCapacity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiViewEditCapacity.Designer.cs">
+      <DependentUpon>guiViewEditCapacity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiViewSync.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiViewSync.Designer.cs">
+      <DependentUpon>guiViewSync.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiZoom.Designer.cs">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationPriceConfig\Localization\OperationPriceConfigLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\OperationPriceConfig\OperationPriceConfigEntities.cs" />
+    <Compile Include="Modules\OperationPriceConfig\OperationPriceConfigModule.cs" />
+    <Compile Include="Modules\OperationPriceConfig\UI\DMOPC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationPriceConfig\UI\DMOPC100.designer.cs">
+      <DependentUpon>DMOPC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationPriceConfig\UI\GridControl\OperationPriceConfigItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationPriceConfig\UI\GridControl\OperationPriceConfigItemsGridControl.Designer.cs">
+      <DependentUpon>OperationPriceConfigItemsGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationPriceConfig\UI\SMOPC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationPriceConfig\UI\SMOPC100.designer.cs">
+      <DependentUpon>SMOPC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Operation\Localization\OperationLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\Operation\OperationEntities.cs" />
+    <Compile Include="Modules\Operation\OperationModule.cs" />
+    <Compile Include="Modules\Operation\UI\DMOP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Operation\UI\DMOP100.designer.cs">
+      <DependentUpon>DMOP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Operation\UI\GridControl\MMOperationMachineGroupsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\Operation\UI\GridControl\MMProductionComplexityByOperationsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\Operation\UI\SMOP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Operation\UI\SMOP100.designer.cs">
+      <DependentUpon>SMOP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Operation\UI\TreeListControl\MMLineOperationsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\Operation\UI\TreeListControl\MMOperationsTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\PaintProcesses\Localization\PaintProcessesLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\PaintProcesses\PaintProcessesEntities.cs" />
+    <Compile Include="Modules\PaintProcesses\PaintProcessesModule.cs" />
+    <Compile Include="Modules\PaintProcesses\UI\DMPP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PaintProcesses\UI\DMPP100.designer.cs">
+      <DependentUpon>DMPP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PaintProcesses\UI\GirdControl\PaintProcessesItemsTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\PaintProcesses\UI\SMPP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PaintProcesses\UI\SMPP100.designer.cs">
+      <DependentUpon>SMPP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PrintRouting\PrintRoutingEntities.cs" />
+    <Compile Include="Modules\PrintRouting\PrintRoutingModule.cs" />
+    <Compile Include="Modules\PrintRouting\UI\DMPRT100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PrintRouting\UI\DMPRT100.designer.cs">
+      <DependentUpon>DMPRT100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PrintRouting\UI\GridControl\MMPrintRoutingsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\Processs\Localization\ProcessLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\Processs\ProcesssEntities.cs" />
+    <Compile Include="Modules\Processs\ProcesssModule.cs" />
+    <Compile Include="Modules\Processs\UI\DMPCE100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\DMPCE100.designer.cs">
+      <DependentUpon>DMPCE100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\DMPCE101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\DMPCE101.designer.cs">
+      <DependentUpon>DMPCE101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\GridControl\MMProcessProductsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\GridControl\ProcessInfosGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\GridControl\ProcessInfosGridControl.Designer.cs">
+      <DependentUpon>ProcessInfosGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\GridControl\ProductAttributeItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\GridControl\ProductAttributeItemsGridControl.Designer.cs">
+      <DependentUpon>ProductAttributeItemsGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\guiProcessInfos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\guiProcessInfos.Designer.cs">
+      <DependentUpon>guiProcessInfos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\SMPCE100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Processs\UI\SMPCE100.designer.cs">
+      <DependentUpon>SMPCE100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCostCalculation\ProductionCostCalculationEntities.cs" />
+    <Compile Include="Modules\ProductionCostCalculation\ProductionCostCalculationModule.cs" />
+    <Compile Include="Modules\ProductionCostCalculation\UI\DMPCC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostCalculation\UI\DMPCC100.designer.cs">
+      <DependentUpon>DMPCC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCostCalculation\UI\GridControl\MMProductionCostCalculationAllocationOthersGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostCalculation\UI\GridControl\MMProductionCostCalculationAllocationsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostCalculation\UI\GridControl\MMProductionCostCalculationDetailCostsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostCalculation\UI\GridControl\MMProductionCostCalculationItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostCalculation\UI\GridControl\MMProductionCostCalculationPricesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostCalculation\UI\SMPCC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostCalculation\UI\SMPCC100.designer.cs">
+      <DependentUpon>SMPCC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCostFormula\ProductionCostFormulaEntities.cs" />
+    <Compile Include="Modules\ProductionCostFormula\ProductionCostFormulaModule.cs" />
+    <Compile Include="Modules\ProductionCostFormula\UI\DMPCF100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostFormula\UI\DMPCF100.designer.cs">
+      <DependentUpon>DMPCF100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCostFormula\UI\GridControl\MMProductionCostFormulaDetailsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostFormula\UI\GridControl\MMProductionCostFormulaOperationItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostFormula\UI\GridControl\MMProductionCostFormulaOperationsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostFormula\UI\GridControl\MMProductionCostFormulaProductsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostFormula\UI\SMPCF100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostFormula\UI\SMPCF100.designer.cs">
+      <DependentUpon>SMPCF100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\ProductionCostWoodEntities.cs" />
+    <Compile Include="Modules\ProductionCostWood\ProductionCostWoodModule.cs" />
+    <Compile Include="Modules\ProductionCostWood\UI\DMPCW100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\DMPCW100.designer.cs">
+      <DependentUpon>DMPCW100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\DMPCW101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\DMPCW101.designer.cs">
+      <DependentUpon>DMPCW101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\DMPCW102.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\DMPCW102.designer.cs">
+      <DependentUpon>DMPCW102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\GridControl\MMProductionCostIngredientCostsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\GridControl\MMProductionCostItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\GridControl\MMProductionCostOverallsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\GridControl\MMProductPriceIncompletesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\GridControl\MMProductPricesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\SMPCW100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCostWood\UI\SMPCW100.designer.cs">
+      <DependentUpon>SMPCW100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\ProductionCostEntities.cs" />
+    <Compile Include="Modules\ProductionCost\ProductionCostModule.cs" />
+    <Compile Include="Modules\ProductionCost\ProductionCostModule_103.cs" />
+    <Compile Include="Modules\ProductionCost\UI\DMPDC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC100.designer.cs">
+      <DependentUpon>DMPDC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC101.designer.cs">
+      <DependentUpon>DMPDC101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC102.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC102.designer.cs">
+      <DependentUpon>DMPDC102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC103.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC103.designer.cs">
+      <DependentUpon>DMPDC103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC105.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC105.designer.cs">
+      <DependentUpon>DMPDC105.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC106.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC106.designer.cs">
+      <DependentUpon>DMPDC106.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC107.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\DMPDC107.designer.cs">
+      <DependentUpon>DMPDC107.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostDGsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostLRsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostSCsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostSonsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostTCsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompleteDGsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompleteLRsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompleteSCsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompletesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompleteSonsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompleteTCsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostOtherFeesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\GridControl\MMProductionCostOverallsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\SMPDC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionCost\UI\SMPDC100.designer.cs">
+      <DependentUpon>SMPDC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MachineConfig\MachineConfigEntities.cs" />
+    <Compile Include="Modules\MachineConfig\MachineConfigModule.cs" />
+    <Compile Include="Modules\MachineConfig\UI\DMMCC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MachineConfig\UI\DMMCC100.designer.cs">
+      <DependentUpon>DMMCC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MachineConfig\UI\GridControl\MachinesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MachineConfig\UI\GridControl\OperationsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MachineConfig\UI\guiConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MachineConfig\UI\guiConfiguration.Designer.cs">
+      <DependentUpon>guiConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionNorm\Localization\ProductionNormLocalizeResources.Designer.cs">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Localization</CustomToolNamespace>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\Localization\ProductionPlanningLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\ProductionPlanning\ProductionPlanningEntities.cs" />
+    <Compile Include="Modules\ProductionPlanning\ProductionPlanningModule.cs" />
+    <Compile Include="Modules\ProductionPlanning\UI\DMOSS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\DMOSS100.designer.cs">
+      <DependentUpon>DMOSS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\GridControl\ARProductionPlanningItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\GridControl\ARSaleOrderItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\GridControl\guiInventoryStockGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\GridControl\MMProductionNormItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\guiChooseARSaleOrderItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\guiChooseARSaleOrderItem.Designer.cs">
+      <DependentUpon>guiChooseARSaleOrderItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\guiInventoryStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\guiInventoryStock.designer.cs">
+      <DependentUpon>guiInventoryStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\guiMMProductionNormItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\guiMMProductionNormItems.designer.cs">
+      <DependentUpon>guiMMProductionNormItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\SMOSS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ProductionPlanning\UI\SMOSS100.designer.cs">
+      <DependentUpon>SMOSS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SemiProductIngredient\SemiProductIngredientEntities.cs" />
+    <Compile Include="Modules\SemiProductIngredient\SemiProductIngredientModule.cs" />
+    <Compile Include="Modules\SemiProductIngredient\UI\DMSPI100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\SemiProductIngredient\UI\DMSPI100.designer.cs">
+      <DependentUpon>DMSPI100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SemiProductIngredient\UI\GridControl\MMSemiProductIngredientItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\SemiProductIngredient\UI\GridControl\ShowIngredientCostDDGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\SemiProductIngredient\UI\GridControl\ShowIngredientCostDDGridControl.Designer.cs">
+      <DependentUpon>ShowIngredientCostDDGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SemiProductIngredient\UI\guiShowIngredientCostDD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\SemiProductIngredient\UI\guiShowIngredientCostDD.Designer.cs">
+      <DependentUpon>guiShowIngredientCostDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SemiProductIngredient\UI\SMSPI100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\SemiProductIngredient\UI\SMSPI100.designer.cs">
+      <DependentUpon>SMSPI100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\Localization\WoodPlanLocalizedResources.Designer.cs" />
+    <Compile Include="Modules\WoodPlan\UI\DMWP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\DMWP100.designer.cs">
+      <DependentUpon>DMWP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\GridControl\MMWoodPlanItemDetailMainsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\GridControl\MMWoodPlanItemDetailsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\GridControl\MMWoodPlanItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\GridControl\ProductionNormItemsTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\guiFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\guiFilter.Designer.cs">
+      <DependentUpon>guiFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\guiFilterBatchProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\guiFilterBatchProduct.Designer.cs">
+      <DependentUpon>guiFilterBatchProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\PrintWoodPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\PrintWoodPlan.Designer.cs">
+      <DependentUpon>PrintWoodPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\SMWP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\UI\SMWP100.designer.cs">
+      <DependentUpon>SMWP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\WoodPlan\WoodPlanEntities.cs" />
+    <Compile Include="Modules\WoodPlan\WoodPlanModule.cs" />
+    <Compile Include="Modules\WorkShop\UI\DMWS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\WorkShop\UI\DMWS100.designer.cs">
+      <DependentUpon>DMWS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\WorkShop\UI\SMWS100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\WorkShop\UI\SMWS100.designer.cs">
+      <DependentUpon>SMWS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\WorkShop\WorkShopEntities.cs" />
+    <Compile Include="Modules\WorkShop\WorkShopModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GridControl\BOSBandedGridColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewModel\TreeStructure.cs" />
+    <EmbeddedResource Include="Localization\MESLocalizedResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MESLocalizedResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Localization</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AllocationProposal\UI\DMAPL100.resx">
+      <DependentUpon>DMAPL100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AllocationProposal\UI\guiZoom.resx">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AllocationProposal\UI\SMAPL100.resx">
+      <DependentUpon>SMAPL100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProductShedule\Localization\BatchProductScheduleLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\BatchProductShedule\UI\DMBPS100.resx">
+      <DependentUpon>DMBPS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProductShedule\UI\guiAddMaterialOverBOM.resx">
+      <DependentUpon>guiAddMaterialOverBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProductShedule\UI\guiAllocationQty.resx">
+      <DependentUpon>guiAllocationQty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProductShedule\UI\guiAlternativeMulti.resx">
+      <DependentUpon>guiAlternativeMulti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProductShedule\UI\guiAlternative.resx">
+      <DependentUpon>guiAlternative.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProductShedule\UI\guiShowOperationDetailPlanMaterial.resx">
+      <DependentUpon>guiShowOperationDetailPlanMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProductShedule\UI\guiChooseBatchProduct.resx">
+      <DependentUpon>guiChooseBatchProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProductShedule\UI\guiZoom.resx">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProductShedule\UI\SMBPS100.resx">
+      <DependentUpon>SMBPS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\Localization\BatchProductLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\BatchProduct\UI\DMBP100.resx">
+      <DependentUpon>DMBP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\DMBP101.resx">
+      <DependentUpon>DMBP101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\DMBP102.resx">
+      <DependentUpon>DMBP102.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiBPProductionNormItemMeterials.resx">
+      <DependentUpon>guiBPProductionNormItemMeterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiBPProductionNormItemProcesss.resx">
+      <DependentUpon>guiBPProductionNormItemProcesss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiChangeToNeedMerge.resx">
+      <DependentUpon>guiChangeToNeedMerge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiChooseARSaleOrderItem.resx">
+      <DependentUpon>guiChooseARSaleOrderItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiChooseBPItemOutSourcing.resx">
+      <DependentUpon>guiChooseBPItemOutSourcing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiChooseProductionPlanningItem.resx">
+      <DependentUpon>guiChooseProductionPlanningItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiChooseBatchProposalItem.resx">
+      <DependentUpon>guiChooseBatchProposalItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiChooseProductionNormOperationProcessInfos.resx">
+      <DependentUpon>guiChooseProductionNormOperationProcessInfos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiShowBatchProductMessage.resx">
+      <DependentUpon>guiShowBatchProductMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiMMDepartmentCapacityDetails.resx">
+      <DependentUpon>guiMMDepartmentCapacityDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiProductionNormItemHardware.resx">
+      <DependentUpon>guiProductionNormItemHardware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiProductionNormOperationProcessInfos.resx">
+      <DependentUpon>guiProductionNormOperationProcessInfos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\guiZoom.resx">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProduct\UI\SMBP100.resx">
+      <DependentUpon>SMBP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProposal\Localization\BatchProposalLocalizeResources.resx" />
+    <EmbeddedResource Include="Modules\BatchProposal\UI\DMBP100.resx">
+      <DependentUpon>DMBP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProposal\UI\DMBP101.resx">
+      <DependentUpon>DMBP101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BatchProposal\UI\SMBP100.resx">
+      <DependentUpon>SMBP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CalculatorProductionNormCost\UI\DMCPNC100.resx">
+      <DependentUpon>DMCPNC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CalculatorProductionNormCost\UI\SMCPNC100.resx">
+      <DependentUpon>SMCPNC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CanceledBatchProposal\Localization\CanceledProposalLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\CanceledBatchProposal\UI\DMCBP100.resx">
+      <DependentUpon>DMCBP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CanceledBatchProposal\UI\SMCBP100.resx">
+      <DependentUpon>SMCBP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\DMCCB100.resx">
+      <DependentUpon>DMCCB100.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiChooseBOM.resx">
+      <DependentUpon>guiChooseBOM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiCopyMaterial.resx">
+      <DependentUpon>guiCopyMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiImportBOM.resx">
+      <DependentUpon>guiImportBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiShowDetailPaint.resx">
+      <DependentUpon>guiShowDetailPaint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiChangeHardware.resx">
+      <DependentUpon>guiChangeHardware.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiChoosePackaging.resx">
+      <DependentUpon>guiChoosePackaging.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiCreateProductStructure.resx">
+      <DependentUpon>guiCreateProductStructure.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiInputApproveDescription.resx">
+      <DependentUpon>guiInputApproveDescription.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiPackagingComponent.resx">
+      <DependentUpon>guiPackagingComponent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiPacking.resx">
+      <DependentUpon>guiPacking.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiPicture.resx">
+      <DependentUpon>guiPicture.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiProcess.resx">
+      <DependentUpon>guiProcess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiProductionNormItemHardware.resx">
+      <DependentUpon>guiProductionNormItemHardware.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiViewPicture.resx">
+      <DependentUpon>guiViewPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiZoom.resx">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ChangeBOMInformation\UI\DMCBI100.resx">
+      <DependentUpon>DMCBI100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ChangeBOMInformation\UI\guiChooseHistoryLog.resx">
+      <DependentUpon>guiChooseHistoryLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ChangeBOMInformation\UI\guiShowError.resx">
+      <DependentUpon>guiShowError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ChangeBOMInformation\UI\SMCBI100.resx">
+      <DependentUpon>SMCBI100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\EndingInProgressStatistic\UI\DMEIPS100.resx">
+      <DependentUpon>DMEIPS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\EndingInProgressStatistic\UI\guiClassifyType.resx">
+      <DependentUpon>guiClassifyType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\EndingInProgressStatistic\UI\SMEIPS100.resx">
+      <DependentUpon>SMEIPS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\GeneralCostAllocation\UI\DMGCA100.resx">
+      <DependentUpon>DMGCA100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\GeneralCostAllocation\UI\SMGCA100.resx">
+      <DependentUpon>SMGCA100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\JobTicket\UI\DMJT100.resx">
+      <DependentUpon>DMJT100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\JobTicket\UI\guiAddItemFromList.resx">
+      <DependentUpon>guiAddItemFromList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\JobTicket\UI\guiChooseDetailPlan.resx">
+      <DependentUpon>guiChooseDetailPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\JobTicket\UI\guiSearchEmployee.resx">
+      <DependentUpon>guiSearchEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\JobTicket\UI\guiZoom.resx">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\JobTicket\UI\SMJT100.resx">
+      <DependentUpon>SMJT100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Line\Localization\LineLocalizeResources.resx" />
+    <EmbeddedResource Include="Modules\Line\UI\DMLM100.resx">
+      <DependentUpon>DMLM100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Line\UI\DMLM101.resx">
+      <DependentUpon>DMLM101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Line\UI\SMLM100.resx">
+      <DependentUpon>SMLM100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MachineUnit\UI\guiChooseOperation.resx">
+      <DependentUpon>guiChooseOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MergeBOMChange\UI\DMMBC100.resx">
+      <DependentUpon>DMMBC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MergeBOMChange\UI\SMMBC100.resx">
+      <DependentUpon>SMMBC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\NormTemplate\Localization\NormTemplateLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\NormTemplate\UI\DMNTL100.resx">
+      <DependentUpon>DMNTL100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\NormTemplate\UI\DMNTL101.resx">
+      <DependentUpon>DMNTL101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\NormTemplate\UI\SMNTL100.resx">
+      <DependentUpon>SMNTL100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OpeningInProgressStatistic\UI\DMOIPS100.resx">
+      <DependentUpon>DMOIPS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OpeningInProgressStatistic\UI\SMOIPS100.resx">
+      <DependentUpon>SMOIPS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MachineUnit\Localization\MachineUnitLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\MachineUnit\UI\DMMU100.resx">
+      <DependentUpon>DMMU100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MachineUnit\UI\SMMU100.resx">
+      <DependentUpon>SMMU100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlanCancel\UI\DMODPC100.resx">
+      <DependentUpon>DMODPC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlanCancel\UI\SMODPC100.resx">
+      <DependentUpon>SMODPC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlanCapacity\Localization\OperationDetailPlanCapacityLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\OperationDetailPlanCapacity\UI\DMODPC100.resx">
+      <DependentUpon>DMODPC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlanCapacity\UI\guiAddItemFromList.resx">
+      <DependentUpon>guiAddItemFromList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlanCapacity\UI\guiChooseOperationDetailPlanItemChildOperation.resx">
+      <DependentUpon>guiChooseOperationDetailPlanItemChildOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlanCapacity\UI\guiOperationPlanInfo.resx">
+      <DependentUpon>guiOperationPlanInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\Localization\OperationDetailPlanLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\DMODPS100.resx">
+      <DependentUpon>DMODPS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiChooseBPPINormOperation.resx">
+      <DependentUpon>guiChooseBPPINormOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiChooseMachineUnit.resx">
+      <DependentUpon>guiChooseMachineUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiChooseHumanUnit.resx">
+      <DependentUpon>guiChooseHumanUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiChooseOperation.resx">
+      <DependentUpon>guiChooseOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiChooseWeek.resx">
+      <DependentUpon>guiChooseWeek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiEditHuman.resx">
+      <DependentUpon>guiEditHuman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiEditMachine.resx">
+      <DependentUpon>guiEditMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiPrintFilter.resx">
+      <DependentUpon>guiPrintFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiSearchMachine.resx">
+      <DependentUpon>guiSearchMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiSearchEmployee.resx">
+      <DependentUpon>guiSearchEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiViewEditCapacity.resx">
+      <DependentUpon>guiViewEditCapacity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiViewSync.resx">
+      <DependentUpon>guiViewSync.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiZoom.resx">
+      <DependentUpon>guiZoom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationPriceConfig\Localization\OperationPriceConfigLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\OperationPriceConfig\UI\DMOPC100.resx">
+      <DependentUpon>DMOPC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationPriceConfig\UI\SMOPC100.resx">
+      <DependentUpon>SMOPC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Operation\Localization\OperationLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\Operation\UI\DMOP100.resx">
+      <DependentUpon>DMOP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Operation\UI\SMOP100.resx">
+      <DependentUpon>SMOP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PaintProcesses\Localization\PaintProcessesLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\PaintProcesses\UI\DMPP100.resx">
+      <DependentUpon>DMPP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PaintProcesses\UI\SMPP100.resx">
+      <DependentUpon>SMPP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PrintRouting\UI\DMPRT100.resx">
+      <DependentUpon>DMPRT100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Processs\Localization\ProcessLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\Processs\UI\DMPCE100.resx">
+      <DependentUpon>DMPCE100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Processs\UI\DMPCE101.resx">
+      <DependentUpon>DMPCE101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Processs\UI\guiProcessInfos.resx">
+      <DependentUpon>guiProcessInfos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Processs\UI\SMPCE100.resx">
+      <DependentUpon>SMPCE100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostCalculation\UI\DMPCC100.resx">
+      <DependentUpon>DMPCC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostCalculation\UI\SMPCC100.resx">
+      <DependentUpon>SMPCC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostFormula\UI\DMPCF100.resx">
+      <DependentUpon>DMPCF100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostFormula\UI\SMPCF100.resx">
+      <DependentUpon>SMPCF100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostWood\UI\DMPCW100.resx">
+      <DependentUpon>DMPCW100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostWood\UI\DMPCW101.resx">
+      <DependentUpon>DMPCW101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostWood\UI\DMPCW102.resx">
+      <DependentUpon>DMPCW102.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostWood\UI\GridControl\MMProductionCostIngredientCostsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientCostsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostWood\UI\GridControl\MMProductionCostItemsGridControl.resx">
+      <DependentUpon>MMProductionCostItemsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostWood\UI\GridControl\MMProductionCostOverallsGridControl.resx">
+      <DependentUpon>MMProductionCostOverallsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostWood\UI\GridControl\MMProductPriceIncompletesGridControl.resx">
+      <DependentUpon>MMProductPriceIncompletesGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostWood\UI\GridControl\MMProductPricesGridControl.resx">
+      <DependentUpon>MMProductPricesGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCostWood\UI\SMPCW100.resx">
+      <DependentUpon>SMPCW100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\DMPDC100.resx">
+      <DependentUpon>DMPDC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\DMPDC101.resx">
+      <DependentUpon>DMPDC101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\DMPDC102.resx">
+      <DependentUpon>DMPDC102.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\DMPDC103.resx">
+      <DependentUpon>DMPDC103.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\DMPDC105.resx">
+      <DependentUpon>DMPDC105.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\DMPDC106.resx">
+      <DependentUpon>DMPDC106.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\DMPDC107.resx">
+      <DependentUpon>DMPDC107.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostDGsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientCostDGsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostLRsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientCostLRsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostSCsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientCostSCsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientCostsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostSonsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientCostSonsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientCostTCsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientCostTCsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompleteDGsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientIncompleteDGsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompleteLRsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientIncompleteLRsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompleteSCsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientIncompleteSCsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompletesGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientIncompletesGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompleteSonsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientIncompleteSonsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostIngredientIncompleteTCsGridControl.resx">
+      <DependentUpon>MMProductionCostIngredientIncompleteTCsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostItemsGridControl.resx">
+      <DependentUpon>MMProductionCostItemsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostOtherFeesGridControl.resx">
+      <DependentUpon>MMProductionCostOtherFeesGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\GridControl\MMProductionCostOverallsGridControl.resx">
+      <DependentUpon>MMProductionCostOverallsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionCost\UI\SMPDC100.resx">
+      <DependentUpon>SMPDC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MachineConfig\UI\DMMCC100.resx">
+      <DependentUpon>DMMCC100.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MachineConfig\UI\guiConfiguration.resx">
+      <DependentUpon>guiConfiguration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionNorm\Localization\ProductionNormLocalizeResources.resx" />
+    <EmbeddedResource Include="Modules\ProductionPlanning\Localization\ProductionPlanningLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\ProductionPlanning\UI\DMOSS100.resx">
+      <DependentUpon>DMOSS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionPlanning\UI\guiChooseARSaleOrderItem.resx">
+      <DependentUpon>guiChooseARSaleOrderItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionPlanning\UI\guiInventoryStock.resx">
+      <DependentUpon>guiInventoryStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionPlanning\UI\guiMMProductionNormItems.resx">
+      <DependentUpon>guiMMProductionNormItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProductionPlanning\UI\SMOSS100.resx">
+      <DependentUpon>SMOSS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SemiProductIngredient\UI\DMSPI100.resx">
+      <DependentUpon>DMSPI100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SemiProductIngredient\UI\GridControl\MMSemiProductIngredientItemsGridControl.resx">
+      <DependentUpon>MMSemiProductIngredientItemsGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SemiProductIngredient\UI\guiShowIngredientCostDD.resx">
+      <DependentUpon>guiShowIngredientCostDD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SemiProductIngredient\UI\SMSPI100.resx">
+      <DependentUpon>SMSPI100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\WoodPlan\Localization\WoodPlanLocalizedResources.resx" />
+    <EmbeddedResource Include="Modules\WoodPlan\UI\DMWP100.resx">
+      <DependentUpon>DMWP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\WoodPlan\UI\guiFilter.resx">
+      <DependentUpon>guiFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\WoodPlan\UI\guiFilterBatchProduct.resx">
+      <DependentUpon>guiFilterBatchProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\WoodPlan\UI\PrintWoodPlan.resx">
+      <DependentUpon>PrintWoodPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\WoodPlan\UI\SMWP100.resx">
+      <DependentUpon>SMWP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\WorkShop\UI\DMWS100.resx">
+      <DependentUpon>DMWS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\WorkShop\UI\SMWS100.resx">
+      <DependentUpon>SMWS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\AllocationProposal\Localization\" />
+    <Folder Include="Modules\CalculatorProductionNormCost\Localization\" />
+    <Folder Include="Modules\PrintRouting\Localization\" />
+    <Folder Include="Modules\WorkShop\UI\GridControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bys.Core\BOSBase\BOSBase.csproj">
+      <Project>{051d5ae3-e906-4a72-9180-d1fac27a7d16}</Project>
+      <Name>BOSBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bys.Core\BOSCommon\BOSCommon.csproj">
+      <Project>{b05df8ad-9ae4-471c-85c5-6d63540443ad}</Project>
+      <Name>BOSCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bys.Core\BOSComponent\BOSComponent.csproj">
+      <Project>{220ed659-0c9e-4501-baee-dd5f5fc1a3bb}</Project>
+      <Name>BOSComponent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bys.Core\BOSEntity\BOSEntity.csproj">
+      <Project>{fe3f2e92-4ddb-4a44-98bb-209c9a452f2a}</Project>
+      <Name>BOSEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bys.Core\BOSLib\BOSLib.csproj">
+      <Project>{a4860258-380c-4ff3-9f93-ec653abdae8d}</Project>
+      <Name>BOSLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BOSReport\BOSReport.csproj">
+      <Project>{8c8b6f8d-74cc-4fc5-9e4f-8409b0288626}</Project>
+      <Name>BOSReport</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewEmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-refresh-small-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boxes-brown-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Candy Vivian Icon 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save-as-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table-add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table-refresh-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

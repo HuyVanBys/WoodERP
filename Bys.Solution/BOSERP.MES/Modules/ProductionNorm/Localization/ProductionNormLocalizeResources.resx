@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADConfigKeyValue" xml:space="preserve">
+    <value>ADConfigKeyValue</value>
+  </data>
+  <data name="ADConfigText" xml:space="preserve">
+    <value>ADConfigText</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="ChangeDispalyText" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="ComponentQuantityString" xml:space="preserve">
+    <value> ={0} pc</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteDispalyText" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="ExistInListMessage" xml:space="preserve">
+    <value>Đối tượng đã tồn tại trong danh sách!</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="GEHistoryDetailColumnNameCaption" xml:space="preserve">
+    <value>Mã chi tiết</value>
+  </data>
+  <data name="GEHistoryDetailTableNameCaption" xml:space="preserve">
+    <value>Tên bảng</value>
+  </data>
+  <data name="GeneralDisplayText" xml:space="preserve">
+    <value>Thông tin chung</value>
+  </data>
+  <data name="GEObjectHistoryActionCaption" xml:space="preserve">
+    <value>Thao tác</value>
+  </data>
+  <data name="GroupExistInListMessage" xml:space="preserve">
+    <value>Cụm đã tồn tại trong danh sách!</value>
+  </data>
+  <data name="HardwareReportText" xml:space="preserve">
+    <value>BẢNG ĐỊNH MỨC HARDWARE</value>
+  </data>
+  <data name="HREmployeeNameCaption" xml:space="preserve">
+    <value>Người thay đổi</value>
+  </data>
+  <data name="ICProductAttribute" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="ICProductAttributeName" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="ICProductGruopType" xml:space="preserve">
+    <value>Bán thành phẩm - Cụm</value>
+  </data>
+  <data name="ICProductJoinery" xml:space="preserve">
+    <value>Mộng</value>
+  </data>
+  <data name="ICProductLong" xml:space="preserve">
+    <value>Dài</value>
+  </data>
+  <data name="ICProductName" xml:space="preserve">
+    <value>Tên vật tư</value>
+  </data>
+  <data name="ICProductThick" xml:space="preserve">
+    <value>Dày</value>
+  </data>
+  <data name="ICProductWidth" xml:space="preserve">
+    <value>Rộng</value>
+  </data>
+  <data name="ICProductWoodType" xml:space="preserve">
+    <value>Loại nguyên liệu</value>
+  </data>
+  <data name="ICProductWoodTypeName" xml:space="preserve">
+    <value>Loại nguyên liệu</value>
+  </data>
+  <data name="InputNotCorrectFornat" xml:space="preserve">
+    <value>Giá trị nhập vào không đúng định dạng</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>IsActive</value>
+  </data>
+  <data name="MMHardwareItemImage" xml:space="preserve">
+    <value>Hình ảnh</value>
+  </data>
+  <data name="MMHardwareItemNoCaption" xml:space="preserve">
+    <value>Mã Hardware</value>
+  </data>
+  <data name="MMHardwareItemOrderNo" xml:space="preserve">
+    <value>MMHardwareItemOrderNo</value>
+  </data>
+  <data name="MMHardwareItemSpecification" xml:space="preserve">
+    <value>Qui cách</value>
+  </data>
+  <data name="MMHardwareItemsTableNameDisplayText" xml:space="preserve">
+    <value>Định mức Hardware</value>
+  </data>
+  <data name="MMPackagingItemNoCaption" xml:space="preserve">
+    <value>Mã NPL</value>
+  </data>
+  <data name="MMPackagingItemsTableNameDisplayText" xml:space="preserve">
+    <value>Định mức NPL đóng gói</value>
+  </data>
+  <data name="MMPackaginItemOrderNo" xml:space="preserve">
+    <value>MMPackaginItemOrderNo</value>
+  </data>
+  <data name="MMPaintItemNoCaption" xml:space="preserve">
+    <value>Mã VT</value>
+  </data>
+  <data name="MMPaintItemsTableNameDisplayText" xml:space="preserve">
+    <value>Định mức VT sơn</value>
+  </data>
+  <data name="MMProductionNormItemDescCaption" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
+  <data name="MMProductionNormItemDescGraftCaption" xml:space="preserve">
+    <value>Ghi chú mô tả</value>
+  </data>
+  <data name="MMProductionNormItemHardwareQuantity" xml:space="preserve">
+    <value>SL ráp trước sơn</value>
+  </data>
+  <data name="MMProductionNormItemHardwareSubForSets" xml:space="preserve">
+    <value>SL Đóng gói</value>
+  </data>
+  <data name="MMProductionNormItemICProductNameHardware" xml:space="preserve">
+    <value>Tên Hardware</value>
+  </data>
+  <data name="MMProductionNormItemICProductNamePackaging" xml:space="preserve">
+    <value>Tên PLĐG</value>
+  </data>
+  <data name="MMProductionNormItemICProductNamePaint" xml:space="preserve">
+    <value>Tên vật tư sơn</value>
+  </data>
+  <data name="MMProductionNormItemICProductNoHardware" xml:space="preserve">
+    <value>Mã Hardware</value>
+  </data>
+  <data name="MMProductionNormItemICProductNoPackaging" xml:space="preserve">
+    <value>Mã PLĐG</value>
+  </data>
+  <data name="MMProductionNormItemICProductNoPaint" xml:space="preserve">
+    <value>Mã vật tư</value>
+  </data>
+  <data name="MMProductionNormItemICProductSupplierName" xml:space="preserve">
+    <value>NCC</value>
+  </data>
+  <data name="MMProductionNormItemICProductSupplierNumber" xml:space="preserve">
+    <value>Mã VTS NCC</value>
+  </data>
+  <data name="MMProductionNormItemSemiProductDepartmentAttributeCaption" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="MMProductionNormItemsTableNameDisplayText" xml:space="preserve">
+    <value>Định mức gổ</value>
+  </data>
+  <data name="MMProductionNormOrderNo" xml:space="preserve">
+    <value>STT</value>
+  </data>
+  <data name="MMProductionNormStatusApproved" xml:space="preserve">
+    <value>Đã duyệt</value>
+  </data>
+  <data name="MMProductionNormStatusEdit" xml:space="preserve">
+    <value>Chỉnh sửa</value>
+  </data>
+  <data name="MMProductionNormStatusNew" xml:space="preserve">
+    <value>Tạo mới</value>
+  </data>
+  <data name="MMProductionNormStatusUnApproved" xml:space="preserve">
+    <value>Không duyệt</value>
+  </data>
+  <data name="MMProductionNormStatusUnValidated" xml:space="preserve">
+    <value>Không đạt</value>
+  </data>
+  <data name="MMProductionNormStatusValidated" xml:space="preserve">
+    <value>Đạt</value>
+  </data>
+  <data name="MMProductionNormTotalWoodConsumable" xml:space="preserve">
+    <value>Tổng nguyên liệu tiêu hao     </value>
+  </data>
+  <data name="MMProfileManagementItemDescCaption" xml:space="preserve">
+    <value>Nội dung thay đổi</value>
+  </data>
+  <data name="MMProfileManagementItemNameCaption" xml:space="preserve">
+    <value>Tên vật tư</value>
+  </data>
+  <data name="MMProfileManagementItemNewValueCaption" xml:space="preserve">
+    <value>Giá trị mới</value>
+  </data>
+  <data name="MMProfileManagementItemNoCaption" xml:space="preserve">
+    <value>Mã vật tư</value>
+  </data>
+  <data name="MMProfileManagementItemOldValueCaption" xml:space="preserve">
+    <value>Giá trị cũ</value>
+  </data>
+  <data name="MMProfileManagementItemUpdateDateCaption" xml:space="preserve">
+    <value>Ngày thay đổi</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NewDispalyText" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="PackagingReportText" xml:space="preserve">
+    <value>BẢNG ĐỊNH MỨC NGUYÊN PHỤ LIỆU ĐÓNG GÓI</value>
+  </data>
+  <data name="PaintReportText" xml:space="preserve">
+    <value>BẢNG ĐỊNH MỨC SƠN</value>
+  </data>
+  <data name="ProductPackNoCaption" xml:space="preserve">
+    <value>Mã kiện</value>
+  </data>
+  <data name="ProductReuseNoCaption" xml:space="preserve">
+    <value>Mã nguyên liệu tận dụng</value>
+  </data>
+  <data name="SemiProductReportText" xml:space="preserve">
+    <value>BẢNG ĐỊNH MỨC BÁN THÀNH PHẨM</value>
+  </data>
+  <data name="MMProductionNormItemSemiProductDepartmentAttribute3Caption" xml:space="preserve">
+    <value>Kích thước</value>
+  </data>
+  <data name="MMProductionNormItemSemiProductDepartmentAttribute4Caption" xml:space="preserve">
+    <value>Màu sắc</value>
+  </data>
+  <data name="MMProductionNormItemSemiProductDepartmentAttribute5Caption" xml:space="preserve">
+    <value>Định lượng</value>
+  </data>
+  <data name="ChooseProductMessage" xml:space="preserve">
+    <value>Vui lòng chọn hàng hóa.</value>
+  </data>
+  <data name="NameProductIsRequireMessage" xml:space="preserve">
+    <value>Tên bán thành phẩm có STT: {0} không thể để trống!</value>
+  </data>
+  <data name="SaveSuccessMessage" xml:space="preserve">
+    <value>Lưu thành công!</value>
+  </data>
+  <data name="ProductPackNameCaption" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="MMProductionNormItemPackagingProductDepartmentAttribute3Caption" xml:space="preserve">
+    <value>KT phủ bì</value>
+  </data>
+  <data name="MMProductionNormItemPackagingProductDepartmentAttribute6Caption" xml:space="preserve">
+    <value>KT lọt lòng</value>
+  </data>
+  <data name="DeleteMessageConfirm" xml:space="preserve">
+    <value>Chi tiết/ Cụm đã dược lưu, bạn có chắc muốn xóa không?</value>
+  </data>
+  <data name="UpdateMessage" xml:space="preserve">
+    <value>Vui lòng lưu cụm trước khi thêm cụm {0} mới!</value>
+  </data>
+  <data name="ProductNameGroupCaption" xml:space="preserve">
+    <value>Tên cụm</value>
+  </data>
+  <data name="ProductNoGroupCaption" xml:space="preserve">
+    <value>Mã cụm</value>
+  </data>
+  <data name="ProductNameDetailCaption" xml:space="preserve">
+    <value>Tên cụm/chi tiết</value>
+  </data>
+  <data name="ProductNoDetailCaption" xml:space="preserve">
+    <value>Mã cụm/chi tiết</value>
+  </data>
+  <data name="ProductGroupNameCaption" xml:space="preserve">
+    <value>Nhóm cụm</value>
+  </data>
+  <data name="ProductGroupNoCaption" xml:space="preserve">
+    <value>Mã nhóm cụm</value>
+  </data>
+  <data name="ProductionNormItemVeneerCaption" xml:space="preserve">
+    <value>Veneer (M2)</value>
+  </data>
+  <data name="ProductDetailNameCaption" xml:space="preserve">
+    <value>Nhóm chi tiết</value>
+  </data>
+  <data name="ProductGroupIsRequireMessage" xml:space="preserve">
+    <value>Nhóm chi tiết của: {0} không thể để trống!</value>
+  </data>
+  <data name="NewProductMustBeChoose" xml:space="preserve">
+    <value>Bạn phải chọn sản phẩm mới khi tạo mới cụm/chhi tiết!</value>
+  </data>
+  <data name="MMProductionNormItemPackagingProductQtyInBox" xml:space="preserve">
+    <value>Qty/Box</value>
+  </data>
+  <data name="MMProductionNormItemHardwareAssembleTotalQuantityCaption" xml:space="preserve">
+    <value>SL ráp sau sơn</value>
+  </data>
+  <data name="ProductionNormDetail" xml:space="preserve">
+    <value>Chi tiết</value>
+  </data>
+  <data name="ProductionNormGroup" xml:space="preserve">
+    <value>Cụm</value>
+  </data>
+  <data name="SemiProductGroupDefaultNo" xml:space="preserve">
+    <value>{0}.{1}</value>
+  </data>
+  <data name="GroupRequireMessage" xml:space="preserve">
+    <value>Vui lòng lưu cụm trước khi thêm mới chi tiết!</value>
+  </data>
+  <data name="DetailExist" xml:space="preserve">
+    <value>Chi tiết {0} đã tồn tại.</value>
+  </data>
+  <data name="GroupExist" xml:space="preserve">
+    <value>Cụm {0} đã tồn tại.</value>
+  </data>
+  <data name="SaveDetailMessage" xml:space="preserve">
+    <value>Có Cụm/Chi tiết không cùng mã với sản phẩm. Vui lòng kiểm tra lại!</value>
+  </data>
+  <data name="MatchHardwareNo" xml:space="preserve">
+    <value>Hardware đã tồn tại!</value>
+  </data>
+  <data name="MMProductionNormItemProductWoodIngredientName" xml:space="preserve">
+    <value>Tên nguyên liệu</value>
+  </data>
+  <data name="MissProductWoodIngredientError" xml:space="preserve">
+    <value>Vui lòng chọn đầy đủ nguyên vật liệu cho định mức BTP!</value>
+  </data>
+  <data name="APSupplierName" xml:space="preserve">
+    <value>Tên NCC</value>
+  </data>
+  <data name="MatchNoExceptionMessage" xml:space="preserve">
+    <value>Mã {0} đã tồn tại!</value>
+  </data>
+  <data name="MMProductionNormItemICProductName" xml:space="preserve">
+    <value>Tên chi tiết</value>
+  </data>
+  <data name="ProductionNormItemDepreciationRate" xml:space="preserve">
+    <value>HS Tiêu Hao</value>
+  </data>
+  <data name="UploadFileSuccessfullyMessage" xml:space="preserve">
+    <value>Cập nhật thành công</value>
+  </data>
+  <data name="ConfirmOverrideFile" xml:space="preserve">
+    <value>Tập tin đã tồn tại, bạn có muốn lưu đề lên không.</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>Thêm ảnh</value>
+  </data>
+  <data name="FTPError" xml:space="preserve">
+    <value>Xảy ra lỗi với phương thức FTP, vui lòng thử lại</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Hình ảnh</value>
+  </data>
+  <data name="ViewRouting" xml:space="preserve">
+    <value>Chi tiết</value>
+  </data>
+  <data name="PleaseSaveOperationBeforeUpdateDetail" xml:space="preserve">
+    <value>Vui lòng lưu công đoạn trước khi thêm chi tiết!</value>
+  </data>
+  <data name="SemiProductExistConfirmMessage" xml:space="preserve">
+    <value>Mã hàng {0} đã tồn tại chi tiết bán thành phẩm, bạn muốn import thêm?</value>
+  </data>
+  <data name="ChooseAlternativeAllBOMMessage" xml:space="preserve">
+    <value>Bạn chắc chắn muốn thay thế mã vật tư đã chọn, cho tất cả các bảng định mức?</value>
+  </data>
+  <data name="ChooseAlternativeErrorMessage" xml:space="preserve">
+    <value>Chưa có mã vật tư thay thế!</value>
+  </data>
+  <data name="ChooseAlternativeThisBOMMessage" xml:space="preserve">
+    <value>Bạn chắc chắn muốn thay thế mã vật tư đã chọn, cho bảng định mức này?</value>
+  </data>
+  <data name="ChooseNoneErrorMessage" xml:space="preserve">
+    <value>Không có chi tiết nào được chọn!</value>
+  </data>
+  <data name="MaterialReportText" xml:space="preserve">
+    <value>BẢNG ĐỊNH MỨC VẬT TƯ SẢN XUẤT</value>
+  </data>
+  <data name="MaterialLableText" xml:space="preserve">
+    <value>Định mức vật tư sản xuất</value>
+  </data>
+  <data name="MaterialExitsInListMessage" xml:space="preserve">
+    <value>Mã vật tư: {0} đã tồn tại trong danh sách, bạn muốn cập nhật lại số lượng từ cấu hình không?</value>
+  </data>
+</root>

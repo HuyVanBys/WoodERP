@@ -1,0 +1,116 @@
+/// <XRTypeInfo>
+///   <AssemblyFullName>BOSBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</AssemblyFullName>
+///   <AssemblyLocation>F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\BOSBase.dll</AssemblyLocation>
+///   <TypeName>BOSReport.BaseReport</TypeName>
+///   <Localization>en-US</Localization>
+///   <Version>19.1</Version>
+///   <References>
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\BOSBase.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_32\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_32\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Caching\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Caching.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\BOSLib.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.Utils.v19.1.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\UIAutomationClient\v4.0_4.0.0.0__31bf3856ad364e35\UIAutomationClient.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\WindowsBase\v4.0_4.0.0.0__31bf3856ad364e35\WindowsBase.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\UIAutomationTypes\v4.0_4.0.0.0__31bf3856ad364e35\UIAutomationTypes.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_32\PresentationCore\v4.0_4.0.0.0__31bf3856ad364e35\PresentationCore.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.XtraBars.v19.1.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.XtraEditors.v19.1.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Data.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Data.Linq.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Data.DataSetExtensions\v4.0_4.0.0.0__b77a5c561934e089\System.Data.DataSetExtensions.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.XtraGrid.v19.1.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.XtraLayout.v19.1.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.XtraPrinting.v19.1.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.XtraTreeList.v19.1.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\BOSEntity.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\BOSCommon.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\BOSComponent.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.XtraReports.v19.1.Extensions.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Design.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_32\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Drawing.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.Design.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.Utils.v19.1.UI.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.XtraVerticalGrid.v19.1.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.DataAccess.v19.1.UI.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.XtraNavBar.v19.1.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\DevExpress.XtraCharts.v19.1.Wizard.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualBasic\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Management\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Management.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\RestSharp.dll" />
+///     <Reference Path="F:\SinhVien\Nam4\thucTap\Dự_Án\ThanhVinh\TienIch\Newtonsoft.Json.dll" />
+///   </References>
+///   <Resources>
+///     <Resource Name="XtraReportSerialization.BaseReport">
+/// zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAABAAAAAAAAAFBBRFBBRFAF9WM2AAAAAOMAAAAiWAB0AHIAYQBSAGUAcABvAHIAdAAuAEUAdgBlAG4AdABzAAAAAAABLUJhc2VSZXBvcnQsQmVmb3JlUHJpbnQsQmFzZVJlcG9ydF9CZWZvcmVQcmludA==</Resource>
+///   </Resources>
+/// </XRTypeInfo>
+namespace XtraReportSerialization {
+    
+    public class BaseReport : DevExpress.XtraReports.UI.XtraReport {
+        private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
+        private DevExpress.XtraReports.UI.XRLabel label1;
+        private System.Resources.ResourceManager _resources;
+        private string _resourceString;
+        public BaseReport() {
+            this._resourceString = DevExpress.XtraReports.Serialization.XRResourceManager.GetResourceFor("XtraReportSerialization.BaseReport");
+            this.InitializeComponent();
+        }
+        private System.Resources.ResourceManager resources {
+            get {
+                if (_resources == null) {
+                    this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(this._resourceString);
+                }
+                return this._resources;
+            }
+        }
+        private void InitializeComponent() {
+            this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.label1 = new DevExpress.XtraReports.UI.XRLabel();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // ReportHeader
+            // 
+            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label1});
+            this.ReportHeader.Name = "ReportHeader";
+            // 
+            // label1
+            // 
+            this.label1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Table].[AACreatedDate]")});
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(203.125F, 22.87499F);
+            this.label1.Multiline = true;
+            this.label1.Name = "label1";
+            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.label1.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label1.Text = "label1";
+            this.label1.TextFormatString = "{0:d}";
+            // 
+            // BaseReport
+            // 
+            this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.ReportHeader});
+            this.Name = "BaseReport";
+            this.PageHeight = 1100;
+            this.PageWidth = 850;
+            this.StyleSheetPath = null;
+            this.Version = "19.1";
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+        }
+    }
+}

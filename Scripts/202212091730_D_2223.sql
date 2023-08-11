@@ -1,0 +1,5 @@
+﻿Insert into STModules values('Alive', 'ClearData', 'CMD', 0, 1, 'OnlyERP')
+Insert into STModuleDescriptions values ((Select STModuleID from STModules Where STModuleName = 'ClearData'), 1, N'Clear Data cho Module')
+Insert into STScreens values('DMCMD100', N'Thông tin', 'guiClearData', (Select STModuleID from STModules Where STModuleName = 'ClearData'), 1,-1644826,-16777216,'Tahoma',8.25,'Regular','DM',0,0,0,0,1,1,'',0,0,'',1)
+Insert into AAColumnAlias Values (0,'','Alive','STModuleID', 'Module', 'STModuleClearDatas', '', '' ,'' ,'', 1,1)
+Insert into AAColumnAlias Values (0,'','Alive','STModuleClearDataFunction', N'Câu lệnh', 'STModuleClearDatas', '', '' ,'' ,'', 1,1)

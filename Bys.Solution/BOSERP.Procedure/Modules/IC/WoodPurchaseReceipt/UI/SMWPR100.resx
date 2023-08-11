@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="ScreenHelper.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>272, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fld_lblLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 12</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fld_lblLabel.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lblLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
+  </data>
+  <data name="fld_lblLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="fld_lblLabel.Text" xml:space="preserve">
+    <value>Mã chứng từ</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel.Name" xml:space="preserve">
+    <value>fld_lblLabel</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="fld_lblLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 142</value>
+  </data>
+  <data name="fld_lblLabel2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lblLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="fld_lblLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="fld_lblLabel2.Text" xml:space="preserve">
+    <value>Ngày chứng từ từ</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel2.Name" xml:space="preserve">
+    <value>fld_lblLabel2</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel2.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="fld_lblLabel111.Location" type="System.Drawing.Point, System.Drawing">
+    <value>334, 142</value>
+  </data>
+  <data name="fld_lblLabel111.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lblLabel111.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 13</value>
+  </data>
+  <data name="fld_lblLabel111.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="fld_lblLabel111.Text" xml:space="preserve">
+    <value>Đến</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel111.Name" xml:space="preserve">
+    <value>fld_lblLabel111</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel111.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel111.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel111.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="fld_dteSearchFromICReceiptDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 139</value>
+  </data>
+  <assembly alias="DevExpress.Utils.v20.2" name="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="fld_dteSearchFromICReceiptDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_dteSearchFromICReceiptDate.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dteSearchFromICReceiptDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_dteSearchFromICReceiptDate.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;fld_dteSearchFromICReceiptDate.Name" xml:space="preserve">
+    <value>fld_dteSearchFromICReceiptDate</value>
+  </data>
+  <data name="&gt;&gt;fld_dteSearchFromICReceiptDate.Type" xml:space="preserve">
+    <value>BOSComponent.BOSDateEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dteSearchFromICReceiptDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_dteSearchFromICReceiptDate.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="fld_dteSearchToICReceiptDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 139</value>
+  </data>
+  <data name="fld_dteSearchToICReceiptDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_dteSearchToICReceiptDate.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dteSearchToICReceiptDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_dteSearchToICReceiptDate.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;fld_dteSearchToICReceiptDate.Name" xml:space="preserve">
+    <value>fld_dteSearchToICReceiptDate</value>
+  </data>
+  <data name="&gt;&gt;fld_dteSearchToICReceiptDate.Type" xml:space="preserve">
+    <value>BOSComponent.BOSDateEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dteSearchToICReceiptDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_dteSearchToICReceiptDate.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="fld_txtICReceiptNo1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 9</value>
+  </data>
+  <data name="fld_txtICReceiptNo1.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fld_txtICReceiptNo1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptNo1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptNo1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_txtICReceiptNo1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptNo1.Name" xml:space="preserve">
+    <value>fld_txtICReceiptNo1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptNo1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptNo1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptNo1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="fld_dgcICReceipt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcICReceipt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 269</value>
+  </data>
+  <data name="fld_dgcICReceipt.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcICReceipt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 286</value>
+  </data>
+  <data name="fld_dgcICReceipt.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcICReceipt.Name" xml:space="preserve">
+    <value>fld_dgcICReceipt</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcICReceipt.Type" xml:space="preserve">
+    <value>BOSERP.BOSSearchResultsGridControl, BOSBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcICReceipt.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcICReceipt.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="fld_lblLabel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 90</value>
+  </data>
+  <data name="fld_lblLabel5.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lblLabel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="fld_lblLabel5.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="fld_lblLabel5.Text" xml:space="preserve">
+    <value>Nhân viên</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel5.Name" xml:space="preserve">
+    <value>fld_lblLabel5</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel5.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel5.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 87</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID1.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID1.Properties.Columns" xml:space="preserve">
+    <value>HREmployeeName</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_HREmployeeID1.Name" xml:space="preserve">
+    <value>fld_lkeFK_HREmployeeID1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_HREmployeeID1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_HREmployeeID1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_HREmployeeID1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 61</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID2.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID2.Properties.Columns" xml:space="preserve">
+    <value>ICStockName</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICStockID2.Name" xml:space="preserve">
+    <value>fld_lkeFK_ICStockID2</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICStockID2.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICStockID2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICStockID2.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="fld_lblLabel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 64</value>
+  </data>
+  <data name="fld_lblLabel8.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lblLabel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 13</value>
+  </data>
+  <data name="fld_lblLabel8.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="fld_lblLabel8.Text" xml:space="preserve">
+    <value>Kho</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel8.Name" xml:space="preserve">
+    <value>fld_lblLabel8</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel8.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel8.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel8.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="fld_lblLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 38</value>
+  </data>
+  <data name="fld_lblLabel1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lblLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="fld_lblLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="fld_lblLabel1.Text" xml:space="preserve">
+    <value>Đối tượng</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel1.Name" xml:space="preserve">
+    <value>fld_lblLabel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="bosLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 116</value>
+  </data>
+  <data name="bosLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="bosLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>92</value>
+  </data>
+  <data name="bosLabel1.Text" xml:space="preserve">
+    <value>Chi nhánh</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.Name" xml:space="preserve">
+    <value>bosLabel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_lkeFK_BRBranchID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 113</value>
+  </data>
+  <data name="fld_lkeFK_BRBranchID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_BRBranchID.Properties.Columns" xml:space="preserve">
+    <value>BRBranchNo</value>
+  </data>
+  <data name="fld_lkeFK_BRBranchID.Properties.Columns1" xml:space="preserve">
+    <value>Mã chi nhánh</value>
+  </data>
+  <data name="fld_lkeFK_BRBranchID.Properties.Columns2" xml:space="preserve">
+    <value>BRBranchName</value>
+  </data>
+  <data name="fld_lkeFK_BRBranchID.Properties.Columns3" xml:space="preserve">
+    <value>Tên chi nhánh</value>
+  </data>
+  <data name="fld_lkeFK_BRBranchID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_BRBranchID.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_BRBranchID.Name" xml:space="preserve">
+    <value>fld_lkeFK_BRBranchID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_BRBranchID.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_BRBranchID.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_BRBranchID.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 35</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns" xml:space="preserve">
+    <value>ACObjectNo</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns1" xml:space="preserve">
+    <value>Mã đối tượng</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns2" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <assembly alias="DevExpress.Data.v20.2" name="DevExpress.Data.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns3" type="DevExpress.Utils.FormatType, DevExpress.Data.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns4" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns5" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v20.2">
+    <value>Default</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns6" xml:space="preserve">
+    <value>ACObjectName</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns7" xml:space="preserve">
+    <value>Tên đối tượng</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACAssObjectID.Name" xml:space="preserve">
+    <value>fld_lkeFK_ACAssObjectID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACAssObjectID.Type" xml:space="preserve">
+    <value>BOSERP.AccObjectLookupEdit, BOSERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACAssObjectID.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACAssObjectID.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>613, 567</value>
+  </data>
+  <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="&gt;&gt;ScreenHelper.Name" xml:space="preserve">
+    <value>ScreenHelper</value>
+  </data>
+  <data name="&gt;&gt;ScreenHelper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fld_dgvICReceipt.Name" xml:space="preserve">
+    <value>fld_dgvICReceipt</value>
+  </data>
+  <data name="&gt;&gt;fld_dgvICReceipt.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SMWPR100</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>BOSERP.BOSERPScreen, BOSBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+</root>

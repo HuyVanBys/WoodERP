@@ -1,0 +1,39 @@
+using DevExpress.XtraReports.UI;
+using System;
+
+namespace BOSReport
+{
+    public partial class RP_ReceiptForProduct : BaseReport
+    {
+        public RP_ReceiptForProduct()
+        {
+            InitializeComponent();
+        }
+
+        private void xrTableCellQty_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            XRTableCell tableCell = sender as XRTableCell;
+            decimal strNumber = 0;
+            Decimal.TryParse(tableCell.Text, out strNumber);
+            if (strNumber % 1 != 0)
+            {
+                tableCell.Text = strNumber.ToString("n3");
+            }
+            else
+                tableCell.Text = strNumber.ToString("n0");
+        }
+
+        private void xrLabelQty_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            XRLabel label = sender as XRLabel;
+            decimal strNumber = 0;
+            Decimal.TryParse(label.Text, out strNumber);
+            if (strNumber % 1 != 0)
+            {
+                label.Text = strNumber.ToString("n3");
+            }
+            else
+                label.Text = strNumber.ToString("n0");
+        }
+    }
+}

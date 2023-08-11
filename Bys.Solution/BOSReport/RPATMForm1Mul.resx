@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="xrLabel347.Text" xml:space="preserve">
+    <value>định (theo thông báo của NH) để cân nhắc việc tiếp tục sử dụng dịch vụ tài khoản theo nội dung sửa đổi, bổ sung, thay thế được thông báo. Khách hàng được coi là chấp thuận toàn bộ nội dung sửa đổi, bổ sung, thay thế theo thông báo của NH nếu khách hàng không thực hiện thủ tục đóng TKTT, chấm dứt sử dụng dịch vụ TKTT trong thời hạn nêu trên.</value>
+  </data>
+  <data name="xrLabel346.Text" xml:space="preserve">
+    <value>Trong quá trình thực hiện, nếu phát sinh tranh chấp thì các bên sẽ bàn bạc, giải quyết trên cơ sở thương lượng. Nếu không tự giải quyết được, một trong hai Bên có quyền chuyển tranh chấp ra Tòa án có thẩm quyền nơi Agribank có trụ sở để giải quyết theo quy định của pháp luật.</value>
+  </data>
+  <data name="xrLabel343.Text" xml:space="preserve">
+    <value>Khách hàng đồng ý việc Agribank sửa đổi, bổ sung, thay thế Điều kiện, điều khoản mở và sử dụng dịch vụ tài khoản của Agribank và được thông báo bằng văn bản trên phương tiện thông tin đại chúng hoặc trên trang thông tin điện tử chính thức của Agribank (website: www.agribank.com.vn) hoặc tại quầy giao dịch của Agribank. Khách hàng có một thời hạn nhất</value>
+  </data>
+  <data name="xrLabel341.Text" xml:space="preserve">
+    <value>KH chịu trách nhiệm về những thiệt hại xảy ra do vô tình hay cố ý để lộ thông tin về Tên đăng nhập, mật khẩu, điện thoại di động (để nhận SMS OTP) và thiết bị Token và các thiết bị bảo mật khác dẫn đến bị lợi dụng. KH thông báo bằng hình thức nhanh nhất cho NH khi phát hiện hoặc nghi ngờ việc truy cập trái phép, lộ Tên đăng nhập, mật khẩu, tài khoản truy cập và/hoặc các thông tin cá nhân khác có khả năng dẫn đến việc lợi dụng, các hiện tượng giả mạo, gian lận khác và xác nhận sau đó bằng Văn bản gửi cho NH (nếu trước đó thông báo bằng hình thức khác).</value>
+  </data>
+  <data name="xrLabel340.Text" xml:space="preserve">
+    <value>KH có trách nhiệm cẩn trọng trong giao dịch, đảm bảo quá trình thực hiện giao dịch chính xác và đầy đủ, kiểm tra kỹ thông tin trước khi gửi lệnh đến NH, NH miễn trừ trách nhiệm với thông tin đã được xử lý khỏi hệ thống theo lệnh của KH.</value>
+  </data>
+  <data name="xrLabel339.Text" xml:space="preserve">
+    <value>Các giao dịch NHĐT có thể có rủi ro nhất định về tính bảo mật, tính liên tục không bị gián đoạn, sự cố đường truyền, điện, mạng, thiết bị, virut, lỗi kỹ thuật... KH xác nhận đã đánh giá, nhận biết đầy đủ về rủi ro có thể phát sinh. KH chấp nhận thực hiện các giao dịch và đồng ý miễn trừ trách nhiệm pháp lý và bồi thường thiệt hại cho NH về rủi ro phát sinh. KH cam kết là chủ sở hữu duy nhất số thuê bao điện thoại đã đăng ký, chịu trách nhiệm về mọi khiếu nại phát sinh liên quan đến số thuê bao của KH tại nhà mạng là không chính chủ.</value>
+  </data>
+  <data name="xrLabel338.Text" xml:space="preserve">
+    <value>Sử dụng đúng, quản lý, bảo đảm an toàn, bảo mật Tên đăng nhập, mật khẩu, điện thoại di động (để nhận SMS OTP) và thiết bị Token hoặc các yếu tố định danh khách hàng theo phương tiện, phương thức, quy trình giao dịch. </value>
+  </data>
+  <data name="xrLabel335.Text" xml:space="preserve">
+    <value>Trường hợp KH là công dân Mỹ, hoặc là đối tượng cư trú Mỹ hoặc có một trong những dấu hiệu Mỹ, KH cam kết tuân thủ Đạo luật tuân thủ thuế đối với Tài khoản ở nước ngoài của Mỹ (Foreign Account Tax Compliance Act, viết tắt là “FATCA”), khách hàng chấp thuận việc Agribank sử dụng thông tin đăng ký công khai thông tin cho Cơ quan nhà nước có thẩm quyền của Việt Nam và Sở Thuế vụ Hoa kỳ, thực hiện khấu trừ theo yêu cầu tuân thủ Đạo luật FATCA.</value>
+  </data>
+  <data name="xrLabel330.Text" xml:space="preserve">
+    <value>KH cung cấp giấy đề nghị tra soát, khiếu nại (theo mẫu của Agribank) và các hồ sơ, tài liệu khác liên quan (nếu có). Trường hợp ủy quyền cho người khác đề nghị tra soát, khiếu nại, KH thực hiện theo quy định của pháp luật về ủy quyền.</value>
+  </data>
+  <data name="xrLabel327.Text" xml:space="preserve">
+    <value>Khách hàng có trách nhiệm theo dõi số dư TKTT và giao dịch trên TKTT; định kỳ hoặc đột xuất nhận sao kê, thông tin, giao dịch tại Agribank và kịp thời thông báo cho Agribank khi phát hiện có sai sót, nhầm lẫn trên TKTT của mình hoặc nghi ngờ TKTT của mình bị lợi dụng.</value>
+  </data>
+  <data name="xrLabel326.Text" xml:space="preserve">
+    <value>CTK đồng ý ủy quyền cho Agribank thu các khoản phí, khoản nợ đến hạn, quá hạn, tiền lãi, các khoản nhờ thu, các chi phí phát sinh trong quá trình quản lý tài khoản và sử dụng các dịch vụ thanh toán (nếu có) từ TKTT thường xuyên, định kỳ theo yêu cầu của CTK và ngân hàng. </value>
+  </data>
+  <data name="xrLabel323.Text" xml:space="preserve">
+    <value>Trường hợp phát sinh giao dịch chuyển tiền đến đối với tài khoản đã đóng, Agribank nơi mở tài khoản chuyển trả lệnh thanh toán cho ngân hàng chuyển tiền hoặc thông báo cho khách hàng (nếu có thể) để khách hàng có hướng xử lý.</value>
+  </data>
+  <data name="xrLabel319.Text" xml:space="preserve">
+    <value>Trường hợp CTK hoặc người thụ hưởng hợp pháp số dư trên tài khoản đã được thông báo mà không đến nhận hoặc theo thỏa thuận trước bằng văn bản với CTK, Agribank nơi mở tài khoản hạch toán số tiền còn lại vào tài khoản thu nhập bất thường. Nếu sau đó, khách hàng có yêu cầu nhận tiền còn lại từ TKTT, Agribank nơi đóng TKTT kiểm tra, xác nhận thông tin và hạch toán chi trả cho khách hàng từ tài khoản chi phí bất thường.</value>
+  </data>
+  <data name="xrLabel317.Text" xml:space="preserve">
+    <value>Chi trả theo yêu cầu của CTK; người giám hộ, người đại điện  hợp pháp của CTK trong trường hợp CTK là người chưa đủ 15 tuổi, người hạn chế năng lực hành vi dân sự, người mất năng lực hành vi dân sự, người khó khăn trong nhận thức, làm chủ hành vi.</value>
+  </data>
+  <data name="xrLabel308.Text" xml:space="preserve">
+    <value>CTK có văn bản yêu cầu đóng TKTT và cam kết đã thực hiện đầy đủ các nghĩa vụ liên quan đến TKTT. Trường hợp CTK là người chưa đủ 15 tuổi, người hạn chế năng lực hành vi dân sự, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi thì việc đóng tài khoản được thực hiện theo yêu cầu của người giám hộ, người đại diện theo pháp luật của CTK.</value>
+  </data>
+  <data name="xrLabel302.Text" xml:space="preserve">
+    <value>Đối với TKTT có số dư thấp hơn số dư tối thiểu và không phát sinh giao dịch trong thời gian 12 (mười hai) tháng, Agribank nơi mở tài khoản thực hiện tạm khóa TKTT ở trạng thái tài khoản không hoạt động. </value>
+  </data>
+  <data name="xrLabel301.Text" xml:space="preserve">
+    <value>Việc chấm dứt tạm khóa TKTT và việc xử lý các lệnh thanh toán đi, đến trong thời gian tạm khóa thực hiện theo yêu cầu của CTK (hoặc người giám hộ, người đại diện hợp pháp của CTK) hoặc theo văn bản thỏa thuận giữa CTK với Agribank nơi mở tài khoản. </value>
+  </data>
+  <data name="xrLabel300.Text" xml:space="preserve">
+    <value>Agribank từ chối yêu cầu tạm khóa TKTT của CTK khi CTK chưa hoàn thành nghĩa vụ thanh toán theo quyết định cưỡng chế của cơ quan nhà nước có thẩm quyền hoặc chưa thanh toán xong các khoản nợ phải trả cho Agribank.</value>
+  </data>
+  <data name="xrLabel299.Text" xml:space="preserve">
+    <value>Agribank thực hiện tạm khóa TKTT của khách hàng khi có văn bản yêu cầu của CTK (người đại diện hợp pháp của CTK) hoặc theo thỏa thuận trước bằng văn bản giữa CTK với Agribank nơi mở tài khoản, trừ trường hợp đặc biệt liên quan TKTT chung theo quy định Agribank.</value>
+  </data>
+  <data name="xrLabel287.Text" xml:space="preserve">
+    <value>Phát hiện thấy có nhầm lẫn, sai sót khi ghi Có nhầm vào TKTT của khách hàng hoặc theo yêu cầu hoàn trả lại tiền của tổ chức cung ứng dịch vụ thanh toán chuyển tiền do có nhầm lẫn, sai sót so với lệnh thanh toán của người chuyển tiền. Số tiền bị phong tỏa trên TKTT không vượt quá với số tiền trên lệnh chuyển tiền bị nhầm lẫn, sai sót.</value>
+  </data>
+  <data name="xrLabel272.Text" xml:space="preserve">
+    <value>Trong quá trình sử dụng TKTT và các dịch vụ thanh toán, khách hàng chịu trách nhiệm thanh toán các khoản phí liên quan khi thực hiện giao dịch, dịch vụ trên TKTT theo quy định của Agribank hoặc theo thỏa thuận bằng văn bản với Agribank phù hợp với quy định của pháp luật.</value>
+  </data>
+  <data name="xrLabel263.Text" xml:space="preserve">
+    <value>Cập nhật kịp thời các thông tin khi có thông báo thay đổi nội dung trong hồ sơ mở TKTT của CTK. Bảo quản, lưu trữ hồ sơ mở tài khoản và các chứng từ giao dịch qua tài khoản theo đúng quy định của pháp luật.</value>
+  </data>
+  <data name="xrLabel262.Text" xml:space="preserve">
+    <value>Theo hình thức nhận thông báo số dư và sao kê TKTT mà khách hàng đăng ký tại Giấy đề nghị kiêm hợp đồng mở và sử dụng dịch vụ TKTT, Agribank thông tin đầy đủ, kịp thời về số dư và các giao dịch phát sinh trên TKTT và việc phong tỏa TKTT theo thỏa thuận với CTK (qua hình thức sau: Điện thoại và/hoặc tin nhắn (SMS) và/hoặc thư điện tử (email) và/hoặc fax và/hoặc giấy báo (sổ phụ) và/hoặc hình thức khác phù hợp với quy định của Agribank) và chịu trách nhiệm về tính chính xác đối với những thông tin mà mình cung cấp.</value>
+  </data>
+  <data name="xrLabel219.Text" xml:space="preserve">
+    <value>Từ chối yêu cầu tạm khóa, đóng TKTT của CTK hoặc chưa phong tỏa TKTT chung theo quy định của Agribank khi CTK chưa hoàn thành nghĩa vụ thanh toán theo quyết định cưỡng chế của cơ quan nhà nước có thẩm quyền hoặc chưa thanh toán xong các khoản nợ phải trả cho Agribank.</value>
+  </data>
+  <data name="xrLabel218.Text" xml:space="preserve">
+    <value>TKTT đang bị tạm khóa, bị phong tỏa toàn bộ hoặc TKTT đã đóng, TKTT bị tạm khóa hoặc phong tỏa một phần mà phần không bị tạm khóa, phong tỏa không có đủ số dư (trừ trường hợp được thấu chi) hoặc vượt hạn mức thấu chi để thực hiện các lệnh thanh toán; </value>
+  </data>
+  <data name="xrLabel215.Text" xml:space="preserve">
+    <value>CTK không thực hiện đầy đủ các yêu cầu về thủ tục thanh toán, lệnh thanh toán không hợp lệ, không khớp đúng với các yếu tố đã đăng ký trong hồ sơ mở TKTT hoặc không phù hợp với các thỏa thuận giữa CTK với Agribank;</value>
+  </data>
+  <data name="xrLabel212.Text" xml:space="preserve">
+    <value>Khi phát hiện đã ghi Có nhầm vào tài khoản của khách hàng hoặc theo yêu cầu hủy lệnh chuyển Có của tổ chức cung ứng dịch vụ thanh toán chuyển tiền do tổ chức cung ứng dịch vụ thanh toán chuyển tiền phát hiện thấy có sai sót so với lệnh thanh toán của người chuyển tiền; </value>
+  </data>
+  <data name="xrLabel210.Text" xml:space="preserve">
+    <value>Để điều chỉnh các khoản mục bị hạch toán sai, hạch toán không đúng bản chất hoặc không phù hợp với nội dung sử dụng của TKTT theo quy định của pháp luật và thông báo cho CTK biết qua hình thức sau đây: Điện thoại và/hoặc tin nhắn (SMS) và/hoặc thư điện tử (email) và/hoặc fax và/hoặc hình thức khác theo thông tin khách hàng đã đăng ký với Agribank tại hợp đồng mở và sử dụng TKTT;</value>
+  </data>
+  <data name="xrLabel209.Text" xml:space="preserve">
+    <value>Theo yêu cầu bằng văn bản của cơ quan nhà nước có thẩm quyền trong việc cưỡng chế thi hành quyết định về xử phạt vi phạm hành chính, quyết định thi hành án, quyết định thu thuế hoặc thực hiện các nghĩa vụ thanh toán khác theo quy định của pháp luật;</value>
+  </data>
+  <data name="xrLabel204.Text" xml:space="preserve">
+    <value>Quản lý các chứng từ có liên quan đến giao dịch trên TKTT (séc, ủy nhiệm chi, v.v...), chịu trách nhiệm về mọi thiệt hại và/hoặc tranh chấp (nếu có) phát sinh nếu chứng từ có liên quan đến TKTT do mình quản lý bị lợi dụng như: Làm mất séc; ký/đóng dấu (nếu có) trước khi điền đầy đủ các nội dung trên chứng từ; các trường hợp lợi dụng khác.</value>
+  </data>
+  <data name="xrLabel203.Text" xml:space="preserve">
+    <value>Chịu trách nhiệm trong trường hợp chữ ký, con dấu, mật khẩu (khi sử dụng dịch vụ ngân hàng nếu có) bị lạm dụng (kể cả trường hợp con dấu thật, chữ ký giả mạo hoặc con dấu giả mạo, chữ ký thật) do lỗi của mình dẫn đến tổn thất hoặc tài khoản bị lợi dụng cho các giao dịch bất hợp pháp hoặc giao dịch có tranh chấp với bên thứ ba.</value>
+  </data>
+  <data name="xrLabel202.Text" xml:space="preserve">
+    <value>Tuân thủ các hướng dẫn của Agribank về việc lập các lệnh thanh toán và sử dụng phương tiện thanh toán, thực hiện thanh toán qua tài khoản; sử dụng, luân chuyển, lưu trữ chứng từ giao dịch; đảm bảo các biện pháp an toàn theo quy định của Agribank.</value>
+  </data>
+  <data name="xrLabel200.Text" xml:space="preserve">
+    <value>Cung cấp đầy đủ, rõ ràng, chính xác các thông tin liên quan về mở và sử dụng TKTT. Thông báo kịp thời và gửi các giấy tờ liên quan cho Agribank nơi mở tài khoản khi có sự thay đổi về thông tin trong hồ sơ mở TKTT.</value>
+  </data>
+  <data name="xrLabel196.Text" xml:space="preserve">
+    <value>Đảm bảo có đủ tiền trên TKTT để thực hiện các lệnh thanh toán đã lập. Trường hợp có thỏa thuận thấu chi với Agribank nơi mở tài khoản thì phải thực hiện các nghĩa vụ liên quan khi chi trả vượt quá số dư Có trên tài khoản.</value>
+  </data>
+  <data name="xrLabel173.Text" xml:space="preserve">
+    <value>Yêu cầu Agribank thực hiện các lệnh thanh toán hợp pháp, hợp lệ trong phạm vi số dư Có và hạn mức được phép thấu chi (nếu có); được cung cấp thông tin về các giao dịch thanh toán, số dư trên TKTT của mình theo thỏa thuận, phù hợp với quy định của Agribank.</value>
+  </data>
+  <data name="xrLabel66.Text" xml:space="preserve">
+    <value>Việc mở và sử dụng TKTT bằng ngoại tệ của người cư trú và người không cư trú, TKTT bằng đồng Việt Nam của người không cư trú và người cư trú là cá nhân người nước ngoài phải thực hiện quy định về quản lý ngoại hối của Agribank, Ngân hàng Nhà nước và Pháp luật. </value>
+  </data>
+  <data name="xrLabel64.Text" xml:space="preserve">
+    <value>Dịch vụ TKTT: là việc mở, sử dụng, quản lý TKTT và bao gồm nhưng không giới hạn các giao dịch liên quan đến các dịch vụ gia tăng như Thẻ, dịch vụ ngân hàng điện tử (Đối với dịch vụ gia tăng có quy định ký hợp đồng dịch vụ riêng, KH ký thêm hợp đồng dịch vụ đó).</value>
+  </data>
+  <data name="xrLabel59.Text" xml:space="preserve">
+    <value>Khách hàng (KH) xác nhận đã nhận biết đầy đủ, hiểu rõ, đồng ý thực hiện toàn bộ điều kiện, điều khoản mở và sử dụng dịch vụ tài khoản, quyền và trách nhiệm của KH khi mở và sử dụng dịch vụ TKTT tại Agribank.</value>
+  </data>
+  <data name="xrLabel132.Text" xml:space="preserve">
+    <value>      Tôi/Chúng tôi cam kết những thông tin trên đây là đúng sự thật và hoàn toàn chịu trách nhiệm về các thông tin đã cung cấp. Tôi/Chúng tôi đã đọc, hiểu rõ và đồng ý với các điều kiện điều khoản mở và sử dụng tài khoản kèm theo, cam kết chấp thuận và chịu trách nhiệm quản lý và sử dụng TKTT, các dịch vụ ngân hàng đã đăng ký theo các quy định của Agribank, NHNN và pháp luật của nước CHXHCN Việt Nam. Tôi hiểu rằng các quy định này có thể được sửa đổi theo từng thời kỳ, theo đó các quy định sẽ điều chỉnh quan hệ tài khoản và sử dụng dịch vụ của tôi và đồng ý tuân thủ các quy định đó. </value>
+  </data>
+  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="xtraTabbedMdiManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="objectDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+</root>

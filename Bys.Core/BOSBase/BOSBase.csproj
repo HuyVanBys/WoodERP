@@ -1,0 +1,775 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{051D5AE3-E906-4A72-9180-D1FAC27A7D16}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BOSBase</RootNamespace>
+    <AssemblyName>BOSBase</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>..\..\bin\Release\BOSBase.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CredentialManagement, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CredentialManagement.1.0.2\lib\net35\CredentialManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\libs\CrystalDecisions.Enterprise.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\libs\CrystalDecisions.Enterprise.InfoStore.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v20.2.Export, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v20.2.Design, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v20.2.Wizard, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v20.2.Design, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v20.2.UI, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v20.2.Design, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v20.2.Design, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v20.2.Design, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v20.2.Design, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v20.2.Design, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v20.2.Design, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v20.2.UI, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v20.2.Extensions, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v20.2.Design, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v20.2.Design, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <HintPath>..\..\libs\Interop.Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="IronBarCode, Version=2022.5.0.5918, Culture=neutral, PublicKeyToken=b971bb3971bdf306, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BarCode.2022.5.5918\lib\net40\IronBarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security">
+      <HintPath>..\..\libs\Microsoft.Practices.EnterpriseLibrary.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>..\..\libs\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Replication, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Microsoft.SqlServer.Replication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Rmo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Microsoft.SqlServer.Rmo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.VisualBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\libs\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapper\DtoMappingProfile.cs" />
+    <Compile Include="BaseProviderERP\AccountHelper.cs" />
+    <Compile Include="BaseProviderERP\BaseReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\BaseReport.designer.cs">
+      <DependentUpon>BaseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\BaseTransactionEntities.cs" />
+    <Compile Include="BaseProviderERP\BaseTransactionModule.cs" />
+    <Compile Include="BaseProviderERP\Components\AccObjectLookupEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\AccObjectLookupEdit.Designer.cs">
+      <DependentUpon>AccObjectLookupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\BaseDocumentEntryGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\guiReportDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\guiReportDesigner.Designer.cs">
+      <DependentUpon>guiReportDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\guiReportPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\guiReportPreview.Designer.cs">
+      <DependentUpon>guiReportPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\ItemGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\ItemGridControl.Designer.cs">
+      <DependentUpon>ItemGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\ItemLookupEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\ItemLookupEdit.Designer.cs">
+      <DependentUpon>ItemLookupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\ReportFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\ReportFormView.designer.cs">
+      <DependentUpon>ReportFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\GenaralLeadger\GLHelper.cs" />
+    <Compile Include="BaseProviderERP\GenaralLeadger\GLReceiptEntities.cs" />
+    <Compile Include="BaseProviderERP\GenaralLeadger\GLReceiptModule.cs" />
+    <Compile Include="BaseProviderERP\GenaralLeadger\GLShipmentEntities.cs" />
+    <Compile Include="BaseProviderERP\GenaralLeadger\GLShipmentModule.cs" />
+    <Compile Include="BaseProviderERP\GenaralLeadger\GLTransferEntities.cs" />
+    <Compile Include="BaseProviderERP\GenaralLeadger\GLTransferModule.cs" />
+    <Compile Include="BaseProviderERP\GridControlHelper.cs" />
+    <Compile Include="BaseProviderERP\GridMulti.cs" />
+    <Compile Include="BaseProviderERP\UI\GridControl\ICProductPackageItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiAddProductPackageItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiAddProductPackageItems.Designer.cs">
+      <DependentUpon>guiAddProductPackageItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Utilities\AlertMessageHelper.cs" />
+    <Compile Include="BaseProviderERP\BaseModuleERP.ControlEvents.cs" />
+    <Compile Include="BaseProviderERP\BaseModuleERP.cs" />
+    <Compile Include="BaseProviderERP\BaseModuleERP.util.cs" />
+    <Compile Include="BaseProviderERP\BaseModuleFactory.cs" />
+    <Compile Include="BaseProviderERP\BaseSearchObject.cs" />
+    <Compile Include="BaseProviderERP\BaseSearchObjectFactory.cs" />
+    <Compile Include="BaseProviderERP\Components\BOSERPScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\BOSERPScreenFactory.cs" />
+    <Compile Include="BaseProviderERP\BOSItemsEntityList.cs" />
+    <Compile Include="BaseProviderERP\BOSList.cs" />
+    <Compile Include="BaseProviderERP\BOSTreeList.cs" />
+    <Compile Include="BaseProviderERP\Components\ADCriteriasGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\ADCriteriasGridControl.Designer.cs">
+      <DependentUpon>ADCriteriasGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\BOSSearchResultsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\BOSSearchResultsGridControl.Designer.cs">
+      <DependentUpon>BOSSearchResultsGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\BOSSearchResultsTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\BOSSearchResultsTreeListControl.Designer.cs">
+      <DependentUpon>BOSSearchResultsTreeListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Constants\PermissionEnum.cs" />
+    <Compile Include="BaseProviderERP\ERPModuleEntities.cs" />
+    <Compile Include="BaseProviderERP\ERPModuleEntities.util.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\ERPModuleEntitiesFactory.cs" />
+    <Compile Include="BaseProviderERP\UI\GridControl\BranchGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\GridControl\BranchGridControl.Designer.cs">
+      <DependentUpon>BranchGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\GridControl\InventoryStatusGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\GridControl\InventoryStatusGridControl.Designer.cs">
+      <DependentUpon>InventoryStatusGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiChooseBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiChooseBranch.Designer.cs">
+      <DependentUpon>guiChooseBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiCustomizeToolbarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiCustomizeToolbarForm.Designer.cs">
+      <DependentUpon>guiCustomizeToolbarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiErrorMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiErrorMessage.Designer.cs">
+      <DependentUpon>guiErrorMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiFind.Designer.cs">
+      <DependentUpon>guiFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiInventoryStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiInventoryStatus.Designer.cs">
+      <DependentUpon>guiInventoryStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiShowData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiShowData.Designer.cs">
+      <DependentUpon>guiShowData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiUserAudit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiUserAudit.Designer.cs">
+      <DependentUpon>guiUserAudit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Utilities\DataTableHelper.cs" />
+    <Compile Include="BaseProviderERP\Utilities\ExcelExporter.cs" />
+    <Compile Include="BaseProviderERP\Utilities\ExcelImportExportObject.cs" />
+    <Compile Include="BaseProviderERP\UI\guiExcelExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiExcelExport.Designer.cs">
+      <DependentUpon>guiExcelExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiExcelImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\UI\guiExcelImport.Designer.cs">
+      <DependentUpon>guiExcelImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseProviderERP\Utilities\ExportExcelParameter.cs" />
+    <Compile Include="BaseProviderERP\Utilities\TransactionUtil.cs" />
+    <Compile Include="BaseProviderERP\Utilities\XtraReportHelper.cs" />
+    <Compile Include="BOSApp.cs" />
+    <Compile Include="BOSApp.util.cs" />
+    <Compile Include="guiLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="guiLogin.designer.cs">
+      <DependentUpon>guiLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\BaseLocalizedResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseLocalizedResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\ModuleParentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\ModuleSearchScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseProviderERP\Components\ModuleSearchScreen.Designer.cs">
+      <DependentUpon>ModuleSearchScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BysSplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BysSplashForm.Designer.cs">
+      <DependentUpon>BysSplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GridControl\BOSBandedGridColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\GridControl\BOSBandedGridColumnCollection.cs" />
+    <Compile Include="UI\GridControl\BOSBandedGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\GridControl\BOSGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\GridControl\BOSGridInfoRegistrator.cs" />
+    <Compile Include="UI\GridControl\HREmployeesGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\GridControl\InventoryStockQuantityGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\GridControl\InventoryStockQuantityGridControl.Designer.cs">
+      <DependentUpon>InventoryStockQuantityGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GridControl\ShowInventoryStockGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\GridControl\ShowInventoryStockGridControl.Designer.cs">
+      <DependentUpon>ShowInventoryStockGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\guiChooseLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\guiChooseLocation.Designer.cs">
+      <DependentUpon>guiChooseLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\guiInventoryStockQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\guiInventoryStockQuantity.Designer.cs">
+      <DependentUpon>guiInventoryStockQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\guiShowTemplateItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\guiShowTemplateItems.Designer.cs">
+      <DependentUpon>guiShowTemplateItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\guiProductGroupTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\guiProductGroupTree.Designer.cs">
+      <DependentUpon>guiProductGroupTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\guiShowInventoryStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\guiShowInventoryStock.Designer.cs">
+      <DependentUpon>guiShowInventoryStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreeListControl\GELocationsTreeListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\TreeListControl\GELocationsTreeListControl.Designer.cs">
+      <DependentUpon>GELocationsTreeListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ApiClientHelper.cs" />
+    <Compile Include="Utilities\ApiLicenseHelper.cs" />
+    <Compile Include="Utilities\Code128Content.cs" />
+    <Compile Include="Utilities\Code128Rendering.cs" />
+    <Compile Include="Utilities\GuidHelper.cs" />
+    <Compile Include="Utilities\MimeTypeMapHelper.cs" />
+    <Compile Include="WinApi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseProviderERP\Components\BOSERPScreen.resx">
+      <DependentUpon>BOSERPScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\Components\ADCriteriasGridControl.resx">
+      <DependentUpon>ADCriteriasGridControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\Components\BOSSearchResultsGridControl.resx">
+      <DependentUpon>BOSSearchResultsGridControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\BaseReport.resx">
+      <DependentUpon>BaseReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\Components\guiReportDesigner.resx">
+      <DependentUpon>guiReportDesigner.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\Components\guiReportPreview.resx">
+      <DependentUpon>guiReportPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\Components\ReportFormView.resx">
+      <DependentUpon>ReportFormView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\UI\guiAddProductPackageItems.resx">
+      <DependentUpon>guiAddProductPackageItems.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\UI\guiChooseBranch.resx">
+      <DependentUpon>guiChooseBranch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\UI\guiCustomizeToolbarForm.resx">
+      <DependentUpon>guiCustomizeToolbarForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\UI\guiErrorMessage.resx">
+      <DependentUpon>guiErrorMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\UI\guiFind.resx">
+      <DependentUpon>guiFind.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\UI\guiInventoryStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>guiInventoryStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\UI\guiShowData.resx">
+      <DependentUpon>guiShowData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\UI\guiUserAudit.resx">
+      <DependentUpon>guiUserAudit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\UI\guiExcelExport.resx">
+      <DependentUpon>guiExcelExport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\UI\guiExcelImport.resx">
+      <DependentUpon>guiExcelImport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="guiLogin.resx">
+      <DependentUpon>guiLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\BaseLocalizedResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BaseLocalizedResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Localization</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\Components\ModuleParentScreen.resx">
+      <DependentUpon>ModuleParentScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseProviderERP\Components\ModuleSearchScreen.resx">
+      <DependentUpon>ModuleSearchScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CommonResources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BysSplashForm.resx">
+      <DependentUpon>BysSplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\guiChooseLocation.resx">
+      <DependentUpon>guiChooseLocation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\guiInventoryStockQuantity.resx">
+      <DependentUpon>guiInventoryStockQuantity.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\guiShowTemplateItems.resx">
+      <DependentUpon>guiShowTemplateItems.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\guiProductGroupTree.resx">
+      <DependentUpon>guiProductGroupTree.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\guiShowInventoryStock.resx">
+      <DependentUpon>guiShowInventoryStock.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\BYSLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="lib\Interop.Microsoft.Office.Core.dll" />
+    <Content Include="lib\Interop.MSTSCLib.dll" />
+    <Content Include="lib\Interop.Outlook.dll" />
+    <Content Include="lib\Interop.VBIDE.dll" />
+    <Content Include="lib\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="lib\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="lib\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll" />
+    <Content Include="lib\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll" />
+    <Content Include="lib\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design.dll" />
+    <Content Include="lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" />
+    <Content Include="lib\Microsoft.Practices.EnterpriseLibrary.Security.dll" />
+    <Content Include="lib\Microsoft.Practices.ObjectBuilder.dll" />
+    <None Include="Resources\down-arrow.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\padlock.png" />
+    <None Include="Resources\hide-interface-symbol.png" />
+    <None Include="Resources\loginBackgroud.png" />
+    <None Include="Resources\plus.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BOSCommon\BOSCommon.csproj">
+      <Project>{b05df8ad-9ae4-471c-85c5-6d63540443ad}</Project>
+      <Name>BOSCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BOSComponent\BOSComponent.csproj">
+      <Project>{220ed659-0c9e-4501-baee-dd5f5fc1a3bb}</Project>
+      <Name>BOSComponent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BOSEntity\BOSEntity.csproj">
+      <Project>{fe3f2e92-4ddb-4a44-98bb-209c9a452f2a}</Project>
+      <Name>BOSEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BOSLib\BOSLib.csproj">
+      <Project>{a4860258-380c-4ff3-9f93-ec653abdae8d}</Project>
+      <Name>BOSLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

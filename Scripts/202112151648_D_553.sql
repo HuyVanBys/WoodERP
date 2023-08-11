@@ -1,0 +1,6 @@
+﻿Insert into AAColumnAlias Values(0, '', 'Alive', 'ARProductionPlanningItemSemiProductRemark', N'Ghi chú BTP', 'ARProductionPlanningItems','','','','',1,'')
+Insert into AAColumnAlias Values(0, '', 'Alive', 'ARProductionPlanningItemProductRemark', N'Ghi chú Thành phẩm', 'ARProductionPlanningItems','','','','',1,'')
+Insert into AAColumnAlias Values(0, '', 'Alive', 'ARProductionPlanningItemWoodRemark', N'Ghi chú Nguyên liệu', 'ARProductionPlanningItems','','','','',1,'')
+Insert into AAColumnAlias Values(0, '', 'Alive', 'ARProductionPlanningItemPackagingRemark', N'Ghi chú PLĐG', 'ARProductionPlanningItems','','','','',1,'')
+Insert into AAColumnAlias Values(0, '', 'Alive', 'ARProductionPlanningItemPaintRemark', N'Ghi chú Sơn', 'ARProductionPlanningItems','','','','',1,'')
+Insert into AAColumnAlias Values(0, '', 'Alive', 'ARProductionPlanningItemGeneralMaterialRemark', N'Ghi chú ngành hàng khác', 'ARProductionPlanningItems','','','','',1,'')

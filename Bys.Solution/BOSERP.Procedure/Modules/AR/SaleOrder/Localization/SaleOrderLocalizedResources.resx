@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ARCustomerName" xml:space="preserve">
+    <value>Khách hàng</value>
+  </data>
+  <data name="AROpenDocumentNo" xml:space="preserve">
+    <value>Mã đơn hàng</value>
+  </data>
+  <data name="ARSaleOrderItemRemainedQty" xml:space="preserve">
+    <value>Số lượng còn lại</value>
+  </data>
+  <data name="CannotBuyProductErrorMessage" xml:space="preserve">
+    <value>Khách hàng này đã bị khóa mua hàng, xin chọn khách hàng khác.</value>
+  </data>
+  <data name="CompleteSuccessfullyMessage" xml:space="preserve">
+    <value>Hoàn tất thành công</value>
+  </data>
+  <data name="ConfirmUpdatePriceLevelToListedItemsMessage" xml:space="preserve">
+    <value>Bạn có muốn áp dụng mức giá mới cho những sản phẩm đã chọn?</value>
+  </data>
+  <data name="DeleteSuccessfullMessage" xml:space="preserve">
+    <value>Xóa đặt cọc thành công</value>
+  </data>
+  <data name="QuestionDeleteMessage" xml:space="preserve">
+    <value>Bạn có muốn xóa lần đặt cọc này?</value>
+  </data>
+  <data name="SaleOrderHasBeenCanceledMessage" xml:space="preserve">
+    <value>Đơn đặt hàng đã bị hủy và không thể chỉnh sửa</value>
+  </data>
+  <data name="SaleOrderHasBeenConfirmedMessage" xml:space="preserve">
+    <value>Đơn đặt hàng đã được xác nhận từ phía khách hàng và không thể chỉnh sửa</value>
+  </data>
+  <data name="SaleOrderHasBeenShippedMessage" xml:space="preserve">
+    <value>Đơn đặt hàng đã được lập phiếu giao và không thể chỉnh sửa</value>
+  </data>
+  <data name="SOItemComponent" xml:space="preserve">
+    <value>Thành phần</value>
+  </data>
+  <data name="UpdateSuccessfullMessage" xml:space="preserve">
+    <value>Cập nhật đặt cọc thành công</value>
+  </data>
+  <data name="ConfirmDepositBeforePrintingMessage" xml:space="preserve">
+    <value>Đơn đặt hàng chưa thu tiền cọc. Bạn có muốn in?</value>
+  </data>
+  <data name="ComponentIsNull" xml:space="preserve">
+    <value>Không có thành phần cho sản phẩm này</value>
+  </data>
+  <data name="ICProductName" xml:space="preserve">
+    <value>Tên sản phẩm</value>
+  </data>
+  <data name="ItemComponentList" xml:space="preserve">
+    <value>Thành phần</value>
+  </data>
+  <data name="SaleOrderMustBeCompletedBeforePrintingMessage" xml:space="preserve">
+    <value>Bạn cần hoàn tất đơn hàng trước khi in</value>
+  </data>
+  <data name="SaleOrderMustBeCompletedBeforeTakingDepositMessage" xml:space="preserve">
+    <value>Bạn cần hoàn tất đơn hàng trước khi thu tiền cọc</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>CK</value>
+  </data>
+  <data name="VAT" xml:space="preserve">
+    <value>VAT</value>
+  </data>
+  <data name="ARCustomerPaymentNo" xml:space="preserve">
+    <value>Mã phiếu cọc</value>
+  </data>
+  <data name="ICProductDesc" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="ICProductSupplierNo" xml:space="preserve">
+    <value>Mã sản phẩm NCC</value>
+  </data>
+  <data name="ARCustomerPaymentExchangeRate" xml:space="preserve">
+    <value>Tỉ giá</value>
+  </data>
+  <data name="GECurrencyName" xml:space="preserve">
+    <value>Loại tiền tệ</value>
+  </data>
+  <data name="HREmployeeName" xml:space="preserve">
+    <value>Nhân viên</value>
+  </data>
+  <data name="Copy1" xml:space="preserve">
+    <value>Liên 1: Lưu</value>
+  </data>
+  <data name="Copy2" xml:space="preserve">
+    <value>Liên 2: Giao cho khách hàng</value>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Tỷ giá</value>
+  </data>
+  <data name="ICProductSerialNo" xml:space="preserve">
+    <value>Mã lô hàng</value>
+  </data>
+  <data name="ICStockName" xml:space="preserve">
+    <value>Kho</value>
+  </data>
+  <data name="DepositAlreadyExistsMessage" xml:space="preserve">
+    <value>Phiếu cọc {0} đã có trong đơn hàng</value>
+  </data>
+  <data name="DepositHasNotSameCustomerMessage" xml:space="preserve">
+    <value>Phiếu cọc {0} không cùng khách hàng với đơn hàng</value>
+  </data>
+  <data name="ARCustomerPaymentDate" xml:space="preserve">
+    <value>Ngày đặt cọc</value>
+  </data>
+  <data name="DepositBanlace" xml:space="preserve">
+    <value>Số tiền còn lại</value>
+  </data>
+  <data name="TransferedDepositAmount" xml:space="preserve">
+    <value>Số tiền cọc bị chuyển</value>
+  </data>
+  <data name="ConfirmOverrideFile" xml:space="preserve">
+    <value>Tập tin đã tồn tại, bạn có muốn lưu đề lên không</value>
+  </data>
+  <data name="UploadFileSuccessfullyMessage" xml:space="preserve">
+    <value>Lưu file thành công</value>
+  </data>
+  <data name="SelectTemplateToView" xml:space="preserve">
+    <value>Vui lòng chọn tài liệu cần xem</value>
+  </data>
+  <data name="UserCreatedName" xml:space="preserve">
+    <value>Tên người tạo</value>
+  </data>
+  <data name="ConfirmDeleteFile" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa tài liệu này?</value>
+  </data>
+  <data name="ChooseMulltiSaleOrderMessage" xml:space="preserve">
+    <value>Các sản phẩm bạn đã chọn không cùng Sale forecast!</value>
+  </data>
+  <data name="InvalidPaymentTimeAmount" xml:space="preserve">
+    <value>Số tiền đợt thanh toán không được lớn hơn tổng số tiền chứng từ.</value>
+  </data>
+  <data name="ARPaymentMethodComboIsNullMessage" xml:space="preserve">
+    <value>Chọn hình thức thanh toán.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Không nhập quá số lượng trong SaleForecast</value>
+  </data>
+  <data name="TotalError" xml:space="preserve">
+    <value>Không được nhập lớn hơn thành tiền</value>
+  </data>
+  <data name="ProductQty" xml:space="preserve">
+    <value>Khối lượng</value>
+  </data>
+  <data name="ProductSerialNoLumber" xml:space="preserve">
+    <value>Mã kiện</value>
+  </data>
+  <data name="ProductSerialNoRoundWood" xml:space="preserve">
+    <value>Mã đầu lóng</value>
+  </data>
+  <data name="ChooseOneAllocationPlan" xml:space="preserve">
+    <value>Vui lòng chọn cùng một kế hoạch sử dụng!</value>
+  </data>
+  <data name="ARSaleOrderItemShippedQty" xml:space="preserve">
+    <value>Khối lượng đã giao</value>
+  </data>
+  <data name="ARSaleOrderItemCanceledQty" xml:space="preserve">
+    <value>Khối lượng đã hủy</value>
+  </data>
+  <data name="ARSaleOrderItemRemainedWQty" xml:space="preserve">
+    <value>Khối lượng còn lại</value>
+  </data>
+  <data name="EditPriceMessage" xml:space="preserve">
+    <value>Bạn không thể sửa các giá trị khác ngoài đơn giá.</value>
+  </data>
+  <data name="ConfirmChangeDeliveryDateMessage" xml:space="preserve">
+    <value>Bạn có muốn thay đổi ngày giao cho các đơn hàng đã chọn không?</value>
+  </data>
+  <data name="LumberProductSerialNo" xml:space="preserve">
+    <value>Mã kiện không được bỏ trống!</value>
+  </data>
+  <data name="RoundWoodProductSerialNo" xml:space="preserve">
+    <value>Mã đầu lóng không được bỏ trống!</value>
+  </data>
+  <data name="InventoryQty" xml:space="preserve">
+    <value>Khối lượng bán không được lớn hơn khối lượng tồn!</value>
+  </data>
+  <data name="ProductUnitPrice" xml:space="preserve">
+    <value>Đơn giá vốn</value>
+  </data>
+  <data name="ErrorProductionAndPurchase" xml:space="preserve">
+    <value>Không thể chọn Loại đề nghị cho trường hợp này</value>
+  </data>
+  <data name="ARSaleOrderItemWorkComponentCaption" xml:space="preserve">
+    <value>Thành phần</value>
+  </data>
+  <data name="ProductLockedErrorMessage" xml:space="preserve">
+    <value>Sản phẩm này đã bị khóa mua hàng, xin chọn sản phẩm khác.</value>
+  </data>
+  <data name="UpdateReceiptAddressRequireMessage" xml:space="preserve">
+    <value>Vui lòng cập nhật Địa chỉ giao hàng!</value>
+  </data>
+  <data name="ItemCopyNewRow" xml:space="preserve">
+    <value>Thêm dòng</value>
+  </data>
+  <data name="CurrencyErrorMessages" xml:space="preserve">
+    <value>Vui lòng chọn loại tiền tề.</value>
+  </data>
+  <data name="SaleOrderItemGrantedFromErrorMessages" xml:space="preserve">
+    <value>Vui lòng chọn thông tin cấp từ trong lưới sản phẩm. Cấp từ không được bỏ trống !</value>
+  </data>
+  <data name="ObjectIDIsNullMessage" xml:space="preserve">
+    <value>Vui lòng chọn đối tượng !</value>
+  </data>
+  <data name="AmountLargerPaymentTimeAmount" xml:space="preserve">
+    <value>Vượt quá số tiền cần thanh toán</value>
+  </data>
+  <data name="AmountLargerRemainAmount" xml:space="preserve">
+    <value>Vượt quá số tiền có thể cấn trừ</value>
+  </data>
+  <data name="InValueCustomer" xml:space="preserve">
+    <value>Vui lòng chọn khác hàng</value>
+  </data>
+  <data name="ProductNonRetailMessages" xml:space="preserve">
+    <value>Sản phẩm này không được phép bán lẻ !</value>
+  </data>
+  <data name="ProductNonActiveCheck" xml:space="preserve">
+    <value>Sản phẩm đã ngừng hoạt động. Vui lòng chọn sản phẩm khác !</value>
+  </data>
+  <data name="NonProductUnitPrice" xml:space="preserve">
+    <value>Sản phẩm {0} chưa có Đơn giá gốc, bạn có muốn tiếp tục?</value>
+  </data>
+  <data name="PaymentTermNoActive" xml:space="preserve">
+    <value>ĐKTT này đã ngưng sử dụng. Vui lòng chọn ĐKTT khác !</value>
+  </data>
+  <data name="DuplicateObjectErrorMessage" xml:space="preserve">
+    <value>Các đơn hàng phải cùng đối tượng!</value>
+  </data>
+  <data name="UpdateReceiptTelRequireMessage" xml:space="preserve">
+    <value>Vui lòng cập nhật số điện thoại người nhận tại mục địa chỉ giao hàng!</value>
+  </data>
+  <data name="ARSaleOrderSaleAgreement" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ChangeProductPriceOfProductDesign" xml:space="preserve">
+    <value>Bạn có muốn thay đối đơn giá gốc của mặt hàng thiết kế này không?</value>
+  </data>
+  <data name="CostGroupName" xml:space="preserve">
+    <value>Danh sách chi phí</value>
+  </data>
+  <data name="OtherGroupName" xml:space="preserve">
+    <value>Nhóm hàng khác</value>
+  </data>
+  <data name="NotExistsMMProposals" xml:space="preserve">
+    <value>Đơn bán hàng đã tạo đề nghị sản xuất. Không thể sửa sau hoàn tất !</value>
+  </data>
+  <data name="ValidateAfterCompleteMessage" xml:space="preserve">
+    <value>Đơn hàng này đã được thu tiền, Bạn không thể sửa sau hoàn tất!</value>
+  </data>
+  <data name="ARSaleOrderItemWorkProductName" xml:space="preserve">
+    <value>Tên chi phí</value>
+  </data>
+  <data name="ARSaleOrderItemWorkProductNo" xml:space="preserve">
+    <value>Mã chi phí</value>
+  </data>
+  <data name="ARSaleOrderDiscountPerCentAllItemError" xml:space="preserve">
+    <value>Vui lòng kiểm ta lại %CK !</value>
+  </data>
+  <data name="NotNullContractPrinciples" xml:space="preserve">
+    <value>Vui lòng chọn Mã dự án!</value>
+  </data>
+  <data name="CurrencyErrorMessage" xml:space="preserve">
+    <value>Vui lòng chọn loại tiền tệ</value>
+  </data>
+  <data name="ValidateAfterPaymentMessage" xml:space="preserve">
+    <value>Sản phẩm này đã thu tiền, Bạn không thể xóa!</value>
+  </data>
+  <data name="StockIDIsNullMessage" xml:space="preserve">
+    <value>Vui lòng chọn kho và mã lô cho các sản phẩm cấp từ tồn kho!</value>
+  </data>
+  <data name="ProductSerieIDIsNullMessage" xml:space="preserve">
+    <value>Vui lòng chọn mã kiện(mã đầu lóng) cho các sản phẩm cấp từ tồn kho!</value>
+  </data>
+  <data name="PaymentTime3_Tinh" xml:space="preserve">
+    <value>trước khi Vinmus giao hàng 3 ngày, khi nhận đủ tiền tạm ứng đợt 3 Vinmus sẽ tiến hành vận chuyển sản phẩm đến công trình và lắp đặt.</value>
+  </data>
+  <data name="PaymentTime3_TPHCM" xml:space="preserve">
+    <value>tại thời điểm Vinmus vận chuyển sản phẩm đến công trình, khi nhận đủ tiền tạm ứng đợt 3 Vinmus sẽ tiến hành lắp đặt.</value>
+  </data>
+  <data name="PaymentTime4_TPHCM" xml:space="preserve">
+    <value>Đợt 4: Sau khi Vinmus thi công hoàn thiện, các bên ký kết biên bản nghiệm thu công trình thì khách hàng thanh toán dứt điểm cho Vinmus số tiền còn lại (thời gian không quá 03 ngày kể từ ngày ký biên bản nghiệm thu).</value>
+  </data>
+  <data name="SaleOrderManual" xml:space="preserve">
+    <value>Thông thường</value>
+  </data>
+  <data name="SaleOrderNotSameCustomer" xml:space="preserve">
+    <value>Các đơn bán hàng được chọn không cùng khách hàng. Vui lòng chọn lại</value>
+  </data>
+  <data name="NotEnoughStockQtyMessage" xml:space="preserve">
+    <value>Số lượng bán không thể lớn hơn số lượng tồn! Vui lòng kiểm tra lại các sản phẩm có mã {0}</value>
+  </data>
+  <data name="CostName" xml:space="preserve">
+    <value>Chi phí</value>
+  </data>
+  <data name="Draft" xml:space="preserve">
+    <value>BẢN NHÁP</value>
+  </data>
+  <data name="NotEnoughtInventory" xml:space="preserve">
+    <value>Không đủ tồn kho đối với các sản phẩm có mã {0}</value>
+  </data>
+  <data name="GrantedFromIsNull" xml:space="preserve">
+    <value>Vui lòng chọn cấp từ cho các sản phẩm có mã {0}</value>
+  </data>
+  <data name="ObjectIsExistMessage" xml:space="preserve">
+    <value>Đơn hàng đã chọn khách hàng. Vui lòng kiểm tra lại!</value>
+  </data>
+  <data name="ProductSerialIsRequierMessages" xml:space="preserve">
+    <value>Vui lòng chọn mã kiện(mã đầu lóng) cho các sản phẩm có mã sau :  {0}</value>
+  </data>
+  <data name="DuplicateFileName" xml:space="preserve">
+    <value>File đính kèm đã tồn tại. Vui lòng kiểm tra lại!</value>
+  </data>
+  <data name="FileNotFoundErrorMessage" xml:space="preserve">
+    <value>File đã xóa hoặc không tồn tại. Vui lòng kiểm tra lại!</value>
+  </data>
+  <data name="AttachFileCaption" xml:space="preserve">
+    <value>Tài liệu đính kèm</value>
+  </data>
+  <data name="ChooseFileCaption" xml:space="preserve">
+    <value>Chọn tệp</value>
+  </data>
+  <data name="CommissionTotalAmountInvalid" xml:space="preserve">
+    <value>Số tiền hoa hồng không hợp lệ. Vui lòng kiểm tra lại!</value>
+  </data>
+  <data name="DowloadTemplateCaption" xml:space="preserve">
+    <value>Tải về</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="SaleOrderSaleTypeMessage" xml:space="preserve">
+    <value>Vui lòng chọn Hình thức bán hàng!</value>
+  </data>
+  <data name="PleaseChooseSameSaleOrder" xml:space="preserve">
+    <value>Xin vui lòng chọn cùng đơn hàng !</value>
+  </data>
+  <data name="PleaseChooseSameObject" xml:space="preserve">
+    <value>Vui lòng chọn cùng đối tượng !</value>
+  </data>
+  <data name="TaxNumberOrInvoiceRequestCannotNull" xml:space="preserve">
+    <value>Mã số thuế / Yếu cầu xuất hóa đơn không được để trống đối với loại khách hàng là công ty !</value>
+  </data>
+  <data name="ThePriceLevelIsReadyDoYouWantToContinue" xml:space="preserve">
+    <value>Sản phẩm đã được áp dụng mức giá, bạn có muốn tiếp tục không?</value>
+  </data>
+  <data name="CommissionIsExisted" xml:space="preserve">
+    <value>Người giới thiệu đã tồn tại !</value>
+  </data>
+  <data name="SaleStypeIsNull" xml:space="preserve">
+    <value>Hình thức bán hàng không được để trống!</value>
+  </data>
+  <data name="ShippingTypeIsNull" xml:space="preserve">
+    <value>Hình thức giao hàng không được để trống!</value>
+  </data>
+  <data name="ARSaleOrderProductTypeIsNull" xml:space="preserve">
+    <value>Loại hàng hóa không được để trống!</value>
+  </data>
+  <data name="ApproveBeforePrintMessage" xml:space="preserve">
+    <value>Vui lòng hoàn tất chứng từ trước khi in!</value>
+  </data>
+  <data name="NoChangeUnitPrice" xml:space="preserve">
+    <value>Bạn không thể thay đổi Đơn giá mua bán đối với hình thức bán hàng Nội địa!</value>
+  </data>
+  <data name="NoChangeUnitPrice2" xml:space="preserve">
+    <value>Bạn không thể thay đổi Đơn giá quy đổi đối với hình thức bán hàng Quốc tế!</value>
+  </data>
+  <data name="ChooseTTMT" xml:space="preserve">
+    <value>Vui lòng chọn TTMT!</value>
+  </data>
+  <data name="CurrencyConfligErrorMessage" xml:space="preserve">
+    <value>Loại tiền tệ và tỉ giá không phù hợp!</value>
+  </data>
+  <data name="CancelCompleteDepositMessage" xml:space="preserve">
+    <value>Đơn hàng này đã được thu tiền. Bạn không thể huỷ hoàn tất!</value>
+  </data>
+  <data name="CancelCompleteExistsDeliveryPlan" xml:space="preserve">
+    <value>Đơn hàng này đã tạo đề nghị xuất kho. Bạn không thể huỷ hoàn tất!</value>
+  </data>
+  <data name="CancelCompleteExistsLoadCont" xml:space="preserve">
+    <value>Đơn hàng này đã tạo load hàng. Bạn không thể huỷ hoàn tất!</value>
+  </data>
+  <data name="CancelCompleteExistsMMProposals" xml:space="preserve">
+    <value>Đơn hàng này đã đề nghị sản xuất. Bạn không thể huỷ hoàn tất!</value>
+  </data>
+  <data name="UpdateReceiptNameRequireMessage" xml:space="preserve">
+    <value>Vui lòng cập nhật Tên người liên hệ tại mục địa chỉ giao hàng!</value>
+  </data>
+  <data name="CancelCompleteExistsInvoice" xml:space="preserve">
+    <value>Đơn hàng này đã tạo Hóa đơn. Bạn không thể huỷ hoàn tất!</value>
+  </data>
+  <data name="CancelCompleteExistsShipment" xml:space="preserve">
+    <value>Đơn hàng này đã tạo Xuất kho. Bạn không thể huỷ hoàn tất!</value>
+  </data>
+</root>

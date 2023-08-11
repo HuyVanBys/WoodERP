@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="xrLabel176.Text" xml:space="preserve">
+    <value>Hai bên xác nhận đã đọc, hiểu rõ và hoàn toàn nhất trí với nội dung Hợp đồng, đồng thời cam kết nghiêm chỉnh thực hiện các điều kiện, điều khoản đã ký kết. Trường hợp phát sinh tranh chấp trong quá trình thực hiện, hai Bên sẽ bàn bạc, giải quyết trên cơ sở thương lượng, đôi Bên cùng có lợi. Nếu không tự giải quyết được, một trong hai Bên có quyền chuyển tranh chấp ra Tòa án nhân dân có thẩm quyền để giải quyết. Quyết định của Tòa án có hiệu lực cuối cùng và bắt buộc thi hành đối với các Bên. Án phí do Bên thua kiện chịu. </value>
+  </data>
+  <data name="xrLabel156.Text" xml:space="preserve">
+    <value>Trường hợp có nhu cầu sửa đổi, bổ sung các điều kiện, điều khoản của Hợp đồng, Bên A sẽ thông báo cho Bên B bằng văn bản hoặc trên các phương tiện thông tin đại chúng hoặc trên Website của Agribank về việc sửa đổi, bổ sung Hợp đồng. Bên B có một khoảng thời gian nhất định (theo thông báo của Bên A) để cân nhắc việc tiếp tục sử dụng thẻ theo nội dung sửa đổi được Bên A thông báo. </value>
+  </data>
+  <data name="xrLabel149.Text" xml:space="preserve">
+    <value>Thực hiện, tổ chức thực hiện hoặc tạo điều kiện để người khác thực hiện các hành vi giao dịch thẻ gian lận, giả mạo, giao dịch thanh toán khống tại ĐVCNT (không phát sinh việc mua bán hàng hóa và cung ứng dịch vụ).</value>
+  </data>
+  <data name="xrLabel141.Text" xml:space="preserve">
+    <value>Chủ động thông báo qua tổng đài điện thoại của Agribank hoặc chi nhánh Agribank gần nhất ngay khi phát hiện thẻ bị mất/bị đánh cắp/bị lộ mã PIN hoặc có nghi ngờ thẻ bị gian lận, lợi dụng. Sau đó phải đến bất kỳ chi nhánh nào của Agribank để hoàn tất thủ tục báo mất thẻ. Các thông tin cần cung cấp trong trường hợp này bao gồm: Họ tên, số CMT/Hộ chiếu/Thẻ căn cước công dân, số thẻ, loại thẻ, ngày hiệu lực của thẻ, địa điểm thẻ bị mất/bị đánh cắp, thời gian mất, chi nhánh phát hành thẻ.</value>
+  </data>
+  <data name="xrLabel138.Text" xml:space="preserve">
+    <value>Hoàn toàn chịu trách nhiệm về mọi rủi ro, tổn thất phát sinh liên quan đến các giao dịch thẻ thực hiện qua ứng dụng Agribank E-Mobile Banking, giao dịch Internet trong trường hợp có đăng ký sử dụng dịch vụ.</value>
+  </data>
+  <data name="xrLabel137.Text" xml:space="preserve">
+    <value>Hoàn toàn chịu trách nhiệm đối với các giao dịch thẻ có chữ ký và (hoặc) sử dụng mã PIN, các giao dịch khác phát sinh do lỗi của Bên B trong trường hợp không cần chữ ký của chủ thẻ nhưng Ngân hàng cung cấp được bằng chứng về giao dịch đã được thực hiện.</value>
+  </data>
+  <data name="xrLabel133.Text" xml:space="preserve">
+    <value>Bảo quản thẻ, bảo mật mã PIN. Không được cho người khác mượn thẻ/mã PIN hoặc tiết lộ mã PIN cho người khác. Trường hợp để mất thẻ hoặc để lộ mã PIN, phải chịu trách nhiệm về mọi rủi ro, tổn thất phát sinh trước thời điểm Bên A khóa thẻ trên hệ thống quản lý thẻ của Agribank.</value>
+  </data>
+  <data name="xrLabel123.Text" xml:space="preserve">
+    <value>Khiếu nại các vấn đề có liên quan trong quá trình sử dụng thẻ qua tổng đài điện thoại và/hoặc tại bất kỳ chi nhánh nào của Agribank. Thời hạn khiếu nại là 30 ngày làm việc đối với thẻ ghi nợ quốc tế và 80 ngày (bao gồm cả ngày nghỉ, ngày lễ) đối với thẻ ghi nợ nội địa kể từ ngày giao dịch.</value>
+  </data>
+  <data name="xrLabel120.Text" xml:space="preserve">
+    <value>Đề nghị Bên A cấp lại mã PIN, phát hành lại thẻ, phát hành thẻ phụ (đối với thẻ ghi nợ quốc tế); Có quyền đưa ra các yêu cầu có liên quan đến việc sử dụng thẻ của chủ thẻ phụ; Đề nghị Bên A tạm ngừng hoặc chấm dứt sử dụng thẻ. </value>
+  </data>
+  <data name="xrLabel111.Text" xml:space="preserve">
+    <value>Bảo mật các thông tin về tài khoản, giao dịch thẻ của Bên B, không cung cấp/tiết lộ thông tin về tài khoản và giao dịch của bên B cho bất kỳ bên thứ ba nào, trừ trường hợp hai Bên có thỏa thuận khác hoặc theo yêu cầu của cơ quan nhà nước có thẩm quyền.</value>
+  </data>
+  <data name="xrLabel110.Text" xml:space="preserve">
+    <value>Trường hợp vụ việc có dấu hiệu tội phạm, Bên A có quyền thông báo cho cơ quan nhà nước có thẩm quyền theo quy định của pháp luật về tố tụng hình sự và báo cáo Ngân hàng Nhà nước; đồng thời thông báo cho Bên B về tình trạng xử lý tra soát, khiếu nại. Việc xử lý kết quả tra soát, khiếu nại thuộc trách nhiệm giải quyết của cơ quan nhà nước có thẩm quyền. Trong trường hợp cơ quan nhà nước có thẩm quyền thông báo kết quả giải quyết không có yếu tố tội phạm, trong vòng 15 ngày làm việc kể từ ngày có kết luận của cơ quan nhà nước có thẩm quyền, Bên A sẽ thỏa thuận với Bên B về phương án xử lý tra soát, khiếu nại.</value>
+  </data>
+  <data name="xrLabel108.Text" xml:space="preserve">
+    <value>Trường hợp hết thời hạn xử lý tra soát, khiếu nại theo quy định tại Điểm d, Khoản 2, Điều 5 Hợp đồng này mà vẫn chưa xác định được nguyên nhân hay lỗi thuộc Bên nào thì trong vòng 15 ngày làm việc tiếp theo, Bên A thỏa thuận với Bên B về phương án xử lý hoặc tạm thời bồi hoàn tổn thất</value>
+  </data>
+  <data name="xrLabel107.Text" xml:space="preserve">
+    <value>Trường hợp giao dịch tra soát, khiếu nại được hoàn tiền, Agribank sẽ thực hiện hoàn tiền cho Bên B trong phạm vi 05 (năm) ngày làm việc kể từ ngày Bên A thông báo kết quả tra soát khiếu nại cho Bên B đối với những tổn thất phát sinh không do lỗi của Bên B và hoặc không thuộc các trường hợp bất khả kháng quy định của Hợp đồng này.</value>
+  </data>
+  <data name="xrLabel106.Text" xml:space="preserve">
+    <value>Giải quyết kịp thời các yêu cầu tra soát, khiếu nại của Bên B liên quan đến việc sử dụng thẻ, cụ thể tối đa 45 ngày làm việc (đối với thẻ ghi nợ nội địa), 180 ngày làm việc (đối với thẻ ghi nợ quốc tế) kể từ ngày Agribank nhận được đề nghị tra soát, khiếu nại của Bên B bằng văn bản.  </value>
+  </data>
+  <data name="xrLabel63.Text" xml:space="preserve">
+    <value>Thu hồi thẻ vào bất cứ lúc nào trong các trường hợp quy định tại Khoản 2, Điều 4, Hợp đồng này bằng cách thông báo trực tiếp cho Bên B hoặc thông qua TCTTT, ĐVCNT về việc thu hồi thẻ. Trong trường hợp này, Bên A được miễn trách nhiệm đối với bất kỳ sự phương hại nào tới danh dự, uy tín của Bên B.</value>
+  </data>
+  <data name="xrLabel62.Text" xml:space="preserve">
+    <value>Không chịu trách nhiệm về việc giao nhận hàng, chất lượng hàng hoá, dịch vụ được thanh toán bằng thẻ và các khoản phí, lãi phát sinh liên quan đến Bên B hủy giao dịch hoặc trả lại hàng hóa, dịch vụ cho ĐVCNT trừ trường hợp do lỗi của Bên A.</value>
+  </data>
+  <data name="xrLabel41.Text" xml:space="preserve">
+    <value>Bên B phải thanh toán cho Bên A các loại phí, lãi liên quan đến việc sử dụng thẻ theo Biểu phí dịch vụ thẻ hiện hành của Agribank và được thông báo trên Website (www.agribank.com.vn) hoặc qua các kênh thông tin khác của Agribank ít nhất 07 (bảy) ngày trước khi có sự thay đổi.</value>
+  </data>
+  <data name="xrLabel38.Text" xml:space="preserve">
+    <value>Sự kiện bất khả kháng: Là sự kiện do nguyên nhân khách quan gây ra vượt quá khả năng kiểm soát của các Bên tham gia Hợp đồng, như: Chiến tranh, nổi loạn, khủng bố, hỏa hoạn, lũ lụt, cháy nổ, thiên tai, bạo động, v.v…</value>
+  </data>
+  <data name="xrLabel37.Text" xml:space="preserve">
+    <value>Thiết bị chấp nhận thẻ tại điểm bán (POS, mPOS, QR Code,v.v...): Là các loại thiết bị và/hoặc ứng dụng được cài đặt và sử dụng tại các ĐVCNT/chi nhánh, phòng giao dịch của Ngân hàng mà chủ thẻ có thể sử dụng thẻ để thanh toán hàng hóa, dịch vụ hoặc rút/ứng tiền mặt và các dịch vụ khác do Ngân hàng cung cấp.</value>
+  </data>
+  <data name="xrLabel31.Text" xml:space="preserve">
+    <value>OTP (One Time Password): Là mật khẩu sử dụng một lần trong một khoảng thời gian nhất định, có thể tùy biến do Agribank cấp cho chủ thẻ qua các phương tiện khác nhau như Website, thư điện tử, điện thoại di động và các thiết bị cung cấp mật khẩu chuyên dùng khác khi thanh toán trực tuyến.</value>
+  </data>
+  <data name="xrLabel30.Text" xml:space="preserve">
+    <value>Mã số xác định chủ thẻ (mã PIN): Là mã số mật của cá nhân được Agribank cấp cho chủ thẻ lần đầu và sau đó chủ thẻ thay đổi theo quy trình được xác định để sử dụng trong các giao dịch thẻ nhằm xác thực chủ thẻ. Trong các giao dịch thẻ có sử dụng mã PIN, mã PIN được coi là chữ ký của chủ thẻ và chủ thẻ có trách nhiệm bảo mật.</value>
+  </data>
+  <data name="xrLabel29.Text" xml:space="preserve">
+    <value>Đơn vị chấp nhận thẻ (ĐVCNT): Là tổ chức hoặc cá nhân chấp nhận thanh toán hàng hóa, dịch vụ bằng thẻ qua POS và/hoặc các ứng dụng QR Code, Samsung Pay,v.v….theo hợp đồng thanh toán thẻ ký kết với Agribank.</value>
+  </data>
+  <data name="xrLabel26.Text" xml:space="preserve">
+    <value>Tổ chức thẻ quốc tế (TCTQT): Là tổ chức được thành lập ở nước ngoài theo quy định của pháp luật nước ngoài, có thỏa thuận với Tổ chức phát hành thẻ, Tổ chức thanh toán thẻ và các bên liên quan khác để hợp tác phát hành, thanh toán thẻ quốc tế phù hợp với quy định của pháp luật Việt Nam và cam kết quốc tế.</value>
+  </data>
+  <data name="xrLabel8.Text" xml:space="preserve">
+    <value>Địa chỉ:  284 Lê Văn Việt, Phường Tăng Nhơn Phú B, Quận 9, TP.HCM.
+Điện thoại:028.3730 8320    Fax: 028.3730 9277
+Đại diện: Ông    LÊ TRUNG MINH
+Chức vụ:            Phó Giám đốc.
+Quyết định/Giấy uỷ quyền số (nếu có): 1026 ngày 01/06/2017 do Giám đốc Agribank chi nhánh 9 ký.
+</value>
+  </data>
+  <data name="xrLabel343.Text" xml:space="preserve">
+    <value>Căn cứ:
+Bộ luật Dân sự hiện hành; 
+Luật các tổ chức tín dụng hiện hành; 
+Các quy định hiện hành của Ngân hàng Nhà nước Việt Nam và Agribank về phát hành, quản lý, sử dụng và thanh toán thẻ;
+Nhu cầu và khả năng của hai Bên.
+Hôm nay, ngày #d/#M/#y, tại Agribank Chi nhánh 9
+Chúng tôi gồm có:
+</value>
+  </data>
+  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="objectDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+</root>

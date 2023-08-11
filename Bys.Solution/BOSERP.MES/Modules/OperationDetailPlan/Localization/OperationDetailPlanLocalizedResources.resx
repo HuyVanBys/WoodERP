@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ARSaleOrderNoMessage" xml:space="preserve">
+    <value>Mã PI</value>
+  </data>
+  <data name="BatchProductItemTotalQtyMessage" xml:space="preserve">
+    <value>Tổng SP LSX</value>
+  </data>
+  <data name="CalculateQuantityMessage" xml:space="preserve">
+    <value>Không tìm thấy công thức qui đổi thích hợp. Vui lòng kiểm tra lại!</value>
+  </data>
+  <data name="ChooseBatchProductItemOperationsMessage" xml:space="preserve">
+    <value>Vui lòng chọn chi tiết cần hoạch định!</value>
+  </data>
+  <data name="ConfirmOperationDetailPlanChangeDateMessage" xml:space="preserve">
+    <value>Thông tin đã hoạch định sẽ thay đổi, bạn có chắc muốn thay đổi không?</value>
+  </data>
+  <data name="MMBatchProductNoMessage" xml:space="preserve">
+    <value>Mã lệnh SX</value>
+  </data>
+  <data name="MMOperationDetailPlanItemCompletedProductCountMessage" xml:space="preserve">
+    <value>SL còn lại</value>
+  </data>
+  <data name="MMOperationDetailPlanItemCompletedProductQtyMessage" xml:space="preserve">
+    <value>M3 hoàn thành</value>
+  </data>
+  <data name="MMOperationDetailPlanItemProductCountMessage" xml:space="preserve">
+    <value>SL CT/ SP</value>
+  </data>
+  <data name="MMOperationDetailPlanItemProductHeightMessage" xml:space="preserve">
+    <value>Dày</value>
+  </data>
+  <data name="MMOperationDetailPlanItemProductLengthMessage" xml:space="preserve">
+    <value>Dài</value>
+  </data>
+  <data name="MMOperationDetailPlanItemProductQtyMessage" xml:space="preserve">
+    <value>M3 tinh/ CT</value>
+  </data>
+  <data name="MMOperationDetailPlanItemProductSerialMessage" xml:space="preserve">
+    <value>Mã lô SX</value>
+  </data>
+  <data name="MMOperationDetailPlanItemProductWidthMessage" xml:space="preserve">
+    <value>Rộng</value>
+  </data>
+  <data name="MMOperationDetailPlanItemProductWoodTypeMessage" xml:space="preserve">
+    <value>Loại nguyên liệu</value>
+  </data>
+  <data name="MMOperationDetailPlanItemTotalProductCountMessage" xml:space="preserve">
+    <value>Tổng chi tiết SX</value>
+  </data>
+  <data name="MMOperationDetailPlanItemTotalProductQtyMessage" xml:space="preserve">
+    <value>M3 SX</value>
+  </data>
+  <data name="MMOperationNameMessage" xml:space="preserve">
+    <value>Công đoạn</value>
+  </data>
+  <data name="OperationDetailPlanApprovedErrorMessage" xml:space="preserve">
+    <value>Bạn không thể thay đổi kế hoạch đã duyệt.</value>
+  </data>
+  <data name="OperationDetailPlanChooseMessage" xml:space="preserve">
+    <value>Vui lòng chọn công đoạn cần hoạch định!</value>
+  </data>
+  <data name="OperationDetailPlanEndDateMessage" xml:space="preserve">
+    <value>Vui lòng chọn này kết thúc!</value>
+  </data>
+  <data name="OperationDetailPlanFromDateErrorMessage" xml:space="preserve">
+    <value>Ngày bắt đầu không thể nhỏ hơn ngày hiện tại!</value>
+  </data>
+  <data name="OperationDetailPlanItemDateProductQtyErrorMessage" xml:space="preserve">
+    <value>Tổng SL hoạch định theo ngày không được lớn hơn số lượng kế hoạch.</value>
+  </data>
+  <data name="OperationDetailPlanItemProductQtyErrorMessage" xml:space="preserve">
+    <value>Số lượng hoạch định không thể lớn hơn số lượng còn thiếu.</value>
+  </data>
+  <data name="OperationDetailPlanItemProductQtyNegativeNumberErrorMessage" xml:space="preserve">
+    <value>Số lượng hoạch định không được nhỏ hơn 0.</value>
+  </data>
+  <data name="OperationDetailPlanItemProductQtySaveErrorMessage" xml:space="preserve">
+    <value>{0}: Số lượng hoạch định:{1} không thể lớn hơn số lượng còn thiếu : {2} .</value>
+  </data>
+  <data name="OperationDetailPlanProcessingMessage" xml:space="preserve">
+    <value>Đang tải dữ liệu....</value>
+  </data>
+  <data name="OperationDetailPlanSaveProcessingMessage" xml:space="preserve">
+    <value>Đang lưu dữ liệu, vui lòng đợi...</value>
+  </data>
+  <data name="OperationDetailPlanStartDateMessage" xml:space="preserve">
+    <value>Vui lòng chọn ngày bắt đầu!</value>
+  </data>
+  <data name="OperationDetailPlanToDateChangedErrorMessage" xml:space="preserve">
+    <value>Ngày hoạch định bị thay đổi, bạn chưa cập nhật ngày trong chi tiết hoạch định.</value>
+  </data>
+  <data name="OperationDetailPlanToDateErrorMessage" xml:space="preserve">
+    <value>Ngày kết thúc không thể nhỏ hơn ngày bắt đầu!</value>
+  </data>
+  <data name="ProductForBatchNo" xml:space="preserve">
+    <value>Mã Sản phẩm</value>
+  </data>
+  <data name="ProductForBatchNoMessage" xml:space="preserve">
+    <value>Mã sản phẩm</value>
+  </data>
+  <data name="ProductNameMessage" xml:space="preserve">
+    <value>Tên chi tiết</value>
+  </data>
+  <data name="ProductNoMessage" xml:space="preserve">
+    <value>Mã chi tiết</value>
+  </data>
+  <data name="ProductQtyErrorMessage" xml:space="preserve">
+    <value>Số lượng kế hoạch sử dụng của sản phẩm  </value>
+  </data>
+  <data name="ProductQtyErrorMessage1" xml:space="preserve">
+    <value>không được vượt quá số lượng có thể sử dụng trong kho!</value>
+  </data>
+  <data name="SameBatchProductErrorMessage" xml:space="preserve">
+    <value>Vui lòng chọn các vật tư cùng lệnh sản xuất!</value>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>Chọn</value>
+  </data>
+</root>

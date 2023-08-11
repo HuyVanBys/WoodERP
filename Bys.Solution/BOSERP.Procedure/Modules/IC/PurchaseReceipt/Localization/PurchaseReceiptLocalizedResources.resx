@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AAColumnAliasCaption" xml:space="preserve">
+    <value>Thông tin thay đổi</value>
+  </data>
+  <data name="ADUserName" xml:space="preserve">
+    <value>Tên người dùng</value>
+  </data>
+  <data name="CanNotModifyMessage" xml:space="preserve">
+    <value>Nhập kho đã được hoàn tất và không thể sửa đổi</value>
+  </data>
+  <data name="CompleteReceiptQuestionMessage" xml:space="preserve">
+    <value>Bạn có muốn hoàn tất phiếu nhập kho này ?</value>
+  </data>
+  <data name="CompleteSuccessfullyMessage" xml:space="preserve">
+    <value>Hoàn tất thành công. Tồn kho đã được cập nhật lại</value>
+  </data>
+  <data name="ConfirmDeleteExistingPackagesMessage" xml:space="preserve">
+    <value>Các kiện hàng được tạo trước đó của lô hàng này sẽ bị xóa. Bạn có muốn tiếp tục?</value>
+  </data>
+  <data name="ConfirmReceiptHasNoPackageMessage" xml:space="preserve">
+    <value>Bạn chưa tạo kiện cho phiếu nhập. Bạn có muốn tiếp tục?</value>
+  </data>
+  <data name="Contact1" xml:space="preserve">
+    <value>(Liên 1 - Lưu)</value>
+  </data>
+  <data name="Contact2" xml:space="preserve">
+    <value>(Liên 2 - Dùng để nhập hàng)</value>
+  </data>
+  <data name="DefineStoreForEachItemMessage" xml:space="preserve">
+    <value>Chọn kho cho từng dòng dữ liệu</value>
+  </data>
+  <data name="GenarateErrorMessage" xml:space="preserve">
+    <value>Có lỗi khi tạo các kiện hàng</value>
+  </data>
+  <data name="GenarateSuccessMessage" xml:space="preserve">
+    <value>Tạo các kiện hàng thành công</value>
+  </data>
+  <data name="GEObjectHistoryDate" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+  <data name="ICMeasureUnitName" xml:space="preserve">
+    <value>Đơn vị tính</value>
+  </data>
+  <data name="ICPackageGroup" xml:space="preserve">
+    <value>Nhóm kiện</value>
+  </data>
+  <data name="ICPackageSupplierNo" xml:space="preserve">
+    <value>Mã kiện NCC</value>
+  </data>
+  <data name="ICProductDesc" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="ICReceiptItemProductSupplierNo" xml:space="preserve">
+    <value>Mã sản phẩm NCC</value>
+  </data>
+  <data name="IdentifyPackageSupplierNo" xml:space="preserve">
+    <value>Xác định mã kiện NCC</value>
+  </data>
+  <data name="InvalidReceiptItemPackageQtyTotalMessage" xml:space="preserve">
+    <value>Tổng số lượng kiện không hợp lệ</value>
+  </data>
+  <data name="MoveToMultiPackage" xml:space="preserve">
+    <value>Chuyển qua "1 sản phẩm đóng trong nhiều kiện"</value>
+  </data>
+  <data name="MoveToMultiPackageMultiProduct" xml:space="preserve">
+    <value>Chuyển qua "Nhiều kiện chứa nhiều sản phẩm"</value>
+  </data>
+  <data name="MoveToMultiProduct" xml:space="preserve">
+    <value>Chuyển qua "1 kiện chứa nhiều sản phẩm"</value>
+  </data>
+  <data name="ReceiptHasBeenCompletedMessage" xml:space="preserve">
+    <value>Nhập kho đã được hoàn tất</value>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>Chọn</value>
+  </data>
+  <data name="ICProductNo" xml:space="preserve">
+    <value>Mã sản phẩm</value>
+  </data>
+  <data name="ConfirmChangeItemStockMessage" xml:space="preserve">
+    <value>Bạn có muốn thay đổi kho cho những mặt hàng đã chọn?</value>
+  </data>
+  <data name="BranchReceiptHasNotBeenCompletedMessage" xml:space="preserve">
+    <value>Phiếu nhập tại chi nhánh chưa được hoàn tất</value>
+  </data>
+  <data name="PurchaseReceiptDefaultDesc" xml:space="preserve">
+    <value>Nhập kho mua hàng của {0} {1}</value>
+  </data>
+  <data name="TransferredProductNotExistMessage" xml:space="preserve">
+    <value>Sản phẩm {0} không có ở chi nhánh. Vui lòng chuyển tồn kho cho chi nhánh trước khi chuyển phiếu nhập.</value>
+  </data>
+  <data name="ItemSerieNoIsRequiredMessage" xml:space="preserve">
+    <value>Mã lô/Mã kiện(Mã đầu lóng) cho sản phẩm {0} không thể để trống</value>
+  </data>
+  <data name="IsExistLotNoInListText" xml:space="preserve">
+    <value>Mã đầu lóng này đã tồn tại trong danh sách!</value>
+  </data>
+  <data name="IsExistLotNoText" xml:space="preserve">
+    <value>Mã kiện (Mã đầu lóng) của sản phẩm {0} đã tồn tại trong hệ thống!</value>
+  </data>
+  <data name="IsLotNoIsNull" xml:space="preserve">
+    <value>Mã đầu lóng không được để trống!</value>
+  </data>
+  <data name="ICSerialNo" xml:space="preserve">
+    <value>Nhập Số Serial</value>
+  </data>
+  <data name="ConfirmChangeItemLotNoMessage" xml:space="preserve">
+    <value>Bạn có muốn thay đổi mã lô cho những mặt hàng đã chọn?</value>
+  </data>
+  <data name="ICReceiptItemProductOriginComboCaption" xml:space="preserve">
+    <value>Xuất xứ</value>
+  </data>
+  <data name="RoundWoodSplitMessage" xml:space="preserve">
+    <value>Chia lóng</value>
+  </data>
+  <data name="BLockCaptionMessage" xml:space="preserve">
+    <value>Số lượng</value>
+  </data>
+  <data name="RoundWoodSerialNo" xml:space="preserve">
+    <value>Mã đầu lóng</value>
+  </data>
+  <data name="ItemWoodSerieNoIsRequiredMessage" xml:space="preserve">
+    <value>Mã kiện(Mã đầu lóng) không được để trống</value>
+  </data>
+  <data name="ICProductQty" xml:space="preserve">
+    <value>Khối lượng</value>
+  </data>
+  <data name="ReceiptFromInvoiceInErrorMessage" xml:space="preserve">
+    <value>Nhập kho quá số lượng trên hóa đơn mua hàng! Vui lòng nhập lại số lượng!</value>
+  </data>
+  <data name="ReceiptFromPurchaseOrderErrorMessage" xml:space="preserve">
+    <value>Nhập kho quá số lượng trên đơn mua hàng! Bạn có muốn tiếp tục!</value>
+  </data>
+  <data name="ChoosePurchaseOrderItemsMessage" xml:space="preserve">
+    <value>Vui lòng chọn sản phẩm đã mua!</value>
+  </data>
+  <data name="APPurchaseOrderNo" xml:space="preserve">
+    <value>Mã đơn hàng</value>
+  </data>
+  <data name="ChooseMultiPurchaseOrderMessage" xml:space="preserve">
+    <value>Các sản phẩm đã chọn không cùng đơn mua hàng!</value>
+  </data>
+  <data name="ChooseMultiPurchaseOrderMessage1" xml:space="preserve">
+    <value>Các sản phẩm đã chọn không cùng đơn mua hàng với các sản phẩm trước đó!</value>
+  </data>
+  <data name="ReceiptQtyCannotBeGreaterThanOrderedQty" xml:space="preserve">
+    <value>Số lượng nhập kho không thể lớn hơn số lượng đơn mua hàng</value>
+  </data>
+  <data name="ChooseMultiInvoiceMessage" xml:space="preserve">
+    <value>Các mặt hàng bạn chọn không cùng hóa đơn mua hàng.</value>
+  </data>
+  <data name="ProductSerialNumberDefault" xml:space="preserve">
+    <value>{0}.{1}</value>
+  </data>
+  <data name="ChangeTerminalItemsMessage" xml:space="preserve">
+    <value>Bạn có muốn thay đổi cảng cho những mặt hàng đã chọn?</value>
+  </data>
+  <data name="ChangeWoodTypeItemsMessage" xml:space="preserve">
+    <value>Bạn có muốn thay đổi loại gỗ cho những mặt hàng đã chọn?</value>
+  </data>
+  <data name="ChangeContFeeUnitCost" xml:space="preserve">
+    <value>Người dùng có thay đổi đơn giá chi phí cont, bạn muốn tiếp tục?</value>
+  </data>
+  <data name="ErrorProportion" xml:space="preserve">
+    <value>Tỷ trọng không được vượt quá {0}</value>
+  </data>
+  <data name="CancelCompleteExistsInvoiceIn" xml:space="preserve">
+    <value>Phiếu nhập này đã tạo Hoá đơn. Bạn không thể huỷ hoàn tất!</value>
+  </data>
+  <data name="CancelCompleteExistsShipment" xml:space="preserve">
+    <value>Chứng từ này đã tạo chứng từ xuất kho hoặc số lượng tồn kho hiện tại không đủ.</value>
+  </data>
+  <data name="ReceiptQtyCannotBeGreaterThanOrderedQty1" xml:space="preserve">
+    <value>Số lượng nhập kho không thể lớn hơn số lượng hóa đơn mua hàng</value>
+  </data>
+  <data name="CancelCompleteExistsFee" xml:space="preserve">
+    <value>Phiếu nhập này đã tạo phát sinh phân bổ chi phí mua hàng. Bạn không thể huỷ hoàn tất!</value>
+  </data>
+  <data name="ErrorProductLength" xml:space="preserve">
+    <value>Dữ liệu không nằm trong Nhóm dài</value>
+  </data>
+  <data name="ErrorProductWidth" xml:space="preserve">
+    <value>Dữ liệu không nằm trong Nhóm rộng</value>
+  </data>
+  <data name="ICReceiptItemSOName" xml:space="preserve">
+    <value>Mã đơn hàng nội bộ</value>
+  </data>
+  <data name="ConfirmClearExistingSerialNo" xml:space="preserve">
+    <value>Các Mã kiện được tạo trước đó sẽ bị xóa. Bạn có muốn tiếp tục?</value>
+  </data>
+  <data name="ConfirmGroupExistingSerialNoErrorSelect" xml:space="preserve">
+    <value>Vui lòng chọn hơn 1 kiện cần gộp!</value>
+  </data>
+</root>

@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="APProposalItemPurchaseOrderQty" xml:space="preserve">
+    <value>Khối lượng đã mua</value>
+  </data>
+  <data name="APProposalItemPurchaseOrderQty1" xml:space="preserve">
+    <value>Số lượng đã mua</value>
+  </data>
+  <data name="ApproveProposalSuccessfullyMessage" xml:space="preserve">
+    <value>Duyệt đề nghị thành công</value>
+  </data>
+  <data name="BlockQuanlity" xml:space="preserve">
+    <value>Khối lượng (m3)</value>
+  </data>
+  <data name="CancelProposalitem" xml:space="preserve">
+    <value>Mặt hàng đã được hủy</value>
+  </data>
+  <data name="CannotDiscardDisapprovedItem" xml:space="preserve">
+    <value>Bạn không thể hủy mặt hàng chưa được duyệt</value>
+  </data>
+  <data name="CannotDiscardPurchasedItem" xml:space="preserve">
+    <value>Bạn không thể hủy mặt hàng đã đặt mua</value>
+  </data>
+  <data name="CannotDiscardPurchasedOrderItem" xml:space="preserve">
+    <value>Số lượng đã hết bạn không thể hủy.</value>
+  </data>
+  <data name="CannotDiscarPurchaseProposal" xml:space="preserve">
+    <value>Không thể hủy đề nghị vì đã tạo đơn mua hàng</value>
+  </data>
+  <data name="ChangeProposalItemStatusMessage" xml:space="preserve">
+    <value>Trạng thái của tất cả những mặt hàng đã được thay đổi</value>
+  </data>
+  <data name="ChooseMultiBatchProductMessage" xml:space="preserve">
+    <value>Không được chọn nhiều lệnh sản xuất khác nhau</value>
+  </data>
+  <data name="ChooseProposalItemsMessage" xml:space="preserve">
+    <value>Vui lòng chọn mặt hàng đề nghị!</value>
+  </data>
+  <data name="ChoseProduct" xml:space="preserve">
+    <value>Vui lòng chọn sản phẩm!</value>
+  </data>
+  <data name="ConfirmCancelUnselectedProposalItemsMessage" xml:space="preserve">
+    <value>Bạn có muốn hủy những mặt hàng đề nghị không được chọn?</value>
+  </data>
+  <data name="ConfirmChangeBranchForProposalItemsMessage" xml:space="preserve">
+    <value>Bạn có muốn thay đổi chi nhánh cho các mặt hàng đã chọn?</value>
+  </data>
+  <data name="ConfirmChangeItemProposalTypeMessage" xml:space="preserve">
+    <value>Bạn có muốn thay đổi loại đề nghị cho các mặt hàng đã chọn?</value>
+  </data>
+  <data name="Discard" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="DiscardErrorMessage" xml:space="preserve">
+    <value>Không thể hủy phiếu đề nghị mua hàng này vì đã tạo đơn mua hàng (tình trạng tạo mới)!</value>
+  </data>
+  <data name="DiscardItem" xml:space="preserve">
+    <value>Hủy mặt hàng</value>
+  </data>
+  <data name="DiscardItemErrorMessage" xml:space="preserve">
+    <value>Không thể hủy mặt hàng mua hàng này vì đã tạo đơn mua hàng (tình trạng tạo mới)!</value>
+  </data>
+  <data name="DiscardProposalSuccessfullyMessage" xml:space="preserve">
+    <value>Hủy đề nghị thành công</value>
+  </data>
+  <data name="ProductActiveCheckFalseMessage" xml:space="preserve">
+    <value>Sản phẩm {0} đã ngưng hoạt động. Bạn có muốn lưu không?</value>
+  </data>
+  <data name="Quanlity" xml:space="preserve">
+    <value>Số lượng</value>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>Chọn</value>
+  </data>
+  <data name="NotMatchBatchProductMessage" xml:space="preserve">
+    <value>Vui lòng chọn cùng một lệnh sản xuất!</value>
+  </data>
+  <data name="VerneerM2" xml:space="preserve">
+    <value>Verneer m2</value>
+  </data>
+  <data name="ConfirmChangeNeedTimeMessage" xml:space="preserve">
+    <value>Bạn có muốn thay đổi thời gian cần cho những mặt hàng đã chọn?</value>
+  </data>
+  <data name="ProductLockedMessages" xml:space="preserve">
+    <value>Sản phẩm đã bị khóa mua hàng. Vui lòng chọn sản phẩm khác.</value>
+  </data>
+  <data name="ApproveItem" xml:space="preserve">
+    <value>Duyệt mặt hàng</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Duyệt</value>
+  </data>
+  <data name="CannotApprovedCanceledItem" xml:space="preserve">
+    <value>Bạn không thể duyệt mặt hàng đã hủy</value>
+  </data>
+  <data name="CannotApprovedPurchasedItem" xml:space="preserve">
+    <value>Bạn không thể duyệt mặt hàng đã đặt mua</value>
+  </data>
+  <data name="CantPurchase" xml:space="preserve">
+    <value>Không mua được</value>
+  </data>
+  <data name="CantPurchaseItem" xml:space="preserve">
+    <value>Không mua được hàng</value>
+  </data>
+  <data name="ProposalQtyCannotBeGreaterThanSaleOrderQty" xml:space="preserve">
+    <value>Số lượng đề nghị không được lớn hơn số lượng trong đơn bán hàng</value>
+  </data>
+  <data name="DiscardProposalErrorMessage" xml:space="preserve">
+    <value>Không thể hủy phiếu đề nghị mua hàng này vì đã tạo đơn mua hàng!</value>
+  </data>
+  <data name="ProductNonActiveCheck" xml:space="preserve">
+    <value>Sản phẩm đã ngừng hoạt động. Vui lòng chọn sản phẩm khác !</value>
+  </data>
+  <data name="APProposalItemTotalPurchaseOrderQty" xml:space="preserve">
+    <value>Khối lượng đã mua</value>
+  </data>
+  <data name="APProposalItemTotalPurchaseOrderQty1" xml:space="preserve">
+    <value>Số lượng đã mua</value>
+  </data>
+  <data name="NotMatchPurchasePlanIDMessage" xml:space="preserve">
+    <value>Vui lòng chọn cùng một kế hoạch mua hàng!</value>
+  </data>
+  <data name="PleaseCancelTheFollowingPurchasesBeforeCanceling" xml:space="preserve">
+    <value>Vui lòng hủy các đơn mua hàng sau trước khi hủy duyệt!</value>
+  </data>
+  <data name="TheQuantitiesPurchasedInTheProductsBelowAreGreaterThan0AndCanNotBeCanceled" xml:space="preserve">
+    <value>Số lượng đã mua ở các sản phẩm/vật tư chi tiết dưới đây lớn hơn 0 nên không thể hủy duyệt!</value>
+  </data>
+  <data name="PleaseSearchDuringThirtyDay" xml:space="preserve">
+    <value>Vui lòng tìm kiếm trong khoảng thời gian 30 ngày</value>
+  </data>
+</root>

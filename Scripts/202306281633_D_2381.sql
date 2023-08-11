@@ -1,0 +1,2 @@
+﻿Insert into ADConfigValues values ('Alive', 'PriceSheetTypeSupplierPriceSheet', 'SupplierPriceSheet', N'Bảng giá NCC', 'PriceSheetTypeSupplierPriceSheet', 'PriceSheetType',1)
+Insert into ADConfigValues values ('Alive', 'PriceSheetTypePlanPriceSheet', 'PlanPriceSheet', N'Bảng giá kế hoạch', 'PriceSheetTypePlanPriceSheet', 'PriceSheetType',1)

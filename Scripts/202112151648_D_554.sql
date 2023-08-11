@@ -1,0 +1,6 @@
+﻿Insert into AAColumnAlias Values(0, '', 'Alive', 'MMBatchProductItemSemiProductRemark', N'Ghi chú BTP', 'MMBatchProductItems','','','','',1,'')
+Insert into AAColumnAlias Values(0, '', 'Alive', 'MMBatchProductItemProductRemark', N'Ghi chú Thành phẩm', 'MMBatchProductItems','','','','',1,'')
+Insert into AAColumnAlias Values(0, '', 'Alive', 'MMBatchProductItemWoodRemark', N'Ghi chú Nguyên liệu', 'MMBatchProductItems','','','','',1,'')
+Insert into AAColumnAlias Values(0, '', 'Alive', 'MMBatchProductItemPackagingRemark', N'Ghi chú PLĐG', 'MMBatchProductItems','','','','',1,'')
+Insert into AAColumnAlias Values(0, '', 'Alive', 'MMBatchProductItemPaintRemark', N'Ghi chú Sơn', 'MMBatchProductItems','','','','',1,'')
+Insert into AAColumnAlias Values(0, '', 'Alive', 'MMBatchProductItemGeneralMaterialRemark', N'Ghi chú ngành hàng khác', 'MMBatchProductItems','','','','',1,'')

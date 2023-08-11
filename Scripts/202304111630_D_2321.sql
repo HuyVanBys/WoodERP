@@ -1,0 +1,3 @@
+﻿insert into AAColumnAlias Values (0, '', 'Alive', 'ARSaleOrderSaleType', N'Hình thức bán hàng', 'ARSaleOrderSaleTypeConfigs', '', '', '', '', 1, '')
+insert into AAColumnAlias Values (0, '', 'Alive', 'FK_GECurrencyID', N'Loại tiền tệ', 'ARSaleOrderSaleTypeConfigs', 'GECurrencies', 'GECurrencyName', '', '', 1, '')
+insert into AAColumnAlias Values (0, '', 'Alive', 'ARSaleOrderItemGrantedFrom', N'Nguồn sản phẩm', 'ARSaleOrderSaleTypeConfigs', '', '', '', '', 1, '')

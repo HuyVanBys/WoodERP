@@ -1,0 +1,62 @@
+using BOSERP;
+using DevExpress.XtraReports.UI;
+using System;
+using System.Globalization;
+using System.Windows.Forms;
+
+namespace BOSReport
+{
+    public partial class RP_WoodPurchaseReceiptForRoundWood : BaseReport
+    {
+        public RP_WoodPurchaseReceiptForRoundWood()
+        {
+            InitializeComponent();
+            logoCompany.ImageUrl = Application.StartupPath + BOSApp.CurrentCompanyInfo.CSCompanyLogo;
+        }
+
+        private void xrTableCell17_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            double text = double.Parse(xrTableCell17.Text.ToString());
+            double so = Math.Round(text, 4);
+            xrTableCell17.Text = string.Format("{0:n4}", so);
+        }
+
+
+        private void xrTableCellQty_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            XRTableCell tableCell = sender as XRTableCell;
+            decimal strNumber = 0;
+            Decimal.TryParse(tableCell.Text, out strNumber);
+            if (strNumber % 1 != 0)
+            {
+                tableCell.Text = strNumber.ToString("n3");
+            }
+            else
+                tableCell.Text = strNumber.ToString("n0");
+        }
+
+        private void xrLabelQty_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            XRLabel label = sender as XRLabel;
+            decimal strNumber = 0;
+            Decimal.TryParse(label.Text, out strNumber);
+            if (strNumber % 1 != 0)
+            {
+                label.Text = strNumber.ToString("n3");
+            }
+            else
+                label.Text = strNumber.ToString("n0");
+        }
+
+        private void XrLabel37_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            if (string.IsNullOrEmpty(xrLabel37.Text))
+                return;
+            DateTime rd = DateTime.ParseExact(xrLabel37.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            TimeSpan ts = DateTime.MaxValue - rd;
+            double res = ts.TotalDays;
+            if (res < 1)
+                xrLabel37.Text = string.Empty;
+        }
+    }
+}

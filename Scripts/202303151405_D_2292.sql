@@ -1,0 +1,1 @@
+Insert into ADConfigValues values ('Alive', 'IsGetDefaultItemPriceTrue', 'true', 'true', '' , 'IsGetDefaultItemPrice', 1)

@@ -1,0 +1,4418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="ScreenHelper.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fld_tabHumanResource.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fld_tabHumanResource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_tabCompany.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_tabCompany.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fld_tabOvertimeConfig.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParam2s.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParam2s.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParam2s.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParam2s.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParam2s.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 728</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParam2s.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRTimeSheetParam2s.Name" xml:space="preserve">
+    <value>fld_dgcHRTimeSheetParam2s</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRTimeSheetParam2s.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRTimeSheetParam2GridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRTimeSheetParam2s.Parent" xml:space="preserve">
+    <value>fld_tabOvertimeConfig</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRTimeSheetParam2s.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_tabOvertimeConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 728</value>
+  </data>
+  <data name="fld_tabOvertimeConfig.Text" xml:space="preserve">
+    <value>Cấu hình hệ số tăng ca</value>
+  </data>
+  <data name="&gt;&gt;fld_tabOvertimeConfig.Name" xml:space="preserve">
+    <value>fld_tabOvertimeConfig</value>
+  </data>
+  <data name="&gt;&gt;fld_tabOvertimeConfig.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_tabOvertimeConfig.Parent" xml:space="preserve">
+    <value>fld_tabCompany</value>
+  </data>
+  <data name="&gt;&gt;fld_tabOvertimeConfig.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_tabCompany.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_tabCompany.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1336, 756</value>
+  </data>
+  <data name="fld_tabCompany.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParams.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParams.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParams.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParams.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParams.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1324, 721</value>
+  </data>
+  <data name="fld_dgcHRTimeSheetParams.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRTimeSheetParams.Name" xml:space="preserve">
+    <value>fld_dgcHRTimeSheetParams</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRTimeSheetParams.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRTimeSheetParamGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRTimeSheetParams.Parent" xml:space="preserve">
+    <value>fld_tabPayrollConfig</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRTimeSheetParams.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_tabPayrollConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1324, 721</value>
+  </data>
+  <data name="fld_tabPayrollConfig.Text" xml:space="preserve">
+    <value>Cấu hình hệ số tính lương</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPayrollConfig.Name" xml:space="preserve">
+    <value>fld_tabPayrollConfig</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPayrollConfig.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPayrollConfig.Parent" xml:space="preserve">
+    <value>fld_tabCompany</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPayrollConfig.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_tabCompany.Name" xml:space="preserve">
+    <value>fld_tabCompany</value>
+  </data>
+  <data name="&gt;&gt;fld_tabCompany.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTabControl, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_tabCompany.Parent" xml:space="preserve">
+    <value>xtraTabPage2</value>
+  </data>
+  <data name="&gt;&gt;fld_tabCompany.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPage2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="xtraTabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1336, 756</value>
+  </data>
+  <data name="xtraTabPage2.Text" xml:space="preserve">
+    <value>Cấu hình hệ số lương &amp;&amp; tăng ca</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage2.Name" xml:space="preserve">
+    <value>xtraTabPage2</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage2.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage2.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_tabHumanResource.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_tabHumanResource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1342, 784</value>
+  </data>
+  <data name="fld_tabHumanResource.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="fld_txtNormalLeaveDays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 74</value>
+  </data>
+  <data name="fld_txtNormalLeaveDays.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtNormalLeaveDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtNormalLeaveDays.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtNormalLeaveDays.Name" xml:space="preserve">
+    <value>fld_txtNormalLeaveDays</value>
+  </data>
+  <data name="&gt;&gt;fld_txtNormalLeaveDays.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtNormalLeaveDays.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;fld_txtNormalLeaveDays.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_txtOTLeaveDays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>541, 48</value>
+  </data>
+  <data name="fld_txtOTLeaveDays.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtOTLeaveDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtOTLeaveDays.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTLeaveDays.Name" xml:space="preserve">
+    <value>fld_txtOTLeaveDays</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTLeaveDays.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTLeaveDays.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTLeaveDays.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_txtBirthLeaveDays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>541, 18</value>
+  </data>
+  <data name="fld_txtBirthLeaveDays.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtBirthLeaveDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtBirthLeaveDays.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fld_txtBirthLeaveDays.Name" xml:space="preserve">
+    <value>fld_txtBirthLeaveDays</value>
+  </data>
+  <data name="&gt;&gt;fld_txtBirthLeaveDays.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtBirthLeaveDays.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;fld_txtBirthLeaveDays.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_txtSickLeaveDays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 48</value>
+  </data>
+  <data name="fld_txtSickLeaveDays.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtSickLeaveDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtSickLeaveDays.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtSickLeaveDays.Name" xml:space="preserve">
+    <value>fld_txtSickLeaveDays</value>
+  </data>
+  <data name="&gt;&gt;fld_txtSickLeaveDays.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtSickLeaveDays.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;fld_txtSickLeaveDays.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="fld_txtAnnualLeaveDays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 22</value>
+  </data>
+  <data name="fld_txtAnnualLeaveDays.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtAnnualLeaveDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtAnnualLeaveDays.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_txtAnnualLeaveDays.Name" xml:space="preserve">
+    <value>fld_txtAnnualLeaveDays</value>
+  </data>
+  <data name="&gt;&gt;fld_txtAnnualLeaveDays.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtAnnualLeaveDays.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;fld_txtAnnualLeaveDays.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="bosLabel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 77</value>
+  </data>
+  <data name="bosLabel5.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="bosLabel5.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="bosLabel5.Text" xml:space="preserve">
+    <value>Nghỉ không lương</value>
+  </data>
+  <data name="&gt;&gt;bosLabel5.Name" xml:space="preserve">
+    <value>bosLabel5</value>
+  </data>
+  <data name="&gt;&gt;bosLabel5.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel5.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;bosLabel5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="bosLabel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>374, 51</value>
+  </data>
+  <data name="bosLabel4.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="bosLabel4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="bosLabel4.Text" xml:space="preserve">
+    <value>Nghỉ bù</value>
+  </data>
+  <data name="&gt;&gt;bosLabel4.Name" xml:space="preserve">
+    <value>bosLabel4</value>
+  </data>
+  <data name="&gt;&gt;bosLabel4.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel4.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;bosLabel4.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="bosLabel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>374, 21</value>
+  </data>
+  <data name="bosLabel3.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="bosLabel3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bosLabel3.Text" xml:space="preserve">
+    <value>Nghỉ thai sản</value>
+  </data>
+  <data name="&gt;&gt;bosLabel3.Name" xml:space="preserve">
+    <value>bosLabel3</value>
+  </data>
+  <data name="&gt;&gt;bosLabel3.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel3.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;bosLabel3.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="bosLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 51</value>
+  </data>
+  <data name="bosLabel2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="bosLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="bosLabel2.Text" xml:space="preserve">
+    <value>Nghỉ bệnh</value>
+  </data>
+  <data name="&gt;&gt;bosLabel2.Name" xml:space="preserve">
+    <value>bosLabel2</value>
+  </data>
+  <data name="&gt;&gt;bosLabel2.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel2.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;bosLabel2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="bosLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 25</value>
+  </data>
+  <data name="bosLabel1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 13</value>
+  </data>
+  <data name="bosLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="bosLabel1.Text" xml:space="preserve">
+    <value>Nghỉ phép năm</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.Name" xml:space="preserve">
+    <value>bosLabel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="fld_grpGroupControl15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 537</value>
+  </data>
+  <data name="fld_grpGroupControl15.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_grpGroupControl15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>768, 102</value>
+  </data>
+  <data name="fld_grpGroupControl15.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="fld_grpGroupControl15.Text" xml:space="preserve">
+    <value>Số ngày nghỉ phép</value>
+  </data>
+  <data name="fld_grpGroupControl15.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl15.Name" xml:space="preserve">
+    <value>fld_grpGroupControl15</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl15.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLine, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl15.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl15.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLabel9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>337, 35</value>
+  </data>
+  <data name="bosLabel9.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="bosLabel9.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bosLabel9.Text" xml:space="preserve">
+    <value>Thời gian kết thúc</value>
+  </data>
+  <data name="&gt;&gt;bosLabel9.Name" xml:space="preserve">
+    <value>bosLabel9</value>
+  </data>
+  <data name="&gt;&gt;bosLabel9.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel9.Parent" xml:space="preserve">
+    <value>bosLine2</value>
+  </data>
+  <data name="&gt;&gt;bosLabel9.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_txtOTToTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 32</value>
+  </data>
+  <data name="fld_txtOTToTime.Properties.Mask.EditMask" xml:space="preserve">
+    <value>HH:mm:ss</value>
+  </data>
+  <assembly alias="DevExpress.XtraEditors.v20.2" name="DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="fld_txtOTToTime.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>DateTime</value>
+  </data>
+  <data name="fld_txtOTToTime.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtOTToTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtOTToTime.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTToTime.Name" xml:space="preserve">
+    <value>fld_txtOTToTime</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTToTime.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTToTime.Parent" xml:space="preserve">
+    <value>bosLine2</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTToTime.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bosLabel12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 57</value>
+  </data>
+  <data name="bosLabel12.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 13</value>
+  </data>
+  <data name="bosLabel12.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bosLabel12.Text" xml:space="preserve">
+    <value>Số phút tính tăng ca</value>
+  </data>
+  <data name="&gt;&gt;bosLabel12.Name" xml:space="preserve">
+    <value>bosLabel12</value>
+  </data>
+  <data name="&gt;&gt;bosLabel12.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel12.Parent" xml:space="preserve">
+    <value>bosLine2</value>
+  </data>
+  <data name="&gt;&gt;bosLabel12.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_txtOTValueTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 54</value>
+  </data>
+  <data name="fld_txtOTValueTime.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtOTValueTime.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtOTValueTime.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtOTValueTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtOTValueTime.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTValueTime.Name" xml:space="preserve">
+    <value>fld_txtOTValueTime</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTValueTime.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTValueTime.Parent" xml:space="preserve">
+    <value>bosLine2</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTValueTime.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="bosLabel10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 31</value>
+  </data>
+  <data name="bosLabel10.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="bosLabel10.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bosLabel10.Text" xml:space="preserve">
+    <value>Thời gian bắt đầu</value>
+  </data>
+  <data name="&gt;&gt;bosLabel10.Name" xml:space="preserve">
+    <value>bosLabel10</value>
+  </data>
+  <data name="&gt;&gt;bosLabel10.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel10.Parent" xml:space="preserve">
+    <value>bosLine2</value>
+  </data>
+  <data name="&gt;&gt;bosLabel10.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="fld_txtOTFromTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 28</value>
+  </data>
+  <data name="fld_txtOTFromTime.Properties.Mask.EditMask" xml:space="preserve">
+    <value>HH:mm:ss</value>
+  </data>
+  <data name="fld_txtOTFromTime.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>DateTime</value>
+  </data>
+  <data name="fld_txtOTFromTime.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtOTFromTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtOTFromTime.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTFromTime.Name" xml:space="preserve">
+    <value>fld_txtOTFromTime</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTFromTime.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTFromTime.Parent" xml:space="preserve">
+    <value>bosLine2</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTFromTime.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="bosLine2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 439</value>
+  </data>
+  <data name="bosLine2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLine2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>768, 92</value>
+  </data>
+  <data name="bosLine2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="bosLine2.Text" xml:space="preserve">
+    <value>Số phút tính tăng ca trong khoảng thời gian tăng ca</value>
+  </data>
+  <data name="&gt;&gt;bosLine2.Name" xml:space="preserve">
+    <value>bosLine2</value>
+  </data>
+  <data name="&gt;&gt;bosLine2.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLine, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLine2.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;bosLine2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_txtSubtractOT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>504, 20</value>
+  </data>
+  <data name="fld_txtSubtractOT.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtSubtractOT.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtSubtractOT.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtSubtractOT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtSubtractOT.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtSubtractOT.Name" xml:space="preserve">
+    <value>fld_txtSubtractOT</value>
+  </data>
+  <data name="&gt;&gt;fld_txtSubtractOT.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtSubtractOT.Parent" xml:space="preserve">
+    <value>bosLine1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtSubtractOT.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLabel24.Location" type="System.Drawing.Point, System.Drawing">
+    <value>340, 23</value>
+  </data>
+  <data name="bosLabel24.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
+  </data>
+  <data name="bosLabel24.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="bosLabel24.Text" xml:space="preserve">
+    <value>Trừ tiền xuống tăng ca</value>
+  </data>
+  <data name="&gt;&gt;bosLabel24.Name" xml:space="preserve">
+    <value>bosLabel24</value>
+  </data>
+  <data name="&gt;&gt;bosLabel24.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel24.Parent" xml:space="preserve">
+    <value>bosLine1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel24.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bosLabel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 23</value>
+  </data>
+  <data name="bosLabel6.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 13</value>
+  </data>
+  <data name="bosLabel6.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bosLabel6.Text" xml:space="preserve">
+    <value>Số giờ tăng ca tối đa trong ngày</value>
+  </data>
+  <data name="&gt;&gt;bosLabel6.Name" xml:space="preserve">
+    <value>bosLabel6</value>
+  </data>
+  <data name="&gt;&gt;bosLabel6.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel6.Parent" xml:space="preserve">
+    <value>bosLine1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_txtOTAuditDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 20</value>
+  </data>
+  <data name="fld_txtOTAuditDay.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtOTAuditDay.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtOTAuditDay.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtOTAuditDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtOTAuditDay.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTAuditDay.Name" xml:space="preserve">
+    <value>fld_txtOTAuditDay</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTAuditDay.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTAuditDay.Parent" xml:space="preserve">
+    <value>bosLine1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTAuditDay.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="bosLabel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 49</value>
+  </data>
+  <data name="bosLabel8.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 13</value>
+  </data>
+  <data name="bosLabel8.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bosLabel8.Text" xml:space="preserve">
+    <value>Số giờ tăng ca tối đa trong tháng</value>
+  </data>
+  <data name="&gt;&gt;bosLabel8.Name" xml:space="preserve">
+    <value>bosLabel8</value>
+  </data>
+  <data name="&gt;&gt;bosLabel8.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel8.Parent" xml:space="preserve">
+    <value>bosLine1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel8.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="fld_txtOTAuditMonth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 46</value>
+  </data>
+  <data name="fld_txtOTAuditMonth.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtOTAuditMonth.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtOTAuditMonth.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtOTAuditMonth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtOTAuditMonth.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTAuditMonth.Name" xml:space="preserve">
+    <value>fld_txtOTAuditMonth</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTAuditMonth.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTAuditMonth.Parent" xml:space="preserve">
+    <value>bosLine1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtOTAuditMonth.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="bosLine1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 341</value>
+  </data>
+  <data name="bosLine1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLine1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>768, 92</value>
+  </data>
+  <data name="bosLine1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="bosLine1.Text" xml:space="preserve">
+    <value>Thời gian tăng ca</value>
+  </data>
+  <data name="&gt;&gt;bosLine1.Name" xml:space="preserve">
+    <value>bosLine1</value>
+  </data>
+  <data name="&gt;&gt;bosLine1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLine, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLine1.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;bosLine1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="bosLabel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 23</value>
+  </data>
+  <data name="bosLabel7.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="bosLabel7.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="bosLabel7.Text" xml:space="preserve">
+    <value>Số ngày công trong tháng</value>
+  </data>
+  <data name="&gt;&gt;bosLabel7.Name" xml:space="preserve">
+    <value>bosLabel7</value>
+  </data>
+  <data name="&gt;&gt;bosLabel7.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel7.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl14</value>
+  </data>
+  <data name="&gt;&gt;bosLabel7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLabel11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 49</value>
+  </data>
+  <data name="bosLabel11.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 13</value>
+  </data>
+  <data name="bosLabel11.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bosLabel11.Text" xml:space="preserve">
+    <value>Số giờ làm việc trong ngày</value>
+  </data>
+  <data name="&gt;&gt;bosLabel11.Name" xml:space="preserve">
+    <value>bosLabel11</value>
+  </data>
+  <data name="&gt;&gt;bosLabel11.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel11.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl14</value>
+  </data>
+  <data name="&gt;&gt;bosLabel11.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_txtHoursPerDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 46</value>
+  </data>
+  <data name="fld_txtHoursPerDay.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtHoursPerDay.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHoursPerDay.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHoursPerDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtHoursPerDay.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHoursPerDay.Name" xml:space="preserve">
+    <value>fld_txtHoursPerDay</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHoursPerDay.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHoursPerDay.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl14</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHoursPerDay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_txtDaysPerMonth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 20</value>
+  </data>
+  <data name="fld_txtDaysPerMonth.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtDaysPerMonth.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtDaysPerMonth.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtDaysPerMonth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="fld_txtDaysPerMonth.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_txtDaysPerMonth.Name" xml:space="preserve">
+    <value>fld_txtDaysPerMonth</value>
+  </data>
+  <data name="&gt;&gt;fld_txtDaysPerMonth.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtDaysPerMonth.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl14</value>
+  </data>
+  <data name="&gt;&gt;fld_txtDaysPerMonth.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="fld_grpGroupControl14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 261</value>
+  </data>
+  <data name="fld_grpGroupControl14.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_grpGroupControl14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>768, 74</value>
+  </data>
+  <data name="fld_grpGroupControl14.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="fld_grpGroupControl14.Text" xml:space="preserve">
+    <value>Thời gian làm việc</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl14.Name" xml:space="preserve">
+    <value>fld_grpGroupControl14</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl14.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLine, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl14.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl14.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="fld_dgcHRWorkingShifts.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHRWorkingShifts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcHRWorkingShifts.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRWorkingShifts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>762, 222</value>
+  </data>
+  <data name="fld_dgcHRWorkingShifts.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRWorkingShifts.Name" xml:space="preserve">
+    <value>fld_dgcHRWorkingShifts</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRWorkingShifts.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.WorkingShiftGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRWorkingShifts.Parent" xml:space="preserve">
+    <value>fld_grpGroupControl13</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRWorkingShifts.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_grpGroupControl13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="fld_grpGroupControl13.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_grpGroupControl13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>768, 242</value>
+  </data>
+  <data name="fld_grpGroupControl13.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="fld_grpGroupControl13.Text" xml:space="preserve">
+    <value>Ca làm việc</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl13.Name" xml:space="preserve">
+    <value>fld_grpGroupControl13</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl13.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLine, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl13.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;fld_grpGroupControl13.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="xtraTabPage1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="xtraTabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage1.Text" xml:space="preserve">
+    <value>Thời gian làm việc</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage1.Name" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage1.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage1.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLine6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="fld_dgcHREmployeePieceWorks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHREmployeePieceWorks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcHREmployeePieceWorks.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHREmployeePieceWorks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>988, 282</value>
+  </data>
+  <data name="fld_dgcHREmployeePieceWorks.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHREmployeePieceWorks.Name" xml:space="preserve">
+    <value>fld_dgcHREmployeePieceWorks</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHREmployeePieceWorks.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HREmployeePieceWorksGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHREmployeePieceWorks.Parent" xml:space="preserve">
+    <value>bosLine6</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHREmployeePieceWorks.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLine6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 19</value>
+  </data>
+  <data name="bosLine6.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLine6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>994, 302</value>
+  </data>
+  <data name="bosLine6.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="bosLine6.Text" xml:space="preserve">
+    <value>Lương khoán</value>
+  </data>
+  <data name="&gt;&gt;bosLine6.Name" xml:space="preserve">
+    <value>bosLine6</value>
+  </data>
+  <data name="&gt;&gt;bosLine6.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLine, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLine6.Parent" xml:space="preserve">
+    <value>xtraTabPage3</value>
+  </data>
+  <data name="&gt;&gt;bosLine6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_dgcHRSalaryTypeGridControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHRSalaryTypeGridControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcHRSalaryTypeGridControl.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRSalaryTypeGridControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 285</value>
+  </data>
+  <data name="fld_dgcHRSalaryTypeGridControl.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRSalaryTypeGridControl.Name" xml:space="preserve">
+    <value>fld_dgcHRSalaryTypeGridControl</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRSalaryTypeGridControl.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRSalaryTypeGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRSalaryTypeGridControl.Parent" xml:space="preserve">
+    <value>bosLine5</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRSalaryTypeGridControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLine5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 19</value>
+  </data>
+  <data name="bosLine5.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLine5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 305</value>
+  </data>
+  <data name="bosLine5.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="bosLine5.Text" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="&gt;&gt;bosLine5.Name" xml:space="preserve">
+    <value>bosLine5</value>
+  </data>
+  <data name="&gt;&gt;bosLine5.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLine, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLine5.Parent" xml:space="preserve">
+    <value>xtraTabPage3</value>
+  </data>
+  <data name="&gt;&gt;bosLine5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="xtraTabPage3.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="xtraTabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage3.Text" xml:space="preserve">
+    <value>Danh mục công thức tính lương</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage3.Name" xml:space="preserve">
+    <value>xtraTabPage3</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage3.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage3.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_dgcHREmployeeSalaryConfigs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHREmployeeSalaryConfigs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHREmployeeSalaryConfigs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcHREmployeeSalaryConfigs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHREmployeeSalaryConfigs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="fld_dgcHREmployeeSalaryConfigs.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHREmployeeSalaryConfigs.Name" xml:space="preserve">
+    <value>fld_dgcHREmployeeSalaryConfigs</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHREmployeeSalaryConfigs.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.EmployeeSalaryConfigsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHREmployeeSalaryConfigs.Parent" xml:space="preserve">
+    <value>xtraTabPage6</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHREmployeeSalaryConfigs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPage6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage6.Text" xml:space="preserve">
+    <value>Mức lương theo tổ</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage6.Name" xml:space="preserve">
+    <value>xtraTabPage6</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage6.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage6.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage6.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="fld_dgcADConfigValues.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcADConfigValues.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcADConfigValues.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcADConfigValues.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcADConfigValues.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="fld_dgcADConfigValues.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADConfigValues.Name" xml:space="preserve">
+    <value>fld_dgcADConfigValues</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADConfigValues.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRTimeSheetParam3GridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADConfigValues.Parent" xml:space="preserve">
+    <value>xtraTabPage4</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADConfigValues.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPage4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage4.Text" xml:space="preserve">
+    <value>Cấu hình loại kỷ luật</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage4.Name" xml:space="preserve">
+    <value>xtraTabPage4</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage4.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage4.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="fld_dgcTrainingCourse.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcTrainingCourse.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcTrainingCourse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcTrainingCourse.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcTrainingCourse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="fld_dgcTrainingCourse.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcTrainingCourse.Name" xml:space="preserve">
+    <value>fld_dgcTrainingCourse</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcTrainingCourse.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.TrainingCoursesGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcTrainingCourse.Parent" xml:space="preserve">
+    <value>xtraTabPage5</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcTrainingCourse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPage5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage5.Text" xml:space="preserve">
+    <value>Cấu hình khóa đào tạo</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage5.Name" xml:space="preserve">
+    <value>xtraTabPage5</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage5.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage5.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="fld_btnAddGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>802, 10</value>
+  </data>
+  <data name="fld_btnAddGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 25</value>
+  </data>
+  <data name="fld_btnAddGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="fld_btnAddGroup.Text" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="&gt;&gt;fld_btnAddGroup.Name" xml:space="preserve">
+    <value>fld_btnAddGroup</value>
+  </data>
+  <data name="&gt;&gt;fld_btnAddGroup.Type" xml:space="preserve">
+    <value>BOSComponent.BOSButton, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_btnAddGroup.Parent" xml:space="preserve">
+    <value>fld_tabUserAppPermission</value>
+  </data>
+  <data name="&gt;&gt;fld_btnAddGroup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_lkeADUserGroupID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 15</value>
+  </data>
+  <assembly alias="DevExpress.Utils.v20.2" name="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="fld_lkeADUserGroupID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeADUserGroupID.Properties.Columns" xml:space="preserve">
+    <value>ADUserGroupName</value>
+  </data>
+  <data name="fld_lkeADUserGroupID.Properties.Columns1" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="fld_lkeADUserGroupID.Properties.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fld_lkeADUserGroupID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="fld_lkeADUserGroupID.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeADUserGroupID.Name" xml:space="preserve">
+    <value>fld_lkeADUserGroupID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeADUserGroupID.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeADUserGroupID.Parent" xml:space="preserve">
+    <value>fld_tabUserAppPermission</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeADUserGroupID.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bosLabel15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 18</value>
+  </data>
+  <data name="bosLabel15.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="bosLabel15.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="bosLabel15.Text" xml:space="preserve">
+    <value>Nhóm user</value>
+  </data>
+  <data name="&gt;&gt;bosLabel15.Name" xml:space="preserve">
+    <value>bosLabel15</value>
+  </data>
+  <data name="&gt;&gt;bosLabel15.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel15.Parent" xml:space="preserve">
+    <value>fld_tabUserAppPermission</value>
+  </data>
+  <data name="&gt;&gt;bosLabel15.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_lkeConfigFunction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>619, 15</value>
+  </data>
+  <data name="fld_lkeConfigFunction.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeConfigFunction.Properties.Columns" xml:space="preserve">
+    <value>ADConfigText</value>
+  </data>
+  <data name="fld_lkeConfigFunction.Properties.Columns1" xml:space="preserve">
+    <value>Loại</value>
+  </data>
+  <data name="fld_lkeConfigFunction.Properties.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fld_lkeConfigFunction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="fld_lkeConfigFunction.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeConfigFunction.Name" xml:space="preserve">
+    <value>fld_lkeConfigFunction</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeConfigFunction.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeConfigFunction.Parent" xml:space="preserve">
+    <value>fld_tabUserAppPermission</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeConfigFunction.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="bosLabel14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>548, 18</value>
+  </data>
+  <data name="bosLabel14.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="bosLabel14.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="bosLabel14.Text" xml:space="preserve">
+    <value>Chức năng</value>
+  </data>
+  <data name="&gt;&gt;bosLabel14.Name" xml:space="preserve">
+    <value>bosLabel14</value>
+  </data>
+  <data name="&gt;&gt;bosLabel14.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel14.Parent" xml:space="preserve">
+    <value>fld_tabUserAppPermission</value>
+  </data>
+  <data name="&gt;&gt;bosLabel14.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="fld_lkeConfigGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 15</value>
+  </data>
+  <data name="fld_lkeConfigGroup.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeConfigGroup.Properties.Columns" xml:space="preserve">
+    <value>ADConfigText</value>
+  </data>
+  <data name="fld_lkeConfigGroup.Properties.Columns1" xml:space="preserve">
+    <value>Loại</value>
+  </data>
+  <data name="fld_lkeConfigGroup.Properties.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fld_lkeConfigGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="fld_lkeConfigGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeConfigGroup.Name" xml:space="preserve">
+    <value>fld_lkeConfigGroup</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeConfigGroup.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeConfigGroup.Parent" xml:space="preserve">
+    <value>fld_tabUserAppPermission</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeConfigGroup.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="bosLabel13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 18</value>
+  </data>
+  <data name="bosLabel13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="bosLabel13.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bosLabel13.Text" xml:space="preserve">
+    <value>Nhóm chức năng</value>
+  </data>
+  <data name="&gt;&gt;bosLabel13.Name" xml:space="preserve">
+    <value>bosLabel13</value>
+  </data>
+  <data name="&gt;&gt;bosLabel13.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel13.Parent" xml:space="preserve">
+    <value>fld_tabUserAppPermission</value>
+  </data>
+  <data name="&gt;&gt;bosLabel13.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="fld_dgcADAppUserPermissions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_dgcADAppUserPermissions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcADAppUserPermissions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 41</value>
+  </data>
+  <data name="fld_dgcADAppUserPermissions.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcADAppUserPermissions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 708</value>
+  </data>
+  <data name="fld_dgcADAppUserPermissions.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADAppUserPermissions.Name" xml:space="preserve">
+    <value>fld_dgcADAppUserPermissions</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADAppUserPermissions.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.AppUserPermissionsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADAppUserPermissions.Parent" xml:space="preserve">
+    <value>fld_tabUserAppPermission</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADAppUserPermissions.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="fld_tabUserAppPermission.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="fld_tabUserAppPermission.Text" xml:space="preserve">
+    <value>Phân quyền ứng dụng</value>
+  </data>
+  <data name="&gt;&gt;fld_tabUserAppPermission.Name" xml:space="preserve">
+    <value>fld_tabUserAppPermission</value>
+  </data>
+  <data name="&gt;&gt;fld_tabUserAppPermission.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_tabUserAppPermission.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;fld_tabUserAppPermission.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="fld_dgcHRErrorTypes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHRErrorTypes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRErrorTypes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcHRErrorTypes.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRErrorTypes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="fld_dgcHRErrorTypes.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRErrorTypes.Name" xml:space="preserve">
+    <value>fld_dgcHRErrorTypes</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRErrorTypes.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.ErrorTypesGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRErrorTypes.Parent" xml:space="preserve">
+    <value>xtraTabPage7</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRErrorTypes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPage7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage7.Text" xml:space="preserve">
+    <value>Cấu hình loại lỗi</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage7.Name" xml:space="preserve">
+    <value>xtraTabPage7</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage7.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage7.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage7.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigHistorys.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigHistorys.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigHistorys.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 25</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigHistorys.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigHistorys.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1261, 409</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigHistorys.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAllowanceManageConfigHistorys.Name" xml:space="preserve">
+    <value>fld_dgcHRAllowanceManageConfigHistorys</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAllowanceManageConfigHistorys.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRAllowanceManageConfigHistorysGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAllowanceManageConfigHistorys.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAllowanceManageConfigHistorys.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 232</value>
+  </data>
+  <data name="groupBox6.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 440</value>
+  </data>
+  <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Lịch sử thay đổi</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
+    <value>xtraTabPage8</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_btnSaveAllowanceManageConfigs.AccessibleDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fld_btnSaveAllowanceManageConfigs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="fld_btnSaveAllowanceManageConfigs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1292, 25</value>
+  </data>
+  <data name="fld_btnSaveAllowanceManageConfigs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_btnSaveAllowanceManageConfigs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 30</value>
+  </data>
+  <data name="fld_btnSaveAllowanceManageConfigs.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="fld_btnSaveAllowanceManageConfigs.Text" xml:space="preserve">
+    <value>bosButton2</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveAllowanceManageConfigs.Name" xml:space="preserve">
+    <value>fld_btnSaveAllowanceManageConfigs</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveAllowanceManageConfigs.Type" xml:space="preserve">
+    <value>BOSComponent.BOSButton, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveAllowanceManageConfigs.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveAllowanceManageConfigs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 25</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1261, 201</value>
+  </data>
+  <data name="fld_dgcHRAllowanceManageConfigs.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAllowanceManageConfigs.Name" xml:space="preserve">
+    <value>fld_dgcHRAllowanceManageConfigs</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAllowanceManageConfigs.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRAllowanceManageConfigsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAllowanceManageConfigs.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAllowanceManageConfigs.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox5.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 232</value>
+  </data>
+  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Thông tin khai báo</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>xtraTabPage8</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="xtraTabPage8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage8.Text" xml:space="preserve">
+    <value>Cấu hình phụ cấp quản lý</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage8.Name" xml:space="preserve">
+    <value>xtraTabPage8</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage8.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage8.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage8.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="panel3.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1069, 525</value>
+  </data>
+  <data name="bosButton2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 28</value>
+  </data>
+  <data name="bosButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="bosButton2.Text" xml:space="preserve">
+    <value>Lưu </value>
+  </data>
+  <data name="&gt;&gt;bosButton2.Name" xml:space="preserve">
+    <value>bosButton2</value>
+  </data>
+  <data name="&gt;&gt;bosButton2.Type" xml:space="preserve">
+    <value>BOSComponent.BOSButton, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosButton2.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;bosButton2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 510</value>
+  </data>
+  <data name="fld_dgcADInsurrancePlans.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcADInsurrancePlans.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcADInsurrancePlans.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcADInsurrancePlans.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcADInsurrancePlans.Size" type="System.Drawing.Size, System.Drawing">
+    <value>353, 197</value>
+  </data>
+  <data name="fld_dgcADInsurrancePlans.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurrancePlans.Name" xml:space="preserve">
+    <value>fld_dgcADInsurrancePlans</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurrancePlans.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.ADInsurrancePlansGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurrancePlans.Parent" xml:space="preserve">
+    <value>groupBox31</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurrancePlans.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox31.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox31.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox31.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 217</value>
+  </data>
+  <data name="groupBox31.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="groupBox31.Text" xml:space="preserve">
+    <value>Phương án</value>
+  </data>
+  <data name="&gt;&gt;groupBox31.Name" xml:space="preserve">
+    <value>groupBox31</value>
+  </data>
+  <data name="&gt;&gt;groupBox31.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox31.Parent" xml:space="preserve">
+    <value>splitContainer3.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox31.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer3.Panel1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Panel1.Name" xml:space="preserve">
+    <value>splitContainer3.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer3</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="splitContainer4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcADInsurrancePapers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcADInsurrancePapers.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcADInsurrancePapers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcADInsurrancePapers.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcADInsurrancePapers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 197</value>
+  </data>
+  <data name="fld_dgcADInsurrancePapers.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurrancePapers.Name" xml:space="preserve">
+    <value>fld_dgcADInsurrancePapers</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurrancePapers.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.ADInsurrancePapersGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurrancePapers.Parent" xml:space="preserve">
+    <value>groupBox32</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurrancePapers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox32.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox32.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox32.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox32.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 217</value>
+  </data>
+  <data name="groupBox32.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="groupBox32.Text" xml:space="preserve">
+    <value>Loại giấy tờ</value>
+  </data>
+  <data name="&gt;&gt;groupBox32.Name" xml:space="preserve">
+    <value>groupBox32</value>
+  </data>
+  <data name="&gt;&gt;groupBox32.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox32.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox32.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer4.Panel1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel1.Name" xml:space="preserve">
+    <value>splitContainer4.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer4</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_dgcADInsurranceConditions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcADInsurranceConditions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcADInsurranceConditions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcADInsurranceConditions.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcADInsurranceConditions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 197</value>
+  </data>
+  <data name="fld_dgcADInsurranceConditions.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurranceConditions.Name" xml:space="preserve">
+    <value>fld_dgcADInsurranceConditions</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurranceConditions.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.ADInsurranceConditionsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurranceConditions.Parent" xml:space="preserve">
+    <value>groupBox33</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADInsurranceConditions.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox33.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox33.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox33.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 217</value>
+  </data>
+  <data name="groupBox33.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="groupBox33.Text" xml:space="preserve">
+    <value>Tình trạng sổ</value>
+  </data>
+  <data name="&gt;&gt;groupBox33.Name" xml:space="preserve">
+    <value>groupBox33</value>
+  </data>
+  <data name="&gt;&gt;groupBox33.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox33.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel2</value>
+  </data>
+  <data name="&gt;&gt;groupBox33.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer4.Panel2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel2.Name" xml:space="preserve">
+    <value>splitContainer4.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer4</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer4.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="splitContainer4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 217</value>
+  </data>
+  <data name="splitContainer4.SplitterDistance" type="System.Int32, mscorlib">
+    <value>329</value>
+  </data>
+  <data name="splitContainer4.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Name" xml:space="preserve">
+    <value>splitContainer4</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Parent" xml:space="preserve">
+    <value>splitContainer3.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer3.Panel2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Panel2.Name" xml:space="preserve">
+    <value>splitContainer3.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer3</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer3.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1043, 217</value>
+  </data>
+  <data name="splitContainer3.SplitterDistance" type="System.Int32, mscorlib">
+    <value>359</value>
+  </data>
+  <data name="splitContainer3.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Name" xml:space="preserve">
+    <value>splitContainer3</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;splitContainer3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bosButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>701, 324</value>
+  </data>
+  <data name="bosButton1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 28</value>
+  </data>
+  <data name="bosButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="bosButton1.Text" xml:space="preserve">
+    <value>Lưu </value>
+  </data>
+  <data name="&gt;&gt;bosButton1.Name" xml:space="preserve">
+    <value>bosButton1</value>
+  </data>
+  <data name="&gt;&gt;bosButton1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSButton, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosButton1.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;bosButton1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_dgcHRATMCardManageConfigs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHRATMCardManageConfigs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRATMCardManageConfigs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcHRATMCardManageConfigs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRATMCardManageConfigs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>670, 177</value>
+  </data>
+  <data name="fld_dgcHRATMCardManageConfigs.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRATMCardManageConfigs.Name" xml:space="preserve">
+    <value>fld_dgcHRATMCardManageConfigs</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRATMCardManageConfigs.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRATMCardManageConfigsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRATMCardManageConfigs.Parent" xml:space="preserve">
+    <value>groupBox10</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRATMCardManageConfigs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 307</value>
+  </data>
+  <data name="groupBox10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>676, 197</value>
+  </data>
+  <data name="groupBox10.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Cấu hình loại thẻ ATM</value>
+  </data>
+  <data name="&gt;&gt;groupBox10.Name" xml:space="preserve">
+    <value>groupBox10</value>
+  </data>
+  <data name="&gt;&gt;groupBox10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox10.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;groupBox10.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 72</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentNext.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n2</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentNext.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentNext.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentNext.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentNext.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentNext.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceOutOfWorkInsPercentNext</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentNext.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentNext.Parent" xml:space="preserve">
+    <value>groupBox9</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentNext.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLabel28.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 75</value>
+  </data>
+  <data name="bosLabel28.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="bosLabel28.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="bosLabel28.Text" xml:space="preserve">
+    <value>BHTN cá nhân (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel28.Name" xml:space="preserve">
+    <value>bosLabel28</value>
+  </data>
+  <data name="&gt;&gt;bosLabel28.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel28.Parent" xml:space="preserve">
+    <value>groupBox9</value>
+  </data>
+  <data name="&gt;&gt;bosLabel28.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bosLabel33.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 49</value>
+  </data>
+  <data name="bosLabel33.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 13</value>
+  </data>
+  <data name="bosLabel33.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="bosLabel33.Text" xml:space="preserve">
+    <value>BHYT cá nhân (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel33.Name" xml:space="preserve">
+    <value>bosLabel33</value>
+  </data>
+  <data name="&gt;&gt;bosLabel33.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel33.Parent" xml:space="preserve">
+    <value>groupBox9</value>
+  </data>
+  <data name="&gt;&gt;bosLabel33.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 46</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentNext.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n2</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentNext.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentNext.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentNext.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentNext.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentNext.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceHealthInsPercentNext</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentNext.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentNext.Parent" xml:space="preserve">
+    <value>groupBox9</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentNext.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="bosLabel34.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 23</value>
+  </data>
+  <data name="bosLabel34.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel34.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="bosLabel34.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="bosLabel34.Text" xml:space="preserve">
+    <value>BHXH cá nhân (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel34.Name" xml:space="preserve">
+    <value>bosLabel34</value>
+  </data>
+  <data name="&gt;&gt;bosLabel34.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel34.Parent" xml:space="preserve">
+    <value>groupBox9</value>
+  </data>
+  <data name="&gt;&gt;bosLabel34.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentNext.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n2</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentNext.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentNext.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentNext.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentNext.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentNext.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceSocialInsPercentNext</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentNext.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentNext.Parent" xml:space="preserve">
+    <value>groupBox9</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentNext.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 46</value>
+  </data>
+  <data name="groupBox9.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 105</value>
+  </data>
+  <data name="groupBox9.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Sau ngày áp dụng</value>
+  </data>
+  <data name="&gt;&gt;groupBox9.Name" xml:space="preserve">
+    <value>groupBox9</value>
+  </data>
+  <data name="&gt;&gt;groupBox9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox9.Parent" xml:space="preserve">
+    <value>bosLine3</value>
+  </data>
+  <data name="&gt;&gt;groupBox9.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentPrevious.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 72</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentPrevious.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n2</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentPrevious.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentPrevious.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentPrevious.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentPrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentPrevious.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentPrevious.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceOutOfWorkInsPercentPrevious</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentPrevious.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentPrevious.Parent" xml:space="preserve">
+    <value>groupBox8</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentPrevious.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLabel32.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 75</value>
+  </data>
+  <data name="bosLabel32.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel32.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="bosLabel32.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="bosLabel32.Text" xml:space="preserve">
+    <value>BHTN cá nhân (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel32.Name" xml:space="preserve">
+    <value>bosLabel32</value>
+  </data>
+  <data name="&gt;&gt;bosLabel32.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel32.Parent" xml:space="preserve">
+    <value>groupBox8</value>
+  </data>
+  <data name="&gt;&gt;bosLabel32.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bosLabel31.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 49</value>
+  </data>
+  <data name="bosLabel31.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 13</value>
+  </data>
+  <data name="bosLabel31.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="bosLabel31.Text" xml:space="preserve">
+    <value>BHYT cá nhân (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel31.Name" xml:space="preserve">
+    <value>bosLabel31</value>
+  </data>
+  <data name="&gt;&gt;bosLabel31.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel31.Parent" xml:space="preserve">
+    <value>groupBox8</value>
+  </data>
+  <data name="&gt;&gt;bosLabel31.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentPrevious.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 46</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentPrevious.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n2</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentPrevious.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentPrevious.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentPrevious.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentPrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentPrevious.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentPrevious.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceHealthInsPercentPrevious</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentPrevious.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentPrevious.Parent" xml:space="preserve">
+    <value>groupBox8</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentPrevious.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="bosLabel29.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 23</value>
+  </data>
+  <data name="bosLabel29.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="bosLabel29.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="bosLabel29.Text" xml:space="preserve">
+    <value>BHXH cá nhân (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel29.Name" xml:space="preserve">
+    <value>bosLabel29</value>
+  </data>
+  <data name="&gt;&gt;bosLabel29.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel29.Parent" xml:space="preserve">
+    <value>groupBox8</value>
+  </data>
+  <data name="&gt;&gt;bosLabel29.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentPrevious.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentPrevious.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n2</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentPrevious.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentPrevious.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentPrevious.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentPrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentPrevious.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentPrevious.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceSocialInsPercentPrevious</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentPrevious.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentPrevious.Parent" xml:space="preserve">
+    <value>groupBox8</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentPrevious.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 46</value>
+  </data>
+  <data name="groupBox8.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 105</value>
+  </data>
+  <data name="groupBox8.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Trước ngày áp dụng</value>
+  </data>
+  <data name="&gt;&gt;groupBox8.Name" xml:space="preserve">
+    <value>groupBox8</value>
+  </data>
+  <data name="&gt;&gt;groupBox8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox8.Parent" xml:space="preserve">
+    <value>bosLine3</value>
+  </data>
+  <data name="&gt;&gt;groupBox8.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_dteHRInsurranceDateApply.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="fld_dteHRInsurranceDateApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 20</value>
+  </data>
+  <data name="fld_dteHRInsurranceDateApply.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_dteHRInsurranceDateApply.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dteHRInsurranceDateApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_dteHRInsurranceDateApply.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;fld_dteHRInsurranceDateApply.Name" xml:space="preserve">
+    <value>fld_dteHRInsurranceDateApply</value>
+  </data>
+  <data name="&gt;&gt;fld_dteHRInsurranceDateApply.Type" xml:space="preserve">
+    <value>BOSComponent.BOSDateEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dteHRInsurranceDateApply.Parent" xml:space="preserve">
+    <value>bosLine3</value>
+  </data>
+  <data name="&gt;&gt;fld_dteHRInsurranceDateApply.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="bosLabel25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 23</value>
+  </data>
+  <data name="bosLabel25.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 13</value>
+  </data>
+  <data name="bosLabel25.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="bosLabel25.Text" xml:space="preserve">
+    <value>Ngày áp dụng trong tháng</value>
+  </data>
+  <data name="&gt;&gt;bosLabel25.Name" xml:space="preserve">
+    <value>bosLabel25</value>
+  </data>
+  <data name="&gt;&gt;bosLabel25.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel25.Parent" xml:space="preserve">
+    <value>bosLine3</value>
+  </data>
+  <data name="&gt;&gt;bosLabel25.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="bosLine3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 138</value>
+  </data>
+  <data name="bosLine3.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLine3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>675, 163</value>
+  </data>
+  <data name="bosLine3.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="bosLine3.Text" xml:space="preserve">
+    <value>Bảo hiểm cho nhân viên nghỉ việc</value>
+  </data>
+  <data name="&gt;&gt;bosLine3.Name" xml:space="preserve">
+    <value>bosLine3</value>
+  </data>
+  <data name="&gt;&gt;bosLine3.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLine, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLine3.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;bosLine3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="bosLabel21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 98</value>
+  </data>
+  <data name="bosLabel21.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 13</value>
+  </data>
+  <data name="bosLabel21.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="bosLabel21.Text" xml:space="preserve">
+    <value>Mức người phụ thuộc</value>
+  </data>
+  <data name="&gt;&gt;bosLabel21.Name" xml:space="preserve">
+    <value>bosLabel21</value>
+  </data>
+  <data name="&gt;&gt;bosLabel21.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel21.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;bosLabel21.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLabel18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 20</value>
+  </data>
+  <data name="bosLabel18.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 13</value>
+  </data>
+  <data name="bosLabel18.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="bosLabel18.Text" xml:space="preserve">
+    <value>BHXH doanh nghiệp (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel18.Name" xml:space="preserve">
+    <value>bosLabel18</value>
+  </data>
+  <data name="&gt;&gt;bosLabel18.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel18.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;bosLabel18.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_txtADInsurranceDependencyLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>513, 95</value>
+  </data>
+  <data name="fld_txtADInsurranceDependencyLevel.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtADInsurranceDependencyLevel.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtADInsurranceDependencyLevel.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtADInsurranceDependencyLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtADInsurranceDependencyLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;fld_txtADInsurranceDependencyLevel.Name" xml:space="preserve">
+    <value>fld_txtADInsurranceDependencyLevel</value>
+  </data>
+  <data name="&gt;&gt;fld_txtADInsurranceDependencyLevel.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtADInsurranceDependencyLevel.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtADInsurranceDependencyLevel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="bosLabel20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 72</value>
+  </data>
+  <data name="bosLabel20.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 13</value>
+  </data>
+  <data name="bosLabel20.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="bosLabel20.Text" xml:space="preserve">
+    <value>BHTN doanh nghiệp (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel20.Name" xml:space="preserve">
+    <value>bosLabel20</value>
+  </data>
+  <data name="&gt;&gt;bosLabel20.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel20.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;bosLabel20.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="fld_txtADInsurranceLevelNotTaxable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 95</value>
+  </data>
+  <data name="fld_txtADInsurranceLevelNotTaxable.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtADInsurranceLevelNotTaxable.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtADInsurranceLevelNotTaxable.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtADInsurranceLevelNotTaxable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtADInsurranceLevelNotTaxable.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;fld_txtADInsurranceLevelNotTaxable.Name" xml:space="preserve">
+    <value>fld_txtADInsurranceLevelNotTaxable</value>
+  </data>
+  <data name="&gt;&gt;fld_txtADInsurranceLevelNotTaxable.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtADInsurranceLevelNotTaxable.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtADInsurranceLevelNotTaxable.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="bosLabel22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 98</value>
+  </data>
+  <data name="bosLabel22.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 13</value>
+  </data>
+  <data name="bosLabel22.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="bosLabel22.Text" xml:space="preserve">
+    <value>Mức không chịu thuế TNCN</value>
+  </data>
+  <data name="&gt;&gt;bosLabel22.Name" xml:space="preserve">
+    <value>bosLabel22</value>
+  </data>
+  <data name="&gt;&gt;bosLabel22.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel22.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;bosLabel22.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 17</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercent.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercent.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercent.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercent.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercent.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceSocialInsPercent</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercent.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercent.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercent.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentDN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>513, 69</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentDN.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentDN.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentDN.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentDN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercentDN.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentDN.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceOutOfWorkInsPercentDN</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentDN.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentDN.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercentDN.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="bosLabel16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 20</value>
+  </data>
+  <data name="bosLabel16.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="bosLabel16.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="bosLabel16.Text" xml:space="preserve">
+    <value>BHXH cá nhân (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel16.Name" xml:space="preserve">
+    <value>bosLabel16</value>
+  </data>
+  <data name="&gt;&gt;bosLabel16.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel16.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;bosLabel16.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="bosLabel19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 46</value>
+  </data>
+  <data name="bosLabel19.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 13</value>
+  </data>
+  <data name="bosLabel19.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="bosLabel19.Text" xml:space="preserve">
+    <value>BHYT doanh nghiệp (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel19.Name" xml:space="preserve">
+    <value>bosLabel19</value>
+  </data>
+  <data name="&gt;&gt;bosLabel19.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel19.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;bosLabel19.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 43</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercent.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercent.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercent.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercent.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercent.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceHealthInsPercent</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercent.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercent.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercent.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentDN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>513, 43</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentDN.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentDN.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentDN.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentDN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceHealthInsPercentDN.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentDN.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceHealthInsPercentDN</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentDN.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentDN.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceHealthInsPercentDN.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="bosLabel17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 46</value>
+  </data>
+  <data name="bosLabel17.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 13</value>
+  </data>
+  <data name="bosLabel17.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="bosLabel17.Text" xml:space="preserve">
+    <value>BHYT cá nhân (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel17.Name" xml:space="preserve">
+    <value>bosLabel17</value>
+  </data>
+  <data name="&gt;&gt;bosLabel17.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel17.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;bosLabel17.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 69</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercent.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercent.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercent.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceOutOfWorkInsPercent.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercent.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceOutOfWorkInsPercent</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercent.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercent.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceOutOfWorkInsPercent.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentDN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>513, 17</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentDN.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentDN.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentDN.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentDN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="fld_txtHRInsurranceSocialInsPercentDN.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentDN.Name" xml:space="preserve">
+    <value>fld_txtHRInsurranceSocialInsPercentDN</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentDN.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentDN.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRInsurranceSocialInsPercentDN.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="bosLabel23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 72</value>
+  </data>
+  <data name="bosLabel23.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="bosLabel23.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="bosLabel23.Text" xml:space="preserve">
+    <value>BHTN cá nhân (%)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel23.Name" xml:space="preserve">
+    <value>bosLabel23</value>
+  </data>
+  <data name="&gt;&gt;bosLabel23.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel23.Parent" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;bosLabel23.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="bosLine4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 3</value>
+  </data>
+  <data name="bosLine4.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLine4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>675, 129</value>
+  </data>
+  <data name="bosLine4.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="bosLine4.Text" xml:space="preserve">
+    <value>Bảo hiểm</value>
+  </data>
+  <data name="&gt;&gt;bosLine4.Name" xml:space="preserve">
+    <value>bosLine4</value>
+  </data>
+  <data name="&gt;&gt;bosLine4.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLine, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLine4.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;bosLine4.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="fld_btnSaveInsurrances.Location" type="System.Drawing.Point, System.Drawing">
+    <value>701, 12</value>
+  </data>
+  <data name="fld_btnSaveInsurrances.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_btnSaveInsurrances.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 28</value>
+  </data>
+  <data name="fld_btnSaveInsurrances.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="fld_btnSaveInsurrances.Text" xml:space="preserve">
+    <value>Lưu </value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveInsurrances.Name" xml:space="preserve">
+    <value>fld_btnSaveInsurrances</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveInsurrances.Type" xml:space="preserve">
+    <value>BOSComponent.BOSButton, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveInsurrances.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveInsurrances.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>xtraTabPage9</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPage9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage9.Text" xml:space="preserve">
+    <value>Bảo hiểm và thuế thu nhập cá nhân</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage9.Name" xml:space="preserve">
+    <value>xtraTabPage9</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage9.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage9.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage9.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="fld_dgcADTimesheetConfigs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_dgcADTimesheetConfigs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcADTimesheetConfigs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcADTimesheetConfigs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcADTimesheetConfigs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 708</value>
+  </data>
+  <data name="fld_dgcADTimesheetConfigs.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADTimesheetConfigs.Name" xml:space="preserve">
+    <value>fld_dgcADTimesheetConfigs</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADTimesheetConfigs.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.ADTimesheetConfigsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADTimesheetConfigs.Parent" xml:space="preserve">
+    <value>xtraTabPage10</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcADTimesheetConfigs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_btnSaveTimesheetConfigs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="fld_btnSaveTimesheetConfigs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1247, 714</value>
+  </data>
+  <data name="fld_btnSaveTimesheetConfigs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_btnSaveTimesheetConfigs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 28</value>
+  </data>
+  <data name="fld_btnSaveTimesheetConfigs.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="fld_btnSaveTimesheetConfigs.Text" xml:space="preserve">
+    <value>Lưu </value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveTimesheetConfigs.Name" xml:space="preserve">
+    <value>fld_btnSaveTimesheetConfigs</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveTimesheetConfigs.Type" xml:space="preserve">
+    <value>BOSComponent.BOSButton, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveTimesheetConfigs.Parent" xml:space="preserve">
+    <value>xtraTabPage10</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveTimesheetConfigs.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="xtraTabPage10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage10.Text" xml:space="preserve">
+    <value>Cấu hình công tháng</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage10.Name" xml:space="preserve">
+    <value>xtraTabPage10</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage10.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage10.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage10.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="panel1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRConfigRanks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_dgcHRConfigRanks.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRConfigRanks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
+  </data>
+  <data name="fld_dgcHRConfigRanks.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRConfigRanks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>722, 228</value>
+  </data>
+  <data name="fld_dgcHRConfigRanks.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRConfigRanks.Name" xml:space="preserve">
+    <value>fld_dgcHRConfigRanks</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRConfigRanks.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRConfigRanksGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRConfigRanks.Parent" xml:space="preserve">
+    <value>groupBox23</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRConfigRanks.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_btnSaveRank.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="fld_btnSaveRank.Location" type="System.Drawing.Point, System.Drawing">
+    <value>734, 20</value>
+  </data>
+  <data name="fld_btnSaveRank.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_btnSaveRank.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 30</value>
+  </data>
+  <data name="fld_btnSaveRank.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="fld_btnSaveRank.Text" xml:space="preserve">
+    <value>bosButton1</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveRank.Name" xml:space="preserve">
+    <value>fld_btnSaveRank</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveRank.Type" xml:space="preserve">
+    <value>BOSComponent.BOSButton, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveRank.Parent" xml:space="preserve">
+    <value>groupBox23</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveRank.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 241</value>
+  </data>
+  <data name="groupBox23.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>771, 254</value>
+  </data>
+  <data name="groupBox23.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="groupBox23.Text" xml:space="preserve">
+    <value>Cấu hình Bậc</value>
+  </data>
+  <data name="&gt;&gt;groupBox23.Name" xml:space="preserve">
+    <value>groupBox23</value>
+  </data>
+  <data name="&gt;&gt;groupBox23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox23.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox23.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_dgcHRConfigScales.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_dgcHRConfigScales.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRConfigScales.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
+  </data>
+  <data name="fld_dgcHRConfigScales.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRConfigScales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>722, 206</value>
+  </data>
+  <data name="fld_dgcHRConfigScales.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRConfigScales.Name" xml:space="preserve">
+    <value>fld_dgcHRConfigScales</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRConfigScales.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRConfigScalesGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRConfigScales.Parent" xml:space="preserve">
+    <value>groupBox25</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRConfigScales.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_btnSaveScale.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="fld_btnSaveScale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>734, 20</value>
+  </data>
+  <data name="fld_btnSaveScale.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_btnSaveScale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 30</value>
+  </data>
+  <data name="fld_btnSaveScale.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="fld_btnSaveScale.Text" xml:space="preserve">
+    <value>bosButton2</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveScale.Name" xml:space="preserve">
+    <value>fld_btnSaveScale</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveScale.Type" xml:space="preserve">
+    <value>BOSComponent.BOSButton, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveScale.Parent" xml:space="preserve">
+    <value>groupBox25</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveScale.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 3</value>
+  </data>
+  <data name="groupBox25.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>771, 232</value>
+  </data>
+  <data name="groupBox25.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="groupBox25.Text" xml:space="preserve">
+    <value>Cấu hình Ngạch</value>
+  </data>
+  <data name="&gt;&gt;groupBox25.Name" xml:space="preserve">
+    <value>groupBox25</value>
+  </data>
+  <data name="&gt;&gt;groupBox25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox25.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox25.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>xtraTabPage11</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPage11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage11.Text" xml:space="preserve">
+    <value>Cấu hình Ngạch/ Bậc</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage11.Name" xml:space="preserve">
+    <value>xtraTabPage11</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage11.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage11.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage11.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="panel2.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="splitContainer2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="splitContainer2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 284</value>
+  </data>
+  <data name="fld_dgcHRSeniorityLeaveDayConfigs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHRSeniorityLeaveDayConfigs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRSeniorityLeaveDayConfigs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcHRSeniorityLeaveDayConfigs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRSeniorityLeaveDayConfigs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>338, 227</value>
+  </data>
+  <data name="fld_dgcHRSeniorityLeaveDayConfigs.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRSeniorityLeaveDayConfigs.Name" xml:space="preserve">
+    <value>fld_dgcHRSeniorityLeaveDayConfigs</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRSeniorityLeaveDayConfigs.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRSeniorityLeaveDayConfigsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRSeniorityLeaveDayConfigs.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRSeniorityLeaveDayConfigs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 247</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Phép thâm niên</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.Name" xml:space="preserve">
+    <value>splitContainer2.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcHRDepartmentRoomLeaveDayConfigs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHRDepartmentRoomLeaveDayConfigs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRDepartmentRoomLeaveDayConfigs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcHRDepartmentRoomLeaveDayConfigs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRDepartmentRoomLeaveDayConfigs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>389, 227</value>
+  </data>
+  <data name="fld_dgcHRDepartmentRoomLeaveDayConfigs.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRDepartmentRoomLeaveDayConfigs.Name" xml:space="preserve">
+    <value>fld_dgcHRDepartmentRoomLeaveDayConfigs</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRDepartmentRoomLeaveDayConfigs.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRDepartmentRoomLeaveDayConfigsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRDepartmentRoomLeaveDayConfigs.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRDepartmentRoomLeaveDayConfigs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox3.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>395, 247</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Phép cộng theo khu vực</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer1.Panel1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_dgcHROtherLeaveDayConfigs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHROtherLeaveDayConfigs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHROtherLeaveDayConfigs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcHROtherLeaveDayConfigs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHROtherLeaveDayConfigs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>567, 227</value>
+  </data>
+  <data name="fld_dgcHROtherLeaveDayConfigs.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHROtherLeaveDayConfigs.Name" xml:space="preserve">
+    <value>fld_dgcHROtherLeaveDayConfigs</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHROtherLeaveDayConfigs.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HROtherLeaveDayConfigsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHROtherLeaveDayConfigs.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHROtherLeaveDayConfigs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox4.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>573, 247</value>
+  </data>
+  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Phép cộng thêm khác</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer1.Panel2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 247</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>395</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.Name" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1320, 247</value>
+  </data>
+  <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
+    <value>344</value>
+  </data>
+  <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Name" xml:space="preserve">
+    <value>splitContainer2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="fld_dgcHRAnnualLeaveDayConfigs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcHRAnnualLeaveDayConfigs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRAnnualLeaveDayConfigs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_dgcHRAnnualLeaveDayConfigs.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRAnnualLeaveDayConfigs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1317, 255</value>
+  </data>
+  <data name="fld_dgcHRAnnualLeaveDayConfigs.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAnnualLeaveDayConfigs.Name" xml:space="preserve">
+    <value>fld_dgcHRAnnualLeaveDayConfigs</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAnnualLeaveDayConfigs.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRAnnualLeaveDayConfigsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAnnualLeaveDayConfigs.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRAnnualLeaveDayConfigs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 3</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1323, 275</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Phép năm</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1336, 756</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>xtraTabPage12</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPage12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1336, 756</value>
+  </data>
+  <data name="xtraTabPage12.Text" xml:space="preserve">
+    <value>Cấu hình phép năm</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage12.Name" xml:space="preserve">
+    <value>xtraTabPage12</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage12.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage12.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage12.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="fld_dgcHRRelationships.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_dgcHRRelationships.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcHRRelationships.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
+  </data>
+  <data name="fld_dgcHRRelationships.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRRelationships.Size" type="System.Drawing.Size, System.Drawing">
+    <value>722, 206</value>
+  </data>
+  <data name="fld_dgcHRRelationships.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRRelationships.Name" xml:space="preserve">
+    <value>fld_dgcHRRelationships</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRRelationships.Type" xml:space="preserve">
+    <value>BOSERP.Modules.CompanyConstant.HRRelationshipsGridControl, BOSERP.Procedure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRRelationships.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRRelationships.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_btnSaveRelationships.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="fld_btnSaveRelationships.Location" type="System.Drawing.Point, System.Drawing">
+    <value>734, 20</value>
+  </data>
+  <data name="fld_btnSaveRelationships.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_btnSaveRelationships.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 30</value>
+  </data>
+  <data name="fld_btnSaveRelationships.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="fld_btnSaveRelationships.Text" xml:space="preserve">
+    <value>bosButton2</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveRelationships.Name" xml:space="preserve">
+    <value>fld_btnSaveRelationships</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveRelationships.Type" xml:space="preserve">
+    <value>BOSComponent.BOSButton, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveRelationships.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;fld_btnSaveRelationships.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupBox7.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>771, 232</value>
+  </data>
+  <data name="groupBox7.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Thông tin nhân thân</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Name" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Parent" xml:space="preserve">
+    <value>xtraTabPage13</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPage13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 749</value>
+  </data>
+  <data name="xtraTabPage13.Text" xml:space="preserve">
+    <value>Thông tin nhân thân</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage13.Name" xml:space="preserve">
+    <value>xtraTabPage13</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage13.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage13.Parent" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage13.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;fld_tabHumanResource.Name" xml:space="preserve">
+    <value>fld_tabHumanResource</value>
+  </data>
+  <data name="&gt;&gt;fld_tabHumanResource.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTabControl, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_tabHumanResource.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_tabHumanResource.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1342, 784</value>
+  </data>
+  <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Nhân sự</value>
+  </data>
+  <data name="&gt;&gt;ScreenHelper.Name" xml:space="preserve">
+    <value>ScreenHelper</value>
+  </data>
+  <data name="&gt;&gt;ScreenHelper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gridView2.Name" xml:space="preserve">
+    <value>gridView2</value>
+  </data>
+  <data name="&gt;&gt;gridView2.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView1.Name" xml:space="preserve">
+    <value>gridView1</value>
+  </data>
+  <data name="&gt;&gt;gridView1.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView11.Name" xml:space="preserve">
+    <value>gridView11</value>
+  </data>
+  <data name="&gt;&gt;gridView11.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView10.Name" xml:space="preserve">
+    <value>gridView10</value>
+  </data>
+  <data name="&gt;&gt;gridView10.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView14.Name" xml:space="preserve">
+    <value>gridView14</value>
+  </data>
+  <data name="&gt;&gt;gridView14.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView12.Name" xml:space="preserve">
+    <value>gridView12</value>
+  </data>
+  <data name="&gt;&gt;gridView12.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView13.Name" xml:space="preserve">
+    <value>gridView13</value>
+  </data>
+  <data name="&gt;&gt;gridView13.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView15.Name" xml:space="preserve">
+    <value>gridView15</value>
+  </data>
+  <data name="&gt;&gt;gridView15.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView16.Name" xml:space="preserve">
+    <value>gridView16</value>
+  </data>
+  <data name="&gt;&gt;gridView16.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView24.Name" xml:space="preserve">
+    <value>gridView24</value>
+  </data>
+  <data name="&gt;&gt;gridView24.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView17.Name" xml:space="preserve">
+    <value>gridView17</value>
+  </data>
+  <data name="&gt;&gt;gridView17.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView27.Name" xml:space="preserve">
+    <value>gridView27</value>
+  </data>
+  <data name="&gt;&gt;gridView27.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView28.Name" xml:space="preserve">
+    <value>gridView28</value>
+  </data>
+  <data name="&gt;&gt;gridView28.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView29.Name" xml:space="preserve">
+    <value>gridView29</value>
+  </data>
+  <data name="&gt;&gt;gridView29.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView26.Name" xml:space="preserve">
+    <value>gridView26</value>
+  </data>
+  <data name="&gt;&gt;gridView26.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView41.Name" xml:space="preserve">
+    <value>gridView41</value>
+  </data>
+  <data name="&gt;&gt;gridView41.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView19.Name" xml:space="preserve">
+    <value>gridView19</value>
+  </data>
+  <data name="&gt;&gt;gridView19.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView18.Name" xml:space="preserve">
+    <value>gridView18</value>
+  </data>
+  <data name="&gt;&gt;gridView18.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView21.Name" xml:space="preserve">
+    <value>gridView21</value>
+  </data>
+  <data name="&gt;&gt;gridView21.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView22.Name" xml:space="preserve">
+    <value>gridView22</value>
+  </data>
+  <data name="&gt;&gt;gridView22.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView23.Name" xml:space="preserve">
+    <value>gridView23</value>
+  </data>
+  <data name="&gt;&gt;gridView23.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView20.Name" xml:space="preserve">
+    <value>gridView20</value>
+  </data>
+  <data name="&gt;&gt;gridView20.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView25.Name" xml:space="preserve">
+    <value>gridView25</value>
+  </data>
+  <data name="&gt;&gt;gridView25.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView7.Name" xml:space="preserve">
+    <value>gridView7</value>
+  </data>
+  <data name="&gt;&gt;gridView7.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView6.Name" xml:space="preserve">
+    <value>gridView6</value>
+  </data>
+  <data name="&gt;&gt;gridView6.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView3.Name" xml:space="preserve">
+    <value>gridView3</value>
+  </data>
+  <data name="&gt;&gt;gridView3.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView4.Name" xml:space="preserve">
+    <value>gridView4</value>
+  </data>
+  <data name="&gt;&gt;gridView4.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView5.Name" xml:space="preserve">
+    <value>gridView5</value>
+  </data>
+  <data name="&gt;&gt;gridView5.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView8.Name" xml:space="preserve">
+    <value>gridView8</value>
+  </data>
+  <data name="&gt;&gt;gridView8.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView9.Name" xml:space="preserve">
+    <value>gridView9</value>
+  </data>
+  <data name="&gt;&gt;gridView9.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView32.Name" xml:space="preserve">
+    <value>gridView32</value>
+  </data>
+  <data name="&gt;&gt;gridView32.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView33.Name" xml:space="preserve">
+    <value>gridView33</value>
+  </data>
+  <data name="&gt;&gt;gridView33.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView34.Name" xml:space="preserve">
+    <value>gridView34</value>
+  </data>
+  <data name="&gt;&gt;gridView34.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DMCS105</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>BOSERP.BOSERPScreen, BOSBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+</root>

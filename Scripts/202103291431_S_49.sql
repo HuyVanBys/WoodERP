@@ -1,0 +1,2 @@
+ALTER TABLE dbo.MMWorkShops
+ALTER COLUMN MMWorkShopContactRoom NVARCHAR(256)

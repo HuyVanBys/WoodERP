@@ -1,0 +1,113 @@
+﻿namespace BOSCommon.Constants
+{
+    public class ConfigValueGroup
+    {
+        public const string HardwareOperationType = "HardwareOperationType";
+        public const string SaleOrder = "SaleOrder";
+        public const string InvoiceType = "InvoiceType";
+        public const string InvoiceStatus = "InvoiceStatus";
+        public const string PurchaseOrderType = "PurchaseOrderType";
+        public const string PurchaseProposalType = "PurchaseProposalType";
+        public const string CancelPurchaseProposalItemType = "CancelPurchaseProposalItemType";
+        public const string CancelPurchaseProposalAPType = "CancelPurchaseProposalAPType";
+        public const string PurchaseProposalItemStatus = "PurchaseProposalItemStatus";
+        public const string CustomerType = "CustomerType";
+        public const string CustomerBusiness = "CustomerBusiness";
+        public const string CustomerDistributionChannelType = "CustomerDistributionChannelType";
+        public const string ConfigProductionComplexityType = "ConfigProductionComplexityType";
+        public const string ProductType = "ProductType";
+        public const string ProductPurchaseType = "ProductPurchaseType";
+        public const string PaymentMethod = "PaymentMethod";
+        public const string SupplierType = "SupplierType";
+        public const string InvoiceInStatus = "InvoiceInStatus";
+        public const string EmployeeGender = "EmployeeGender";
+        public const string ObjectType = "ObjectType";
+        public const string ReceiptVoucherType = "ReceiptVoucherType";
+        public const string PaymentVoucherType = "PaymentVoucherType";
+        public const string WoodType = "WoodType";
+        public const string Priority = "Priority";
+        public const string AllocationPlanItemHWQtySource = "AllocationPlanItemHWQtySource";
+        public const string BatchProductPlanWoodPurchaseType = "BatchProductPlanWoodPurchaseType";
+        public const string BatchItemWoodDetailPlanType = "BatchItemWoodDetailPlanType";
+        public const string ProductOrigin = "ProductOrigin";
+        public const string ProductTrademark = "ProductTrademark";
+        public const string ProductCollection = "ProductCollection";
+        public const string ProductStorageCondition = "ProductStorageCondition";
+        public const string PaymentProposalStatus = "PaymentProposalStatus";
+        public const string PaymentProposalType = "PaymentProposalType";
+        public const string PaymentProposalPaymentMethod = "PaymentProposalPaymentMethod";
+        public const string ReceiptItemProductOrigin = "ReceiptItemProductOrigin";
+        public const string PurchasePlanItemPurchaseType = "PurchasePlanItemPurchaseType";
+        public const string ReceiptItemProductAttributeKey = "ReceiptItemProductAttributeKey";
+        public const string ReceiptItemProductFSC = "ReceiptItemProductFSC";
+        //public const string ReceiptItemProductAttributeKey = "ReceiptItemProductAttributeKey";
+        public const string ReceiptItemProductSource = "ReceiptItemProductFSC";
+        public const string InvoiceInvoiceNo = "InvoiceInvoiceNo";
+        public const string InvoiceVATInputDocumentType = "InvoiceVATInputDocumentType";
+        public const string ShipmentShipmentType = "ShipmentShipmentType";
+        public const string ShipmentType = "ShipmentType";
+        public const string ContainerType = "ContainerType";
+        public const string TrainingCourse = "TrainingCourse";
+        public const string HRTimeSheetParamType = "DisciplineType";
+        public const string EmployeePayrollFormulaSalaryType = "EmployeePayrollFormulaSalaryType";
+        public const string ProductOriginOfProduct = "ProductOriginOfProduct";
+        public const string ProductDepartmentGroup = "ProductDepartmentGroup";
+
+        public const string LevelGraduation = "LevelGraduation";
+        public const string LevelQualification = "LevelQualification";
+        public const string LevelFrequency = "LevelFrequency";
+        public const string LevelEvaluationCriteria = "LevelEvaluationCriteria";
+        public const string LevelExp = "LevelExp";
+        public const string LevelComputerProficiency = "LevelComputerProficiency";
+        public const string LevelNecessarySkills = "LevelNecessarySkills";
+        public const string LevelHealth = "LevelHealth";
+        public const string SplitRatioGroup = "SplitRatioGroup";
+        public const string BonusLevelCalculatedOn = "BonusLevelCalculatedOn";
+
+        public const string LevelDutiesResponsibilitiesFrequency = "LevelDutiesResponsibilitiesFrequency";
+        public const string LevelDutiesResponsibilitiesEvaluationCriteria = "LevelDutiesResponsibilitiesEvaluationCriteria";
+        public const string CircumstancesRewardType = "CircumstancesRewardType";
+        public const string BestSellerType = "BestSellerType";
+        public const string LevelJobSummary = "LevelJobSummary";
+        public const string LevelMajor = "LevelMajor";
+        public const string ConfigureRewardTimeReceiptTime = "ConfigureRewardTimeReceiptTime";
+        public const string ConfigureBonusLevelProductionGroup = "ConfigureBonusLevelProductionGroup";
+        public const string ConfigureAccording = "ConfigureAccording";
+        public const string ProductionCostInProgressClassifyType = "ProductionCostInProgressClassifyType";
+
+        public const string PrivilegeAppSatffGroup = "PrivilegeAppSatffGroup";
+        public const string CalculateType = "CalculateType";
+        public const string VATDocumentType = "VATDocumentType";
+        public const string AdvanceRequestItemLoanDetailStatus = "AdvanceRequestItemLoanDetailStatus";
+        public const string ProductionCostAllocationType = "ProductionCostAllocationType";
+        public const string ProductionCostCollectType = "ProductionCostCollectType";
+        public const string ProductionCostInProgressCalType = "ProductionCostInProgressCalType";
+        public const string SalaryEntryTypeDetailGroupType = "SalaryEntryTypeDetailGroupType";
+        public const string EmployeeWorkingForm = "EmployeeWorkingForm";
+        public const string EmployeeStatus = "EmployeeStatus";
+        public const string RoutingType = "RoutingType";
+        public const string ErrorType = "ErrorType";
+        public const string CommodityType = "CommodityType";
+        public const string ListOfSalesChannelType = "ListOfSalesChannelType";
+        public const string SourceSellingPriceType = "SourceSellingPriceType";
+        public const string MachineGroup = "MachineGroup";
+        public const string ProductGroupType = "ProductGroupType";
+        public const string InputVATDocumentType = "InputVATDocumentType";
+        public const string InputVATInvoiceNo = "InputVATInvoiceNo";
+        public const string RewardType = "RewardType";
+        public const string CandidateStatus = "CandidateStatus";
+        public const string BlockColumnOperator = "BlockColumnOperator";
+        public const string DepartmentGroup = "DepartmentGroup";
+        public const string ProposalAPType = "ProposalAPType";
+        public const string PurchaseOrderReceiptType = "PurchaseOrderReceiptType";
+        public const string InvoiceInType = "InvoiceInType";
+        public const string ReceiptReceiptType = "ReceiptReceiptType";
+        public const string AppUserPermissionType = "AppUserPermissionType";
+        public const string AppUserPermissionFunctionCode = "AppUserPermissionFunctionCode";
+        public const string AppUserPermission = "AppUserPermission";
+        public const string EmployeeSalaryConfig = "EmployeeSalaryConfig";
+        public const string SaleForecastProductType = "SaleForecastProductType";
+        public const string SupplierOtherType = "SupplierOtherType";
+        
+    }
+}

@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fld_txtHRCalendarYear.Properties.Mask.PlaceHolder" type="System.Char, mscorlib" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="fld_lblLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fld_txtHRCalendarYear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 126</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fld_lblLabel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="fld_lblLabel1.Text" xml:space="preserve">
+    <value>Tên danh sách</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.AutoHeight" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.AutoHeight" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.Mask.BeepOnError" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="fld_lblLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="fld_lkeLookupEdit.Properties.NullValuePrompt" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fld_lblLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <assembly alias="DevExpress.XtraEditors.v20.2" name="DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="fld_txtHRCalendarNo.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>None</value>
+  </data>
+  <data name="fld_dgcHRCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 166</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 20</value>
+  </data>
+  <data name="&gt;&gt;fld_dgvHRCalendar.Name" xml:space="preserve">
+    <value>fld_dgvHRCalendar</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.Mask.EditMask" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fld_lblLabel.Text" xml:space="preserve">
+    <value>Mã danh sách</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>862, 567</value>
+  </data>
+  <data name="fld_lkeLookupEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.Mask.IgnoreMaskBlank" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.Mask.BeepOnError" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>None</value>
+  </data>
+  <data name="fld_dgcHRCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 200</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.Mask.IgnoreMaskBlank" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.Mask.SaveLiteral" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="fld_txtHRCalendarName.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="fld_lblLabel1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 78</value>
+  </data>
+  <data name="fld_lblLabel2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="fld_lkeLookupEdit.Properties.AutoHeight" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lblLabel3.Text" xml:space="preserve">
+    <value>Năm</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel2.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_lblLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 57</value>
+  </data>
+  <data name="fld_dgcHRCalendar.EmbeddedNavigator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="fld_dgcHRCalendar.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.Mask.SaveLiteral" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeLookupEdit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="fld_lkeLookupEdit.Properties.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;fld_lblLabel1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="fld_lblLabel2.Text" xml:space="preserve">
+    <value>Loại</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRCalendar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v20.2">
+    <value>Default</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.Mask.BeepOnError" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="fld_txtHRCalendarName.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.Mask.EditMask" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarNo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ScreenHelper.Name" xml:space="preserve">
+    <value>ScreenHelper</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel2.Name" xml:space="preserve">
+    <value>fld_lblLabel2</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 54</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel.Name" xml:space="preserve">
+    <value>fld_lblLabel</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarNo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_lblLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 105</value>
+  </data>
+  <data name="fld_txtHRCalendarName.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="fld_lkeLookupEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 102</value>
+  </data>
+  <data name="fld_dgcHRCalendar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.Mask.ShowPlaceHolders" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.NullValuePromptShowForEmptyValue" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SMHRCL100</value>
+  </data>
+  <data name="fld_dgcHRCalendar.EmbeddedNavigator.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;fld_lblLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel1.Name" xml:space="preserve">
+    <value>fld_lblLabel1</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.Mask.PlaceHolder" type="System.Char, mscorlib" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="fld_lblLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 81</value>
+  </data>
+  <data name="&gt;&gt;ScreenHelper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.Mask.IgnoreMaskBlank" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarYear.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRCalendar.Type" xml:space="preserve">
+    <value>BOSERP.BOSSearchResultsGridControl, BOSBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="fld_dgcHRCalendar.EmbeddedNavigator.TextLocation" type="DevExpress.XtraEditors.NavigatorButtonsTextLocation, DevExpress.XtraEditors.v20.2">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel3.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.AutoHeight" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;fld_dgvHRCalendar.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcHRCalendar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="fld_lkeLookupEdit.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeLookupEdit.Name" xml:space="preserve">
+    <value>fld_lkeLookupEdit</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.Mask.ShowPlaceHolders" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.Mask.ShowPlaceHolders" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRCalendar.EmbeddedNavigator.ToolTipTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.NullValuePrompt" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarYear.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarYear.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>BOSERP.BOSERPScreen, BOSBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarName.Name" xml:space="preserve">
+    <value>fld_txtHRCalendarName</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.Mask.PlaceHolder" type="System.Char, mscorlib" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v20.2">
+    <value>Default</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 20</value>
+  </data>
+  <assembly alias="DevExpress.Utils.v20.2" name="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="fld_lkeLookupEdit.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeLookupEdit.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="fld_dgcHRCalendar.EmbeddedNavigator.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="fld_lkeLookupEdit.Properties.NullValuePromptShowForEmptyValue" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel2.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_lblLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 13</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarNo.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel3.Name" xml:space="preserve">
+    <value>fld_lblLabel3</value>
+  </data>
+  <data name="fld_txtHRCalendarName.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;fld_dgcHRCalendar.Name" xml:space="preserve">
+    <value>fld_dgcHRCalendar</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="fld_lblLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="fld_lblLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="fld_lblLabel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 129</value>
+  </data>
+  <data name="fld_dgcHRCalendar.EmbeddedNavigator.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="fld_lblLabel3.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="fld_lblLabel3.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="fld_lkeLookupEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 20</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarName.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.NullValuePromptShowForEmptyValue" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="fld_txtHRCalendarName.Properties.NullValuePrompt" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.Mask.AutoComplete" type="DevExpress.XtraEditors.Mask.AutoCompleteType, DevExpress.XtraEditors.v20.2">
+    <value>Default</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel3.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="fld_dgcHRCalendar.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.NullValuePrompt" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarYear.Name" xml:space="preserve">
+    <value>fld_txtHRCalendarYear</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeLookupEdit.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.NullValuePromptShowForEmptyValue" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;fld_txtHRCalendarNo.Name" xml:space="preserve">
+    <value>fld_txtHRCalendarNo</value>
+  </data>
+  <data name="fld_txtHRCalendarNo.Properties.Mask.SaveLiteral" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcHRCalendar.EmbeddedNavigator.ToolTipIconType" type="DevExpress.Utils.ToolTipIconType, DevExpress.Utils.v20.2">
+    <value>None</value>
+  </data>
+  <data name="fld_lblLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 13</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 20</value>
+  </data>
+  <assembly alias="DevExpress.Data.v20.2" name="DevExpress.Data.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="fld_dgcHRCalendar.EmbeddedNavigator.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v20.2">
+    <value>Default</value>
+  </data>
+  <data name="fld_txtHRCalendarYear.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ScreenHelper.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>272, 17</value>
+  </metadata>
+</root>

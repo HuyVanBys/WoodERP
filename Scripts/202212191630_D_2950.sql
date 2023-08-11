@@ -1,0 +1,1 @@
+﻿insert into STToolbars values('Alive', (Select STModuleID from STModules Where STModuleName = 'CostBudget'), 1, 'fld_barbtnDuplicate', N'Bản sao(F10)', 'Duplicate','Default', N'Bản sao(F10)', 'Action', (Select MAx(STToolbarOrder + 1) from STToolbars Where STModuleID = (Select STModuleID from STModules Where STModuleName = 'CostBudget') and STToolbarGroup = 'Action'),1,'',0,'')

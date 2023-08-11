@@ -1,0 +1,3 @@
+﻿Insert into ADConfigValues Values ('Alive', 'ProposalSourceSellingPriceMethodMasterData', 'MasterData', N'Lấy giá từ Master Data', '', 'ProposalSourceSellingPriceMethod', 1)
+Insert into ADConfigValues Values ('Alive', 'ProposalSourceSellingPriceMethodPriceSheet', 'PriceSheet', N'Lấy giá từ Bảng giá', '', 'ProposalSourceSellingPriceMethod', 1)
+Insert into ADConfigValues Values ('Alive', 'ProposalSourceSellingPriceMethodTyping', 'Typing', N'Tự nhập', '', 'ProposalSourceSellingPriceMethod', 1)

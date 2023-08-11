@@ -1,0 +1,31 @@
+﻿Insert into STToolbars  values ('Alive', (Select STModuleID from STModules Where STModuleName = 'ConversionProposal'), 1, 'fld_barbtnNewManual', N'Thông thường', 'Manual', 'Default', N'Thông thường', 'Action', (Select Max(STToolbarOrder + 1) from STToolbars Where STModuleID = (Select STModuleID from STModules Where STModuleName = 'ConversionProposal') and STToolbarGroup = 'Action'),1,'', (Select STToolbarID from STToolbars Where STModuleID = (Select STModuleID from STModules Where STModuleName = 'ConversionProposal') and STToolbarName = 'fld_barbtnNew') ,'')
+Insert into STToolbars  values ('Alive', (Select STModuleID from STModules Where STModuleName = 'ConversionProposal'), 1, 'fld_barbtnNewFromAllocationPlan', N'Từ Kế hoạch sử dụng NPL', 'NewFromAllocationPlan', 'Default', N'Từ Kế hoạch sử dụng NPL', 'Action', (Select Max(STToolbarOrder + 1) from STToolbars Where STModuleID = (Select STModuleID from STModules Where STModuleName = 'ConversionProposal') and STToolbarGroup = 'Action'),1,'', (Select STToolbarID from STToolbars Where STModuleID = (Select STModuleID from STModules Where STModuleName = 'ConversionProposal') and STToolbarName = 'fld_barbtnNew') ,'')
+
+Insert into STToolbarFunctions values ('', (Select STToolbarID from STToolbars Where STModuleID = (Select STModuleID from STModules Where STModuleName = 'ConversionProposal') and STToolbarName = 'fld_barbtnNewManual') , 'ActionNew', 'void ActionNew()', 'BOSERP.Modules.ConversionProposal.ConversionProposalModule',1)
+Insert into STToolbarFunctions values ('', (Select STToolbarID from STToolbars Where STModuleID = (Select STModuleID from STModules Where STModuleName = 'ConversionProposal') and STToolbarName = 'fld_barbtnNewFromAllocationPlan') , 'ActionNewFromAllocationPlan', 'void ActionNewFromAllocationPlan()', 'BOSERP.Modules.ConversionProposal.ConversionProposalModule',1)
+
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemProductLength',	N'Dài (mm)','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemProductHeight',	N'Dày (mm)','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','FK_ICMeasureUnitID',	N'Đơn vị tính','ICConversionProposalItemVMs','ICMeasureUnits','ICMeasureUnitName','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemComment',	N'Ghi chú','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','FK_ICStockID',	N'Kho','ICConversionProposalItemVMs','ICStocks','ICStockName','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemProductSerialNo',	N'Mã kiện','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemProductLotNo',	N'Mã lô hàng','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemProductNo',	N'Mã sản phẩm','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemProductDesc',	N'Mô tả','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemSupplierName',	N'Nhà cung cấp','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemProductWidth',	N'Rộng (mm)','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemProductQty',	N'Số lượng/ Khối lượng','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemWoodQty',	N'Số thanh tấm','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemProductName',	N'Tên sản phẩm','ICConversionProposalItemVMs','','','','',1,1)
+Insert into AAColumnAlias values (	0,'','Alive','ICConversionProposalItemLocation',	N'Vị trí','ICConversionProposalItemVMs','','','','',1,1)
+
+Insert into STFieldFormats values ('ConversionProposal', 'ICConversionProposalItemVMs', 1, 'ICConversionProposalItemProductHeight', 0, 0)
+Insert into STFieldFormats values ('ConversionProposal', 'ICConversionProposalItemVMs', 1, 'ICConversionProposalItemProductWidth', 0, 0)
+Insert into STFieldFormats values ('ConversionProposal', 'ICConversionProposalItemVMs', 1, 'ICConversionProposalItemProductLength', 0, 0)
+Insert into STFieldFormats values ('ConversionProposal', 'ICConversionProposalItemVMs', 15, 'ICConversionProposalItemProductQty', 0, 0)
+Insert into STFieldFormats values ('ConversionProposal', 'ICConversionProposalItemVMs', 15, 'ICConversionProposalItemWoodQty', 0, 0)
+
+Insert into STToolbars  values ('Alive', (Select STModuleID from STModules Where STModuleName = 'ProductConversion'), 1, 'fld_barbtnActionNewConversionProposal', N'Từ Đề nghị chuyển mã', 'ActionNewConversionProposal', 'Default', N'Từ Đề nghị chuyển mã', 'Action', (Select Max(STToolbarOrder + 1) from STToolbars Where STModuleID = (Select STModuleID from STModules Where STModuleName = 'ProductConversion') and STToolbarGroup = 'Action'),1,'', (Select STToolbarID from STToolbars Where STModuleID = (Select STModuleID from STModules Where STModuleName = 'ProductConversion') and STToolbarName = 'fld_barbtnNew') ,'')
+
+Insert into STToolbarFunctions values ('', (Select STToolbarID from STToolbars Where STModuleID = (Select STModuleID from STModules Where STModuleName = 'ProductConversion') and STToolbarName = 'fld_barbtnActionNewConversionProposal') , 'ActionNewConversionProposal', 'void ActionNewConversionProposal()', 'BOSERP.Modules.ProductConversion.ProductConversionModule',1)

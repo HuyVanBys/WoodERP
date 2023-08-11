@@ -1,0 +1,2892 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="ScreenHelper.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>272, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fld_rdgReceiptType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>342, 552</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fld_rdgReceiptType.Properties.Items" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="fld_rdgReceiptType.Properties.Items1" xml:space="preserve">
+    <value>Nhập kho theo thành phẩm</value>
+  </data>
+  <data name="fld_rdgReceiptType.Properties.Items2" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="fld_rdgReceiptType.Properties.Items3" xml:space="preserve">
+    <value>Nhập kho theo kiện</value>
+  </data>
+  <data name="fld_rdgReceiptType.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_rdgReceiptType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 29</value>
+  </data>
+  <data name="fld_rdgReceiptType.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="fld_rdgReceiptType.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;fld_rdgReceiptType.Name" xml:space="preserve">
+    <value>fld_rdgReceiptType</value>
+  </data>
+  <data name="&gt;&gt;fld_rdgReceiptType.Type" xml:space="preserve">
+    <value>BOSComponent.BOSRadioGroup, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_rdgReceiptType.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_rdgReceiptType.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fld_panelProduct.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 11</value>
+  </data>
+  <assembly alias="DevExpress.Utils.v20.2" name="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="fld_lkeFK_ICProductID1.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.Properties.Columns" xml:space="preserve">
+    <value>ICProductNo</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.Properties.Columns1" xml:space="preserve">
+    <value>Mã sản phẩm</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.Properties.Columns2" xml:space="preserve">
+    <value>ICProductName</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.Properties.Columns3" xml:space="preserve">
+    <value>Tên sản phẩm</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.Properties.Columns4" xml:space="preserve">
+    <value>ICProductDesc</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.Properties.Columns5" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>889, 20</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductID1.Name" xml:space="preserve">
+    <value>fld_lkeFK_ICProductID1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductID1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductID1.Parent" xml:space="preserve">
+    <value>fld_panelProduct</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductID1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_dgcICReceiptItems.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_dgcICReceiptItems.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcICReceiptItems.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 38</value>
+  </data>
+  <data name="fld_dgcICReceiptItems.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcICReceiptItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>960, 259</value>
+  </data>
+  <data name="fld_dgcICReceiptItems.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcICReceiptItems.Name" xml:space="preserve">
+    <value>fld_dgcICReceiptItems</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcICReceiptItems.Type" xml:space="preserve">
+    <value>BOSERP.Modules.WoodPurchaseReceipt.ICReceiptItemsGridControl, BOSERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcICReceiptItems.Parent" xml:space="preserve">
+    <value>fld_panelProduct</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcICReceiptItems.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bosLabel13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="bosLabel13.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="bosLabel13.TabIndex" type="System.Int32, mscorlib">
+    <value>387</value>
+  </data>
+  <data name="bosLabel13.Text" xml:space="preserve">
+    <value>Sản phẩm</value>
+  </data>
+  <data name="&gt;&gt;bosLabel13.Name" xml:space="preserve">
+    <value>bosLabel13</value>
+  </data>
+  <data name="&gt;&gt;bosLabel13.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel13.Parent" xml:space="preserve">
+    <value>fld_panelProduct</value>
+  </data>
+  <data name="&gt;&gt;bosLabel13.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_pteICReceiptItemProductPicture1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="fld_pteICReceiptItemProductPicture1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>971, 9</value>
+  </data>
+  <data name="fld_pteICReceiptItemProductPicture1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_pteICReceiptItemProductPicture1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 140</value>
+  </data>
+  <data name="fld_pteICReceiptItemProductPicture1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptItemProductPicture1.Name" xml:space="preserve">
+    <value>fld_pteICReceiptItemProductPicture1</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptItemProductPicture1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSPictureEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptItemProductPicture1.Parent" xml:space="preserve">
+    <value>fld_panelProduct</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptItemProductPicture1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="fld_panelProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 3</value>
+  </data>
+  <data name="fld_panelProduct.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_panelProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1115, 299</value>
+  </data>
+  <data name="fld_panelProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;fld_panelProduct.Name" xml:space="preserve">
+    <value>fld_panelProduct</value>
+  </data>
+  <data name="&gt;&gt;fld_panelProduct.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PanelControl, DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_panelProduct.Parent" xml:space="preserve">
+    <value>fld_tabPageReceiptItems</value>
+  </data>
+  <data name="&gt;&gt;fld_panelProduct.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_panelPackage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_tabChoocePackingList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_tabChoocePackingList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 38</value>
+  </data>
+  <data name="fld_dgcMultiPackageReceiptItems.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcMultiPackageReceiptItems.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcMultiPackageReceiptItems.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcMultiPackageReceiptItems.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcMultiPackageReceiptItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>959, 206</value>
+  </data>
+  <data name="fld_dgcMultiPackageReceiptItems.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiPackageReceiptItems.Name" xml:space="preserve">
+    <value>fld_dgcMultiPackageReceiptItems</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiPackageReceiptItems.Type" xml:space="preserve">
+    <value>BOSERP.Modules.WoodPurchaseReceipt.MultiPackageReceiptItemsGridControl, BOSERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiPackageReceiptItems.Parent" xml:space="preserve">
+    <value>fld_xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiPackageReceiptItems.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_xtraTabPage1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_xtraTabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>959, 206</value>
+  </data>
+  <data name="fld_xtraTabPage1.Text" xml:space="preserve">
+    <value>1 sản phẩm đóng trong nhiều kiện hàng</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage1.Name" xml:space="preserve">
+    <value>fld_xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage1.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage1.Parent" xml:space="preserve">
+    <value>fld_tabChoocePackingList</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_tabChoocePackingList.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_tabChoocePackingList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>966, 235</value>
+  </data>
+  <data name="fld_tabChoocePackingList.TabIndex" type="System.Int32, mscorlib">
+    <value>472</value>
+  </data>
+  <data name="fld_dgcMultiProductReceiptItems.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcMultiProductReceiptItems.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcMultiProductReceiptItems.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcMultiProductReceiptItems.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcMultiProductReceiptItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1001, 232</value>
+  </data>
+  <data name="fld_dgcMultiProductReceiptItems.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiProductReceiptItems.Name" xml:space="preserve">
+    <value>fld_dgcMultiProductReceiptItems</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiProductReceiptItems.Type" xml:space="preserve">
+    <value>BOSERP.Modules.WoodPurchaseReceipt.MultiProductReceiptItemsGridControl, BOSERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiProductReceiptItems.Parent" xml:space="preserve">
+    <value>fld_xtraTabPage2</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiProductReceiptItems.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_xtraTabPage2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_xtraTabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1001, 232</value>
+  </data>
+  <data name="fld_xtraTabPage2.Text" xml:space="preserve">
+    <value>1 kiện chứa nhiều sản phẩm</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage2.Name" xml:space="preserve">
+    <value>fld_xtraTabPage2</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage2.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage2.Parent" xml:space="preserve">
+    <value>fld_tabChoocePackingList</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_dgcMultiReceiptItems.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcMultiReceiptItems.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcMultiReceiptItems.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcMultiReceiptItems.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcMultiReceiptItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1001, 232</value>
+  </data>
+  <data name="fld_dgcMultiReceiptItems.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiReceiptItems.Name" xml:space="preserve">
+    <value>fld_dgcMultiReceiptItems</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiReceiptItems.Type" xml:space="preserve">
+    <value>BOSERP.Modules.WoodPurchaseReceipt.MultiReceiptItemsGridControl, BOSERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiReceiptItems.Parent" xml:space="preserve">
+    <value>fld_xtraTabPage3</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcMultiReceiptItems.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_xtraTabPage3.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_xtraTabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1001, 232</value>
+  </data>
+  <data name="fld_xtraTabPage3.Text" xml:space="preserve">
+    <value>Nhiều kiện chứa nhiều sản phẩm</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage3.Name" xml:space="preserve">
+    <value>fld_xtraTabPage3</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage3.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage3.Parent" xml:space="preserve">
+    <value>fld_tabChoocePackingList</value>
+  </data>
+  <data name="&gt;&gt;fld_xtraTabPage3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fld_tabChoocePackingList.Name" xml:space="preserve">
+    <value>fld_tabChoocePackingList</value>
+  </data>
+  <data name="&gt;&gt;fld_tabChoocePackingList.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTabControl, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_tabChoocePackingList.Parent" xml:space="preserve">
+    <value>fld_panelPackage</value>
+  </data>
+  <data name="&gt;&gt;fld_tabChoocePackingList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_Lablel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="fld_Lablel.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_Lablel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="fld_Lablel.TabIndex" type="System.Int32, mscorlib">
+    <value>387</value>
+  </data>
+  <data name="fld_Lablel.Text" xml:space="preserve">
+    <value>Sản phẩm</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel.Name" xml:space="preserve">
+    <value>fld_Lablel</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel.Parent" xml:space="preserve">
+    <value>fld_panelPackage</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_pteICReceiptItemProductPicture.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="fld_pteICReceiptItemProductPicture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>972, 9</value>
+  </data>
+  <data name="fld_pteICReceiptItemProductPicture.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_pteICReceiptItemProductPicture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 140</value>
+  </data>
+  <data name="fld_pteICReceiptItemProductPicture.TabIndex" type="System.Int32, mscorlib">
+    <value>471</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptItemProductPicture.Name" xml:space="preserve">
+    <value>fld_pteICReceiptItemProductPicture</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptItemProductPicture.Type" xml:space="preserve">
+    <value>BOSComponent.BOSPictureEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptItemProductPicture.Parent" xml:space="preserve">
+    <value>fld_panelPackage</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptItemProductPicture.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 12</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.Properties.Columns" xml:space="preserve">
+    <value>ICProductNo</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.Properties.Columns1" xml:space="preserve">
+    <value>Style No.</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.Properties.Columns2" xml:space="preserve">
+    <value>ICProductName</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.Properties.Columns3" xml:space="preserve">
+    <value>Own Style No.</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.Properties.Columns4" xml:space="preserve">
+    <value>ICProductDesc</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.Properties.Columns5" xml:space="preserve">
+    <value>Desc.</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>899, 20</value>
+  </data>
+  <data name="fld_lkeFK_ICProductID.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductID.Name" xml:space="preserve">
+    <value>fld_lkeFK_ICProductID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductID.Type" xml:space="preserve">
+    <value>BOSERP.ItemLookupEdit, BOSERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductID.Parent" xml:space="preserve">
+    <value>fld_panelPackage</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductID.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="fld_panelPackage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 29</value>
+  </data>
+  <data name="fld_panelPackage.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_panelPackage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1118, 271</value>
+  </data>
+  <data name="fld_panelPackage.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="fld_panelPackage.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;fld_panelPackage.Name" xml:space="preserve">
+    <value>fld_panelPackage</value>
+  </data>
+  <data name="&gt;&gt;fld_panelPackage.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PanelControl, DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_panelPackage.Parent" xml:space="preserve">
+    <value>fld_tabPageReceiptItems</value>
+  </data>
+  <data name="&gt;&gt;fld_panelPackage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 103</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.Properties.Columns" xml:space="preserve">
+    <value>HREmployeeNo</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.Properties.Columns1" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.Properties.Columns2" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <assembly alias="DevExpress.Data.v20.2" name="DevExpress.Data.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="fld_lkeFK_HREmployeeID.Properties.Columns3" type="DevExpress.Utils.FormatType, DevExpress.Data.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.Properties.Columns4" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.Properties.Columns5" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v20.2">
+    <value>Default</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.Properties.Columns6" xml:space="preserve">
+    <value>HREmployeeName</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.Properties.Columns7" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="fld_lkeFK_HREmployeeID.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_HREmployeeID.Name" xml:space="preserve">
+    <value>fld_lkeFK_HREmployeeID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_HREmployeeID.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_HREmployeeID.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_HREmployeeID.ZOrder" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="fld_pteICReceiptEmployeePicture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="fld_pteICReceiptEmployeePicture.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_pteICReceiptEmployeePicture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 96</value>
+  </data>
+  <data name="fld_pteICReceiptEmployeePicture.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptEmployeePicture.Name" xml:space="preserve">
+    <value>fld_pteICReceiptEmployeePicture</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptEmployeePicture.Type" xml:space="preserve">
+    <value>BOSComponent.BOSPictureEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptEmployeePicture.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_pteICReceiptEmployeePicture.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="fld_Lablel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>643, 16</value>
+  </data>
+  <data name="fld_Lablel2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_Lablel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="fld_Lablel2.TabIndex" type="System.Int32, mscorlib">
+    <value>478</value>
+  </data>
+  <data name="fld_Lablel2.Text" xml:space="preserve">
+    <value>Tình trạng</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel2.Name" xml:space="preserve">
+    <value>fld_Lablel2</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel2.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel2.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel2.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="fld_lblLabel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 43</value>
+  </data>
+  <data name="fld_lblLabel7.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lblLabel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="fld_lblLabel7.TabIndex" type="System.Int32, mscorlib">
+    <value>481</value>
+  </data>
+  <data name="fld_lblLabel7.Text" xml:space="preserve">
+    <value>Đối tượng</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel7.Name" xml:space="preserve">
+    <value>fld_lblLabel7</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel7.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel7.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel7.ZOrder" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="fld_Lablel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 69</value>
+  </data>
+  <data name="fld_Lablel3.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_Lablel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 13</value>
+  </data>
+  <data name="fld_Lablel3.TabIndex" type="System.Int32, mscorlib">
+    <value>482</value>
+  </data>
+  <data name="fld_Lablel3.Text" xml:space="preserve">
+    <value>Kho</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel3.Name" xml:space="preserve">
+    <value>fld_Lablel3</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel3.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel3.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_Lablel3.ZOrder" xml:space="preserve">
+    <value>43</value>
+  </data>
+  <data name="fld_medICReceiptDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>966, 66</value>
+  </data>
+  <data name="fld_medICReceiptDesc.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_medICReceiptDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 45</value>
+  </data>
+  <data name="fld_medICReceiptDesc.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;fld_medICReceiptDesc.Name" xml:space="preserve">
+    <value>fld_medICReceiptDesc</value>
+  </data>
+  <data name="&gt;&gt;fld_medICReceiptDesc.Type" xml:space="preserve">
+    <value>BOSComponent.BOSMemoEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_medICReceiptDesc.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_medICReceiptDesc.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 66</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Properties.Columns" xml:space="preserve">
+    <value>ICStockNo</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Properties.Columns1" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Properties.Columns2" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Properties.Columns3" type="DevExpress.Utils.FormatType, DevExpress.Data.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Properties.Columns4" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Properties.Columns5" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v20.2">
+    <value>Default</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Properties.Columns6" xml:space="preserve">
+    <value>ICStockName</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Properties.Columns7" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_ICStockID1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICStockID1.Name" xml:space="preserve">
+    <value>fld_lkeFK_ICStockID1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICStockID1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICStockID1.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICStockID1.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="fld_dteICReceiptDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 13</value>
+  </data>
+  <data name="fld_dteICReceiptDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_dteICReceiptDate.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dteICReceiptDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_dteICReceiptDate.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_dteICReceiptDate.Name" xml:space="preserve">
+    <value>fld_dteICReceiptDate</value>
+  </data>
+  <data name="&gt;&gt;fld_dteICReceiptDate.Type" xml:space="preserve">
+    <value>BOSComponent.BOSDateEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dteICReceiptDate.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_dteICReceiptDate.ZOrder" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="BOSLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 16</value>
+  </data>
+  <data name="BOSLabel2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="BOSLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="BOSLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>508</value>
+  </data>
+  <data name="BOSLabel2.Text" xml:space="preserve">
+    <value>Ngày chứng từ</value>
+  </data>
+  <data name="&gt;&gt;BOSLabel2.Name" xml:space="preserve">
+    <value>BOSLabel2</value>
+  </data>
+  <data name="&gt;&gt;BOSLabel2.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BOSLabel2.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;BOSLabel2.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="bosLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 16</value>
+  </data>
+  <data name="bosLabel1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
+  </data>
+  <data name="bosLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>510</value>
+  </data>
+  <data name="bosLabel1.Text" xml:space="preserve">
+    <value>Mã chứng từ</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.Name" xml:space="preserve">
+    <value>bosLabel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel1.ZOrder" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="fld_txtICReceiptNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 13</value>
+  </data>
+  <data name="fld_txtICReceiptNo.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_txtICReceiptNo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptNo.Name" xml:space="preserve">
+    <value>fld_txtICReceiptNo</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptNo.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptNo.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptNo.ZOrder" xml:space="preserve">
+    <value>66</value>
+  </data>
+  <data name="bosLabel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 43</value>
+  </data>
+  <data name="bosLabel6.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="bosLabel6.TabIndex" type="System.Int32, mscorlib">
+    <value>518</value>
+  </data>
+  <data name="bosLabel6.Text" xml:space="preserve">
+    <value>Mã hóa đơn NCC</value>
+  </data>
+  <data name="&gt;&gt;bosLabel6.Name" xml:space="preserve">
+    <value>bosLabel6</value>
+  </data>
+  <data name="&gt;&gt;bosLabel6.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel6.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel6.ZOrder" xml:space="preserve">
+    <value>57</value>
+  </data>
+  <data name="fld_txtICReceiptInvoiceInNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 39</value>
+  </data>
+  <data name="fld_txtICReceiptInvoiceInNo.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptInvoiceInNo.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptInvoiceInNo.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptInvoiceInNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_txtICReceiptInvoiceInNo.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptInvoiceInNo.Name" xml:space="preserve">
+    <value>fld_txtICReceiptInvoiceInNo</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptInvoiceInNo.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptInvoiceInNo.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptInvoiceInNo.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="bosLabel10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 69</value>
+  </data>
+  <data name="bosLabel10.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="bosLabel10.TabIndex" type="System.Int32, mscorlib">
+    <value>526</value>
+  </data>
+  <data name="bosLabel10.Text" xml:space="preserve">
+    <value>Mã lô gỗ tròn</value>
+  </data>
+  <data name="&gt;&gt;bosLabel10.Name" xml:space="preserve">
+    <value>bosLabel10</value>
+  </data>
+  <data name="&gt;&gt;bosLabel10.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel10.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel10.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="fld_txtICReceiptPackNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 66</value>
+  </data>
+  <data name="fld_txtICReceiptPackNo.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptPackNo.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptPackNo.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptPackNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_txtICReceiptPackNo.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptPackNo.Name" xml:space="preserve">
+    <value>fld_txtICReceiptPackNo</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptPackNo.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptPackNo.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptPackNo.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="fld_lkeICReceiptStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>725, 13</value>
+  </data>
+  <data name="fld_lkeICReceiptStatus.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeICReceiptStatus.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeICReceiptStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeICReceiptStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeICReceiptStatus.Name" xml:space="preserve">
+    <value>fld_lkeICReceiptStatus</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeICReceiptStatus.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeICReceiptStatus.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeICReceiptStatus.ZOrder" xml:space="preserve">
+    <value>62</value>
+  </data>
+  <data name="bosLabel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>644, 43</value>
+  </data>
+  <data name="bosLabel3.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="bosLabel3.TabIndex" type="System.Int32, mscorlib">
+    <value>518</value>
+  </data>
+  <data name="bosLabel3.Text" xml:space="preserve">
+    <value>Ngày hóa đơn</value>
+  </data>
+  <data name="&gt;&gt;bosLabel3.Name" xml:space="preserve">
+    <value>bosLabel3</value>
+  </data>
+  <data name="&gt;&gt;bosLabel3.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel3.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel3.ZOrder" xml:space="preserve">
+    <value>41</value>
+  </data>
+  <data name="fld_dteICReceiptInvoiceInDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>725, 39</value>
+  </data>
+  <data name="fld_dteICReceiptInvoiceInDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_dteICReceiptInvoiceInDate.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dteICReceiptInvoiceInDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_dteICReceiptInvoiceInDate.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;fld_dteICReceiptInvoiceInDate.Name" xml:space="preserve">
+    <value>fld_dteICReceiptInvoiceInDate</value>
+  </data>
+  <data name="&gt;&gt;fld_dteICReceiptInvoiceInDate.Type" xml:space="preserve">
+    <value>BOSComponent.BOSDateEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dteICReceiptInvoiceInDate.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_dteICReceiptInvoiceInDate.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="bosLabel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 120</value>
+  </data>
+  <data name="bosLabel4.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="bosLabel4.TabIndex" type="System.Int32, mscorlib">
+    <value>528</value>
+  </data>
+  <data name="bosLabel4.Text" xml:space="preserve">
+    <value>Người giao hàng</value>
+  </data>
+  <data name="&gt;&gt;bosLabel4.Name" xml:space="preserve">
+    <value>bosLabel4</value>
+  </data>
+  <data name="&gt;&gt;bosLabel4.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel4.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel4.ZOrder" xml:space="preserve">
+    <value>61</value>
+  </data>
+  <data name="fld_txtICReceiptDeliveryContactName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 118</value>
+  </data>
+  <data name="fld_txtICReceiptDeliveryContactName.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptDeliveryContactName.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptDeliveryContactName.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptDeliveryContactName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_txtICReceiptDeliveryContactName.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDeliveryContactName.Name" xml:space="preserve">
+    <value>fld_txtICReceiptDeliveryContactName</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDeliveryContactName.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDeliveryContactName.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDeliveryContactName.ZOrder" xml:space="preserve">
+    <value>54</value>
+  </data>
+  <data name="bosLabel5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="bosLabel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>889, 533</value>
+  </data>
+  <data name="bosLabel5.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="bosLabel5.TabIndex" type="System.Int32, mscorlib">
+    <value>529</value>
+  </data>
+  <data name="bosLabel5.Text" xml:space="preserve">
+    <value>Tổng tiền</value>
+  </data>
+  <data name="&gt;&gt;bosLabel5.Name" xml:space="preserve">
+    <value>bosLabel5</value>
+  </data>
+  <data name="&gt;&gt;bosLabel5.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel5.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel5.ZOrder" xml:space="preserve">
+    <value>58</value>
+  </data>
+  <data name="bosLabel8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="bosLabel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>868, 661</value>
+  </data>
+  <data name="bosLabel8.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="bosLabel8.TabIndex" type="System.Int32, mscorlib">
+    <value>529</value>
+  </data>
+  <data name="bosLabel8.Text" xml:space="preserve">
+    <value>THÀNH TIỀN</value>
+  </data>
+  <data name="&gt;&gt;bosLabel8.Name" xml:space="preserve">
+    <value>bosLabel8</value>
+  </data>
+  <data name="&gt;&gt;bosLabel8.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel8.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel8.ZOrder" xml:space="preserve">
+    <value>49</value>
+  </data>
+  <data name="fld_txtICReceiptSubTotalCost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="fld_txtICReceiptSubTotalCost.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="fld_txtICReceiptSubTotalCost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>956, 530</value>
+  </data>
+  <data name="fld_txtICReceiptSubTotalCost.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n</value>
+  </data>
+  <assembly alias="DevExpress.XtraEditors.v20.2" name="DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="fld_txtICReceiptSubTotalCost.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtICReceiptSubTotalCost.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptSubTotalCost.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptSubTotalCost.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptSubTotalCost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 20</value>
+  </data>
+  <data name="fld_txtICReceiptSubTotalCost.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptSubTotalCost.Name" xml:space="preserve">
+    <value>fld_txtICReceiptSubTotalCost</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptSubTotalCost.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptSubTotalCost.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptSubTotalCost.ZOrder" xml:space="preserve">
+    <value>47</value>
+  </data>
+  <data name="fld_txtICReceiptTotalCost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="fld_txtICReceiptTotalCost.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="fld_txtICReceiptTotalCost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>956, 658</value>
+  </data>
+  <data name="fld_txtICReceiptTotalCost.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n</value>
+  </data>
+  <data name="fld_txtICReceiptTotalCost.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtICReceiptTotalCost.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptTotalCost.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptTotalCost.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptTotalCost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 20</value>
+  </data>
+  <data name="fld_txtICReceiptTotalCost.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalCost.Name" xml:space="preserve">
+    <value>fld_txtICReceiptTotalCost</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalCost.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalCost.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalCost.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="bosLabel11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="bosLabel11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>861, 584</value>
+  </data>
+  <data name="bosLabel11.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="bosLabel11.TabIndex" type="System.Int32, mscorlib">
+    <value>529</value>
+  </data>
+  <data name="bosLabel11.Text" xml:space="preserve">
+    <value>Phí vận chuyển</value>
+  </data>
+  <data name="&gt;&gt;bosLabel11.Name" xml:space="preserve">
+    <value>bosLabel11</value>
+  </data>
+  <data name="&gt;&gt;bosLabel11.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel11.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel11.ZOrder" xml:space="preserve">
+    <value>52</value>
+  </data>
+  <data name="bosLabel12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="bosLabel12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>895, 610</value>
+  </data>
+  <data name="bosLabel12.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="bosLabel12.TabIndex" type="System.Int32, mscorlib">
+    <value>529</value>
+  </data>
+  <data name="bosLabel12.Text" xml:space="preserve">
+    <value>Phí khác</value>
+  </data>
+  <data name="&gt;&gt;bosLabel12.Name" xml:space="preserve">
+    <value>bosLabel12</value>
+  </data>
+  <data name="&gt;&gt;bosLabel12.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel12.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel12.ZOrder" xml:space="preserve">
+    <value>51</value>
+  </data>
+  <data name="fld_txtICReceiptShippingFee.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="fld_txtICReceiptShippingFee.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="fld_txtICReceiptShippingFee.Location" type="System.Drawing.Point, System.Drawing">
+    <value>956, 581</value>
+  </data>
+  <data name="fld_txtICReceiptShippingFee.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n</value>
+  </data>
+  <data name="fld_txtICReceiptShippingFee.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtICReceiptShippingFee.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptShippingFee.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptShippingFee.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptShippingFee.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 20</value>
+  </data>
+  <data name="fld_txtICReceiptShippingFee.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptShippingFee.Name" xml:space="preserve">
+    <value>fld_txtICReceiptShippingFee</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptShippingFee.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptShippingFee.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptShippingFee.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="fld_txtICReceiptShippingExtraFee.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="fld_txtICReceiptShippingExtraFee.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="fld_txtICReceiptShippingExtraFee.Location" type="System.Drawing.Point, System.Drawing">
+    <value>956, 607</value>
+  </data>
+  <data name="fld_txtICReceiptShippingExtraFee.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n</value>
+  </data>
+  <data name="fld_txtICReceiptShippingExtraFee.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtICReceiptShippingExtraFee.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptShippingExtraFee.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptShippingExtraFee.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptShippingExtraFee.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 20</value>
+  </data>
+  <data name="fld_txtICReceiptShippingExtraFee.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptShippingExtraFee.Name" xml:space="preserve">
+    <value>fld_txtICReceiptShippingExtraFee</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptShippingExtraFee.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptShippingExtraFee.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptShippingExtraFee.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="fld_lkeFK_ARSaleContractID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>966, 13</value>
+  </data>
+  <data name="fld_lkeFK_ARSaleContractID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_ARSaleContractID.Properties.Columns" xml:space="preserve">
+    <value>APPurchaseContractNo</value>
+  </data>
+  <data name="fld_lkeFK_ARSaleContractID.Properties.Columns1" xml:space="preserve">
+    <value>Số hợp đồng</value>
+  </data>
+  <data name="fld_lkeFK_ARSaleContractID.Properties.Columns2" xml:space="preserve">
+    <value>APPurchaseContractName</value>
+  </data>
+  <data name="fld_lkeFK_ARSaleContractID.Properties.Columns3" xml:space="preserve">
+    <value>Tên hợp đồng</value>
+  </data>
+  <data name="fld_lkeFK_ARSaleContractID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_ARSaleContractID.TabIndex" type="System.Int32, mscorlib">
+    <value>606</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ARSaleContractID.Name" xml:space="preserve">
+    <value>fld_lkeFK_ARSaleContractID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ARSaleContractID.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ARSaleContractID.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ARSaleContractID.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLabel26.Location" type="System.Drawing.Point, System.Drawing">
+    <value>893, 16</value>
+  </data>
+  <data name="bosLabel26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="bosLabel26.TabIndex" type="System.Int32, mscorlib">
+    <value>605</value>
+  </data>
+  <data name="bosLabel26.Text" xml:space="preserve">
+    <value>Số hợp đồng</value>
+  </data>
+  <data name="&gt;&gt;bosLabel26.Name" xml:space="preserve">
+    <value>bosLabel26</value>
+  </data>
+  <data name="&gt;&gt;bosLabel26.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel26.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel26.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 39</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns" xml:space="preserve">
+    <value>ACObjectNo</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns1" xml:space="preserve">
+    <value>Mã đối tượng</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns2" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns3" type="DevExpress.Utils.FormatType, DevExpress.Data.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns4" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns5" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v20.2">
+    <value>Default</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns6" xml:space="preserve">
+    <value>ACObjectName</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Properties.Columns7" xml:space="preserve">
+    <value>Tên đối tượng</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_ACAssObjectID.TabIndex" type="System.Int32, mscorlib">
+    <value>599</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACAssObjectID.Name" xml:space="preserve">
+    <value>fld_lkeFK_ACAssObjectID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACAssObjectID.Type" xml:space="preserve">
+    <value>BOSERP.AccObjectLookupEdit, BOSBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACAssObjectID.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACAssObjectID.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 146</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Properties.Columns" xml:space="preserve">
+    <value>ACObjectNo</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Properties.Columns1" xml:space="preserve">
+    <value>Mã đối tượng</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Properties.Columns2" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Properties.Columns3" type="DevExpress.Utils.FormatType, DevExpress.Data.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Properties.Columns4" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Properties.Columns5" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v20.2">
+    <value>Default</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Properties.Columns6" xml:space="preserve">
+    <value>ACObjectName</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Properties.Columns7" xml:space="preserve">
+    <value>Tên đối tượng</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_ACObjectID.TabIndex" type="System.Int32, mscorlib">
+    <value>598</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACObjectID.Name" xml:space="preserve">
+    <value>fld_lkeFK_ACObjectID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACObjectID.Type" xml:space="preserve">
+    <value>BOSERP.AccObjectLookupEdit, BOSBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACObjectID.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ACObjectID.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="bosLabel25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 145</value>
+  </data>
+  <data name="bosLabel25.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="bosLabel25.TabIndex" type="System.Int32, mscorlib">
+    <value>597</value>
+  </data>
+  <data name="bosLabel25.Text" xml:space="preserve">
+    <value>Mã LSX</value>
+  </data>
+  <data name="&gt;&gt;bosLabel25.Name" xml:space="preserve">
+    <value>bosLabel25</value>
+  </data>
+  <data name="&gt;&gt;bosLabel25.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel25.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel25.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="bosLookupEdit1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 143</value>
+  </data>
+  <data name="bosLookupEdit1.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="bosLookupEdit1.Properties.Columns" xml:space="preserve">
+    <value>MMBatchProductNo</value>
+  </data>
+  <data name="bosLookupEdit1.Properties.Columns1" xml:space="preserve">
+    <value>Mã LSX</value>
+  </data>
+  <data name="bosLookupEdit1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLookupEdit1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="bosLookupEdit1.TabIndex" type="System.Int32, mscorlib">
+    <value>596</value>
+  </data>
+  <data name="&gt;&gt;bosLookupEdit1.Name" xml:space="preserve">
+    <value>bosLookupEdit1</value>
+  </data>
+  <data name="&gt;&gt;bosLookupEdit1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLookupEdit1.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLookupEdit1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="fld_lblLabel10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 147</value>
+  </data>
+  <data name="fld_lblLabel10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="fld_lblLabel10.TabIndex" type="System.Int32, mscorlib">
+    <value>595</value>
+  </data>
+  <data name="fld_lblLabel10.Text" xml:space="preserve">
+    <value>Đối tượng 2</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel10.Name" xml:space="preserve">
+    <value>fld_lblLabel10</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel10.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel10.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lblLabel10.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="bosLabel29.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 121</value>
+  </data>
+  <data name="bosLabel29.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="bosLabel29.TabIndex" type="System.Int32, mscorlib">
+    <value>591</value>
+  </data>
+  <data name="bosLabel29.Text" xml:space="preserve">
+    <value>Mã ĐMH</value>
+  </data>
+  <data name="&gt;&gt;bosLabel29.Name" xml:space="preserve">
+    <value>bosLabel29</value>
+  </data>
+  <data name="&gt;&gt;bosLabel29.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel29.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel29.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="bosTextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 117</value>
+  </data>
+  <data name="bosTextBox2.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosTextBox2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="bosTextBox2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosTextBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="bosTextBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>590</value>
+  </data>
+  <data name="&gt;&gt;bosTextBox2.Name" xml:space="preserve">
+    <value>bosTextBox2</value>
+  </data>
+  <data name="&gt;&gt;bosTextBox2.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosTextBox2.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosTextBox2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="fld_txtICReceiptDeclarations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>725, 146</value>
+  </data>
+  <data name="fld_txtICReceiptDeclarations.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptDeclarations.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptDeclarations.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptDeclarations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_txtICReceiptDeclarations.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="fld_txtICReceiptDeclarations.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDeclarations.Name" xml:space="preserve">
+    <value>fld_txtICReceiptDeclarations</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDeclarations.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDeclarations.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDeclarations.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="bosLabel22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>643, 146</value>
+  </data>
+  <data name="bosLabel22.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="bosLabel22.TabIndex" type="System.Int32, mscorlib">
+    <value>533</value>
+  </data>
+  <data name="bosLabel22.Text" xml:space="preserve">
+    <value>Số tờ khai</value>
+  </data>
+  <data name="bosLabel22.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bosLabel22.Name" xml:space="preserve">
+    <value>bosLabel22</value>
+  </data>
+  <data name="&gt;&gt;bosLabel22.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel22.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel22.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="fld_lkeFK_GECountryID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>966, 40</value>
+  </data>
+  <data name="fld_lkeFK_GECountryID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_GECountryID.Properties.Columns" xml:space="preserve">
+    <value>GECountryName</value>
+  </data>
+  <data name="fld_lkeFK_GECountryID.Properties.Columns1" xml:space="preserve">
+    <value>Xuất xứ</value>
+  </data>
+  <data name="fld_lkeFK_GECountryID.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_GECountryID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_GECountryID.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_GECountryID.Name" xml:space="preserve">
+    <value>fld_lkeFK_GECountryID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_GECountryID.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_GECountryID.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_GECountryID.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="bosLabel21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>893, 43</value>
+  </data>
+  <data name="bosLabel21.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="bosLabel21.TabIndex" type="System.Int32, mscorlib">
+    <value>474</value>
+  </data>
+  <data name="bosLabel21.Text" xml:space="preserve">
+    <value>Xuất xứ</value>
+  </data>
+  <data name="&gt;&gt;bosLabel21.Name" xml:space="preserve">
+    <value>bosLabel21</value>
+  </data>
+  <data name="&gt;&gt;bosLabel21.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel21.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel21.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeTTMTID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>725, 92</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeTTMTID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeTTMTID.Properties.Columns" xml:space="preserve">
+    <value>ICProductAttributeValue</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeTTMTID.Properties.Columns1" xml:space="preserve">
+    <value>TTMT</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeTTMTID.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeTTMTID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeTTMTID.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductAttributeTTMTID.Name" xml:space="preserve">
+    <value>fld_lkeFK_ICProductAttributeTTMTID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductAttributeTTMTID.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductAttributeTTMTID.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductAttributeTTMTID.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="bosLabel19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>644, 95</value>
+  </data>
+  <data name="bosLabel19.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="bosLabel19.TabIndex" type="System.Int32, mscorlib">
+    <value>476</value>
+  </data>
+  <data name="bosLabel19.Text" xml:space="preserve">
+    <value>TTMT</value>
+  </data>
+  <data name="&gt;&gt;bosLabel19.Name" xml:space="preserve">
+    <value>bosLabel19</value>
+  </data>
+  <data name="&gt;&gt;bosLabel19.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel19.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel19.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="fld_lkeICReceiptReceiptType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 92</value>
+  </data>
+  <data name="fld_lkeICReceiptReceiptType.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeICReceiptReceiptType.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeICReceiptReceiptType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeICReceiptReceiptType.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeICReceiptReceiptType.Name" xml:space="preserve">
+    <value>fld_lkeICReceiptReceiptType</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeICReceiptReceiptType.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeICReceiptReceiptType.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeICReceiptReceiptType.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="bosLabel18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 95</value>
+  </data>
+  <data name="bosLabel18.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 13</value>
+  </data>
+  <data name="bosLabel18.TabIndex" type="System.Int32, mscorlib">
+    <value>531</value>
+  </data>
+  <data name="bosLabel18.Text" xml:space="preserve">
+    <value>Loại</value>
+  </data>
+  <data name="&gt;&gt;bosLabel18.Name" xml:space="preserve">
+    <value>bosLabel18</value>
+  </data>
+  <data name="&gt;&gt;bosLabel18.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel18.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel18.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeWoodTypeID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 92</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeWoodTypeID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeWoodTypeID.Properties.Columns" xml:space="preserve">
+    <value>ICProductAttributeNo</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeWoodTypeID.Properties.Columns1" xml:space="preserve">
+    <value>Mã loại gỗ</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeWoodTypeID.Properties.Columns2" xml:space="preserve">
+    <value>ICProductAttributeValue</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeWoodTypeID.Properties.Columns3" xml:space="preserve">
+    <value>Tên loại gỗ</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeWoodTypeID.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeWoodTypeID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_ICProductAttributeWoodTypeID.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductAttributeWoodTypeID.Name" xml:space="preserve">
+    <value>fld_lkeFK_ICProductAttributeWoodTypeID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductAttributeWoodTypeID.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductAttributeWoodTypeID.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_ICProductAttributeWoodTypeID.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="bosLine1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="fld_medICReceiptComment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_medICReceiptComment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="fld_medICReceiptComment.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_medICReceiptComment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 121</value>
+  </data>
+  <data name="fld_medICReceiptComment.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fld_medICReceiptComment.Name" xml:space="preserve">
+    <value>fld_medICReceiptComment</value>
+  </data>
+  <data name="&gt;&gt;fld_medICReceiptComment.Type" xml:space="preserve">
+    <value>BOSComponent.BOSMemoEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_medICReceiptComment.Parent" xml:space="preserve">
+    <value>bosLine1</value>
+  </data>
+  <data name="&gt;&gt;fld_medICReceiptComment.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bosLine1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt, style=Bold</value>
+  </data>
+  <data name="bosLine1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 533</value>
+  </data>
+  <data name="bosLine1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLine1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 141</value>
+  </data>
+  <data name="bosLine1.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="bosLine1.Text" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
+  <data name="&gt;&gt;bosLine1.Name" xml:space="preserve">
+    <value>bosLine1</value>
+  </data>
+  <data name="&gt;&gt;bosLine1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLine, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLine1.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLine1.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="bosLabel20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 95</value>
+  </data>
+  <data name="bosLabel20.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="bosLabel20.TabIndex" type="System.Int32, mscorlib">
+    <value>475</value>
+  </data>
+  <data name="bosLabel20.Text" xml:space="preserve">
+    <value>Loại gỗ</value>
+  </data>
+  <data name="&gt;&gt;bosLabel20.Name" xml:space="preserve">
+    <value>bosLabel20</value>
+  </data>
+  <data name="&gt;&gt;bosLabel20.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel20.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel20.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="fld_tabReceiptItems.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="fld_tabReceiptItems.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 198</value>
+  </data>
+  <data name="fld_tabPageReceiptItems.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_tabPageReceiptItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1113, 300</value>
+  </data>
+  <data name="fld_tabPageReceiptItems.Text" xml:space="preserve">
+    <value>Danh sách sản phẩm</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPageReceiptItems.Name" xml:space="preserve">
+    <value>fld_tabPageReceiptItems</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPageReceiptItems.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPageReceiptItems.Parent" xml:space="preserve">
+    <value>fld_tabReceiptItems</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPageReceiptItems.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_tabReceiptItems.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_tabReceiptItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1120, 329</value>
+  </data>
+  <data name="fld_tabReceiptItems.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="fld_dgcACDocumentEntrys.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="fld_dgcACDocumentEntrys.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8.25pt</value>
+  </data>
+  <data name="fld_dgcACDocumentEntrys.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fld_dgcACDocumentEntrys.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_dgcACDocumentEntrys.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1155, 326</value>
+  </data>
+  <data name="fld_dgcACDocumentEntrys.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcACDocumentEntrys.Name" xml:space="preserve">
+    <value>fld_dgcACDocumentEntrys</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcACDocumentEntrys.Type" xml:space="preserve">
+    <value>BOSERP.BaseDocumentEntryGridControl, BOSERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcACDocumentEntrys.Parent" xml:space="preserve">
+    <value>fld_tabPageDocumentEntrys</value>
+  </data>
+  <data name="&gt;&gt;fld_dgcACDocumentEntrys.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fld_tabPageDocumentEntrys.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_tabPageDocumentEntrys.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1155, 326</value>
+  </data>
+  <data name="fld_tabPageDocumentEntrys.Text" xml:space="preserve">
+    <value>Hạch toán</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPageDocumentEntrys.Name" xml:space="preserve">
+    <value>fld_tabPageDocumentEntrys</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPageDocumentEntrys.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPageDocumentEntrys.Parent" xml:space="preserve">
+    <value>fld_tabReceiptItems</value>
+  </data>
+  <data name="&gt;&gt;fld_tabPageDocumentEntrys.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fld_tabReceiptItems.Name" xml:space="preserve">
+    <value>fld_tabReceiptItems</value>
+  </data>
+  <data name="&gt;&gt;fld_tabReceiptItems.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTabControl, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_tabReceiptItems.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_tabReceiptItems.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="fld_lkeFK_GECurrencyID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 169</value>
+  </data>
+  <data name="fld_lkeFK_GECurrencyID.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v20.2">
+    <value>Combo</value>
+  </data>
+  <data name="fld_lkeFK_GECurrencyID.Properties.Columns" xml:space="preserve">
+    <value>GECurrencyName</value>
+  </data>
+  <data name="fld_lkeFK_GECurrencyID.Properties.Columns1" xml:space="preserve">
+    <value>Loại tiền tệ</value>
+  </data>
+  <data name="fld_lkeFK_GECurrencyID.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_lkeFK_GECurrencyID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_lkeFK_GECurrencyID.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_GECurrencyID.Name" xml:space="preserve">
+    <value>fld_lkeFK_GECurrencyID</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_GECurrencyID.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLookupEdit, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_GECurrencyID.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_lkeFK_GECurrencyID.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountFix.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountFix.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountFix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1034, 555</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountFix.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountFix.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountFix.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountFix.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountFix.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountFix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 20</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountFix.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDiscountFix.Name" xml:space="preserve">
+    <value>fld_txtICReceiptDiscountFix</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDiscountFix.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDiscountFix.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDiscountFix.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="bosLabel23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>644, 176</value>
+  </data>
+  <data name="bosLabel23.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="bosLabel23.TabIndex" type="System.Int32, mscorlib">
+    <value>518</value>
+  </data>
+  <data name="bosLabel23.Text" xml:space="preserve">
+    <value>Tổng SL</value>
+  </data>
+  <data name="&gt;&gt;bosLabel23.Name" xml:space="preserve">
+    <value>bosLabel23</value>
+  </data>
+  <data name="&gt;&gt;bosLabel23.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel23.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel23.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="bosLabel17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>643, 68</value>
+  </data>
+  <data name="bosLabel17.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="bosLabel17.TabIndex" type="System.Int32, mscorlib">
+    <value>518</value>
+  </data>
+  <data name="bosLabel17.Text" xml:space="preserve">
+    <value>Tổng KL (m3)</value>
+  </data>
+  <data name="&gt;&gt;bosLabel17.Name" xml:space="preserve">
+    <value>bosLabel17</value>
+  </data>
+  <data name="&gt;&gt;bosLabel17.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel17.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel17.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="bosLabel15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 175</value>
+  </data>
+  <data name="bosLabel15.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="bosLabel15.TabIndex" type="System.Int32, mscorlib">
+    <value>518</value>
+  </data>
+  <data name="bosLabel15.Text" xml:space="preserve">
+    <value>Tỷ giá</value>
+  </data>
+  <data name="&gt;&gt;bosLabel15.Name" xml:space="preserve">
+    <value>bosLabel15</value>
+  </data>
+  <data name="&gt;&gt;bosLabel15.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel15.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel15.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="bosLabel16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>893, 68</value>
+  </data>
+  <data name="bosLabel16.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="bosLabel16.TabIndex" type="System.Int32, mscorlib">
+    <value>518</value>
+  </data>
+  <data name="bosLabel16.Text" xml:space="preserve">
+    <value>Diễn giải</value>
+  </data>
+  <data name="&gt;&gt;bosLabel16.Name" xml:space="preserve">
+    <value>bosLabel16</value>
+  </data>
+  <data name="&gt;&gt;bosLabel16.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel16.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel16.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="bosLabel14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 172</value>
+  </data>
+  <data name="bosLabel14.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="bosLabel14.TabIndex" type="System.Int32, mscorlib">
+    <value>518</value>
+  </data>
+  <data name="bosLabel14.Text" xml:space="preserve">
+    <value>Loại tiền tệ</value>
+  </data>
+  <data name="&gt;&gt;bosLabel14.Name" xml:space="preserve">
+    <value>bosLabel14</value>
+  </data>
+  <data name="&gt;&gt;bosLabel14.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel14.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel14.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="fld_txtICReceiptTaxAmount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="fld_txtICReceiptTaxAmount.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="fld_txtICReceiptTaxAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1034, 633</value>
+  </data>
+  <data name="fld_txtICReceiptTaxAmount.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n</value>
+  </data>
+  <data name="fld_txtICReceiptTaxAmount.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtICReceiptTaxAmount.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptTaxAmount.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptTaxAmount.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptTaxAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 20</value>
+  </data>
+  <data name="fld_txtICReceiptTaxAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTaxAmount.Name" xml:space="preserve">
+    <value>fld_txtICReceiptTaxAmount</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTaxAmount.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTaxAmount.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTaxAmount.ZOrder" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="fld_txtICReceiptTaxPercent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="fld_txtICReceiptTaxPercent.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="fld_txtICReceiptTaxPercent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>956, 633</value>
+  </data>
+  <data name="fld_txtICReceiptTaxPercent.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n</value>
+  </data>
+  <data name="fld_txtICReceiptTaxPercent.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtICReceiptTaxPercent.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptTaxPercent.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptTaxPercent.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptTaxPercent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="fld_txtICReceiptTaxPercent.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTaxPercent.Name" xml:space="preserve">
+    <value>fld_txtICReceiptTaxPercent</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTaxPercent.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTaxPercent.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTaxPercent.ZOrder" xml:space="preserve">
+    <value>44</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountPerCent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountPerCent.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountPerCent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>956, 555</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountPerCent.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountPerCent.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v20.2">
+    <value>Numeric</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountPerCent.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountPerCent.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountPerCent.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountPerCent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="fld_txtICReceiptDiscountPerCent.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDiscountPerCent.Name" xml:space="preserve">
+    <value>fld_txtICReceiptDiscountPerCent</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDiscountPerCent.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDiscountPerCent.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptDiscountPerCent.ZOrder" xml:space="preserve">
+    <value>46</value>
+  </data>
+  <data name="fld_txtICReceiptContainerNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>725, 118</value>
+  </data>
+  <data name="fld_txtICReceiptContainerNo.Properties.Mask.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptContainerNo.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="fld_txtICReceiptContainerNo.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptContainerNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_txtICReceiptContainerNo.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptContainerNo.Name" xml:space="preserve">
+    <value>fld_txtICReceiptContainerNo</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptContainerNo.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptContainerNo.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptContainerNo.ZOrder" xml:space="preserve">
+    <value>53</value>
+  </data>
+  <data name="bosLabel9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="bosLabel9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>910, 636</value>
+  </data>
+  <data name="bosLabel9.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 13</value>
+  </data>
+  <data name="bosLabel9.TabIndex" type="System.Int32, mscorlib">
+    <value>529</value>
+  </data>
+  <data name="bosLabel9.Text" xml:space="preserve">
+    <value>Thuế</value>
+  </data>
+  <data name="&gt;&gt;bosLabel9.Name" xml:space="preserve">
+    <value>bosLabel9</value>
+  </data>
+  <data name="&gt;&gt;bosLabel9.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel9.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel9.ZOrder" xml:space="preserve">
+    <value>55</value>
+  </data>
+  <data name="bosLabel7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="bosLabel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>881, 558</value>
+  </data>
+  <data name="bosLabel7.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="bosLabel7.TabIndex" type="System.Int32, mscorlib">
+    <value>529</value>
+  </data>
+  <data name="bosLabel7.Text" xml:space="preserve">
+    <value>Chiết khấu</value>
+  </data>
+  <data name="&gt;&gt;bosLabel7.Name" xml:space="preserve">
+    <value>bosLabel7</value>
+  </data>
+  <data name="&gt;&gt;bosLabel7.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel7.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel7.ZOrder" xml:space="preserve">
+    <value>56</value>
+  </data>
+  <data name="bosLabel24.Location" type="System.Drawing.Point, System.Drawing">
+    <value>643, 121</value>
+  </data>
+  <data name="bosLabel24.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosLabel24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="bosLabel24.TabIndex" type="System.Int32, mscorlib">
+    <value>528</value>
+  </data>
+  <data name="bosLabel24.Text" xml:space="preserve">
+    <value>ContainerNo</value>
+  </data>
+  <data name="&gt;&gt;bosLabel24.Name" xml:space="preserve">
+    <value>bosLabel24</value>
+  </data>
+  <data name="&gt;&gt;bosLabel24.Type" xml:space="preserve">
+    <value>BOSComponent.BOSLabel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosLabel24.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosLabel24.ZOrder" xml:space="preserve">
+    <value>59</value>
+  </data>
+  <data name="fld_txtICReceiptTotalWoodQty.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="fld_txtICReceiptTotalWoodQty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>725, 172</value>
+  </data>
+  <data name="fld_txtICReceiptTotalWoodQty.Properties.Mask.EditMask" xml:space="preserve">
+    <value>{0:0.####}</value>
+  </data>
+  <data name="fld_txtICReceiptTotalWoodQty.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptTotalWoodQty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_txtICReceiptTotalWoodQty.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalWoodQty.Name" xml:space="preserve">
+    <value>fld_txtICReceiptTotalWoodQty</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalWoodQty.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalWoodQty.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalWoodQty.ZOrder" xml:space="preserve">
+    <value>63</value>
+  </data>
+  <data name="fld_txtICReceiptTotalQty.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="fld_txtICReceiptTotalQty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>725, 65</value>
+  </data>
+  <data name="fld_txtICReceiptTotalQty.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptTotalQty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_txtICReceiptTotalQty.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalQty.Name" xml:space="preserve">
+    <value>fld_txtICReceiptTotalQty</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalQty.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalQty.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptTotalQty.ZOrder" xml:space="preserve">
+    <value>64</value>
+  </data>
+  <data name="fld_txtICReceiptExchangeRate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 172</value>
+  </data>
+  <data name="fld_txtICReceiptExchangeRate.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fld_txtICReceiptExchangeRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="fld_txtICReceiptExchangeRate.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptExchangeRate.Name" xml:space="preserve">
+    <value>fld_txtICReceiptExchangeRate</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptExchangeRate.Type" xml:space="preserve">
+    <value>BOSComponent.BOSTextBox, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptExchangeRate.Parent" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;fld_txtICReceiptExchangeRate.ZOrder" xml:space="preserve">
+    <value>65</value>
+  </data>
+  <data name="bosPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="bosPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="bosPanel1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bosPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1145, 690</value>
+  </data>
+  <data name="bosPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;bosPanel1.Name" xml:space="preserve">
+    <value>bosPanel1</value>
+  </data>
+  <data name="&gt;&gt;bosPanel1.Type" xml:space="preserve">
+    <value>BOSComponent.BOSPanel, BOSComponent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bosPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bosPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1145, 690</value>
+  </data>
+  <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="&gt;&gt;ScreenHelper.Name" xml:space="preserve">
+    <value>ScreenHelper</value>
+  </data>
+  <data name="&gt;&gt;ScreenHelper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gridView4.Name" xml:space="preserve">
+    <value>gridView4</value>
+  </data>
+  <data name="&gt;&gt;gridView4.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView3.Name" xml:space="preserve">
+    <value>gridView3</value>
+  </data>
+  <data name="&gt;&gt;gridView3.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView1.Name" xml:space="preserve">
+    <value>gridView1</value>
+  </data>
+  <data name="&gt;&gt;gridView1.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridView2.Name" xml:space="preserve">
+    <value>gridView2</value>
+  </data>
+  <data name="&gt;&gt;gridView2.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;fld_dgvACDocumentEntrys.Name" xml:space="preserve">
+    <value>fld_dgvACDocumentEntrys</value>
+  </data>
+  <data name="&gt;&gt;fld_dgvACDocumentEntrys.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DMWPR100</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>BOSERP.BOSERPScreen, BOSBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+</root>

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B05DF8AD-9AE4-471C-85C5-6D63540443AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BOSCommon</RootNamespace>
+    <AssemblyName>BOSCommon</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>..\..\bin\Release\BOSCommon.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\AccAccount.cs" />
+    <Compile Include="Constants\AccDocumentName.cs" />
+    <Compile Include="Constants\AccEntryName.cs" />
+    <Compile Include="Constants\AccountDefault.cs" />
+    <Compile Include="Constants\AccountingFormulaItemSpot.cs" />
+    <Compile Include="Constants\ADDataViewPermissionAppStaffColumnNames.cs" />
+    <Compile Include="Constants\ADDataViewPermissionColumnNames.cs" />
+    <Compile Include="Constants\ADDataViewPermissionType.cs" />
+    <Compile Include="Constants\App.cs" />
+    <Compile Include="Constants\ApproveStatus.cs" />
+    <Compile Include="Constants\Bank.cs" />
+    <Compile Include="Constants\BankCode.cs" />
+    <Compile Include="Constants\BatchProductConst.cs" />
+    <Compile Include="Constants\BatchProductSheduleConst.cs" />
+    <Compile Include="Constants\BatchProposalConst.cs" />
+    <Compile Include="Constants\CalculateType.cs" />
+    <Compile Include="Constants\CalculationProductionNormConst.cs" />
+    <Compile Include="Constants\CanceledbatchProposal.cs" />
+    <Compile Include="Constants\Chiphinguyenlieu.cs" />
+    <Compile Include="Constants\CommonColumn.cs" />
+    <Compile Include="Constants\ConfigValueGroup.cs" />
+    <Compile Include="Constants\ConfigValueKey.cs" />
+    <Compile Include="Constants\ContainerLoaderConst.cs" />
+    <Compile Include="Constants\DepartmentAttributeColorLevel.cs" />
+    <Compile Include="Constants\DepartmentID.cs" />
+    <Compile Include="Constants\DepartmentNo.cs" />
+    <Compile Include="Constants\DetailType.cs" />
+    <Compile Include="Constants\DocumentTypeName.cs" />
+    <Compile Include="Constants\EInvoicePaymentMethodName.cs" />
+    <Compile Include="Constants\FormulaConst.cs" />
+    <Compile Include="Constants\GECurrencyID.cs" />
+    <Compile Include="Constants\LeaveDayTypes.cs" />
+    <Compile Include="Constants\MatchCodeConst.cs" />
+    <Compile Include="Constants\ModuleName.cs" />
+    <Compile Include="Constants\ModulePostingType.cs" />
+    <Compile Include="Constants\ModuleViewType.cs" />
+    <Compile Include="Constants\ObjectStatus.cs" />
+    <Compile Include="Constants\OperationNo.cs" />
+    <Compile Include="Constants\OperationReceiptType.cs" />
+    <Compile Include="Constants\ProductGroupNameHardCode.cs" />
+    <Compile Include="Constants\ProductionCostAccounts.cs" />
+    <Compile Include="Constants\ProductionCostIngredientCostReferenceType.cs" />
+    <Compile Include="Constants\ProductionNormConst.cs" />
+    <Compile Include="Constants\ProductionPlanningConst.cs" />
+    <Compile Include="Constants\PurchaseReceiptConst.cs" />
+    <Compile Include="Constants\ReceiptAcceptance.cs" />
+    <Compile Include="Constants\ReceiptCDConst.cs" />
+    <Compile Include="Constants\Report.cs" />
+    <Compile Include="Constants\RoundingNumber.cs" />
+    <Compile Include="Constants\ShipmentCDConst.cs" />
+    <Compile Include="Constants\ShipmentProposalConst.cs" />
+    <Compile Include="Constants\StockNo.cs" />
+    <Compile Include="Constants\StockNoHardCode.cs" />
+    <Compile Include="Constants\TableName.cs" />
+    <Compile Include="Constants\ToolbarButtons.cs" />
+    <Compile Include="Constants\TransactionType.cs" />
+    <Compile Include="Constants\UserGroup.cs" />
+    <Compile Include="Constants\WoodPurchaseReceiptConst.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Enums\HistoryAction.cs" />
+    <Compile Include="Enums\InventoryStockCountType.cs" />
+    <Compile Include="Enums\ModulePrefix.cs" />
+    <Compile Include="Enums\ProductTolenranceCalculateType.cs" />
+    <Compile Include="Enums\ProductTolenranceType.cs" />
+    <Compile Include="Enums\ScheduleMenuTag.cs" />
+    <Compile Include="Extensions\Helper\EnumExtensions.cs" />
+    <Compile Include="Extensions\Helper\LinqHelper.cs" />
+    <Compile Include="Extensions\Helper\StringHelper.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
