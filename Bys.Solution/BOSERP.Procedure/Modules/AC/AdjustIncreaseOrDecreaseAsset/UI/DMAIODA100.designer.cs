@@ -29,10 +29,11 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DMAIODA100));
             this.fld_pteAPInvoiceInEmployeePicture = new BOSComponent.BOSPictureEdit(this.components);
-            this.fld_lkeFK_HREmployeeID1 = new BOSComponent.BOSLookupEdit(this.components);
             this.bosPanel1 = new BOSComponent.BOSPanel(this.components);
             this.bosLabel2 = new BOSComponent.BOSLabel(this.components);
+            this.bosTextBox2 = new BOSComponent.BOSTextBox(this.components);
             this.bosTextBox1 = new BOSComponent.BOSTextBox(this.components);
             this.bosMemoEdit1 = new BOSComponent.BOSMemoEdit(this.components);
             this.fld_lkeFK_ACObjectID = new BOSERP.AccObjectLookupEdit(this.components);
@@ -57,8 +58,8 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.bosLabel11 = new BOSComponent.BOSLabel(this.components);
             this.fld_txtAPInvoiceInExchangeRate = new BOSComponent.BOSTextBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.fld_pteAPInvoiceInEmployeePicture.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HREmployeeID1.Properties)).BeginInit();
             this.bosPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bosTextBox2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bosTextBox1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bosMemoEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_ACObjectID.Properties)).BeginInit();
@@ -105,44 +106,6 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.fld_pteAPInvoiceInEmployeePicture.TabIndex = 0;
             this.fld_pteAPInvoiceInEmployeePicture.Tag = "DC";
             // 
-            // fld_lkeFK_HREmployeeID1
-            // 
-            this.fld_lkeFK_HREmployeeID1.BOSAllowAddNew = false;
-            this.fld_lkeFK_HREmployeeID1.BOSAllowDummy = false;
-            this.fld_lkeFK_HREmployeeID1.BOSComment = "";
-            this.fld_lkeFK_HREmployeeID1.BOSDataMember = "FK_HREmployeeID";
-            this.fld_lkeFK_HREmployeeID1.BOSDataSource = "APInvoiceIns";
-            this.fld_lkeFK_HREmployeeID1.BOSDescription = null;
-            this.fld_lkeFK_HREmployeeID1.BOSError = null;
-            this.fld_lkeFK_HREmployeeID1.BOSFieldGroup = "";
-            this.fld_lkeFK_HREmployeeID1.BOSFieldParent = "";
-            this.fld_lkeFK_HREmployeeID1.BOSFieldRelation = "";
-            this.fld_lkeFK_HREmployeeID1.BOSPrivilege = "";
-            this.fld_lkeFK_HREmployeeID1.BOSPropertyName = "EditValue";
-            this.fld_lkeFK_HREmployeeID1.BOSSelectType = "";
-            this.fld_lkeFK_HREmployeeID1.BOSSelectTypeValue = "";
-            this.fld_lkeFK_HREmployeeID1.CurrentDisplayText = null;
-            this.fld_lkeFK_HREmployeeID1.Location = new System.Drawing.Point(12, 111);
-            this.fld_lkeFK_HREmployeeID1.Name = "fld_lkeFK_HREmployeeID1";
-            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.Options.UseBackColor = true;
-            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.Options.UseForeColor = true;
-            this.fld_lkeFK_HREmployeeID1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.fld_lkeFK_HREmployeeID1.Properties.ColumnName = null;
-            this.fld_lkeFK_HREmployeeID1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HREmployeeNo", "No", 20, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HREmployeeName", "Name")});
-            this.fld_lkeFK_HREmployeeID1.Properties.DisplayMember = "HREmployeeNo";
-            this.fld_lkeFK_HREmployeeID1.Properties.NullText = "";
-            this.fld_lkeFK_HREmployeeID1.Properties.PopupWidth = 40;
-            this.fld_lkeFK_HREmployeeID1.Properties.ValueMember = "HREmployeeID";
-            this.fld_lkeFK_HREmployeeID1.Screen = null;
-            this.fld_lkeFK_HREmployeeID1.Size = new System.Drawing.Size(116, 20);
-            this.fld_lkeFK_HREmployeeID1.TabIndex = 1;
-            this.fld_lkeFK_HREmployeeID1.Tag = "DC";
-            // 
             // bosPanel1
             // 
             this.bosPanel1.BOSComment = null;
@@ -155,6 +118,7 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.bosPanel1.BOSPrivilege = null;
             this.bosPanel1.BOSPropertyName = null;
             this.bosPanel1.Controls.Add(this.bosLabel2);
+            this.bosPanel1.Controls.Add(this.bosTextBox2);
             this.bosPanel1.Controls.Add(this.bosTextBox1);
             this.bosPanel1.Controls.Add(this.bosMemoEdit1);
             this.bosPanel1.Controls.Add(this.fld_lkeFK_ACObjectID);
@@ -162,7 +126,6 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.bosPanel1.Controls.Add(this.fld_lblLabel7);
             this.bosPanel1.Controls.Add(this.fld_tabInvoiceInItems);
             this.bosPanel1.Controls.Add(this.fld_pteAPInvoiceInEmployeePicture);
-            this.bosPanel1.Controls.Add(this.fld_lkeFK_HREmployeeID1);
             this.bosPanel1.Controls.Add(this.fld_txtAPInvoiceInNo1);
             this.bosPanel1.Controls.Add(this.bosLabel27);
             this.bosPanel1.Controls.Add(this.fld_lkeAPInvoiceInType);
@@ -177,7 +140,7 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(979, 593);
+            this.bosPanel1.Size = new System.Drawing.Size(1035, 621);
             this.bosPanel1.TabIndex = 0;
             // 
             // bosLabel2
@@ -202,6 +165,31 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.bosLabel2.TabIndex = 370;
             this.bosLabel2.Tag = "";
             this.bosLabel2.Text = "Địa chỉ";
+            // 
+            // bosTextBox2
+            // 
+            this.bosTextBox2.BOSComment = "";
+            this.bosTextBox2.BOSDataMember = "HREmployeeName";
+            this.bosTextBox2.BOSDataSource = "ACAdjustIncreaseOrDecreaseAssets";
+            this.bosTextBox2.BOSDescription = null;
+            this.bosTextBox2.BOSError = null;
+            this.bosTextBox2.BOSFieldGroup = "";
+            this.bosTextBox2.BOSFieldRelation = "";
+            this.bosTextBox2.BOSPrivilege = "";
+            this.bosTextBox2.BOSPropertyName = "Text";
+            this.bosTextBox2.EditValue = "";
+            this.bosTextBox2.Location = new System.Drawing.Point(12, 111);
+            this.bosTextBox2.Name = "bosTextBox2";
+            this.bosTextBox2.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bosTextBox2.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bosTextBox2.Properties.Appearance.Options.UseBackColor = true;
+            this.bosTextBox2.Properties.Appearance.Options.UseForeColor = true;
+            this.bosTextBox2.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.bosTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bosTextBox2.Screen = null;
+            this.bosTextBox2.Size = new System.Drawing.Size(116, 20);
+            this.bosTextBox2.TabIndex = 4;
+            this.bosTextBox2.Tag = "DC";
             // 
             // bosTextBox1
             // 
@@ -352,7 +340,7 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.fld_tabInvoiceInItems.Name = "fld_tabInvoiceInItems";
             this.fld_tabInvoiceInItems.Screen = null;
             this.fld_tabInvoiceInItems.SelectedTabPage = this.fld_tabPageInvoiceInItems;
-            this.fld_tabInvoiceInItems.Size = new System.Drawing.Size(968, 444);
+            this.fld_tabInvoiceInItems.Size = new System.Drawing.Size(1024, 472);
             this.fld_tabInvoiceInItems.TabIndex = 10;
             this.fld_tabInvoiceInItems.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tabPageInvoiceInItems,
@@ -364,7 +352,7 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.fld_tabPageInvoiceInItems.Controls.Add(this.bosLabel3);
             this.fld_tabPageInvoiceInItems.Controls.Add(this.fld_dgcACAdjustIncreaseOrDecreaseAssetItems);
             this.fld_tabPageInvoiceInItems.Name = "fld_tabPageInvoiceInItems";
-            this.fld_tabPageInvoiceInItems.Size = new System.Drawing.Size(962, 416);
+            this.fld_tabPageInvoiceInItems.Size = new System.Drawing.Size(1022, 447);
             this.fld_tabPageInvoiceInItems.Text = "Danh sách sản phẩm";
             // 
             // fld_lkeAssetID
@@ -405,7 +393,7 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.fld_lkeAssetID.Properties.ValueMember = "ACAssetID";
             this.fld_lkeAssetID.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_lkeAssetID, true);
-            this.fld_lkeAssetID.Size = new System.Drawing.Size(903, 20);
+            this.fld_lkeAssetID.Size = new System.Drawing.Size(963, 20);
             this.fld_lkeAssetID.TabIndex = 372;
             this.fld_lkeAssetID.Tag = "DC";
             this.fld_lkeAssetID.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.fld_lkeAssetID_QueryPopUp);
@@ -458,14 +446,14 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.fld_dgcACAdjustIncreaseOrDecreaseAssetItems.Name = "fld_dgcACAdjustIncreaseOrDecreaseAssetItems";
             this.fld_dgcACAdjustIncreaseOrDecreaseAssetItems.PrintReport = false;
             this.fld_dgcACAdjustIncreaseOrDecreaseAssetItems.Screen = null;
-            this.fld_dgcACAdjustIncreaseOrDecreaseAssetItems.Size = new System.Drawing.Size(948, 375);
+            this.fld_dgcACAdjustIncreaseOrDecreaseAssetItems.Size = new System.Drawing.Size(1008, 406);
             this.fld_dgcACAdjustIncreaseOrDecreaseAssetItems.TabIndex = 0;
             // 
             // fld_tabPageDocumentEntrys
             // 
             this.fld_tabPageDocumentEntrys.Controls.Add(this.fld_dgcACDocumentEntrys);
             this.fld_tabPageDocumentEntrys.Name = "fld_tabPageDocumentEntrys";
-            this.fld_tabPageDocumentEntrys.Size = new System.Drawing.Size(956, 409);
+            this.fld_tabPageDocumentEntrys.Size = new System.Drawing.Size(1008, 440);
             this.fld_tabPageDocumentEntrys.Text = "Hạch toán";
             // 
             // fld_dgcACDocumentEntrys
@@ -489,7 +477,7 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             this.fld_dgcACDocumentEntrys.Name = "fld_dgcACDocumentEntrys";
             this.fld_dgcACDocumentEntrys.PrintReport = false;
             this.fld_dgcACDocumentEntrys.Screen = null;
-            this.fld_dgcACDocumentEntrys.Size = new System.Drawing.Size(956, 409);
+            this.fld_dgcACDocumentEntrys.Size = new System.Drawing.Size(1008, 440);
             this.fld_dgcACDocumentEntrys.TabIndex = 1;
             this.fld_dgcACDocumentEntrys.Tag = "DC";
             this.fld_dgcACDocumentEntrys.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -761,15 +749,16 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(979, 593);
+            this.ClientSize = new System.Drawing.Size(1035, 621);
             this.Controls.Add(this.bosPanel1);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMAIODA100.IconOptions.Icon")));
             this.Name = "DMAIODA100";
             this.Text = "Thông tin";
             this.Controls.SetChildIndex(this.bosPanel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.fld_pteAPInvoiceInEmployeePicture.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HREmployeeID1.Properties)).EndInit();
             this.bosPanel1.ResumeLayout(false);
             this.bosPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bosTextBox2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bosTextBox1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bosMemoEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_ACObjectID.Properties)).EndInit();
@@ -796,7 +785,6 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
 
         private IContainer components;
         private BOSComponent.BOSPictureEdit fld_pteAPInvoiceInEmployeePicture;
-        private BOSComponent.BOSLookupEdit fld_lkeFK_HREmployeeID1;
         private BOSComponent.BOSPanel bosPanel1;
         private BOSComponent.BOSTabControl fld_tabInvoiceInItems;
         private DevExpress.XtraTab.XtraTabPage fld_tabPageInvoiceInItems;
@@ -823,5 +811,6 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset.UI
         private BOSComponent.BOSLabel bosLabel3;
         private BOSComponent.BOSTextBox bosTextBox1;
         private BOSComponent.BOSLabel bosLabel4;
-	}
+        private BOSComponent.BOSTextBox bosTextBox2;
+    }
 }

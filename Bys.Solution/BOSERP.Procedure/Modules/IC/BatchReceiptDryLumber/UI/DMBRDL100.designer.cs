@@ -29,6 +29,7 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DMBRDL100));
             this.bosPanel1 = new BOSComponent.BOSPanel(this.components);
             this.fld_lkeFK_ICImportAndExportReasonID = new BOSComponent.BOSLookupEdit(this.components);
             this.bosLabel12 = new BOSComponent.BOSLabel(this.components);
@@ -58,6 +59,9 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             this.fld_lkeFK_HREmployeeID = new BOSComponent.BOSLookupEdit(this.components);
             this.bosLabel1 = new BOSComponent.BOSLabel(this.components);
             this.fld_txtICReceiptNo = new BOSComponent.BOSTextBox(this.components);
+            this.fld_lkeMMUpdatePositionItemID = new BOSComponent.BOSLookupEdit(this.components);
+            this.fld_lnkChooseProspectCustomer = new DevExpress.XtraEditors.HyperLinkEdit();
+            this.bosLabel = new BOSComponent.BOSLabel(this.components);
             this.bosPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_ICImportAndExportReasonID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtReceiptPackNo.Properties)).BeginInit();
@@ -78,6 +82,8 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             ((System.ComponentModel.ISupportInitialize)(this.fld_dteICReceiptDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HREmployeeID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtICReceiptNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeMMUpdatePositionItemID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lnkChooseProspectCustomer.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // bosPanel1
@@ -91,6 +97,9 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             this.bosPanel1.BOSFieldRelation = null;
             this.bosPanel1.BOSPrivilege = null;
             this.bosPanel1.BOSPropertyName = null;
+            this.bosPanel1.Controls.Add(this.fld_lkeMMUpdatePositionItemID);
+            this.bosPanel1.Controls.Add(this.fld_lnkChooseProspectCustomer);
+            this.bosPanel1.Controls.Add(this.bosLabel);
             this.bosPanel1.Controls.Add(this.fld_lkeFK_ICImportAndExportReasonID);
             this.bosPanel1.Controls.Add(this.bosLabel12);
             this.bosPanel1.Controls.Add(this.fld_txtReceiptPackNo);
@@ -117,7 +126,7 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
             this.ScreenHelper.SetShowHelp(this.bosPanel1, true);
-            this.bosPanel1.Size = new System.Drawing.Size(918, 558);
+            this.bosPanel1.Size = new System.Drawing.Size(932, 565);
             this.bosPanel1.TabIndex = 0;
             // 
             // fld_lkeFK_ICImportAndExportReasonID
@@ -302,12 +311,12 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             this.fld_tabReceiptItems.BOSFieldRelation = null;
             this.fld_tabReceiptItems.BOSPrivilege = null;
             this.fld_tabReceiptItems.BOSPropertyName = null;
-            this.fld_tabReceiptItems.Location = new System.Drawing.Point(9, 142);
+            this.fld_tabReceiptItems.Location = new System.Drawing.Point(9, 168);
             this.fld_tabReceiptItems.Name = "fld_tabReceiptItems";
             this.fld_tabReceiptItems.Screen = null;
             this.fld_tabReceiptItems.SelectedTabPage = this.fld_tabPageReceiptItems;
             this.ScreenHelper.SetShowHelp(this.fld_tabReceiptItems, true);
-            this.fld_tabReceiptItems.Size = new System.Drawing.Size(908, 413);
+            this.fld_tabReceiptItems.Size = new System.Drawing.Size(922, 394);
             this.fld_tabReceiptItems.TabIndex = 8;
             this.fld_tabReceiptItems.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tabPageReceiptItems,
@@ -320,7 +329,7 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             this.fld_tabPageReceiptItems.Controls.Add(this.fld_lkeFK_ICProductID1);
             this.fld_tabPageReceiptItems.Name = "fld_tabPageReceiptItems";
             this.ScreenHelper.SetShowHelp(this.fld_tabPageReceiptItems, true);
-            this.fld_tabPageReceiptItems.Size = new System.Drawing.Size(902, 385);
+            this.fld_tabPageReceiptItems.Size = new System.Drawing.Size(920, 369);
             this.fld_tabPageReceiptItems.Text = "Danh sách sản phẩm";
             this.fld_tabPageReceiptItems.Paint += new System.Windows.Forms.PaintEventHandler(this.fld_tabPageReceiptItems_Paint);
             // 
@@ -346,7 +355,7 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             this.fld_dgcReceiptItems.PrintReport = false;
             this.fld_dgcReceiptItems.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_dgcReceiptItems, true);
-            this.fld_dgcReceiptItems.Size = new System.Drawing.Size(888, 346);
+            this.fld_dgcReceiptItems.Size = new System.Drawing.Size(906, 330);
             this.fld_dgcReceiptItems.TabIndex = 2;
             // 
             // bosLabel13
@@ -411,7 +420,7 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             this.fld_lkeFK_ICProductID1.Properties.ValueMember = "ICProductID";
             this.fld_lkeFK_ICProductID1.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_lkeFK_ICProductID1, true);
-            this.fld_lkeFK_ICProductID1.Size = new System.Drawing.Size(820, 20);
+            this.fld_lkeFK_ICProductID1.Size = new System.Drawing.Size(838, 20);
             this.fld_lkeFK_ICProductID1.TabIndex = 0;
             this.fld_lkeFK_ICProductID1.Tag = "DC";
             this.fld_lkeFK_ICProductID1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fld_lkeFK_ICProductID1_KeyUp);
@@ -421,7 +430,7 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             this.fld_tabPageDocumentEntrys.Controls.Add(this.fld_dgcACDocumentEntrys);
             this.fld_tabPageDocumentEntrys.Name = "fld_tabPageDocumentEntrys";
             this.ScreenHelper.SetShowHelp(this.fld_tabPageDocumentEntrys, true);
-            this.fld_tabPageDocumentEntrys.Size = new System.Drawing.Size(896, 378);
+            this.fld_tabPageDocumentEntrys.Size = new System.Drawing.Size(906, 388);
             this.fld_tabPageDocumentEntrys.Text = "Hạch toán";
             // 
             // fld_dgcACDocumentEntrys
@@ -446,7 +455,7 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             this.fld_dgcACDocumentEntrys.PrintReport = false;
             this.fld_dgcACDocumentEntrys.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_dgcACDocumentEntrys, true);
-            this.fld_dgcACDocumentEntrys.Size = new System.Drawing.Size(896, 378);
+            this.fld_dgcACDocumentEntrys.Size = new System.Drawing.Size(906, 388);
             this.fld_dgcACDocumentEntrys.TabIndex = 1;
             this.fld_dgcACDocumentEntrys.Tag = "DC";
             this.fld_dgcACDocumentEntrys.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -835,12 +844,83 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             this.fld_txtICReceiptNo.TabIndex = 0;
             this.fld_txtICReceiptNo.Tag = "DC";
             // 
+            // fld_lkeMMUpdatePositionItemID
+            // 
+            this.fld_lkeMMUpdatePositionItemID.BOSAllowAddNew = true;
+            this.fld_lkeMMUpdatePositionItemID.BOSAllowDummy = true;
+            this.fld_lkeMMUpdatePositionItemID.BOSComment = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSDataMember = "MMUpdatePositionItemPositionName";
+            this.fld_lkeMMUpdatePositionItemID.BOSDataSource = "ICReceipts";
+            this.fld_lkeMMUpdatePositionItemID.BOSDescription = null;
+            this.fld_lkeMMUpdatePositionItemID.BOSError = null;
+            this.fld_lkeMMUpdatePositionItemID.BOSFieldGroup = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSFieldParent = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSFieldRelation = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSPrivilege = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSPropertyName = "EditValue";
+            this.fld_lkeMMUpdatePositionItemID.BOSSelectType = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSSelectTypeValue = "";
+            this.fld_lkeMMUpdatePositionItemID.CurrentDisplayText = null;
+            this.fld_lkeMMUpdatePositionItemID.Location = new System.Drawing.Point(626, 142);
+            this.fld_lkeMMUpdatePositionItemID.Name = "fld_lkeMMUpdatePositionItemID";
+            this.fld_lkeMMUpdatePositionItemID.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fld_lkeMMUpdatePositionItemID.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.fld_lkeMMUpdatePositionItemID.Properties.Appearance.Options.UseBackColor = true;
+            this.fld_lkeMMUpdatePositionItemID.Properties.Appearance.Options.UseForeColor = true;
+            this.fld_lkeMMUpdatePositionItemID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.fld_lkeMMUpdatePositionItemID.Properties.ColumnName = "MMUpdatePositionItemPositionName";
+            this.fld_lkeMMUpdatePositionItemID.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MMUpdatePositionItemPositionName", "Vị trí")});
+            this.fld_lkeMMUpdatePositionItemID.Properties.DisplayMember = "MMUpdatePositionItemPositionName";
+            this.fld_lkeMMUpdatePositionItemID.Properties.NullText = "";
+            this.fld_lkeMMUpdatePositionItemID.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.fld_lkeMMUpdatePositionItemID.Properties.ValueMember = "MMUpdatePositionItemPositionName";
+            this.fld_lkeMMUpdatePositionItemID.Screen = null;
+            this.fld_lkeMMUpdatePositionItemID.Size = new System.Drawing.Size(160, 20);
+            this.fld_lkeMMUpdatePositionItemID.TabIndex = 663;
+            this.fld_lkeMMUpdatePositionItemID.Tag = "DC";
+            this.fld_lkeMMUpdatePositionItemID.CloseUp += new DevExpress.XtraEditors.Controls.CloseUpEventHandler(this.fld_lkeMMUpdatePositionItemID_CloseUp);
+            // 
+            // fld_lnkChooseProspectCustomer
+            // 
+            this.fld_lnkChooseProspectCustomer.EditValue = "Thêm mới vị trí";
+            this.fld_lnkChooseProspectCustomer.Location = new System.Drawing.Point(792, 144);
+            this.fld_lnkChooseProspectCustomer.Name = "fld_lnkChooseProspectCustomer";
+            this.fld_lnkChooseProspectCustomer.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.fld_lnkChooseProspectCustomer.Properties.Appearance.Options.UseBackColor = true;
+            this.fld_lnkChooseProspectCustomer.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.fld_lnkChooseProspectCustomer.Size = new System.Drawing.Size(78, 18);
+            this.fld_lnkChooseProspectCustomer.TabIndex = 662;
+            this.fld_lnkChooseProspectCustomer.TabStop = false;
+            this.fld_lnkChooseProspectCustomer.OpenLink += new DevExpress.XtraEditors.Controls.OpenLinkEventHandler(this.fld_lnkChooseProspectCustomer_OpenLink);
+            // 
+            // bosLabel
+            // 
+            this.bosLabel.BOSComment = null;
+            this.bosLabel.BOSDataMember = null;
+            this.bosLabel.BOSDataSource = null;
+            this.bosLabel.BOSDescription = null;
+            this.bosLabel.BOSError = null;
+            this.bosLabel.BOSFieldGroup = null;
+            this.bosLabel.BOSFieldRelation = null;
+            this.bosLabel.BOSPrivilege = null;
+            this.bosLabel.BOSPropertyName = null;
+            this.bosLabel.Location = new System.Drawing.Point(539, 145);
+            this.bosLabel.Name = "bosLabel";
+            this.bosLabel.Screen = null;
+            this.ScreenHelper.SetShowHelp(this.bosLabel, true);
+            this.bosLabel.Size = new System.Drawing.Size(21, 13);
+            this.bosLabel.TabIndex = 661;
+            this.bosLabel.Text = "Vị trí";
+            // 
             // DMBRDL100
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(918, 558);
+            this.ClientSize = new System.Drawing.Size(932, 565);
             this.Controls.Add(this.bosPanel1);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMBRDL100.IconOptions.Icon")));
             this.Name = "DMBRDL100";
             this.Text = "Thông tin";
             this.Controls.SetChildIndex(this.bosPanel1, 0);
@@ -866,6 +946,8 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
             ((System.ComponentModel.ISupportInitialize)(this.fld_dteICReceiptDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HREmployeeID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtICReceiptNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeMMUpdatePositionItemID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lnkChooseProspectCustomer.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -902,5 +984,8 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
         private BOSComponent.BOSLabel bosLabel10;
         private BOSComponent.BOSLookupEdit fld_lkeFK_ICImportAndExportReasonID;
         private BOSComponent.BOSLabel bosLabel12;
-	}
+        private BOSComponent.BOSLookupEdit fld_lkeMMUpdatePositionItemID;
+        private DevExpress.XtraEditors.HyperLinkEdit fld_lnkChooseProspectCustomer;
+        private BOSComponent.BOSLabel bosLabel;
+    }
 }

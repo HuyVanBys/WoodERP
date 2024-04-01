@@ -73,6 +73,11 @@ namespace BOSERP
         protected int _iCProductDetailOldID;
         protected int _fK_ICProductGroupID;
         protected String _iCConfigProductionComplexityType = String.Empty;
+		protected string _iCProductDetailCode11Combo = string.Empty;
+		protected string _iCProductDetailCode12Combo = string.Empty;
+		protected string _iCProductDetailCode13Combo = string.Empty;
+		protected string _iCProductDetailCode14Combo = string.Empty;
+		protected string _iCProductDetailCode15Combo = string.Empty;
         #endregion
 
         #region Public properties
@@ -664,6 +669,66 @@ namespace BOSERP
                 }
             }
         }
+		public string ICProductDetailCode11Combo
+		{
+			get { return _iCProductDetailCode11Combo; }
+			set
+			{
+				if (value != this._iCProductDetailCode11Combo)
+				{
+					_iCProductDetailCode11Combo = value;
+					NotifyChanged("ICProductDetailCode11Combo");
+				}
+			}
+		}
+		public string ICProductDetailCode12Combo
+		{
+			get { return _iCProductDetailCode12Combo; }
+			set
+			{
+				if (value != this._iCProductDetailCode12Combo)
+				{
+					_iCProductDetailCode12Combo = value;
+					NotifyChanged("ICProductDetailCode12Combo");
+				}
+			}
+		}
+		public string ICProductDetailCode13Combo
+		{
+			get { return _iCProductDetailCode13Combo; }
+			set
+			{
+				if (value != this._iCProductDetailCode13Combo)
+				{
+					_iCProductDetailCode13Combo = value;
+					NotifyChanged("ICProductDetailCode13Combo");
+				}
+			}
+		}
+		public string ICProductDetailCode14Combo
+		{
+			get { return _iCProductDetailCode14Combo; }
+			set
+			{
+				if (value != this._iCProductDetailCode14Combo)
+				{
+					_iCProductDetailCode14Combo = value;
+					NotifyChanged("ICProductDetailCode14Combo");
+				}
+			}
+		}
+		public string ICProductDetailCode15Combo
+		{
+			get { return _iCProductDetailCode15Combo; }
+			set
+			{
+				if (value != this._iCProductDetailCode15Combo)
+				{
+					_iCProductDetailCode15Combo = value;
+					NotifyChanged("ICProductDetailCode15Combo");
+				}
+			}
+		}
         #endregion
 
 

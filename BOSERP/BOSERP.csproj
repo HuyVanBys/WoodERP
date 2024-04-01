@@ -76,10 +76,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="App - HA.config" />
-    <None Include="App - Transfor.config" />
-    <None Include="App - DucThanh.config" />
-    <None Include="App - Test.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,9 +91,11 @@
     <None Include="Template\GiftVouchers.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Template\HangBanTraLai_Template.xlsx" />
     <None Include="Template\ProductApplyPrice.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Template\SOTemplate.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -165,6 +165,10 @@ namespace BOSERP.Modules.ConversionProposal
                             item.MMAllocationPlanItemWidth = objProductSeriesInfo.ICProductSerieProductWidth;
                             item.MMAllocationPlanItemLength = objProductSeriesInfo.ICProductSerieProductLength;
                             item.MMAllocationPlanItemLengthMin = objProductSeriesInfo.ICProductSerieProductLength;
+                            item.FK_ICProductAttributeTTMTID = objProductSeriesInfo.FK_ICProductAttributeTTMTID;
+                            item.MMAllocationPlanItemPositionName = objProductSeriesInfo.ICProductSeriePositionName;
+                            item.ICProductNoOfOldSys = objProductSeriesInfo.ICProductAttributeTTMT;
+                            item.FK_ICProductAttributeQualityID = objProductSeriesInfo.FK_ICProductAttributeQualityID;
                             item.APSupplierName = objProductSeriesInfo.APSupplierName;
                             item.FK_ICProductSerieID = objProductSeriesInfo.ICProductSerieID;
                             item.FK_ICProductAlternativeID = objProductSeriesInfo.FK_ICProductID; // Trường hợp dùng kiện  cùng loại gỗ khác độ dày => khác mã SP
@@ -185,6 +189,9 @@ namespace BOSERP.Modules.ConversionProposal
                         item.FK_ICProductSerieID = 0;
                         item.FK_ICProductAlternativeID = 0;
                         item.MMAllocationProposalItemShippedQty = 0;
+                        item.FK_ICProductAttributeTTMTID = 0;
+                        item.FK_ICProductAttributeQualityID = 0;
+                        item.ICProductNoOfOldSys = string.Empty;
                         item.MMAllocationPlanItemQty = item.MMAllocationPlanItemBPProductionNormItemQty;
                         item.MMAllocationPlanItemWoodQty = Math.Round(item.MMAllocationPlanItemHeightMax * item.MMAllocationPlanItemWidthMax * item.MMAllocationPlanItemLengthMax == 0 ? 0 :
                                 item.MMAllocationPlanItemQty / (item.MMAllocationPlanItemHeightMax * item.MMAllocationPlanItemWidthMax * item.MMAllocationPlanItemLengthMax) * 1000000000, 0);
@@ -296,8 +303,8 @@ namespace BOSERP.Modules.ConversionProposal
             gridView.Columns.Add(column);
 
             column = new GridColumn();
-            column.Caption = "Nhà cung cấp";
-            column.FieldName = "APSupplierName";
+            column.Caption = "Vị trí";
+            column.FieldName = "MMAllocationPlanItemPositionName";
             column.OptionsColumn.AllowEdit = false;
             column.Visible = true;
             gridView.Columns.Add(column);

@@ -75,7 +75,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1140, 628);
+            this.panel1.Size = new System.Drawing.Size(1154, 635);
             this.panel1.TabIndex = 6;
             // 
             // fld_tabProductionNorm
@@ -95,7 +95,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_tabProductionNorm.Screen = null;
             this.fld_tabProductionNorm.SelectedTabPage = this.fld_tabSemiProduct;
             this.ScreenHelper.SetShowHelp(this.fld_tabProductionNorm, true);
-            this.fld_tabProductionNorm.Size = new System.Drawing.Size(1140, 628);
+            this.fld_tabProductionNorm.Size = new System.Drawing.Size(1154, 635);
             this.fld_tabProductionNorm.TabIndex = 3;
             this.fld_tabProductionNorm.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tabSemiProduct,
@@ -114,13 +114,13 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_tabSemiProduct.Controls.Add(this.fld_trlMMBatchProductProductionNormItems);
             this.fld_tabSemiProduct.Name = "fld_tabSemiProduct";
             this.ScreenHelper.SetShowHelp(this.fld_tabSemiProduct, true);
-            this.fld_tabSemiProduct.Size = new System.Drawing.Size(1138, 603);
+            this.fld_tabSemiProduct.Size = new System.Drawing.Size(1152, 610);
             this.fld_tabSemiProduct.Text = "ĐM Bán thành phẩm";
             // 
             // fld_lkeSumGoM3
             // 
             this.fld_lkeSumGoM3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.fld_lkeSumGoM3.Location = new System.Drawing.Point(1004, 15);
+            this.fld_lkeSumGoM3.Location = new System.Drawing.Point(1018, 15);
             this.fld_lkeSumGoM3.MenuManager = this.screenToolbar;
             this.fld_lkeSumGoM3.Name = "fld_lkeSumGoM3";
             this.fld_lkeSumGoM3.Properties.DisplayFormat.FormatString = "n6";
@@ -149,7 +149,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.bosLabel18.BOSFieldRelation = "";
             this.bosLabel18.BOSPrivilege = "";
             this.bosLabel18.BOSPropertyName = "";
-            this.bosLabel18.Location = new System.Drawing.Point(941, 19);
+            this.bosLabel18.Location = new System.Drawing.Point(955, 19);
             this.bosLabel18.Name = "bosLabel18";
             this.bosLabel18.Screen = null;
             this.ScreenHelper.SetShowHelp(this.bosLabel18, true);
@@ -241,7 +241,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_trlMMBatchProductProductionNormItems.Name = "fld_trlMMBatchProductProductionNormItems";
             this.fld_trlMMBatchProductProductionNormItems.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.fld_trlMMBatchProductProductionNormItems.Screen = null;
-            this.fld_trlMMBatchProductProductionNormItems.Size = new System.Drawing.Size(1135, 553);
+            this.fld_trlMMBatchProductProductionNormItems.Size = new System.Drawing.Size(1149, 560);
             this.fld_trlMMBatchProductProductionNormItems.TabIndex = 93;
             this.fld_trlMMBatchProductProductionNormItems.Tag = "DC";
             this.fld_trlMMBatchProductProductionNormItems.NodeCellStyle += new DevExpress.XtraTreeList.GetCustomNodeCellStyleEventHandler(this.fld_trlMMBatchProductProductionNormItems_NodeCellStyle);
@@ -254,7 +254,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_tabHardware.Controls.Add(this.fld_trlMMProductionNormItemsHardware);
             this.fld_tabHardware.Name = "fld_tabHardware";
             this.ScreenHelper.SetShowHelp(this.fld_tabHardware, true);
-            this.fld_tabHardware.Size = new System.Drawing.Size(1124, 596);
+            this.fld_tabHardware.Size = new System.Drawing.Size(1152, 610);
             this.fld_tabHardware.Text = "ĐM Hardware";
             // 
             // fld_btnUpdateHardware
@@ -297,7 +297,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_trlMMProductionNormItemsHardware.Name = "fld_trlMMProductionNormItemsHardware";
             this.fld_trlMMProductionNormItemsHardware.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.fld_trlMMProductionNormItemsHardware.Screen = null;
-            this.fld_trlMMProductionNormItemsHardware.Size = new System.Drawing.Size(1116, 557);
+            this.fld_trlMMProductionNormItemsHardware.Size = new System.Drawing.Size(1144, 571);
             this.fld_trlMMProductionNormItemsHardware.TabIndex = 94;
             this.fld_trlMMProductionNormItemsHardware.Tag = "DC";
             this.fld_trlMMProductionNormItemsHardware.NodeCellStyle += new DevExpress.XtraTreeList.GetCustomNodeCellStyleEventHandler(this.fld_trlMMProductionNormItemsHardware_NodeCellStyle);
@@ -309,7 +309,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_tabPaint.Controls.Add(this.fld_btnUpdatePaint);
             this.fld_tabPaint.Controls.Add(this.fld_trlMMProductionNormItemsPaint);
             this.fld_tabPaint.Name = "fld_tabPaint";
-            this.fld_tabPaint.Size = new System.Drawing.Size(1124, 596);
+            this.fld_tabPaint.Size = new System.Drawing.Size(1152, 610);
             this.fld_tabPaint.Text = "ĐM Sơn";
             // 
             // fld_btnUpdatePaint
@@ -352,7 +352,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_trlMMProductionNormItemsPaint.Name = "fld_trlMMProductionNormItemsPaint";
             this.fld_trlMMProductionNormItemsPaint.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.fld_trlMMProductionNormItemsPaint.Screen = null;
-            this.fld_trlMMProductionNormItemsPaint.Size = new System.Drawing.Size(1116, 557);
+            this.fld_trlMMProductionNormItemsPaint.Size = new System.Drawing.Size(1144, 571);
             this.fld_trlMMProductionNormItemsPaint.TabIndex = 94;
             this.fld_trlMMProductionNormItemsPaint.Tag = "DC";
             this.fld_trlMMProductionNormItemsPaint.NodeCellStyle += new DevExpress.XtraTreeList.GetCustomNodeCellStyleEventHandler(this.fld_trlMMProductionNormItemsPaint_NodeCellStyle);
@@ -364,7 +364,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_tabPackaging.Controls.Add(this.fld_btnUpdatePackaging);
             this.fld_tabPackaging.Controls.Add(this.fld_trlMMProductionNormItemsPackaging);
             this.fld_tabPackaging.Name = "fld_tabPackaging";
-            this.fld_tabPackaging.Size = new System.Drawing.Size(1124, 596);
+            this.fld_tabPackaging.Size = new System.Drawing.Size(1138, 603);
             this.fld_tabPackaging.Text = "ĐM Phụ liệu đóng gói";
             // 
             // fld_btnUpdatePackaging
@@ -407,7 +407,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_trlMMProductionNormItemsPackaging.Name = "fld_trlMMProductionNormItemsPackaging";
             this.fld_trlMMProductionNormItemsPackaging.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.fld_trlMMProductionNormItemsPackaging.Screen = null;
-            this.fld_trlMMProductionNormItemsPackaging.Size = new System.Drawing.Size(1116, 557);
+            this.fld_trlMMProductionNormItemsPackaging.Size = new System.Drawing.Size(1130, 564);
             this.fld_trlMMProductionNormItemsPackaging.TabIndex = 94;
             this.fld_trlMMProductionNormItemsPackaging.Tag = "DC";
             this.fld_trlMMProductionNormItemsPackaging.NodeCellStyle += new DevExpress.XtraTreeList.GetCustomNodeCellStyleEventHandler(this.fld_trlMMProductionNormItemsPackaging_NodeCellStyle);
@@ -419,7 +419,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_tbGeneralMaterial.Controls.Add(this.fld_trlMMProductionNormItemsGeneralMaterial);
             this.fld_tbGeneralMaterial.Controls.Add(this.fld_btnGeneralMaterial);
             this.fld_tbGeneralMaterial.Name = "fld_tbGeneralMaterial";
-            this.fld_tbGeneralMaterial.Size = new System.Drawing.Size(1124, 596);
+            this.fld_tbGeneralMaterial.Size = new System.Drawing.Size(1138, 603);
             this.fld_tbGeneralMaterial.Text = "Vật tư khác";
             // 
             // fld_trlMMProductionNormItemsGeneralMaterial
@@ -443,7 +443,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             this.fld_trlMMProductionNormItemsGeneralMaterial.Name = "fld_trlMMProductionNormItemsGeneralMaterial";
             this.fld_trlMMProductionNormItemsGeneralMaterial.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.fld_trlMMProductionNormItemsGeneralMaterial.Screen = null;
-            this.fld_trlMMProductionNormItemsGeneralMaterial.Size = new System.Drawing.Size(1123, 557);
+            this.fld_trlMMProductionNormItemsGeneralMaterial.Size = new System.Drawing.Size(1137, 564);
             this.fld_trlMMProductionNormItemsGeneralMaterial.TabIndex = 97;
             this.fld_trlMMProductionNormItemsGeneralMaterial.Tag = "DC";
             // 
@@ -470,7 +470,7 @@ namespace BOSERP.Modules.BatchProduct.UI
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(1140, 628);
+            this.ClientSize = new System.Drawing.Size(1154, 635);
             this.Controls.Add(this.panel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMBP101.IconOptions.Icon")));
             this.Name = "DMBP101";

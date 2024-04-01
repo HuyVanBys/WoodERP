@@ -129,7 +129,8 @@ namespace BOSERP.Modules.InvoiceInTransaction
             repositoryItemLookUpEdit.DisplayMember = "ACObjectName";
             repositoryItemLookUpEdit.ValueMember = "ACObjectAccessKey";
             repositoryItemLookUpEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            repositoryItemLookUpEdit.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoFilter;
+            repositoryItemLookUpEdit.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch;
+            repositoryItemLookUpEdit.AutoSearch += new LookUpEditAutoSearchEventHandler(rp_AutoSearch);
             repositoryItemLookUpEdit.NullText = string.Empty;
             repositoryItemLookUpEdit.Columns.Add(new LookUpColumnInfo("ACObjectNo", "Mã đối tượng"));
             repositoryItemLookUpEdit.Columns.Add(new LookUpColumnInfo("ACObjectName", "Tên đối tượng"));
@@ -140,7 +141,10 @@ namespace BOSERP.Modules.InvoiceInTransaction
             newColumn.ColumnEdit = repositoryItemLookUpEdit;
             gridView.Columns.Add(newColumn);
         }
-
+        private void rp_AutoSearch(object sender, LookUpEditAutoSearchEventArgs e)
+        {
+            e.ClearHighlight();
+        }
         protected override void GridView_InitNewRow(object sender, InitNewRowEventArgs e)
         {
             base.GridView_InitNewRow(sender, e);

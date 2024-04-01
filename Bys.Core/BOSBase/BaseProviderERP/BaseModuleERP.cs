@@ -463,10 +463,17 @@ namespace BOSERP
             if (CurrentModuleEntity.MainObject != null)
             {
                 BOSDbUtil dbUtil = new BOSDbUtil();
-                if (ToolbarNewActionName != null && ToolbarNewActionName != string.Empty)
-                    dbUtil.SetPropertyValue(CurrentModuleEntity.MainObject, "STToolbarActionName", ToolbarNewActionName);
-                else
-                    dbUtil.SetPropertyValue(CurrentModuleEntity.MainObject, "STToolbarActionName", ToolbarActionName);
+                try
+                {
+                    string value = (string)dbUtil.GetPropertyValue(CurrentModuleEntity.MainObject, "STToolbarActionName");
+                    if (ToolbarNewActionName != null && ToolbarNewActionName != string.Empty )
+                        dbUtil.SetPropertyValue(CurrentModuleEntity.MainObject, "STToolbarActionName", ToolbarNewActionName);
+                    else
+                        dbUtil.SetPropertyValue(CurrentModuleEntity.MainObject, "STToolbarActionName", ToolbarActionName);
+                }
+                catch
+                { 
+                }
             }
         }
 
@@ -822,8 +829,17 @@ namespace BOSERP
                     int minIndex = Int32.MaxValue;
                     ResetFocus(page.Controls, 0, ref minIndex);
                     return;
+                    //String tableName = BOSUtil.GetTableNameFromBusinessObject(this.CurrentModuleEntity.MainObject);
+                    //if (!string.IsNullOrEmpty(tableName))
+                    //{
+                    //    String primaryKey = BOSApp.GetTablePrimaryColumn(tableName);
+                    //    string mainNo = tableName.Substring(0, tableName.Length - 2) + "No"; 
+                    //    BOSTextBox mainNoControl = (BOSTextBox)Controls["fld_txt" +mainNo];
+                    //    if (mainNoControl != null) mainNoControl.Focus();
+                    //}
                 }
             }
+            
         }
 
         /// <summary>

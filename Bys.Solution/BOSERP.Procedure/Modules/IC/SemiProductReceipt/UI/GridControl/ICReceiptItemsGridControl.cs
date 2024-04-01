@@ -48,6 +48,20 @@ namespace BOSERP.Modules.SemiProductReceipt
             column.Caption = "Mã đơn hàng nội bộ";
             column.OptionsColumn.AllowEdit = false;
             gridView.Columns.Add(column);
+
+            column = new GridColumn();
+            column.FieldName = "FK_MMUpdatePositionItemID";
+            column.Caption = "Vị trí";
+            column.OptionsColumn.AllowEdit = true;
+            RepositoryItemLookUpEdit rep = new RepositoryItemLookUpEdit();
+            rep.ValueMember = "MMUpdatePositionItemID";
+            rep.DisplayMember = "MMUpdatePositionItemPositionName";
+            rep.NullText = String.Empty;
+            rep.TextEditStyle = TextEditStyles.Standard;
+            rep.SearchMode = SearchMode.AutoFilter;
+            rep.Columns.Add(new LookUpColumnInfo("MMUpdatePositionItemPositionName", "Vị trí"));
+            rep.QueryPopUp += new System.ComponentModel.CancelEventHandler(rep_QueryPopUp);
+            gridView.Columns.Add(column);
         }
         protected override void GridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
@@ -477,6 +491,23 @@ namespace BOSERP.Modules.SemiProductReceipt
                         e.ErrorText = "Hệ số không được phép thay đổi.";
                         e.Valid = false;
                     }
+                }
+            }
+        }
+        private void rep_QueryPopUp(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GridView gridView = (GridView)MainView;
+            ICReceiptsInfo item = (ICReceiptsInfo)gridView.GetRow(gridView.FocusedRowHandle);
+            LookUpEdit lookUpEdit = (LookUpEdit)sender;
+            if (item != null)
+            {
+                MMUpdatePositionItemsController controller = new MMUpdatePositionItemsController();
+                List<MMUpdatePositionItemsInfo> updatePositionItems = controller.GetAllLocationNameByProduct(item.FK_ICProductID, item.FK_ICStockID, 0);
+                if (updatePositionItems != null)
+                {
+                    lookUpEdit.Properties.DataSource = updatePositionItems;
+                    lookUpEdit.Properties.DisplayMember = "MMUpdatePositionItemPositionName";
+                    lookUpEdit.Properties.ValueMember = "MMUpdatePositionItemID";
                 }
             }
         }

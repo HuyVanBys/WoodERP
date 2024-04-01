@@ -1,4 +1,5 @@
 ﻿using BOSLib;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -52,6 +53,11 @@ namespace BOSERP
             }
             ds.Dispose();
             return list;
+        }
+        public List<APInvoiceInTransactionsInfo> CheckAvailableVATInfo(string VATNo, DateTime VATDate, string VATSymbol, string taxNumber)
+        {
+            DataSet ds = dal.GetDataSet("APInvoiceInTransactions_CheckAvailableVATInfo", VATNo, VATDate, VATSymbol, taxNumber);
+            return (List<APInvoiceInTransactionsInfo>)GetListFromDataSet(ds);
         }
     }
     #endregion

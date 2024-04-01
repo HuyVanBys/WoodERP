@@ -622,6 +622,7 @@ namespace BOSERP.Modules.PaymentCash
             ParentScreen.SetEnableOfToolbarButton(PaymentCashModule.ToolbarButtonApprove, false);
             ParentScreen.SetEnableOfToolbarButton(ToolbarButtons.PostedTransactions, false);
             ParentScreen.SetEnableOfToolbarButton(ToolbarButtons.UnPostedTransactions, false);
+            ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, false);
             if (objBankTransactionsInfo.ACBankTransactionID > 0)
             {
                 if (objBankTransactionsInfo.ACBankTransactionStatus == BankTransactionStatus.New.ToString())
@@ -629,23 +630,29 @@ namespace BOSERP.Modules.PaymentCash
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonEdit, true);
                     ParentScreen.SetEnableOfToolbarButton(PaymentCashModule.ToolbarButtonApprove, true);
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonComplete, false);
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, false);
                 }
                 else if (objBankTransactionsInfo.ACBankTransactionStatus == BankTransactionStatus.Approved.ToString())
                 {
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonEdit, false);
                     ParentScreen.SetEnableOfToolbarButton(PaymentCashModule.ToolbarButtonApprove, false);
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonComplete, true);
-
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, false);
                 }
                 else
                 {
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonEdit, false);
                     ParentScreen.SetEnableOfToolbarButton(PaymentCashModule.ToolbarButtonApprove, false);
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonComplete, false);
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, true);
                     ParentScreen.SetEnableOfToolbarButton(ToolbarButtons.PostedTransactions,
                          objBankTransactionsInfo.ACBankTransactionPostedStatus != PostedTransactionStatus.Posted.ToString());
                     ParentScreen.SetEnableOfToolbarButton(ToolbarButtons.UnPostedTransactions,
                         objBankTransactionsInfo.ACBankTransactionPostedStatus == PostedTransactionStatus.Posted.ToString());
+                }
+                if (Toolbar.IsEditAction())
+                {
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, true);
                 }
             }
         }
@@ -978,7 +985,8 @@ namespace BOSERP.Modules.PaymentCash
 
         public void ActionUnPosted()
         {
-            if (!CheckLock()) return;
+            if (!CheckLock())
+                return;
             PaymentCashEntities entity = (PaymentCashEntities)CurrentModuleEntity;
             ACBankTransactionsInfo mainObject = (ACBankTransactionsInfo)entity.MainObject;
             mainObject.ACBankTransactionPostedStatus = PostedTransactionStatus.UnPosted.ToString();
@@ -997,6 +1005,39 @@ namespace BOSERP.Modules.PaymentCash
                 item.ACBankTransactionItemDesc = mainObject.ACBankTransactionDesc;
             }
             entity.BankTransactionItemList.GridControl.RefreshDataSource();
+        }
+        public override bool ActionCancelComplete()
+        {
+            ACBankTransactionsInfo mainObject = (ACBankTransactionsInfo)CurrentModuleEntity.MainObject;
+            if (mainObject.ACBankTransactionID > 0)
+            {
+                if (!CheckLock()) return false;
+                if (!CheckRelativeDocument()) return false;
+                bool isComplete = base.ActionCancelComplete();
+                if (isComplete)
+                {
+                    ActionUnPosted();
+                    InvalidateToolbar();
+                }
+                return isComplete;
+            }
+            return false;
+        }
+        private bool CheckRelativeDocument()
+        {
+            ACBankTransactionsInfo mainObject = (ACBankTransactionsInfo)CurrentModuleEntity.MainObject;
+            ACDocumentsController objDocumentsController = new ACDocumentsController();
+            List<ACDocumentsInfo> documentsList = objDocumentsController.GetRelativeDocumentListByPaymentCashID(mainObject.ACBankTransactionID);
+
+            if (documentsList.Count() > 0)
+            {
+                MessageBox.Show(string.Format("Không thể thực hiện do đã tạo các chứng từ sau:" + Environment.NewLine + "-{0}", string.Join("\n-", documentsList.Select(o => o.ACDocumentNo).ToArray()))
+                                , CommonLocalizedResources.MessageBoxDefaultCaption
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }

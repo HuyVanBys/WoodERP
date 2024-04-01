@@ -31,10 +31,13 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.1.4.1")]
+[assembly: AssemblyVersion("4.1.5.5")]
 //[assembly: AssemblyFileVersion("1.0.0.1")]    //Dev
-[assembly: AssemblyFileVersion("1.6.4.9")]    //Test
-//[assembly: AssemblyFileVersion("1.3.7.7")]  //DT UAT
+//[assembly: AssemblyFileVersion("1.6.5.0")]    //Test
+//[assembly: AssemblyFileVersion("1.3.8.0")]  //BKV UAT
+[assembly: AssemblyFileVersion("1.4.6.1")]  //DucThanh UAT
 //[assembly: AssemblyFileVersion("1.3.5.5")]  //TR UAT
+//[assembly: AssemblyFileVersion("1.3.3.1")]  //DGK UAT
 //[assembly: AssemblyFileVersion("1.3.2.7")]  //HA UAT
-//[assembly: AssemblyFileVersion("1.3.2.6")]  //TH UAT
+//[assembly: AssemblyFileVersion("1.3.3.5")]  //TH UAT
+//[assembly: AssemblyFileVersion("1.3.0.9")]  //Happy UAT

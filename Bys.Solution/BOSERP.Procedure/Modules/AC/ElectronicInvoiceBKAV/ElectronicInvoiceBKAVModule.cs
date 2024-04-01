@@ -171,7 +171,14 @@ namespace BOSERP.Modules.ElectronicInvoiceBKAV
                     }
                 }
             }
-            mainObject.TotalAmountWithVATInWords = ConvertAmountToWord.ReadAmount(mainObject.TotalAmountWithVAT.ToString(), GECurrencyID);
+            if (mainObject.TotalAmountWithVAT < 0)
+            {
+                mainObject.TotalAmountWithVATInWords = String.Format("Âm {0}", ConvertAmountToWord.ReadAmount(Math.Abs(mainObject.TotalAmountWithVAT).ToString(), GECurrencyID));
+            }
+            else
+            {
+                mainObject.TotalAmountWithVATInWords = ConvertAmountToWord.ReadAmount(mainObject.TotalAmountWithVAT.ToString(), GECurrencyID);
+            }
             entity.EInvoiceDetailsList.GridControl?.RefreshDataSource();
             entity.UpdateMainObjectBindingSource();
         }
@@ -257,7 +264,14 @@ namespace BOSERP.Modules.ElectronicInvoiceBKAV
             mainObject.TotalAmountWithVAT = Math.Round(mainObject.SumOfTotalLineAmountWithoutVAT
                                                                     - mainObject.DiscountAmount
                                                                     + mainObject.TotalVATAmount, 0, MidpointRounding.AwayFromZero);
-            mainObject.TotalAmountWithVATInWords = ConvertAmountToWord.ReadAmount(mainObject.TotalAmountWithVAT.ToString(), objInvoicesInfo.FK_GECurrencyID);
+            if (mainObject.TotalAmountWithVAT < 0)
+            {
+                mainObject.TotalAmountWithVATInWords = String.Format("Âm {0}", ConvertAmountToWord.ReadAmount(Math.Abs(mainObject.TotalAmountWithVAT).ToString(), objInvoicesInfo.FK_GECurrencyID));
+            }
+            else
+            {
+                mainObject.TotalAmountWithVATInWords = ConvertAmountToWord.ReadAmount(mainObject.TotalAmountWithVAT.ToString(), objInvoicesInfo.FK_GECurrencyID);
+            }
             mainObject.ACEInvoiceGeneralType = EInvoiceGeneralType.Original.ToString();
 
             entity.EInvoiceDetailsList.GridControl.RefreshDataSource();

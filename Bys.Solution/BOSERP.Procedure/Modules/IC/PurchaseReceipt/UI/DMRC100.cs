@@ -242,5 +242,25 @@ namespace BOSERP.Modules.PurchaseReceipt.UI
         {
             ((PurchaseReceiptModule)Module).ClearPackage();
         }
+
+        private void fld_lnkChooseProspectCustomer_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
+        {
+            ((PurchaseReceiptModule)Module).CreateUpdatePositionsInfo();
+        }
+
+
+        private void fld_lkeMMUpdatePositionItemID_CloseUp_1(object sender, DevExpress.XtraEditors.Controls.CloseUpEventArgs e)
+        {
+            BOSLookupEdit lke = (BOSLookupEdit)sender;
+            if (e.Value != null && e.Value != lke.OldEditValue)
+            {
+                ((PurchaseReceiptModule)Module).ChangeUpdatePositionLocation(e.Value.ToString());
+            }
+        }
+
+        private void fld_lnkLoadQualitySerialNo_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
+        {
+            ((PurchaseReceiptModule)Module).UpdateQualitySerial();
+        }
     }
 }

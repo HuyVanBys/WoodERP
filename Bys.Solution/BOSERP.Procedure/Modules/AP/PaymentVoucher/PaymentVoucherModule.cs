@@ -338,7 +338,24 @@ namespace BOSERP.Modules.PaymentVoucher
                 if (!IsValidAmountLoanReceiptPaymentPlan())
                     return 0;
             }
-
+            string VATInfo = string.Empty;
+            ACDocumentsController objDocumentsController = new ACDocumentsController();
+            foreach (APPaymentVoucherItemsInfo item in entity.PaymentVoucherItemList)
+            {
+                List<ACDocumentsInfo> transactionList = objDocumentsController.CheckAvailableVATInfo(item.APPaymentVoucherItemVoucherNo, item.APPaymentVoucherItemInvoiceDate, item.APPaymentVoucherItemVATSymbol, item.APPaymentVoucherItemTaxNumber);
+                if (transactionList != null && transactionList.Count() > 0)
+                {
+                    VATInfo += String.Format("(Số hoá đơn: {0}, số seri: {1}, mã số thuế: {2})", item.APPaymentVoucherItemVoucherNo, item.APPaymentVoucherItemVATSymbol, item.APPaymentVoucherItemTaxNumber);
+                    VATInfo += Environment.NewLine;
+                }
+            }
+            if (!string.IsNullOrEmpty(VATInfo))
+            {
+                if (MessageBox.Show(String.Format("Hoá đơn kê khai đã tồn tại /n {0}, có lưu lại chứng từ không?", VATInfo), CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                {
+                    return 0;
+                }
+            }
             //foreach (APPaymentVoucherItemsInfo item in entity.PaymentVoucherItemList)
             //{
             //    ACAccountsController objAccountsController = new ACAccountsController();

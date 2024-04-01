@@ -53,6 +53,7 @@ namespace BOSERP.Modules.Proposal
         public const string ProposalItemsGridControlName = "fld_dgcARProposalItemsGridControl";
         public const string stProposalDescRichEdit = "fld_recARProposalDesc";
         public const string PaymentMethodControlName = "fld_lkeARPaymentMethodCombo";
+        public const string ProductAttributeControlName = "fld_lkeFK_ICProductAttributeID";
 
         public BOSLookupEdit SearchItemWorkLookupEditControl = null;
         public ARProposalItemWorksGridControl ARProposalItemWorksGridControl;
@@ -71,6 +72,7 @@ namespace BOSERP.Modules.Proposal
         private BOSPictureEdit ProductPicturePictureBox;
         public BOSRichEditControl ProposalDescEditControl;
         BOSLookupEdit PaymentMethodLookupEditControl;
+        public BOSLookupEdit ProductAttributeControl;
 
         public Dictionary<string, string> Operation = new Dictionary<string, string>()
             {
@@ -102,6 +104,7 @@ namespace BOSERP.Modules.Proposal
             ProductPicturePictureBox = (BOSPictureEdit)Controls[ProductPicturePictureBoxName];
             ProposalItemsGridControl = (ARProposalItemsGridControl)Controls[ProposalItemsGridControlName];
             ProposalDescEditControl = (BOSRichEditControl)Controls[stProposalDescRichEdit];
+            ProductAttributeControl = (BOSLookupEdit)Controls[ProductAttributeControlName];
             //AddSectionButtonControl = (BOSButton)Controls[AddSectionButtonControlName];
             //AddWorkButtonControl = (BOSButton)Controls[AddWorkButtonControlName];
 
@@ -2121,12 +2124,13 @@ namespace BOSERP.Modules.Proposal
                                                                             searchObject.ARProposalValidateFromDate,
                                                                             searchObject.ARProposalValidateToDate,
                                                                             searchObject.FK_ICProductID,
+                                                                            BOSApp.CurrentUsersInfo.ADUserID,
                                                                             BranchList);
                 }
             }
             else
             {
-                ds = objProposalsController.GetProposalByBranchID(searchObject.ARProposalNo,
+                ds = objProposalsController.GetProposalByBranchIDAndUser(searchObject.ARProposalNo,
                                                                             objObjectsInfo.ACObjectID,
                                                                             objObjectsInfo.ACObjectType,
                                                                             searchObject.FK_HREmployeeID,
@@ -2137,7 +2141,8 @@ namespace BOSERP.Modules.Proposal
                                                                             searchObject.ARProposalValidateFromDate,
                                                                             searchObject.ARProposalValidateToDate,
                                                                             searchObject.FK_ICProductID,
-                                                                            searchObject.FK_BRBranchID);
+                                                                            searchObject.FK_BRBranchID,
+                                                                            BOSApp.CurrentUsersInfo.ADUserID);
             }
 
             return ds;
@@ -3231,7 +3236,7 @@ namespace BOSERP.Modules.Proposal
             ARPriceSheetsController objPriceSheetsController = new ARPriceSheetsController();
             ARPriceSheetItemsInfo objPriceSheetItemsInfo = new ARPriceSheetItemsInfo();
             ARPriceSheetItemsController objPriceSheetItemsController = new ARPriceSheetItemsController();
-            List<ARPriceSheetItemsInfo> priceSheetItemsList = objPriceSheetItemsController.GetAllPriceSheetItemForProposal();
+            List<ARPriceSheetItemsInfo> priceSheetItemsList = objPriceSheetItemsController.GetAllPriceSheetItemForProposalBysUser(BOSApp.CurrentUsersInfo.ADUserID);
         stampp:
             guiFind<ARPriceSheetItemsInfo> guiSheetItems = new guiFind<ARPriceSheetItemsInfo>(TableName.ARPriceSheetItemsTableName,
                                                                                                 priceSheetItemsList, this, true, true, new[] { "ARPriceSheetNo" });
@@ -4784,6 +4789,15 @@ namespace BOSERP.Modules.Proposal
                 reviewer = new guiReportPreview(report, rptFile, true);
                 reviewer.Show();
             }
+        }
+        public List<ICProductsInfo> LoadProductList()
+        {
+            ProposalEntities entity = (ProposalEntities)CurrentModuleEntity;
+            ARProposalsInfo mainObject = (ARProposalsInfo)entity.MainObject;
+            ICProductsController objProductsController = new ICProductsController();
+            List<ICProductsInfo> listProduct = new List<ICProductsInfo>();
+            listProduct = objProductsController.GetAllProductForSaleToLookupEdit();
+            return listProduct;
         }
     }
     #endregion

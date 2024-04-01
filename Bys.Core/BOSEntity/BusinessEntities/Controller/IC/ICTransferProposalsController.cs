@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-
+using System.Linq;
 
 namespace BOSERP
 {
@@ -54,6 +54,20 @@ namespace BOSERP
         {
             DataSet ds = dal.GetDataSet("ICTransferProposals_GetSearchDataPermission", transferProposalNo, branchRef, employeeID, dateFrom, dateTo);
             return ds;
+        }
+        public ICTransferProposalsInfo GetTransferProposalForReportByTransferProposalID(int TransferProposalID)
+        {
+            DataSet ds = dal.GetDataSet("ICTransferProposals_GetTransferProposalForReportByTransferProposalID", TransferProposalID);
+            List<ICTransferProposalsInfo> TransferProposals = new List<ICTransferProposalsInfo>();
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    ICTransferProposalsInfo objTransferProposalsInfo = (ICTransferProposalsInfo)GetObjectFromDataRow(row);
+                    TransferProposals.Add(objTransferProposalsInfo);
+                }
+            }
+            return TransferProposals.FirstOrDefault();
         }
     }
     #endregion

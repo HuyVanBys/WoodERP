@@ -33,6 +33,9 @@ namespace BOSERP
         protected String _gEAccountingFormulaItemAccountCredit = String.Empty;
         protected String _gEAccountingFormulaItemExceptAccountDebit = String.Empty;
         protected String _gEAccountingFormulaItemExceptAccountCredit = String.Empty;
+        protected string _aRListOfSalesChannelType = string.Empty;
+        protected string _gEAccountingFormulaItemExceptChannelType = string.Empty;
+
 
         #endregion
 
@@ -251,6 +254,30 @@ namespace BOSERP
                 {
                     _gEAccountingFormulaItemExceptAccountCredit = value;
                     NotifyChanged("GEAccountingFormulaItemExceptAccountCredit");
+                }
+            }
+        }
+        public string ARListOfSalesChannelType
+        {
+            get { return _aRListOfSalesChannelType; }
+            set
+            {
+                if (value != this._aRListOfSalesChannelType)
+                {
+                    _aRListOfSalesChannelType = value;
+                    NotifyChanged("ARListOfSalesChannelType");
+                }
+            }
+        }
+        public string GEAccountingFormulaItemExceptChannelType
+        {
+            get { return _gEAccountingFormulaItemExceptChannelType; }
+            set
+            {
+                if (value != this._gEAccountingFormulaItemExceptChannelType)
+                {
+                    _gEAccountingFormulaItemExceptChannelType = value;
+                    NotifyChanged("GEAccountingFormulaItemExceptChannelType");
                 }
             }
         }

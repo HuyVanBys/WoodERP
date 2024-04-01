@@ -32,7 +32,7 @@ using Microsoft.Office.Interop.Excel;
 using BOSERP.Modules.SaleOrder.UI;
 using System.Reflection;
 using System.Data.OleDb;
-
+using System.Threading;
 namespace BOSERP.Modules.SaleOrder
 {
     #region SaleOrderModule
@@ -98,6 +98,7 @@ namespace BOSERP.Modules.SaleOrder
         public const string stSaleOrderInternalCommentRichEdit = "fld_recARSaleOrderInternalComment";
         public const string CommissionObjectLookupEditName = "fld_lkeACCustomerObjectID";
         private const string ButtonEditOtherFeeName = "fld_btnEditOtherFees";
+        private const string SaveCommision = "fld_btnSaveCommision";
         #endregion
 
         #region Other
@@ -106,6 +107,7 @@ namespace BOSERP.Modules.SaleOrder
         public bool IsSave = false;
         public string DiscountPerCentAllItem = string.Empty;
         public bool IsEditAfterPayment = false;
+        public bool IsEditPaymentTime = false;
         public List<string> TabModuleList { get; set; }
         #endregion
 
@@ -154,7 +156,7 @@ namespace BOSERP.Modules.SaleOrder
         public BOSLookupEdit ProductLookupControl;
         public BOSLookupEdit CommissionObjectLookupControl;
         public BOSButton ButtonEditOtherFee;
-
+        public BOSButton fld_btnSaveCommision;
         public class TempCommissionInfo
         {
             public int FK_ACObjectID { get; set; }
@@ -230,6 +232,8 @@ namespace BOSERP.Modules.SaleOrder
             ProductLookupControl = (BOSLookupEdit)Controls[ProductLookupControlName];
             CommissionObjectLookupControl = (BOSLookupEdit)Controls[CommissionObjectLookupEditName];
             ButtonEditOtherFee = (BOSComponent.BOSButton)Controls[SaleOrderModule.ButtonEditOtherFeeName];
+            fld_btnSaveCommision = (BOSComponent.BOSButton)Controls[SaleOrderModule.SaveCommision];
+
             ACObjectsController objObjectsController = new ACObjectsController();
             if (CommissionObjectLookupControl != null)
             {
@@ -309,12 +313,13 @@ namespace BOSERP.Modules.SaleOrder
                                                                             searchObject.SaleOrderFromDate,
                                                                             searchObject.SaleOrderToDate,
                                                                             searchObject.FK_ICProductID,
+                                                                            BOSApp.CurrentUsersInfo.ADUserID,
                                                                             BranchList);
                 }
             }
             else
             {
-                ds = objSaleOrdersController.GetSaleOrdersSemiProduct(searchObject.ARSaleOrderNo,
+                ds = objSaleOrdersController.GetSaleOrdersSemiProductBysUser(searchObject.ARSaleOrderNo,
                                                             searchObject.FK_HREmployeeID,
                                                             searchObject.FK_BRBranchID,
                                                             objObjectsInfo.ACObjectID,
@@ -323,7 +328,8 @@ namespace BOSERP.Modules.SaleOrder
                                                             SaleOrderType.SaleOrder.ToString(),
                                                             searchObject.SaleOrderFromDate,
                                                             searchObject.SaleOrderToDate,
-                                                            searchObject.FK_ICProductID
+                                                            searchObject.FK_ICProductID,
+                                                            BOSApp.CurrentUsersInfo.ADUserID
                                                             );
             }
             DataSet result = new DataSet();
@@ -497,10 +503,16 @@ namespace BOSERP.Modules.SaleOrder
             int customerPaymentCount = entity.ARSaleOrderPaymentTimesList.Where(o => o.FK_ARCustomerPaymentID != 0
                                                                   || o.FK_ARExtraCustomerPaymentID != 0)
                                                                   .Count();
-            decimal UnitVolume = Math.Round((objSaleOrderItemsInfo2.ARSaleOrderItemHeight * objSaleOrderItemsInfo2.ARSaleOrderItemWidth * objSaleOrderItemsInfo2.ARSaleOrderItemLength)
+            decimal UnitVolume = 0;
+                if (objProductsInfo.ICProductVolume > 0) UnitVolume = objProductsInfo.ICProductVolume;
+                else
+                    UnitVolume = Math.Round((objSaleOrderItemsInfo2.ARSaleOrderItemHeight * objSaleOrderItemsInfo2.ARSaleOrderItemWidth * objSaleOrderItemsInfo2.ARSaleOrderItemLength)
                     / (decimal)Math.Pow(10, 9), 4);
             objSaleOrderItemsInfo2.ARSaleOrderItemProductCBM = UnitVolume * objSaleOrderItemsInfo2.ARSaleOrderItemProductQty;
+            objSaleOrderItemsInfo2.ARSaleOrderItemBlock = (Math.Round((objSaleOrderItemsInfo2.ARSaleOrderItemHeight * objSaleOrderItemsInfo2.ARSaleOrderItemWidth * objSaleOrderItemsInfo2.ARSaleOrderItemLength)
+                    / (decimal)Math.Pow(10, 9), 4) )* objSaleOrderItemsInfo2.ARSaleOrderItemProductQty  ;
             objSaleOrdersInfo.ARSaleOrderCBM = entity.ARSaleOrderItemsList.Sum(x => x.ARSaleOrderItemProductCBM);
+            objSaleOrderItemsInfo2.ARSaleOrderItemProductQtyInBox = objSaleOrderItemsInfo2.ARSaleOrderItemProductQty / (objProductsInfo.ICProductQtyInBox == 0? 1: objProductsInfo.ICProductQtyInBox);
             UpdateContQty();
             UpdateTotalAmount(entity.ARSaleOrderItemsList);
         }
@@ -678,10 +690,10 @@ namespace BOSERP.Modules.SaleOrder
             SetVisibleTabPage(Tab, "fld_tabSOItemContainers,xtraTabPage5", true);
             if (ARSaleOrderItemsGridControl != null)
                 ARSaleOrderItemsGridControl.LoadGridViewAccordingToToolbarActionNew(string.Empty);
-            if (ProductLookupControl != null)
-            {
-                ProductLookupControl.Properties.DataSource = LoadProductList();
-            }
+            //if (ProductLookupControl != null)
+            //{
+            //    ProductLookupControl.Properties.DataSource = LoadProductList();
+            //}
             CurrentModuleEntity.UpdateMainObjectBindingSource();
             ChangeDisplayAndDataItemListGridView();
         }
@@ -867,10 +879,6 @@ namespace BOSERP.Modules.SaleOrder
             //else
             //    SaleOrderItemsGridControl.LoadGridViewSourceSellingPrice(true);
             SaleOrderItemsGridControl.LoadGridViewSourceSellingPrice(true);
-            if (ProductLookupControl != null)
-            {
-                ProductLookupControl.Properties.DataSource = LoadProductList();
-            }
             SaleOrderItemsGridControl.ShowMessage = true;
             CurrentModuleEntity.UpdateMainObjectBindingSource();
             //SetDefaultMainObjectBySomeCreteria();
@@ -884,8 +892,8 @@ namespace BOSERP.Modules.SaleOrder
             ARSaleOrdersInfo mainObject = (ARSaleOrdersInfo)CurrentModuleEntity.MainObject;
             mainObject.ARSaleOrderSaleType = SaleType.National.ToString();
             mainObject.STToolbarActionName = "NewFromOther";
-            if (ARSaleOrderSaleTypeLookupEditControl != null)
-                ARSaleOrderSaleTypeLookupEditControl.ReadOnly = true;
+            //if (ARSaleOrderSaleTypeLookupEditControl != null)
+            //    ARSaleOrderSaleTypeLookupEditControl.ReadOnly = true;
             ValidateDeliveryMethodByActionNew("NewFromOther");
             CSCompanysInfo objCompanysInfo = BOSApp.CurrentCompanyInfo;
             //if (objCompanysInfo != null && objCompanysInfo.CSSourceSellingPriceMethod == ADConfigValueUtility.cstSourceSellingPriceMethodMasterData)
@@ -893,10 +901,6 @@ namespace BOSERP.Modules.SaleOrder
             //else
             //    SaleOrderItemsGridControl.LoadGridViewSourceSellingPrice(true);
             SaleOrderItemsGridControl.LoadGridViewSourceSellingPrice(true);
-            if (ProductLookupControl != null)
-            {
-                ProductLookupControl.Properties.DataSource = LoadProductList();
-            }
             //SetDefaultMainObjectBySomeCreteria();
             ChangeSaleType();
             CurrentModuleEntity.UpdateMainObjectBindingSource();
@@ -1008,16 +1012,13 @@ namespace BOSERP.Modules.SaleOrder
             ARSaleOrdersInfo objSaleOrdersInfo = (ARSaleOrdersInfo)entity.MainObject;
 
             ARProposalItemsController objProposalItemsController = new ARProposalItemsController();
-            List<ARProposalItemsInfo> proposalList = objProposalItemsController.GetProposalsForOrdering();
+            List<ARProposalItemsInfo> proposalList = objProposalItemsController.GetProposalsForOrderingBysUser(BOSApp.CurrentUsersInfo.ADUserID);
 
             ValidateDeliveryMethodByActionNew("FromNewProposal");
             objSaleOrdersInfo.STToolbarActionName = "NewFromProposal";
             objSaleOrdersInfo.ARSaleOrderProductType = SaleOrderProductType.Product.ToString();
             SaleOrderItemsGridControl.LoadGridViewSourceSellingPrice(false);
-            if (ProductLookupControl != null)
-            {
-                ProductLookupControl.Properties.DataSource = LoadProductList();
-            }
+            
             //guiFind<ARProposalItemsInfo> guiFind = new guiFind<ARProposalItemsInfo>(TableName.ARProposalItemsTableName, proposalList, this, true, true);
             //guiFind.ShowDialog();
             guiChooseProposals guiFind = new guiChooseProposals(proposalList);
@@ -1199,14 +1200,14 @@ namespace BOSERP.Modules.SaleOrder
                 MessageBox.Show(SaleOrderLocalizedResources.UpdateReceiptAddressRequireMessage, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return 0;
             }
-            if (String.IsNullOrEmpty(objSaleOrdersInfo.ARSaleOrderDeliveryContactName))
+            if (String.IsNullOrEmpty(objSaleOrdersInfo.ARSaleOrderDeliveryContactName) &&
+                MessageBox.Show(SaleOrderLocalizedResources.UpdateReceiptNameRequireMessage, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             {
-                MessageBox.Show(SaleOrderLocalizedResources.UpdateReceiptNameRequireMessage, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return 0;
             }
-            if (String.IsNullOrEmpty(objSaleOrdersInfo.ARSaleOrderDeliveryAddressTel))
+            if (String.IsNullOrEmpty(objSaleOrdersInfo.ARSaleOrderDeliveryAddressTel)
+                && MessageBox.Show(SaleOrderLocalizedResources.UpdateReceiptTelRequireMessage, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             {
-                MessageBox.Show(SaleOrderLocalizedResources.UpdateReceiptTelRequireMessage, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return 0;
             }
 
@@ -1767,8 +1768,11 @@ namespace BOSERP.Modules.SaleOrder
                     EnableFieldGroupControls(SaleOrderModule.FieldGroupDeposit, true);
                 }
             }
+            ARInvoicesController objARInvoicesController = new ARInvoicesController();
+            List<ARInvoicesInfo> listInvoice = objARInvoicesController.GetInvoiceListBySaleOrder(objSaleOrdersInfo.ARSaleOrderID);
+            if (listInvoice.Count() > 0) fld_btnSaveCommision.Visible = false; else fld_btnSaveCommision.Visible = true;
             OldSaleOrder = (ARSaleOrdersInfo)CurrentModuleEntity.MainObject.Clone();
-            entity.ARSaleOrderItemsList.GridControl?.RefreshDataSource();
+            
 
             string salesmans = string.Join(" , ", entity.ARSalesmansList.Select(p => p.ARSalesmanName).ToArray());
             if(SalesmanButtonEditControl != null)
@@ -1800,8 +1804,8 @@ namespace BOSERP.Modules.SaleOrder
                 SaleOrderInternalCommentRichEdit.OpenXmlBytes = (objSaleOrdersInfo.ARSaleOrderInternalComment != null && objSaleOrdersInfo.ARSaleOrderInternalComment.Length > 0)
                     ? objSaleOrdersInfo.ARSaleOrderInternalComment : null;
             }
-            if (objSaleOrdersInfo.STToolbarActionName.Equals("NewFromWood")
-                || objSaleOrdersInfo.STToolbarActionName.Equals("NewFromOther"))
+            if (objSaleOrdersInfo.STToolbarActionName.Equals("NewFromWood"))
+                //|| objSaleOrdersInfo.STToolbarActionName.Equals("NewFromOther"))
             {
                 ARSaleOrderSaleTypeLookupEditControl.ReadOnly = true;
                 SetVisibleTabPage(Tab, "fld_tabSOItemContainers,xtraTabPage5", false);
@@ -1813,6 +1817,7 @@ namespace BOSERP.Modules.SaleOrder
                 ARSaleOrderSaleTypeLookupEditControl.ReadOnly = false;
                 SetVisibleTabPage(Tab, "fld_tabSOItemContainers,xtraTabPage5", true);
             }
+
             if(DiscountProgramButtonEdit != null)
             {
                 if (objSaleOrdersInfo.STToolbarActionName == "NewFromProposal")
@@ -1838,11 +1843,13 @@ namespace BOSERP.Modules.SaleOrder
             }
             LoadControlByEditPrice(IsEditPrice);
             SaleOrderItemsGridControl.ShowMessage = true;
+            IsEditPaymentTime = false;
             ARDiscountProgramsController objDiscountProgramsController = new ARDiscountProgramsController();
             ARDiscountProgramsInfo objDiscountProgramsInfo = (ARDiscountProgramsInfo)objDiscountProgramsController.GetObjectByID(objSaleOrdersInfo.FK_ARDiscountProgramID);
             if (objDiscountProgramsInfo != null)
                 objSaleOrdersInfo.ARDiscountProgramName = objDiscountProgramsInfo.ARDiscountProgramName;
             objSaleOrdersInfo.ARSaleOrderItemGrantedFrom = entity.ARSaleOrderItemsList.Select(o => o.ARSaleOrderItemGrantedFrom).FirstOrDefault();
+            entity.ARSaleOrderItemsList.GridControl?.RefreshDataSource();
             entity.UpdateMainObjectBindingSource();
         }
 
@@ -2046,7 +2053,7 @@ namespace BOSERP.Modules.SaleOrder
 
                 ARInvoicesController objARInvoicesController = new ARInvoicesController();
                 List<ARInvoicesInfo> listInvoice = objARInvoicesController.GetInvoiceListBySaleOrder(objSaleOrdersInfo.ARSaleOrderID);
-                if (listPlan.Count() > 0)
+                if (listInvoice.Count() > 0)
                 {
                     MessageBox.Show(SaleOrderLocalizedResources.CancelCompleteExistsInvoice
                         + Environment.NewLine
@@ -2825,7 +2832,23 @@ namespace BOSERP.Modules.SaleOrder
             UpdateCommissions();
             entity.UpdateMainObjectBindingSource();
         }
-
+        public void SaveCommissions()
+        {
+            SaleOrderEntities entity = (SaleOrderEntities)CurrentModuleEntity;
+            ARSaleOrdersInfo objSaleOrdersInfo = (ARSaleOrdersInfo)entity.MainObject;
+            ARInvoicesController objARInvoicesController = new ARInvoicesController();
+            List<ARInvoicesInfo> listInvoice = objARInvoicesController.GetInvoiceListBySaleOrder(objSaleOrdersInfo.ARSaleOrderID);
+            if (Toolbar.IsNullOrNoneAction() && objSaleOrdersInfo.ARSaleOrderID > 0 
+                && objSaleOrdersInfo.ARSaleOrderBatchStatus != "New" && !string.IsNullOrEmpty(objSaleOrdersInfo.ARSaleOrderBatchStatus)
+                 && listInvoice.Count() == 0)
+            {
+                if (BOSApp.ShowMessageYesNo("Bạn có muốn lưu chi phí thay đổi không?") == DialogResult.Yes)
+                {
+                    entity.SaleCommissionsList.SaveItemObjects();
+                    (new ARSaleOrdersController()).UpdateCommisSion(objSaleOrdersInfo.ARSaleOrderID, objSaleOrdersInfo.ARSaleOrderSOCommissionPercent, objSaleOrdersInfo.ARSaleOrderSOCommissionAmount, BOSApp.CurrentUsersInfo.ADUserName);
+                }
+            }
+        }
         public void ChangeCommissionAmount()
         {
             SaleOrderEntities entity = (SaleOrderEntities)CurrentModuleEntity;
@@ -2841,6 +2864,7 @@ namespace BOSERP.Modules.SaleOrder
             BOSApp.RoundByCurrency(objSaleOrdersInfo, objSaleOrdersInfo.FK_GECurrencyID);
             UpdateCommissions();
             entity.UpdateMainObjectBindingSource();
+            SaveCommissions();
         }
 
         public void ChangeDiffPricePercent()
@@ -5046,16 +5070,19 @@ namespace BOSERP.Modules.SaleOrder
             SaleOrderEntities entity = (SaleOrderEntities)CurrentModuleEntity;
             ARSaleOrdersInfo mainObject = (ARSaleOrdersInfo)entity.MainObject;
             decimal remainAmount = mainObject.ARSaleOrderTotalAmount;
-            entity.ARSaleOrderPaymentTimesList.ForEach(o =>
+            if (!IsEditPaymentTime)
             {
-                o.ARSaleOrderPaymentTimeStatus = SaleOrderPaymentTimeStatus.New.ToString();
-                o.ARSaleOrderPaymentTimeAmount = Math.Min(remainAmount, mainObject.ARSaleOrderTotalAmount * o.ARSaleOrderPaymentTimePaymentTermItemPercentPayment / 100);
-                o.ARSaleOrderPaymentTimeBalanceDue = Math.Min(remainAmount, mainObject.ARSaleOrderTotalAmount * o.ARSaleOrderPaymentTimePaymentTermItemPercentPayment / 100);
-                o.ARSaleOrderPaymentTimeDate = GetPaymentTime(o.ARSaleOrderPaymentTimePaymentTermItemType, o.ARSaleOrderPaymentTimePaymentTimepoint, o.ARSaleOrderPaymentTimePaymentTermItemDay);
-                o.ARSaleOrderPaymentTimeDueDate = GetPaymentTime(o.ARSaleOrderPaymentTimePaymentTermItemType, o.ARSaleOrderPaymentTimePaymentTimepoint, o.ARSaleOrderPaymentTimePaymentTermItemDay);
-                BOSApp.RoundByCurrency(o, mainObject.FK_GECurrencyID);
-                remainAmount -= o.ARSaleOrderPaymentTimeAmount;
-            });
+                entity.ARSaleOrderPaymentTimesList.ForEach(o =>
+                {
+                    o.ARSaleOrderPaymentTimeStatus = SaleOrderPaymentTimeStatus.New.ToString();
+                    o.ARSaleOrderPaymentTimeAmount = Math.Min(remainAmount, mainObject.ARSaleOrderTotalAmount * o.ARSaleOrderPaymentTimePaymentTermItemPercentPayment / 100);
+                    o.ARSaleOrderPaymentTimeBalanceDue = Math.Min(remainAmount, mainObject.ARSaleOrderTotalAmount * o.ARSaleOrderPaymentTimePaymentTermItemPercentPayment / 100);
+                    o.ARSaleOrderPaymentTimeDate = GetPaymentTime(o.ARSaleOrderPaymentTimePaymentTermItemType, o.ARSaleOrderPaymentTimePaymentTimepoint, o.ARSaleOrderPaymentTimePaymentTermItemDay);
+                    o.ARSaleOrderPaymentTimeDueDate = GetPaymentTime(o.ARSaleOrderPaymentTimePaymentTermItemType, o.ARSaleOrderPaymentTimePaymentTimepoint, o.ARSaleOrderPaymentTimePaymentTermItemDay);
+                    BOSApp.RoundByCurrency(o, mainObject.FK_GECurrencyID);
+                    remainAmount -= o.ARSaleOrderPaymentTimeAmount;
+                });
+            }
             entity.ARSaleOrderPaymentTimesList.GridControl?.RefreshDataSource();
         }
 
@@ -7709,6 +7736,7 @@ namespace BOSERP.Modules.SaleOrder
                 BOSApp.RoundByCurrency(o, mainobject.FK_GECurrencyID);
             });
             entity.SaleCommissionsList.GridControl?.RefreshDataSource();
+            
         }
 
         public void DeleteItemFromSaleCommissions()
@@ -8307,7 +8335,7 @@ namespace BOSERP.Modules.SaleOrder
                     a.ARSaleOrderItemContainerValume = objContainersInfo.GEContainerQuantity;
                 }
             });
-
+            if (entity.SaleOrderItemContainerList.Count() == 0) return;
             ARSaleOrderItemContainersInfo objSaleOrderItemContainersInfo = entity.SaleOrderItemContainerList[entity.SaleOrderItemContainerList.CurrentIndex];
             if (volumeTotalcont > 0 && objSaleOrderItemContainersInfo.ARSaleOrderItemContainerValume > 0)
             {
@@ -8361,7 +8389,7 @@ namespace BOSERP.Modules.SaleOrder
                     || mainObject.STToolbarActionName.Equals("NewFromOther")
                     || mainObject.STToolbarActionName.Equals("NewFromWood"))
                 {
-                    if (objCompanysInfo != null && objCompanysInfo.CSSourceSellingPriceMethod == ADConfigValueUtility.cstSourceSellingPriceMethodMasterData)
+                    if ((objCompanysInfo != null && objCompanysInfo.CSSourceSellingPriceMethod == ADConfigValueUtility.cstSourceSellingPriceMethodMasterData)  || mainObject.STToolbarActionName.Equals("NewFromOther"))
                     {
                         entity.ARSaleOrderItemsList.ForEach(o =>
                         {
@@ -8442,13 +8470,22 @@ namespace BOSERP.Modules.SaleOrder
 
             SaleOrderEntities entity = (SaleOrderEntities)CurrentModuleEntity;
             ARSaleOrdersInfo objSaleOrdersInfo = (ARSaleOrdersInfo)entity.MainObject;
-
+            
             GridColumn qtyColumn = gridView.Columns["ARSaleOrderItemProductQty"];
             if (qtyColumn != null)
             {
                 if (objSaleOrdersInfo.ARSaleOrderProductType == ProductType.Product.ToString())
                 {
-                    SaleOrderItemsGridControl.FormatNumbericColumn(qtyColumn, true, "n0");
+                    string ProjectBKV = BOSApp.GetDisplayTextFromConfigValue("ProjectBKV", "true");
+                    bool isProjectBKV = bool.Parse(string.IsNullOrWhiteSpace(ProjectBKV) ? "false" : ProjectBKV);
+                    if (isProjectBKV)
+                    {
+                        SaleOrderItemsGridControl.FormatNumbericColumn(qtyColumn, true, "n4");
+                    }    
+                    else
+                    {
+                        SaleOrderItemsGridControl.FormatNumbericColumn(qtyColumn, true, "n0");
+                    }    
                 }
                 else
                 {
@@ -8632,7 +8669,28 @@ namespace BOSERP.Modules.SaleOrder
                 ProductPicturePictureBox.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             }
         }
-
+        public void InitProductPictureImage(string image,BOSPictureEdit ProductPicturePictureBox)
+        {
+            if (string.IsNullOrEmpty(image))
+                return;
+            //image = image.Replace("/view?usp=sharing", "").Replace("https://drive.google.com/file/d/", "https://drive.google.com/uc?id=");
+            try
+            {
+                //WebClient webclient = new WebClient();
+                //webclient.Headers.Add("User-Agent: Other");
+                //byte[] bytes = webclient.DownloadData(image);
+                //MemoryStream ms = new MemoryStream(bytes);
+                //System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                if (ProductPicturePictureBox != null)
+                    ProductPicturePictureBox.Image = BOSApp.GetProductPictureImageByLink(image);
+            }
+            catch
+            {
+                //BOSApp.ShowMessage("Link ảnh hoặc định dạng hình ảnh không hợp lệ!");
+                //if (CarcassPicture != null)
+                //    CarcassPicture.Image = null;
+            }
+        }
         public void GetInventoryQty()
         {
             SaleOrderEntities entity = (SaleOrderEntities)CurrentModuleEntity;
@@ -8743,7 +8801,7 @@ namespace BOSERP.Modules.SaleOrder
             foreach (ARSaleOrderItemsInfo item in entity.ARSaleOrderItemsList)
             {
                 fee = entity.SaleOrderItemAllocationFeeList.Where(o => o.ARSaleOrderItemVirtualID == item.ARSaleOrderItemVirtualID).Sum(i => i.ARSaleOrderItemAllocationFeeFeeAmount);
-                if(item.ARSaleOrderItemProductExchangeQty > 0)
+                if(item.ARSaleOrderItemProductExchangeQty > 0 && fee != 0 )
                 {
                     item.ARSaleOrderItemProductUnitPrice = item.ICProductUnitPrice + fee / item.ARSaleOrderItemProductExchangeQty;
                     entity.SetProductPriceByProductUnitPrice(item);
@@ -8993,7 +9051,7 @@ namespace BOSERP.Modules.SaleOrder
             {
                 if(!string.IsNullOrEmpty(o.IPProductNo))
                 objProductsInfo = (ICProductsInfo)objProductsController.GetObjectByNo(o.IPProductNo);
-                if (!string.IsNullOrEmpty(o.IPProductNoOfOldSys))
+                if (string.IsNullOrEmpty(o.IPProductNo) && !string.IsNullOrEmpty(o.IPProductNoOfOldSys))
                     objProductsInfo = (ICProductsInfo)objProductsController.GetProductByNoOfOldSys(o.IPProductNoOfOldSys);
                 item = new ARSaleOrderItemsInfo();
                 item.FK_ICProductID = objProductsInfo.ICProductID;
@@ -9001,6 +9059,7 @@ namespace BOSERP.Modules.SaleOrder
                 item.ARSaleOrderItemProductQty = Math.Round(o.IPProductQuantity, 6);
                 item.ARSaleOrderItemProductUnitPrice = o.IPProductUnitPrice;
                 item.ARSaleOrderItemProductDiscount = o.IPProductDiscount;
+                string test = item.ARSaleOrderItemVirtualID;
                 ValidateItemToSaleOrderItemsList(item);
                 
             });
@@ -9166,6 +9225,8 @@ namespace BOSERP.Modules.SaleOrder
                 ICProductsInfo product = (ICProductsInfo)objProductsController.GetObjectByID(objSaleOrderItemsInfo.FK_ICProductID);
                 decimal qty = objSaleOrderItemsInfo.ARSaleOrderItemProductQty;
                 objSaleOrderItemsInfo = ToSaleOrderItemsInfo(product);
+                string projectBKV = BOSApp.GetDisplayTextFromConfigValue("ProjectBKV", "true");
+                bool isProjectBKV = bool.Parse(string.IsNullOrWhiteSpace(projectBKV) ? "false" : projectBKV);
                 if (IsEditAfterPayment)
                 {
                     objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice = 0;
@@ -9183,19 +9244,90 @@ namespace BOSERP.Modules.SaleOrder
                     objSaleOrderItemsInfo.ARSaleOrderItemPrice = 0;
                     objSaleOrderItemsInfo.ICProductUnitPrice = objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice;
                     objSaleOrderItemsInfo.ARSaleOrderItemProductTargetPrice = 0;
-                    objSaleOrderItemsInfo.ARSaleOrderItemProductQty = qty;                    
+                    objSaleOrderItemsInfo.ARSaleOrderItemProductQty = qty;
                     if (mainObject.STToolbarActionName.Equals("NewFromWood") && product != null)
                     {
                         objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice = product.ICProductPrice01;
                         BOSApp.RoundByCurrency(objSaleOrderItemsInfo, mainObject.FK_GECurrencyID);
                     }
-
                     if (mainObject.STToolbarActionName == "Manual")
                     {
                         if (product != null && product.ICProductType == ProductType.Product.ToString())
                         {
-                            decimal sumQty = entity.ARSaleOrderItemsList.Where(o => o.FK_ICProductID == objSaleOrderItemsInfo.FK_ICProductID && o.FK_ICMeasureUnitID == objSaleOrderItemsInfo.FK_ICMeasureUnitID).Sum(p => p.ARSaleOrderItemProductQty);
+                            if (isProjectBKV)
+                            {
+                                objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice = BOSApp.CalculaterProductUnitPrice(product,
+                                                                                                objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice,
+                                                                                                qty,
+                                                                                                objSaleOrderItemsInfo.FK_ICMeasureUnitID,
+                                                                                                objCustomersInfo != null ? objCustomersInfo.ARCustomerID : 0,
+                                                                                                mainObject.ARSaleOrderDate,
+                                                                                                mainObject.FK_GECurrencyID);
+                                objSaleOrderItemsInfo.ICProductUnitPrice = objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice;
+                                BOSApp.RoundByCurrency(objSaleOrderItemsInfo, mainObject.FK_GECurrencyID);
+                                objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice2 = mainObject.ARSaleOrderExchangeRate2 > 0 ? objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice * mainObject.ARSaleOrderExchangeRate / mainObject.ARSaleOrderExchangeRate2 : 0;
+                            }
+                            else
+                            {
+                                decimal sumQty = entity.ARSaleOrderItemsList.Where(o => o.FK_ICProductID == objSaleOrderItemsInfo.FK_ICProductID && o.FK_ICMeasureUnitID == objSaleOrderItemsInfo.FK_ICMeasureUnitID).Sum(p => p.ARSaleOrderItemProductQty);
+                                objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice = BOSApp.CalculaterProductUnitPrice(product,
+                                                                                                objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice,
+                                                                                                sumQty + qty,
+                                                                                                objSaleOrderItemsInfo.FK_ICMeasureUnitID,
+                                                                                                objCustomersInfo != null ? objCustomersInfo.ARCustomerID : 0,
+                                                                                                mainObject.ARSaleOrderDate,
+                                                                                                mainObject.FK_GECurrencyID);
+                                objSaleOrderItemsInfo.ICProductUnitPrice = objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice;
+                                BOSApp.RoundByCurrency(objSaleOrderItemsInfo, mainObject.FK_GECurrencyID);
+                                objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice2 = mainObject.ARSaleOrderExchangeRate2 > 0 ? objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice * mainObject.ARSaleOrderExchangeRate / mainObject.ARSaleOrderExchangeRate2 : 0;
+
+                                if (entity.ARSaleOrderItemsList.Where(o => o.FK_ICProductID == objSaleOrderItemsInfo.FK_ICProductID && o.FK_ICMeasureUnitID == objSaleOrderItemsInfo.FK_ICMeasureUnitID).Count() > 0)
+                                {
+                                    entity.ARSaleOrderItemsList.Where(o => o.FK_ICProductID == objSaleOrderItemsInfo.FK_ICProductID && o.FK_ICMeasureUnitID == objSaleOrderItemsInfo.FK_ICMeasureUnitID).ToList().ForEach(o =>
+                                    {
+                                        o.ARSaleOrderItemProductUnitPrice = BOSApp.CalculaterProductUnitPrice(product,
+                                                                                                o.ARSaleOrderItemProductUnitPrice,
+                                                                                                sumQty + qty,
+                                                                                                o.FK_ICMeasureUnitID,
+                                                                                                objCustomersInfo != null ? objCustomersInfo.ARCustomerID : 0,
+                                                                                                mainObject.ARSaleOrderDate,
+                                                                                                mainObject.FK_GECurrencyID);
+                                        o.ICProductUnitPrice = o.ARSaleOrderItemProductUnitPrice;
+                                        BOSApp.RoundByCurrency(o, mainObject.FK_GECurrencyID);
+                                        o.ARSaleOrderItemProductUnitPrice2 = mainObject.ARSaleOrderExchangeRate2 > 0 ? o.ARSaleOrderItemProductUnitPrice * mainObject.ARSaleOrderExchangeRate / mainObject.ARSaleOrderExchangeRate2 : 0;
+                                    });
+                                }
+                            }
+                        }
+                    }
+                    entity.SetProductPriceByProductUnitPrice(objSaleOrderItemsInfo);
+                    entity.ARSaleOrderItemsList.Add(objSaleOrderItemsInfo);
+                }
+                else
+                {
+                    if (objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice == 0 || string.IsNullOrEmpty(objSaleOrderItemsInfo.ARSaleOrderItemVirtualID) || mainObject.STToolbarActionName == "Manual")
+                        ChangeItemUnitPriceBelongPriceLevel(objSaleOrderItemsInfo);
+                    objSaleOrderItemsInfo.ARSaleOrderItemProductQty = qty;
+                    if (product != null && product.ICProductType == ProductType.Product.ToString())
+                    {
+                        if (isProjectBKV)
+                        {
                             objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice = BOSApp.CalculaterProductUnitPrice(product,
+                                                                                            objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice,
+                                                                                            qty,
+                                                                                            objSaleOrderItemsInfo.FK_ICMeasureUnitID,
+                                                                                            objCustomersInfo != null ? objCustomersInfo.ARCustomerID : 0,
+                                                                                            mainObject.ARSaleOrderDate,
+                                                                                            mainObject.FK_GECurrencyID);
+                            objSaleOrderItemsInfo.ICProductUnitPrice = objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice;
+                            BOSApp.RoundByCurrency(objSaleOrderItemsInfo, mainObject.FK_GECurrencyID);
+                            objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice2 = mainObject.ARSaleOrderExchangeRate2 > 0 ? objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice * mainObject.ARSaleOrderExchangeRate / mainObject.ARSaleOrderExchangeRate2 : 0;
+                        }
+                        else
+                        {
+                            decimal sumQty = entity.ARSaleOrderItemsList.Where(o => o.FK_ICProductID == objSaleOrderItemsInfo.FK_ICProductID && o.FK_ICMeasureUnitID == objSaleOrderItemsInfo.FK_ICMeasureUnitID).Sum(p => p.ARSaleOrderItemProductQty);
+                            if (objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice == 0 || string.IsNullOrEmpty(objSaleOrderItemsInfo.ARSaleOrderItemVirtualID) || mainObject.STToolbarActionName == "Manual")
+                                objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice = BOSApp.CalculaterProductUnitPrice(product,
                                                                                             objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice,
                                                                                             sumQty + qty,
                                                                                             objSaleOrderItemsInfo.FK_ICMeasureUnitID,
@@ -9210,7 +9342,8 @@ namespace BOSERP.Modules.SaleOrder
                             {
                                 entity.ARSaleOrderItemsList.Where(o => o.FK_ICProductID == objSaleOrderItemsInfo.FK_ICProductID && o.FK_ICMeasureUnitID == objSaleOrderItemsInfo.FK_ICMeasureUnitID).ToList().ForEach(o =>
                                 {
-                                    o.ARSaleOrderItemProductUnitPrice = BOSApp.CalculaterProductUnitPrice(product,
+                                    if (objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice == 0 || string.IsNullOrEmpty(objSaleOrderItemsInfo.ARSaleOrderItemVirtualID) || mainObject.STToolbarActionName == "Manual")
+                                        o.ARSaleOrderItemProductUnitPrice = BOSApp.CalculaterProductUnitPrice(product,
                                                                                             o.ARSaleOrderItemProductUnitPrice,
                                                                                             sumQty + qty,
                                                                                             o.FK_ICMeasureUnitID,
@@ -9224,49 +9357,14 @@ namespace BOSERP.Modules.SaleOrder
                             }
                         }
                     }
-                    entity.SetProductPriceByProductUnitPrice(objSaleOrderItemsInfo);
-                    entity.ARSaleOrderItemsList.Add(objSaleOrderItemsInfo);
-                }
-                else
-                {
-                    ChangeItemUnitPriceBelongPriceLevel(objSaleOrderItemsInfo);
-                    objSaleOrderItemsInfo.ARSaleOrderItemProductQty = qty;
-                    if (product != null && product.ICProductType == ProductType.Product.ToString())
-                    {
-                        decimal sumQty = entity.ARSaleOrderItemsList.Where(o => o.FK_ICProductID == objSaleOrderItemsInfo.FK_ICProductID && o.FK_ICMeasureUnitID == objSaleOrderItemsInfo.FK_ICMeasureUnitID).Sum(p => p.ARSaleOrderItemProductQty);
-                        objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice = BOSApp.CalculaterProductUnitPrice(product,
-                                                                                        objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice,
-                                                                                        sumQty + qty,
-                                                                                        objSaleOrderItemsInfo.FK_ICMeasureUnitID,
-                                                                                        objCustomersInfo != null ? objCustomersInfo.ARCustomerID : 0,
-                                                                                        mainObject.ARSaleOrderDate,
-                                                                                        mainObject.FK_GECurrencyID);
-                        objSaleOrderItemsInfo.ICProductUnitPrice = objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice;
-                        BOSApp.RoundByCurrency(objSaleOrderItemsInfo, mainObject.FK_GECurrencyID);
-                        objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice2 = mainObject.ARSaleOrderExchangeRate2 > 0 ? objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice * mainObject.ARSaleOrderExchangeRate / mainObject.ARSaleOrderExchangeRate2 : 0;
-
-                        if (entity.ARSaleOrderItemsList.Where(o => o.FK_ICProductID == objSaleOrderItemsInfo.FK_ICProductID && o.FK_ICMeasureUnitID == objSaleOrderItemsInfo.FK_ICMeasureUnitID).Count() > 0)
-                        {
-                            entity.ARSaleOrderItemsList.Where(o => o.FK_ICProductID == objSaleOrderItemsInfo.FK_ICProductID && o.FK_ICMeasureUnitID == objSaleOrderItemsInfo.FK_ICMeasureUnitID).ToList().ForEach(o =>
-                            {
-                                o.ARSaleOrderItemProductUnitPrice = BOSApp.CalculaterProductUnitPrice(product,
-                                                                                        o.ARSaleOrderItemProductUnitPrice,
-                                                                                        sumQty + qty,
-                                                                                        o.FK_ICMeasureUnitID,
-                                                                                        objCustomersInfo != null ? objCustomersInfo.ARCustomerID : 0,
-                                                                                        mainObject.ARSaleOrderDate,
-                                                                                        mainObject.FK_GECurrencyID);
-                                o.ICProductUnitPrice = o.ARSaleOrderItemProductUnitPrice;
-                                BOSApp.RoundByCurrency(o, mainObject.FK_GECurrencyID);
-                                o.ARSaleOrderItemProductUnitPrice2 = mainObject.ARSaleOrderExchangeRate2 > 0 ? o.ARSaleOrderItemProductUnitPrice * mainObject.ARSaleOrderExchangeRate / mainObject.ARSaleOrderExchangeRate2 : 0;
-                            });
-                        }
-                    }
                     if (mainObject.STToolbarActionName.Equals("NewFromWood") && product != null)
                     {
-                        objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice = product.ICProductPrice01;
+                        if (objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice > 0 && string.IsNullOrEmpty(objSaleOrderItemsInfo.ARSaleOrderItemVirtualID))
+                            objSaleOrderItemsInfo.ARSaleOrderItemProductUnitPrice = product.ICProductPrice01;
                         BOSApp.RoundByCurrency(objSaleOrderItemsInfo, mainObject.FK_GECurrencyID);
                     }
+                    if (string.IsNullOrEmpty(objSaleOrderItemsInfo.ARSaleOrderItemVirtualID))
+                        objSaleOrderItemsInfo.ARSaleOrderItemVirtualID = Guid.NewGuid().ToString();
                     entity.SetProductPriceByProductUnitPrice(objSaleOrderItemsInfo);
                     entity.ARSaleOrderItemsList.Add(objSaleOrderItemsInfo);
                 }

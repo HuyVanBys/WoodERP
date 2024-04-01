@@ -30,6 +30,7 @@ namespace BOSERP.Modules.BatchReceiptDryLumber
         public const string ReceiptItemGridControlName = "fld_dgcReceiptItems";
         public const string DocumentEntryGridControlName = "fld_dgcACDocumentEntrys";
         public const string OperationLookupEditControlName = "fld_lkeFK_MMOperationID";
+        public const string UpdatePositionItemsControlName = "fld_lkeMMUpdatePositionItemID";
         #endregion
 
         #region Variable
@@ -37,6 +38,7 @@ namespace BOSERP.Modules.BatchReceiptDryLumber
 
         #region Public properties
         public BOSLookupEdit OperationLookupEditControl = null;
+        public BOSLookupEdit UpdatePositionItemControl;
         //bool flag = false;
         //bool isnewfrom = false;
         #endregion
@@ -50,6 +52,10 @@ namespace BOSERP.Modules.BatchReceiptDryLumber
 
             InitializeOperationlookupDataSource();
             StartGettingInventoryThread();
+            UpdatePositionItemControl = (BOSLookupEdit)Controls[UpdatePositionItemsControlName];
+            MMUpdatePositionItemsController objUpdatePosititonsController = new MMUpdatePositionItemsController();
+            List<MMUpdatePositionItemsInfo> listUpdatePositions = objUpdatePosititonsController.GetAllLocationName();
+            UpdatePositionItemControl.Properties.DataSource = listUpdatePositions;
         }
 
         public override void ActionNew()
@@ -1141,6 +1147,39 @@ namespace BOSERP.Modules.BatchReceiptDryLumber
             object[] arParam = new object[1];
             arParam[0] = objReceiptsInfo.ICReceiptID;
             ViewReportByTemplate("RPReceiptTV", "GetDataSourceForRPReceiptTV", arParam);
+        }
+        public void ChangeUpdatePositionLocation(string updatePositionItemLocationName)
+        {
+            if (!Toolbar.IsNullOrNoneAction())
+            {
+                BatchReceiptDryLumberEntities entity = (BatchReceiptDryLumberEntities)CurrentModuleEntity;
+                ICReceiptsInfo objReceiptsInfo = (ICReceiptsInfo)CurrentModuleEntity.MainObject;
+                objReceiptsInfo.MMUpdatePositionItemPositionName = updatePositionItemLocationName;
+                MMUpdatePositionItemsController objUpdatePositionItemsController = new MMUpdatePositionItemsController();
+                entity.ReceiptItemsList.ForEach(o =>
+                {
+                    MMUpdatePositionItemsInfo objUpdatePositionItemsInfo = (MMUpdatePositionItemsInfo)objUpdatePositionItemsController.GetItemByLocationName(updatePositionItemLocationName, o.FK_ICProductID, o.FK_ICStockID, 0);
+                    if (objUpdatePositionItemsInfo != null)
+                    {
+                        o.FK_MMUpdatePositionItemID = objUpdatePositionItemsInfo.MMUpdatePositionItemID;
+                    }
+                });
+                entity.UpdateMainObjectBindingSource();
+            }
+        }
+        public void CreateUpdatePositionsInfo()
+        {
+            BatchReceiptDryLumberEntities entity = (BatchReceiptDryLumberEntities)CurrentModuleEntity;
+            ICReceiptsInfo objICReceiptsInfo = (ICReceiptsInfo)entity.MainObject;
+            if (objICReceiptsInfo.FK_ICStockID == 0)
+            {
+                BOSApp.ShowMessage("Vui lòng chọn mã kho!");
+                return;
+            }
+            guiAddUpdatePositionItems guiAddUpdatePositionItem = new guiAddUpdatePositionItems(objICReceiptsInfo.FK_ICStockID);
+            guiAddUpdatePositionItem.Module = this;
+            guiAddUpdatePositionItem.ShowDialog();
+
         }
     }
     #endregion BatchReceiptDryLumberModule

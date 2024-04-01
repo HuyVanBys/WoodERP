@@ -39,6 +39,7 @@ namespace BOSERP
         protected decimal _aRPOSPaymentDetailSubAmount13;
         protected decimal _aRPOSPaymentDetailSubAmount14;
         protected decimal _aRPOSPaymentDetailSubAmount15;
+        protected DateTime _aRPOSPaymentDetailDate;
         protected int _fK_ARInvoiceID;
         #endregion
 
@@ -341,6 +342,18 @@ namespace BOSERP
                     _fK_ARInvoiceID = value;
                     NotifyChanged("FK_ARInvoiceID");
                 }
+            }
+        }
+        public DateTime ARPOSPaymentDetailDate
+        {
+            get { return _aRPOSPaymentDetailDate; }
+            set
+            {
+                if (value != this._aRPOSPaymentDetailDate)
+                {
+                    _aRPOSPaymentDetailDate = value;
+                    NotifyChanged("ARPOSPaymentDetailDate");
+                }    
             }
         }
         #endregion

@@ -53,6 +53,7 @@ namespace BOSERP
         protected string _aRProductionPlanningComment = string.Empty;
         protected byte[] _aRProductionPlanningDesc;
         protected string _aRProductionPlanningSaleOrderName = string.Empty;
+        protected int _fK_HRDepartmentRoomGroupItemID;
         #endregion
 
         #region Public properties
@@ -497,6 +498,18 @@ namespace BOSERP
                 {
                     _aRProductionPlanningSaleOrderName = value;
                     NotifyChanged("ARProductionPlanningSaleOrderName");
+                }
+            }
+        }
+        public int FK_HRDepartmentRoomGroupItemID
+        {
+            get { return _fK_HRDepartmentRoomGroupItemID; }
+            set
+            {
+                if (value != this._fK_HRDepartmentRoomGroupItemID)
+                {
+                    _fK_HRDepartmentRoomGroupItemID = value;
+                    NotifyChanged("FK_HRDepartmentRoomGroupItemID");
                 }
             }
         }

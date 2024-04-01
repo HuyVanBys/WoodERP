@@ -1157,6 +1157,9 @@ namespace BOSERP
         public bool Selected { get; set; }
         public int FK_ICProductConversionItemID { get; set; }
         public decimal MMAllocationPlanItemUnitCost { get; set; }
+        public string ICSemiProductSizeAndSpecifiCations { get; set; }
+        public decimal MMAllocationPlanItemBPNormRemainQty { get; set; }
+        public string MMAllocationPlanItemPositionName { get; set; }
         #endregion
     }
     #endregion

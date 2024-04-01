@@ -187,6 +187,14 @@ namespace BOSERP.Modules.ProductConstant.UI
                     ((ProductConstantModule)this.Module).InvalidateConfigMaterialShipmentUtility();
                     fld_btnSave2.Visible = false;
                     break;
+                case "ConfigFalseConditional":
+                    DMPC119 guiConfigFalseConditional = new DMPC119();
+                    guiConfigFalseConditional.ScreenNumber = "DMPC119";
+                    guiConfigFalseConditional.Module = Module;
+                    LoadScreen(guiConfigFalseConditional);
+                    ((ProductConstantModule)this.Module).InvalidateConfigFalseConditionalList();
+                    fld_btnSave2.Visible = true;
+                    break;
             }
 
             ((ProductConstantEntities)((BaseModuleERP)Module).CurrentModuleEntity).InitGridControlInBOSList();
@@ -344,6 +352,17 @@ namespace BOSERP.Modules.ProductConstant.UI
                     break;
                 case "ConfigAccountOperation":
                     isSuccess = module.SaveConfigAccountOperationList();
+                    if (isSuccess)
+                    {
+                        MessageBox.Show(ProductConstantLocalizedResources.SaveSuccessMessage, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(ProductConstantLocalizedResources.SaveErrorMessage, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+                case "ConfigFalseConditional":
+                    isSuccess = module.SaveConfigFalseConditionalList();
                     if (isSuccess)
                     {
                         MessageBox.Show(ProductConstantLocalizedResources.SaveSuccessMessage, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -96,12 +96,13 @@ namespace BOSERP
                                                            DateTime? saleReturnDateFrom,
                                                            DateTime? saleReturnDateTo,
                                                            int? branchID,
+                                                           int? userID,
                                                            List<BRBranchsInfo> branchList)
         {
             DataSet rtn = new DataSet();
             foreach (BRBranchsInfo ojbBranchsInfo in branchList)
             {
-                DataSet ds = GetSaleReturnListByBranchID(saleReturnNo, invoiceNo, objectID, objectType, employeeID, saleReturnDateFrom, saleReturnDateTo, ojbBranchsInfo.BRBranchID);
+                DataSet ds = GetSaleReturnListByBranchIDAndUser(saleReturnNo, invoiceNo, objectID, objectType, employeeID, saleReturnDateFrom, saleReturnDateTo, ojbBranchsInfo.BRBranchID, userID);
                 rtn.Merge(ds);
             }
 
@@ -130,6 +131,19 @@ namespace BOSERP
         {
 
             return dal.GetDataSet("ARSaleReturns_GetSaleReturnListByBranchID", saleReturnNo, invoiceNo, objectID, objectType, employeeID, saleReturnDateFrom, saleReturnDateTo, branchID);
+        }
+        public DataSet GetSaleReturnListByBranchIDAndUser(string saleReturnNo,
+                                                   string invoiceNo,
+                                                   int? objectID,
+                                                   string objectType,
+                                                   int? employeeID,
+                                                   DateTime? saleReturnDateFrom,
+                                                   DateTime? saleReturnDateTo,
+                                                   int? branchID,
+                                                   int? userID)
+        {
+
+            return dal.GetDataSet("ARSaleReturns_GetSaleReturnListByBranchIDAndUser", saleReturnNo, invoiceNo, objectID, objectType, employeeID, saleReturnDateFrom, saleReturnDateTo, branchID, userID);
         }
 
         public List<ARSaleReturnsInfo> GetSaleReturnsForShipping()

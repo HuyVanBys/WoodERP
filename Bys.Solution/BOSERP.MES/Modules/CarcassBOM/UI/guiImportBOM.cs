@@ -168,6 +168,27 @@ namespace BOSERP.Modules.CarcassBOM.UI
             }
             else return string.Empty;
         }
+        private string GetPaintProcessIDList(string colorRef)
+        {
+            if (string.IsNullOrWhiteSpace(colorRef))
+                return string.Empty;
+
+            List<string> colorID = colorRef.Split(',').Select(o => o.Trim().ToLower()).ToList();
+            DataSet ds = BOSApp.GetLookupTableData("MMPaintProcessess");
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                List<MMPaintProcessessInfo> ColorData = (List<MMPaintProcessessInfo>)(new MMPaintProcessessController()).GetListFromDataSet(ds);
+                string notExit = string.Join(", ", ColorData.Where(o => colorID.Contains(o.MMPaintProcessesPaintName.ToLower().Trim())).Select(o => o.MMPaintProcessesID).ToArray());
+                if (!string.IsNullOrEmpty(notExit))
+                {
+                    notExit = string.Join(", ", ColorData.Where(o => colorID.Contains(o.MMPaintProcessesPaintName.ToLower().Trim())).Select(o => o.MMPaintProcessesID).ToArray());
+                }
+                if (!string.IsNullOrEmpty(notExit))
+                    return notExit;
+                else return string.Empty;
+            }
+            else return string.Empty;
+        }
         public bool IsValidSaveBOM()
         {
             ICProductsForViewInfo objProductsInfo = new ICProductsForViewInfo();
@@ -202,6 +223,19 @@ namespace BOSERP.Modules.CarcassBOM.UI
                 o.FK_ICProductAttributeColorID = objProductAttributesInfo == null ? 0 : objProductAttributesInfo.ICProductAttributeID;
                 if (!string.IsNullOrWhiteSpace(o.ICProductAttributeOtherColor))
                     o.ICProductAttributeOtherColorID = GetColorIDList(o.ICProductAttributeOtherColor);
+
+                if (!string.IsNullOrWhiteSpace(o.ICProductColorPaintAText))
+                    o.ICProductColorPaintA = GetPaintProcessIDList(o.ICProductColorPaintAText);
+                if (!string.IsNullOrWhiteSpace(o.ICProductColorPaintBText))
+                    o.ICProductColorPaintB = GetPaintProcessIDList(o.ICProductColorPaintBText);
+                if (!string.IsNullOrWhiteSpace(o.ICProductColorPaintCText))
+                    o.ICProductColorPaintC = GetPaintProcessIDList(o.ICProductColorPaintCText);
+                if (!string.IsNullOrWhiteSpace(o.ICProductPaintProcessAText))
+                    o.ICProductPaintProcessA = GetPaintProcessIDList(o.ICProductPaintProcessAText);
+                if (!string.IsNullOrWhiteSpace(o.ICProductPaintProcessBText))
+                    o.ICProductPaintProcessB = GetPaintProcessIDList(o.ICProductPaintProcessBText);
+                if (!string.IsNullOrWhiteSpace(o.ICProductPaintProcessCText))
+                    o.ICProductPaintProcessC = GetPaintProcessIDList(o.ICProductPaintProcessCText);
 
                 objSpecialityInfo = attributesList.Where(a => a.ICProductAttributeGroup == ProductAttributeGroup.Speciality.ToString()
                                                                 && (a.ICProductAttributeNo == o.IPProductAttributeSemiProductSpecialityNo ||

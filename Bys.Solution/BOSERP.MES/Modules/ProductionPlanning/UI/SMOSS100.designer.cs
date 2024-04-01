@@ -464,7 +464,9 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.fld_lkeFK_ICProductID.Properties.ColumnName = null;
             this.fld_lkeFK_ICProductID.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ICProductNo", "Mã sản phẩm", 20, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ICProductName", "Tên sản phẩm")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ICProductName", "Tên sản phẩm"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ICProductNoOfOldSys", "Mã HTC"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ICProductCustomerNumber", "Mã SP khách hàng")});
             this.fld_lkeFK_ICProductID.Properties.DisplayMember = "ICProductName";
             this.fld_lkeFK_ICProductID.Properties.NullText = "";
             this.fld_lkeFK_ICProductID.Properties.PopupWidth = 40;
@@ -539,7 +541,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(958, 610);
+            this.ClientSize = new System.Drawing.Size(972, 617);
             this.Controls.Add(this.fld_lkeACObjectAccessKey);
             this.Controls.Add(this.fld_lkeFK_ICProductID);
             this.Controls.Add(this.boslabel29);

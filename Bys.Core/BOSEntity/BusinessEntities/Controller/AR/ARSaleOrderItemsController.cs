@@ -597,6 +597,11 @@ namespace BOSERP
             DataSet ds = dal.GetDataSet("ARSaleOrderItems_GeSaleOrderItemsForShipmentSaleOrder");
             return (List<ARSaleOrderItemsInfo>)GetListFromDataSet(ds);
         }
+        public List<ARSaleOrderItemsInfo> GeSaleOrderItemsForShipmentSaleOrderByUser(int? userID)
+        {
+            DataSet ds = dal.GetDataSet("ARSaleOrderItems_GeSaleOrderItemsForShipmentSaleOrderByUser");
+            return (List<ARSaleOrderItemsInfo>)GetListFromDataSet(ds);
+        }
         public List<ARSaleOrderItemsInfo> GetSaleOrderItemsService(int saleOderID)
         {
             DataSet ds = dal.GetDataSet("ARSaleOrderItems_GetSaleOrderItemsService", saleOderID);
@@ -610,6 +615,11 @@ namespace BOSERP
         public List<ARSaleOrderItemsInfo> GetAllInvoiceAndShipment()
         {
             DataSet ds = dal.GetDataSet("ARSaleOrderItems_GetAllInvoiceAndShipment");
+            return (List<ARSaleOrderItemsInfo>)GetListFromDataSet(ds);
+        }
+        public List<ARSaleOrderItemsInfo> GetAllInvoiceAndShipmentByUser(int? userID)
+        {
+            DataSet ds = dal.GetDataSet("ARSaleOrderItems_GetAllInvoiceAndShipmentByUser", userID);
             return (List<ARSaleOrderItemsInfo>)GetListFromDataSet(ds);
         }
         public List<ARSaleOrderItemsInfo> GetListForContainerLoader()

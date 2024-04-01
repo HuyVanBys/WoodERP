@@ -35,6 +35,7 @@ namespace BOSERP
         protected String _mMPaintProcessesProductGroupName = String.Empty;
         protected int _fK_ARCustomerID;
         protected bool _mMPaintProcessesIsActive = false;
+        protected String _mMPaintProcessesStatus = String.Empty;
         #endregion
 
         #region Public properties
@@ -276,6 +277,18 @@ namespace BOSERP
                 {
                     _mMPaintProcessesIsActive = value;
                     NotifyChanged("MMPaintProcessesIsActive");
+                }    
+            }
+        }
+        public String MMPaintProcessesStatus
+        {
+            get { return _mMPaintProcessesStatus; }
+            set
+            {
+                if (value != this._mMPaintProcessesStatus)
+                {
+                    _mMPaintProcessesStatus = value;
+                    NotifyChanged("MMPaintProcessesStatus");
                 }    
             }
         }

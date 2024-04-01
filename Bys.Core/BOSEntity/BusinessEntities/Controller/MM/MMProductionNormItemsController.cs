@@ -298,9 +298,9 @@ namespace BOSERP
             dal.ExecuteStoredProcedure("MMProductionNormItems_UpdateDeleteProductionNormItemsByProductionNormID", productionNormID);
         }
 
-        public void CalculateProductionNormItemConsumable(int productionNormID, int carcassID)
+        public void CalculateProductionNormItemConsumable(int productionNormID, int carcassID, string ADUserName)
         {
-            dal.ExecuteStoredProcedure("MMProductionNormItems_CalculateProductionNormItemConsumable", carcassID, productionNormID);
+            dal.ExecuteStoredProcedure("MMProductionNormItems_CalculateProductionNormItemConsumable", carcassID, productionNormID, ADUserName);
         }
 
         public List<MMProductionNormItemsInfo> GetByGroupAnd2ProductionNormID(string group, int productionNormID, DateTime effectiveDate)

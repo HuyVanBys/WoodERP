@@ -78,14 +78,50 @@ namespace BOSERP.Modules.CarcassBOM
             {
                 FormatNumbericColumn(column, true, "n5");
             }
-            column = gridView.Columns["MMProductionNormItemOtherColor"];
+            //column = gridView.Columns["MMProductionNormItemOtherColor"];
+            //if (column != null)
+            //{
+            //    RepositoryItemCheckedComboBoxEdit rpOhterColor = new RepositoryItemCheckedComboBoxEdit();
+            //    rpOhterColor.DisplayMember = "ICProductAttributeValue";
+            //    rpOhterColor.ValueMember = "ICProductAttributeID";
+            //    rpOhterColor.NullText = string.Empty;
+            //    rpOhterColor.DataSource = GetProductAttributeDatasource(ProductAttributeGroup.COLOR.ToString());
+            //    column.ColumnEdit = rpOhterColor;
+            //}
+            //column = gridView.Columns["MMProductionNormItemPaintAKey"];
+            //if (column != null)
+            //{
+            //    RepositoryItemCheckedComboBoxEdit rpOhterColor = new RepositoryItemCheckedComboBoxEdit();
+            //    rpOhterColor.DisplayMember = "MMPaintProcessesPaintName";
+            //    rpOhterColor.ValueMember = "MMPaintProcessesID";
+            //    rpOhterColor.NullText = string.Empty;
+            //    column.ColumnEdit = rpOhterColor;
+            //}
+            //column = gridView.Columns["MMProductionNormItemPaintBKey"];
+            //if (column != null)
+            //{
+            //    RepositoryItemCheckedComboBoxEdit rpOhterColor = new RepositoryItemCheckedComboBoxEdit();
+            //    rpOhterColor.DisplayMember = "MMPaintProcessesPaintName";
+            //    rpOhterColor.ValueMember = "MMPaintProcessesID";
+            //    rpOhterColor.NullText = string.Empty;
+            //    column.ColumnEdit = rpOhterColor;
+            //}
+            //column = gridView.Columns["MMProductionNormItemVeneerKey"];
+            //if (column != null)
+            //{
+            //    RepositoryItemCheckedComboBoxEdit rpOhterColor = new RepositoryItemCheckedComboBoxEdit();
+            //    rpOhterColor.DisplayMember = "MMPaintProcessesPaintName";
+            //    rpOhterColor.ValueMember = "MMPaintProcessesID";
+            //    rpOhterColor.NullText = string.Empty;
+            //    column.ColumnEdit = rpOhterColor;
+            //}
+            column = gridView.Columns["MMProductionNormItemPaintExecuteMethod"];
             if (column != null)
             {
                 RepositoryItemCheckedComboBoxEdit rpOhterColor = new RepositoryItemCheckedComboBoxEdit();
-                rpOhterColor.DisplayMember = "ICProductAttributeValue";
-                rpOhterColor.ValueMember = "ICProductAttributeID";
+                rpOhterColor.DisplayMember = "MMPaintProcessesPaintName";
+                rpOhterColor.ValueMember = "MMPaintProcessesID";
                 rpOhterColor.NullText = string.Empty;
-                rpOhterColor.DataSource = GetProductAttributeDatasource(ProductAttributeGroup.COLOR.ToString());
                 column.ColumnEdit = rpOhterColor;
             }
             //gridView.DoubleClick += new EventHandler(gridView_DoubleClick);
@@ -98,7 +134,9 @@ namespace BOSERP.Modules.CarcassBOM
                 return string.Empty;
 
             List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
-            DataSet ds = BOSApp.GetLookupTableData("ICProductAttributes");
+            DataSet ds = BOSApp.LookupTables["ICProductAttributes"] as DataSet;
+            if (ds == null || ds.Tables.Count == 0)
+                ds = BOSApp.GetLookupTableData("ICProductAttributes");
             if (ds != null && ds.Tables.Count > 0)
             {
                 List<ICProductAttributesInfo> ColorData = (List<ICProductAttributesInfo>)(new ICProductAttributesController()).GetListFromDataSet(ds);
@@ -106,7 +144,36 @@ namespace BOSERP.Modules.CarcassBOM
             }
             else return string.Empty;
         }
+        private string GetProductColorDisplayText(string colorRef)
+        {
+            if (string.IsNullOrWhiteSpace(colorRef))
+                return string.Empty;
 
+            List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
+            List<ICProductsForViewInfo> ColorData = BOSApp.CurrentProductList.Where(p => p.ICProductType == ProductType.IngredientPaint.ToString()).ToList();
+            if (ColorData.Count > 0)
+            {
+                return string.Join(", ", ColorData.Where(o => colorID.Contains(o.ICProductID)).Select(o => o.ICProductName).ToArray());
+            }
+            else return string.Empty;
+        }
+        private string GetPaintProcessDisplayText(string colorRef)
+        {
+            if (string.IsNullOrWhiteSpace(colorRef))
+                return string.Empty;
+
+            List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
+
+            DataSet ds = BOSApp.LookupTables["MMPaintProcessess"] as DataSet;
+            if (ds == null || ds.Tables.Count == 0)
+                ds = BOSApp.GetLookupTableData("MMPaintProcessess");
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                List<MMPaintProcessessInfo> ColorData = (List<MMPaintProcessessInfo>)(new MMPaintProcessessController()).GetListFromDataSet(ds);
+                return string.Join(", ", ColorData.Where(o => colorID.Contains(o.MMPaintProcessesID)).Select(o => o.MMPaintProcessesPaintName).ToArray());
+            }
+            else return string.Empty;
+        }
         public List<ICProductAttributesInfo> GetProductAttributeDatasource(string group)
         {
             List<ICProductAttributesInfo> woodTypeList = new List<ICProductAttributesInfo>();
@@ -123,12 +190,24 @@ namespace BOSERP.Modules.CarcassBOM
                 {
                     e.DisplayText = ((CarcassBOMModule)Screen.Module).GetSemiProductDisplayDisplayText(int.Parse(e.Value.ToString()));
                 }
-                else if (e.Value != null && e.Column.FieldName == "MMProductionNormItemOtherColor")
-                {
-                    e.DisplayText = GetColorDisplayText(e.Value.ToString());
-                }
                 else
                     e.DisplayText = string.Empty;
+            }
+            else if (e.Value != null && e.Column.FieldName == "MMProductionNormItemOtherColor")
+            {
+                e.DisplayText = GetColorDisplayText(e.Value.ToString());
+            }
+            else if (e.Value != null && (e.Column.FieldName == "MMProductionNormItemPaintAKey" ||
+                e.Column.FieldName == "MMProductionNormItemPaintBKey" ||
+                e.Column.FieldName == "MMProductionNormItemVeneerKey" ))
+            {
+                e.DisplayText = GetProductColorDisplayText(e.Value.ToString());
+            }
+            else if (e.Value != null && (e.Column.FieldName == "MMProductionNormItemCode01Combo" ||
+                e.Column.FieldName == "MMProductionNormItemCode02Combo" ||
+                e.Column.FieldName == "MMProductionNormItemCode03Combo" ))
+            {
+                e.DisplayText = GetPaintProcessDisplayText(e.Value.ToString());
             }
         }
 

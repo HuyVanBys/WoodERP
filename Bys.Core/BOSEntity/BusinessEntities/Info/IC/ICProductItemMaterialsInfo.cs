@@ -317,6 +317,10 @@ namespace BOSERP
         public string IPProductionItemParentCode { get; set; }
         public int FK_MMOperationProcessID { get; set; }
         public int FK_ICProductAttributeWoodTypeID { get; set; }
+        public string MMOperationMaterialName { get; set; }
+        public decimal MMProductionNormItemProductHeight { get; set; }
+        public decimal MMProductionNormItemProductLength { get; set; }
+        public decimal MMProductionNormItemProductWidth { get; set; }
         #endregion
     }
     #endregion

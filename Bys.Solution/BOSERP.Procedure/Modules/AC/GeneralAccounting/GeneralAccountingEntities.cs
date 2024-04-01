@@ -164,7 +164,8 @@ namespace BOSERP.Modules.GeneralAccounting
             ACDepreciationAssetTransController objDepreciationAssetTransController = new ACDepreciationAssetTransController();
             List<ACDepreciationAssetTransInfo> items = objDepreciationAssetTransController.GetDepreciationAssetTransByDocumentID(iObjectID);
             DepreciationAssetTranList.Invalidate(items);
-            AllocationEquipmentTranList.Invalidate(iObjectID);
+            List<ACAllocationEquipmentTransInfo> Equipments = (new ACAllocationEquipmentTransController()).GetAllocationEquipmentTransByDocumentID(iObjectID);
+            AllocationEquipmentTranList.Invalidate(Equipments);
             ACAllocationCostObjectTransController objAllocationCostObjectTransController = new ACAllocationCostObjectTransController();
             List<ACAllocationCostObjectTransInfo> allocationCostItems = objAllocationCostObjectTransController.GetAllocationCostObjectTransByDocumentID(iObjectID);
             AllocationCostObjectTranList.Invalidate(allocationCostItems);

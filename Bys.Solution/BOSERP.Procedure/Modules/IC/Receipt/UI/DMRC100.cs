@@ -84,5 +84,19 @@ namespace BOSERP.Modules.Receipt.UI
         {
             ((ReceiptModule)Module).ImportReceiptItemExcel();
         }
+
+        private void fld_lkeMMUpdatePositionItemID_CloseUp(object sender, DevExpress.XtraEditors.Controls.CloseUpEventArgs e)
+        {
+            BOSLookupEdit lke = (BOSLookupEdit)sender;
+            if (e.Value != null && e.Value != lke.OldEditValue)
+            {
+                ((ReceiptModule)Module).ChangeUpdatePositionLocation(e.Value.ToString());
+            }
+        }
+
+        private void fld_lnkChooseProspectCustomer_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
+        {
+            ((ReceiptModule)Module).CreateUpdatePositionsInfo();
+        }
     }
 }

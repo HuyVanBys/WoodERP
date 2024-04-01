@@ -212,6 +212,7 @@ namespace BOSERP.Modules.ReturnShipping
             objReceiptItemsInfo.ICReceiptItemProductUnitPrice = objShipmentItemsInfo.ICShipmentItemProductUnitPrice;
             objReceiptItemsInfo.ICReceiptDate = objShipmentItemsInfo.ICShipmentDate;
             objReceiptItemsInfo.ICReceiptItemWoodQty = objShipmentItemsInfo.ICShipmentItemWoodQty;
+            objReceiptItemsInfo.ICReceiptItemProductUnitCost = AccountHelper.GetProductUnitCost(objReceiptItemsInfo.FK_ICStockID, objReceiptItemsInfo.FK_ICProductID, objReceiptItemsInfo.ICReceiptItemProductSerialNo, objReceiptsInfo.ICShipmentDate);
             SetProductCostByProductUnitCost(objReceiptItemsInfo);
             return objReceiptItemsInfo;
         }

@@ -673,6 +673,7 @@ namespace BOSERP
                                            DateTime? dateFrom,
                                            DateTime? dateTo, 
                                            int? productID,
+                                           int ?userID,
                                            List<BRBranchsInfo> branchList)
         {
             DataSet rtn = new DataSet();
@@ -683,7 +684,7 @@ namespace BOSERP
             bool isValid = true;
             foreach (BRBranchsInfo ojbBranchsInfo in branchList)
             {
-                DataSet ds = GetSaleOrdersSemiProduct(saleOrderNo, employeeID, ojbBranchsInfo.BRBranchID, objectID, objectType, sellerID, saleOrderType, dateFrom, dateTo, productID);
+                DataSet ds = GetSaleOrdersSemiProductBysUser(saleOrderNo, employeeID, ojbBranchsInfo.BRBranchID, objectID, objectType, sellerID, saleOrderType, dateFrom, dateTo, productID, userID);
                 if (ds != null && ds.Tables.Count != 0 && ds.Tables[0].Rows.Count != 0)
                 {
                     rowIndex = 0;
@@ -728,6 +729,22 @@ namespace BOSERP
                                            int? productID)
         {
             DataSet ds = dal.GetDataSet("ARSaleOrders_GetSaleOrdersSemiProduct", saleOrderNo, employeeID, branchID, objectID, objectType, sellerID, saleOrderType, dateFrom, dateTo, productID);
+            return ds;
+        }
+        public DataSet GetSaleOrdersSemiProductBysUser(string saleOrderNo,
+                                          int? employeeID,
+                                          int? branchID,
+                                          int? objectID,
+                                          string objectType,
+                                          int? sellerID,
+                                          string saleOrderType,
+                                          DateTime? dateFrom,
+                                          DateTime? dateTo,
+                                          int? productID,
+                                          int?userID
+            )
+        {
+            DataSet ds = dal.GetDataSet("ARSaleOrders_GetSaleOrdersSemiProductBysUser", saleOrderNo, employeeID, branchID, objectID, objectType, sellerID, saleOrderType, dateFrom, dateTo, productID, userID);
             return ds;
         }
 
@@ -902,6 +919,11 @@ namespace BOSERP
             DataSet ds = dal.GetDataSet("ARSaleOrders_GetSaleOrderNosListByProposal", proposalID);
             return (List<ARSaleOrdersInfo>)GetListFromDataSet(ds);
         }
+        public void UpdateCommisSion(int saleOrderID, decimal comissionPercen, decimal comissionAmount, string username)
+        {
+            dal.ExecuteStoredProcedure("ARSaleOrders_Updatecomission", saleOrderID, comissionPercen, comissionAmount, username);
+        }
+
     }
     #endregion
 }

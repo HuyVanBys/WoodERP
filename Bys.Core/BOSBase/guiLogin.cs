@@ -44,29 +44,30 @@ namespace BOSERP
                     }
                     else
                     {
-                        string messageError = string.Empty;
-                        int result = Utilities.ApiLicenseHelper.CheckLicense(fld_txtUserName.Text, ref messageError);
-                        if ((int)LicenseStatus.NoConnecttion == result)
-                        {
-                            MessageBox.Show(BaseLocalizedResources.NoConnecttionLicense, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
+                        //string messageError = string.Empty;
+                        //int result = Utilities.ApiLicenseHelper.CheckLicense(fld_txtUserName.Text, ref messageError);
+                        //if ((int)LicenseStatus.NoConnecttion == result)
+                        //{
+                        //    MessageBox.Show(BaseLocalizedResources.NoConnecttionLicense, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //}
+                        //else
+                        //{
+                        //    if ((int)LicenseStatus.Inactive == result)
+                        //    {
+                        //        MessageBox.Show(messageError, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //    }
+                        //    else
+                        //    {
+                                
+                        //    }
+                        //}
+                        BRBranchID = Convert.ToInt32(fld_lkeBRBranchID.EditValue);
+                        BOSApp.SetCurrentUserLogin(fld_txtUserName.Text);
+                        if (fld_ckeSavePassword.Checked)
+                            SavePassword(fld_txtUserName.Text, fld_txtPassword.Text);
                         else
-                        {
-                            if ((int)LicenseStatus.Inactive == result)
-                            {
-                                MessageBox.Show(messageError, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            }
-                            else
-                            {
-                                BRBranchID = Convert.ToInt32(fld_lkeBRBranchID.EditValue);
-                                BOSApp.SetCurrentUserLogin(fld_txtUserName.Text);
-                                if (fld_ckeSavePassword.Checked)
-                                    SavePassword(fld_txtUserName.Text, fld_txtPassword.Text);
-                                else
-                                    DeleteCredential(fld_txtUserName.Text);
-                                this.Dispose();
-                            }
-                        }
+                            DeleteCredential(fld_txtUserName.Text);
+                        this.Dispose();
                     }
                 }
                 else

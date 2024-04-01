@@ -29,36 +29,41 @@ namespace BOSERP.Modules.PaintProcesses.UI
 		#region Windows Form Designer generated code
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DMPP100));
-            this.fld_lkeFK_ICProductAttributeHTID = new BOSComponent.BOSLookupEdit();
-            this.bosLabel5 = new BOSComponent.BOSLabel();
-            this.fld_lkeFK_APSupperID = new BOSComponent.BOSLookupEdit();
-            this.fld_bedFK_ICProductGroupID = new BOSComponent.BOSButtonEdit();
-            this.fld_txtMMPaintProcessesNo = new BOSComponent.BOSTextBox();
-            this.fld_lkeFK_ICProductAttributeColorID = new BOSComponent.BOSLookupEdit();
-            this.fld_txtMMPaintProcessesPaintName = new BOSComponent.BOSTextBox();
+            this.fld_lkeFK_ICProductAttributeHTID = new BOSComponent.BOSLookupEdit(this.components);
+            this.bosLabel5 = new BOSComponent.BOSLabel(this.components);
+            this.fld_lkeFK_APSupperID = new BOSComponent.BOSLookupEdit(this.components);
+            this.fld_bedFK_ICProductGroupID = new BOSComponent.BOSButtonEdit(this.components);
+            this.fld_txtMMPaintProcessesNo = new BOSComponent.BOSTextBox(this.components);
+            this.fld_lkeFK_ICProductAttributeColorID = new BOSComponent.BOSLookupEdit(this.components);
+            this.fld_txtMMPaintProcessesPaintName = new BOSComponent.BOSTextBox(this.components);
             this.fld_lnkSetDefaultDesc = new DevExpress.XtraEditors.HyperLinkEdit();
-            this.fld_txtMMPaintProcessesTotalAmount = new BOSComponent.BOSTextBox();
-            this.fld_lblLabel17 = new BOSComponent.BOSLabel();
-            this.fld_medMMPaintProcessesDesc = new BOSComponent.BOSMemoEdit();
-            this.bosLabel4 = new BOSComponent.BOSLabel();
-            this.fld_lblLabel28 = new BOSComponent.BOSLabel();
-            this.bosLabel3 = new BOSComponent.BOSLabel();
-            this.bosLabel2 = new BOSComponent.BOSLabel();
-            this.fld_lblLabel15 = new BOSComponent.BOSLabel();
-            this.bosLabel1 = new BOSComponent.BOSLabel();
-            this.fld_grcGroupControl5 = new BOSComponent.BOSGroupControl();
+            this.fld_txtMMPaintProcessesTotalAmount = new BOSComponent.BOSTextBox(this.components);
+            this.fld_lblLabel17 = new BOSComponent.BOSLabel(this.components);
+            this.fld_medMMPaintProcessesDesc = new BOSComponent.BOSMemoEdit(this.components);
+            this.bosLabel4 = new BOSComponent.BOSLabel(this.components);
+            this.fld_lblLabel28 = new BOSComponent.BOSLabel(this.components);
+            this.bosLabel3 = new BOSComponent.BOSLabel(this.components);
+            this.bosLabel2 = new BOSComponent.BOSLabel(this.components);
+            this.fld_lblLabel15 = new BOSComponent.BOSLabel(this.components);
+            this.bosLabel1 = new BOSComponent.BOSLabel(this.components);
+            this.fld_grcGroupControl5 = new BOSComponent.BOSGroupControl(this.components);
             this.fld_trlMMPaintProcessesItems = new BOSERP.Modules.PaintProcesses.PaintProcessesItemsTreeListControl();
-            this.fld_btnAddGroup = new BOSComponent.BOSButton();
-            this.fld_lkeMMPaintProcessesItemGroup = new BOSComponent.BOSLookupEdit();
-            this.fld_lblProductionNormItemGroup = new BOSComponent.BOSLabel();
-            this.bosLabel21 = new BOSComponent.BOSLabel();
-            this.fld_lkeFK_ICProductID = new BOSComponent.BOSLookupEdit();
-            this.bosLookupEdit1 = new BOSComponent.BOSLookupEdit();
-            this.bosLabel6 = new BOSComponent.BOSLabel();
-            this.imageList1 = new System.Windows.Forms.ImageList();
-            this.panel1 = new BOSComponent.BOSPanel();
-            this.fld_chkMMPaintProcessesIsActive = new BOSComponent.BOSCheckEdit();
+            this.fld_btnAddGroup = new BOSComponent.BOSButton(this.components);
+            this.fld_lkeMMPaintProcessesItemGroup = new BOSComponent.BOSLookupEdit(this.components);
+            this.fld_lblProductionNormItemGroup = new BOSComponent.BOSLabel(this.components);
+            this.bosLabel21 = new BOSComponent.BOSLabel(this.components);
+            this.fld_lkeFK_ICProductID = new BOSComponent.BOSLookupEdit(this.components);
+            this.bosLookupEdit1 = new BOSComponent.BOSLookupEdit(this.components);
+            this.bosLabel6 = new BOSComponent.BOSLabel(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.panel1 = new BOSComponent.BOSPanel(this.components);
+            this.bosLookupEdit3 = new BOSComponent.BOSLookupEdit(this.components);
+            this.bosLabel8 = new BOSComponent.BOSLabel(this.components);
+            this.fld_chkMMPaintProcessesIsActive = new BOSComponent.BOSCheckEdit(this.components);
+            this.bosLookupEdit2 = new BOSComponent.BOSLookupEdit(this.components);
+            this.bosLabel7 = new BOSComponent.BOSLabel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_ICProductAttributeHTID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_APSupperID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_bedFK_ICProductGroupID.Properties)).BeginInit();
@@ -75,7 +80,9 @@ namespace BOSERP.Modules.PaintProcesses.UI
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_ICProductID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bosLookupEdit1.Properties)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bosLookupEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_chkMMPaintProcessesIsActive.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bosLookupEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // fld_lkeFK_ICProductAttributeHTID
@@ -318,7 +325,7 @@ namespace BOSERP.Modules.PaintProcesses.UI
             this.fld_txtMMPaintProcessesTotalAmount.BOSPrivilege = "";
             this.fld_txtMMPaintProcessesTotalAmount.BOSPropertyName = "Text";
             this.fld_txtMMPaintProcessesTotalAmount.EditValue = "";
-            this.fld_txtMMPaintProcessesTotalAmount.Location = new System.Drawing.Point(606, 47);
+            this.fld_txtMMPaintProcessesTotalAmount.Location = new System.Drawing.Point(835, 48);
             this.fld_txtMMPaintProcessesTotalAmount.Name = "fld_txtMMPaintProcessesTotalAmount";
             this.fld_txtMMPaintProcessesTotalAmount.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.fld_txtMMPaintProcessesTotalAmount.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -392,7 +399,7 @@ namespace BOSERP.Modules.PaintProcesses.UI
             this.bosLabel4.BOSFieldRelation = "";
             this.bosLabel4.BOSPrivilege = "";
             this.bosLabel4.BOSPropertyName = "";
-            this.bosLabel4.Location = new System.Drawing.Point(532, 50);
+            this.bosLabel4.Location = new System.Drawing.Point(781, 50);
             this.bosLabel4.Name = "bosLabel4";
             this.bosLabel4.Screen = null;
             this.ScreenHelper.SetShowHelp(this.bosLabel4, true);
@@ -559,7 +566,7 @@ namespace BOSERP.Modules.PaintProcesses.UI
             this.fld_grcGroupControl5.Name = "fld_grcGroupControl5";
             this.fld_grcGroupControl5.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_grcGroupControl5, true);
-            this.fld_grcGroupControl5.Size = new System.Drawing.Size(958, 454);
+            this.fld_grcGroupControl5.Size = new System.Drawing.Size(1098, 489);
             this.fld_grcGroupControl5.TabIndex = 36;
             this.fld_grcGroupControl5.Tag = "";
             this.fld_grcGroupControl5.Text = "Chi tiết";
@@ -583,7 +590,7 @@ namespace BOSERP.Modules.PaintProcesses.UI
             this.fld_trlMMPaintProcessesItems.Location = new System.Drawing.Point(6, 58);
             this.fld_trlMMPaintProcessesItems.Name = "fld_trlMMPaintProcessesItems";
             this.fld_trlMMPaintProcessesItems.Screen = null;
-            this.fld_trlMMPaintProcessesItems.Size = new System.Drawing.Size(947, 388);
+            this.fld_trlMMPaintProcessesItems.Size = new System.Drawing.Size(1087, 423);
             this.fld_trlMMPaintProcessesItems.TabIndex = 87;
             this.fld_trlMMPaintProcessesItems.Tag = "SR";
             this.fld_trlMMPaintProcessesItems.CellValueChanged += new DevExpress.XtraTreeList.CellValueChangedEventHandler(this.fld_trlMMPaintProcessesItems_CellValueChanged);
@@ -815,6 +822,8 @@ namespace BOSERP.Modules.PaintProcesses.UI
             this.panel1.BOSFieldRelation = null;
             this.panel1.BOSPrivilege = null;
             this.panel1.BOSPropertyName = null;
+            this.panel1.Controls.Add(this.bosLookupEdit3);
+            this.panel1.Controls.Add(this.bosLabel8);
             this.panel1.Controls.Add(this.fld_chkMMPaintProcessesIsActive);
             this.panel1.Controls.Add(this.fld_lblLabel15);
             this.panel1.Controls.Add(this.fld_grcGroupControl5);
@@ -823,7 +832,9 @@ namespace BOSERP.Modules.PaintProcesses.UI
             this.panel1.Controls.Add(this.bosLabel6);
             this.panel1.Controls.Add(this.bosLabel2);
             this.panel1.Controls.Add(this.bosLabel3);
+            this.panel1.Controls.Add(this.bosLookupEdit2);
             this.panel1.Controls.Add(this.fld_lkeFK_ICProductAttributeHTID);
+            this.panel1.Controls.Add(this.bosLabel7);
             this.panel1.Controls.Add(this.fld_lblLabel28);
             this.panel1.Controls.Add(this.bosLabel5);
             this.panel1.Controls.Add(this.bosLabel4);
@@ -840,8 +851,63 @@ namespace BOSERP.Modules.PaintProcesses.UI
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Screen = null;
-            this.panel1.Size = new System.Drawing.Size(966, 622);
+            this.panel1.Size = new System.Drawing.Size(1106, 657);
             this.panel1.TabIndex = 39;
+            // 
+            // bosLookupEdit3
+            // 
+            this.bosLookupEdit3.BOSAllowAddNew = false;
+            this.bosLookupEdit3.BOSAllowDummy = false;
+            this.bosLookupEdit3.BOSComment = null;
+            this.bosLookupEdit3.BOSDataMember = "MMPaintProcessesStatus";
+            this.bosLookupEdit3.BOSDataSource = "MMPaintProcessess";
+            this.bosLookupEdit3.BOSDescription = null;
+            this.bosLookupEdit3.BOSError = null;
+            this.bosLookupEdit3.BOSFieldGroup = null;
+            this.bosLookupEdit3.BOSFieldParent = null;
+            this.bosLookupEdit3.BOSFieldRelation = null;
+            this.bosLookupEdit3.BOSPrivilege = null;
+            this.bosLookupEdit3.BOSPropertyName = "EditValue";
+            this.bosLookupEdit3.BOSSelectType = "";
+            this.bosLookupEdit3.BOSSelectTypeValue = "";
+            this.bosLookupEdit3.CurrentDisplayText = null;
+            this.bosLookupEdit3.Enabled = false;
+            this.bosLookupEdit3.Location = new System.Drawing.Point(835, 74);
+            this.bosLookupEdit3.Name = "bosLookupEdit3";
+            this.bosLookupEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.bosLookupEdit3.Properties.ColumnName = null;
+            this.bosLookupEdit3.Properties.NullText = "";
+            this.bosLookupEdit3.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.bosLookupEdit3.Screen = null;
+            this.bosLookupEdit3.Size = new System.Drawing.Size(157, 20);
+            this.bosLookupEdit3.TabIndex = 41;
+            this.bosLookupEdit3.Tag = "DC";
+            // 
+            // bosLabel8
+            // 
+            this.bosLabel8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bosLabel8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.bosLabel8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bosLabel8.Appearance.Options.UseBackColor = true;
+            this.bosLabel8.Appearance.Options.UseFont = true;
+            this.bosLabel8.Appearance.Options.UseForeColor = true;
+            this.bosLabel8.BOSComment = "";
+            this.bosLabel8.BOSDataMember = "";
+            this.bosLabel8.BOSDataSource = "";
+            this.bosLabel8.BOSDescription = null;
+            this.bosLabel8.BOSError = null;
+            this.bosLabel8.BOSFieldGroup = "";
+            this.bosLabel8.BOSFieldRelation = "";
+            this.bosLabel8.BOSPrivilege = "";
+            this.bosLabel8.BOSPropertyName = "";
+            this.bosLabel8.Location = new System.Drawing.Point(781, 77);
+            this.bosLabel8.Name = "bosLabel8";
+            this.bosLabel8.Screen = null;
+            this.bosLabel8.Size = new System.Drawing.Size(48, 13);
+            this.bosLabel8.TabIndex = 40;
+            this.bosLabel8.Tag = "";
+            this.bosLabel8.Text = "Tình trạng";
             // 
             // fld_chkMMPaintProcessesIsActive
             // 
@@ -854,7 +920,7 @@ namespace BOSERP.Modules.PaintProcesses.UI
             this.fld_chkMMPaintProcessesIsActive.BOSFieldRelation = null;
             this.fld_chkMMPaintProcessesIsActive.BOSPrivilege = null;
             this.fld_chkMMPaintProcessesIsActive.BOSPropertyName = "EditValue";
-            this.fld_chkMMPaintProcessesIsActive.Location = new System.Drawing.Point(786, 21);
+            this.fld_chkMMPaintProcessesIsActive.Location = new System.Drawing.Point(819, 17);
             this.fld_chkMMPaintProcessesIsActive.MenuManager = this.screenToolbar;
             this.fld_chkMMPaintProcessesIsActive.Name = "fld_chkMMPaintProcessesIsActive";
             this.fld_chkMMPaintProcessesIsActive.Properties.Caption = "Hoạt động";
@@ -863,11 +929,65 @@ namespace BOSERP.Modules.PaintProcesses.UI
             this.fld_chkMMPaintProcessesIsActive.TabIndex = 39;
             this.fld_chkMMPaintProcessesIsActive.Tag = "DC";
             // 
+            // bosLookupEdit2
+            // 
+            this.bosLookupEdit2.BOSAllowAddNew = false;
+            this.bosLookupEdit2.BOSAllowDummy = false;
+            this.bosLookupEdit2.BOSComment = null;
+            this.bosLookupEdit2.BOSDataMember = "MMPaintProcessesGroupName";
+            this.bosLookupEdit2.BOSDataSource = "MMPaintProcessess";
+            this.bosLookupEdit2.BOSDescription = null;
+            this.bosLookupEdit2.BOSError = null;
+            this.bosLookupEdit2.BOSFieldGroup = null;
+            this.bosLookupEdit2.BOSFieldParent = null;
+            this.bosLookupEdit2.BOSFieldRelation = null;
+            this.bosLookupEdit2.BOSPrivilege = null;
+            this.bosLookupEdit2.BOSPropertyName = "EditValue";
+            this.bosLookupEdit2.BOSSelectType = "";
+            this.bosLookupEdit2.BOSSelectTypeValue = "";
+            this.bosLookupEdit2.CurrentDisplayText = null;
+            this.bosLookupEdit2.Location = new System.Drawing.Point(606, 47);
+            this.bosLookupEdit2.Name = "bosLookupEdit2";
+            this.bosLookupEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.bosLookupEdit2.Properties.ColumnName = null;
+            this.bosLookupEdit2.Properties.NullText = "";
+            this.bosLookupEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.bosLookupEdit2.Screen = null;
+            this.bosLookupEdit2.Size = new System.Drawing.Size(157, 20);
+            this.bosLookupEdit2.TabIndex = 35;
+            this.bosLookupEdit2.Tag = "DC";
+            // 
+            // bosLabel7
+            // 
+            this.bosLabel7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bosLabel7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.bosLabel7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bosLabel7.Appearance.Options.UseBackColor = true;
+            this.bosLabel7.Appearance.Options.UseFont = true;
+            this.bosLabel7.Appearance.Options.UseForeColor = true;
+            this.bosLabel7.BOSComment = "";
+            this.bosLabel7.BOSDataMember = "";
+            this.bosLabel7.BOSDataSource = "";
+            this.bosLabel7.BOSDescription = null;
+            this.bosLabel7.BOSError = null;
+            this.bosLabel7.BOSFieldGroup = "";
+            this.bosLabel7.BOSFieldRelation = "";
+            this.bosLabel7.BOSPrivilege = "";
+            this.bosLabel7.BOSPropertyName = "";
+            this.bosLabel7.Location = new System.Drawing.Point(532, 50);
+            this.bosLabel7.Name = "bosLabel7";
+            this.bosLabel7.Screen = null;
+            this.bosLabel7.Size = new System.Drawing.Size(20, 13);
+            this.bosLabel7.TabIndex = 34;
+            this.bosLabel7.Tag = "";
+            this.bosLabel7.Text = "Loại";
+            // 
             // DMPP100
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(966, 622);
+            this.ClientSize = new System.Drawing.Size(1106, 657);
             this.Controls.Add(this.panel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMPP100.IconOptions.Icon")));
             this.Name = "DMPP100";
@@ -891,7 +1011,9 @@ namespace BOSERP.Modules.PaintProcesses.UI
             ((System.ComponentModel.ISupportInitialize)(this.bosLookupEdit1.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bosLookupEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_chkMMPaintProcessesIsActive.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bosLookupEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -928,5 +1050,9 @@ namespace BOSERP.Modules.PaintProcesses.UI
         private ImageList imageList1;
         private BOSPanel panel1;
         private BOSCheckEdit fld_chkMMPaintProcessesIsActive;
+        private BOSLookupEdit bosLookupEdit2;
+        private BOSLabel bosLabel7;
+        private BOSLookupEdit bosLookupEdit3;
+        private BOSLabel bosLabel8;
     }
 }

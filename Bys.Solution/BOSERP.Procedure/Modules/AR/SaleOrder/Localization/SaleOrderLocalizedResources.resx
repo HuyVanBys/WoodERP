@@ -346,7 +346,7 @@
     <value>Các đơn hàng phải cùng đối tượng!</value>
   </data>
   <data name="UpdateReceiptTelRequireMessage" xml:space="preserve">
-    <value>Vui lòng cập nhật số điện thoại người nhận tại mục địa chỉ giao hàng!</value>
+    <value>Số điện thoại người nhận tại mục địa chỉ giao hàng chưa có, bạn có muốn tiếp tục không?</value>
   </data>
   <data name="ARSaleOrderSaleAgreement" xml:space="preserve">
     <value />
@@ -502,7 +502,7 @@
     <value>Đơn hàng này đã đề nghị sản xuất. Bạn không thể huỷ hoàn tất!</value>
   </data>
   <data name="UpdateReceiptNameRequireMessage" xml:space="preserve">
-    <value>Vui lòng cập nhật Tên người liên hệ tại mục địa chỉ giao hàng!</value>
+    <value>Tên người liên hệ tại mục địa chỉ giao hàng chưa có, bạn có muốn tiếp tục không?</value>
   </data>
   <data name="CancelCompleteExistsInvoice" xml:space="preserve">
     <value>Đơn hàng này đã tạo Hóa đơn. Bạn không thể huỷ hoàn tất!</value>

@@ -132,5 +132,10 @@
         public const string ElectronicInvoiceMInvoice = "ElectronicInvoiceMInvoice";
         public const string RetailVAT = "RetailVAT";
         public const string BatchShipmentDryLumber = "BatchShipmentDryLumber";
+        public const string PositionWire = "PositionWire";
+        public const string PositionLine = "PositionLine";
+        public const string PositionRange = "PositionRange";
+        public const string UpdatePosition = "UpdatePosition";
+        public const string FalseConditional = "FalseConditional";
     }
 }

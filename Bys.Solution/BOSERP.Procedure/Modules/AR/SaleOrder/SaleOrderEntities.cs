@@ -775,10 +775,11 @@ namespace BOSERP.Modules.SaleOrder
                 objSaleOrderItemsInfo.ARSaleOrderItemLength = objProductsInfo.ICProductLength;
                 objSaleOrderItemsInfo.ARSaleOrderItemWidth = objProductsInfo.ICProductWidth;
 
-                decimal unitVolumn = Math.Round((objSaleOrderItemsInfo.ARSaleOrderItemHeight * objSaleOrderItemsInfo.ARSaleOrderItemWidth * objSaleOrderItemsInfo.ARSaleOrderItemLength)
+                decimal unitVolumn = objProductsInfo.ICProductVolume > 0 ? objProductsInfo.ICProductVolume : Math.Round((objSaleOrderItemsInfo.ARSaleOrderItemHeight * objSaleOrderItemsInfo.ARSaleOrderItemWidth * objSaleOrderItemsInfo.ARSaleOrderItemLength)
                                            / (decimal)Math.Pow(10, 9), 4);
                 objSaleOrderItemsInfo.ARSaleOrderItemProductCBM = unitVolumn * objSaleOrderItemsInfo.ARSaleOrderItemProductQty;
-
+                objSaleOrderItemsInfo.ARSaleOrderItemBlock = objSaleOrderItemsInfo.ARSaleOrderItemProductQty * (Math.Round((objSaleOrderItemsInfo.ARSaleOrderItemHeight * objSaleOrderItemsInfo.ARSaleOrderItemWidth * objSaleOrderItemsInfo.ARSaleOrderItemLength)
+                                                   / (decimal)Math.Pow(10, 9), 4));
                 objSaleOrderItemsInfo.FK_ICProductAttributeColorID = objProductsInfo.FK_ICProductAttributeColorID;
                 objSaleOrderItemsInfo.ARSaleOrderItemProductColorAttribute = objProductsInfo.ICProductColorAttribute;
                 objSaleOrderItemsInfo.ARSaleOrderItemProductNo = objProductsInfo.ICProductNo;
@@ -1038,6 +1039,8 @@ namespace BOSERP.Modules.SaleOrder
                 groupDiscountAmount = unitPrice * discountPercent / 100;
                 dbUtil.SetPropertyValue(item, groupDiscountColumnName, unitPrice - groupDiscountAmount);
             }
+            string totalGroupDiscountColumnName = itemTablePrefix + "TotalGroupDiscount";
+            dbUtil.SetPropertyValue(item, totalGroupDiscountColumnName, (unitPrice - groupDiscountAmount) * qty);
 
             //Get or set tax percent and amount
             string taxPercentColumnName = itemTablePrefix + "ProductTaxPercent";
@@ -1344,6 +1347,8 @@ namespace BOSERP.Modules.SaleOrder
             objSaleOrderItemsInfo.FK_ARProposalItemID = objProposalItemsInfo.ARProposalItemID;
             objProposalItemsInfo.ARProposalItemProductQtyRemained = objProposalItemsInfo.ARProposalItemProductQty - objProposalItemsInfo.ARProposalItemProductQtyOld;
             objSaleOrderItemsInfo.ARSaleOrderItemProductQty = objProposalItemsInfo.ARProposalItemProductQtyOld > 0 ? objProposalItemsInfo.ARProposalItemProductQtyOld : 0;
+            objSaleOrderItemsInfo.ARSaleOrderItemProductFactor = objProposalItemsInfo.ARProposalItemProductSellFactor;
+            objSaleOrderItemsInfo.ARSaleOrderItemProductExchangeQty = objSaleOrderItemsInfo.ARSaleOrderItemProductQty * objSaleOrderItemsInfo.ARSaleOrderItemProductFactor;
             objSaleOrderItemsInfo.FK_ICProductAttributeColorID = objProposalItemsInfo.FK_ICProductAttributeColorID;
             objSaleOrderItemsInfo.FK_ICProductFormulaPriceConfigID = objProposalItemsInfo.FK_ICProductFormulaPriceConfigID;
             objSaleOrderItemsInfo.ARSaleOrderItemFormulaPriceConfigQty = objProposalItemsInfo.ARProposalItemFormulaPriceConfigQty;
@@ -1375,9 +1380,7 @@ namespace BOSERP.Modules.SaleOrder
             objSaleOrderItemsInfo.ARSaleOrderItemProductFactor = (measureUnit != null && measureUnit.ICProductMeasureUnitFactor > 0)
                                                 ? measureUnit.ICProductMeasureUnitFactor
                                                 : 1;
-            decimal unitVolumn = Math.Round((objSaleOrderItemsInfo.ARSaleOrderItemHeight * objSaleOrderItemsInfo.ARSaleOrderItemWidth * objSaleOrderItemsInfo.ARSaleOrderItemLength)
-                                           / (decimal)Math.Pow(10, 9), 4);
-            objSaleOrderItemsInfo.ARSaleOrderItemProductCBM = unitVolumn * objSaleOrderItemsInfo.ARSaleOrderItemProductQty;
+            
             ICProductsController objProductsController = new ICProductsController();
             ICProductsInfo objProductsInfo = (ICProductsInfo)objProductsController.GetObjectByID(objProposalItemsInfo.FK_ICProductID);
             if (objProductsInfo != null)
@@ -1401,6 +1404,11 @@ namespace BOSERP.Modules.SaleOrder
                 if (!string.IsNullOrEmpty(objSaleOrderItemsInfo.ARSaleOrderItemOriginOfProduct))
                     objSaleOrderItemsInfo.ARSaleOrderItemGrantedFrom = GenerateDefaultGrantedFrom(objSaleOrderItemsInfo.ARSaleOrderItemOriginOfProduct);
                 objSaleOrderItemsInfo.ARSaleOrderItemProductNoOfOldSys = objProductsInfo.ICProductNoOfOldSys;
+                decimal unitVolumn = objProductsInfo.ICProductVolume > 0 ? objProductsInfo.ICProductVolume : Math.Round((objSaleOrderItemsInfo.ARSaleOrderItemHeight * objSaleOrderItemsInfo.ARSaleOrderItemWidth * objSaleOrderItemsInfo.ARSaleOrderItemLength)
+                                           / (decimal)Math.Pow(10, 9), 4);
+                objSaleOrderItemsInfo.ARSaleOrderItemProductCBM = unitVolumn * objSaleOrderItemsInfo.ARSaleOrderItemProductQty;
+                objSaleOrderItemsInfo.ARSaleOrderItemBlock = objSaleOrderItemsInfo.ARSaleOrderItemProductQty * (Math.Round((objSaleOrderItemsInfo.ARSaleOrderItemHeight * objSaleOrderItemsInfo.ARSaleOrderItemWidth * objSaleOrderItemsInfo.ARSaleOrderItemLength)
+                                                   / (decimal)Math.Pow(10, 9), 4));
                 // GetComponent
                 objSaleOrderItemsInfo.ARSOItemComponentList = new BOSList<ARSOItemComponentsInfo>();
                 ICProductComponentsController objProductComponentsController = new ICProductComponentsController();
@@ -2148,9 +2156,11 @@ namespace BOSERP.Modules.SaleOrder
                         objSaleOrderItemsInfo.ARSaleOrderItemOriginOfProduct = objProductsInfo.ICProductOriginOfProduct;
                         objSaleOrderItemsInfo.ARSaleOrderItemProductCustomerNumber = objSaleForecastItemsInfo.ARSaleForecastItemProductCustomerNumber;
                         objSaleOrderItemsInfo.ARSaleOrderItemGrantedFrom = GenerateDefaultGrantedFrom(objSaleOrderItemsInfo.ARSaleOrderItemOriginOfProduct);
-                        decimal unitVolumn = Math.Round((objSaleOrderItemsInfo.ARSaleOrderItemHeight * objSaleOrderItemsInfo.ARSaleOrderItemWidth * objSaleOrderItemsInfo.ARSaleOrderItemLength)
-                                           / (decimal)Math.Pow(10, 9), 4);
+                        decimal unitVolumn = objProductsInfo.ICProductVolume > 0 ? objProductsInfo.ICProductVolume : Math.Round((objSaleOrderItemsInfo.ARSaleOrderItemHeight * objSaleOrderItemsInfo.ARSaleOrderItemWidth * objSaleOrderItemsInfo.ARSaleOrderItemLength)
+                                            / (decimal)Math.Pow(10, 9), 4);
                         objSaleOrderItemsInfo.ARSaleOrderItemProductCBM = unitVolumn * objSaleOrderItemsInfo.ARSaleOrderItemProductQty;
+                        objSaleOrderItemsInfo.ARSaleOrderItemBlock = objSaleOrderItemsInfo.ARSaleOrderItemProductQty * ( Math.Round((objSaleOrderItemsInfo.ARSaleOrderItemHeight * objSaleOrderItemsInfo.ARSaleOrderItemWidth * objSaleOrderItemsInfo.ARSaleOrderItemLength)
+                                                   / (decimal)Math.Pow(10, 9), 4));
                         //Màu son
                         objSaleOrderItemsInfo.ARSaleOrderItemColorID = objProductsInfo.ICProductColorAttribute;
                         //Lo?i g?

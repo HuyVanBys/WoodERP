@@ -51,6 +51,8 @@ namespace BOSERP.Modules.PurchaseReceipt
         public const string PurchaseOrderItemButtonName = "fld_btnShowPurchaseOrderItems";
         public const string ICReceiptItemContsControlName = "fld_lkeICReceiptItemConts";
         public const string ICReceiptItemContFeesControlName = "fld_dgcICReceiptItemContFees";
+        public const string UpdatePositionItemsControlName = "fld_lkeMMUpdatePositionItemID";
+        public const string HyperLinkLoadQualitySerialControlName = "fld_lnkLoadQualitySerialNo";
         #endregion
 
         #region Variable
@@ -105,6 +107,8 @@ namespace BOSERP.Modules.PurchaseReceipt
         //NUThao [ADD] [08/04/2014] [DB centre] [Search document by BRBranchID], END
         public BOSLookupEdit ICProductIDItemLookupEdit;
         public ICReceiptItemsGridControl ReceiptItemsGridControl;
+        public BOSLookupEdit UpdatePositionItemControl;
+        public DevExpress.XtraEditors.HyperLinkEdit LoadQualitySerialControl;
         //public  int STT ;
 
         #endregion
@@ -136,6 +140,11 @@ namespace BOSERP.Modules.PurchaseReceipt
             //ChangedInputType(ProductType.Product.ToString());
             ProductPicturePictureBox = (BOSPictureEdit)Controls[ProductPicturePictureBoxName];
             StartGettingInventoryThread();
+            UpdatePositionItemControl = (BOSLookupEdit)Controls[UpdatePositionItemsControlName];
+            MMUpdatePositionItemsController objUpdatePosititonsController = new MMUpdatePositionItemsController();
+            List<MMUpdatePositionItemsInfo> listUpdatePositions = objUpdatePosititonsController.GetAllLocationName();
+            UpdatePositionItemControl.Properties.DataSource = listUpdatePositions;
+            LoadQualitySerialControl = (DevExpress.XtraEditors.HyperLinkEdit)Controls[HyperLinkLoadQualitySerialControlName];
         }
         //NUThao [ADD] [08/04/2014] [DB centre] [Search document by BRBranchID], START
         //public override string GenerateSearchQuery(string strTableName)
@@ -1283,6 +1292,8 @@ namespace BOSERP.Modules.PurchaseReceipt
             PurchaseReceiptEntities entity = (PurchaseReceiptEntities)CurrentModuleEntity;
             ICProductIDItemLookupEdit.Enabled = true;
             PurchaseOrderItemButton.Enabled = entity.ReceiptItemsList.Count(o1 => o1.FK_APPurchaseOrderItemID > 0) > 0;
+            if (LoadQualitySerialControl != null)
+                LoadQualitySerialControl.Visible = false;
             LoadGridViewReceiptItemList();
             bool isWoodType = BOSApp.IsWoodTypeDocument(objOriginalReceiptsInfo.ICReceiptReceiptType, entity.ReceiptItemsList.FirstOrDefault());
             ChangeDisplayColumnByWoodType(entity.ReceiptItemsList.GridControl, isWoodType);
@@ -2434,6 +2445,8 @@ namespace BOSERP.Modules.PurchaseReceipt
                         entity.ReceiptItemsList.GridControl.RefreshDataSource();
                     }
                 }
+                if (LoadQualitySerialControl != null)
+                    LoadQualitySerialControl.Visible = true;
             }
         }
 
@@ -4123,6 +4136,78 @@ namespace BOSERP.Modules.PurchaseReceipt
                 }
             }
             return true;
+        }
+        public void ChangeUpdatePositionLocation(string updatePositionItemLocationName)
+        {
+            if (!Toolbar.IsNullOrNoneAction())
+            {
+                PurchaseReceiptEntities entity = (PurchaseReceiptEntities)CurrentModuleEntity;
+                ICReceiptsInfo objReceiptsInfo = (ICReceiptsInfo)CurrentModuleEntity.MainObject;
+                objReceiptsInfo.MMUpdatePositionItemPositionName = updatePositionItemLocationName;
+                MMUpdatePositionItemsController objUpdatePositionItemsController = new MMUpdatePositionItemsController();
+                entity.ReceiptItemsList.ForEach(o =>
+                {
+                    MMUpdatePositionItemsInfo objUpdatePositionItemsInfo = (MMUpdatePositionItemsInfo)objUpdatePositionItemsController.GetItemByLocationName(updatePositionItemLocationName, o.FK_ICProductID, o.FK_ICStockID, 0);
+                    if (objUpdatePositionItemsInfo != null)
+                    {
+                        o.FK_MMUpdatePositionItemID = objUpdatePositionItemsInfo.MMUpdatePositionItemID;
+                    }
+                });
+                entity.UpdateMainObjectBindingSource();
+            }
+        }
+        public void CreateUpdatePositionsInfo()
+        {
+            PurchaseReceiptEntities entity = (PurchaseReceiptEntities)CurrentModuleEntity;
+            ICReceiptsInfo objICReceiptsInfo = (ICReceiptsInfo)entity.MainObject;
+            if (objICReceiptsInfo.FK_ICStockID == 0)
+            {
+                BOSApp.ShowMessage("Vui lòng chọn mã kho!");
+                return;
+            }
+            guiAddUpdatePositionItems guiAddUpdatePositionItem = new guiAddUpdatePositionItems(objICReceiptsInfo.FK_ICStockID);
+            guiAddUpdatePositionItem.Module = this;
+            guiAddUpdatePositionItem.ShowDialog();
+
+        }
+        public void UpdateQualitySerial()
+        {
+            if (!Toolbar.IsNullOrNoneAction())
+            {
+                PurchaseReceiptEntities entity = (PurchaseReceiptEntities)CurrentModuleEntity;
+                ICReceiptsInfo objICReceiptsInfo = (ICReceiptsInfo)entity.MainObject;
+                MMFalseConditionalItemsController objFalseConditionalItemsController = new MMFalseConditionalItemsController();
+                entity.ReceiptItemsList.ForEach(o =>
+                {
+                    MMFalseConditionalItemsInfo objFalseConditionalItemsInfo = (MMFalseConditionalItemsInfo)objFalseConditionalItemsController.GetItemBySerialNo(o.ICReceiptItemProductSerialNo);
+                    if (objFalseConditionalItemsInfo != null)
+                    {
+                        o.FK_ICProductAttributeQualityID = objFalseConditionalItemsInfo.FK_ICProductAttributeQualityID;
+                        o.ICReceiptItemProductLength = objFalseConditionalItemsInfo.MMFalseConditionalItemProductLength;
+                        o.ICReceiptItemProductHeight = objFalseConditionalItemsInfo.MMFalseConditionalItemProductHeight;
+                        o.ICReceiptItemProductWidth = objFalseConditionalItemsInfo.MMFalseConditionalItemProductWidth;
+                        o.ICReceiptItemWoodQty = objFalseConditionalItemsInfo.MMFalseConditionalItemWoodQty;
+                        if (CalculatedPackageVolumnConfigsList == null || CalculatedPackageVolumnConfigsList.Count <= 0)
+                        {
+                            CalculatedPackageVolumnConfigsList = (new ICCalculatedPackageVolumnConfigsController()).GetAllObjectList();
+                        }
+                        ICCalculatedPackageVolumnConfigsInfo objCalculatedPackageVolumnConfigsInfo = CalculatedPackageVolumnConfigsList.FirstOrDefault(p => p.STModuleName == this.Name);
+                        ICProductsForViewInfo product = BOSApp.CurrentProductList.FirstOrDefault(p => p.ICProductID == o.FK_ICProductID);
+                        if (product.ICProductType == ProductType.Lumber.ToString()
+                            && objCalculatedPackageVolumnConfigsInfo != null
+                            && objCalculatedPackageVolumnConfigsInfo.IsActive
+                            && o.ICReceiptItemProductLength * o.ICReceiptItemProductHeight * o.ICReceiptItemProductWidth * o.ICReceiptItemWoodQty != 0M)
+                        {
+                            o.ICReceiptItemProductQty = o.ICReceiptItemProductLength * o.ICReceiptItemProductHeight * o.ICReceiptItemProductWidth * o.ICReceiptItemWoodQty / 1000000000;
+                            o.ICReceiptItemProductExchangeQty = o.ICReceiptItemProductQty * o.ICReceiptItemProductFactor;
+                            o.ICReceiptItemProductQty = Math.Round(o.ICReceiptItemProductQty, RoundingNumber.FormatN6, MidpointRounding.AwayFromZero);
+                            o.ICReceiptItemProductExchangeQty = Math.Round(o.ICReceiptItemProductExchangeQty, RoundingNumber.FormatN6, MidpointRounding.AwayFromZero);
+                            entity.ReceiptItemsList.GridControl?.RefreshDataSource();
+                        }
+                        o.ICReceiptItemCode01Combo = objFalseConditionalItemsInfo.MMFalseConditionalItemHumidity.ToString("n2");
+                    }    
+                });
+            }
         }
     }
     #endregion

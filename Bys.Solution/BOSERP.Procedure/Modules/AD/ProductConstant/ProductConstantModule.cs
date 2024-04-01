@@ -44,6 +44,7 @@ namespace BOSERP.Modules.ProductConstant
         public const string MMLabourProductivityTargetConfigsGridControl = "fld_dgcMMLabourProductivityTargetConfigs";
         public const string SemiGroupTypeListGridControl = "fld_dgcSemiGroupType";
         public const string MMConfigAccountOperationsGridControl = "fld_dgcMMConfigAccountOperations";
+        public const string MMConfigFalseConditionalsGridControl = "fld_dgcMMConfigFalseConditionals";
         public const string ConfigThinkAccordWoodTypesGridControl = "fld_dgcICConfigThinkAccordWoodType";
         public const string ConfigQualityAccordWoodTypesGridControl = "fld_dgcICConfigQualityAccordWoodType";
         public const string ProductionCompletionTimeConfigsGridControl = "fld_dgcMMProductionCompletionTimeConfigs";
@@ -100,6 +101,7 @@ namespace BOSERP.Modules.ProductConstant
             trlSection2s.AppendNode(new object[] { ProductConstantLocalizedResources.MMConfigAccountOperations }, -1, "ConfigAccountOperation");
             trlSection2s.AppendNode(new object[] { ProductConstantLocalizedResources.ExecuteTimeConfig }, -1, "ExecuteTimeConfig");
             trlSection2s.AppendNode(new object[] { ProductConstantLocalizedResources.DirectoryPath }, -1, "DirectoryPath");
+            trlSection2s.AppendNode(new object[] { ProductConstantLocalizedResources.MMConfigFalseConditionals }, -1, "ConfigFalseConditional");
             trlSection2s.Nodes[0].Selected = true;
             trlSection2s.BestFitColumns();
         }
@@ -409,6 +411,18 @@ namespace BOSERP.Modules.ProductConstant
             }
             ds.Dispose();
         }
+        public void InvalidateConfigFalseConditionalList()
+        {
+            ProductConstantEntities entity = (ProductConstantEntities)CurrentModuleEntity;
+            MMConfigFalseConditionalsController ctrl = new MMConfigFalseConditionalsController();
+            DataSet ds = ctrl.GetAllObjects();
+            if (ds != null)
+            {
+                entity.ConfigFalseConditionalList.Invalidate(ds);
+                entity.ConfigFalseConditionalList.GridControl.RefreshDataSource();
+            }
+            ds.Dispose();
+        }
         public void InvalidateConfigProductionCompletionTimeList()
         {
             ProductConstantEntities entity = (ProductConstantEntities)CurrentModuleEntity;
@@ -699,6 +713,11 @@ namespace BOSERP.Modules.ProductConstant
         {
             ProductConstantEntities entity = (ProductConstantEntities)CurrentModuleEntity;
             entity.ConfigAccountOperationList.RemoveSelectedRowObjectFromList();
+        }
+        public void RemoveSelectedConfigFalseConditionalList()
+        {
+            ProductConstantEntities entity = (ProductConstantEntities)CurrentModuleEntity;
+            entity.ConfigFalseConditionalList.RemoveSelectedRowObjectFromList();
         }
         public void RemoveSelectedProductionCompletionTimeList()
         {
@@ -1121,6 +1140,12 @@ namespace BOSERP.Modules.ProductConstant
         {
             ProductConstantEntities entity = (ProductConstantEntities)CurrentModuleEntity;
             entity.ConfigAccountOperationList.SaveItemObjects();
+            return true;
+        }
+        public bool SaveConfigFalseConditionalList()
+        {
+            ProductConstantEntities entity = (ProductConstantEntities)CurrentModuleEntity;
+            entity.ConfigFalseConditionalList.SaveItemObjects();
             return true;
         }
         public bool SaveConfigDirectoryPathList()

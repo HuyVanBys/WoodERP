@@ -402,7 +402,7 @@ namespace BOSERP.Modules.ClearInvoice
             decimal totalAllocationAmount = 0;
             if (entity.InvoiceItemList != null && entity.InvoiceItemList.Count > 0)
             {
-                totalAllocationAmount = entity.InvoiceItemList.Sum(a => a.ARClearInvoiceInvoiceAllocationAmount * a.ARClearInvoiceInvoiceExchangeRate);
+                totalAllocationAmount = entity.InvoiceItemList.Sum(a => a.ARClearInvoiceInvoiceAllocationAmount);
             }
             if (entity.DocumentList.Count > 0)
             {

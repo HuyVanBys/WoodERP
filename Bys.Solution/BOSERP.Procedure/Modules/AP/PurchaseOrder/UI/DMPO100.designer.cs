@@ -100,7 +100,6 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.bosLabel3 = new BOSComponent.BOSLabel(this.components);
             this.fld_lkeAPPurchaseOrderReceiptTypeCombo = new BOSComponent.BOSLookupEdit(this.components);
             this.fld_lblLabel1 = new BOSComponent.BOSLabel(this.components);
-            this.fld_lkeFK_HREmployeeID1 = new BOSComponent.BOSLookupEdit(this.components);
             this.fld_lkeFK_GECurrencyID = new BOSComponent.BOSLookupEdit(this.components);
             this.fld_lkeAPPaymentMethodCombo = new BOSComponent.BOSLookupEdit(this.components);
             this.bosLabel8 = new BOSComponent.BOSLabel(this.components);
@@ -141,6 +140,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bosLine1 = new BOSComponent.BOSLine(this.components);
             this.fld_dgvAPPurchaseOrderPaymentTimes = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.fld_lkeFK_HREmployeeID1 = new BOSComponent.BOSLookupEdit(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.fld_medAPPurchaseOrderComment.Properties)).BeginInit();
             this.fld_Line3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtAPPurchaseOrderShippingFees.Properties)).BeginInit();
@@ -174,7 +174,6 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtAPPurchaseOrderContractNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtAPPurchaseOrderNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeAPPurchaseOrderReceiptTypeCombo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HREmployeeID1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_GECurrencyID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeAPPaymentMethodCombo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_dteAPPurchaseOrderContractDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -204,6 +203,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.bosLine1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fld_dgvAPPurchaseOrderPaymentTimes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HREmployeeID1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // fld_medAPPurchaseOrderComment
@@ -254,7 +254,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_Line3.Controls.Add(this.fld_btnShippingInfo);
             this.fld_Line3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.fld_Line3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.fld_Line3.Location = new System.Drawing.Point(331, 849);
+            this.fld_Line3.Location = new System.Drawing.Point(331, 863);
             this.fld_Line3.Name = "fld_Line3";
             this.fld_Line3.Screen = null;
             this.fld_Line3.Size = new System.Drawing.Size(372, 170);
@@ -484,7 +484,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_txtAPPurchaseOrderShippingFees.BOSPrivilege = "";
             this.fld_txtAPPurchaseOrderShippingFees.BOSPropertyName = "Text";
             this.fld_txtAPPurchaseOrderShippingFees.EditValue = "0.00";
-            this.fld_txtAPPurchaseOrderShippingFees.Location = new System.Drawing.Point(1340, 898);
+            this.fld_txtAPPurchaseOrderShippingFees.Location = new System.Drawing.Point(1368, 912);
             this.fld_txtAPPurchaseOrderShippingFees.Name = "fld_txtAPPurchaseOrderShippingFees";
             this.fld_txtAPPurchaseOrderShippingFees.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.fld_txtAPPurchaseOrderShippingFees.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -513,7 +513,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_txtAPPurchaseOrderShippingExtraFees.BOSPrivilege = "";
             this.fld_txtAPPurchaseOrderShippingExtraFees.BOSPropertyName = "Text";
             this.fld_txtAPPurchaseOrderShippingExtraFees.EditValue = "0.00";
-            this.fld_txtAPPurchaseOrderShippingExtraFees.Location = new System.Drawing.Point(1340, 923);
+            this.fld_txtAPPurchaseOrderShippingExtraFees.Location = new System.Drawing.Point(1368, 937);
             this.fld_txtAPPurchaseOrderShippingExtraFees.Name = "fld_txtAPPurchaseOrderShippingExtraFees";
             this.fld_txtAPPurchaseOrderShippingExtraFees.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.fld_txtAPPurchaseOrderShippingExtraFees.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -542,7 +542,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_txtAPPurchaseOrderDiscountPerCent.BOSPrivilege = "";
             this.fld_txtAPPurchaseOrderDiscountPerCent.BOSPropertyName = "Text";
             this.fld_txtAPPurchaseOrderDiscountPerCent.EditValue = "0.00";
-            this.fld_txtAPPurchaseOrderDiscountPerCent.Location = new System.Drawing.Point(1340, 872);
+            this.fld_txtAPPurchaseOrderDiscountPerCent.Location = new System.Drawing.Point(1368, 886);
             this.fld_txtAPPurchaseOrderDiscountPerCent.Name = "fld_txtAPPurchaseOrderDiscountPerCent";
             this.fld_txtAPPurchaseOrderDiscountPerCent.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.fld_txtAPPurchaseOrderDiscountPerCent.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -571,7 +571,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_txtAPPurchaseOrderTaxPercent.BOSPrivilege = "";
             this.fld_txtAPPurchaseOrderTaxPercent.BOSPropertyName = "Text";
             this.fld_txtAPPurchaseOrderTaxPercent.EditValue = "0.00";
-            this.fld_txtAPPurchaseOrderTaxPercent.Location = new System.Drawing.Point(1340, 948);
+            this.fld_txtAPPurchaseOrderTaxPercent.Location = new System.Drawing.Point(1368, 962);
             this.fld_txtAPPurchaseOrderTaxPercent.Name = "fld_txtAPPurchaseOrderTaxPercent";
             this.fld_txtAPPurchaseOrderTaxPercent.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.fld_txtAPPurchaseOrderTaxPercent.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -600,7 +600,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_txtAPPurchaseOrderTotalCost.BOSPrivilege = "";
             this.fld_txtAPPurchaseOrderTotalCost.BOSPropertyName = "Text";
             this.fld_txtAPPurchaseOrderTotalCost.EditValue = "0.00";
-            this.fld_txtAPPurchaseOrderTotalCost.Location = new System.Drawing.Point(1340, 974);
+            this.fld_txtAPPurchaseOrderTotalCost.Location = new System.Drawing.Point(1368, 988);
             this.fld_txtAPPurchaseOrderTotalCost.Name = "fld_txtAPPurchaseOrderTotalCost";
             this.fld_txtAPPurchaseOrderTotalCost.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
             this.fld_txtAPPurchaseOrderTotalCost.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -634,7 +634,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_lblLabel16.BOSFieldRelation = "";
             this.fld_lblLabel16.BOSPrivilege = "";
             this.fld_lblLabel16.BOSPropertyName = "";
-            this.fld_lblLabel16.Location = new System.Drawing.Point(1231, 849);
+            this.fld_lblLabel16.Location = new System.Drawing.Point(1259, 863);
             this.fld_lblLabel16.Name = "fld_lblLabel16";
             this.fld_lblLabel16.Screen = null;
             this.fld_lblLabel16.Size = new System.Drawing.Size(50, 13);
@@ -658,7 +658,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_lblLabel19.BOSFieldRelation = "";
             this.fld_lblLabel19.BOSPrivilege = "";
             this.fld_lblLabel19.BOSPropertyName = "";
-            this.fld_lblLabel19.Location = new System.Drawing.Point(1231, 874);
+            this.fld_lblLabel19.Location = new System.Drawing.Point(1259, 888);
             this.fld_lblLabel19.Name = "fld_lblLabel19";
             this.fld_lblLabel19.Screen = null;
             this.fld_lblLabel19.Size = new System.Drawing.Size(51, 13);
@@ -682,7 +682,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.bosLabel1.BOSFieldRelation = "";
             this.bosLabel1.BOSPrivilege = "";
             this.bosLabel1.BOSPropertyName = "";
-            this.bosLabel1.Location = new System.Drawing.Point(1231, 951);
+            this.bosLabel1.Location = new System.Drawing.Point(1259, 965);
             this.bosLabel1.Name = "bosLabel1";
             this.bosLabel1.Screen = null;
             this.bosLabel1.Size = new System.Drawing.Size(24, 13);
@@ -703,7 +703,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_txtAPPurchaseOrderDiscountFix.BOSPrivilege = "";
             this.fld_txtAPPurchaseOrderDiscountFix.BOSPropertyName = "Text";
             this.fld_txtAPPurchaseOrderDiscountFix.EditValue = "0.00";
-            this.fld_txtAPPurchaseOrderDiscountFix.Location = new System.Drawing.Point(1414, 872);
+            this.fld_txtAPPurchaseOrderDiscountFix.Location = new System.Drawing.Point(1442, 886);
             this.fld_txtAPPurchaseOrderDiscountFix.Name = "fld_txtAPPurchaseOrderDiscountFix";
             this.fld_txtAPPurchaseOrderDiscountFix.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.fld_txtAPPurchaseOrderDiscountFix.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -732,7 +732,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_txtAPPurchaseOrderTaxAmount.BOSPrivilege = "";
             this.fld_txtAPPurchaseOrderTaxAmount.BOSPropertyName = "Text";
             this.fld_txtAPPurchaseOrderTaxAmount.EditValue = "0.00";
-            this.fld_txtAPPurchaseOrderTaxAmount.Location = new System.Drawing.Point(1414, 948);
+            this.fld_txtAPPurchaseOrderTaxAmount.Location = new System.Drawing.Point(1442, 962);
             this.fld_txtAPPurchaseOrderTaxAmount.Name = "fld_txtAPPurchaseOrderTaxAmount";
             this.fld_txtAPPurchaseOrderTaxAmount.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.fld_txtAPPurchaseOrderTaxAmount.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -765,7 +765,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_lblLabel20.BOSFieldRelation = "";
             this.fld_lblLabel20.BOSPrivilege = "";
             this.fld_lblLabel20.BOSPropertyName = "";
-            this.fld_lblLabel20.Location = new System.Drawing.Point(1231, 901);
+            this.fld_lblLabel20.Location = new System.Drawing.Point(1259, 915);
             this.fld_lblLabel20.Name = "fld_lblLabel20";
             this.fld_lblLabel20.Screen = null;
             this.fld_lblLabel20.Size = new System.Drawing.Size(73, 13);
@@ -789,7 +789,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_lblLabel21.BOSFieldRelation = "";
             this.fld_lblLabel21.BOSPrivilege = "";
             this.fld_lblLabel21.BOSPropertyName = "";
-            this.fld_lblLabel21.Location = new System.Drawing.Point(1231, 925);
+            this.fld_lblLabel21.Location = new System.Drawing.Point(1259, 939);
             this.fld_lblLabel21.Name = "fld_lblLabel21";
             this.fld_lblLabel21.Screen = null;
             this.fld_lblLabel21.Size = new System.Drawing.Size(39, 13);
@@ -810,7 +810,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_txtARPurchaseOrderSubTotalCost.BOSPrivilege = "";
             this.fld_txtARPurchaseOrderSubTotalCost.BOSPropertyName = "Text";
             this.fld_txtARPurchaseOrderSubTotalCost.EditValue = "0.00";
-            this.fld_txtARPurchaseOrderSubTotalCost.Location = new System.Drawing.Point(1340, 846);
+            this.fld_txtARPurchaseOrderSubTotalCost.Location = new System.Drawing.Point(1368, 860);
             this.fld_txtARPurchaseOrderSubTotalCost.Name = "fld_txtARPurchaseOrderSubTotalCost";
             this.fld_txtARPurchaseOrderSubTotalCost.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
             this.fld_txtARPurchaseOrderSubTotalCost.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -844,7 +844,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_lblLabel22.BOSFieldRelation = "";
             this.fld_lblLabel22.BOSPrivilege = "";
             this.fld_lblLabel22.BOSPropertyName = "";
-            this.fld_lblLabel22.Location = new System.Drawing.Point(1231, 976);
+            this.fld_lblLabel22.Location = new System.Drawing.Point(1259, 990);
             this.fld_lblLabel22.Name = "fld_lblLabel22";
             this.fld_lblLabel22.Screen = null;
             this.fld_lblLabel22.Size = new System.Drawing.Size(66, 13);
@@ -863,6 +863,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.bosPanel1.BOSFieldRelation = null;
             this.bosPanel1.BOSPrivilege = null;
             this.bosPanel1.BOSPropertyName = null;
+            this.bosPanel1.Controls.Add(this.fld_lkeFK_HREmployeeID1);
             this.bosPanel1.Controls.Add(this.bosLabel22);
             this.bosPanel1.Controls.Add(this.bosTextBox2);
             this.bosPanel1.Controls.Add(this.fld_lkeFK_ICStockID);
@@ -907,7 +908,6 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.bosPanel1.Controls.Add(this.bosLabel3);
             this.bosPanel1.Controls.Add(this.fld_lkeAPPurchaseOrderReceiptTypeCombo);
             this.bosPanel1.Controls.Add(this.fld_lblLabel1);
-            this.bosPanel1.Controls.Add(this.fld_lkeFK_HREmployeeID1);
             this.bosPanel1.Controls.Add(this.fld_lkeFK_GECurrencyID);
             this.bosPanel1.Controls.Add(this.fld_lkeAPPaymentMethodCombo);
             this.bosPanel1.Controls.Add(this.bosLabel8);
@@ -944,7 +944,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(1528, 1029);
+            this.bosPanel1.Size = new System.Drawing.Size(1556, 1043);
             this.bosPanel1.TabIndex = 0;
             // 
             // bosLabel22
@@ -2160,45 +2160,6 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_lblLabel1.Tag = "";
             this.fld_lblLabel1.Text = "Nhà cung cấp";
             // 
-            // fld_lkeFK_HREmployeeID1
-            // 
-            this.fld_lkeFK_HREmployeeID1.BOSAllowAddNew = false;
-            this.fld_lkeFK_HREmployeeID1.BOSAllowDummy = false;
-            this.fld_lkeFK_HREmployeeID1.BOSComment = "";
-            this.fld_lkeFK_HREmployeeID1.BOSDataMember = "FK_HREmployeeID";
-            this.fld_lkeFK_HREmployeeID1.BOSDataSource = "APPurchaseOrders";
-            this.fld_lkeFK_HREmployeeID1.BOSDescription = null;
-            this.fld_lkeFK_HREmployeeID1.BOSError = null;
-            this.fld_lkeFK_HREmployeeID1.BOSFieldGroup = "";
-            this.fld_lkeFK_HREmployeeID1.BOSFieldParent = "";
-            this.fld_lkeFK_HREmployeeID1.BOSFieldRelation = "";
-            this.fld_lkeFK_HREmployeeID1.BOSPrivilege = "";
-            this.fld_lkeFK_HREmployeeID1.BOSPropertyName = "EditValue";
-            this.fld_lkeFK_HREmployeeID1.BOSSelectType = "";
-            this.fld_lkeFK_HREmployeeID1.BOSSelectTypeValue = "";
-            this.fld_lkeFK_HREmployeeID1.CurrentDisplayText = null;
-            this.fld_lkeFK_HREmployeeID1.Location = new System.Drawing.Point(9, 115);
-            this.fld_lkeFK_HREmployeeID1.Name = "fld_lkeFK_HREmployeeID1";
-            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.Options.UseBackColor = true;
-            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.Options.UseForeColor = true;
-            this.fld_lkeFK_HREmployeeID1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.fld_lkeFK_HREmployeeID1.Properties.ColumnName = null;
-            this.fld_lkeFK_HREmployeeID1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HREmployeeNo", "No", 20, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HREmployeeFName", "Name")});
-            this.fld_lkeFK_HREmployeeID1.Properties.DisplayMember = "HREmployeeNo";
-            this.fld_lkeFK_HREmployeeID1.Properties.NullText = "";
-            this.fld_lkeFK_HREmployeeID1.Properties.PopupWidth = 40;
-            this.fld_lkeFK_HREmployeeID1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.fld_lkeFK_HREmployeeID1.Properties.ValueMember = "HREmployeeID";
-            this.fld_lkeFK_HREmployeeID1.Screen = null;
-            this.fld_lkeFK_HREmployeeID1.Size = new System.Drawing.Size(100, 20);
-            this.fld_lkeFK_HREmployeeID1.TabIndex = 1;
-            this.fld_lkeFK_HREmployeeID1.Tag = "DC";
-            // 
             // fld_lkeFK_GECurrencyID
             // 
             this.fld_lkeFK_GECurrencyID.BOSAllowAddNew = false;
@@ -2608,7 +2569,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_tclModuleObjects.Screen = null;
             this.fld_tclModuleObjects.SelectedTabPage = this.xtraTabPage1;
             this.ScreenHelper.SetShowHelp(this.fld_tclModuleObjects, true);
-            this.fld_tclModuleObjects.Size = new System.Drawing.Size(1515, 596);
+            this.fld_tclModuleObjects.Size = new System.Drawing.Size(1543, 610);
             this.fld_tclModuleObjects.TabIndex = 603;
             this.fld_tclModuleObjects.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -2626,7 +2587,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.xtraTabPage1.Controls.Add(this.fld_pteAPPurchaseOrderItemProductPicture);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.ScreenHelper.SetShowHelp(this.xtraTabPage1, true);
-            this.xtraTabPage1.Size = new System.Drawing.Size(1513, 571);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1541, 585);
             this.xtraTabPage1.Text = "Danh sách sản phẩm";
             // 
             // fld_btnUpdateInventoryStock
@@ -2641,7 +2602,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_btnUpdateInventoryStock.BOSFieldRelation = null;
             this.fld_btnUpdateInventoryStock.BOSPrivilege = null;
             this.fld_btnUpdateInventoryStock.BOSPropertyName = null;
-            this.fld_btnUpdateInventoryStock.Location = new System.Drawing.Point(1389, 6);
+            this.fld_btnUpdateInventoryStock.Location = new System.Drawing.Point(1417, 6);
             this.fld_btnUpdateInventoryStock.Name = "fld_btnUpdateInventoryStock";
             this.fld_btnUpdateInventoryStock.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_btnUpdateInventoryStock, true);
@@ -2682,7 +2643,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_lkeFK_ICProductAttributeID.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.fld_lkeFK_ICProductAttributeID.Properties.ValueMember = "ICProductID";
             this.fld_lkeFK_ICProductAttributeID.Screen = null;
-            this.fld_lkeFK_ICProductAttributeID.Size = new System.Drawing.Size(1317, 20);
+            this.fld_lkeFK_ICProductAttributeID.Size = new System.Drawing.Size(1345, 20);
             this.fld_lkeFK_ICProductAttributeID.TabIndex = 0;
             this.fld_lkeFK_ICProductAttributeID.Tag = "DC";
             this.fld_lkeFK_ICProductAttributeID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fld_lkeFK_ICProductAttributeID_KeyUp);
@@ -2701,7 +2662,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_btnShowProposalItems.BOSFieldRelation = "";
             this.fld_btnShowProposalItems.BOSPrivilege = "";
             this.fld_btnShowProposalItems.BOSPropertyName = "";
-            this.fld_btnShowProposalItems.Location = new System.Drawing.Point(1389, 160);
+            this.fld_btnShowProposalItems.Location = new System.Drawing.Point(1417, 160);
             this.fld_btnShowProposalItems.Name = "fld_btnShowProposalItems";
             this.fld_btnShowProposalItems.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_btnShowProposalItems, true);
@@ -2757,7 +2718,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_dgcAPPurchaseOrderItems.Name = "fld_dgcAPPurchaseOrderItems";
             this.fld_dgcAPPurchaseOrderItems.PrintReport = false;
             this.fld_dgcAPPurchaseOrderItems.Screen = null;
-            this.fld_dgcAPPurchaseOrderItems.Size = new System.Drawing.Size(1379, 534);
+            this.fld_dgcAPPurchaseOrderItems.Size = new System.Drawing.Size(1407, 548);
             this.fld_dgcAPPurchaseOrderItems.TabIndex = 1;
             this.fld_dgcAPPurchaseOrderItems.Tag = "DC";
             this.fld_dgcAPPurchaseOrderItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -2785,7 +2746,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_pteAPPurchaseOrderItemProductPicture.EditValue = "";
             this.fld_pteAPPurchaseOrderItemProductPicture.FileName = null;
             this.fld_pteAPPurchaseOrderItemProductPicture.FilePath = null;
-            this.fld_pteAPPurchaseOrderItemProductPicture.Location = new System.Drawing.Point(1389, 34);
+            this.fld_pteAPPurchaseOrderItemProductPicture.Location = new System.Drawing.Point(1417, 34);
             this.fld_pteAPPurchaseOrderItemProductPicture.Name = "fld_pteAPPurchaseOrderItemProductPicture";
             this.fld_pteAPPurchaseOrderItemProductPicture.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.fld_pteAPPurchaseOrderItemProductPicture.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -2806,7 +2767,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_tabOutsourcingProduct.Controls.Add(this.fld_btnAddSemiProduct);
             this.fld_tabOutsourcingProduct.Name = "fld_tabOutsourcingProduct";
             this.fld_tabOutsourcingProduct.PageVisible = false;
-            this.fld_tabOutsourcingProduct.Size = new System.Drawing.Size(1499, 564);
+            this.fld_tabOutsourcingProduct.Size = new System.Drawing.Size(1527, 578);
             this.fld_tabOutsourcingProduct.Text = "Danh sách nguyên liệu gia công";
             // 
             // fld_btnAddMoreMaterial
@@ -2848,7 +2809,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.bosPictureEdit1.EditValue = "";
             this.bosPictureEdit1.FileName = null;
             this.bosPictureEdit1.FilePath = null;
-            this.bosPictureEdit1.Location = new System.Drawing.Point(1374, 36);
+            this.bosPictureEdit1.Location = new System.Drawing.Point(1402, 36);
             this.bosPictureEdit1.Name = "bosPictureEdit1";
             this.bosPictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.bosPictureEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -2883,7 +2844,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_dgcAPPurchaseOrderItemOutSourcingsGridControl.Name = "fld_dgcAPPurchaseOrderItemOutSourcingsGridControl";
             this.fld_dgcAPPurchaseOrderItemOutSourcingsGridControl.PrintReport = false;
             this.fld_dgcAPPurchaseOrderItemOutSourcingsGridControl.Screen = null;
-            this.fld_dgcAPPurchaseOrderItemOutSourcingsGridControl.Size = new System.Drawing.Size(1363, 522);
+            this.fld_dgcAPPurchaseOrderItemOutSourcingsGridControl.Size = new System.Drawing.Size(1391, 536);
             this.fld_dgcAPPurchaseOrderItemOutSourcingsGridControl.TabIndex = 5;
             this.fld_dgcAPPurchaseOrderItemOutSourcingsGridControl.Tag = "DC";
             this.fld_dgcAPPurchaseOrderItemOutSourcingsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -2946,7 +2907,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.xtraTabPage3.Controls.Add(this.fld_dgcAPPurchaseOrderPaymentTimes);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.ScreenHelper.SetShowHelp(this.xtraTabPage3, true);
-            this.xtraTabPage3.Size = new System.Drawing.Size(1499, 564);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1527, 578);
             this.xtraTabPage3.Text = "Danh sách đợt thanh toán";
             // 
             // fld_dgcAPPurchaseOrderPaymentTimes
@@ -2970,7 +2931,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_dgcAPPurchaseOrderPaymentTimes.Name = "fld_dgcAPPurchaseOrderPaymentTimes";
             this.fld_dgcAPPurchaseOrderPaymentTimes.PrintReport = false;
             this.fld_dgcAPPurchaseOrderPaymentTimes.Screen = null;
-            this.fld_dgcAPPurchaseOrderPaymentTimes.Size = new System.Drawing.Size(1499, 564);
+            this.fld_dgcAPPurchaseOrderPaymentTimes.Size = new System.Drawing.Size(1527, 578);
             this.fld_dgcAPPurchaseOrderPaymentTimes.TabIndex = 11;
             this.fld_dgcAPPurchaseOrderPaymentTimes.Tag = "DC";
             this.fld_dgcAPPurchaseOrderPaymentTimes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -2987,7 +2948,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.xtraTabPage2.Controls.Add(this.fld_btnSaveDelivery);
             this.xtraTabPage2.Controls.Add(this.fld_dgcAPPurchaseOrderItemDeliverys);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1499, 564);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1527, 578);
             this.xtraTabPage2.Text = "Nhập đợt hàng về";
             // 
             // fld_btnSaveDelivery
@@ -3036,7 +2997,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_dgcAPPurchaseOrderItemDeliverys.Name = "fld_dgcAPPurchaseOrderItemDeliverys";
             this.fld_dgcAPPurchaseOrderItemDeliverys.PrintReport = false;
             this.fld_dgcAPPurchaseOrderItemDeliverys.Screen = null;
-            this.fld_dgcAPPurchaseOrderItemDeliverys.Size = new System.Drawing.Size(1491, 524);
+            this.fld_dgcAPPurchaseOrderItemDeliverys.Size = new System.Drawing.Size(1519, 538);
             this.fld_dgcAPPurchaseOrderItemDeliverys.TabIndex = 12;
             this.fld_dgcAPPurchaseOrderItemDeliverys.Tag = "DC";
             this.fld_dgcAPPurchaseOrderItemDeliverys.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -3062,7 +3023,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.bosLine1.BOSPropertyName = null;
             this.bosLine1.Controls.Add(this.fld_medAPPurchaseOrderComment);
             this.bosLine1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.bosLine1.Location = new System.Drawing.Point(3, 849);
+            this.bosLine1.Location = new System.Drawing.Point(3, 863);
             this.bosLine1.Name = "bosLine1";
             this.bosLine1.Screen = null;
             this.bosLine1.Size = new System.Drawing.Size(322, 170);
@@ -3075,11 +3036,49 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             this.fld_dgvAPPurchaseOrderPaymentTimes.Name = "fld_dgvAPPurchaseOrderPaymentTimes";
             this.fld_dgvAPPurchaseOrderPaymentTimes.PaintStyleName = "Office2003";
             // 
+            // fld_lkeFK_HREmployeeID1
+            // 
+            this.fld_lkeFK_HREmployeeID1.BOSAllowAddNew = false;
+            this.fld_lkeFK_HREmployeeID1.BOSAllowDummy = false;
+            this.fld_lkeFK_HREmployeeID1.BOSComment = null;
+            this.fld_lkeFK_HREmployeeID1.BOSDataMember = "FK_HREmployeeID";
+            this.fld_lkeFK_HREmployeeID1.BOSDataSource = "APPurchaseOrders";
+            this.fld_lkeFK_HREmployeeID1.BOSDescription = null;
+            this.fld_lkeFK_HREmployeeID1.BOSError = null;
+            this.fld_lkeFK_HREmployeeID1.BOSFieldGroup = null;
+            this.fld_lkeFK_HREmployeeID1.BOSFieldParent = null;
+            this.fld_lkeFK_HREmployeeID1.BOSFieldRelation = null;
+            this.fld_lkeFK_HREmployeeID1.BOSPrivilege = null;
+            this.fld_lkeFK_HREmployeeID1.BOSPropertyName = "EditValue";
+            this.fld_lkeFK_HREmployeeID1.BOSSelectType = null;
+            this.fld_lkeFK_HREmployeeID1.BOSSelectTypeValue = null;
+            this.fld_lkeFK_HREmployeeID1.CurrentDisplayText = null;
+            this.fld_lkeFK_HREmployeeID1.Location = new System.Drawing.Point(9, 116);
+            this.fld_lkeFK_HREmployeeID1.Name = "fld_lkeFK_HREmployeeID1";
+            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.Options.UseBackColor = true;
+            this.fld_lkeFK_HREmployeeID1.Properties.Appearance.Options.UseForeColor = true;
+            this.fld_lkeFK_HREmployeeID1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.fld_lkeFK_HREmployeeID1.Properties.ColumnName = null;
+            this.fld_lkeFK_HREmployeeID1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HREmployeeName", "Name")});
+            this.fld_lkeFK_HREmployeeID1.Properties.DisplayMember = "HREmployeeNo";
+            this.fld_lkeFK_HREmployeeID1.Properties.PopupWidth = 40;
+            this.fld_lkeFK_HREmployeeID1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.fld_lkeFK_HREmployeeID1.Properties.ValueMember = "HREmployeeID";
+            this.fld_lkeFK_HREmployeeID1.Screen = null;
+            this.fld_lkeFK_HREmployeeID1.Size = new System.Drawing.Size(100, 20);
+            this.fld_lkeFK_HREmployeeID1.TabIndex = 659;
+            this.fld_lkeFK_HREmployeeID1.Tag = "DC";
+            this.fld_lkeFK_HREmployeeID1.Validated += new System.EventHandler(this.fld_lkeFK_HREmployeeID1_Validated);
+            // 
             // DMPO100
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(1528, 1029);
+            this.ClientSize = new System.Drawing.Size(1556, 1043);
             this.Controls.Add(this.bosPanel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMPO100.IconOptions.Icon")));
             this.Name = "DMPO100";
@@ -3120,7 +3119,6 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtAPPurchaseOrderContractNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtAPPurchaseOrderNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeAPPurchaseOrderReceiptTypeCombo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HREmployeeID1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_GECurrencyID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeAPPaymentMethodCombo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_dteAPPurchaseOrderContractDate.Properties.CalendarTimeProperties)).EndInit();
@@ -3151,6 +3149,7 @@ namespace BOSERP.Modules.PurchaseOrder.UI
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.bosLine1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fld_dgvAPPurchaseOrderPaymentTimes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HREmployeeID1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3231,7 +3230,6 @@ namespace BOSERP.Modules.PurchaseOrder.UI
         private BOSComponent.BOSLabel bosLabel3;
         private BOSComponent.BOSLookupEdit fld_lkeAPPurchaseOrderReceiptTypeCombo;
         private BOSComponent.BOSLabel fld_lblLabel1;
-        private BOSComponent.BOSLookupEdit fld_lkeFK_HREmployeeID1;
         private BOSComponent.BOSLookupEdit fld_lkeFK_GECurrencyID;
         private BOSComponent.BOSLookupEdit fld_lkeAPPaymentMethodCombo;
         private BOSComponent.BOSLabel bosLabel8;
@@ -3269,5 +3267,6 @@ namespace BOSERP.Modules.PurchaseOrder.UI
         private BOSComponent.BOSLabel bosLabel21;
         private BOSComponent.BOSLabel bosLabel22;
         private BOSComponent.BOSTextBox bosTextBox2;
+        private BOSComponent.BOSLookupEdit fld_lkeFK_HREmployeeID1;
     }
 }

@@ -338,5 +338,12 @@ namespace Localization {
                 return ResourceManager.GetString("ProductionNormConfig", resourceCulture);
             }
         }
+        public static string MMConfigFalseConditionals
+        {
+            get
+            {
+                return ResourceManager.GetString("MMConfigFalseConditionals", resourceCulture);
+            }
+        }
     }
 }

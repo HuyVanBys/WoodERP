@@ -36,8 +36,10 @@ namespace BOSReport
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.bsICTransfers = new System.Windows.Forms.BindingSource(this.components);
             this.formattingRule1 = new DevExpress.XtraReports.UI.FormattingRule();
@@ -48,8 +50,10 @@ namespace BOSReport
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.EvenStyle = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -88,14 +92,14 @@ namespace BOSReport
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.xr_lblTransferDate = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xr_lblDebitAccount = new DevExpress.XtraReports.UI.XRLabel();
-            this.xr_lblCreditAccount = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xr_lblBRBranchAddressLine3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xr_lblBRBranchPhone = new DevExpress.XtraReports.UI.XRLabel();
             this.xr_lblBRBranchFax = new DevExpress.XtraReports.UI.XRLabel();
             this.logoCompany = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xr_lblDebitAccount = new DevExpress.XtraReports.UI.XRLabel();
+            this.xr_lblCreditAccount = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsICTransfers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsICTransferItems)).BeginInit();
@@ -117,11 +121,11 @@ namespace BOSReport
             this.xrTable1.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(2.765335F, 0F);
+            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(1.041668F, 0F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(797.4694F, 25F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(801.9584F, 25F);
             this.xrTable1.StylePriority.UseBorderColor = false;
             this.xrTable1.StylePriority.UseBorders = false;
             this.xrTable1.StylePriority.UseFont = false;
@@ -132,8 +136,10 @@ namespace BOSReport
             this.xrTableCell6,
             this.xrTableCell8,
             this.xrTableCell4,
+            this.xrTableCell12,
             this.xrTableCell5,
             this.xrTableCell7,
+            this.xrTableCell14,
             this.xrTableCell16});
             this.xrTableRow1.Name = "xrTableRow1";
             this.xrTableRow1.Weight = 1D;
@@ -153,7 +159,7 @@ namespace BOSReport
             this.xrTableCell6.Summary = xrSummary1;
             this.xrTableCell6.Text = "xrTableCell6";
             this.xrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell6.Weight = 0.15595424275696723D;
+            this.xrTableCell6.Weight = 0.22698092133168224D;
             // 
             // xrTableCell8
             // 
@@ -167,19 +173,30 @@ namespace BOSReport
             this.xrTableCell8.StylePriority.UseTextAlignment = false;
             this.xrTableCell8.Text = "xrTableCell8";
             this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell8.Weight = 0.41080015249354385D;
+            this.xrTableCell8.Weight = 0.57354571284552058D;
             // 
             // xrTableCell4
             // 
             this.xrTableCell4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "ICTransferItemProductDesc", "{0:dd/MM/yyyy}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "ICTransferItemProductName", "{0:dd/MM/yyyy}")});
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
             this.xrTableCell4.StylePriority.UsePadding = false;
             this.xrTableCell4.StylePriority.UseTextAlignment = false;
-            this.xrTableCell4.Text = "xrTableCell4";
             this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell4.Weight = 1.2282179792718564D;
+            this.xrTableCell4.Weight = 1.2470182726992156D;
+            // 
+            // xrTableCell12
+            // 
+            this.xrTableCell12.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "ICTransferItemProductSerialNo")});
+            this.xrTableCell12.Multiline = true;
+            this.xrTableCell12.Name = "xrTableCell12";
+            this.xrTableCell12.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
+            this.xrTableCell12.StylePriority.UsePadding = false;
+            this.xrTableCell12.StylePriority.UseTextAlignment = false;
+            this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell12.Weight = 0.55156402158741746D;
             // 
             // xrTableCell5
             // 
@@ -191,7 +208,7 @@ namespace BOSReport
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
             this.xrTableCell5.Text = "xrTableCell5";
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell5.Weight = 0.32532987468464492D;
+            this.xrTableCell5.Weight = 0.3704299436137215D;
             // 
             // xrTableCell7
             // 
@@ -203,8 +220,20 @@ namespace BOSReport
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
             this.xrTableCell7.Text = "xrTableCell7";
             this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell7.Weight = 0.25296031696419596D;
+            this.xrTableCell7.Weight = 0.28687523103470991D;
             this.xrTableCell7.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrTableCellQty_BeforePrint);
+            // 
+            // xrTableCell14
+            // 
+            this.xrTableCell14.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "ICTransferItemQty1Str")});
+            this.xrTableCell14.Multiline = true;
+            this.xrTableCell14.Name = "xrTableCell14";
+            this.xrTableCell14.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.xrTableCell14.StylePriority.UsePadding = false;
+            this.xrTableCell14.StylePriority.UseTextAlignment = false;
+            this.xrTableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell14.Weight = 0.34815726995171137D;
             // 
             // xrTableCell16
             // 
@@ -218,7 +247,7 @@ namespace BOSReport
             this.xrTableCell16.StylePriority.UseTextAlignment = false;
             this.xrTableCell16.Text = "xrTableCell16";
             this.xrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell16.Weight = 0.68956310440808277D;
+            this.xrTableCell16.Weight = 1.0488891575493318D;
             // 
             // bsICTransfers
             // 
@@ -250,11 +279,11 @@ namespace BOSReport
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(2.765339F, 0F);
+            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(797.4694F, 33.33333F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(803F, 33.33333F);
             this.xrTable2.StylePriority.UseBackColor = false;
             this.xrTable2.StylePriority.UseBorderColor = false;
             this.xrTable2.StylePriority.UseBorders = false;
@@ -270,8 +299,10 @@ namespace BOSReport
             this.xrTableCell10,
             this.xrTableCell11,
             this.xrTableCell1,
+            this.xrTableCell9,
             this.xrTableCell2,
             this.xrTableCell13,
+            this.xrTableCell15,
             this.xrTableCell3});
             this.xrTableRow2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableRow2.Name = "xrTableRow2";
@@ -291,7 +322,7 @@ namespace BOSReport
             this.xrTableCell10.StylePriority.UseTextAlignment = false;
             this.xrTableCell10.Text = "STT";
             this.xrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell10.Weight = 0.1398852592370069D;
+            this.xrTableCell10.Weight = 0.17940741876173139D;
             // 
             // xrTableCell11
             // 
@@ -302,15 +333,24 @@ namespace BOSReport
             this.xrTableCell11.StylePriority.UseTextAlignment = false;
             this.xrTableCell11.Text = "Mã sản phẩm";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell11.Weight = 0.36847273753445942D;
+            this.xrTableCell11.Weight = 0.44157575859763104D;
             // 
             // xrTableCell1
             // 
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
-            this.xrTableCell1.Text = "Mô tả sản phẩm";
+            this.xrTableCell1.Text = "Tên sản phẩm";
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell1.Weight = 1.1016668263332088D;
+            this.xrTableCell1.Weight = 0.960085774864558D;
+            // 
+            // xrTableCell9
+            // 
+            this.xrTableCell9.Multiline = true;
+            this.xrTableCell9.Name = "xrTableCell9";
+            this.xrTableCell9.StylePriority.UseTextAlignment = false;
+            this.xrTableCell9.Text = "Mã lô";
+            this.xrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell9.Weight = 0.42465196038753023D;
             // 
             // xrTableCell2
             // 
@@ -318,7 +358,7 @@ namespace BOSReport
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
             this.xrTableCell2.Text = "ĐVT";
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell2.Weight = 0.29180884052501233D;
+            this.xrTableCell2.Weight = 0.28519575359784355D;
             // 
             // xrTableCell13
             // 
@@ -328,7 +368,18 @@ namespace BOSReport
             this.xrTableCell13.StylePriority.UseTextAlignment = false;
             this.xrTableCell13.Text = "SL";
             this.xrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell13.Weight = 0.22689638647399577D;
+            this.xrTableCell13.Weight = 0.22086667506111313D;
+            // 
+            // xrTableCell15
+            // 
+            this.xrTableCell15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.xrTableCell15.Multiline = true;
+            this.xrTableCell15.Name = "xrTableCell15";
+            this.xrTableCell15.StylePriority.UseBorderColor = false;
+            this.xrTableCell15.StylePriority.UseTextAlignment = false;
+            this.xrTableCell15.Text = "Số Thanh";
+            this.xrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell15.Weight = 0.2680480651092732D;
             // 
             // xrTableCell3
             // 
@@ -336,7 +387,7 @@ namespace BOSReport
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
             this.xrTableCell3.Text = "Ghi chú";
             this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell3.Weight = 0.61851293599139345D;
+            this.xrTableCell3.Weight = 0.80754514549667811D;
             // 
             // BottomMargin
             // 
@@ -576,7 +627,6 @@ namespace BOSReport
             this.xrLabel18.StylePriority.UseFont = false;
             this.xrLabel18.StylePriority.UsePadding = false;
             this.xrLabel18.StylePriority.UseTextAlignment = false;
-            this.xrLabel18.Text = "xrLabel18";
             this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel16
@@ -664,7 +714,7 @@ namespace BOSReport
             // xrLabel29
             // 
             this.xrLabel29.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", this.bsICTransfers, "HREmployeeReceverName")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", this.bsICTransfers, "ACObjectName")});
             this.xrLabel29.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(77.49999F, 198.0451F);
             this.xrLabel29.Name = "xrLabel29";
@@ -672,7 +722,6 @@ namespace BOSReport
             this.xrLabel29.SizeF = new System.Drawing.SizeF(337.7917F, 25.08F);
             this.xrLabel29.StylePriority.UseFont = false;
             this.xrLabel29.StylePriority.UseTextAlignment = false;
-            this.xrLabel29.Text = "xrLabel29";
             this.xrLabel29.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel28
@@ -864,6 +913,78 @@ namespace BOSReport
             this.ReportHeader.HeightF = 289F;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // xrLabel8
+            // 
+            this.xrLabel8.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(179.6196F, 27.83337F);
+            this.xrLabel8.Multiline = true;
+            this.xrLabel8.Name = "xrLabel8";
+            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel8.SizeF = new System.Drawing.SizeF(75F, 18.91664F);
+            this.xrLabel8.StylePriority.UseFont = false;
+            this.xrLabel8.StylePriority.UseTextAlignment = false;
+            this.xrLabel8.Text = "Điện thoại:";
+            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrLabel5
+            // 
+            this.xrLabel5.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(179.6196F, 46.74996F);
+            this.xrLabel5.Multiline = true;
+            this.xrLabel5.Name = "xrLabel5";
+            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(33.33333F, 18.91665F);
+            this.xrLabel5.StylePriority.UseFont = false;
+            this.xrLabel5.StylePriority.UseTextAlignment = false;
+            this.xrLabel5.Text = "Fax:";
+            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xr_lblBRBranchAddressLine3
+            // 
+            this.xr_lblBRBranchAddressLine3.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xr_lblBRBranchAddressLine3.LocationFloat = new DevExpress.Utils.PointFloat(179.6196F, 10.00001F);
+            this.xr_lblBRBranchAddressLine3.Multiline = true;
+            this.xr_lblBRBranchAddressLine3.Name = "xr_lblBRBranchAddressLine3";
+            this.xr_lblBRBranchAddressLine3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xr_lblBRBranchAddressLine3.SizeF = new System.Drawing.SizeF(320.712F, 17.83336F);
+            this.xr_lblBRBranchAddressLine3.StylePriority.UseFont = false;
+            this.xr_lblBRBranchAddressLine3.StylePriority.UseTextAlignment = false;
+            this.xr_lblBRBranchAddressLine3.Text = "xr_lblBRBranchAddressLine3";
+            this.xr_lblBRBranchAddressLine3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xr_lblBRBranchPhone
+            // 
+            this.xr_lblBRBranchPhone.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xr_lblBRBranchPhone.LocationFloat = new DevExpress.Utils.PointFloat(254.853F, 27.83337F);
+            this.xr_lblBRBranchPhone.Multiline = true;
+            this.xr_lblBRBranchPhone.Name = "xr_lblBRBranchPhone";
+            this.xr_lblBRBranchPhone.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xr_lblBRBranchPhone.SizeF = new System.Drawing.SizeF(99.99995F, 18.91664F);
+            this.xr_lblBRBranchPhone.StylePriority.UseFont = false;
+            this.xr_lblBRBranchPhone.StylePriority.UseTextAlignment = false;
+            this.xr_lblBRBranchPhone.Text = "xr_lblBRBranchPhone";
+            this.xr_lblBRBranchPhone.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xr_lblBRBranchFax
+            // 
+            this.xr_lblBRBranchFax.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xr_lblBRBranchFax.LocationFloat = new DevExpress.Utils.PointFloat(215.358F, 46.74996F);
+            this.xr_lblBRBranchFax.Multiline = true;
+            this.xr_lblBRBranchFax.Name = "xr_lblBRBranchFax";
+            this.xr_lblBRBranchFax.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xr_lblBRBranchFax.SizeF = new System.Drawing.SizeF(104.7078F, 18.91665F);
+            this.xr_lblBRBranchFax.StylePriority.UseFont = false;
+            this.xr_lblBRBranchFax.StylePriority.UseTextAlignment = false;
+            this.xr_lblBRBranchFax.Text = "xr_lblBRBranchFax";
+            this.xr_lblBRBranchFax.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // logoCompany
+            // 
+            this.logoCompany.LocationFloat = new DevExpress.Utils.PointFloat(9.99999F, 10.00001F);
+            this.logoCompany.Name = "logoCompany";
+            this.logoCompany.SizeF = new System.Drawing.SizeF(153.4565F, 63.70831F);
+            this.logoCompany.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
             // xr_lblDebitAccount
             // 
             this.xr_lblDebitAccount.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -890,78 +1011,6 @@ namespace BOSReport
             this.xr_lblCreditAccount.Text = "Có:";
             this.xr_lblCreditAccount.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // xrLabel8
-            // 
-            this.xrLabel8.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(163.3567F, 27.83337F);
-            this.xrLabel8.Multiline = true;
-            this.xrLabel8.Name = "xrLabel8";
-            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(75F, 18.91664F);
-            this.xrLabel8.StylePriority.UseFont = false;
-            this.xrLabel8.StylePriority.UseTextAlignment = false;
-            this.xrLabel8.Text = "Điện thoại:";
-            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrLabel5
-            // 
-            this.xrLabel5.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(163.3567F, 46.74996F);
-            this.xrLabel5.Multiline = true;
-            this.xrLabel5.Name = "xrLabel5";
-            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(33.33333F, 18.91665F);
-            this.xrLabel5.StylePriority.UseFont = false;
-            this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Fax:";
-            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xr_lblBRBranchAddressLine3
-            // 
-            this.xr_lblBRBranchAddressLine3.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.xr_lblBRBranchAddressLine3.LocationFloat = new DevExpress.Utils.PointFloat(163.3567F, 10.00001F);
-            this.xr_lblBRBranchAddressLine3.Multiline = true;
-            this.xr_lblBRBranchAddressLine3.Name = "xr_lblBRBranchAddressLine3";
-            this.xr_lblBRBranchAddressLine3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xr_lblBRBranchAddressLine3.SizeF = new System.Drawing.SizeF(320.712F, 17.83336F);
-            this.xr_lblBRBranchAddressLine3.StylePriority.UseFont = false;
-            this.xr_lblBRBranchAddressLine3.StylePriority.UseTextAlignment = false;
-            this.xr_lblBRBranchAddressLine3.Text = "xr_lblBRBranchAddressLine3";
-            this.xr_lblBRBranchAddressLine3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xr_lblBRBranchPhone
-            // 
-            this.xr_lblBRBranchPhone.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.xr_lblBRBranchPhone.LocationFloat = new DevExpress.Utils.PointFloat(238.5901F, 27.83337F);
-            this.xr_lblBRBranchPhone.Multiline = true;
-            this.xr_lblBRBranchPhone.Name = "xr_lblBRBranchPhone";
-            this.xr_lblBRBranchPhone.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xr_lblBRBranchPhone.SizeF = new System.Drawing.SizeF(99.99995F, 18.91664F);
-            this.xr_lblBRBranchPhone.StylePriority.UseFont = false;
-            this.xr_lblBRBranchPhone.StylePriority.UseTextAlignment = false;
-            this.xr_lblBRBranchPhone.Text = "xr_lblBRBranchPhone";
-            this.xr_lblBRBranchPhone.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xr_lblBRBranchFax
-            // 
-            this.xr_lblBRBranchFax.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.xr_lblBRBranchFax.LocationFloat = new DevExpress.Utils.PointFloat(199.0952F, 46.74996F);
-            this.xr_lblBRBranchFax.Multiline = true;
-            this.xr_lblBRBranchFax.Name = "xr_lblBRBranchFax";
-            this.xr_lblBRBranchFax.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xr_lblBRBranchFax.SizeF = new System.Drawing.SizeF(104.7078F, 18.91665F);
-            this.xr_lblBRBranchFax.StylePriority.UseFont = false;
-            this.xr_lblBRBranchFax.StylePriority.UseTextAlignment = false;
-            this.xr_lblBRBranchFax.Text = "xr_lblBRBranchFax";
-            this.xr_lblBRBranchFax.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // logoCompany
-            // 
-            this.logoCompany.LocationFloat = new DevExpress.Utils.PointFloat(11.45835F, 1.958307F);
-            this.logoCompany.Name = "logoCompany";
-            this.logoCompany.SizeF = new System.Drawing.SizeF(116.9665F, 95.05862F);
-            this.logoCompany.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
-            // 
             // RPTransferVMA4
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -986,7 +1035,7 @@ namespace BOSReport
             this.EvenStyle,
             this.OddStyle});
             this.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.Version = "19.1";
+            this.Version = "20.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsICTransfers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsICTransferItems)).EndInit();
@@ -1063,5 +1112,9 @@ namespace BOSReport
         private DevExpress.XtraReports.UI.XRLabel xr_lblBRBranchPhone;
         private DevExpress.XtraReports.UI.XRLabel xr_lblBRBranchFax;
         private DevExpress.XtraReports.UI.XRPictureBox logoCompany;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell9;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell14;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell15;
     }
 }

@@ -193,6 +193,7 @@ namespace BOSERP
         protected int _fK_APBillOfLadingItemID;
         protected DateTime _iCReceiptItemProductionDate = DateTime.MaxValue;
         protected DateTime _iCReceiptItemExpiryDate = DateTime.MaxValue;
+        protected int _fK_MMUpdatePositionItemID;
         #endregion
 
         #region Public properties
@@ -2126,6 +2127,18 @@ namespace BOSERP
                 {
                     _iCReceiptItemExpiryDate = value;
                     NotifyChanged("ICReceiptItemExpiryDate");
+                }
+            }
+        }
+        public int FK_MMUpdatePositionItemID
+        {
+            get { return _fK_MMUpdatePositionItemID; }
+            set
+            {
+                if (value != this._fK_MMUpdatePositionItemID)
+                {
+                    _fK_MMUpdatePositionItemID = value;
+                    NotifyChanged("FK_MMUpdatePositionItemID");
                 }
             }
         }

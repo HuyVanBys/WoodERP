@@ -2191,6 +2191,8 @@ namespace BOSERP
         public String Ten_Cong_Ty { get; set; }
         public String Dia_Chi { get; set; }
         public String ARSaleOrderDesc { get; set; }
+        public decimal ARSaleOrderItemProductQtyInBox { get; set; }
+        public decimal ARSaleOrderItemTotalGroupDiscount { get; set; }
         #endregion
     }
     #endregion

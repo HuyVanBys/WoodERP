@@ -3,8 +3,10 @@ using BOSCommon.Constants;
 using BOSComponent;
 using BOSERP.Modules.IC.TransferProposal.Localization;
 using BOSLib;
+using BOSReport;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraReports.UI;
 using Localization;
 using System;
 using System.Collections.Generic;
@@ -447,6 +449,111 @@ namespace BOSERP.Modules.TransferProposal
                 ICTransferProposalsInfo mainObject = (ICTransferProposalsInfo)entity.MainObject;
                 entity.TransferProposalItemList.ForEach(p => p.ICTransferProposalItemValidDate = mainObject.ICTransferProposalValidDate);
                 entity.TransferProposalItemList.GridControl.RefreshDataSource();
+            }
+        }
+
+        public void ActionPrintA4()
+        {
+            if (Toolbar.IsNullOrNoneAction() && Toolbar.CurrentObjectID > 0)
+            {
+                RPTransferProposals report = new RPTransferProposals();
+                InitRPTransferProposalsA4Report(report);
+                guiReportPreview reviewer = new guiReportPreview(report, BOSCommon.Constants.Report.DevInvoiceItemReportPath, true);
+                reviewer.Show();
+            }
+        }
+
+        private void InitRPTransferProposalsA4Report(RPTransferProposals report)
+        {
+            string creditNos = string.Empty;
+            string debitNos = string.Empty;
+            TransferProposalEntities entity = (TransferProposalEntities)CurrentModuleEntity;
+            ICTransferProposalsInfo mainobject = (ICTransferProposalsInfo)entity.MainObject;
+            ICTransferProposalsController objTransferProposalsController = new ICTransferProposalsController();
+            ICTransferProposalsInfo objTransferProposalsInfo = objTransferProposalsController.GetTransferProposalForReportByTransferProposalID(mainobject.ICTransferProposalID);
+            report.bsICTransferProposals.DataSource = objTransferProposalsInfo;
+            ICTransferProposalItemsController objTransferProposalItemsController = new ICTransferProposalItemsController();
+            List<ICTransferProposalItemsInfo> TransferProposalItemList = objTransferProposalItemsController.GetTransferProposalItemForReportByTransferProposalID(mainobject.ICTransferProposalID);
+            report.bsICTransferProposalItems.DataSource = TransferProposalItemList;
+
+            ACAccountsController objAccountsController = new ACAccountsController();
+            ACAccountsInfo objAccountsInfo;
+            foreach (ACDocumentEntrysInfo documentEntrysInfo in (BOSList<ACDocumentEntrysInfo>)entity.DocumentEntryList)
+            {
+                if (documentEntrysInfo.FK_ACCreditAccountID != null && documentEntrysInfo.FK_ACCreditAccountID != 0)
+                {
+                    objAccountsInfo = (ACAccountsInfo)objAccountsController.GetObjectByID(documentEntrysInfo.FK_ACCreditAccountID);
+                    if (objAccountsInfo != null && !string.IsNullOrEmpty(objAccountsInfo.ACAccountNo))
+                    {
+                        if (string.IsNullOrEmpty(creditNos)) creditNos = objAccountsInfo.ACAccountNo;
+                        else creditNos = string.Format("{0}, {1}", creditNos, objAccountsInfo.ACAccountNo);
+                    }
+                }
+                if (documentEntrysInfo.FK_ACDebitAccountID != null && documentEntrysInfo.FK_ACDebitAccountID != 0)
+                {
+                    objAccountsInfo = (ACAccountsInfo)objAccountsController.GetObjectByID(documentEntrysInfo.FK_ACDebitAccountID);
+                    if (objAccountsInfo != null && !string.IsNullOrEmpty(objAccountsInfo.ACAccountNo))
+                    {
+                        if (string.IsNullOrEmpty(debitNos)) debitNos = objAccountsInfo.ACAccountNo;
+                        else debitNos = string.Format("{0}, {1}", debitNos, objAccountsInfo.ACAccountNo);
+                    }
+                }
+            }
+
+            XRLabel label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_lblTransferToDate"];
+            if (label != null)
+            {
+                label.Text = string.Format(label.Text
+                                           , BOSApp.GetCurrentServerDate().Day
+                                           , BOSApp.GetCurrentServerDate().Month
+                                           , BOSApp.GetCurrentServerDate().Year);
+            }
+            label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_lblTransferDate"];
+            if (label != null)
+            {
+                label.Text = string.Format(label.Text
+                                           , mainobject.ICTransferProposalDate.Day
+                                           , mainobject.ICTransferProposalDate.Month
+                                           , mainobject.ICTransferProposalDate.Year);
+            }
+            label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_lblTransferNo"];
+            if (label != null)
+            {
+                label.Text = string.Format("Số: " + mainobject.ICTransferProposalNo);
+            }
+
+            label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_lblCreditAccount"];
+            if (label != null)
+            {
+                label.Text = string.Format("Có: {0}", creditNos);
+            }
+
+            label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_lblDebitAccount"];
+            if (label != null)
+            {
+                label.Text = string.Format("Nợ: {0}", debitNos);
+            }
+            BRBranchsController objBranchsController = new BRBranchsController();
+            BRBranchsInfo objBranchsInfo = (BRBranchsInfo)objBranchsController.GetObjectByID(BOSApp.CurrentCompanyInfo.FK_BRBranchID);
+            if (objBranchsInfo != null)
+            {
+                label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_lblBRBranchAddressLine3"];
+                if (label != null)
+                {
+                    label.Text = objBranchsInfo.BRBranchContactAddressLine3;
+                }
+
+                label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_lblBRBranchPhone"];
+                if (label != null)
+                {
+                    label.Text = objBranchsInfo.BRBranchContactPhone;
+                }
+
+                label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_lblBRBranchFax"];
+                if (label != null)
+                {
+                    label.Text = objBranchsInfo.BRBranchContactFax;
+                }
             }
         }
     }

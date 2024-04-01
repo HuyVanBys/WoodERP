@@ -85,6 +85,9 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             this.fld_txtICReceiptNo = new BOSComponent.BOSTextBox(this.components);
             this.fld_pteICReceiptEmployeePicture = new BOSComponent.BOSPictureEdit(this.components);
             this.fld_lkeFK_HREmployeeID = new BOSComponent.BOSLookupEdit(this.components);
+            this.fld_lnkChooseProspectCustomer = new DevExpress.XtraEditors.HyperLinkEdit();
+            this.fld_lkeMMUpdatePositionItemID = new BOSComponent.BOSLookupEdit(this.components);
+            this.bosLabel = new BOSComponent.BOSLabel(this.components);
             this.bosPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bosTextBox8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HRDeliveryEmployeeID.Properties)).BeginInit();
@@ -118,6 +121,8 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtICReceiptNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_pteICReceiptEmployeePicture.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HREmployeeID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lnkChooseProspectCustomer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeMMUpdatePositionItemID.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // bosPanel1
@@ -131,6 +136,9 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             this.bosPanel1.BOSFieldRelation = null;
             this.bosPanel1.BOSPrivilege = null;
             this.bosPanel1.BOSPropertyName = null;
+            this.bosPanel1.Controls.Add(this.fld_lnkChooseProspectCustomer);
+            this.bosPanel1.Controls.Add(this.fld_lkeMMUpdatePositionItemID);
+            this.bosPanel1.Controls.Add(this.bosLabel);
             this.bosPanel1.Controls.Add(this.bosTextBox8);
             this.bosPanel1.Controls.Add(this.bosLabel20);
             this.bosPanel1.Controls.Add(this.bosLabel3);
@@ -182,7 +190,7 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(1362, 756);
+            this.bosPanel1.Size = new System.Drawing.Size(1376, 763);
             this.bosPanel1.TabIndex = 0;
             // 
             // bosTextBox8
@@ -825,7 +833,7 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             this.fld_tabReceiptItems.Name = "fld_tabReceiptItems";
             this.fld_tabReceiptItems.Screen = null;
             this.fld_tabReceiptItems.SelectedTabPage = this.fld_tabPageReceiptItems;
-            this.fld_tabReceiptItems.Size = new System.Drawing.Size(1355, 578);
+            this.fld_tabReceiptItems.Size = new System.Drawing.Size(1369, 585);
             this.fld_tabReceiptItems.TabIndex = 42;
             this.fld_tabReceiptItems.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tabPageReceiptItems,
@@ -837,7 +845,7 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             this.fld_tabPageReceiptItems.Controls.Add(this.bosLabel13);
             this.fld_tabPageReceiptItems.Controls.Add(this.fld_lkeFK_ICProductID1);
             this.fld_tabPageReceiptItems.Name = "fld_tabPageReceiptItems";
-            this.fld_tabPageReceiptItems.Size = new System.Drawing.Size(1353, 553);
+            this.fld_tabPageReceiptItems.Size = new System.Drawing.Size(1367, 560);
             this.fld_tabPageReceiptItems.Text = "Danh sách sản phẩm";
             // 
             // fld_dgcReceiptItems
@@ -861,7 +869,7 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             this.fld_dgcReceiptItems.Name = "fld_dgcReceiptItems";
             this.fld_dgcReceiptItems.PrintReport = false;
             this.fld_dgcReceiptItems.Screen = null;
-            this.fld_dgcReceiptItems.Size = new System.Drawing.Size(1342, 539);
+            this.fld_dgcReceiptItems.Size = new System.Drawing.Size(1356, 546);
             this.fld_dgcReceiptItems.TabIndex = 0;
             // 
             // bosLabel13
@@ -925,7 +933,7 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             this.fld_lkeFK_ICProductID1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.fld_lkeFK_ICProductID1.Properties.ValueMember = "ICProductID";
             this.fld_lkeFK_ICProductID1.Screen = null;
-            this.fld_lkeFK_ICProductID1.Size = new System.Drawing.Size(1142, 20);
+            this.fld_lkeFK_ICProductID1.Size = new System.Drawing.Size(1156, 20);
             this.fld_lkeFK_ICProductID1.TabIndex = 2;
             this.fld_lkeFK_ICProductID1.Tag = "DC";
             this.fld_lkeFK_ICProductID1.Visible = false;
@@ -935,7 +943,7 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             // 
             this.fld_tabPageDocumentEntrys.Controls.Add(this.fld_dgcACDocumentEntrys);
             this.fld_tabPageDocumentEntrys.Name = "fld_tabPageDocumentEntrys";
-            this.fld_tabPageDocumentEntrys.Size = new System.Drawing.Size(1339, 546);
+            this.fld_tabPageDocumentEntrys.Size = new System.Drawing.Size(1353, 553);
             this.fld_tabPageDocumentEntrys.Text = "Hạch toán";
             // 
             // fld_dgcACDocumentEntrys
@@ -959,7 +967,7 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             this.fld_dgcACDocumentEntrys.Name = "fld_dgcACDocumentEntrys";
             this.fld_dgcACDocumentEntrys.PrintReport = false;
             this.fld_dgcACDocumentEntrys.Screen = null;
-            this.fld_dgcACDocumentEntrys.Size = new System.Drawing.Size(1339, 546);
+            this.fld_dgcACDocumentEntrys.Size = new System.Drawing.Size(1353, 553);
             this.fld_dgcACDocumentEntrys.TabIndex = 1;
             this.fld_dgcACDocumentEntrys.Tag = "DC";
             this.fld_dgcACDocumentEntrys.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1595,11 +1603,81 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             this.fld_lkeFK_HREmployeeID.TabIndex = 1;
             this.fld_lkeFK_HREmployeeID.Tag = "DC";
             // 
+            // fld_lnkChooseProspectCustomer
+            // 
+            this.fld_lnkChooseProspectCustomer.EditValue = "Thêm mới vị trí";
+            this.fld_lnkChooseProspectCustomer.Location = new System.Drawing.Point(1266, 64);
+            this.fld_lnkChooseProspectCustomer.Name = "fld_lnkChooseProspectCustomer";
+            this.fld_lnkChooseProspectCustomer.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.fld_lnkChooseProspectCustomer.Properties.Appearance.Options.UseBackColor = true;
+            this.fld_lnkChooseProspectCustomer.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.fld_lnkChooseProspectCustomer.Size = new System.Drawing.Size(78, 18);
+            this.fld_lnkChooseProspectCustomer.TabIndex = 851;
+            this.fld_lnkChooseProspectCustomer.TabStop = false;
+            this.fld_lnkChooseProspectCustomer.OpenLink += new DevExpress.XtraEditors.Controls.OpenLinkEventHandler(this.fld_lnkChooseProspectCustomer_OpenLink);
+            // 
+            // fld_lkeMMUpdatePositionItemID
+            // 
+            this.fld_lkeMMUpdatePositionItemID.BOSAllowAddNew = true;
+            this.fld_lkeMMUpdatePositionItemID.BOSAllowDummy = true;
+            this.fld_lkeMMUpdatePositionItemID.BOSComment = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSDataMember = "MMUpdatePositionItemPositionName";
+            this.fld_lkeMMUpdatePositionItemID.BOSDataSource = "ICReceipts";
+            this.fld_lkeMMUpdatePositionItemID.BOSDescription = null;
+            this.fld_lkeMMUpdatePositionItemID.BOSError = null;
+            this.fld_lkeMMUpdatePositionItemID.BOSFieldGroup = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSFieldParent = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSFieldRelation = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSPrivilege = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSPropertyName = "EditValue";
+            this.fld_lkeMMUpdatePositionItemID.BOSSelectType = "";
+            this.fld_lkeMMUpdatePositionItemID.BOSSelectTypeValue = "";
+            this.fld_lkeMMUpdatePositionItemID.CurrentDisplayText = null;
+            this.fld_lkeMMUpdatePositionItemID.Location = new System.Drawing.Point(1202, 36);
+            this.fld_lkeMMUpdatePositionItemID.Name = "fld_lkeMMUpdatePositionItemID";
+            this.fld_lkeMMUpdatePositionItemID.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fld_lkeMMUpdatePositionItemID.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.fld_lkeMMUpdatePositionItemID.Properties.Appearance.Options.UseBackColor = true;
+            this.fld_lkeMMUpdatePositionItemID.Properties.Appearance.Options.UseForeColor = true;
+            this.fld_lkeMMUpdatePositionItemID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.fld_lkeMMUpdatePositionItemID.Properties.ColumnName = "MMUpdatePositionItemPositionName";
+            this.fld_lkeMMUpdatePositionItemID.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MMUpdatePositionItemPositionName", "Vị trí")});
+            this.fld_lkeMMUpdatePositionItemID.Properties.DisplayMember = "MMUpdatePositionItemPositionName";
+            this.fld_lkeMMUpdatePositionItemID.Properties.NullText = "";
+            this.fld_lkeMMUpdatePositionItemID.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.fld_lkeMMUpdatePositionItemID.Properties.ValueMember = "MMUpdatePositionItemPositionName";
+            this.fld_lkeMMUpdatePositionItemID.Screen = null;
+            this.fld_lkeMMUpdatePositionItemID.Size = new System.Drawing.Size(142, 20);
+            this.fld_lkeMMUpdatePositionItemID.TabIndex = 849;
+            this.fld_lkeMMUpdatePositionItemID.Tag = "DC";
+            this.fld_lkeMMUpdatePositionItemID.CloseUp += new DevExpress.XtraEditors.Controls.CloseUpEventHandler(this.fld_lkeMMUpdatePositionItemID_CloseUp);
+            // 
+            // bosLabel
+            // 
+            this.bosLabel.BOSComment = null;
+            this.bosLabel.BOSDataMember = null;
+            this.bosLabel.BOSDataSource = null;
+            this.bosLabel.BOSDescription = null;
+            this.bosLabel.BOSError = null;
+            this.bosLabel.BOSFieldGroup = null;
+            this.bosLabel.BOSFieldRelation = null;
+            this.bosLabel.BOSPrivilege = null;
+            this.bosLabel.BOSPropertyName = null;
+            this.bosLabel.Location = new System.Drawing.Point(1170, 38);
+            this.bosLabel.Name = "bosLabel";
+            this.bosLabel.Screen = null;
+            this.ScreenHelper.SetShowHelp(this.bosLabel, true);
+            this.bosLabel.Size = new System.Drawing.Size(21, 13);
+            this.bosLabel.TabIndex = 850;
+            this.bosLabel.Text = "Vị trí";
+            // 
             // DMSPRC100
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(1362, 756);
+            this.ClientSize = new System.Drawing.Size(1376, 763);
             this.Controls.Add(this.bosPanel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMSPRC100.IconOptions.Icon")));
             this.Name = "DMSPRC100";
@@ -1640,6 +1718,8 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtICReceiptNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_pteICReceiptEmployeePicture.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeFK_HREmployeeID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lnkChooseProspectCustomer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeMMUpdatePositionItemID.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1703,5 +1783,8 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
         private BOSComponent.BOSLookupEdit fld_lkeFK_HRDeliveryEmployeeID;
         private BOSComponent.BOSTextBox bosTextBox8;
         private BOSComponent.BOSLabel bosLabel20;
+        private DevExpress.XtraEditors.HyperLinkEdit fld_lnkChooseProspectCustomer;
+        private BOSComponent.BOSLookupEdit fld_lkeMMUpdatePositionItemID;
+        private BOSComponent.BOSLabel bosLabel;
     }
 }

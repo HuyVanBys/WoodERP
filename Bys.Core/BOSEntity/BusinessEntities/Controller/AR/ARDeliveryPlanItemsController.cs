@@ -54,7 +54,12 @@ namespace BOSERP
 
             return (List<ARDeliveryPlanItemsInfo>)GetListFromDataSet(ds);
         }
+        public List<ARDeliveryPlanItemsInfo> GetAllDeliveryPlanItemsByDeliveryPlanCompletedAndProductQtyByuser(int? userID)
+        {
+            DataSet ds = dal.GetDataSet("ARDeliveryPlanItems_GetAllDeliveryPlanItemsByDeliveryPlanCompletedAndProductQtyByuser", userID);
 
+            return (List<ARDeliveryPlanItemsInfo>)GetListFromDataSet(ds);
+        }
         public List<ARDeliveryPlanItemsInfo> GetAllDeliveryPlanItemsByDeliveryPlanItemReferenceID(int deliveryPlanItemReferenceID)
         {
             DataSet ds = dal.GetDataSet("ARDeliveryPlanItems_GetAllDeliveryPlanItemsByDeliveryPlanItemReferenceID", deliveryPlanItemReferenceID);

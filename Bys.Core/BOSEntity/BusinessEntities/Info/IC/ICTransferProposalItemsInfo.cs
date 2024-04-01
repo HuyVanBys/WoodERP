@@ -573,6 +573,8 @@ namespace BOSERP
         public string ICTransferProposalNo { get; set; }
 
         public DateTime ICTransferProposalDate { get; set; }
+        public String ICProductNo { get; set; }
+        public String ICMeasureUnitName { get; set; }
 
         #endregion
     }

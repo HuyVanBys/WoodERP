@@ -185,6 +185,13 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
                 if (ds != null)
                     fld_lkeFK_MMWorkShopID.Properties.DataSource = ds.Tables[0];
             }
+            else
+            {
+                MMWorkShopsController objWorkShopsController = new MMWorkShopsController();
+                DataSet ds = objWorkShopsController.GetAllAliveObjects();
+                if (ds != null)
+                    fld_lkeFK_MMWorkShopID.Properties.DataSource = ds.Tables[0];
+            }    
         }
 
         private void fld_lkeFK_MMMachineUnitID_CloseUp(object sender, DevExpress.XtraEditors.Controls.CloseUpEventArgs e)
@@ -204,6 +211,20 @@ namespace BOSERP.Modules.SemiProductReceipt.UI
                 if (ds != null)
                     fld_lkeFK_MMMachineUnitID.Properties.DataSource = ds.Tables[0];
             }
+        }
+
+        private void fld_lkeMMUpdatePositionItemID_CloseUp(object sender, DevExpress.XtraEditors.Controls.CloseUpEventArgs e)
+        {
+            BOSLookupEdit lke = (BOSLookupEdit)sender;
+            if (e.Value != null && e.Value != lke.OldEditValue)
+            {
+                ((SemiProductReceiptModule)Module).ChangeUpdatePositionLocation(e.Value.ToString());
+            }
+        }
+
+        private void fld_lnkChooseProspectCustomer_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
+        {
+            ((SemiProductReceiptModule)Module).CreateUpdatePositionsInfo();
         }
     }
 }

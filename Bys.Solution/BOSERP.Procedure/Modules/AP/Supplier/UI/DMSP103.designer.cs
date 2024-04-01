@@ -63,6 +63,12 @@ namespace BOSERP.Modules.Supplier.UI
             this.fld_btnDeleteContact = new BOSComponent.BOSButton(this.components);
             this.fld_btnAddContact = new BOSComponent.BOSButton(this.components);
             this.bosPanel1 = new BOSComponent.BOSPanel(this.components);
+            this.bosTextBox1 = new BOSComponent.BOSTextBox(this.components);
+            this.bosLabel8 = new BOSComponent.BOSLabel(this.components);
+            this.bosDateEdit1 = new BOSComponent.BOSDateEdit(this.components);
+            this.bosLabel9 = new BOSComponent.BOSLabel(this.components);
+            this.bosTextBox2 = new BOSComponent.BOSTextBox(this.components);
+            this.bosLabel10 = new BOSComponent.BOSLabel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bosGroupControl1)).BeginInit();
             this.bosGroupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtAPSupplierContactLevel.Properties)).BeginInit();
@@ -83,6 +89,10 @@ namespace BOSERP.Modules.Supplier.UI
             this.bosGroupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fld_dgcAPSupplierContacts)).BeginInit();
             this.bosPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bosTextBox1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bosDateEdit1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bosDateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bosTextBox2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // bosGroupControl1
@@ -98,6 +108,12 @@ namespace BOSERP.Modules.Supplier.UI
             this.bosGroupControl1.BOSFieldRelation = null;
             this.bosGroupControl1.BOSPrivilege = null;
             this.bosGroupControl1.BOSPropertyName = null;
+            this.bosGroupControl1.Controls.Add(this.bosTextBox2);
+            this.bosGroupControl1.Controls.Add(this.bosLabel10);
+            this.bosGroupControl1.Controls.Add(this.bosDateEdit1);
+            this.bosGroupControl1.Controls.Add(this.bosLabel9);
+            this.bosGroupControl1.Controls.Add(this.bosTextBox1);
+            this.bosGroupControl1.Controls.Add(this.bosLabel8);
             this.bosGroupControl1.Controls.Add(this.fld_txtAPSupplierContactLevel);
             this.bosGroupControl1.Controls.Add(this.bosLabel7);
             this.bosGroupControl1.Controls.Add(this.fld_dtpAPSupplierContactBirthday);
@@ -127,7 +143,7 @@ namespace BOSERP.Modules.Supplier.UI
             this.bosGroupControl1.Location = new System.Drawing.Point(5, 3);
             this.bosGroupControl1.Name = "bosGroupControl1";
             this.bosGroupControl1.Screen = null;
-            this.bosGroupControl1.Size = new System.Drawing.Size(877, 256);
+            this.bosGroupControl1.Size = new System.Drawing.Size(912, 299);
             this.bosGroupControl1.TabIndex = 0;
             this.bosGroupControl1.Text = "Thông tin người liên hệ";
             // 
@@ -172,7 +188,7 @@ namespace BOSERP.Modules.Supplier.UI
             this.bosLabel7.BOSFieldRelation = "";
             this.bosLabel7.BOSPrivilege = "";
             this.bosLabel7.BOSPropertyName = null;
-            this.bosLabel7.Location = new System.Drawing.Point(295, 35);
+            this.bosLabel7.Location = new System.Drawing.Point(286, 35);
             this.bosLabel7.Name = "bosLabel7";
             this.bosLabel7.Screen = null;
             this.bosLabel7.Size = new System.Drawing.Size(40, 13);
@@ -418,7 +434,7 @@ namespace BOSERP.Modules.Supplier.UI
             this.bosLabel6.BOSFieldRelation = "";
             this.bosLabel6.BOSPrivilege = "";
             this.bosLabel6.BOSPropertyName = null;
-            this.bosLabel6.Location = new System.Drawing.Point(295, 216);
+            this.bosLabel6.Location = new System.Drawing.Point(286, 216);
             this.bosLabel6.Name = "bosLabel6";
             this.bosLabel6.Screen = null;
             this.bosLabel6.Size = new System.Drawing.Size(42, 13);
@@ -443,7 +459,7 @@ namespace BOSERP.Modules.Supplier.UI
             this.bosLabel5.BOSFieldRelation = "";
             this.bosLabel5.BOSPrivilege = "";
             this.bosLabel5.BOSPropertyName = null;
-            this.bosLabel5.Location = new System.Drawing.Point(295, 191);
+            this.bosLabel5.Location = new System.Drawing.Point(286, 191);
             this.bosLabel5.Name = "bosLabel5";
             this.bosLabel5.Screen = null;
             this.bosLabel5.Size = new System.Drawing.Size(21, 13);
@@ -740,7 +756,7 @@ namespace BOSERP.Modules.Supplier.UI
             this.fld_lblLabel49.BOSFieldRelation = "";
             this.fld_lblLabel49.BOSPrivilege = "";
             this.fld_lblLabel49.BOSPropertyName = null;
-            this.fld_lblLabel49.Location = new System.Drawing.Point(295, 87);
+            this.fld_lblLabel49.Location = new System.Drawing.Point(286, 87);
             this.fld_lblLabel49.Name = "fld_lblLabel49";
             this.fld_lblLabel49.Screen = null;
             this.fld_lblLabel49.Size = new System.Drawing.Size(48, 13);
@@ -765,7 +781,7 @@ namespace BOSERP.Modules.Supplier.UI
             this.fld_lblLabel50.BOSFieldRelation = "";
             this.fld_lblLabel50.BOSPrivilege = "";
             this.fld_lblLabel50.BOSPropertyName = null;
-            this.fld_lblLabel50.Location = new System.Drawing.Point(295, 113);
+            this.fld_lblLabel50.Location = new System.Drawing.Point(286, 113);
             this.fld_lblLabel50.Name = "fld_lblLabel50";
             this.fld_lblLabel50.Screen = null;
             this.fld_lblLabel50.Size = new System.Drawing.Size(30, 13);
@@ -788,10 +804,10 @@ namespace BOSERP.Modules.Supplier.UI
             this.bosGroupControl2.BOSPrivilege = null;
             this.bosGroupControl2.BOSPropertyName = null;
             this.bosGroupControl2.Controls.Add(this.fld_dgcAPSupplierContacts);
-            this.bosGroupControl2.Location = new System.Drawing.Point(3, 295);
+            this.bosGroupControl2.Location = new System.Drawing.Point(3, 341);
             this.bosGroupControl2.Name = "bosGroupControl2";
             this.bosGroupControl2.Screen = null;
-            this.bosGroupControl2.Size = new System.Drawing.Size(884, 283);
+            this.bosGroupControl2.Size = new System.Drawing.Size(919, 352);
             this.bosGroupControl2.TabIndex = 6;
             this.bosGroupControl2.Text = "Danh sách người liên hệ";
             // 
@@ -815,7 +831,7 @@ namespace BOSERP.Modules.Supplier.UI
             this.fld_dgcAPSupplierContacts.Name = "fld_dgcAPSupplierContacts";
             this.fld_dgcAPSupplierContacts.PrintReport = false;
             this.fld_dgcAPSupplierContacts.Screen = null;
-            this.fld_dgcAPSupplierContacts.Size = new System.Drawing.Size(880, 258);
+            this.fld_dgcAPSupplierContacts.Size = new System.Drawing.Size(915, 327);
             this.fld_dgcAPSupplierContacts.TabIndex = 7;
             // 
             // fld_btnEditContact
@@ -830,7 +846,7 @@ namespace BOSERP.Modules.Supplier.UI
             this.fld_btnEditContact.BOSFieldRelation = null;
             this.fld_btnEditContact.BOSPrivilege = null;
             this.fld_btnEditContact.BOSPropertyName = null;
-            this.fld_btnEditContact.Location = new System.Drawing.Point(728, 264);
+            this.fld_btnEditContact.Location = new System.Drawing.Point(764, 308);
             this.fld_btnEditContact.Name = "fld_btnEditContact";
             this.fld_btnEditContact.Screen = null;
             this.fld_btnEditContact.Size = new System.Drawing.Size(75, 27);
@@ -850,7 +866,7 @@ namespace BOSERP.Modules.Supplier.UI
             this.fld_btnDeleteContact.BOSFieldRelation = null;
             this.fld_btnDeleteContact.BOSPrivilege = null;
             this.fld_btnDeleteContact.BOSPropertyName = null;
-            this.fld_btnDeleteContact.Location = new System.Drawing.Point(809, 264);
+            this.fld_btnDeleteContact.Location = new System.Drawing.Point(845, 308);
             this.fld_btnDeleteContact.Name = "fld_btnDeleteContact";
             this.fld_btnDeleteContact.Screen = null;
             this.fld_btnDeleteContact.Size = new System.Drawing.Size(75, 27);
@@ -870,7 +886,7 @@ namespace BOSERP.Modules.Supplier.UI
             this.fld_btnAddContact.BOSFieldRelation = null;
             this.fld_btnAddContact.BOSPrivilege = null;
             this.fld_btnAddContact.BOSPropertyName = null;
-            this.fld_btnAddContact.Location = new System.Drawing.Point(647, 264);
+            this.fld_btnAddContact.Location = new System.Drawing.Point(683, 308);
             this.fld_btnAddContact.Name = "fld_btnAddContact";
             this.fld_btnAddContact.Screen = null;
             this.fld_btnAddContact.Size = new System.Drawing.Size(75, 27);
@@ -898,14 +914,166 @@ namespace BOSERP.Modules.Supplier.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(890, 581);
+            this.bosPanel1.Size = new System.Drawing.Size(925, 696);
             this.bosPanel1.TabIndex = 6;
+            // 
+            // bosTextBox1
+            // 
+            this.bosTextBox1.BOSComment = "";
+            this.bosTextBox1.BOSDataMember = "APSupplierContactCCCDNo";
+            this.bosTextBox1.BOSDataSource = "APSupplierContacts";
+            this.bosTextBox1.BOSDescription = null;
+            this.bosTextBox1.BOSError = "";
+            this.bosTextBox1.BOSFieldGroup = "";
+            this.bosTextBox1.BOSFieldRelation = "";
+            this.bosTextBox1.BOSPrivilege = "";
+            this.bosTextBox1.BOSPropertyName = "Text";
+            this.bosTextBox1.Location = new System.Drawing.Point(103, 240);
+            this.bosTextBox1.Name = "bosTextBox1";
+            this.bosTextBox1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bosTextBox1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bosTextBox1.Properties.Appearance.Options.UseBackColor = true;
+            this.bosTextBox1.Properties.Appearance.Options.UseForeColor = true;
+            this.bosTextBox1.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.bosTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bosTextBox1.Screen = null;
+            this.bosTextBox1.Size = new System.Drawing.Size(145, 20);
+            this.bosTextBox1.TabIndex = 27;
+            this.bosTextBox1.Tag = "DC";
+            // 
+            // bosLabel8
+            // 
+            this.bosLabel8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bosLabel8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.bosLabel8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bosLabel8.Appearance.Options.UseBackColor = true;
+            this.bosLabel8.Appearance.Options.UseFont = true;
+            this.bosLabel8.Appearance.Options.UseForeColor = true;
+            this.bosLabel8.BOSComment = "";
+            this.bosLabel8.BOSDataMember = "";
+            this.bosLabel8.BOSDataSource = "";
+            this.bosLabel8.BOSDescription = null;
+            this.bosLabel8.BOSError = null;
+            this.bosLabel8.BOSFieldGroup = "";
+            this.bosLabel8.BOSFieldRelation = "";
+            this.bosLabel8.BOSPrivilege = "";
+            this.bosLabel8.BOSPropertyName = null;
+            this.bosLabel8.Location = new System.Drawing.Point(18, 243);
+            this.bosLabel8.Name = "bosLabel8";
+            this.bosLabel8.Screen = null;
+            this.bosLabel8.Size = new System.Drawing.Size(45, 13);
+            this.bosLabel8.TabIndex = 26;
+            this.bosLabel8.Tag = "";
+            this.bosLabel8.Text = "Số CCCD";
+            // 
+            // bosDateEdit1
+            // 
+            this.bosDateEdit1.BOSComment = "";
+            this.bosDateEdit1.BOSDataMember = "APSupplierContactCCCDDate";
+            this.bosDateEdit1.BOSDataSource = "APSupplierContacts";
+            this.bosDateEdit1.BOSDescription = null;
+            this.bosDateEdit1.BOSError = "";
+            this.bosDateEdit1.BOSFieldGroup = "";
+            this.bosDateEdit1.BOSFieldRelation = null;
+            this.bosDateEdit1.BOSPrivilege = "";
+            this.bosDateEdit1.BOSPropertyName = "EditValue";
+            this.bosDateEdit1.EditValue = null;
+            this.bosDateEdit1.Location = new System.Drawing.Point(356, 240);
+            this.bosDateEdit1.Name = "bosDateEdit1";
+            this.bosDateEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bosDateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.bosDateEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bosDateEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.bosDateEdit1.Properties.Appearance.Options.UseFont = true;
+            this.bosDateEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.bosDateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.bosDateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.bosDateEdit1.Screen = null;
+            this.bosDateEdit1.Size = new System.Drawing.Size(145, 20);
+            this.bosDateEdit1.TabIndex = 29;
+            this.bosDateEdit1.Tag = "DC";
+            // 
+            // bosLabel9
+            // 
+            this.bosLabel9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bosLabel9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.bosLabel9.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bosLabel9.Appearance.Options.UseBackColor = true;
+            this.bosLabel9.Appearance.Options.UseFont = true;
+            this.bosLabel9.Appearance.Options.UseForeColor = true;
+            this.bosLabel9.BOSComment = "";
+            this.bosLabel9.BOSDataMember = "";
+            this.bosLabel9.BOSDataSource = "";
+            this.bosLabel9.BOSDescription = null;
+            this.bosLabel9.BOSError = null;
+            this.bosLabel9.BOSFieldGroup = "";
+            this.bosLabel9.BOSFieldRelation = "";
+            this.bosLabel9.BOSPrivilege = "";
+            this.bosLabel9.BOSPropertyName = null;
+            this.bosLabel9.Location = new System.Drawing.Point(286, 243);
+            this.bosLabel9.Name = "bosLabel9";
+            this.bosLabel9.Screen = null;
+            this.bosLabel9.Size = new System.Drawing.Size(57, 13);
+            this.bosLabel9.TabIndex = 28;
+            this.bosLabel9.Tag = "";
+            this.bosLabel9.Text = "Ngày CCCD";
+            // 
+            // bosTextBox2
+            // 
+            this.bosTextBox2.BOSComment = "";
+            this.bosTextBox2.BOSDataMember = "APSupplierContactCCCDAddressLine1";
+            this.bosTextBox2.BOSDataSource = "APSupplierContacts";
+            this.bosTextBox2.BOSDescription = null;
+            this.bosTextBox2.BOSError = "";
+            this.bosTextBox2.BOSFieldGroup = "";
+            this.bosTextBox2.BOSFieldRelation = "";
+            this.bosTextBox2.BOSPrivilege = "";
+            this.bosTextBox2.BOSPropertyName = "Text";
+            this.bosTextBox2.Location = new System.Drawing.Point(103, 266);
+            this.bosTextBox2.Name = "bosTextBox2";
+            this.bosTextBox2.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bosTextBox2.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bosTextBox2.Properties.Appearance.Options.UseBackColor = true;
+            this.bosTextBox2.Properties.Appearance.Options.UseForeColor = true;
+            this.bosTextBox2.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.bosTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bosTextBox2.Screen = null;
+            this.bosTextBox2.Size = new System.Drawing.Size(398, 20);
+            this.bosTextBox2.TabIndex = 31;
+            this.bosTextBox2.Tag = "DC";
+            // 
+            // bosLabel10
+            // 
+            this.bosLabel10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bosLabel10.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.bosLabel10.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bosLabel10.Appearance.Options.UseBackColor = true;
+            this.bosLabel10.Appearance.Options.UseFont = true;
+            this.bosLabel10.Appearance.Options.UseForeColor = true;
+            this.bosLabel10.BOSComment = "";
+            this.bosLabel10.BOSDataMember = "";
+            this.bosLabel10.BOSDataSource = "";
+            this.bosLabel10.BOSDescription = null;
+            this.bosLabel10.BOSError = null;
+            this.bosLabel10.BOSFieldGroup = "";
+            this.bosLabel10.BOSFieldRelation = "";
+            this.bosLabel10.BOSPrivilege = "";
+            this.bosLabel10.BOSPropertyName = null;
+            this.bosLabel10.Location = new System.Drawing.Point(18, 269);
+            this.bosLabel10.Name = "bosLabel10";
+            this.bosLabel10.Screen = null;
+            this.bosLabel10.Size = new System.Drawing.Size(69, 13);
+            this.bosLabel10.TabIndex = 30;
+            this.bosLabel10.Tag = "";
+            this.bosLabel10.Text = "Nơi cấp CCCD";
             // 
             // DMSP103
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(890, 581);
+            this.ClientSize = new System.Drawing.Size(925, 696);
             this.Controls.Add(this.bosPanel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMSP103.IconOptions.Icon")));
             this.Name = "DMSP103";
@@ -932,6 +1100,10 @@ namespace BOSERP.Modules.Supplier.UI
             this.bosGroupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fld_dgcAPSupplierContacts)).EndInit();
             this.bosPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bosTextBox1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bosDateEdit1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bosDateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bosTextBox2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -972,5 +1144,11 @@ namespace BOSERP.Modules.Supplier.UI
         private BOSComponent.BOSPanel bosPanel1;
         private BOSComponent.BOSTextBox fld_txtAPSupplierContactLevel;
         private BOSComponent.BOSLabel bosLabel7;
+        private BOSComponent.BOSTextBox bosTextBox2;
+        private BOSComponent.BOSLabel bosLabel10;
+        private BOSComponent.BOSDateEdit bosDateEdit1;
+        private BOSComponent.BOSLabel bosLabel9;
+        private BOSComponent.BOSTextBox bosTextBox1;
+        private BOSComponent.BOSLabel bosLabel8;
     }
 }

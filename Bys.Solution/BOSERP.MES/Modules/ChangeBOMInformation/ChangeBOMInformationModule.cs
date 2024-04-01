@@ -957,31 +957,31 @@ namespace BOSERP.Modules.ChangeBOMInformation
         {
             if (changeBOMInformationItemList.Count() == 0)
                 return;
-            MMChangeBOMInformationsInfo mainobject = (MMChangeBOMInformationsInfo)CurrentModuleEntity.MainObject;
+            //MMChangeBOMInformationsInfo mainobject = (MMChangeBOMInformationsInfo)CurrentModuleEntity.MainObject;
 
-            MMProductionNormItemsController objProductionNormItemsController = new MMProductionNormItemsController();
-            MMProductionNormItemsInfo objProductionNormItemsInfo = new MMProductionNormItemsInfo();
+            //MMProductionNormItemsController objProductionNormItemsController = new MMProductionNormItemsController();
+            //MMProductionNormItemsInfo objProductionNormItemsInfo = new MMProductionNormItemsInfo();
 
-            List<MMProductionNormItemsInfo> productionNormItemParentList = new List<MMProductionNormItemsInfo>();
-            List<MMProductionNormItemsInfo> productionNormItemChildList = new List<MMProductionNormItemsInfo>();
-            changeBOMInformationItemList.ForEach(o =>
-            {
-                objProductionNormItemsInfo = (MMProductionNormItemsInfo)objProductionNormItemsController.GetObjectByID(o.FK_MMProductionNormItemID);
-                if (objProductionNormItemsInfo == null)
-                    return;
-                if (objProductionNormItemsInfo.MMProductionNormItemParentID == 0)
-                    productionNormItemParentList.Add(objProductionNormItemsInfo);
-                else
-                    productionNormItemChildList.Add(objProductionNormItemsInfo);
-            });
-            MMBatchProductProductionNormItemsController objBatchProductProductionNormItemsController = new MMBatchProductProductionNormItemsController();
-            objBatchProductProductionNormItemsController.InsertBPProductionNormItemRootNode(mainobject.FK_MMBatchProductID
-                                                                                            , string.Join(",", productionNormItemParentList.Select(o => o.MMProductionNormItemID.ToString()).ToArray())
-                                                                                            , BOSApp.CurrentUser);
+            //List<MMProductionNormItemsInfo> productionNormItemParentList = new List<MMProductionNormItemsInfo>();
+            //List<MMProductionNormItemsInfo> productionNormItemChildList = new List<MMProductionNormItemsInfo>();
+            //changeBOMInformationItemList.ForEach(o =>
+            //{
+            //    objProductionNormItemsInfo = (MMProductionNormItemsInfo)objProductionNormItemsController.GetObjectByID(o.FK_MMProductionNormItemID);
+            //    if (objProductionNormItemsInfo == null)
+            //        return;
+            //    if (objProductionNormItemsInfo.MMProductionNormItemParentID == 0)
+            //        productionNormItemParentList.Add(objProductionNormItemsInfo);
+            //    else
+            //        productionNormItemChildList.Add(objProductionNormItemsInfo);
+            //});
+            //MMBatchProductProductionNormItemsController objBatchProductProductionNormItemsController = new MMBatchProductProductionNormItemsController();
+            //objBatchProductProductionNormItemsController.InsertBPProductionNormItemRootNode(mainobject.FK_MMBatchProductID
+            //                                                                                , string.Join(",", productionNormItemParentList.Select(o => o.MMProductionNormItemID.ToString()).ToArray())
+            //                                                                                , BOSApp.CurrentUser);
 
-            objBatchProductProductionNormItemsController.InsertBPProductionNormItemChildNode(mainobject.FK_MMBatchProductID
-                                                                                             , string.Join(",", productionNormItemChildList.Select(o => o.MMProductionNormItemID.ToString()).ToArray())
-                                                                                             , BOSApp.CurrentUser);
+            //objBatchProductProductionNormItemsController.InsertBPProductionNormItemChildNode(mainobject.FK_MMBatchProductID
+            //                                                                                 , string.Join(",", productionNormItemChildList.Select(o => o.MMProductionNormItemID.ToString()).ToArray())
+            //                                                                                 , BOSApp.CurrentUser);
         }
 
         public void UpdateBatchProductItemAndDependent(List<MMChangeBOMInformationItemsInfo> changeBOMInformationItemList)
@@ -1004,40 +1004,40 @@ namespace BOSERP.Modules.ChangeBOMInformation
 
         public void ApproveChange()
         {
-            ChangeBOMInformationEntities entity = (ChangeBOMInformationEntities)CurrentModuleEntity;
-            MMChangeBOMInformationsInfo objChangeBOMInformationsInfo = (MMChangeBOMInformationsInfo)entity.MainObject;
-            entity.InvalidateBatchProductItemList(objChangeBOMInformationsInfo.FK_MMBatchProductID);
-            SetDefaultBPProductionNormItemModifiedStatus(string.Empty, entity);
-            MMBatchProductItemsController objBatchProductItemsController = new MMBatchProductItemsController();
-            List<MMBatchProductItemsInfo> batchProductItemList = objBatchProductItemsController.GetBatchProductItemByBatchProduct(objChangeBOMInformationsInfo.FK_MMBatchProductID);
-            List<MMBatchProductItemsInfo> foundBatchProductItemList = null;
-            MMProductionNormItemsController objProductionNormItemsController = new MMProductionNormItemsController();
-            List<MMProductionNormItemsInfo> ProductionNormItemList = new List<MMProductionNormItemsInfo>();
-            if (objChangeBOMInformationsInfo.MMChangeBOMInformationStatus != ChangeBOMInformationStatus.Validated.ToString())
-                return;
-            if (!ValidateChangeBoomInfomation())
-            {
-                ActionCancel();
-                return;
-            }
+            //ChangeBOMInformationEntities entity = (ChangeBOMInformationEntities)CurrentModuleEntity;
+            //MMChangeBOMInformationsInfo objChangeBOMInformationsInfo = (MMChangeBOMInformationsInfo)entity.MainObject;
+            //entity.InvalidateBatchProductItemList(objChangeBOMInformationsInfo.FK_MMBatchProductID);
+            //SetDefaultBPProductionNormItemModifiedStatus(string.Empty, entity);
+            //MMBatchProductItemsController objBatchProductItemsController = new MMBatchProductItemsController();
+            //List<MMBatchProductItemsInfo> batchProductItemList = objBatchProductItemsController.GetBatchProductItemByBatchProduct(objChangeBOMInformationsInfo.FK_MMBatchProductID);
+            //List<MMBatchProductItemsInfo> foundBatchProductItemList = null;
+            //MMProductionNormItemsController objProductionNormItemsController = new MMProductionNormItemsController();
+            //List<MMProductionNormItemsInfo> ProductionNormItemList = new List<MMProductionNormItemsInfo>();
+            //if (objChangeBOMInformationsInfo.MMChangeBOMInformationStatus != ChangeBOMInformationStatus.Validated.ToString())
+            //    return;
+            //if (!ValidateChangeBoomInfomation())
+            //{
+            //    ActionCancel();
+            //    return;
+            //}
 
-            List<int> batchProductIDList = new List<int>();
-            List<MMChangeBOMInformationItemsInfo> finalList = new List<MMChangeBOMInformationItemsInfo>();
-            List<MMChangeBOMInformationItemsInfo> finalListParent = new List<MMChangeBOMInformationItemsInfo>();
-            List<MMChangeBOMInformationItemsInfo> newList = entity.ChangeBOMInformationItemList.Where(t => t.MMChangeBOMInformationItemActionType == ProductionNormLocalizeResources.New).ToList();
-            List<MMChangeBOMInformationItemsInfo> updateList = entity.ChangeBOMInformationItemList.Where(t => t.MMChangeBOMInformationItemActionType == ProductionNormLocalizeResources.Change).ToList();
-            List<MMChangeBOMInformationItemsInfo> deleteList = entity.ChangeBOMInformationItemList.Where(t => t.MMChangeBOMInformationItemActionType == ProductionNormLocalizeResources.Delete).ToList();
-            List<int> BatchProductItemIDList = new List<int>();
+            //List<int> batchProductIDList = new List<int>();
+            //List<MMChangeBOMInformationItemsInfo> finalList = new List<MMChangeBOMInformationItemsInfo>();
+            //List<MMChangeBOMInformationItemsInfo> finalListParent = new List<MMChangeBOMInformationItemsInfo>();
+            //List<MMChangeBOMInformationItemsInfo> newList = entity.ChangeBOMInformationItemList.Where(t => t.MMChangeBOMInformationItemActionType == ProductionNormLocalizeResources.New).ToList();
+            //List<MMChangeBOMInformationItemsInfo> updateList = entity.ChangeBOMInformationItemList.Where(t => t.MMChangeBOMInformationItemActionType == ProductionNormLocalizeResources.Change).ToList();
+            //List<MMChangeBOMInformationItemsInfo> deleteList = entity.ChangeBOMInformationItemList.Where(t => t.MMChangeBOMInformationItemActionType == ProductionNormLocalizeResources.Delete).ToList();
+            //List<int> BatchProductItemIDList = new List<int>();
 
-            DeleteBatchProductItemAndDependent(deleteList);
-            CreateBatchProductItemAndDependent(newList);
-            UpdateBatchProductItemAndDependent(updateList);
+            //DeleteBatchProductItemAndDependent(deleteList);
+            //CreateBatchProductItemAndDependent(newList);
+            //UpdateBatchProductItemAndDependent(updateList);
 
-            objChangeBOMInformationsInfo.MMChangeBOMInformationStatus = ChangeBOMInformationStatus.Approved.ToString();
-            objChangeBOMInformationsInfo.FK_HREmployeeIDApproved = BOSApp.CurrentUsersInfo.FK_HREmployeeID;
-            objChangeBOMInformationsInfo.MMChangeBOMInformationApprovedDate = BOSApp.GetCurrentServerDate();
-            entity.UpdateMainObject();
-            InvalidateToolbar();
+            //objChangeBOMInformationsInfo.MMChangeBOMInformationStatus = ChangeBOMInformationStatus.Approved.ToString();
+            //objChangeBOMInformationsInfo.FK_HREmployeeIDApproved = BOSApp.CurrentUsersInfo.FK_HREmployeeID;
+            //objChangeBOMInformationsInfo.MMChangeBOMInformationApprovedDate = BOSApp.GetCurrentServerDate();
+            //entity.UpdateMainObject();
+            //InvalidateToolbar();
         }
 
         public void UpdateBlockPerOneByBatchProduct(int batchProductID)

@@ -241,6 +241,27 @@ namespace BOSERP.Modules.AccountingBill
                 BOSApp.ShowMessage("Vui lòng chọn Loại thuế cho chứng từ này!");
                 return 0;
             }
+            String VATInfo = string.Empty;
+            if (mainObject.ACDocumentTaxEntryType == DocumentTaxEntryType.ThueGTGTDuocKhauTru.ToString())
+            {
+                APInvoiceInTransactionsController objInvoiceInTransactionsController = new APInvoiceInTransactionsController();
+                foreach (ACAccountingBillsInfo item in entity.AccountingBillsList)
+                {
+                    List<APInvoiceInTransactionsInfo> transactionList = objInvoiceInTransactionsController.CheckAvailableVATInfo(item.ACAccountingBillVoucherNo, item.ACAccountingBillInvoiceDate, item.ACAccountingBillVATSymbol, item.ACAccountingBillTaxNumber);
+                    if (transactionList != null && transactionList.Count() > 0)
+                    {
+                        VATInfo += String.Format("(Số hoá đơn: {0}, số seri: {1}, mã số thuế: {2})", item.ACAccountingBillVoucherNo, item.ACAccountingBillVATSymbol, item.ACAccountingBillTaxNumber);
+                        VATInfo += Environment.NewLine;
+                    }    
+                }
+                if (!string.IsNullOrEmpty(VATInfo))
+                {
+                    if (MessageBox.Show(String.Format("Hoá đơn kê khai đã tồn tại /n {0}, có lưu lại chứng từ không?", VATInfo), CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    {
+                        return 0;
+                    }
+                }    
+            }    
             int documentID = base.ActionSave();
 
             ActionPosted();

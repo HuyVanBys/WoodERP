@@ -42,6 +42,13 @@ namespace BOSERP
             DataSet ds = dal.GetDataSet("ACAdjustIncreaseOrDecreaseAssets_GetAdjustIODAssetListBySomeCriteria ", adjustIODAssetNo, acObjectID, branchID, fromDate, toDate);
             return ds;
         }
+        public ACAdjustIncreaseOrDecreaseAssetsInfo GetObjectByMainID(int objetcID)
+        {
+            DataSet ds = dal.GetDataSet("ACAdjustIncreaseOrDecreaseAssets_GetObjectByMainID", objetcID);
+            if (ds.Tables.Count > 0)
+                return (ACAdjustIncreaseOrDecreaseAssetsInfo)dal.GetSingleObject(ds.Tables[0]);
+            return null;
+        }
     }
     #endregion
 }

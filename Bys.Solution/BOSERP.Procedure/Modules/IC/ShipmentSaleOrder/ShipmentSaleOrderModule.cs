@@ -111,7 +111,7 @@ namespace BOSERP.Modules.ShipmentSaleOrder
             ShipmentSaleOrderEntities entity = (ShipmentSaleOrderEntities)CurrentModuleEntity;
             ICShipmentsInfo objShipmentInfo = (ICShipmentsInfo)entity.MainObject;
             ARDeliveryPlanItemsController objDeliveryPlanItemsController = new ARDeliveryPlanItemsController();
-            List<ARDeliveryPlanItemsInfo> deliveryPlanItems = objDeliveryPlanItemsController.GetAllDeliveryPlanItemsByDeliveryPlanCompletedAndProductQty();
+            List<ARDeliveryPlanItemsInfo> deliveryPlanItems = objDeliveryPlanItemsController.GetAllDeliveryPlanItemsByDeliveryPlanCompletedAndProductQtyByuser(BOSApp.CurrentUsersInfo.ADUserID);
             guiChooseDeliveryPlans guiDeliveryPlan = new guiChooseDeliveryPlans(deliveryPlanItems);
             guiDeliveryPlan.Module = this;
             if (guiDeliveryPlan.ShowDialog() != DialogResult.OK)
@@ -177,7 +177,7 @@ namespace BOSERP.Modules.ShipmentSaleOrder
             ShipmentSaleOrderEntities entity = (ShipmentSaleOrderEntities)CurrentModuleEntity;
             ICShipmentsInfo objShipmentInfo = (ICShipmentsInfo)entity.MainObject;
             ARSaleOrderItemsController objSaleOrderItemsController = new ARSaleOrderItemsController();
-            List<ARSaleOrderItemsInfo> saaleOrderItems = objSaleOrderItemsController.GeSaleOrderItemsForShipmentSaleOrder();
+            List<ARSaleOrderItemsInfo> saaleOrderItems = objSaleOrderItemsController.GeSaleOrderItemsForShipmentSaleOrderByUser(BOSApp.CurrentUsersInfo.ADUserID);
             guiChooseSaleOrders guiSaleOrder = new guiChooseSaleOrders(saaleOrderItems);
             guiSaleOrder.Module = this;
 
@@ -280,7 +280,11 @@ namespace BOSERP.Modules.ShipmentSaleOrder
             ACDocumentsController objDocumentsController = new ACDocumentsController();
             ARSaleOrdersController objSaleOrdersController = new ARSaleOrdersController();
             entity.ShipmentItemList.EndCurrentEdit();
-
+            if (objShipmentsInfo.FK_ICStockID == 0)
+            {
+                MessageBox.Show("Vui lòng chọn kho cho chứng từ!", CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
             if (entity.ShipmentItemList.Count(o1 => o1.FK_ICStockID == 0) > 0)
             {
                 MessageBox.Show(ShipmentSaleOrderLocalizedResources.ChooseStockMessage, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -294,7 +298,7 @@ namespace BOSERP.Modules.ShipmentSaleOrder
                     MessageBox.Show("Khách hàng bạn chọn khác với khách hàng của chứng từ bán", CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return 0;
                 }    
-            }    
+            }
             ICProductsInfo objProductsInfo = new ICProductsInfo();
 
             bool isWoodType = BOSApp.IsWoodTypeDocument(objShipmentsInfo.ICShipmentProductType, entity.ShipmentItemList.FirstOrDefault());
@@ -514,7 +518,7 @@ namespace BOSERP.Modules.ShipmentSaleOrder
                 }
                 else
                 {
-                    ds = objShipmentsController.GetShipmentListAllType(searchObject.ICShipmentNo,
+                    ds = objShipmentsController.GetShipmentSaleListAllType(searchObject.ICShipmentNo,
                                                                        BranchList,
                                                                        objObjectsInfo.ACObjectID,
                                                                        objObjectsInfo.ACObjectType,
@@ -523,12 +527,14 @@ namespace BOSERP.Modules.ShipmentSaleOrder
                                                                        searchObject.ICShipmentTypeCombo,
                                                                        null,
                                                                        searchObject.ShipmentDateFrom,
-                                                                       searchObject.ShipmentDateTo);
+                                                                       searchObject.ShipmentDateTo,
+                                                                       BOSApp.CurrentUsersInfo.ADUserID
+                                                                       );
                 }
             }
             else
             {
-                ds = objShipmentsController.GetShipmentListAllType(searchObject.ICShipmentNo,
+                ds = objShipmentsController.GetShipmentSaleListAllTypeAndUser(searchObject.ICShipmentNo,
                                                                    searchObject.FK_BRBranchID,
                                                                    objObjectsInfo.ACObjectID,
                                                                    objObjectsInfo.ACObjectType,
@@ -537,7 +543,9 @@ namespace BOSERP.Modules.ShipmentSaleOrder
                                                                    searchObject.ICShipmentTypeCombo,
                                                                    null,
                                                                    searchObject.ShipmentDateFrom,
-                                                                   searchObject.ShipmentDateTo);
+                                                                   searchObject.ShipmentDateTo,
+                                                                   BOSApp.CurrentUsersInfo.ADUserID
+                                                                   );
             }
             return ds;
         }
@@ -781,6 +789,23 @@ namespace BOSERP.Modules.ShipmentSaleOrder
             {
                 label.Text = "KTO-QT2-BM4";
             }
+            string strIsBKV = BOSApp.GetDisplayTextFromConfigText("ProjectBKV", "true");
+            bool isBKV = bool.Parse(string.IsNullOrWhiteSpace(strIsBKV) ? "false" : strIsBKV);
+            if (!isBKV)
+            {
+                label = (XRLabel)report.Bands[BandKind.ReportFooter].Controls["xr_lblChuKy4"];
+                if (label != null)
+                {
+                    label.Text = "Khách hàng";
+                }
+                label = (XRLabel)report.Bands[BandKind.ReportFooter].Controls["xr_lblChuKy5"];
+                if (label != null)
+                {
+                    label.Text = @"Giám đốc
+(Kế toán trưởng)";
+                }
+            }
+            
             report.bsShipmentSaleOrder.DataSource = mainObject;
 
             List<ICShipmentItemsInfo> ShipmentItemsInfoListForReport = objShipmentItemController.GetAllShipmentItemForRPDeliveryProductByShipmentID(mainObject.ICShipmentID);
@@ -796,7 +821,8 @@ namespace BOSERP.Modules.ShipmentSaleOrder
                         oldDepartmentName = o.ICDepartmentName;
                         rowNumber = 0;
                     }
-                    o.RowNumber = departmentRowNumber.ToString() + "." + (++rowNumber).ToString();
+                    //o.RowNumber = departmentRowNumber.ToString() + "." + (++rowNumber).ToString();
+                    o.RowNumber = (++rowNumber).ToString();
                 });
             report.bsShipmentSaleOrderItems.DataSource = ShipmentItemsInfoListForReport;
         }
@@ -902,6 +928,22 @@ namespace BOSERP.Modules.ShipmentSaleOrder
             {
                 label.Text = "KTO-QT2-BM4";
             }
+            string strIsBKV = BOSApp.GetDisplayTextFromConfigText("ProjectBKV", "true");
+            bool isBKV = bool.Parse(string.IsNullOrWhiteSpace(strIsBKV) ? "false" : strIsBKV);
+            if (!isBKV)
+            {
+                label = (XRLabel)report.Bands[BandKind.ReportFooter].Controls["xr_lblChuKy4"];
+                if (label != null)
+                {
+                    label.Text = "Khách hàng";
+                }
+                label = (XRLabel)report.Bands[BandKind.ReportFooter].Controls["xr_lblChuKy5"];
+                if (label != null)
+                {
+                    label.Text = @"Giám đốc
+(Kế toán trưởng)";
+                }
+            }
             report.bsShipmentSaleOrder.DataSource = mainObject;
 
             List<ICShipmentItemsInfo> ShipmentItemsInfoListForReport = objShipmentItemController.GetAllShipmentItemForRPDeliveryProductByShipmentID(mainObject.ICShipmentID);
@@ -917,7 +959,8 @@ namespace BOSERP.Modules.ShipmentSaleOrder
                     oldDepartmentName = o.ICDepartmentName;
                     rowNumber = 0;
                 }
-                o.RowNumber = departmentRowNumber.ToString() + "." + (++rowNumber).ToString();
+                //o.RowNumber = departmentRowNumber.ToString() + "." + (++rowNumber).ToString();
+                o.RowNumber = (++rowNumber).ToString();
             });
             report.bsShipmentSaleOrderItems.DataSource = ShipmentItemsInfoListForReport;
         }
@@ -1612,6 +1655,17 @@ namespace BOSERP.Modules.ShipmentSaleOrder
             ADReportsController objReportsController = new ADReportsController();
             List<ICShipmentItemsInfo> dpiList = objReportsController.GetListShipmentItemsForReportPrintPackingListHPBySID(sID);
             report.DataSource = dpiList;
+        }
+        public void UpdatePositionItem(ICShipmentItemsInfo item)
+        {
+            ShipmentSaleOrderEntities entity = (ShipmentSaleOrderEntities)CurrentModuleEntity;
+            ICShipmentsInfo objICShipmentsInfo = (ICShipmentsInfo)entity.MainObject;
+            MMUpdatePositionItemsController objUpdatePositionItemsController = new MMUpdatePositionItemsController();
+            MMUpdatePositionItemsInfo objUpdatePositionItemsInfo = (MMUpdatePositionItemsInfo)objUpdatePositionItemsController.GetItemByLocationName(string.Empty, item.FK_ICProductID, item.FK_ICStockID, item.FK_ICProductSerieID);
+            if (objUpdatePositionItemsInfo != null)
+            {
+                item.FK_MMUpdatePositionItemID = objUpdatePositionItemsInfo.MMUpdatePositionItemID;
+            }
         }
     }
 }

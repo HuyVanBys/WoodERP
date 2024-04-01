@@ -1199,6 +1199,7 @@ namespace BOSERP.Modules.BatchProduct
             }
             mainobject.MMBatchProductMultiCustomer = string.Join(",", productionPlanningItemList.Select(p => p.ACObjectName).Distinct().ToArray());
             mainobject.MMBatchProductSOName = string.Join(",", productionPlanningItemList.Select(p => p.ARProductionPlanningItemSaleOrderName).Distinct().ToArray());
+            mainobject.MMBatchProductDesc = string.Join(",", productionPlanningItemList.Select(p => p.ARSaleOrderNo).Distinct().ToArray());
             productionPlanningItemList.ForEach(o =>
             {
                 objBatchProductItemsInfo = ToBatchProductItems(o, rangeDate);
@@ -2314,7 +2315,7 @@ namespace BOSERP.Modules.BatchProduct
                             {
 
                                 objBatchProductProductionNormItemsController.InsertBatchProductProductionNormItemPaint(item.FK_MMProductionNormID, item.MMBatchProductItemID, item.FK_MMBatchProductID, BOSApp.CurrentUsersInfo.ADUserName,
-                                        item.MMBatchProductItemProductQty, item.FK_ICProductID, item.MMBatchProductItemProductSerial, item.MMBatchProductItemNeededTime);
+                                        item.MMBatchProductItemProductQty, item.FK_ICProductID, item.MMBatchProductItemProductSerial, objBatchProductsInfo.MMBatchProductFromDate);
 
                             }
                             else
@@ -3344,54 +3345,10 @@ namespace BOSERP.Modules.BatchProduct
                     }
                     decimal productionNormItemTotalQty = GetSumProductionNormItemQty();
                     string stisHappy = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormHappy", "true");
+                    string stisBKV = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormBKV", "true");
                     bool isHappy = bool.Parse(stisHappy != string.Empty ? stisHappy : "false");
-                    if (!isHappy)
-                    {
-                        RPBatchProductExcelSemiProduct report = new RPBatchProductExcelSemiProduct(productionNormItemTotalQty);
-                        MMBatchProductProductionNormItemMeterialsController mCtrl = new MMBatchProductProductionNormItemMeterialsController();
-                        MMBatchProductProductionNormItemMeterialsInfo mItem = new MMBatchProductProductionNormItemMeterialsInfo();
-                        MMOperationsController objOperationsController = new MMOperationsController();
-                        MMBatchProductProductionNormItemProcesssController mProcesssCtrl = new MMBatchProductProductionNormItemProcesssController();
-                        MMBatchProductProductionNormItemProcesssInfo mProcesssItem = new MMBatchProductProductionNormItemProcesssInfo();
-                        MMProcesssController objProcesssController = new MMProcesssController();
-
-                        batchproductItemList.ForEach(o =>
-                        {
-                            if (o.MMBatchProductProductionNormItemsSemiProductList != null)
-                            {
-                            //o.MMBatchProductProductionNormItemsSemiProductList = o.MMBatchProductProductionNormItemsSemiProductList.OrderBy(i => i.ICProductCode).ToList();
-                            o.MMBatchProductProductionNormItemsSemiProductList.ForEach(x =>
-                                {
-                                    Math.Round(x.MMBatchProductProductionNormItemDepreciationRate, 2);
-                                    mItem = mCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
-                                    if (mItem != null)
-                                    {
-                                        x.MMBatchProductProductionNormItemMeterialHeigth = mItem.MMBatchProductProductionNormItemMeterialHeigth;
-                                        x.MMBatchProductProductionNormItemMeterialLength = mItem.MMBatchProductProductionNormItemMeterialLength;
-                                        x.MMBatchProductProductionNormItemMeterialWidth = mItem.MMBatchProductProductionNormItemMeterialWidth;
-                                        x.MMBatchProductProductionNormItemMeterialQty = mItem.MMBatchProductProductionNormItemMeterialQty;
-                                        x.MMBatchProductProductionNormItemMeterialDepreciationQty = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty;
-                                        x.MMBatchProductProductionNormItemMeterialWoodBlockNorm = mItem.MMBatchProductProductionNormItemMeterialQty / x.MMBatchProductItemProductQty;    //SLNL/SP
-                                    x.MMBatchProductProductionNormItemMeterialWoodBlocks = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty / x.MMBatchProductItemProductQty;       //SL/KL NL tiêu hao/SP
-                                    x.MMOperationName = objOperationsController.GetObjectNameByID(mItem.FK_MMOperationID);
-                                    }
-                                    mProcesssItem = mProcesssCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
-                                    if (mProcesssItem != null)
-                                    {
-                                        x.MMBatchProductProductionNormPaintProcess = objProcesssController.GetObjectNameByID(mProcesssItem.FK_MMProcessID);
-                                    }
-                                });
-                            }
-                        });
-
-                        report.bindingSource8.DataSource = batchproductItemList;
-                        //enablereport
-                        EnableReportDetail(report, BatchProductGroup.SemiProduct.ToString());
-                        guiReportPreview viewer = new guiReportPreview(report);
-                        viewer.Show();
-                        ActionCancel();
-                    }
-                    else
+                    bool isBKV = bool.Parse(stisBKV != string.Empty ? stisBKV : "false");
+                    if (isHappy)
                     {
                         RPBatchProductExcelSemiProductHP report = new RPBatchProductExcelSemiProductHP(productionNormItemTotalQty);
                         MMBatchProductProductionNormItemMeterialsController mCtrl = new MMBatchProductProductionNormItemMeterialsController();
@@ -3429,6 +3386,146 @@ namespace BOSERP.Modules.BatchProduct
                                 });
                             }
                         });
+
+                        report.bindingSource8.DataSource = batchproductItemList;
+                        //enablereport
+                        EnableReportDetail(report, BatchProductGroup.SemiProduct.ToString());
+                        guiReportPreview viewer = new guiReportPreview(report);
+                        viewer.Show();
+                        ActionCancel();
+                    }
+                    else if (isBKV)
+                    {
+                        RPBatchProductExcelSemiProductBKV report = new RPBatchProductExcelSemiProductBKV(productionNormItemTotalQty);
+                        MMBatchProductProductionNormItemMeterialsController mCtrl = new MMBatchProductProductionNormItemMeterialsController();
+                        MMBatchProductProductionNormItemMeterialsInfo mItem = new MMBatchProductProductionNormItemMeterialsInfo();
+                        MMOperationsController objOperationsController = new MMOperationsController();
+                        MMBatchProductProductionNormItemProcesssController mProcesssCtrl = new MMBatchProductProductionNormItemProcesssController();
+                        MMBatchProductProductionNormItemProcesssInfo mProcesssItem = new MMBatchProductProductionNormItemProcesssInfo();
+                        MMProcesssController objProcesssController = new MMProcesssController();
+                        ICMeasureUnitsController objMeasureUnitsController = new ICMeasureUnitsController();
+                        ICMeasureUnitsInfo objMeasureUnitsInfo = new ICMeasureUnitsInfo();
+
+                        batchproductItemList.ForEach(o =>
+                        {
+                            if (o.MMBatchProductProductionNormItemsSemiProductList != null)
+                            {
+                                //o.MMBatchProductProductionNormItemsSemiProductList = o.MMBatchProductProductionNormItemsSemiProductList.OrderBy(i => i.ICProductCode).ToList();
+                                o.MMBatchProductProductionNormItemsSemiProductList.ForEach(x =>
+                                {
+                                    Math.Round(x.MMBatchProductProductionNormItemDepreciationRate, 2);
+                                    mItem = mCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
+                                    if (mItem != null)
+                                    {
+                                        x.MMBatchProductProductionNormItemMeterialHeigth = mItem.MMBatchProductProductionNormItemMeterialHeigth;
+                                        x.MMBatchProductProductionNormItemMeterialLength = mItem.MMBatchProductProductionNormItemMeterialLength;
+                                        x.MMBatchProductProductionNormItemMeterialWidth = mItem.MMBatchProductProductionNormItemMeterialWidth;
+                                        x.MMBatchProductProductionNormItemMeterialQty = mItem.MMBatchProductProductionNormItemMeterialQty;
+                                        x.MMBatchProductProductionNormItemMeterialDepreciationQty = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty;
+                                        x.MMBatchProductProductionNormItemMeterialWoodBlockNorm = mItem.MMBatchProductProductionNormItemMeterialQty / x.MMBatchProductItemProductQty;    //SLNL/SP
+                                        x.MMBatchProductProductionNormItemMeterialWoodBlocks = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty / x.MMBatchProductItemProductQty;       //SL/KL NL tiêu hao/SP
+                                        x.MMOperationName = objOperationsController.GetObjectNameByID(mItem.FK_MMOperationID);
+                                        x.MMBatchProductProductionNormItemMeterialHeigth = mItem.MMBatchProductProductionNormItemMeterialHeigth;
+                                        ICProductsForViewInfo objProductsForViewInfo = BOSApp.CurrentProductList.Where(y => y.ICProductID == mItem.FK_ICProductID).FirstOrDefault();
+                                        if (objProductsForViewInfo != null)
+                                        {
+                                            x.MMBatchProductProductionNormItemMeterialNo = objProductsForViewInfo.ICProductNo;
+                                            x.MMBatchProductProductionNormItemMeterialDesc = mItem.MMBatchProductProductionNormItemMeterialDesc;
+
+                                            objMeasureUnitsInfo = (ICMeasureUnitsInfo)objMeasureUnitsController.GetObjectByID(mItem.FK_ICMeasureUnitID);
+                                            if (objMeasureUnitsInfo != null)
+                                            {
+                                                x.MMBatchProductProductionNormItemMeterialMeasureUnitName = objMeasureUnitsInfo.ICMeasureUnitName;
+                                            }
+                                        }
+                                    }
+                                    mProcesssItem = mProcesssCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
+                                    if (mProcesssItem != null)
+                                    {
+                                        x.MMBatchProductProductionNormPaintProcess = objProcesssController.GetObjectNameByID(mProcesssItem.FK_MMProcessID);
+                                    }
+                                });
+                            }
+                        });
+
+                        report.bindingSource8.DataSource = batchproductItemList;
+                        //enablereport
+                        EnableReportDetail(report, BatchProductGroup.SemiProduct.ToString());
+                        guiReportPreview viewer = new guiReportPreview(report);
+                        viewer.Show();
+                        ActionCancel();
+                    }
+                    else
+                    {
+                        RPBatchProductExcelSemiProduct report = new RPBatchProductExcelSemiProduct(productionNormItemTotalQty);
+                        MMBatchProductProductionNormItemMeterialsController mCtrl = new MMBatchProductProductionNormItemMeterialsController();
+                        MMBatchProductProductionNormItemMeterialsInfo mItem = new MMBatchProductProductionNormItemMeterialsInfo();
+                        MMOperationsController objOperationsController = new MMOperationsController();
+                        MMBatchProductProductionNormItemProcesssController mProcesssCtrl = new MMBatchProductProductionNormItemProcesssController();
+                        MMBatchProductProductionNormItemProcesssInfo mProcesssItem = new MMBatchProductProductionNormItemProcesssInfo();
+                        MMProcesssController objProcesssController = new MMProcesssController();
+                        ICMeasureUnitsController objMeasureUnitsController = new ICMeasureUnitsController();
+                        ICMeasureUnitsInfo objMeasureUnitsInfo = new ICMeasureUnitsInfo();
+
+                        string stisTH = ADConfigValueUtility.GetConfigTextByGroupAndValue("ProjectTH", "true");
+                        bool isTH = bool.Parse(stisTH != string.Empty ? stisTH : "false");
+                        if (isTH)
+                        {
+                            batchproductItemList.ForEach(o =>
+                            {
+                                if (o.MMBatchProductProductionNormItemsSemiProductList != null)
+                                {
+                                    //o.MMBatchProductProductionNormItemsSemiProductList = o.MMBatchProductProductionNormItemsSemiProductList.OrderBy(i => i.ICProductCode).ToList();
+                                    o.MMBatchProductProductionNormItemsSemiProductList.ForEach(x =>
+                                    {
+                                        x.MMBatchProductProductionNormItemBlockPerOne = x.MMBatchProductProductionNormItemBlockPerOne * x.MMBatchProductProductionNormItemQuantityPerOne;
+                                        x.MMBatchProductProductionNormItemWoodBlocks = x.MMBatchProductProductionNormItemWoodBlocks * x.MMBatchProductProductionNormItemQuantityPerOne;
+                                    });
+                                }
+                            });
+                        }
+
+                        batchproductItemList.ForEach(o =>
+                            {
+                                if (o.MMBatchProductProductionNormItemsSemiProductList != null)
+                                {
+                                    //o.MMBatchProductProductionNormItemsSemiProductList = o.MMBatchProductProductionNormItemsSemiProductList.OrderBy(i => i.ICProductCode).ToList();
+                                    o.MMBatchProductProductionNormItemsSemiProductList.ForEach(x =>
+                                    {
+                                        Math.Round(x.MMBatchProductProductionNormItemDepreciationRate, 2);
+                                        mItem = mCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
+                                        if (mItem != null)
+                                        {
+                                            x.MMBatchProductProductionNormItemMeterialHeigth = mItem.MMBatchProductProductionNormItemMeterialHeigth;
+                                            x.MMBatchProductProductionNormItemMeterialLength = mItem.MMBatchProductProductionNormItemMeterialLength;
+                                            x.MMBatchProductProductionNormItemMeterialWidth = mItem.MMBatchProductProductionNormItemMeterialWidth;
+                                            x.MMBatchProductProductionNormItemMeterialQty = mItem.MMBatchProductProductionNormItemMeterialQty;
+                                            x.MMBatchProductProductionNormItemMeterialDepreciationQty = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty;
+                                            x.MMBatchProductProductionNormItemMeterialWoodBlockNorm = mItem.MMBatchProductProductionNormItemMeterialQty / x.MMBatchProductItemProductQty;    //SLNL/SP
+                                            x.MMBatchProductProductionNormItemMeterialWoodBlocks = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty / x.MMBatchProductItemProductQty;       //SL/KL NL tiêu hao/SP
+                                            x.MMOperationName = objOperationsController.GetObjectNameByID(mItem.FK_MMOperationID);
+                                            x.MMBatchProductProductionNormItemMeterialHeigth = mItem.MMBatchProductProductionNormItemMeterialHeigth;
+                                            ICProductsForViewInfo objProductsForViewInfo = BOSApp.CurrentProductList.Where(y => y.ICProductID == mItem.FK_ICProductID).FirstOrDefault();
+                                            if (objProductsForViewInfo != null)
+                                            {
+                                                x.MMBatchProductProductionNormItemMeterialNo = objProductsForViewInfo.ICProductNo;
+                                                x.MMBatchProductProductionNormItemMeterialDesc = mItem.MMBatchProductProductionNormItemMeterialDesc;
+
+                                                objMeasureUnitsInfo = (ICMeasureUnitsInfo)objMeasureUnitsController.GetObjectByID(mItem.FK_ICMeasureUnitID);
+                                                if (objMeasureUnitsInfo != null)
+                                                {
+                                                    x.MMBatchProductProductionNormItemMeterialMeasureUnitName = objMeasureUnitsInfo.ICMeasureUnitName;
+                                                }
+                                            }
+                                        }
+                                        mProcesssItem = mProcesssCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
+                                        if (mProcesssItem != null)
+                                        {
+                                            x.MMBatchProductProductionNormPaintProcess = objProcesssController.GetObjectNameByID(mProcesssItem.FK_MMProcessID);
+                                        }
+                                    });
+                                }
+                            });
 
                         report.bindingSource8.DataSource = batchproductItemList;
                         //enablereport
@@ -3561,54 +3658,10 @@ namespace BOSERP.Modules.BatchProduct
                     }
                     decimal productionNormItemTotalQty = GetSumProductionNormItemQty();
                     string stisHappy = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormHappy", "true");
+                    string stisBKV = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormBKV", "true");
                     bool isHappy = bool.Parse(stisHappy != string.Empty ? stisHappy : "false");
-                    if (!isHappy)
-                    {
-                        RPBatchProductExcelSemiProductM2 report = new RPBatchProductExcelSemiProductM2(productionNormItemTotalQty);
-
-                        MMBatchProductProductionNormItemMeterialsController mCtrl = new MMBatchProductProductionNormItemMeterialsController();
-                        MMBatchProductProductionNormItemMeterialsInfo mItem = new MMBatchProductProductionNormItemMeterialsInfo();
-                        MMOperationsController objOperationsController = new MMOperationsController();
-                        MMBatchProductProductionNormItemProcesssController mProcesssCtrl = new MMBatchProductProductionNormItemProcesssController();
-                        MMBatchProductProductionNormItemProcesssInfo mProcesssItem = new MMBatchProductProductionNormItemProcesssInfo();
-                        MMProcesssController objProcesssController = new MMProcesssController();
-
-                        batchproductItemList.ForEach(o =>
-                        {
-                            if (o.MMBatchProductProductionNormItemsSemiProductList != null)
-                            {
-                                o.MMBatchProductProductionNormItemsSemiProductList.ForEach(x =>
-                                {
-                                    Math.Round(x.MMBatchProductProductionNormItemDepreciationRate, 2);
-                                    mItem = mCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
-                                    if (mItem != null)
-                                    {
-                                        x.MMBatchProductProductionNormItemMeterialHeigth = mItem.MMBatchProductProductionNormItemMeterialHeigth;
-                                        x.MMBatchProductProductionNormItemMeterialLength = mItem.MMBatchProductProductionNormItemMeterialLength;
-                                        x.MMBatchProductProductionNormItemMeterialWidth = mItem.MMBatchProductProductionNormItemMeterialWidth;
-                                        x.MMBatchProductProductionNormItemMeterialQty = mItem.MMBatchProductProductionNormItemMeterialQty;
-                                        x.MMBatchProductProductionNormItemMeterialDepreciationQty = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty;
-                                        x.MMBatchProductProductionNormItemMeterialWoodBlockNorm = mItem.MMBatchProductProductionNormItemMeterialQty / x.MMBatchProductItemProductQty;    //SLNL/SP
-                                    x.MMBatchProductProductionNormItemMeterialWoodBlocks = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty / x.MMBatchProductItemProductQty;       //SL/KL NL tiêu hao/SP
-                                    x.MMOperationName = objOperationsController.GetObjectNameByID(mItem.FK_MMOperationID);
-                                    }
-                                    mProcesssItem = mProcesssCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
-                                    if (mProcesssItem != null)
-                                    {
-                                        x.MMBatchProductProductionNormPaintProcess = objProcesssController.GetObjectNameByID(mProcesssItem.FK_MMProcessID);
-                                    }
-                                });
-                            }
-                        });
-
-                        report.bindingSource8.DataSource = batchproductItemList;
-                        //enablereport
-                        EnableReportDetail(report, BatchProductGroup.SemiProduct.ToString());
-                        guiReportPreview viewer = new guiReportPreview(report);
-                        viewer.Show();
-                        ActionCancel();
-                    }
-                    else
+                    bool isBKV = bool.Parse(stisBKV != string.Empty ? stisBKV : "false");
+                    if (isHappy)
                     {
                         RPBatchProductExcelSemiProductM2HP report = new RPBatchProductExcelSemiProductM2HP(productionNormItemTotalQty);
 
@@ -3653,7 +3706,99 @@ namespace BOSERP.Modules.BatchProduct
                         guiReportPreview viewer = new guiReportPreview(report);
                         viewer.Show();
                         ActionCancel();
-                    }    
+                    }
+                    else if (isBKV)
+                    {
+                        RPBatchProductExcelSemiProductM2BKV report = new RPBatchProductExcelSemiProductM2BKV(productionNormItemTotalQty);
+
+                        MMBatchProductProductionNormItemMeterialsController mCtrl = new MMBatchProductProductionNormItemMeterialsController();
+                        MMBatchProductProductionNormItemMeterialsInfo mItem = new MMBatchProductProductionNormItemMeterialsInfo();
+                        MMOperationsController objOperationsController = new MMOperationsController();
+                        MMBatchProductProductionNormItemProcesssController mProcesssCtrl = new MMBatchProductProductionNormItemProcesssController();
+                        MMBatchProductProductionNormItemProcesssInfo mProcesssItem = new MMBatchProductProductionNormItemProcesssInfo();
+                        MMProcesssController objProcesssController = new MMProcesssController();
+
+                        batchproductItemList.ForEach(o =>
+                        {
+                            if (o.MMBatchProductProductionNormItemsSemiProductList != null)
+                            {
+                                o.MMBatchProductProductionNormItemsSemiProductList.ForEach(x =>
+                                {
+                                    Math.Round(x.MMBatchProductProductionNormItemDepreciationRate, 2);
+                                    mItem = mCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
+                                    if (mItem != null)
+                                    {
+                                        x.MMBatchProductProductionNormItemMeterialHeigth = mItem.MMBatchProductProductionNormItemMeterialHeigth;
+                                        x.MMBatchProductProductionNormItemMeterialLength = mItem.MMBatchProductProductionNormItemMeterialLength;
+                                        x.MMBatchProductProductionNormItemMeterialWidth = mItem.MMBatchProductProductionNormItemMeterialWidth;
+                                        x.MMBatchProductProductionNormItemMeterialQty = mItem.MMBatchProductProductionNormItemMeterialQty;
+                                        x.MMBatchProductProductionNormItemMeterialDepreciationQty = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty;
+                                        x.MMBatchProductProductionNormItemMeterialWoodBlockNorm = mItem.MMBatchProductProductionNormItemMeterialQty / x.MMBatchProductItemProductQty;    //SLNL/SP
+                                        x.MMBatchProductProductionNormItemMeterialWoodBlocks = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty / x.MMBatchProductItemProductQty;       //SL/KL NL tiêu hao/SP
+                                        x.MMOperationName = objOperationsController.GetObjectNameByID(mItem.FK_MMOperationID);
+                                    }
+                                    mProcesssItem = mProcesssCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
+                                    if (mProcesssItem != null)
+                                    {
+                                        x.MMBatchProductProductionNormPaintProcess = objProcesssController.GetObjectNameByID(mProcesssItem.FK_MMProcessID);
+                                    }
+                                });
+                            }
+                        });
+
+                        report.bindingSource8.DataSource = batchproductItemList;
+                        //enablereport
+                        EnableReportDetail(report, BatchProductGroup.SemiProduct.ToString());
+                        guiReportPreview viewer = new guiReportPreview(report);
+                        viewer.Show();
+                        ActionCancel();
+                    }
+                    else
+                    {
+                        RPBatchProductExcelSemiProductM2 report = new RPBatchProductExcelSemiProductM2(productionNormItemTotalQty);
+
+                        MMBatchProductProductionNormItemMeterialsController mCtrl = new MMBatchProductProductionNormItemMeterialsController();
+                        MMBatchProductProductionNormItemMeterialsInfo mItem = new MMBatchProductProductionNormItemMeterialsInfo();
+                        MMOperationsController objOperationsController = new MMOperationsController();
+                        MMBatchProductProductionNormItemProcesssController mProcesssCtrl = new MMBatchProductProductionNormItemProcesssController();
+                        MMBatchProductProductionNormItemProcesssInfo mProcesssItem = new MMBatchProductProductionNormItemProcesssInfo();
+                        MMProcesssController objProcesssController = new MMProcesssController();
+
+                        batchproductItemList.ForEach(o =>
+                        {
+                            if (o.MMBatchProductProductionNormItemsSemiProductList != null)
+                            {
+                                o.MMBatchProductProductionNormItemsSemiProductList.ForEach(x =>
+                                {
+                                    Math.Round(x.MMBatchProductProductionNormItemDepreciationRate, 2);
+                                    mItem = mCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
+                                    if (mItem != null)
+                                    {
+                                        x.MMBatchProductProductionNormItemMeterialHeigth = mItem.MMBatchProductProductionNormItemMeterialHeigth;
+                                        x.MMBatchProductProductionNormItemMeterialLength = mItem.MMBatchProductProductionNormItemMeterialLength;
+                                        x.MMBatchProductProductionNormItemMeterialWidth = mItem.MMBatchProductProductionNormItemMeterialWidth;
+                                        x.MMBatchProductProductionNormItemMeterialQty = mItem.MMBatchProductProductionNormItemMeterialQty;
+                                        x.MMBatchProductProductionNormItemMeterialDepreciationQty = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty;
+                                        x.MMBatchProductProductionNormItemMeterialWoodBlockNorm = mItem.MMBatchProductProductionNormItemMeterialQty / x.MMBatchProductItemProductQty;    //SLNL/SP
+                                        x.MMBatchProductProductionNormItemMeterialWoodBlocks = mItem.MMBatchProductProductionNormItemMeterialDepreciationQty / x.MMBatchProductItemProductQty;       //SL/KL NL tiêu hao/SP
+                                        x.MMOperationName = objOperationsController.GetObjectNameByID(mItem.FK_MMOperationID);
+                                    }
+                                    mProcesssItem = mProcesssCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
+                                    if (mProcesssItem != null)
+                                    {
+                                        x.MMBatchProductProductionNormPaintProcess = objProcesssController.GetObjectNameByID(mProcesssItem.FK_MMProcessID);
+                                    }
+                                });
+                            }
+                        });
+
+                        report.bindingSource8.DataSource = batchproductItemList;
+                        //enablereport
+                        EnableReportDetail(report, BatchProductGroup.SemiProduct.ToString());
+                        guiReportPreview viewer = new guiReportPreview(report);
+                        viewer.Show();
+                        ActionCancel();
+                    }
                 }
                 else
                 {
@@ -3760,10 +3905,21 @@ namespace BOSERP.Modules.BatchProduct
                     }
                     decimal productionNormItemTotalQty = GetSumProductionNormItemQty();
                     string stisHappy = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormHappy", "true");
+                    string stisBKV = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormBKV", "true");
                     bool isHappy = bool.Parse(stisHappy != string.Empty ? stisHappy : "false");
-                    if (!isHappy)
+                    bool isBKV = bool.Parse(stisBKV != string.Empty ? stisBKV : "false");
+                    if (isHappy)
                     {
-                        RPBatchProductHardwareExcel report = new RPBatchProductHardwareExcel(productionNormItemTotalQty);
+                        RPBatchProductHardwareExcelHP report = new RPBatchProductHardwareExcelHP(productionNormItemTotalQty);
+                        report.bindingSource8.DataSource = batchProductItemList;
+                        EnableReportDetail(report, BatchProductGroup.Hardware.ToString());
+                        guiReportPreview viewer = new guiReportPreview(report);
+                        viewer.Show();
+                        ActionCancel();
+                    }
+                    else if(isBKV)
+                    {
+                        RPBatchProductHardwareExcelBKV report = new RPBatchProductHardwareExcelBKV(productionNormItemTotalQty);
                         report.bindingSource8.DataSource = batchProductItemList;
                         EnableReportDetail(report, BatchProductGroup.Hardware.ToString());
                         guiReportPreview viewer = new guiReportPreview(report);
@@ -3772,7 +3928,7 @@ namespace BOSERP.Modules.BatchProduct
                     }
                     else
                     {
-                        RPBatchProductHardwareExcelHP report = new RPBatchProductHardwareExcelHP(productionNormItemTotalQty);
+                        RPBatchProductHardwareExcel report = new RPBatchProductHardwareExcel(productionNormItemTotalQty);
                         report.bindingSource8.DataSource = batchProductItemList;
                         EnableReportDetail(report, BatchProductGroup.Hardware.ToString());
                         guiReportPreview viewer = new guiReportPreview(report);
@@ -3861,10 +4017,21 @@ namespace BOSERP.Modules.BatchProduct
                     //get total item Qty
                     decimal productionNormItemTotalQty = GetSumProductionNormItemQty();
                     string stisHappy = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormHappy", "true");
+                    string stisBKV = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormBKV", "true");
                     bool isHappy = bool.Parse(stisHappy != string.Empty ? stisHappy : "false");
-                    if (!isHappy)
+                    bool isBKV = bool.Parse(stisBKV != string.Empty ? stisBKV : "false");
+                    if (isHappy)
                     {
-                        RPBatchProductPaintExcel report = new RPBatchProductPaintExcel(productionNormItemTotalQty);
+                        RPBatchProductPaintExcelHP report = new RPBatchProductPaintExcelHP(productionNormItemTotalQty);
+                        report.bindingSource8.DataSource = batchProductIngredientPaintList;
+                        EnableReportDetail(report, BatchProductGroup.IngredientPaint.ToString());
+                        guiReportPreview viewer = new guiReportPreview(report);
+                        viewer.Show();
+                        ActionCancel();
+                    }
+                    else if (isBKV)
+                    {
+                        RPBatchProductPaintExcelBKV report = new RPBatchProductPaintExcelBKV(productionNormItemTotalQty);
                         report.bindingSource8.DataSource = batchProductIngredientPaintList;
                         EnableReportDetail(report, BatchProductGroup.IngredientPaint.ToString());
                         guiReportPreview viewer = new guiReportPreview(report);
@@ -3873,7 +4040,7 @@ namespace BOSERP.Modules.BatchProduct
                     }
                     else
                     {
-                        RPBatchProductPaintExcelHP report = new RPBatchProductPaintExcelHP(productionNormItemTotalQty);
+                        RPBatchProductPaintExcel report = new RPBatchProductPaintExcel(productionNormItemTotalQty);
                         report.bindingSource8.DataSource = batchProductIngredientPaintList;
                         EnableReportDetail(report, BatchProductGroup.IngredientPaint.ToString());
                         guiReportPreview viewer = new guiReportPreview(report);
@@ -4008,19 +4175,30 @@ namespace BOSERP.Modules.BatchProduct
                 //get total item Qty        
                 decimal productionNormItemTotalQty = GetSumProductionNormItemQty();
                 string stisHappy = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormHappy", "true");
+                string stisBKV = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormBKV", "true");
                 bool isHappy = bool.Parse(stisHappy != string.Empty ? stisHappy : "false");
-                if (!isHappy)
+                bool isBKV = bool.Parse(stisBKV != string.Empty ? stisBKV : "false");
+                if (isHappy)
                 {
-                    RPBatchProductExcelPacking report = new RPBatchProductExcelPacking(productionNormItemTotalQty);
+                    RPBatchProductExcelPackingHP report = new RPBatchProductExcelPackingHP(productionNormItemTotalQty);
                     report.bindingSource8.DataSource = batchProductItemList;
                     EnableReportDetail(report, BatchProductGroup.IngredientPackaging.ToString());
                     guiReportPreview viewer = new guiReportPreview(report);
                     viewer.Show();
                     ActionCancel();
-                } 
+                }
+                else if (isBKV)
+                {
+                    RPBatchProductExcelPackingBKV report = new RPBatchProductExcelPackingBKV(productionNormItemTotalQty);
+                    report.bindingSource8.DataSource = batchProductItemList;
+                    EnableReportDetail(report, BatchProductGroup.IngredientPackaging.ToString());
+                    guiReportPreview viewer = new guiReportPreview(report);
+                    viewer.Show();
+                    ActionCancel();
+                }
                 else
                 {
-                    RPBatchProductExcelPackingHP report = new RPBatchProductExcelPackingHP(productionNormItemTotalQty);
+                    RPBatchProductExcelPacking report = new RPBatchProductExcelPacking(productionNormItemTotalQty);
                     report.bindingSource8.DataSource = batchProductItemList;
                     EnableReportDetail(report, BatchProductGroup.IngredientPackaging.ToString());
                     guiReportPreview viewer = new guiReportPreview(report);
@@ -4107,10 +4285,21 @@ namespace BOSERP.Modules.BatchProduct
                     }
                     decimal productionNormItemTotalQty = GetSumProductionNormItemQty();
                     string stisHappy = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormHappy", "true");
+                    string stisBKV = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormBKV", "true");
                     bool isHappy = bool.Parse(stisHappy != string.Empty ? stisHappy : "false");
-                    if (!isHappy)
+                    bool isBKV = bool.Parse(stisBKV != string.Empty ? stisBKV : "false");
+                    if (isHappy)
                     {
-                        RPBatchProductGeneralMaterialExcel report = new RPBatchProductGeneralMaterialExcel(productionNormItemTotalQty);
+                        RPBatchProductGeneralMaterialExcelHP report = new RPBatchProductGeneralMaterialExcelHP(productionNormItemTotalQty);
+                        report.bindingSource8.DataSource = batchProductItemList;
+                        EnableReportDetail(report, BatchProductGroup.GeneralMaterial.ToString());
+                        guiReportPreview viewer = new guiReportPreview(report);
+                        viewer.Show();
+                        ActionCancel();
+                    }
+                    else if (isBKV)
+                    {
+                        RPBatchProductGeneralMaterialExcelBKV report = new RPBatchProductGeneralMaterialExcelBKV(productionNormItemTotalQty);
                         report.bindingSource8.DataSource = batchProductItemList;
                         EnableReportDetail(report, BatchProductGroup.GeneralMaterial.ToString());
                         guiReportPreview viewer = new guiReportPreview(report);
@@ -4119,7 +4308,7 @@ namespace BOSERP.Modules.BatchProduct
                     }
                     else
                     {
-                        RPBatchProductGeneralMaterialExcelHP report = new RPBatchProductGeneralMaterialExcelHP(productionNormItemTotalQty);
+                        RPBatchProductGeneralMaterialExcel report = new RPBatchProductGeneralMaterialExcel(productionNormItemTotalQty);
                         report.bindingSource8.DataSource = batchProductItemList;
                         EnableReportDetail(report, BatchProductGroup.GeneralMaterial.ToString());
                         guiReportPreview viewer = new guiReportPreview(report);
@@ -4805,10 +4994,22 @@ namespace BOSERP.Modules.BatchProduct
         {
             if ((Toolbar.IsNullOrNoneAction() && Toolbar.CurrentObjectID > 0))
             {
-                RP_BatchProduct report = new RP_BatchProduct();
-                InitInvoiceReport(report);
-                guiReportPreview reviewer = new guiReportPreview(report, BOSCommon.Constants.Report.DevInvoiceItemReportPath, false);
-                reviewer.Show();
+                string stisBKV = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormBKV", "true");
+                bool isBKV = bool.Parse(stisBKV != string.Empty ? stisBKV : "false");
+                if (isBKV)
+                {
+                    RP_BatchProductBKV report = new RP_BatchProductBKV();
+                    InitInvoiceReport(report);
+                    guiReportPreview reviewer = new guiReportPreview(report, BOSCommon.Constants.Report.DevInvoiceItemReportPath, false);
+                    reviewer.Show();
+                }
+                else
+                {
+                    RP_BatchProduct report = new RP_BatchProduct();
+                    InitInvoiceReport(report);
+                    guiReportPreview reviewer = new guiReportPreview(report, BOSCommon.Constants.Report.DevInvoiceItemReportPath, false);
+                    reviewer.Show();
+                }
             }
         }
 
@@ -4894,6 +5095,24 @@ namespace BOSERP.Modules.BatchProduct
                     label.Text = objBranchsInfo.BRBranchContactFax;
                 }
             }
+            string stisBKV = ADConfigValueUtility.GetConfigTextByGroupAndValue("IsPrintProductionNormBKV", "true");
+            bool isBKV = bool.Parse(stisBKV != string.Empty ? stisBKV : "false");
+            if (isBKV)
+            {
+                label = (XRLabel)report.Bands[BandKind.ReportFooter].Controls["xrLabelSignature5"];
+                if (label != null)
+                {
+                    label.Text = "Giám đốc sản xuất";
+                }
+            }
+            else
+            {
+                label = (XRLabel)report.Bands[BandKind.ReportFooter].Controls["xrLabelSignature5"];
+                if (label != null)
+                {
+                    label.Text = "Kiểm soát";
+                }
+            }    
         }
 
         public void PrintDeliverySemiProduct()
@@ -5324,6 +5543,17 @@ namespace BOSERP.Modules.BatchProduct
                             {
                                 foreach (MMBatchProductProductionNormItemsInfo parentNode in parentList)
                                 {
+                                    if (item.FK_ARProductionPlanningItemID > 0)
+                                    {
+                                        ARProductionPlanningItemsController objProductionPlanningItemsController = new ARProductionPlanningItemsController();
+                                        ARProductionPlanningItemsInfo objProductionPlanningItemsInfo = new ARProductionPlanningItemsInfo();
+                                        objProductionPlanningItemsInfo = (ARProductionPlanningItemsInfo)objProductionPlanningItemsController.GetObjectByID(item.FK_ARProductionPlanningItemID);
+                                        if (objProductionPlanningItemsInfo != null)
+                                        {
+                                            parentNode.ARProductionPlanningItemProductRemark = objProductionPlanningItemsInfo.ARProductionPlanningItemProductRemark;
+                                        }
+                                    }
+
                                     if (item.MMBatchProductProductionNormItemsSemiProductList == null)
                                     {
                                         item.MMBatchProductProductionNormItemsSemiProductList = new List<MMBatchProductProductionNormItemsInfo>();
@@ -5401,14 +5631,22 @@ namespace BOSERP.Modules.BatchProduct
                                     x.MMOperationName = objOperationsController.GetObjectNameByID(mItem.FK_MMOperationID);
                                     
                                 }
-                                MMBatchProductItemOutSourcingsInfo objBatchProductItemOutSourcingsInfo = entity.BatchProductItemOutSourcingList.Where(y => y.FK_MMBatchProductProductionNormItemID == x.MMBatchProductProductionNormItemID && y.MMBatchProductItemOutSourcingStatus == "Approved" && y.MMBatchProductItemOutSourcingResourceType == "Inventory").FirstOrDefault();
+                                MMBatchProductItemOutSourcingsInfo objBatchProductItemOutSourcingsInfo = entity.BatchProductItemOutSourcingList.Where(y => y.FK_MMBatchProductProductionNormItemID == x.MMBatchProductProductionNormItemID 
+                                && y.MMBatchProductItemOutSourcingStatus == "Approved" && y.MMBatchProductItemOutSourcingResourceType == "Inventory").FirstOrDefault();
                                 if (objBatchProductItemOutSourcingsInfo != null)
                                 {
                                     x.MMBatchProductItemOutSourcingProductQty = objBatchProductItemOutSourcingsInfo.MMBatchProductItemOutSourcingProductQty;
-                                    x.MMBatchProductProductionNormItemNeedMakeQty = (x.MMBatchProductProductionNormItemQuantity * (decimal)1.02) - (x.MMBatchProductItemOutSourcingProductQty == null ? 0 : x.MMBatchProductItemOutSourcingProductQty);
+                                    x.MMBatchProductProductionNormItemNeedMakeQty = (x.MMBatchProductProductionNormItemQuantity *(decimal)( 1.02) - (x.MMBatchProductItemOutSourcingProductQty == null ? 0 : x.MMBatchProductItemOutSourcingProductQty));
                                 }
                                 else
-                                    x.MMBatchProductProductionNormItemNeedMakeQty = (x.MMBatchProductProductionNormItemQuantity * (decimal)1.02);
+                                {
+                                    objBatchProductItemOutSourcingsInfo = entity.BatchProductItemOutSourcingList.Where(y => y.FK_MMBatchProductProductionNormItemID == x.MMBatchProductProductionNormItemParentID 
+                                    && y.MMBatchProductItemOutSourcingStatus == "Approved" && y.MMBatchProductItemOutSourcingResourceType == "Inventory").FirstOrDefault();
+                                    if (objBatchProductItemOutSourcingsInfo != null)
+                                        x.MMBatchProductProductionNormItemNeedMakeQty = x.MMBatchProductProductionNormItemQuantity * (decimal)(1.02)
+                                            - (objBatchProductItemOutSourcingsInfo.MMBatchProductItemOutSourcingProductQty * x.MMBatchProductProductionNormItemQuantityPerOne);
+                                    else x.MMBatchProductProductionNormItemNeedMakeQty = x.MMBatchProductProductionNormItemQuantity * (decimal)(1.02);
+                                }
                                 mProcesssItem = mProcesssCtrl.GetByItemID(x.MMBatchProductProductionNormItemID).FirstOrDefault();
                                 if (mProcesssItem != null)
                                 {

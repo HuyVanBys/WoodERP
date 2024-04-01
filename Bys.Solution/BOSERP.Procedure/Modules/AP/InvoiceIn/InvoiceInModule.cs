@@ -233,7 +233,16 @@ namespace BOSERP.Modules.InvoiceIn
                     return 0;
                 }
             }
-
+            APInvoiceInTransactionsController objInvoiceInTransactions = new APInvoiceInTransactionsController();
+            List<APInvoiceInTransactionsInfo> transactionList = objInvoiceInTransactions.CheckAvailableVATInfo(objInvoiceInsInfo.APInvoiceInSupplierNo, objInvoiceInsInfo.APInvoiceInVATDate, objInvoiceInsInfo.APInvoiceInVATSymbol, objInvoiceInsInfo.APInvoiceInTaxNumber);
+            if (transactionList != null && transactionList.Count() > 0)
+            {
+                if (MessageBox.Show(String.Format("Hoá đơn kê khai đã tồn tại (Số hoá đơn: {0}, số seri: {1}, mã số thuế: {2}), có lưu lại chứng từ không?", objInvoiceInsInfo.APInvoiceInSupplierNo
+                                                                                                                                                           , objInvoiceInsInfo.APInvoiceInVATSymbol
+                                                                                                                                                           , objInvoiceInsInfo.APInvoiceInTaxNumber)
+                                                                        , CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    return 0;
+            }
             UpdateTotalCost();
             UpdateTotalQuantity();
             APPurchaseOrdersController objPurchaseOrderController = new APPurchaseOrdersController();

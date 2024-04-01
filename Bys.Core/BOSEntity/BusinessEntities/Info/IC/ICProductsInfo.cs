@@ -2579,7 +2579,10 @@ namespace BOSERP
         public string ICProductColorPaintA { get; set; }
         public string ICProductColorPaintB { get; set; }
         public string ICProductColorPaintC { get; set; }
-        public string ICProductPaintProcess { get; set; }
+        public string ICProductPaintProcessA { get; set; }
+        public string ICProductPaintProcessB { get; set; }
+        public string ICProductPaintProcessC { get; set; }
+        public string ICProductPaintProcessDefault { get; set; }
         #endregion
     }
     #endregion

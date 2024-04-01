@@ -1135,6 +1135,7 @@ namespace BOSERP.Modules.GeneralAccounting
                             objAllocationCostObjectTransInfo.FK_ACCostObjectID = item.FK_ACCostObjectID;
                             objAllocationCostObjectTransInfo.FK_ACCostObjectItemID = item.ACCostObjectItemID;
                             objAllocationCostObjectTransInfo.ACAllocationCostObjectTranCostObjectName = item.ACCostObjectItemCostObjectName;
+                            objAllocationCostObjectTransInfo.ACAllocationCostObjectTranTotalAmount = item.ACCostObjectItemTotalAmount;
                             objAllocationCostObjectTransInfo.ACAllocationCostObjectTranDepreciatedAmount = item.ACCostObjectItemAllocatedAmount; // Giá trị đã phân bổ
                             objAllocationCostObjectTransInfo.ACAllocationCostObjectTranRemainedAmount = item.ACAllocationCostObjectTranRemainedAmount; //Giá trị còn lại
                             objAllocationCostObjectTransInfo.ACAllocationCostObjectTranAmount = Math.Min(item.ACAllocationCostObjectTranRemainedAmount, item.ACCostObjectItemAllocationMonthAmount); //Giá trị khấu hao kỳ

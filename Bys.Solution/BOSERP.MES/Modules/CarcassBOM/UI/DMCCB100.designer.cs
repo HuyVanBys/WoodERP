@@ -119,6 +119,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_tcDetailInfo = new BOSComponent.BOSTabControl(this.components);
             this.tpSemiProducts = new DevExpress.XtraTab.XtraTabPage();
             this.bosPanel8 = new BOSComponent.BOSPanel(this.components);
+            this.fld_btnPrintMaterial = new BOSComponent.BOSButton(this.components);
             this.bosLabel51 = new BOSComponent.BOSLabel(this.components);
             this.bosLookupEdit1 = new BOSComponent.BOSLookupEdit(this.components);
             this.bosLabel50 = new BOSComponent.BOSLabel(this.components);
@@ -136,6 +137,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosLabel4 = new BOSComponent.BOSLabel(this.components);
             this.fld_lkeCarcassForCopy = new BOSComponent.BOSLookupEdit(this.components);
             this.fld_radPropertiesOrProcess = new BOSComponent.BOSRadioGroup(this.components);
+            this.fld_btnUpdatePaint = new BOSComponent.BOSButton(this.components);
             this.fld_btnSave = new BOSComponent.BOSButton(this.components);
             this.tpProductStructure = new DevExpress.XtraTab.XtraTabPage();
             this.bosPanel4 = new BOSComponent.BOSPanel(this.components);
@@ -437,7 +439,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(2232, 876);
+            this.bosPanel1.Size = new System.Drawing.Size(2330, 925);
             this.bosPanel1.TabIndex = 6;
             // 
             // bosTabControl1
@@ -456,7 +458,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosTabControl1.Name = "bosTabControl1";
             this.bosTabControl1.Screen = null;
             this.bosTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.bosTabControl1.Size = new System.Drawing.Size(2232, 876);
+            this.bosTabControl1.Size = new System.Drawing.Size(2330, 925);
             this.bosTabControl1.TabIndex = 0;
             this.bosTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -467,7 +469,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.xtraTabPage1.Controls.Add(this.bosPanel2);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(2230, 851);
+            this.xtraTabPage1.Size = new System.Drawing.Size(2328, 900);
             this.xtraTabPage1.Text = "Danh sách sản phẩm";
             // 
             // bosPanel2
@@ -505,7 +507,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel2.Location = new System.Drawing.Point(0, 0);
             this.bosPanel2.Name = "bosPanel2";
             this.bosPanel2.Screen = null;
-            this.bosPanel2.Size = new System.Drawing.Size(2230, 851);
+            this.bosPanel2.Size = new System.Drawing.Size(2328, 900);
             this.bosPanel2.TabIndex = 0;
             // 
             // fld_cbbBOMStatus
@@ -1074,7 +1076,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosGroupControl1.Location = new System.Drawing.Point(3, 94);
             this.bosGroupControl1.Name = "bosGroupControl1";
             this.bosGroupControl1.Screen = null;
-            this.bosGroupControl1.Size = new System.Drawing.Size(2223, 730);
+            this.bosGroupControl1.Size = new System.Drawing.Size(2321, 779);
             this.bosGroupControl1.TabIndex = 22;
             this.bosGroupControl1.Text = "Danh sách sản phẩm";
             // 
@@ -1097,14 +1099,14 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_dgcICProductCarcass.Name = "fld_dgcICProductCarcass";
             this.fld_dgcICProductCarcass.PrintReport = false;
             this.fld_dgcICProductCarcass.Screen = null;
-            this.fld_dgcICProductCarcass.Size = new System.Drawing.Size(2219, 705);
+            this.fld_dgcICProductCarcass.Size = new System.Drawing.Size(2317, 754);
             this.fld_dgcICProductCarcass.TabIndex = 0;
             // 
             // CarrcassBOMPage
             // 
             this.CarrcassBOMPage.Controls.Add(this.bosPanel3);
             this.CarrcassBOMPage.Name = "CarrcassBOMPage";
-            this.CarrcassBOMPage.Size = new System.Drawing.Size(2216, 844);
+            this.CarrcassBOMPage.Size = new System.Drawing.Size(2314, 893);
             this.CarrcassBOMPage.Text = "Định mức";
             // 
             // bosPanel3
@@ -1124,7 +1126,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel3.Location = new System.Drawing.Point(0, 0);
             this.bosPanel3.Name = "bosPanel3";
             this.bosPanel3.Screen = null;
-            this.bosPanel3.Size = new System.Drawing.Size(2216, 844);
+            this.bosPanel3.Size = new System.Drawing.Size(2314, 893);
             this.bosPanel3.TabIndex = 0;
             // 
             // bosTabControl4
@@ -1143,7 +1145,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosTabControl4.Name = "bosTabControl4";
             this.bosTabControl4.Screen = null;
             this.bosTabControl4.SelectedTabPage = this.xtraTabPage8;
-            this.bosTabControl4.Size = new System.Drawing.Size(2216, 844);
+            this.bosTabControl4.Size = new System.Drawing.Size(2314, 893);
             this.bosTabControl4.TabIndex = 2;
             this.bosTabControl4.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage8,
@@ -1154,7 +1156,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.xtraTabPage8.Controls.Add(this.bosPanel7);
             this.xtraTabPage8.Name = "xtraTabPage8";
-            this.xtraTabPage8.Size = new System.Drawing.Size(2214, 819);
+            this.xtraTabPage8.Size = new System.Drawing.Size(2312, 868);
             this.xtraTabPage8.Text = "Thông tin";
             // 
             // bosPanel7
@@ -1182,7 +1184,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel7.Location = new System.Drawing.Point(0, 0);
             this.bosPanel7.Name = "bosPanel7";
             this.bosPanel7.Screen = null;
-            this.bosPanel7.Size = new System.Drawing.Size(2214, 819);
+            this.bosPanel7.Size = new System.Drawing.Size(2312, 868);
             this.bosPanel7.TabIndex = 25;
             // 
             // bosButton7
@@ -2295,7 +2297,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_tcDetailInfo.Name = "fld_tcDetailInfo";
             this.fld_tcDetailInfo.Screen = null;
             this.fld_tcDetailInfo.SelectedTabPage = this.tpSemiProducts;
-            this.fld_tcDetailInfo.Size = new System.Drawing.Size(2207, 658);
+            this.fld_tcDetailInfo.Size = new System.Drawing.Size(2305, 707);
             this.fld_tcDetailInfo.TabIndex = 1;
             this.fld_tcDetailInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tpSemiProducts,
@@ -2308,7 +2310,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.tpSemiProducts.Controls.Add(this.bosPanel8);
             this.tpSemiProducts.Name = "tpSemiProducts";
-            this.tpSemiProducts.Size = new System.Drawing.Size(2205, 633);
+            this.tpSemiProducts.Size = new System.Drawing.Size(2303, 682);
             this.tpSemiProducts.Text = "Bán thành phẩm";
             // 
             // bosPanel8
@@ -2323,6 +2325,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel8.BOSFieldRelation = null;
             this.bosPanel8.BOSPrivilege = null;
             this.bosPanel8.BOSPropertyName = null;
+            this.bosPanel8.Controls.Add(this.fld_btnPrintMaterial);
             this.bosPanel8.Controls.Add(this.bosLabel51);
             this.bosPanel8.Controls.Add(this.bosLookupEdit1);
             this.bosPanel8.Controls.Add(this.bosLabel50);
@@ -2335,13 +2338,33 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel8.Controls.Add(this.bosLabel38);
             this.bosPanel8.Controls.Add(this.bosLine2);
             this.bosPanel8.Controls.Add(this.fld_radPropertiesOrProcess);
+            this.bosPanel8.Controls.Add(this.fld_btnUpdatePaint);
             this.bosPanel8.Controls.Add(this.fld_btnSave);
             this.bosPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bosPanel8.Location = new System.Drawing.Point(0, 0);
             this.bosPanel8.Name = "bosPanel8";
             this.bosPanel8.Screen = null;
-            this.bosPanel8.Size = new System.Drawing.Size(2205, 633);
+            this.bosPanel8.Size = new System.Drawing.Size(2303, 682);
             this.bosPanel8.TabIndex = 115;
+            // 
+            // fld_btnPrintMaterial
+            // 
+            this.fld_btnPrintMaterial.BOSComment = null;
+            this.fld_btnPrintMaterial.BOSDataMember = null;
+            this.fld_btnPrintMaterial.BOSDataSource = null;
+            this.fld_btnPrintMaterial.BOSDescription = null;
+            this.fld_btnPrintMaterial.BOSError = null;
+            this.fld_btnPrintMaterial.BOSFieldGroup = null;
+            this.fld_btnPrintMaterial.BOSFieldRelation = null;
+            this.fld_btnPrintMaterial.BOSPrivilege = null;
+            this.fld_btnPrintMaterial.BOSPropertyName = null;
+            this.fld_btnPrintMaterial.Location = new System.Drawing.Point(958, 17);
+            this.fld_btnPrintMaterial.Name = "fld_btnPrintMaterial";
+            this.fld_btnPrintMaterial.Screen = null;
+            this.fld_btnPrintMaterial.Size = new System.Drawing.Size(134, 27);
+            this.fld_btnPrintMaterial.TabIndex = 457;
+            this.fld_btnPrintMaterial.Text = "In định mức nguyên liệu";
+            this.fld_btnPrintMaterial.Click += new System.EventHandler(this.bosButton8_Click);
             // 
             // bosLabel51
             // 
@@ -2543,7 +2566,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_dgcICProducts.Name = "fld_dgcICProducts";
             this.fld_dgcICProducts.PrintReport = false;
             this.fld_dgcICProducts.Screen = null;
-            this.fld_dgcICProducts.Size = new System.Drawing.Size(2192, 538);
+            this.fld_dgcICProducts.Size = new System.Drawing.Size(2290, 587);
             this.fld_dgcICProducts.TabIndex = 117;
             this.fld_dgcICProducts.Tag = "DC";
             // 
@@ -2559,7 +2582,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosButton3.BOSFieldRelation = null;
             this.bosButton3.BOSPrivilege = null;
             this.bosButton3.BOSPropertyName = null;
-            this.bosButton3.Location = new System.Drawing.Point(2180, 3);
+            this.bosButton3.Location = new System.Drawing.Point(2278, 3);
             this.bosButton3.Name = "bosButton3";
             this.bosButton3.Screen = null;
             this.bosButton3.Size = new System.Drawing.Size(22, 22);
@@ -2796,6 +2819,25 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_radPropertiesOrProcess.Size = new System.Drawing.Size(251, 27);
             this.fld_radPropertiesOrProcess.TabIndex = 109;
             // 
+            // fld_btnUpdatePaint
+            // 
+            this.fld_btnUpdatePaint.BOSComment = null;
+            this.fld_btnUpdatePaint.BOSDataMember = null;
+            this.fld_btnUpdatePaint.BOSDataSource = null;
+            this.fld_btnUpdatePaint.BOSDescription = null;
+            this.fld_btnUpdatePaint.BOSError = null;
+            this.fld_btnUpdatePaint.BOSFieldGroup = null;
+            this.fld_btnUpdatePaint.BOSFieldRelation = null;
+            this.fld_btnUpdatePaint.BOSPrivilege = null;
+            this.fld_btnUpdatePaint.BOSPropertyName = null;
+            this.fld_btnUpdatePaint.Location = new System.Drawing.Point(819, 17);
+            this.fld_btnUpdatePaint.Name = "fld_btnUpdatePaint";
+            this.fld_btnUpdatePaint.Screen = null;
+            this.fld_btnUpdatePaint.Size = new System.Drawing.Size(125, 27);
+            this.fld_btnUpdatePaint.TabIndex = 108;
+            this.fld_btnUpdatePaint.Text = "Cập nhật Sơn";
+            this.fld_btnUpdatePaint.Click += new System.EventHandler(this.fld_btnUpdatePaint_Click);
+            // 
             // fld_btnSave
             // 
             this.fld_btnSave.BOSComment = null;
@@ -2820,7 +2862,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.tpProductStructure.Controls.Add(this.bosPanel4);
             this.tpProductStructure.Name = "tpProductStructure";
-            this.tpProductStructure.Size = new System.Drawing.Size(2191, 626);
+            this.tpProductStructure.Size = new System.Drawing.Size(2303, 682);
             this.tpProductStructure.Text = "Cây định mức";
             // 
             // bosPanel4
@@ -2842,7 +2884,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel4.Location = new System.Drawing.Point(0, 0);
             this.bosPanel4.Name = "bosPanel4";
             this.bosPanel4.Screen = null;
-            this.bosPanel4.Size = new System.Drawing.Size(2191, 626);
+            this.bosPanel4.Size = new System.Drawing.Size(2303, 682);
             this.bosPanel4.TabIndex = 0;
             // 
             // fld_btnSaveBOMTree
@@ -2908,7 +2950,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_trlICProductItems.Name = "fld_trlICProductItems";
             this.fld_trlICProductItems.ParentFieldName = "ICProductItemParentID";
             this.fld_trlICProductItems.Screen = null;
-            this.fld_trlICProductItems.Size = new System.Drawing.Size(2188, 578);
+            this.fld_trlICProductItems.Size = new System.Drawing.Size(2300, 634);
             this.fld_trlICProductItems.TabIndex = 94;
             this.fld_trlICProductItems.Tag = "DC";
             // 
@@ -2916,7 +2958,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.fld_tabPackageNo.Controls.Add(this.fld_pnlPackageDetail);
             this.fld_tabPackageNo.Name = "fld_tabPackageNo";
-            this.fld_tabPackageNo.Size = new System.Drawing.Size(2191, 626);
+            this.fld_tabPackageNo.Size = new System.Drawing.Size(2303, 682);
             this.fld_tabPackageNo.Text = "Danh sách kiện";
             // 
             // fld_pnlPackageDetail
@@ -2934,7 +2976,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_pnlPackageDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fld_pnlPackageDetail.Location = new System.Drawing.Point(0, 0);
             this.fld_pnlPackageDetail.Name = "fld_pnlPackageDetail";
-            this.fld_pnlPackageDetail.Size = new System.Drawing.Size(2191, 626);
+            this.fld_pnlPackageDetail.Size = new System.Drawing.Size(2303, 682);
             this.fld_pnlPackageDetail.TabIndex = 414;
             // 
             // bosLabel45
@@ -2975,7 +3017,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.fld_splTicket.Panel2.Controls.Add(this.bosLine9);
             this.fld_splTicket.Panel2.Text = "Panel2";
-            this.fld_splTicket.Size = new System.Drawing.Size(2197, 589);
+            this.fld_splTicket.Size = new System.Drawing.Size(2309, 645);
             this.fld_splTicket.SplitterPosition = 830;
             this.fld_splTicket.TabIndex = 411;
             this.fld_splTicket.Text = "splitContainerControl2";
@@ -2997,7 +3039,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosLine8.Location = new System.Drawing.Point(0, 0);
             this.bosLine8.Name = "bosLine8";
             this.bosLine8.Screen = null;
-            this.bosLine8.Size = new System.Drawing.Size(830, 585);
+            this.bosLine8.Size = new System.Drawing.Size(830, 641);
             this.bosLine8.TabIndex = 405;
             this.bosLine8.TabStop = false;
             this.bosLine8.Text = "Thông tin kiện";
@@ -3022,7 +3064,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_dgcICProductPackages.Name = "fld_dgcICProductPackages";
             this.fld_dgcICProductPackages.PrintReport = false;
             this.fld_dgcICProductPackages.Screen = null;
-            this.fld_dgcICProductPackages.Size = new System.Drawing.Size(824, 565);
+            this.fld_dgcICProductPackages.Size = new System.Drawing.Size(824, 621);
             this.fld_dgcICProductPackages.TabIndex = 404;
             this.fld_dgcICProductPackages.Tag = "DC";
             // 
@@ -3043,7 +3085,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosLine9.Location = new System.Drawing.Point(0, 0);
             this.bosLine9.Name = "bosLine9";
             this.bosLine9.Screen = null;
-            this.bosLine9.Size = new System.Drawing.Size(1353, 585);
+            this.bosLine9.Size = new System.Drawing.Size(1465, 641);
             this.bosLine9.TabIndex = 404;
             this.bosLine9.TabStop = false;
             this.bosLine9.Text = "Thông tin đóng gói";
@@ -3067,7 +3109,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_dgcMMProductionNormItemPackings.Name = "fld_dgcMMProductionNormItemPackings";
             this.fld_dgcMMProductionNormItemPackings.PrintReport = false;
             this.fld_dgcMMProductionNormItemPackings.Screen = null;
-            this.fld_dgcMMProductionNormItemPackings.Size = new System.Drawing.Size(1347, 565);
+            this.fld_dgcMMProductionNormItemPackings.Size = new System.Drawing.Size(1459, 621);
             this.fld_dgcMMProductionNormItemPackings.TabIndex = 402;
             this.fld_dgcMMProductionNormItemPackings.Tag = "DC";
             // 
@@ -3083,7 +3125,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_btnSavePackeNo.BOSFieldRelation = null;
             this.fld_btnSavePackeNo.BOSPrivilege = null;
             this.fld_btnSavePackeNo.BOSPropertyName = null;
-            this.fld_btnSavePackeNo.Location = new System.Drawing.Point(2115, 621);
+            this.fld_btnSavePackeNo.Location = new System.Drawing.Point(2227, 677);
             this.fld_btnSavePackeNo.Name = "fld_btnSavePackeNo";
             this.fld_btnSavePackeNo.Screen = null;
             this.fld_btnSavePackeNo.Size = new System.Drawing.Size(86, 27);
@@ -3235,7 +3277,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.tpBOM.Controls.Add(this.bosPanel5);
             this.tpBOM.Name = "tpBOM";
-            this.tpBOM.Size = new System.Drawing.Size(2191, 626);
+            this.tpBOM.Size = new System.Drawing.Size(2303, 682);
             this.tpBOM.Text = "Chi tiết định mức";
             // 
             // bosPanel5
@@ -3255,7 +3297,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel5.Location = new System.Drawing.Point(0, 0);
             this.bosPanel5.Name = "bosPanel5";
             this.bosPanel5.Screen = null;
-            this.bosPanel5.Size = new System.Drawing.Size(2191, 626);
+            this.bosPanel5.Size = new System.Drawing.Size(2303, 682);
             this.bosPanel5.TabIndex = 0;
             // 
             // fld_tcBOM
@@ -3276,7 +3318,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_tcBOM.Name = "fld_tcBOM";
             this.fld_tcBOM.Screen = null;
             this.fld_tcBOM.SelectedTabPage = this.fld_tpSemiProduct;
-            this.fld_tcBOM.Size = new System.Drawing.Size(2191, 626);
+            this.fld_tcBOM.Size = new System.Drawing.Size(2303, 682);
             this.fld_tcBOM.TabIndex = 97;
             this.fld_tcBOM.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tpSemiProduct,
@@ -3291,7 +3333,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.fld_tpSemiProduct.Controls.Add(this.bosPanel9);
             this.fld_tpSemiProduct.Name = "fld_tpSemiProduct";
-            this.fld_tpSemiProduct.Size = new System.Drawing.Size(2185, 597);
+            this.fld_tpSemiProduct.Size = new System.Drawing.Size(2297, 653);
             this.fld_tpSemiProduct.Text = "Bán thành phẩm";
             // 
             // bosPanel9
@@ -3319,7 +3361,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel9.Location = new System.Drawing.Point(0, 0);
             this.bosPanel9.Name = "bosPanel9";
             this.bosPanel9.Screen = null;
-            this.bosPanel9.Size = new System.Drawing.Size(2185, 597);
+            this.bosPanel9.Size = new System.Drawing.Size(2297, 653);
             this.bosPanel9.TabIndex = 96;
             // 
             // bosButton6
@@ -3523,7 +3565,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_trlProductionNormItemTreeList.Location = new System.Drawing.Point(3, 71);
             this.fld_trlProductionNormItemTreeList.Name = "fld_trlProductionNormItemTreeList";
             this.fld_trlProductionNormItemTreeList.Screen = null;
-            this.fld_trlProductionNormItemTreeList.Size = new System.Drawing.Size(2179, 523);
+            this.fld_trlProductionNormItemTreeList.Size = new System.Drawing.Size(2291, 579);
             this.fld_trlProductionNormItemTreeList.TabIndex = 94;
             this.fld_trlProductionNormItemTreeList.Tag = "DC";
             this.fld_trlProductionNormItemTreeList.NodeCellStyle += new DevExpress.XtraTreeList.GetCustomNodeCellStyleEventHandler(this.fld_trlProductionNormItemTreeList_NodeCellStyle);
@@ -3552,7 +3594,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.fld_tpHardware.Controls.Add(this.bosPanel10);
             this.fld_tpHardware.Name = "fld_tpHardware";
-            this.fld_tpHardware.Size = new System.Drawing.Size(2171, 590);
+            this.fld_tpHardware.Size = new System.Drawing.Size(2297, 653);
             this.fld_tpHardware.Text = "Hardware";
             // 
             // bosPanel10
@@ -3585,7 +3627,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel10.Location = new System.Drawing.Point(0, 0);
             this.bosPanel10.Name = "bosPanel10";
             this.bosPanel10.Screen = null;
-            this.bosPanel10.Size = new System.Drawing.Size(2171, 590);
+            this.bosPanel10.Size = new System.Drawing.Size(2297, 653);
             this.bosPanel10.TabIndex = 132;
             // 
             // fld_txtDepreciationRateHardware
@@ -3994,7 +4036,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_trlMMProductionNormItemsHardware.Name = "fld_trlMMProductionNormItemsHardware";
             this.fld_trlMMProductionNormItemsHardware.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.fld_trlMMProductionNormItemsHardware.Screen = null;
-            this.fld_trlMMProductionNormItemsHardware.Size = new System.Drawing.Size(2165, 514);
+            this.fld_trlMMProductionNormItemsHardware.Size = new System.Drawing.Size(2291, 577);
             this.fld_trlMMProductionNormItemsHardware.TabIndex = 103;
             this.fld_trlMMProductionNormItemsHardware.Tag = "DC";
             this.fld_trlMMProductionNormItemsHardware.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fld_trlMMProductionNormItemsHardware_KeyUp);
@@ -4028,7 +4070,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.fld_tpPaint.Controls.Add(this.fld_pnlPaint);
             this.fld_tpPaint.Name = "fld_tpPaint";
-            this.fld_tpPaint.Size = new System.Drawing.Size(2171, 590);
+            this.fld_tpPaint.Size = new System.Drawing.Size(2297, 653);
             this.fld_tpPaint.Text = "Sơn";
             // 
             // fld_pnlPaint
@@ -4067,7 +4109,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_pnlPaint.Location = new System.Drawing.Point(0, 0);
             this.fld_pnlPaint.Name = "fld_pnlPaint";
             this.fld_pnlPaint.Screen = null;
-            this.fld_pnlPaint.Size = new System.Drawing.Size(2159, 576);
+            this.fld_pnlPaint.Size = new System.Drawing.Size(2285, 639);
             this.fld_pnlPaint.TabIndex = 0;
             // 
             // fld_txtDepreciationRateIngredientPaint
@@ -4209,7 +4251,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosButton5.BOSFieldRelation = null;
             this.bosButton5.BOSPrivilege = null;
             this.bosButton5.BOSPropertyName = null;
-            this.bosButton5.Location = new System.Drawing.Point(2134, 3);
+            this.bosButton5.Location = new System.Drawing.Point(2260, 3);
             this.bosButton5.Name = "bosButton5";
             this.bosButton5.Screen = null;
             this.bosButton5.Size = new System.Drawing.Size(22, 22);
@@ -4327,7 +4369,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.splitContainerControl1.Panel2.Controls.Add(this.bosLabel36);
             this.splitContainerControl1.Panel2.Controls.Add(this.fld_trlMMProductionNormItemsPaint);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(2151, 499);
+            this.splitContainerControl1.Size = new System.Drawing.Size(2277, 562);
             this.splitContainerControl1.SplitterPosition = 695;
             this.splitContainerControl1.TabIndex = 426;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -4397,7 +4439,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_dgcMMProductionNormItemHavePaint.Name = "fld_dgcMMProductionNormItemHavePaint";
             this.fld_dgcMMProductionNormItemHavePaint.PrintReport = false;
             this.fld_dgcMMProductionNormItemHavePaint.Screen = null;
-            this.fld_dgcMMProductionNormItemHavePaint.Size = new System.Drawing.Size(681, 472);
+            this.fld_dgcMMProductionNormItemHavePaint.Size = new System.Drawing.Size(681, 535);
             this.fld_dgcMMProductionNormItemHavePaint.TabIndex = 138;
             // 
             // fld_btnViewDetailPain
@@ -4465,7 +4507,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_trlMMProductionNormItemsPaint.Name = "fld_trlMMProductionNormItemsPaint";
             this.fld_trlMMProductionNormItemsPaint.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.fld_trlMMProductionNormItemsPaint.Screen = null;
-            this.fld_trlMMProductionNormItemsPaint.Size = new System.Drawing.Size(1449, 472);
+            this.fld_trlMMProductionNormItemsPaint.Size = new System.Drawing.Size(1575, 535);
             this.fld_trlMMProductionNormItemsPaint.TabIndex = 131;
             this.fld_trlMMProductionNormItemsPaint.Tag = "DC";
             this.fld_trlMMProductionNormItemsPaint.CellValueChanged += new DevExpress.XtraTreeList.CellValueChangedEventHandler(this.fld_trlMMProductionNormItemsPaint_CellValueChanged);
@@ -4781,7 +4823,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.fld_tpPackaging.Controls.Add(this.bosPanel13);
             this.fld_tpPackaging.Name = "fld_tpPackaging";
-            this.fld_tpPackaging.Size = new System.Drawing.Size(2171, 590);
+            this.fld_tpPackaging.Size = new System.Drawing.Size(2297, 653);
             this.fld_tpPackaging.Text = "Phụ liệu đóng gói";
             // 
             // bosPanel13
@@ -4819,7 +4861,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel13.Location = new System.Drawing.Point(0, 0);
             this.bosPanel13.Name = "bosPanel13";
             this.bosPanel13.Screen = null;
-            this.bosPanel13.Size = new System.Drawing.Size(2171, 590);
+            this.bosPanel13.Size = new System.Drawing.Size(2297, 653);
             this.bosPanel13.TabIndex = 0;
             // 
             // fld_txtDepreciationRateIngredientPackaging
@@ -4878,7 +4920,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_tlcProctionNormItemPackings.OptionsView.NewItemRowPosition = DevExpress.XtraTreeList.TreeListNewItemRowPosition.Top;
             this.fld_tlcProctionNormItemPackings.PackagingList = null;
             this.fld_tlcProctionNormItemPackings.Screen = null;
-            this.fld_tlcProctionNormItemPackings.Size = new System.Drawing.Size(2160, 479);
+            this.fld_tlcProctionNormItemPackings.Size = new System.Drawing.Size(2286, 542);
             this.fld_tlcProctionNormItemPackings.TabIndex = 436;
             this.fld_tlcProctionNormItemPackings.Tag = "DC";
             // 
@@ -5323,7 +5365,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosLabel20.BOSFieldRelation = "";
             this.bosLabel20.BOSPrivilege = "";
             this.bosLabel20.BOSPropertyName = "";
-            this.bosLabel20.Location = new System.Drawing.Point(23, 556);
+            this.bosLabel20.Location = new System.Drawing.Point(23, 619);
             this.bosLabel20.Name = "bosLabel20";
             this.bosLabel20.Screen = null;
             this.bosLabel20.Size = new System.Drawing.Size(21, 13);
@@ -5349,7 +5391,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosLabel19.BOSFieldRelation = "";
             this.bosLabel19.BOSPrivilege = "";
             this.bosLabel19.BOSPropertyName = "";
-            this.bosLabel19.Location = new System.Drawing.Point(23, 574);
+            this.bosLabel19.Location = new System.Drawing.Point(23, 637);
             this.bosLabel19.Name = "bosLabel19";
             this.bosLabel19.Screen = null;
             this.bosLabel19.Size = new System.Drawing.Size(21, 13);
@@ -5375,7 +5417,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosLabel18.BOSFieldRelation = "";
             this.bosLabel18.BOSPrivilege = "";
             this.bosLabel18.BOSPropertyName = "";
-            this.bosLabel18.Location = new System.Drawing.Point(50, 572);
+            this.bosLabel18.Location = new System.Drawing.Point(50, 635);
             this.bosLabel18.Name = "bosLabel18";
             this.bosLabel18.Screen = null;
             this.bosLabel18.Size = new System.Drawing.Size(387, 13);
@@ -5401,7 +5443,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosLabel16.BOSFieldRelation = "";
             this.bosLabel16.BOSPrivilege = "";
             this.bosLabel16.BOSPropertyName = "";
-            this.bosLabel16.Location = new System.Drawing.Point(50, 556);
+            this.bosLabel16.Location = new System.Drawing.Point(50, 619);
             this.bosLabel16.Name = "bosLabel16";
             this.bosLabel16.Screen = null;
             this.bosLabel16.Size = new System.Drawing.Size(182, 13);
@@ -5432,7 +5474,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.fld_tpOther.Controls.Add(this.bosPanel11);
             this.fld_tpOther.Name = "fld_tpOther";
-            this.fld_tpOther.Size = new System.Drawing.Size(2171, 590);
+            this.fld_tpOther.Size = new System.Drawing.Size(2297, 653);
             this.fld_tpOther.Text = "Vật tư khác";
             // 
             // bosPanel11
@@ -5465,7 +5507,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel11.Location = new System.Drawing.Point(0, 0);
             this.bosPanel11.Name = "bosPanel11";
             this.bosPanel11.Screen = null;
-            this.bosPanel11.Size = new System.Drawing.Size(2171, 590);
+            this.bosPanel11.Size = new System.Drawing.Size(2297, 653);
             this.bosPanel11.TabIndex = 141;
             // 
             // fld_txtDepreciationRateGeneralMaterial
@@ -5718,7 +5760,8 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_lkeICProductMaterialID.BOSPrivilege = null;
             this.fld_lkeICProductMaterialID.BOSPropertyName = "EditValue";
             this.fld_lkeICProductMaterialID.BOSSelectType = "ICProductType";
-            this.fld_lkeICProductMaterialID.BOSSelectTypeValue = "Hardware;IngredientPackaging;Verneer;ArtificialBoard;IngredientPaint;Equipment";
+            this.fld_lkeICProductMaterialID.BOSSelectTypeValue = "Hardware;IngredientPackaging;Verneer;ArtificialBoard;IngredientPaint;Equipment;Se" +
+    "miProduct;Product;Ingredient;Material;Roundwood;Lumber;Glasses;Steel;BoardOf";
             this.fld_lkeICProductMaterialID.CurrentDisplayText = null;
             this.fld_lkeICProductMaterialID.Location = new System.Drawing.Point(81, 38);
             this.fld_lkeICProductMaterialID.MenuManager = this.screenToolbar;
@@ -5778,7 +5821,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_dgcMMProductionNormItems.Name = "fld_dgcMMProductionNormItems";
             this.fld_dgcMMProductionNormItems.PrintReport = false;
             this.fld_dgcMMProductionNormItems.Screen = null;
-            this.fld_dgcMMProductionNormItems.Size = new System.Drawing.Size(2159, 490);
+            this.fld_dgcMMProductionNormItems.Size = new System.Drawing.Size(2285, 553);
             this.fld_dgcMMProductionNormItems.TabIndex = 137;
             // 
             // fld_btnUpdateFromConfigMaterial
@@ -5831,7 +5874,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             // 
             this.xtraTabPage9.Controls.Add(this.bosPanel6);
             this.xtraTabPage9.Name = "xtraTabPage9";
-            this.xtraTabPage9.Size = new System.Drawing.Size(2200, 812);
+            this.xtraTabPage9.Size = new System.Drawing.Size(2312, 868);
             this.xtraTabPage9.Text = "Hình ảnh đính kèm";
             // 
             // bosPanel6
@@ -5853,7 +5896,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.bosPanel6.Location = new System.Drawing.Point(0, 0);
             this.bosPanel6.Name = "bosPanel6";
             this.bosPanel6.Screen = null;
-            this.bosPanel6.Size = new System.Drawing.Size(2200, 812);
+            this.bosPanel6.Size = new System.Drawing.Size(2312, 868);
             this.bosPanel6.TabIndex = 0;
             // 
             // fld_lvImageList
@@ -5864,7 +5907,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_lvImageList.HideSelection = false;
             this.fld_lvImageList.Location = new System.Drawing.Point(3, 38);
             this.fld_lvImageList.Name = "fld_lvImageList";
-            this.fld_lvImageList.Size = new System.Drawing.Size(2194, 771);
+            this.fld_lvImageList.Size = new System.Drawing.Size(2306, 827);
             this.fld_lvImageList.TabIndex = 20;
             this.fld_lvImageList.UseCompatibleStateImageBehavior = false;
             this.fld_lvImageList.DoubleClick += new System.EventHandler(this.fld_lvImageList_DoubleClick);
@@ -5913,7 +5956,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_xtpProfile.Controls.Add(this.fld_btnSaveProfile);
             this.fld_xtpProfile.Controls.Add(this.fld_dgcMMProfileManagementItems);
             this.fld_xtpProfile.Name = "fld_xtpProfile";
-            this.fld_xtpProfile.Size = new System.Drawing.Size(2200, 812);
+            this.fld_xtpProfile.Size = new System.Drawing.Size(2312, 868);
             this.fld_xtpProfile.Text = "Trang kiểm soát hồ sơ";
             // 
             // fld_btnSaveProfile
@@ -5957,7 +6000,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.fld_dgcMMProfileManagementItems.PrintReport = false;
             this.fld_dgcMMProfileManagementItems.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_dgcMMProfileManagementItems, true);
-            this.fld_dgcMMProfileManagementItems.Size = new System.Drawing.Size(2195, 766);
+            this.fld_dgcMMProfileManagementItems.Size = new System.Drawing.Size(2307, 822);
             this.fld_dgcMMProfileManagementItems.TabIndex = 74;
             this.fld_dgcMMProfileManagementItems.Tag = "DC";
             this.fld_dgcMMProfileManagementItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -6004,10 +6047,10 @@ namespace BOSERP.Modules.CarcassBOM.UI
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(2232, 876);
+            this.ClientSize = new System.Drawing.Size(2330, 925);
             this.Controls.Add(this.bosPanel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMCCB100.IconOptions.Icon")));
-            this.MinimumSize = new System.Drawing.Size(2, 689);
+            this.MinimumSize = new System.Drawing.Size(2, 640);
             this.Name = "DMCCB100";
             this.Text = "Định mức sản phẩm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -6421,5 +6464,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
         private BOSComponent.BOSLabel bosLabel55;
         private AccObjectLookupEdit fld_lkeACObjectAccessKey;
         private BOSComponent.BOSLabel bosLabel60;
+        private BOSComponent.BOSButton fld_btnUpdatePaint;
+        private BOSComponent.BOSButton fld_btnPrintMaterial;
     }
 }

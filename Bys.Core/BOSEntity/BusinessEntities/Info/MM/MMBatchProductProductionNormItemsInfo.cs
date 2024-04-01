@@ -116,6 +116,21 @@ namespace BOSERP
         protected decimal _mMBatchProductProductionNormItemQuantitative;
         protected int _mMBatchProductProductionNormItemRef;
         protected String _mMBatchProductProductionNormItemType;
+        protected string _mMBatchProductProductionNormItemCode01Combo = string.Empty;
+        protected string _mMBatchProductProductionNormItemCode02Combo = string.Empty;
+        protected string _mMBatchProductProductionNormItemCode03Combo = string.Empty;
+        protected string _mMBatchProductProductionNormItemCode04Combo = string.Empty;
+        protected string _mMBatchProductProductionNormItemCode05Combo = string.Empty;
+        protected string _mMBatchProductProductionNormItemCode06Combo = string.Empty;
+        protected string _mMBatchProductProductionNormItemCode07Combo = string.Empty;
+        protected string _mMBatchProductProductionNormItemCode08Combo = string.Empty;
+        protected string _mMBatchProductProductionNormItemCode09Combo = string.Empty;
+        protected string _mMBatchProductProductionNormItemCode10Combo = string.Empty;
+        protected string _mMBatchProductProductionNormItemColorDesc = string.Empty;
+        protected string _mMBatchProductProductionNormItemOtherColor = string.Empty;
+        protected string _mMBatchProductProductionNormItemComplexityType = string.Empty;
+        protected decimal _mMBatchProductProductionNormItemPaintC;
+        protected int _fK_MMFormulaIDPaintC;
         #endregion
 
         #region Public properties
@@ -1307,6 +1322,186 @@ namespace BOSERP
                 }
             }
         }
+        public string MMBatchProductProductionNormItemCode01Combo
+        {
+            get { return _mMBatchProductProductionNormItemCode01Combo; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemCode01Combo)
+                {
+                    _mMBatchProductProductionNormItemCode01Combo = value;
+                    NotifyChanged("MMBatchProductProductionNormItemCode01Combo");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemCode02Combo
+        {
+            get { return _mMBatchProductProductionNormItemCode02Combo; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemCode02Combo)
+                {
+                    _mMBatchProductProductionNormItemCode02Combo = value;
+                    NotifyChanged("MMBatchProductProductionNormItemCode02Combo");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemCode03Combo
+        {
+            get { return _mMBatchProductProductionNormItemCode03Combo; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemCode03Combo)
+                {
+                    _mMBatchProductProductionNormItemCode03Combo = value;
+                    NotifyChanged("MMBatchProductProductionNormItemCode03Combo");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemCode04Combo
+        {
+            get { return _mMBatchProductProductionNormItemCode04Combo; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemCode04Combo)
+                {
+                    _mMBatchProductProductionNormItemCode04Combo = value;
+                    NotifyChanged("MMBatchProductProductionNormItemCode04Combo");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemCode05Combo
+        {
+            get { return _mMBatchProductProductionNormItemCode05Combo; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemCode05Combo)
+                {
+                    _mMBatchProductProductionNormItemCode05Combo = value;
+                    NotifyChanged("MMBatchProductProductionNormItemCode05Combo");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemCode06Combo
+        {
+            get { return _mMBatchProductProductionNormItemCode06Combo; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemCode06Combo)
+                {
+                    _mMBatchProductProductionNormItemCode06Combo = value;
+                    NotifyChanged("MMBatchProductProductionNormItemCode06Combo");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemCode07Combo
+        {
+            get { return _mMBatchProductProductionNormItemCode07Combo; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemCode07Combo)
+                {
+                    _mMBatchProductProductionNormItemCode07Combo = value;
+                    NotifyChanged("MMBatchProductProductionNormItemCode07Combo");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemCode08Combo
+        {
+            get { return _mMBatchProductProductionNormItemCode08Combo; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemCode08Combo)
+                {
+                    _mMBatchProductProductionNormItemCode08Combo = value;
+                    NotifyChanged("MMBatchProductProductionNormItemCode08Combo");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemCode09Combo
+        {
+            get { return _mMBatchProductProductionNormItemCode09Combo; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemCode09Combo)
+                {
+                    _mMBatchProductProductionNormItemCode09Combo = value;
+                    NotifyChanged("MMBatchProductProductionNormItemCode09Combo");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemCode10Combo
+        {
+            get { return _mMBatchProductProductionNormItemCode10Combo; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemCode10Combo)
+                {
+                    _mMBatchProductProductionNormItemCode10Combo = value;
+                    NotifyChanged("MMBatchProductProductionNormItemCode10Combo");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemColorDesc
+        {
+            get { return _mMBatchProductProductionNormItemColorDesc; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemColorDesc)
+                {
+                    _mMBatchProductProductionNormItemColorDesc = value;
+                    NotifyChanged("MMBatchProductProductionNormItemColorDesc");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemOtherColor
+        {
+            get { return _mMBatchProductProductionNormItemOtherColor; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemOtherColor)
+                {
+                    _mMBatchProductProductionNormItemOtherColor = value;
+                    NotifyChanged("MMBatchProductProductionNormItemOtherColor");
+                }
+            }
+        }
+        public string MMBatchProductProductionNormItemComplexityType
+        {
+            get { return _mMBatchProductProductionNormItemComplexityType; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemComplexityType)
+                {
+                    _mMBatchProductProductionNormItemComplexityType = value;
+                    NotifyChanged("MMBatchProductProductionNormItemComplexityType");
+                }
+            }
+        }
+        public decimal MMBatchProductProductionNormItemPaintC
+        {
+            get { return _mMBatchProductProductionNormItemPaintC; }
+            set
+            {
+                if (value != this._mMBatchProductProductionNormItemPaintC)
+                {
+                    _mMBatchProductProductionNormItemPaintC = value;
+                    NotifyChanged("MMBatchProductProductionNormItemPaintC");
+                }
+            }
+        }
+        public int FK_MMFormulaIDPaintC
+        {
+            get { return _fK_MMFormulaIDPaintC; }
+            set
+            {
+                if (value != this._fK_MMFormulaIDPaintC)
+                {
+                    _fK_MMFormulaIDPaintC = value;
+                    NotifyChanged("FK_MMFormulaIDPaintC");
+                }
+            }
+        }
         #endregion
 
 
@@ -1736,6 +1931,10 @@ namespace BOSERP
         public decimal MMBatchProductProductionNormItemNeedMakeQty { get; set; }
         public int MMBatchProductProductionNormItemPaintViscosity { get; set; }
         public string MMBatchProductProductionNormItemPaintExecuteMethod { get; set; }
+        public string ARProductionPlanningItemProductRemark { get; set; }
+        public string MMBatchProductProductionNormItemMeterialDesc { get; set; }
+        public string MMBatchProductProductionNormItemMeterialNo { get; set; }
+        public string MMBatchProductProductionNormItemMeterialMeasureUnitName { get; set; }
         #endregion
     }
     #endregion

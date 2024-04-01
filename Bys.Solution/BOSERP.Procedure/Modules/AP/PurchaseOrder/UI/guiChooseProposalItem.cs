@@ -73,12 +73,12 @@ namespace BOSERP.Modules.PurchaseOrder
                 MessageBox.Show(BaseLocalizedResources.ChooseObjectMessage, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            countTemp = SelectedObjects.Select(o => o.APPurchaseProposalType).Distinct().Count();
-            if (countTemp != 1)
-            {
-                DialogResult rs = MessageBox.Show("Bạn đang chọn các mặt hàng không cùng loại đề nghị. Vui lòng kiểm tra lại!", CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                return;
-            }
+            //countTemp = SelectedObjects.Select(o => o.APPurchaseProposalType).Distinct().Count();
+            //if (countTemp != 1)
+            //{
+            //    DialogResult rs = MessageBox.Show("Bạn đang chọn các mặt hàng không cùng loại đề nghị. Vui lòng kiểm tra lại!", CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //    return;
+            //}
             APProposalItemsInfo objProposalItemsInfo = SelectedObjects.FirstOrDefault();
             if (objProposalItemsInfo != null)
             {

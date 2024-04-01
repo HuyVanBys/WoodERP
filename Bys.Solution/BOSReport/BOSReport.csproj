@@ -243,6 +243,60 @@
     <Compile Include="RP213.Designer.cs">
       <DependentUpon>RP213.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPBatchProductExcelPackingBKV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPBatchProductExcelPackingBKV.Designer.cs">
+      <DependentUpon>RPBatchProductExcelPackingBKV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPBatchProductExcelSemiProductBKV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPBatchProductExcelSemiProductBKV.Designer.cs">
+      <DependentUpon>RPBatchProductExcelSemiProductBKV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPBatchProductExcelSemiProductM2BKV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPBatchProductExcelSemiProductM2BKV.Designer.cs">
+      <DependentUpon>RPBatchProductExcelSemiProductM2BKV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPBatchProductGeneralMaterialExcelBKV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPBatchProductGeneralMaterialExcelBKV.Designer.cs">
+      <DependentUpon>RPBatchProductGeneralMaterialExcelBKV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPBatchProductHardwareExcelBKV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPBatchProductHardwareExcelBKV.Designer.cs">
+      <DependentUpon>RPBatchProductHardwareExcelBKV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPBatchProductPaintExcelBKV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPBatchProductPaintExcelBKV.Designer.cs">
+      <DependentUpon>RPBatchProductPaintExcelBKV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPProductionNormMaterial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPProductionNormMaterial.Designer.cs">
+      <DependentUpon>RPProductionNormMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPTransferProposals.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTransferProposals.Designer.cs">
+      <DependentUpon>RPTransferProposals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP_BatchProductBKV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP_BatchProductBKV.Designer.cs">
+      <DependentUpon>RP_BatchProductBKV.cs</DependentUpon>
+    </Compile>
     <Compile Include="RP_GetTotalShipmentSO.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1431,6 +1485,18 @@
     <Compile Include="RP_PrintWoodPurchaseReceiptA4.Designer.cs">
       <DependentUpon>RP_PrintWoodPurchaseReceiptA4.cs</DependentUpon>
     </Compile>
+    <Compile Include="RP_ProductionPlanningOrderBKV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP_ProductionPlanningOrderBKV.Designer.cs">
+      <DependentUpon>RP_ProductionPlanningOrderBKV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP_ProductionPlanningBKV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP_ProductionPlanningBKV.Designer.cs">
+      <DependentUpon>RP_ProductionPlanningBKV.cs</DependentUpon>
+    </Compile>
     <Compile Include="RP_ProductionPlanning.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2524,6 +2590,42 @@
     <EmbeddedResource Include="RP213.resx">
       <DependentUpon>RP213.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPBatchProductExcelPackingBKV.resx">
+      <DependentUpon>RPBatchProductExcelPackingBKV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPBatchProductExcelSemiProductBKV.resx">
+      <DependentUpon>RPBatchProductExcelSemiProductBKV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPBatchProductExcelSemiProductM2BKV.resx">
+      <DependentUpon>RPBatchProductExcelSemiProductM2BKV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPBatchProductGeneralMaterialExcelBKV.resx">
+      <DependentUpon>RPBatchProductGeneralMaterialExcelBKV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPBatchProductHardwareExcelBKV.resx">
+      <DependentUpon>RPBatchProductHardwareExcelBKV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPBatchProductPaintExcelBKV.resx">
+      <DependentUpon>RPBatchProductPaintExcelBKV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPProductionNormMaterial.resx">
+      <DependentUpon>RPProductionNormMaterial.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTransferProposals.resx">
+      <DependentUpon>RPTransferProposals.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP_BatchProductBKV.resx">
+      <DependentUpon>RP_BatchProductBKV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="RP_GetTotalShipmentSO.resx">
       <DependentUpon>RP_GetTotalShipmentSO.cs</DependentUpon>
     </EmbeddedResource>
@@ -3298,6 +3400,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RP_PrintWoodPurchaseReceiptA4.resx">
       <DependentUpon>RP_PrintWoodPurchaseReceiptA4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP_ProductionPlanningOrderBKV.resx">
+      <DependentUpon>RP_ProductionPlanningOrderBKV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP_ProductionPlanningBKV.resx">
+      <DependentUpon>RP_ProductionPlanningBKV.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="RP_ProductionPlanning.resx">
       <DependentUpon>RP_ProductionPlanning.cs</DependentUpon>

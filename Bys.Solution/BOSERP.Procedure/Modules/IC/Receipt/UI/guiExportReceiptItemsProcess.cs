@@ -131,6 +131,10 @@ namespace BOSERP.Modules.Receipt
             header.Range["I1"].Value = "Đơn giá";
             header.Range["J1"].Value = "Mã kho";
             header.Range["K1"].Value = "Mã lô hàng/ Mã kiện";
+            header.Range["L1"].Value = "Số thanh";
+            header.Range["M1"].Value = "Dày";
+            header.Range["N1"].Value = "Rộng";
+            header.Range["O1"].Value = "Cao";
             worksheet.Range["A:A"].EntireColumn.NumberFormat = "0";
             worksheet.Range["B:B"].EntireColumn.NumberFormat = "@";
             worksheet.Range["C:C"].EntireColumn.NumberFormat = "@";
@@ -142,6 +146,10 @@ namespace BOSERP.Modules.Receipt
             worksheet.Range["I:I"].EntireColumn.NumberFormat = "#,##0.00";
             worksheet.Range["J:J"].EntireColumn.NumberFormat = "@";
             worksheet.Range["K:K"].EntireColumn.NumberFormat = "@";
+            worksheet.Range["L:L"].EntireColumn.NumberFormat = "#,##0.00";
+            worksheet.Range["M:M"].EntireColumn.NumberFormat = "#,##0.00";
+            worksheet.Range["N:N"].EntireColumn.NumberFormat = "#,##0.00";
+            worksheet.Range["O:O"].EntireColumn.NumberFormat = "#,##0.00";
             background.ReportProgress(10);
 
             int index = 2;
@@ -160,6 +168,10 @@ namespace BOSERP.Modules.Receipt
                 worksheet.Range[$"I{index}"].Value = o.ICReceiptItemProductUnitCost;
                 worksheet.Range[$"J{index}"].Value = o.ICStockName.Trim();
                 worksheet.Range[$"K{index}"].Value = o.ICReceiptItemProductSerialNo.Trim();
+                worksheet.Range[$"L{index}"].Value = o.ICReceiptItemWoodQty;
+                worksheet.Range[$"M{index}"].Value = o.ICReceiptItemProductHeight;
+                worksheet.Range[$"N{index}"].Value = o.ICReceiptItemProductWidth;
+                worksheet.Range[$"O{index}"].Value = o.ICReceiptItemProductLength;
                 index++;
                 process = 10 + 100 * index / totalItem;
                 if (process > 100)

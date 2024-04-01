@@ -66,6 +66,7 @@ namespace BOSERP.Modules.BatchProductShedule
             AddGridColumn(strTableName, "AllocationTypeText", "Loại cấp phát");
             AddGridColumn(strTableName, "MMAllocationPlanItemComment", "Ghi chú");
             AddGridColumn(strTableName, "MMBatchProductItemProductSerial", "Mã lô LSX");
+            AddGridColumn(strTableName, "ICSemiProductSizeAndSpecifiCations", "Kích thước/Qui cách");
             base.AddColumnsFromColumnAlias(strTableName, gridView, LstCustomAliasList);
         }
 

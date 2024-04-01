@@ -1,0 +1,2 @@
+﻿Insert into STToolbars values ('Alive', (Select STModuleID from STModules Where STModuleName = 'UpdatePosition'), 1, 'fld_barbtnImportExcel', '', 'ImportExcel', 'Default', N'Import từ Excel', 'Extra', 0, 1, '', 0, '')
+Insert into STToolbarFunctions values ('', (Select Max(STToolbarID) from STToolbars), 'ImportExcel', 'void ImportExcel()', 'BOSERP.Modules.UpdatePosition.UpdatePositionModule', 1)

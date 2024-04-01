@@ -8,6 +8,7 @@ using BOSLib.Extensions;
 using BOSLib.Interfaces;
 using BOSReport;
 using DevExpress.Utils.Extensions;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraTab;
@@ -58,6 +59,7 @@ namespace BOSERP.Modules.CarcassBOM
         BOSButton SavePaintButton;
         BOSButton SavePackagingButton;
         BOSButton SaveSemiProductButton;
+        BOSButton PrintMaterialButton;
         public const string NewNo = "***NEW***";
         private bool IsCarcass = false;
         BOSTabControl tcBOM;
@@ -110,9 +112,11 @@ namespace BOSERP.Modules.CarcassBOM
             tcBOM = (BOSTabControl)Controls["fld_tcBOM"];
             tcDetailInfo = (BOSTabControl)Controls["fld_tcDetailInfo"];
             OperationPackagingLookupEdit = (BOSLookupEdit)Controls["fld_lkeMMOperationPackaging"];
+            PrintMaterialButton = (BOSButton)Controls["fld_btnPrintMaterial"];
 
             DepreciationRateTextBox = (BOSTextBox)Controls["fld_txtDepreciationRate"];
-            DepreciationRateTextBox.KeyDown += new KeyEventHandler(DepreciationRateTextBox_KeyUp);
+            if(DepreciationRateTextBox != null)
+                DepreciationRateTextBox.KeyDown += new KeyEventHandler(DepreciationRateTextBox_KeyUp);
 
             DepreciationRateHardWareTextBox = (BOSTextBox)Controls["fld_txtDepreciationRateHardware"];
             if (DepreciationRateHardWareTextBox != null)
@@ -621,6 +625,7 @@ namespace BOSERP.Modules.CarcassBOM
                         ctrl.Enabled = !isApprove;
                     }
                     ctrl.Visible = true;
+                    SetPermission(ctrl);
                 }
             }
 
@@ -712,12 +717,53 @@ namespace BOSERP.Modules.CarcassBOM
 
             return objProductsInfoList;
         }
+      
+        private void SetPermission(Control ctrl)
+        {
+           
+            List<STFieldPermissionsInfo> fieldPermissionList = this.LstFieldPermission;
+            if (fieldPermissionList != null)
+                fieldPermissionList = fieldPermissionList.Where(fp => fp.STModuleName == this.Name
+                    && fp.FK_ADUserGroupID == BOSApp.CurrentUserGroupInfo.ADUserGroupID
+                    && fp.STScreenName == "guiCarcassBOM"
+                    ).ToList();
+            STFieldPermissionsInfo objFieldPermissionsInfo = fieldPermissionList.Where(o => o.STFieldName == ctrl.Name).FirstOrDefault();
+            if (objFieldPermissionsInfo != null)
+            {
+                if (ctrl is XtraTabPage)
+                {
+                    XtraTabPage tabPage = (XtraTabPage)ctrl;
+                    if (objFieldPermissionsInfo.STFieldPermissionType == Convert.ToByte(FieldPermissionType.Hided))
+                        tabPage.PageVisible = false;
+                }
+                else
+                {
 
+                    if (objFieldPermissionsInfo.STFieldPermissionType == Convert.ToByte(FieldPermissionType.Hided))
+                    {
+                        ctrl.Visible = false;
+                        ctrl.Enabled = false;
+                    }
+                    else if (objFieldPermissionsInfo.STFieldPermissionType == Convert.ToByte(FieldPermissionType.Disabled))
+                        ctrl.Enabled = false;
+                    else if (objFieldPermissionsInfo.STFieldPermissionType == Convert.ToByte(FieldPermissionType.HidedDisabled))
+                        ctrl.Visible = false;
+                    else if (objFieldPermissionsInfo.STFieldPermissionType == Convert.ToByte(FieldPermissionType.None))
+                    {
+                        ctrl.Visible = true;
+                        ctrl.Enabled = true;
+                        if (ctrl is BaseEdit)
+                        {
+                            (ctrl as BaseEdit).Properties.ReadOnly = false;
+                        }
+                    }
+                }
+            }
+        }
         private void InvalidateCarcassGeneralInfo(XtraTabPage carcassPage, ICProductsInfo carcassInfo)
         {
             carcassPage.PageVisible = true;
             carcassPage.Text = carcassInfo.ICProductNo;
-
 
             BOSTextBox carcassNoControl = (BOSTextBox)Controls["fld_txtICProductNo"];
             if (carcassNoControl != null)
@@ -754,7 +800,8 @@ namespace BOSERP.Modules.CarcassBOM
                 DepreciationRateGeneralMaterialTextBox.Text = 1M.ToString();
             }
             CarcassPicture.Image = null;
-            Thread thr = new Thread(() => {
+            Thread thr = new Thread(() =>
+            {
                 CarcassPicture.Invoke(new Action(() =>
                 {
                     InitProductPictureImage(carcassInfo.ICProductImageFile);
@@ -781,7 +828,7 @@ namespace BOSERP.Modules.CarcassBOM
             }
             catch
             {
-                BOSApp.ShowMessage("Link ảnh hoặc định dạng hình ảnh không hợp lệ!");
+                //BOSApp.ShowMessage("Link ảnh hoặc định dạng hình ảnh không hợp lệ!");
                 //if (CarcassPicture != null)
                 //    CarcassPicture.Image = null;
             }
@@ -848,10 +895,13 @@ namespace BOSERP.Modules.CarcassBOM
             entity.ProductList.BackupList.Clear();
             entity.ProductList.Invalidate(products.OrderBy(o => o.ICProductOrderID).ToList());
             entity.ProductList.GridControl?.RefreshDataSource();
-            GridView view = (GridView)entity.ProductList.GridControl.MainView;
-            if (view != null)
+            if (entity.ProductList.GridControl != null)
             {
-                view.CollapseAllDetails();
+                GridView view = (GridView)entity.ProductList.GridControl.MainView;
+                if (view != null)
+                {
+                    view.CollapseAllDetails();
+                }
             }
         }
 
@@ -1199,6 +1249,9 @@ namespace BOSERP.Modules.CarcassBOM
                 VisiblePaintAndPackagingTabPages(true);
             else
                 VisiblePaintAndPackagingTabPages(!IsCarcass);
+            string stisBKV = ADConfigValueUtility.GetConfigTextByGroupAndValue("ProjectBKV", "true");
+            bool isBKV = bool.Parse(stisBKV != string.Empty ? stisBKV : "false");
+            PrintMaterialButton.Visible = isBKV;
         }
 
         public void InvalidateProductionNorm(ICProductsInfo carcass, out bool isSuccess)
@@ -1306,6 +1359,7 @@ namespace BOSERP.Modules.CarcassBOM
         public void InvalidateCarcassLookupEdit()
         {
             // Cho phép copy của chính nó
+            if(CarcassLookupEdit != null)
             CarcassLookupEdit.Properties.DataSource = GetAnotherCarcass(false);
         }
         public DataTable GetAnotherCarcass(bool ignore)
@@ -1560,7 +1614,7 @@ namespace BOSERP.Modules.CarcassBOM
             return result;
         }
 
-        public void SaveSemiProductList()
+        public void SaveSemiProductList(bool updatePaint)
         {
             CarcassBOMEntities entity = (CarcassBOMEntities)CurrentModuleEntity;
             MMProductionNormsInfo mainobject = (MMProductionNormsInfo)entity.MainObject;
@@ -1571,113 +1625,126 @@ namespace BOSERP.Modules.CarcassBOM
                 SaveProductionNorm();
                 if (CurrentCarcass != null && CurrentCarcass.ICProductID > 0)
                 {
-                    UpdateProductInfo();
+                    if (!updatePaint)
+                        UpdateProductInfo();
 
                     if (entity.ProductList.Count() > 0)
                     {
-                        bool isValid = ValidateProductList();
-                        if (!isValid)
+                        if (!updatePaint)
                         {
+                            bool isValid = ValidateProductList();
+                            if (!isValid)
+                            {
 
-                            BOSProgressBar.Close();
-                            return;
+                                BOSProgressBar.Close();
+                                return;
+                            }
                         }
-
                         bool isSuccess = true;
-                        GenerateProductNo(entity.ProductList, out isSuccess);
+                        if (!updatePaint)
+                            GenerateProductNo(entity.ProductList, out isSuccess);
                         if (!isSuccess)
                         {
                             BOSProgressBar.Close();
                             return;
                         }
                         BOSProgressBar.SetDescription("Đang lưu Bán thành phẩm");
-                        SaveSemiProduct(mainobject, CurrentCarcass, entity.ProductList, out isUpdateDataSource, (List<ICProductsInfo>)entity.ProductList.BackupList);
-                        SaveSemiProductImage();
+                        SaveSemiProduct(mainobject, CurrentCarcass, entity.ProductList, out isUpdateDataSource, (List<ICProductsInfo>)entity.ProductList.BackupList, updatePaint);
+                        if (!updatePaint) SaveSemiProductImage();
 
                         entity.ProductList.GridControl?.RefreshDataSource();
                         ICProductItemProcesssController processCtrl = new ICProductItemProcesssController();
-                        foreach (ICProductsInfo p in entity.ProductList)
-                        {
-                            if (p.ProcessList != null)
-                            {
-                                p.ProcessList.ForEach(pro =>
-                                {
-                                    pro.FK_ICProductID = p.ICProductID;
-                                    pro.FK_MMProductionNormID = mainobject.MMProductionNormID;
-                                    pro.FK_ICProductDetailID = p.ICProductDetailID;
-                                    processCtrl.CreateObject(pro);
-                                });
 
-                                p.ProcessList = null;
-                            }
-                        }
-                        ICProductItemMaterialsController pimController = new ICProductItemMaterialsController();
-                        List<ICProductItemMaterialsInfo> pimList = pimController.GetMaterialByProductionNormID(CurrentCarcass.MMProductionNormID);
-                        List<int> existIdList = new List<int>();
-                        entity.ProductList.ForEach(btp =>
-                        {
-                            foreach (ICProductItemMaterialsInfo m in btp.MaterialList)
+                        if (!updatePaint)
+                            foreach (ICProductsInfo p in entity.ProductList)
                             {
-                                m.FK_ICProductID = btp.ICProductID;
-                                m.FK_ICProductCarcassID = CurrentCarcass.ICProductID;
-                                m.FK_MMProductionNormID = mainobject.MMProductionNormID;
-                                m.FK_ICProductDetailID = btp.ICProductDetailID;
-                                if (m.ICProductItemMaterialID == 0)
+                                if (p.ProcessList != null)
                                 {
-                                    pimController.CreateObject(m);
+                                    p.ProcessList.ForEach(pro =>
+                                    {
+                                        pro.FK_ICProductID = p.ICProductID;
+                                        pro.FK_MMProductionNormID = mainobject.MMProductionNormID;
+                                        pro.FK_ICProductDetailID = p.ICProductDetailID;
+                                        processCtrl.CreateObject(pro);
+                                    });
+
+                                    p.ProcessList = null;
                                 }
-                                else
-                                {
-                                    pimController.UpdateObject(m);
-                                }
-
-                                existIdList.Add(m.ICProductItemMaterialID);
                             }
-                        });
-
-                        foreach (ICProductItemMaterialsInfo pim in pimList)
+                        if (!updatePaint)
                         {
-                            if (!existIdList.Contains(pim.ICProductItemMaterialID))
+                            ICProductItemMaterialsController pimController = new ICProductItemMaterialsController();
+                            List<ICProductItemMaterialsInfo> pimList = pimController.GetMaterialByProductionNormID(CurrentCarcass.MMProductionNormID);
+                            List<int> existIdList = new List<int>();
+                            entity.ProductList.ForEach(btp =>
                             {
-                                pimController.DeleteObject(pim.ICProductItemMaterialID);
+                                foreach (ICProductItemMaterialsInfo m in btp.MaterialList)
+                                {
+                                    m.FK_ICProductID = btp.ICProductID;
+                                    m.FK_ICProductCarcassID = CurrentCarcass.ICProductID;
+                                    m.FK_MMProductionNormID = mainobject.MMProductionNormID;
+                                    m.FK_ICProductDetailID = btp.ICProductDetailID;
+                                    if (m.ICProductItemMaterialID == 0)
+                                    {
+                                        pimController.CreateObject(m);
+                                    }
+                                    else
+                                    {
+                                        pimController.UpdateObject(m);
+                                    }
+
+                                    existIdList.Add(m.ICProductItemMaterialID);
+                                }
+                            });
+
+
+                            foreach (ICProductItemMaterialsInfo pim in pimList)
+                            {
+                                if (!existIdList.Contains(pim.ICProductItemMaterialID))
+                                {
+                                    pimController.DeleteObject(pim.ICProductItemMaterialID);
+                                }
                             }
                         }
                     }
                     else
                     {
-                        if (mainobject.MMProductionNormID > 0)
-                            (new ICProductDetailsController()).UpdateListProductDetailByProductID(mainobject.MMProductionNormID, CurrentCarcass.ICProductID
-                                , string.Join(",", entity.ProductList.Select(p => p.ICProductID.ToString()).ToArray()), BOSApp.CurrentUsersInfo.ADUserName);
-
-                        List<ICProductDetailsInfo> DeleteItem = new List<ICProductDetailsInfo>();
-                        List<ICProductsInfo> productBackupList = (List<ICProductsInfo>)entity.ProductList.BackupList;
-                        if (productBackupList != null && productBackupList.Count > 0)
+                        if (!updatePaint)
                         {
-                            List<ICProductsInfo> checkList = entity.ProductList.Where(x => x.ICProductDetailID > 0).ToList();
-                            foreach (ICProductsInfo item in productBackupList.Where(x => x.ICProductDetailID > 0))
+                            if (mainobject.MMProductionNormID > 0)
+                                (new ICProductDetailsController()).UpdateListProductDetailByProductID(mainobject.MMProductionNormID, CurrentCarcass.ICProductID
+                                    , string.Join(",", entity.ProductList.Select(p => p.ICProductID.ToString()).ToArray()), BOSApp.CurrentUsersInfo.ADUserName);
+
+                            List<ICProductDetailsInfo> DeleteItem = new List<ICProductDetailsInfo>();
+                            List<ICProductsInfo> productBackupList = (List<ICProductsInfo>)entity.ProductList.BackupList;
+                            if (productBackupList != null && productBackupList.Count > 0)
                             {
-                                int count = 0;
-                                if (checkList != null)
-                                    count = checkList.Where(x => x.ICProductDetailID == item.ICProductDetailID).ToList().Count();
-                                if (count == 0)
+                                List<ICProductsInfo> checkList = entity.ProductList.Where(x => x.ICProductDetailID > 0).ToList();
+                                foreach (ICProductsInfo item in productBackupList.Where(x => x.ICProductDetailID > 0))
                                 {
-                                    ICProductDetailsInfo delete = new ICProductDetailsInfo();
-                                    delete.Id = item.ICProductDetailID;
-                                    delete.FK_ICProductID = item.ICProductID;
-                                    delete.FK_ICProductParentID = item.FK_ICProductCarcassID;
-                                    delete.FK_MMProductionNormID = item.FK_MMProductionNormID;
-                                    DeleteItem.Add(delete);
+                                    int count = 0;
+                                    if (checkList != null)
+                                        count = checkList.Where(x => x.ICProductDetailID == item.ICProductDetailID).ToList().Count();
+                                    if (count == 0)
+                                    {
+                                        ICProductDetailsInfo delete = new ICProductDetailsInfo();
+                                        delete.Id = item.ICProductDetailID;
+                                        delete.FK_ICProductID = item.ICProductID;
+                                        delete.FK_ICProductParentID = item.FK_ICProductCarcassID;
+                                        delete.FK_MMProductionNormID = item.FK_MMProductionNormID;
+                                        DeleteItem.Add(delete);
+                                    }
                                 }
                             }
-                        }
 
-                        if (DeleteItem != null && DeleteItem.Count > 0)
-                            SaveItemWithDataTableType.DeleteItem<ICProductDetailsInfo>(DeleteItem, "ICProductDetails", BOSApp.CurrentUsersInfo.ADUserName);
-                        else
-                        {
-                            BOSProgressBar.Close();
-                            MessageBox.Show("Không tồn tại chi tiết BTP!", CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
+                            if (DeleteItem != null && DeleteItem.Count > 0)
+                                SaveItemWithDataTableType.DeleteItem<ICProductDetailsInfo>(DeleteItem, "ICProductDetails", BOSApp.CurrentUsersInfo.ADUserName);
+                            else
+                            {
+                                BOSProgressBar.Close();
+                                MessageBox.Show("Không tồn tại chi tiết BTP!", CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
                         }
                     }
                 }
@@ -1690,6 +1757,13 @@ namespace BOSERP.Modules.CarcassBOM
                 MessageBox.Show("Xảy ra lỗi trong quá trình lưu. Vui lòng thử lại", CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             entity.InvalidateBOM();
+            if (updatePaint)
+            {
+                // Tính lại dt sơn, lấy tự động QTS
+                if (mainobject.MMProductionNormID > 0)
+                    (new MMProductionNormItemsController()).CalculateProductionNormItemConsumable(mainobject.MMProductionNormID, CurrentCarcass.ICProductID, BOSApp.CurrentUsersInfo.ADUserName);
+                entity.InvalidatePaint();
+            }
             InvalidCarcassSemiProductGrid();
             SaveImage(false);
             SaveCarcassDepreciationRate();
@@ -1700,7 +1774,7 @@ namespace BOSERP.Modules.CarcassBOM
                     entity.ProductList.GridControl.RefreshBindingDataLookupEdit();
             }
         }
-
+       
         public string GetProductNoFromConfig(ICProductsInfo objProductsInfo, ref int currentStart, GEGenerateProductNoConfigsInfo objGenerateProductNoConfigsInfo)
         {
             string productNo = string.Empty;
@@ -1955,7 +2029,7 @@ namespace BOSERP.Modules.CarcassBOM
             if (!isCreate)
                 pniController.UpdateDeleteProductionNormItemsByProductionNormID(productionNormID);
 
-            //pniController.CalculateProductionNormItemConsumable(productionNormID, CurrentCarcass.ICProductID);
+            
             CurrentCarcass.MMProductionNormID = productionNormID;
             entity.InvalidateBOM();
             entity.InvalidateBOMHardware();
@@ -2503,12 +2577,15 @@ namespace BOSERP.Modules.CarcassBOM
                 productionNormItem.MMProductionNormItemParentNo = product.IPProductionItemParentCode;
                 productionNormItem.MMProductionNormItemSortOrderString = product.IPProductionItemCode;
                 productionNormItem.MMProductionNormItemProductAttribute = product.FK_ICProductAttributeColorID.ToString();
+                productionNormItem.MMProductionNormItemPaintExecuteMethod = product.ICConfigProductionComplexityType;
                 productionNormItem.MMProductionNormItemColorDesc = product.ICProductAttributeColorText;
                 productionNormItem.MMProductionNormItemOtherColor = product.ICProductColorAttribute;
                 productionNormItem.MMProductionNormItemPaintAKey = product.ICProductColorPaintA;
                 productionNormItem.MMProductionNormItemPaintBKey = product.ICProductColorPaintB;
                 productionNormItem.MMProductionNormItemVeneerKey = product.ICProductColorPaintC;
-                productionNormItem.MMProductionNormItemPaintExecuteMethod = product.ICProductPaintProcess;
+                productionNormItem.MMProductionNormItemCode01Combo = product.ICProductPaintProcessA;
+                productionNormItem.MMProductionNormItemCode02Combo = product.ICProductPaintProcessB;
+                productionNormItem.MMProductionNormItemCode03Combo = product.ICProductPaintProcessC;
 
             }
         }
@@ -2527,10 +2604,15 @@ namespace BOSERP.Modules.CarcassBOM
             objProductionNormItemsInfo.MMProductionNormItemParentNo = objProductsInfo.IPProductionItemParentCode;
             objProductionNormItemsInfo.MMProductionNormItemProductAttribute = objProductsInfo.FK_ICProductAttributeColorID.ToString();
             objProductionNormItemsInfo.MMProductionNormItemOtherColor = objProductsInfo.ICProductColorAttribute.ToString();
+            objProductionNormItemsInfo.MMProductionNormItemColorDesc = objProductsInfo.ICProductAttributeColorText;
+            objProductionNormItemsInfo.MMProductionNormItemPaintExecuteMethod = objProductsInfo.ICConfigProductionComplexityType;
             objProductionNormItemsInfo.MMProductionNormItemPaintAKey = objProductsInfo.ICProductColorPaintA;
             objProductionNormItemsInfo.MMProductionNormItemPaintBKey = objProductsInfo.ICProductColorPaintB;
             objProductionNormItemsInfo.MMProductionNormItemVeneerKey = objProductsInfo.ICProductColorPaintC;
-            objProductionNormItemsInfo.MMProductionNormItemPaintExecuteMethod = objProductsInfo.ICProductPaintProcess;
+            objProductionNormItemsInfo.MMProductionNormItemCode01Combo = objProductsInfo.ICProductPaintProcessA;
+            objProductionNormItemsInfo.MMProductionNormItemCode02Combo = objProductsInfo.ICProductPaintProcessB;
+            objProductionNormItemsInfo.MMProductionNormItemCode03Combo = objProductsInfo.ICProductPaintProcessC;
+          
             if (objProductionNormItemsInfo.SubList == null)
                 objProductionNormItemsInfo.SubList = new BOSTreeList();
             //objProductionNormItemsInfo.MMProductionNormItemIsComponent = false;
@@ -2585,6 +2667,14 @@ namespace BOSERP.Modules.CarcassBOM
             objProductionNormItemsInfo.MMProductionNormItemProductSizeAndPacking = objProductsInfo.ICProductSizeAndSpecifiCations;
             objProductionNormItemsInfo.MMProductionNormItemProductAttribute = objProductsInfo.FK_ICProductAttributeColorID.ToString();
             objProductionNormItemsInfo.MMProductionNormItemColorDesc = objProductsInfo.ICProductAttributeColorText;
+            objProductionNormItemsInfo.MMProductionNormItemPaintExecuteMethod = objProductsInfo.ICConfigProductionComplexityType;
+            objProductionNormItemsInfo.MMProductionNormItemOtherColor = objProductsInfo.ICProductColorAttribute;
+            objProductionNormItemsInfo.MMProductionNormItemPaintAKey = objProductsInfo.ICProductColorPaintA;
+            objProductionNormItemsInfo.MMProductionNormItemPaintBKey = objProductsInfo.ICProductColorPaintB;
+            objProductionNormItemsInfo.MMProductionNormItemVeneerKey = objProductsInfo.ICProductColorPaintC;
+            objProductionNormItemsInfo.MMProductionNormItemCode01Combo = objProductsInfo.ICProductPaintProcessA;
+            objProductionNormItemsInfo.MMProductionNormItemCode02Combo = objProductsInfo.ICProductPaintProcessB;
+            objProductionNormItemsInfo.MMProductionNormItemCode03Combo = objProductsInfo.ICProductPaintProcessC;
             return objProductionNormItemsInfo;
         }
 
@@ -4803,6 +4893,42 @@ namespace BOSERP.Modules.CarcassBOM
                             }
                         }
                         SetProductionNormItemInfoFromPaintProcessesesItem(productionNormItem, item);
+                        
+                        List<MMPaintProcessesItemsInfo> paintItemChildList = paintList.Where(i => i.MMPaintProcessesItemParentID == item.MMPaintProcessesItemID).ToList();
+                        if (paintItemChildList.Count() > 0)
+                        {
+                            productionNormItem.FK_MMPaintProcessesID = item.FK_MMPaintProcessesID;
+                            productionNormItem.FK_MMPaintProcessesItemID = item.MMPaintProcessesItemID;
+                            productionNormItem.MMProductionNormItemProductName = item.MMPaintProcessesItemGroupName;
+                            productionNormItem.MMProductionNormItemPaintPerOne = item.MMPaintProcessesItemProductQty;
+                            productionNormItem.MMProductionNormItemProductDesc = item.MMPaintProcessesNo + " : " + item.MMPaintProcessesDesc;
+                            productionNormItem.MMProductionNormItemGroup = ProductType.IngredientPaint.ToString();
+                            productionNormItem.MMProductionNormItemPaintExecuteMethod = item.MMPaintProcessesItemExecuteMethod;
+
+                            productionNormItem.SubList = new BOSTreeList();
+                            foreach (MMPaintProcessesItemsInfo itemC in paintItemChildList)
+                            {
+                                MMProductionNormItemsInfo productionNormItemChild = new MMProductionNormItemsInfo();
+                                productionNormItemChild.FK_MMOperationID = operationID;
+                                if (operationID == 0)
+                                {
+                                    ICProductsForViewInfo material = BOSApp.CurrentProductList.Where(m => m.ICProductID == itemC.FK_ICProductID).FirstOrDefault();
+                                    if (material != null)
+                                    {
+                                        MMOperationAndHardwareOperationTypesInfo dfOperation = DefualtAllocationOperationList.Where(d => d.MMHardwareOperationType == material.ICProductType).FirstOrDefault();
+                                        if (dfOperation != null) productionNormItemChild.FK_MMOperationID = dfOperation.FK_MMOperationID;
+                                        if (productionNormItem.FK_MMOperationID == 0)
+                                        {
+                                            MMDefaultAllocationOperationConfigsController objDfOperationsController = new MMDefaultAllocationOperationConfigsController();
+                                            MMDefaultAllocationOperationConfigsInfo dfOperationsInfo = (MMDefaultAllocationOperationConfigsInfo)objDfOperationsController.GetOperationByDepartmentAndProductGroup(material.FK_ICDepartmentID, material.FK_ICProductGroupID);
+                                            if (dfOperationsInfo != null) productionNormItemChild.FK_MMOperationID = dfOperationsInfo.FK_MMOperationID;
+                                        }
+                                    }
+                                }
+                                SetProductionNormItemInfoFromPaintProcessesesItem(productionNormItemChild, itemC);
+                                productionNormItem.SubList.Add(productionNormItemChild);
+                            }
+                        }
                         productionNormItemStep.SubList.Add(productionNormItem);
                     }
                 }
@@ -7427,7 +7553,7 @@ namespace BOSERP.Modules.CarcassBOM
                                 mess += Environment.NewLine + "Mã:" + o.MMProductionNormItemNo + ". Kiện:  "
                                         + string.Join(",", samePackType.Where(s => s.ICProductPackageID != o.FK_ICProductPackageID).Select(s => s.ICProductPackageNo).Distinct().ToArray()) + ". SL: ";
                                 if (samePackType != null)
-                                    mess = mess + (Math.Round(exitPack.Where(e => e.FK_ICProductPackageID != o.FK_ICProductPackageID).Sum(s => s.MMProductionNormItemPackingQuantity), 2));
+                                    mess = mess + (Math.Round(exitPack.Where(e => e.FK_ICProductPackageID != o.FK_ICProductPackageID).Sum(s => s.MMProductionNormItemPackingQuantity), 6));
                             }
                         });
                     }
@@ -7606,7 +7732,7 @@ namespace BOSERP.Modules.CarcassBOM
                 BOSProgressBar.Start("Đang tạo bản sao");
                 objProductionNormsController.CopyBOMVersion(item.ICProductID, item.MMProductionNormID, BOSApp.CurrentUsersInfo.ADUserName, BOSApp.CurrentUsersInfo.FK_HREmployeeID, BOSApp.CurrentCompanyInfo.FK_BRBranchID);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -7836,7 +7962,7 @@ namespace BOSERP.Modules.CarcassBOM
             {
                 decimal value = 0;
                 Decimal.TryParse(objValue.ToString(), out value);
-                return Math.Round(value, 5, MidpointRounding.AwayFromZero);
+                return Math.Round(value, 6, MidpointRounding.AwayFromZero);
             }
             if (toType.Equals(typeof(int)))
             {
@@ -7998,6 +8124,12 @@ namespace BOSERP.Modules.CarcassBOM
                 objProductsInfo.FK_ICProductAttributeColorID = o.FK_ICProductAttributeColorID;
                 objProductsInfo.ICProductAttributeColorText = o.ICProductAttributeColorText;
                 objProductsInfo.ICProductColorAttribute = o.ICProductAttributeOtherColorID;
+                objProductsInfo.ICProductColorPaintA = o.ICProductColorPaintA;
+                objProductsInfo.ICProductColorPaintB = o.ICProductColorPaintB;
+                objProductsInfo.ICProductColorPaintC = o.ICProductColorPaintC;
+                objProductsInfo.ICProductPaintProcessA = o.ICProductPaintProcessA;
+                objProductsInfo.ICProductPaintProcessB = o.ICProductPaintProcessB;
+                objProductsInfo.ICProductPaintProcessC = o.ICProductPaintProcessC;
                 semiList.Add(objProductsInfo);
             });
             isSuccess = false;
@@ -8006,7 +8138,7 @@ namespace BOSERP.Modules.CarcassBOM
                 return null;
 
             bool isUpdateDataSource = false;
-            SaveSemiProduct(objProductionNormsInfo, carcass, semiList, out isUpdateDataSource, null);
+            SaveSemiProduct(objProductionNormsInfo, carcass, semiList, out isUpdateDataSource, null,false);
             if (isUpdateDataSource)
             {
                 BOSApp.InvalidateProductList();
@@ -8095,27 +8227,35 @@ namespace BOSERP.Modules.CarcassBOM
             }
         }
 
-        public void SaveSemiProduct(MMProductionNormsInfo objProductionNormsInfo, ICProductsInfo carcass, List<ICProductsInfo> productList, out bool isUpdateDataSource, List<ICProductsInfo> productBackupList)
+        public void SaveSemiProduct(MMProductionNormsInfo objProductionNormsInfo
+            , ICProductsInfo carcass
+            , List<ICProductsInfo> productList
+            , out bool isUpdateDataSource
+            , List<ICProductsInfo> productBackupList
+            , bool isUpdatepaint)
         {
             bool tempUpdate = false;
             ICProductsController objProductsController = new ICProductsController();
             List<ICProductDetailsInfo> DeleteItem = new List<ICProductDetailsInfo>();
-            if (productBackupList != null && productBackupList.Count > 0)
+            if (!isUpdatepaint)
             {
-                List<ICProductsInfo> checkList = productList.Where(x => x.ICProductDetailID > 0).ToList();
-                foreach (ICProductsInfo item in productBackupList.Where(x => x.ICProductDetailID > 0))
+                if (productBackupList != null && productBackupList.Count > 0)
                 {
-                    int count = 0;
-                    if (checkList != null)
-                        count = checkList.Where(x => x.ICProductDetailID == item.ICProductDetailID).ToList().Count();
-                    if (count == 0)
+                    List<ICProductsInfo> checkList = productList.Where(x => x.ICProductDetailID > 0).ToList();
+                    foreach (ICProductsInfo item in productBackupList.Where(x => x.ICProductDetailID > 0))
                     {
-                        ICProductDetailsInfo delete = new ICProductDetailsInfo();
-                        delete.Id = item.ICProductDetailID;
-                        delete.FK_ICProductID = item.ICProductID;
-                        delete.FK_ICProductParentID = item.FK_ICProductCarcassID;
-                        delete.FK_MMProductionNormID = item.FK_MMProductionNormID;
-                        DeleteItem.Add(delete);
+                        int count = 0;
+                        if (checkList != null)
+                            count = checkList.Where(x => x.ICProductDetailID == item.ICProductDetailID).ToList().Count();
+                        if (count == 0)
+                        {
+                            ICProductDetailsInfo delete = new ICProductDetailsInfo();
+                            delete.Id = item.ICProductDetailID;
+                            delete.FK_ICProductID = item.ICProductID;
+                            delete.FK_ICProductParentID = item.FK_ICProductCarcassID;
+                            delete.FK_MMProductionNormID = item.FK_MMProductionNormID;
+                            DeleteItem.Add(delete);
+                        }
                     }
                 }
             }
@@ -8126,39 +8266,46 @@ namespace BOSERP.Modules.CarcassBOM
             List<ICProductDetailsInfo> modifyItems = new List<ICProductDetailsInfo>();
             productList.ForEach(o =>
             {
-                o.VituralID = Guid.NewGuid();
-                if (o.ICProductID == 0)
+                if (!isUpdatepaint)
                 {
-                    if (ctac != null)
+                    o.VituralID = Guid.NewGuid();
+                    if (o.ICProductID == 0)
                     {
-                        o.FK_ICProductTypeAccountConfigID = ctac.ICProductTypeAccountConfigID;
-                        o.FK_ACAccountCostPriceID = ctac.FK_ACAccountCostPriceID;
-                        o.FK_ACAccountDiscountID = ctac.FK_ACAccountDiscountID;
-                        o.FK_ACAccountID = ctac.FK_ACAccountID;
-                        o.FK_ACAccountRevenueID = ctac.FK_ACAccountRevenueID;
-                        o.FK_ACAccountRevenueInternalID = ctac.FK_ACAccountRevenueInternalID;
-                        o.FK_ACAccountSaleReturnID = ctac.FK_ACAccountSaleReturnID;
+                        if (ctac != null)
+                        {
+                            o.FK_ICProductTypeAccountConfigID = ctac.ICProductTypeAccountConfigID;
+                            o.FK_ACAccountCostPriceID = ctac.FK_ACAccountCostPriceID;
+                            o.FK_ACAccountDiscountID = ctac.FK_ACAccountDiscountID;
+                            o.FK_ACAccountID = ctac.FK_ACAccountID;
+                            o.FK_ACAccountRevenueID = ctac.FK_ACAccountRevenueID;
+                            o.FK_ACAccountRevenueInternalID = ctac.FK_ACAccountRevenueInternalID;
+                            o.FK_ACAccountSaleReturnID = ctac.FK_ACAccountSaleReturnID;
+                        }
+                        o.AACreatedDate = BOSApp.GetCurrentServerDate();
+                        o.AACreatedUser = BOSApp.CurrentUser;
+                        objProductsController.CreateObject(o);
+                        tempUpdate = true;
                     }
-                    o.AACreatedDate = BOSApp.GetCurrentServerDate();
-                    o.AACreatedUser = BOSApp.CurrentUser;
-                    objProductsController.CreateObject(o);
-                    tempUpdate = true;
+                    else
+                    {
+                        o.AAUpdatedDate = BOSApp.GetCurrentServerDate();
+                        o.AAUpdatedUser = BOSApp.CurrentUser;
+                        if (o.ICProductType != ProductType.Product.ToString())
+                            objProductsController.UpdateObject(o);
+                        tempUpdate = true;
+                    }
                 }
-                else
-                {
-                    o.AAUpdatedDate = BOSApp.GetCurrentServerDate();
-                    o.AAUpdatedUser = BOSApp.CurrentUser;
-                    if(o.ICProductType != ProductType.Product.ToString())
-                    objProductsController.UpdateObject(o);
-                    tempUpdate = true;
-                }    
                 ICProductDetailsInfo update = new ICProductDetailsInfo();
                 ToProductDetail(o, update);
                 update.FK_MMProductionNormID = objProductionNormsInfo.MMProductionNormID;
                 update.ProductVirtualID = o.VituralID;
                 modifyItems.Add(update);
             });
-            modifyItems.InsertOrUpdateObject();
+            if (!isUpdatepaint)
+                modifyItems.InsertOrUpdateObject();
+            else {
+                SaveItemWithDataTableType.UpdateColumnItem<ICProductDetailsInfo>(modifyItems, "ICProductDetailID", "ICProductDetails", objProductionNormsInfo.MMProductionNormID, BOSApp.CurrentUsersInfo.ADUserName, "ICProductDetails_UpdatePaint");
+            }
             ICProductsInfo productsInfo;
             modifyItems.ForEach(pd =>
             {
@@ -8175,7 +8322,6 @@ namespace BOSERP.Modules.CarcassBOM
         public ICProductDetailsInfo ToProductDetail(ICProductsInfo from, ICProductDetailsInfo to)
         {
             BOSUtil.CopyObject(from, to);
-            to.ICProductDetailSerial = from.ICProductDetailSerial;
             to.FK_ICProductParentID = from.FK_ICProductCarcassID;
             to.FK_ICProductID = from.ICProductID;
             to.Id = from.ICProductDetailID;
@@ -8212,11 +8358,17 @@ namespace BOSERP.Modules.CarcassBOM
             to.ICProductDetailCode02Combo = from.ICProductCode;
             to.ICProductDetailCode03Combo = from.ICProductOrderID > 0 ? from.ICProductOrderID.ToString() : "0";
             to.FK_ICProductGroupID = from.FK_ICProductGroupID;
-            to.ICProductDetailCode02Combo = from.ICProductCode;
             to.ICProductDetailCode04Combo = from.FK_ICProductAttributeColorID.ToString();
             to.ICProductDetailCode05Combo = from.FK_ICProductBasicUnitID.ToString();
             to.ICProductDetailCode06Combo = from.ICProductAttributeColorText;
             to.ICProductDetailCode07Combo = from.ICProductColorAttribute;
+            to.ICProductDetailCode08Combo = from.ICProductColorPaintA;
+            to.ICProductDetailCode09Combo = from.ICProductColorPaintB;
+            to.ICProductDetailCode10Combo = from.ICProductColorPaintC;
+            to.ICProductDetailCode11Combo = from.ICProductPaintProcessA;
+            to.ICProductDetailCode12Combo = from.ICProductPaintProcessB;
+            to.ICProductDetailCode13Combo = from.ICProductPaintProcessC;
+            to.ICProductDetailCode14Combo = from.ICProductPaintProcessDefault;
             to.ICConfigProductionComplexityType = from.ICConfigProductionComplexityType;
             return to;
         }
@@ -8869,7 +9021,7 @@ namespace BOSERP.Modules.CarcassBOM
                     MessageBox.Show(e.Message, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            depreciationRate = Math.Round(depreciationRate, RoundingNumber.FormatN2, MidpointRounding.AwayFromZero);
+            depreciationRate = Math.Round(depreciationRate, RoundingNumber.FormatN4, MidpointRounding.AwayFromZero);
             item.ICProductItemMaterialWoodQty = productQty * materialQty;
             item.ICProductItemMaterialDepreciationRate = depreciationRate == 0 ? 1m : depreciationRate;
 
@@ -9505,6 +9657,7 @@ namespace BOSERP.Modules.CarcassBOM
                 List<ICProductAttributesInfo> lstqualityAttributesInfo = objProductAttributesController.GetProductAttributesByProductAttributeGroup(ProductAttributeGroup.Quality.ToString());
                 List<ICProductAttributesInfo> lstColorAttributesInfo = objProductAttributesController.GetProductAttributesByProductAttributeGroup(ProductAttributeGroup.COLOR.ToString());
                 List<MMProductionNormItemsInfo> productionNormItemMaterialDataSource = new List<MMProductionNormItemsInfo>();
+                List<ICProductItemMaterialsInfo> lstproductionNormItemMaterialDataSource = new List<ICProductItemMaterialsInfo>();
                 ICProductItemMaterialsController objMaterialsController = new ICProductItemMaterialsController();
                 ICProductAttributesInfo objAttributesInfo = new ICProductAttributesInfo();
                 MMProductionNormItemsInfo itemMaterial = new MMProductionNormItemsInfo();
@@ -9572,19 +9725,24 @@ namespace BOSERP.Modules.CarcassBOM
                                 MMOperationsInfo objOperationsInfo = (MMOperationsInfo)objOperationController.GetObjectByID(itemMaterial.FK_MMOperationMaterialID);
                                 itemMaterial.MMOperationMaterialName = objOperationsInfo != null ? objOperationsInfo.MMOperationName : string.Empty;
                             }
+                            ICProductsForViewInfo materialInfo = BOSApp.CurrentProductList.Where(p => p.ICProductID == o.FK_ICProductMaterialID).FirstOrDefault();
+                            if (materialInfo != null)
+                            {
+                                itemMaterial.MMProductionNormItemMaterialNo = materialInfo.ICProductNo;
+                                itemMaterial.MMProductionNormItemMaterialName = materialInfo.ICProductName;
+                            }
                             productionNormItemMaterialDataSource.Add(itemMaterial);
                         });
                     }
                     else
                     {
                         productionNormItemMaterialDataSource.Add(item);
-                    }
+                    } 
                 }
+                    //TNDLoc [ADD][06/01/2015][Set Attribute],END
 
-                //TNDLoc [ADD][06/01/2015][Set Attribute],END
-
-                productionNormItemHardwareDataSource.ForEach(o => o.MMProductionNormItemDepreciationRate = Math.Round(o.MMProductionNormItemDepreciationRate, 2));
-                productionNormItemPackagingDataSource.ForEach(o => o.MMProductionNormItemQuantity = Math.Round(o.MMProductionNormItemQuantity, 2));
+                    productionNormItemHardwareDataSource.ForEach(o => o.MMProductionNormItemDepreciationRate = Math.Round(o.MMProductionNormItemDepreciationRate, 2));
+                productionNormItemPackagingDataSource.ForEach(o => o.MMProductionNormItemQuantity = Math.Round(o.MMProductionNormItemQuantity, 4));
 
                 if (objProductionNormsInfo != null)
                 {
@@ -10267,6 +10425,53 @@ namespace BOSERP.Modules.CarcassBOM
                         viewer.Show();
                     }    
                 }
+                if (printType == ProductionNormPrintType.Material.ToString())
+                {
+                    RPProductionNormMaterial report = new RPProductionNormMaterial(productionNormItemTotalQty);
+                    //report.bsSemiProduct.DataSource = productionNormItemList;
+                    report.bsSemiProduct.DataSource = productionNormItemMaterialDataSource.Where(o => !string.IsNullOrWhiteSpace(o.MMProductionNormItemMaterialNo)).OrderBy(o => o.DetailOrderID);
+                    report.bsHardware.DataSource = productionNormItemHardwareDataSource;
+                    report.bsIngredientPaint.DataSource = productionNormItemPaintDataSource;
+                    report.bsIngredientPacking.DataSource = productionNormItemPackagingDataSource;
+                    report.bsGeneralMaterial.DataSource = productionNormItemGeneralMaterialDataSource;
+
+                    foreach (MMProductionNormsInfo item in productionNormList)
+                    {
+                        HREmployeesController objEmployeesController = new HREmployeesController();
+                        HREmployeesInfo objEmployees = (HREmployeesInfo)objEmployeesController.GetObjectByID(item.FK_HREmployeeGeneralMaterialApproved);
+                        item.MMProductionNormApproveUserName = objEmployees != null ? objEmployees.HREmployeeName : string.Empty;
+                    }
+                    report.bsProductionNorm.DataSource = productionNormList;
+                    //enable report detail
+                    // EnableReportDetail(report,productType);
+                    report.ProductionNormItemPaintA = GetSumProductionNormItemPaintA();
+                    report.ProductionNormItemPaintB = GetSumProductionNormItemPaintB();
+                    report.ProductionNormItemWoodBlocks = GetSumProductionNormItemBlocks();
+                    report.ProductionNormItemPaintTotalWoodConsumable = GetSumProductionNormItemWoodConsumable();
+
+                    if (BOSApp.CurrentCompanyInfo != null)
+                    {
+                        XRLabel label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_TenCongTy"];
+                        if (label != null)
+                        {
+                            label.Text = BOSApp.CurrentCompanyInfo.CSCompanyDesc;
+                        }
+                        label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_DiaChi"];
+                        if (label != null)
+                        {
+                            label.Text = string.Format("Địa chỉ " + BOSApp.CurrentCompanyInfo.CSCompanyAddressLine1);
+                        }
+                        label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_InfoCongTy"];
+                        if (label != null)
+                        {
+                            label.Text = string.Format("ĐT: {0} | Email: {1} | Website: {2}", BOSApp.CurrentCompanyInfo.CSCompanyPhone
+                                                        , BOSApp.CurrentCompanyInfo.CSCompanyEmail, BOSApp.CurrentCompanyInfo.CSCompanyWebsite);
+                        }
+                    }
+
+                    guiReportPreview viewer = new guiReportPreview(report);
+                    viewer.Show();
+                }
 
                 //ActionCancel();
             }
@@ -10378,6 +10583,54 @@ namespace BOSERP.Modules.CarcassBOM
                 }
                 entity.ProductList.GridControl?.RefreshDataSource();
             }
+        }
+
+        /// <summary>
+        /// show form compare product unit cost by supplier and from date to date
+        /// </summary>
+        public string ShowSelectPaintProcessesData()
+        {
+            string rerult = string.Empty;
+            List<MMPaintProcessessInfo> paintList = GetPaintProcessessDatasource(string.Empty);
+            guiChooseColor<MMPaintProcessessInfo> gui = new guiChooseColor<MMPaintProcessessInfo>("MMPaintProcessess", paintList, this);
+            gui.ColumnArr = new string[] { "MMPaintProcessesNo", "MMPaintProcessesPaintName" };
+            gui.Module = this;
+            gui.ShowDialog();
+            if (gui.DialogResult == DialogResult.OK)
+            {
+                List<MMPaintProcessessInfo> selectedList = (List<MMPaintProcessessInfo>)gui.SelectedObjects;
+                rerult = string.Join(",", selectedList.Select(o => o.MMPaintProcessesID.ToString()));
+            }
+            return rerult;
+        }
+        public string ShowSelectColorData()
+        {
+            string rerult = string.Empty;
+            List<ICProductsForViewInfo> paintList = GetProductCorlorDatasource(ProductType.IngredientPaint.ToString());
+            guiChooseColor<ICProductsForViewInfo> gui = new guiChooseColor<ICProductsForViewInfo>("ICProducts", paintList, this);
+            gui.ColumnArr = new string[] { "ICProductNo", "ICProductName", "ICProductNoOfOldSys", "ICProductDesc" };
+            gui.Module = this;
+            gui.ShowDialog();
+            if (gui.DialogResult == DialogResult.OK)
+            {
+                List<ICProductsForViewInfo> selectedList = (List<ICProductsForViewInfo>)gui.SelectedObjects;
+                rerult = string.Join(",", selectedList.Select(o => o.ICProductID.ToString()));
+            }
+            return rerult;
+        }
+        public List<MMPaintProcessessInfo> GetPaintProcessessDatasource(string type)
+        {
+            List<MMPaintProcessessInfo> paintList = new List<MMPaintProcessessInfo>();
+            MMPaintProcessessController objMMPaintProcessessController = new MMPaintProcessessController();
+            paintList = objMMPaintProcessessController.GetPaintProcessesByType(string.Empty);
+            return paintList;
+        }
+        public List<ICProductsForViewInfo> GetProductCorlorDatasource(string type)
+        {
+            List<ICProductsForViewInfo> paintList = new List<ICProductsForViewInfo>();
+            ICProductsController objICProductsController = new ICProductsController();
+            paintList = BOSApp.CurrentProductList.Where(p => p.ICProductType == type).ToList();
+            return paintList;
         }
     }
 }

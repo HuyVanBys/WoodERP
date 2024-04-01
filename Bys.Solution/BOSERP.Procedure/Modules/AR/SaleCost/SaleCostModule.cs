@@ -5,6 +5,7 @@ using BOSERP.Modules.AR.SaleCost.Localization;
 using BOSLib;
 using DevExpress.XtraTab;
 using Localization;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -147,6 +148,7 @@ namespace BOSERP.Modules.SaleCost
             base.Invalidate(iObjectID);
             SaleCostEntities entity = (SaleCostEntities)CurrentModuleEntity;
             ACDocumentsInfo mainObject = (ACDocumentsInfo)entity.MainObject;
+            BOSApp.RoundByCurrency(mainObject, mainObject.FK_GECurrencyID);
             mainObject.ACVATDocumentTypeFeePayment = mainObject.ACVATDocumentType;
             if (mainObject.ACDocumentCreateFrom == "NewNormal")
             {
@@ -407,7 +409,23 @@ namespace BOSERP.Modules.SaleCost
         }
         public override void ActionDuplicate()
         {
+            SaleCostEntities entity = CurrentModuleEntity as SaleCostEntities;
+            ACDocumentsInfo mainObject = (ACDocumentsInfo)entity.MainObject;
             base.ActionDuplicate();
+            mainObject.ACDocumentStatus = DocumentStatus.New.ToString();
+            mainObject.ACDocumentPostedStatus = PostedTransactionStatus.UnPosted.ToString();
+            mainObject.FK_HREmployeeID = BOSApp.CurrentUsersInfo.FK_HREmployeeID;
+            mainObject.AAUpdatedDate = DateTime.MaxValue;
+            mainObject.AAUpdatedUser = String.Empty;
+            mainObject.STToolbarActionName = "NewNormal";
+            base.Toolbar.ModusAction = "New";
+            this.ToolbarNewActionName = "NewNormal";
+            entity.FeePaymentInvoiceList.Duplicate();
+            entity.FeePaymentInvoiceList.GridControl?.RefreshDataSource();
+            entity.FeePaymentFeeConfigList.Duplicate();
+            entity.FeePaymentFeeConfigList.GridControl?.RefreshDataSource();
+            entity.FeePaymentCommissionList.Duplicate();
+            entity.FeePaymentCommissionList.GridControl?.RefreshDataSource();
         }
         public void ChangeObject()
         {

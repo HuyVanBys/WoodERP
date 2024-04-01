@@ -88,15 +88,15 @@ namespace BOSERP
         public override System.Collections.IList GetListFromDataSet(DataSet ds)
         {
             List<MMAllocationPlanItemsInfo> products = new List<MMAllocationPlanItemsInfo>();
-            if (ds.Tables.Count > 0)
+            if (ds != null && ds.Tables.Count > 0)
             {
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
                     MMAllocationPlanItemsInfo objProductsInfo = (MMAllocationPlanItemsInfo)GetObjectFromDataRow(row);
                     products.Add(objProductsInfo);
                 }
+                ds.Dispose();
             }
-            ds.Dispose();
             return products;
         }
         public List<MMAllocationPlanItemsInfo> GetAllocationPlanItemPackagingsByBatchProductProductionNormItems(int productionNormID, decimal productQty)

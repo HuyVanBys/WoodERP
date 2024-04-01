@@ -1786,7 +1786,7 @@ namespace BOSERP.Modules.FeePayment
                         mainObject.ACDocumentPostedStatus != PostedTransactionStatus.Posted.ToString());
                     ParentScreen.SetEnableOfToolbarButton(ToolbarButtons.UnPostedTransactions,
                         mainObject.ACDocumentPostedStatus == PostedTransactionStatus.Posted.ToString());
-                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonAllotment, !mainObject.ACDocumentFollowPosted);
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonAllotment, !mainObject.ACDocumentFollowPosted && mainObject.ACDocumentPostedStatus == PostedTransactionStatus.Posted.ToString());
                 }
             }
             base.InvalidateToolbar();

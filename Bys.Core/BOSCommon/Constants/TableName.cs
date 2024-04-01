@@ -596,6 +596,12 @@
         public const string MMLineOperationTableName = "MMLineOperations";
         public const string MMPaintProcessesTableName = "MMPaintProcessess";
         public const string MMPaintProcessesItemTableName = "MMPaintProcessesItems";
+        public const string MMPositionsTableName = "MMPositions";
+        public const string MMUpdatePositionsTableName = "MMUpdatePositions";
+        public const string MMUpdatePositionItemsTableName = "MMUpdatePositionItems";
+        public const string MMFalseConditionalsTableName = "MMFalseConditionals";
+        public const string MMFalseConditionalItemsTableName = "MMFalseConditionalItems";
+        public const string MMFalseConditionalDetailsTableName = "MMFalseConditionalDetails";
 
         public const string ICShipmentProposalItemsTableName = "ICShipmentProposalItems";
         public const string ICShipmentProposalsTableName = "ICShipmentProposals";
@@ -813,6 +819,7 @@
         public const string MMNormTemplateProductsTableName = "MMNormTemplateProducts";
         public const string MMOperationProductsTableName = "MMOperationProducts";
         public const string MMConfigAccountOperationsTableName = "MMConfigAccountOperations";
+        public const string MMConfigFalseConditionalsTableName = "MMConfigFalseConditionals";
         public const string ICConfigAccordWoodTypesTableName = "ICConfigAccordWoodTypes";
         public const string MMProductionCompletionTimeConfigsTableName = "MMProductionCompletionTimeConfigs";
         public const string MMExecuteTimeConfigsTableName = "MMExecuteTimeConfigs";
@@ -821,6 +828,8 @@
         public const string MMOperationDetailPlanItemsTableName = "MMOperationDetailPlanItems";
         public const string MMOperationDetailPlanCapacityItemsTableName = "MMOperationDetailPlanCapacityItems";
         public const string MMProcesssTableName = "MMProcesss";
+        public const string MMPaintProcessConfigsTableName = "MMPaintProcessConfigs";
+        public const string MMPaintProcessConfigItemsTableName = "MMPaintProcessConfigItems";
         public const string MMProcessProductsTableName = "MMProcessProducts";
         public const string MMOperationDetailPlanItemDateDetailsTableName = "MMOperationDetailPlanItemDateDetails";
         public const string MMOperationDetailPlanItemChildsTableName = "MMOperationDetailPlanItemChilds";

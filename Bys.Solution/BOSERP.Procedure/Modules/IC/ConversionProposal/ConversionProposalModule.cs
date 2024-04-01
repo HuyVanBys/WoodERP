@@ -343,6 +343,7 @@ namespace BOSERP.Modules.ConversionProposal
                 objConversionProposalItemsInfo.ICConversionProposalItemProductWidth = item.ICProductSerieProductWidth;
                 objConversionProposalItemsInfo.ICConversionProposalItemProductLength = item.ICProductSerieProductLength;
                 objConversionProposalItemsInfo.ICConversionProposalItemSortOrder = entity.ConversionProposalItemList.Count > 0 ? entity.ConversionProposalItemList.Max(p => p.ICConversionProposalItemSortOrder) + 1 : 1;
+                objConversionProposalItemsInfo.ICConversionProposalItemLocation = item.ICProductSeriePositionName;
                 entity.ConversionProposalItemList.Add(objConversionProposalItemsInfo);
             }
             entity.ConversionProposalItemList.GridControl?.RefreshDataSource();
@@ -503,10 +504,20 @@ namespace BOSERP.Modules.ConversionProposal
             objConversionProposalsInfo.FK_ICStockID = item.FK_ICStockID;
             objConversionProposalsInfo.ICConversionProposalItemProductName = item.MMAllocationPlanItemProductName;
             objConversionProposalsInfo.ICConversionProposalItemProductDesc = item.MMAllocationPlanItemProductDesc;
+            objConversionProposalsInfo.ICConversionProposalItemWoodQty = item.MMAllocationPlanItemWoodQty;
+            objConversionProposalsInfo.ICConversionProposalItemAllocationPlanWoodQty = item.MMAllocationPlanItemInventoryStock;
             objConversionProposalsInfo.ICConversionProposalItemProductQty = item.MMAllocationPlanItemQty;
             objConversionProposalsInfo.ICConversionProposalItemComment = item.MMAllocationPlanItemSplitComment;
             objConversionProposalsInfo.ICConversionProposalItemProductSerialNo = item.MMAllocationPlanItemProductSerialNo;
             objConversionProposalsInfo.FK_ICProductSerieID = item.FK_ICProductSerieID;
+            objConversionProposalsInfo.ICSemiProductSizeAndSpecifiCations = item.ICSemiProductSizeAndSpecifiCations;
+            objConversionProposalsInfo.ICProductName2 = item.ICProductName2;
+            objConversionProposalsInfo.ICConversionProposalItemRemainQty = item.MMAllocationPlanItemBPNormRemainQty;
+            objConversionProposalsInfo.ICConversionProposalItemSplitRate = 1M;
+            objConversionProposalsInfo.ICConversionProposalItemAllocationPlanLength = item.MMAllocationPlanItemLength;
+            objConversionProposalsInfo.ICConversionProposalItemProductNoOfOldSys = item.ICProductNoOfOldSys;
+            objConversionProposalsInfo.ICConversionProposalItemLocation = item.MMAllocationPlanItemPositionName;
+
             ICProductSeriesInfo objProductSeriesInfo = (ICProductSeriesInfo)objProductSeriesController.GetObjectByID(objConversionProposalsInfo.FK_ICProductSerieID);
             if (objProductSeriesInfo != null)
             {
@@ -514,6 +525,7 @@ namespace BOSERP.Modules.ConversionProposal
                 objConversionProposalsInfo.ICConversionProposalItemProductWidth = objProductSeriesInfo.ICProductSerieProductWidth;
                 objConversionProposalsInfo.ICConversionProposalItemProductHeight = objProductSeriesInfo.ICProductSerieProductHeight;
                 objConversionProposalsInfo.ICConversionProposalItemProductLotNo = objProductSeriesInfo.ICProductSerieLotNo;
+                
             }
             //objConversionProposalsInfo.ICConversionProposalItemProductLength = item.MMAllocationPlanItemLength;
             //objConversionProposalsInfo.ICConversionProposalItemProductWidth = item.MMAllocationPlanItemWidth;

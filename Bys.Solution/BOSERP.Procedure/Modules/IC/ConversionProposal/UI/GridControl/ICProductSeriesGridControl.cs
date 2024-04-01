@@ -136,6 +136,13 @@ namespace BOSERP.Modules.ConversionProposal
             column.OptionsColumn.AllowEdit = false;
             column.VisibleIndex = 17;
             gridView.Columns.Add(column);
+
+            column = new GridColumn();
+            column.Caption = "Vị trí";
+            column.FieldName = "ICProductSeriePositionName";
+            column.OptionsColumn.AllowEdit = false;
+            column.VisibleIndex = 17;
+            gridView.Columns.Add(column);
         }
 
         protected override GridView InitializeGridView()

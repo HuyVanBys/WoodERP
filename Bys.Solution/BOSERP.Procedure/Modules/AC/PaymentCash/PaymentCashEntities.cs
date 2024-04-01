@@ -129,5 +129,13 @@ namespace BOSERP.Modules.PaymentCash
             SaveAccountingData();
             return base.CompleteTransaction();
         }
+        public override bool CancelCompleteTransaction()
+        {
+            ACBankTransactionsInfo objBankTransactionsInfo = (ACBankTransactionsInfo)MainObject;
+            objBankTransactionsInfo.ACBankTransactionStatus = BankTransactionStatus.New.ToString();
+            UpdateMainObject();
+            SaveAccountingData();
+            return base.CompleteTransaction();
+        }
     }
 }

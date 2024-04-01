@@ -1267,6 +1267,7 @@ namespace BOSERP
         public string ACObjectNo { get; set; }
         public string ICProductCustomerNumber { get; set; }
         public string ICProductName { get; set; }
+        public decimal ARProposalItemProductExchangeQty { get; set; }
         #endregion
     }
     #endregion

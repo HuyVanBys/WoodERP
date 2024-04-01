@@ -1238,6 +1238,7 @@ namespace BOSERP
         public int FK_GEDeliveryStateProvinceID { get; set; }
         public string ARSaleReturnComment { get; set; }
         public decimal ICTransferItemWaitingReceiptQty { get; set; }
+        public string ICTransferItemQty1Str { get; set; }
         #endregion
 
         #region Report

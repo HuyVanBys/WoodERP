@@ -237,6 +237,7 @@ namespace BOSERP
         protected int _fK_ACUnfinishedConstructionCostID;
         protected string _iCShipmentInternalSeal = string.Empty;
         protected string _iCShipmentPOD = string.Empty;
+        protected string _mMUpdatePositionItemPositionName;
         #endregion
 
         #region Public properties
@@ -2853,6 +2854,18 @@ namespace BOSERP
                 {
                     _iCShipmentPOD = value;
                     NotifyChanged("ICShipmentPOD");
+                }
+            }
+        }
+        public string MMUpdatePositionItemPositionName
+        {
+            get { return _mMUpdatePositionItemPositionName; }
+            set
+            {
+                if (value != this._mMUpdatePositionItemPositionName)
+                {
+                    _mMUpdatePositionItemPositionName = value;
+                    NotifyChanged("MMUpdatePositionItemPositionName");
                 }
             }
         }

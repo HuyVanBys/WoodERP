@@ -72,13 +72,13 @@ namespace BOSERP.Modules.Receipt
                     entity.ModuleObjects[TableName.ICReceiptItemsTableName] = (ICReceiptItemsInfo)entity.ReceiptItemsList[entity.ReceiptItemsList.CurrentIndex].Clone();
                     ((ReceiptModule)Screen.Module).ChangeItemFromReceiptItemsList();
                 }
-                if(e.Column.FieldName == "ICReceiptItemProductLength"
+                if (e.Column.FieldName == "ICReceiptItemProductLength"
                     || e.Column.FieldName == "ICReceiptItemProductHeight"
                     || e.Column.FieldName == "ICReceiptItemProductWidth"
                     || e.Column.FieldName == "ICReceiptItemWoodQty")
                 {
                     ((ReceiptModule)Screen.Module).CalculatedProductQtyByPackageVolumnConfig();
-                }    
+                }
             }
         }
 
@@ -100,7 +100,6 @@ namespace BOSERP.Modules.Receipt
             GridView gridView = base.InitializeGridView();
             gridView.CellValueChanging += GridView_CellValueChanging;
             gridView.DoubleClick += new EventHandler(GridView_DoubleClick);
-
             if (gridView.Columns["ICReceiptItemProductQty"] != null)
             {
                 gridView.Columns["ICReceiptItemProductQty"].OptionsColumn.AllowEdit = true;
@@ -231,7 +230,7 @@ namespace BOSERP.Modules.Receipt
             if (column != null)
             {
                 column.OptionsColumn.AllowEdit = true;
-            }    
+            }
             gridView.OptionsView.ShowFooter = true;
             InitColumnSummary("ICReceiptItemTotalCost", DevExpress.Data.SummaryItemType.Sum);
             gridView.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(gridView_CustomColumnDisplayText);
@@ -355,6 +354,41 @@ namespace BOSERP.Modules.Receipt
             column.OptionsColumn.AllowEdit = allowEdit;
             column.ColumnEdit = repositoryItemTextEdit;
             column.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+        }
+        protected override void AddColumnsToGridView(string strTableName, GridView gridView)
+        {
+            base.AddColumnsToGridView(strTableName, gridView);
+
+            GridColumn column = new GridColumn();
+            column.FieldName = "FK_MMUpdatePositionItemID";
+            column.Caption = "Vị trí";
+            column.OptionsColumn.AllowEdit = true;
+            RepositoryItemLookUpEdit rep = new RepositoryItemLookUpEdit();
+            rep.ValueMember = "MMUpdatePositionItemID";
+            rep.DisplayMember = "MMUpdatePositionItemPositionName";
+            rep.NullText = String.Empty;
+            rep.TextEditStyle = TextEditStyles.Standard;
+            rep.SearchMode = SearchMode.AutoFilter;
+            rep.Columns.Add(new LookUpColumnInfo("MMUpdatePositionItemPositionName", "Vị trí"));
+            rep.QueryPopUp += new System.ComponentModel.CancelEventHandler(rep_QueryPopUp);
+            gridView.Columns.Add(column);
+        }
+        private void rep_QueryPopUp(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GridView gridView = (GridView)MainView;
+            ICReceiptsInfo item = (ICReceiptsInfo)gridView.GetRow(gridView.FocusedRowHandle);
+            LookUpEdit lookUpEdit = (LookUpEdit)sender;
+            if (item != null)
+            {
+                MMUpdatePositionItemsController controller = new MMUpdatePositionItemsController();
+                List<MMUpdatePositionItemsInfo> updatePositionItems = controller.GetAllLocationNameByProduct(item.FK_ICProductID, item.FK_ICStockID, 0);
+                if (updatePositionItems != null)
+                {
+                    lookUpEdit.Properties.DataSource = updatePositionItems;
+                    lookUpEdit.Properties.DisplayMember = "MMUpdatePositionItemPositionName";
+                    lookUpEdit.Properties.ValueMember = "MMUpdatePositionItemID";
+                }
+            }
         }
     }
 }

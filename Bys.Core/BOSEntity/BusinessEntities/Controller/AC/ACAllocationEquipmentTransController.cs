@@ -33,7 +33,11 @@ namespace BOSERP
             ds.Dispose();
             return allocationEquipmentTrans;
         }
-
+        public List<ACAllocationEquipmentTransInfo> GetAllocationEquipmentTransByDocumentID(int documentID)
+        {
+            DataSet ds = dal.GetDataSet("ACAllocationEquipmentTrans_GetAllocationEquipmentTransByDocumentID", documentID);
+            return (List<ACAllocationEquipmentTransInfo>)GetListFromDataSet(ds);
+        }
         public List<ACAllocationEquipmentTransInfo> GetAllocationEquipmentTransByMonthAndBranchIDs(DateTime dateTime, string branchs)
         {
             DataSet ds = dal.GetDataSet("ACAllocationEquipmentTrans_GetAllocationEquipmentTransByMonthAndBranchIDs", dateTime, branchs);

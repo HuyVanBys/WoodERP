@@ -582,6 +582,23 @@ namespace BOSERP.Modules.Transfer
             report.bsICTransfers.DataSource = objTransfersInfo;
             ICTransferItemsController objTransferItemsController = new ICTransferItemsController();
             List<ICTransferItemsInfo> transferItemList = objTransferItemsController.GetTransferItemForReportByTransferID(mainobject.ICTransferID);
+            string strIsBKV = BOSApp.GetDisplayTextFromConfigText("ProjectBKV", "true");
+            bool isBKV = bool.Parse(string.IsNullOrWhiteSpace(strIsBKV) ? "false" : strIsBKV);
+            if (isBKV)
+            {
+                transferItemList.ForEach(o =>
+                {
+                    o.ICFromStockName = "";
+                    o.ICTransferItemQty1Str = Convert.ToDecimal(o.ICTransferItemQty1).ToString("N0");
+                });
+            }
+            else
+            {
+                transferItemList.ForEach(o =>
+                {
+                    o.ICTransferItemQty1Str = Convert.ToDecimal(o.ICTransferItemQty1Str).ToString("N6");
+                });
+            }    
             report.bsICTransferItems.DataSource = transferItemList;
 
             ACAccountsController objAccountsController = new ACAccountsController();
@@ -620,9 +637,9 @@ namespace BOSERP.Modules.Transfer
             if (label != null)
             {
                 label.Text = string.Format(label.Text
-                                           , BOSApp.GetCurrentServerDate().Day
-                                           , BOSApp.GetCurrentServerDate().Month
-                                           , BOSApp.GetCurrentServerDate().Year);
+                                           , mainobject.ICTransferDate.Day
+                                           , mainobject.ICTransferDate.Month
+                                           , mainobject.ICTransferDate.Year);
             }
             label = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xr_lblTransferNo"];
             if (label != null)
@@ -676,6 +693,23 @@ namespace BOSERP.Modules.Transfer
             report.bsICTransfers.DataSource = objTransfersInfo;
             ICTransferItemsController objTransferItemsController = new ICTransferItemsController();
             List<ICTransferItemsInfo> transferItemList = objTransferItemsController.GetTransferItemForReportByTransferID(mainobject.ICTransferID);
+            string strIsBKV = BOSApp.GetDisplayTextFromConfigText("ProjectBKV", "true");
+            bool isBKV = bool.Parse(string.IsNullOrWhiteSpace(strIsBKV) ? "false" : strIsBKV);
+            if (isBKV)
+            {
+                transferItemList.ForEach(o =>
+                {
+                    o.ICFromStockName = "";
+                    o.ICTransferItemQty1Str = Convert.ToDecimal(o.ICTransferItemQty1Str).ToString("N0");
+                });
+            }
+            else
+            {
+                transferItemList.ForEach(o =>
+                {
+                    o.ICTransferItemQty1Str = Convert.ToDecimal(o.ICTransferItemQty1Str).ToString("N6");
+                });
+            }
             report.bsICTransferItems.DataSource = transferItemList;
 
             ACAccountsController objAccountsController = new ACAccountsController();

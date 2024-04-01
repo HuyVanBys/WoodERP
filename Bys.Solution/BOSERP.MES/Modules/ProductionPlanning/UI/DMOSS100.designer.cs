@@ -32,6 +32,8 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DMOSS100));
             this.bosPanel1 = new BOSComponent.BOSPanel(this.components);
+            this.fld_lkeHRDepartmentRoomGroupItemID = new BOSComponent.BOSLookupEdit(this.components);
+            this.bosLabel16 = new BOSComponent.BOSLabel(this.components);
             this.fld_txtARProductionPlanningSaleOrderName = new BOSComponent.BOSTextBox(this.components);
             this.bosLabel15 = new BOSComponent.BOSLabel(this.components);
             this.BOSLine2 = new BOSComponent.BOSLine(this.components);
@@ -85,6 +87,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.fld_lkeFK_HREmployeeID1 = new BOSComponent.BOSLookupEdit(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bosPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeHRDepartmentRoomGroupItemID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtARProductionPlanningSaleOrderName.Properties)).BeginInit();
             this.BOSLine2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeARProductionPlanningSaleType.Properties)).BeginInit();
@@ -132,6 +135,8 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.bosPanel1.BOSFieldRelation = null;
             this.bosPanel1.BOSPrivilege = null;
             this.bosPanel1.BOSPropertyName = null;
+            this.bosPanel1.Controls.Add(this.fld_lkeHRDepartmentRoomGroupItemID);
+            this.bosPanel1.Controls.Add(this.bosLabel16);
             this.bosPanel1.Controls.Add(this.fld_txtARProductionPlanningSaleOrderName);
             this.bosPanel1.Controls.Add(this.bosLabel15);
             this.bosPanel1.Controls.Add(this.BOSLine2);
@@ -177,8 +182,63 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(1511, 858);
+            this.bosPanel1.Size = new System.Drawing.Size(1525, 865);
             this.bosPanel1.TabIndex = 0;
+            // 
+            // fld_lkeHRDepartmentRoomGroupItemID
+            // 
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSAllowAddNew = false;
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSAllowDummy = true;
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSComment = "";
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSDataMember = "FK_HRDepartmentRoomGroupItemID";
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSDataSource = "ARProductionPlannings";
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSDescription = null;
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSError = null;
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSFieldGroup = "";
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSFieldParent = "";
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSFieldRelation = "";
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSPrivilege = "";
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSPropertyName = "EditValue";
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSSelectType = "";
+            this.fld_lkeHRDepartmentRoomGroupItemID.BOSSelectTypeValue = "";
+            this.fld_lkeHRDepartmentRoomGroupItemID.CurrentDisplayText = "";
+            this.fld_lkeHRDepartmentRoomGroupItemID.Location = new System.Drawing.Point(713, 139);
+            this.fld_lkeHRDepartmentRoomGroupItemID.Name = "fld_lkeHRDepartmentRoomGroupItemID";
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.Appearance.Options.UseBackColor = true;
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.Appearance.Options.UseForeColor = true;
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.ColumnName = null;
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HRDepartmentRoomGroupItemName", "Tổ")});
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.DisplayMember = "HRDepartmentRoomGroupItemName";
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.NullText = "";
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.fld_lkeHRDepartmentRoomGroupItemID.Properties.ValueMember = "HRDepartmentRoomGroupItemID";
+            this.fld_lkeHRDepartmentRoomGroupItemID.Screen = null;
+            this.fld_lkeHRDepartmentRoomGroupItemID.Size = new System.Drawing.Size(150, 20);
+            this.fld_lkeHRDepartmentRoomGroupItemID.TabIndex = 812;
+            this.fld_lkeHRDepartmentRoomGroupItemID.Tag = "DC";
+            // 
+            // bosLabel16
+            // 
+            this.bosLabel16.BOSComment = null;
+            this.bosLabel16.BOSDataMember = null;
+            this.bosLabel16.BOSDataSource = null;
+            this.bosLabel16.BOSDescription = null;
+            this.bosLabel16.BOSError = null;
+            this.bosLabel16.BOSFieldGroup = null;
+            this.bosLabel16.BOSFieldRelation = null;
+            this.bosLabel16.BOSPrivilege = null;
+            this.bosLabel16.BOSPropertyName = null;
+            this.bosLabel16.Location = new System.Drawing.Point(639, 142);
+            this.bosLabel16.Name = "bosLabel16";
+            this.bosLabel16.Screen = null;
+            this.bosLabel16.Size = new System.Drawing.Size(12, 13);
+            this.bosLabel16.TabIndex = 813;
+            this.bosLabel16.Text = "Tổ";
             // 
             // fld_txtARProductionPlanningSaleOrderName
             // 
@@ -239,7 +299,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.BOSLine2.BOSPrivilege = null;
             this.BOSLine2.BOSPropertyName = null;
             this.BOSLine2.Controls.Add(this.fld_recARProductionPlanningDesc);
-            this.BOSLine2.Location = new System.Drawing.Point(4, 626);
+            this.BOSLine2.Location = new System.Drawing.Point(4, 633);
             this.BOSLine2.Name = "BOSLine2";
             this.BOSLine2.Screen = null;
             this.BOSLine2.Size = new System.Drawing.Size(628, 220);
@@ -696,7 +756,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.fld_tabProductionNorm.Screen = null;
             this.fld_tabProductionNorm.SelectedTabPage = this.fld_tabProductList;
             this.ScreenHelper.SetShowHelp(this.fld_tabProductionNorm, true);
-            this.fld_tabProductionNorm.Size = new System.Drawing.Size(1505, 455);
+            this.fld_tabProductionNorm.Size = new System.Drawing.Size(1519, 462);
             this.fld_tabProductionNorm.TabIndex = 31;
             this.fld_tabProductionNorm.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tabProductList});
@@ -709,7 +769,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.fld_tabProductList.Controls.Add(this.fld_dgcARProductionPlanningItems);
             this.fld_tabProductList.Name = "fld_tabProductList";
             this.ScreenHelper.SetShowHelp(this.fld_tabProductList, true);
-            this.fld_tabProductList.Size = new System.Drawing.Size(1503, 430);
+            this.fld_tabProductList.Size = new System.Drawing.Size(1517, 437);
             this.fld_tabProductList.Text = "Danh sách sản phẩm";
             // 
             // fld_lkeFK_ICProductID
@@ -753,7 +813,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.fld_lkeFK_ICProductID.Properties.ValueMember = "ICProductID";
             this.fld_lkeFK_ICProductID.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_lkeFK_ICProductID, true);
-            this.fld_lkeFK_ICProductID.Size = new System.Drawing.Size(1308, 20);
+            this.fld_lkeFK_ICProductID.Size = new System.Drawing.Size(1322, 20);
             this.fld_lkeFK_ICProductID.TabIndex = 30;
             this.fld_lkeFK_ICProductID.Tag = "DC";
             this.fld_lkeFK_ICProductID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fld_lkeFK_ICProductID_KeyUp);
@@ -797,7 +857,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.fld_pteARProductionPlanningItemProductPicture.Cursor = System.Windows.Forms.Cursors.Default;
             this.fld_pteARProductionPlanningItemProductPicture.FileName = null;
             this.fld_pteARProductionPlanningItemProductPicture.FilePath = null;
-            this.fld_pteARProductionPlanningItemProductPicture.Location = new System.Drawing.Point(1377, 6);
+            this.fld_pteARProductionPlanningItemProductPicture.Location = new System.Drawing.Point(1391, 6);
             this.fld_pteARProductionPlanningItemProductPicture.Name = "fld_pteARProductionPlanningItemProductPicture";
             this.fld_pteARProductionPlanningItemProductPicture.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.fld_pteARProductionPlanningItemProductPicture.Screen = null;
@@ -828,7 +888,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.fld_dgcARProductionPlanningItems.Name = "fld_dgcARProductionPlanningItems";
             this.fld_dgcARProductionPlanningItems.PrintReport = false;
             this.fld_dgcARProductionPlanningItems.Screen = null;
-            this.fld_dgcARProductionPlanningItems.Size = new System.Drawing.Size(1364, 391);
+            this.fld_dgcARProductionPlanningItems.Size = new System.Drawing.Size(1378, 398);
             this.fld_dgcARProductionPlanningItems.TabIndex = 0;
             this.fld_dgcARProductionPlanningItems.Tag = "DC";
             this.fld_dgcARProductionPlanningItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1460,7 +1520,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(1511, 858);
+            this.ClientSize = new System.Drawing.Size(1525, 865);
             this.Controls.Add(this.bosPanel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMOSS100.IconOptions.Icon")));
             this.Name = "DMOSS100";
@@ -1468,6 +1528,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
             this.Controls.SetChildIndex(this.bosPanel1, 0);
             this.bosPanel1.ResumeLayout(false);
             this.bosPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeHRDepartmentRoomGroupItemID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtARProductionPlanningSaleOrderName.Properties)).EndInit();
             this.BOSLine2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeARProductionPlanningSaleType.Properties)).EndInit();
@@ -1564,5 +1625,7 @@ namespace BOSERP.Modules.ProductionPlanning.UI
         private BOSComponent.BOSRichEditControl fld_recARProductionPlanningDesc;
         private BOSTextBox fld_txtARProductionPlanningSaleOrderName;
         private BOSLabel bosLabel15;
+        private BOSLookupEdit fld_lkeHRDepartmentRoomGroupItemID;
+        private BOSLabel bosLabel16;
     }
 }

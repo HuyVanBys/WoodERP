@@ -772,6 +772,12 @@
     <Compile Include="Modules\CarcassBOM\UI\guiChooseBOM.Designer.cs">
       <DependentUpon>guiChooseBOM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiChooseColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CarcassBOM\UI\guiChooseColor.Designer.cs">
+      <DependentUpon>guiChooseColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\CarcassBOM\UI\guiCopyMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -856,41 +862,6 @@
     <Compile Include="Modules\CarcassBOM\UI\guiZoom.Designer.cs">
       <DependentUpon>guiZoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\ChangeBOMInformationEntities.cs" />
-    <Compile Include="Modules\ChangeBOMInformation\ChangeBOMInformationModule.cs" />
-    <Compile Include="Modules\ChangeBOMInformation\UI\DMCBI100.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\UI\DMCBI100.designer.cs">
-      <DependentUpon>DMCBI100.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\UI\GridControl\ChangeBOMInformationItemsGridControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\UI\GridControl\ErrorGridControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\UI\GridControl\ProfileManagementHistoryGridControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\UI\guiChooseHistoryLog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\UI\guiChooseHistoryLog.Designer.cs">
-      <DependentUpon>guiChooseHistoryLog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\UI\guiShowError.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\UI\guiShowError.Designer.cs">
-      <DependentUpon>guiShowError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\UI\SMCBI100.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modules\ChangeBOMInformation\UI\SMCBI100.designer.cs">
-      <DependentUpon>SMCBI100.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modules\EndingInProgressStatistic\EndingInProgressStatisticEntities.cs" />
     <Compile Include="Modules\EndingInProgressStatistic\EndingInProgressStatisticModule.cs" />
     <Compile Include="Modules\EndingInProgressStatistic\UI\DMEIPS100.cs">
@@ -913,6 +884,18 @@
     </Compile>
     <Compile Include="Modules\EndingInProgressStatistic\UI\SMEIPS100.designer.cs">
       <DependentUpon>SMEIPS100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\UI\GridControl\FalseConditionalDetailsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\UI\GridControl\FalseConditionalDetailsGridControl.Designer.cs">
+      <DependentUpon>FalseConditionalDetailsGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\UI\guiShowFalseConditionalDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\UI\guiShowFalseConditionalDetail.Designer.cs">
+      <DependentUpon>guiShowFalseConditionalDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\GeneralCostAllocation\GeneralCostAllocationEntities.cs" />
     <Compile Include="Modules\GeneralCostAllocation\GeneralCostAllocationModule.cs" />
@@ -1287,6 +1270,12 @@
     <Compile Include="Modules\OperationDetailPlan\UI\guiEditMachine.Designer.cs">
       <DependentUpon>guiEditMachine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\OperationDetailPlan\UI\guiPrint.Designer.cs">
+      <DependentUpon>guiPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\OperationDetailPlan\UI\guiPrintFilter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1371,6 +1360,12 @@
     <Compile Include="Modules\Operation\UI\TreeListControl\MMOperationsTreeListControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modules\PaintProcessConfig\UI\guiChooseColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PaintProcessConfig\UI\guiChooseColor.Designer.cs">
+      <DependentUpon>guiChooseColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\PaintProcesses\Localization\PaintProcessesLocalizedResources.Designer.cs" />
     <Compile Include="Modules\PaintProcesses\PaintProcessesEntities.cs" />
     <Compile Include="Modules\PaintProcesses\PaintProcessesModule.cs" />
@@ -1389,6 +1384,89 @@
     <Compile Include="Modules\PaintProcesses\UI\SMPP100.designer.cs">
       <DependentUpon>SMPP100.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\PositionLine\PositionLineEntities.cs" />
+    <Compile Include="Modules\PositionLine\PositionLineModule.cs" />
+    <Compile Include="Modules\PositionLine\UI\DMPL100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PositionLine\UI\DMPL100.designer.cs">
+      <DependentUpon>DMPL100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PositionLine\UI\SMPL100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PositionLine\UI\SMPL100.designer.cs">
+      <DependentUpon>SMPL100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PositionRange\PositionRangeEntities.cs" />
+    <Compile Include="Modules\PositionRange\PositionRangeModule.cs" />
+    <Compile Include="Modules\PositionRange\UI\DMPR100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PositionRange\UI\DMPR100.designer.cs">
+      <DependentUpon>DMPR100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PositionRange\UI\SMPR100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PositionRange\UI\SMPR100.designer.cs">
+      <DependentUpon>SMPR100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\UI\DMFC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\UI\DMFC100.designer.cs">
+      <DependentUpon>DMFC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\UI\GridControl\FalseConditionalItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\UI\GridControl\FalseConditionalItemsGridControl.Designer.cs">
+      <DependentUpon>FalseConditionalItemsGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\UI\SMFC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\UI\SMFC100.designer.cs">
+      <DependentUpon>SMFC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FalseConditional\FalseConditionalEntities.cs" />
+    <Compile Include="Modules\FalseConditional\FalseConditionalModule.cs" />
+    <Compile Include="Modules\UpdatePosition\ImportInfo\MMUpdatePositionItemsImportInfo.cs" />
+    <Compile Include="Modules\UpdatePosition\UI\GridControl\UpdatePositionItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\UpdatePosition\UI\GridControl\UpdatePositionItemsGridControl.Designer.cs">
+      <DependentUpon>UpdatePositionItemsGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\UpdatePosition\UpdatePositionEntities.cs" />
+    <Compile Include="Modules\UpdatePosition\UpdatePositionModule.cs" />
+    <Compile Include="Modules\UpdatePosition\UI\DMUP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\UpdatePosition\UI\DMUP100.designer.cs">
+      <DependentUpon>DMUP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\UpdatePosition\UI\SMUP100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\UpdatePosition\UI\SMUP100.designer.cs">
+      <DependentUpon>SMUP100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PositionWire\PositionWireEntities.cs" />
+    <Compile Include="Modules\PositionWire\PositionWireModule.cs" />
+    <Compile Include="Modules\PositionWire\UI\DMPW100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PositionWire\UI\DMPW100.designer.cs">
+      <DependentUpon>DMPW100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PositionWire\UI\SMPW100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PositionWire\UI\SMPW100.designer.cs">
+      <DependentUpon>SMPW100.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\PrintRouting\PrintRoutingEntities.cs" />
     <Compile Include="Modules\PrintRouting\PrintRoutingModule.cs" />
     <Compile Include="Modules\PrintRouting\UI\DMPRT100.cs">
@@ -1399,6 +1477,23 @@
     </Compile>
     <Compile Include="Modules\PrintRouting\UI\GridControl\MMPrintRoutingsGridControl.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\PaintProcessConfig\PaintProcessConfigEntities.cs" />
+    <Compile Include="Modules\PaintProcessConfig\PaintProcessConfigModule.cs" />
+    <Compile Include="Modules\PaintProcessConfig\UI\DMPPC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PaintProcessConfig\UI\DMPPC100.designer.cs">
+      <DependentUpon>DMPPC100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PaintProcessConfig\UI\GridControl\MMPaintProcessConfigItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\PaintProcessConfig\UI\SMPPC100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PaintProcessConfig\UI\SMPPC100.designer.cs">
+      <DependentUpon>SMPPC100.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Processs\Localization\ProcessLocalizedResources.Designer.cs" />
     <Compile Include="Modules\Processs\ProcesssEntities.cs" />
@@ -1928,6 +2023,9 @@
       <DependentUpon>guiChooseBOM.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CarcassBOM\UI\guiChooseColor.resx">
+      <DependentUpon>guiChooseColor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\CarcassBOM\UI\guiCopyMaterial.resx">
       <DependentUpon>guiCopyMaterial.cs</DependentUpon>
     </EmbeddedResource>
@@ -1981,18 +2079,6 @@
       <DependentUpon>guiZoom.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ChangeBOMInformation\UI\DMCBI100.resx">
-      <DependentUpon>DMCBI100.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ChangeBOMInformation\UI\guiChooseHistoryLog.resx">
-      <DependentUpon>guiChooseHistoryLog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ChangeBOMInformation\UI\guiShowError.resx">
-      <DependentUpon>guiShowError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ChangeBOMInformation\UI\SMCBI100.resx">
-      <DependentUpon>SMCBI100.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modules\EndingInProgressStatistic\UI\DMEIPS100.resx">
       <DependentUpon>DMEIPS100.cs</DependentUpon>
     </EmbeddedResource>
@@ -2001,6 +2087,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\EndingInProgressStatistic\UI\SMEIPS100.resx">
       <DependentUpon>SMEIPS100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FalseConditional\UI\guiShowFalseConditionalDetail.resx">
+      <DependentUpon>guiShowFalseConditionalDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\GeneralCostAllocation\UI\DMGCA100.resx">
       <DependentUpon>DMGCA100.cs</DependentUpon>
@@ -2112,6 +2201,9 @@
     <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiEditMachine.resx">
       <DependentUpon>guiEditMachine.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiPrint.resx">
+      <DependentUpon>guiPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\OperationDetailPlan\UI\guiPrintFilter.resx">
       <DependentUpon>guiPrintFilter.cs</DependentUpon>
     </EmbeddedResource>
@@ -2145,6 +2237,9 @@
     <EmbeddedResource Include="Modules\Operation\UI\SMOP100.resx">
       <DependentUpon>SMOP100.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PaintProcessConfig\UI\guiChooseColor.resx">
+      <DependentUpon>guiChooseColor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\PaintProcesses\Localization\PaintProcessesLocalizedResources.resx" />
     <EmbeddedResource Include="Modules\PaintProcesses\UI\DMPP100.resx">
       <DependentUpon>DMPP100.cs</DependentUpon>
@@ -2152,8 +2247,44 @@
     <EmbeddedResource Include="Modules\PaintProcesses\UI\SMPP100.resx">
       <DependentUpon>SMPP100.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PositionLine\UI\DMPL100.resx">
+      <DependentUpon>DMPL100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PositionLine\UI\SMPL100.resx">
+      <DependentUpon>SMPL100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PositionRange\UI\DMPR100.resx">
+      <DependentUpon>DMPR100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PositionRange\UI\SMPR100.resx">
+      <DependentUpon>SMPR100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FalseConditional\UI\DMFC100.resx">
+      <DependentUpon>DMFC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FalseConditional\UI\SMFC100.resx">
+      <DependentUpon>SMFC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\UpdatePosition\UI\DMUP100.resx">
+      <DependentUpon>DMUP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\UpdatePosition\UI\SMUP100.resx">
+      <DependentUpon>SMUP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PositionWire\UI\DMPW100.resx">
+      <DependentUpon>DMPW100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PositionWire\UI\SMPW100.resx">
+      <DependentUpon>SMPW100.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\PrintRouting\UI\DMPRT100.resx">
       <DependentUpon>DMPRT100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PaintProcessConfig\UI\DMPPC100.resx">
+      <DependentUpon>DMPPC100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PaintProcessConfig\UI\SMPPC100.resx">
+      <DependentUpon>SMPPC100.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Processs\Localization\ProcessLocalizedResources.resx" />
     <EmbeddedResource Include="Modules\Processs\UI\DMPCE100.resx">
@@ -2309,7 +2440,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\SemiProductIngredient\UI\guiShowIngredientCostDD.resx">
       <DependentUpon>guiShowIngredientCostDD.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\SemiProductIngredient\UI\SMSPI100.resx">
       <DependentUpon>SMSPI100.cs</DependentUpon>
@@ -2356,7 +2486,15 @@
   <ItemGroup>
     <Folder Include="Modules\AllocationProposal\Localization\" />
     <Folder Include="Modules\CalculatorProductionNormCost\Localization\" />
+    <Folder Include="Modules\PaintProcessConfig\Localization\" />
+    <Folder Include="Modules\PositionLine\Localization\" />
+    <Folder Include="Modules\PositionLine\UI\GridControl\" />
+    <Folder Include="Modules\PositionRange\Localization\" />
+    <Folder Include="Modules\PositionRange\UI\GridControl\" />
+    <Folder Include="Modules\PositionWire\Locolization\" />
+    <Folder Include="Modules\PositionWire\UI\GridControl\" />
     <Folder Include="Modules\PrintRouting\Localization\" />
+    <Folder Include="Modules\UpdatePosition\Locolization\" />
     <Folder Include="Modules\WorkShop\UI\GridControl\" />
   </ItemGroup>
   <ItemGroup>

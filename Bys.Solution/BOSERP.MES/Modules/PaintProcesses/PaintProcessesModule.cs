@@ -156,7 +156,7 @@ namespace BOSERP.Modules.PaintProcesses
         {
             base.ActionNew();
             MMPaintProcessessInfo objPaintProcessessInfo = (MMPaintProcessessInfo)((PaintProcessesEntities)CurrentModuleEntity).MainObject;
-
+            objPaintProcessessInfo.MMPaintProcessesStatus = Status.New.ToString();
         }
 
         public override void ActionCancel()
@@ -575,6 +575,9 @@ namespace BOSERP.Modules.PaintProcesses
         public override void ActionDuplicate()
         {
             base.ActionDuplicate();
+            MMPaintProcessessInfo objPaintProcessessInfo = (MMPaintProcessessInfo)((PaintProcessesEntities)CurrentModuleEntity).MainObject;
+            objPaintProcessessInfo.MMPaintProcessesStatus = Status.New.ToString();
+            InvalidateToolbar();
         }
 
         public override void InvalidateToolbar()
@@ -582,8 +585,24 @@ namespace BOSERP.Modules.PaintProcesses
             base.InvalidateToolbar();
             MMPaintProcessessInfo mainObject = (MMPaintProcessessInfo)CurrentModuleEntity.MainObject;
             ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, false);
+            ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonComplete, false);
+            ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, false);
             if (mainObject.MMPaintProcessesID > 0)
             {
+                if (mainObject.MMPaintProcessesStatus == PaintProcessesStatus.New.ToString())
+                {
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonEdit, true);
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonComplete, true);
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, false);
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, true);
+                }
+                else if (mainObject.MMPaintProcessesStatus == PaintProcessesStatus.Approve.ToString())
+                {
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonEdit, false);
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, true);
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonComplete, false);
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, true);
+                }    
                 if (Toolbar.IsEditAction())
                 {
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, true);
@@ -619,8 +638,61 @@ namespace BOSERP.Modules.PaintProcesses
             }
             catch (Exception e) { }
         }
-
+        public void AllocationProductQtyMixRatio(MMPaintProcessesItemsInfo objPaintProcessesItemsInfo)
+        {
+            PaintProcessesEntities entity = (PaintProcessesEntities)CurrentModuleEntity;
+            MMPaintProcessessInfo mainObject = (MMPaintProcessessInfo)entity.MainObject;
+            MMPaintProcessesItemsController objPaintProcessesItemsController = new MMPaintProcessesItemsController();
+            decimal sumMixRatio = 0;
+            MMPaintProcessesItemsInfo objParentPaintProcessesItemsInfo = new MMPaintProcessesItemsInfo();
+            foreach (MMPaintProcessesItemsInfo item in entity.PaintProcessesItemList)
+            {
+                if (item.MMPaintProcessesItemID == objPaintProcessesItemsInfo.MMPaintProcessesItemParentID)
+                    objParentPaintProcessesItemsInfo = item;
+            }
+            if (objParentPaintProcessesItemsInfo.SubList == null)
+                return;
+            foreach (MMPaintProcessesItemsInfo item in objParentPaintProcessesItemsInfo.SubList)
+            {
+                sumMixRatio += decimal.Parse(item.MMPaintProcessesItemMixRatio == "" ? "0" : item.MMPaintProcessesItemMixRatio);
+            }
+            foreach (MMPaintProcessesItemsInfo item in objParentPaintProcessesItemsInfo.SubList)
+            {
+                item.MMPaintProcessesItemProductQty = objParentPaintProcessesItemsInfo.MMPaintProcessesItemProductQty * decimal.Parse(item.MMPaintProcessesItemMixRatio == "" ? "0" : item.MMPaintProcessesItemMixRatio) / (sumMixRatio == 0 ? 1 : sumMixRatio);
+                item.MMPaintProcessesItemProductQty = Math.Round(item.MMPaintProcessesItemProductQty, RoundingNumber.FormatN4, MidpointRounding.AwayFromZero);
+                ChangeItemFromPaintProcessesItemsList(item);
+            }
+            try
+            {
+                entity.PaintProcessesItemList.TreeListControl?.RefreshDataSource();
+                entity.PaintProcessesItemList.TreeListControl?.ForceInitialize();
+                entity.PaintProcessesItemList.TreeListControl?.ExpandAll();
+            }
+            catch (Exception e) { }
+        }
+        public override bool ActionComplete()
+        {
+            PaintProcessesEntities entity = (PaintProcessesEntities)CurrentModuleEntity;
+            MMPaintProcessessInfo mainObject = (MMPaintProcessessInfo)entity.MainObject;
+            entity.SetPropertyChangeEventLock(false);
+            mainObject.MMPaintProcessesStatus = PaintProcessesStatus.Approve.ToString();
+            entity.UpdateMainObject();
+            entity.SetPropertyChangeEventLock(true);
+            InvalidateToolbar();
+            return base.ActionComplete();
+        }
         #region Mở - Xóa chứng từ
+        public override bool ActionCancelComplete()
+        {
+            PaintProcessesEntities entity = (PaintProcessesEntities)CurrentModuleEntity;
+            MMPaintProcessessInfo mainObject = (MMPaintProcessessInfo)entity.MainObject;
+            entity.SetPropertyChangeEventLock(false);
+            mainObject.MMPaintProcessesStatus = PaintProcessesStatus.New.ToString();
+            entity.UpdateMainObject();
+            entity.SetPropertyChangeEventLock(true);
+            InvalidateToolbar();
+            return base.ActionCancelComplete();
+        }
         public override void ActionDelete()
         {
             MMPaintProcessessInfo mainObject = (MMPaintProcessessInfo)CurrentModuleEntity.MainObject.Clone();

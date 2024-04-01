@@ -44,6 +44,10 @@ namespace BOSERP
 		protected decimal _iCConversionProposalItemProductLength;
 		protected int _fK_MMAllocationPlanID;
 		protected int _fK_MMAllocationPlanItemID;
+		protected decimal _iCConversionProposalItemRemainQty;
+		protected decimal _iCConversionProposalItemSplitRate;
+		protected decimal _iCConversionProposalItemAllocationPlanLength;
+		protected decimal _iCConversionProposalItemAllocationPlanWoodQty;
 		#endregion
 
 		#region Public properties
@@ -371,10 +375,60 @@ namespace BOSERP
 				}
 			}
 		}
+		public decimal ICConversionProposalItemRemainQty
+		{
+			get { return _iCConversionProposalItemRemainQty; }
+			set
+            {
+				if (value != this._iCConversionProposalItemRemainQty)
+                {
+					_iCConversionProposalItemRemainQty = value;
+					NotifyChanged("ICConversionProposalItemRemainQty");
+				}					
+            }
+        }
+		public decimal ICConversionProposalItemSplitRate
+		{
+			get { return _iCConversionProposalItemSplitRate; }
+			set
+			{
+				if (value != this._iCConversionProposalItemSplitRate)
+				{
+					_iCConversionProposalItemSplitRate = value;
+					NotifyChanged("ICConversionProposalItemSplitRate");
+				}
+			}
+		}
+		public decimal ICConversionProposalItemAllocationPlanLength
+		{
+			get { return _iCConversionProposalItemAllocationPlanLength; }
+			set
+			{
+				if (value != this._iCConversionProposalItemAllocationPlanLength)
+				{
+					_iCConversionProposalItemAllocationPlanLength = value;
+					NotifyChanged("ICConversionProposalItemAllocationPlanLength");
+				}
+			}
+		}
+		public decimal ICConversionProposalItemAllocationPlanWoodQty
+        {
+			get { return _iCConversionProposalItemAllocationPlanWoodQty; }
+			set
+            {
+				if (value != this._iCConversionProposalItemAllocationPlanWoodQty)
+                {
+					_iCConversionProposalItemAllocationPlanWoodQty = value;
+					NotifyChanged("ICConversionProposalItemAllocationPlanWoodQty");
+				}
+            }
+        }
 		#endregion
 		#region Extra Properties
 		public string MMBatchProductItemSOName { get; set; }
 		public decimal ICConversionProposalItemNormQty { get; set; }
+		public string ICSemiProductSizeAndSpecifiCations { get; set; }
+		public string ICProductName2 { get; set; }
 		#endregion
 	}
     #endregion

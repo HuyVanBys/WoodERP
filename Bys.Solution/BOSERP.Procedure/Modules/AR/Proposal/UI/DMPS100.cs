@@ -201,8 +201,9 @@ namespace BOSERP.Modules.Proposal.UI
             BOSLookupEdit lke = sender as BOSLookupEdit;
             if (lke == null)
                 return;
-            List<ICProductsForViewInfo> list = BOSApp.CurrentProductList.Where(o => o.ICProductType == "ProductProposal" || o.ICProductType == "Product" || o.ICProductType == "SemiProduct").ToList();
-            lke.Properties.DataSource = list;
+            //List<ICProductsForViewInfo> list = BOSApp.CurrentProductList.Where(o => o.ICProductType == "ProductProposal" || o.ICProductType == "Product" || o.ICProductType == "SemiProduct").ToList();
+            //lke.Properties.DataSource = list;
+            lke.Properties.DataSource = ((ProposalModule)Module).LoadProductList();
         }
 
         private void fld_lkeFK_ACCostCenterID_CloseUp(object sender, DevExpress.XtraEditors.Controls.CloseUpEventArgs e)

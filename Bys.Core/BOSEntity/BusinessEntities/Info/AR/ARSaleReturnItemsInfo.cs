@@ -699,6 +699,7 @@ namespace BOSERP
         public int FK_GEDeliveryDistrictID { get; set; }
         public int FK_GEDeliveryStateProvinceID { get; set; }
         public decimal ICTransactionUnitCost { get; set; }
+        public string ICProductName2 { get; set; }
         #endregion
     }
     #endregion

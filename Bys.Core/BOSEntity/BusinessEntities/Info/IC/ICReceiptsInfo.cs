@@ -229,6 +229,7 @@ namespace BOSERP
         protected int _fK_HRDeliveryEmployeeID;
         protected String _iCReceiptSaleContract = String.Empty;
         protected int _iCReceiptProposedEmployeeID;
+        protected string _mMUpdatePositionItemPositionName;
         #endregion
 
         #region Public properties
@@ -2750,6 +2751,18 @@ namespace BOSERP
                     _iCReceiptProposedEmployeeID = value;
                     NotifyChanged("ICReceiptProposedEmployeeID");
                 }    
+            }
+        }
+        public string MMUpdatePositionItemPositionName
+        {
+            get { return _mMUpdatePositionItemPositionName; }
+            set
+            {
+                if (value != this._mMUpdatePositionItemPositionName)
+                {
+                    _mMUpdatePositionItemPositionName = value;
+                    NotifyChanged("MMUpdatePositionItemPositionName");
+                }
             }
         }
         #endregion

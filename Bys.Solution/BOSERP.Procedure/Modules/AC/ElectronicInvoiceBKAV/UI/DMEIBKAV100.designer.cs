@@ -390,6 +390,7 @@ namespace BOSERP.Modules.ElectronicInvoiceBKAV.UI
             this.fld_cmbTaxOfficeCode.Properties.Items.AddRange(new object[] {
             "0%",
             "5%",
+            "8%",
             "10%",
             "Không thuế GTGT"});
             this.fld_cmbTaxOfficeCode.Screen = null;

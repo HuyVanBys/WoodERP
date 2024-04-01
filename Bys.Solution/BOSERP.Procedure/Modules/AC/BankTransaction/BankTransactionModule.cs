@@ -486,6 +486,7 @@ namespace BOSERP.Modules.BankTransaction
             ParentScreen.SetEnableOfToolbarButton(ToolbarButtons.PostedTransactions, false);
             ParentScreen.SetEnableOfToolbarButton(ToolbarButtons.UnPostedTransactions, false);
             ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, false);
+            ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, false);
             if (mainObject.ACBankTransactionID > 0)
             {
                 if (mainObject.ACBankTransactionStatus == BankTransactionStatus.Completed.ToString())
@@ -498,6 +499,10 @@ namespace BOSERP.Modules.BankTransaction
                             mainObject.ACBankTransactionPostedStatus == PostedTransactionStatus.Posted.ToString());
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, true);
                 }
+            }
+            if (Toolbar.IsEditAction())
+            {
+                ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, true);
             }
             base.InvalidateToolbar();
         }

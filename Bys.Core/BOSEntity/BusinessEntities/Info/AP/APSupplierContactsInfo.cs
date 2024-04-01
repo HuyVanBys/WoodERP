@@ -52,6 +52,9 @@ namespace BOSERP
         protected bool _aPSupplierContactDealCheck = false;
         protected bool _aPSupplierContactPODefaultCheck = false;
         protected string _aPSupplierContactLevel = string.Empty;
+        protected string _aPSupplierContactCCCDNo = string.Empty;
+        protected DateTime _aPSupplierContactCCCDDate = DateTime.MaxValue;
+        protected string _aPSupplierContactCCCDAddressLine1 = string.Empty;
         #endregion
 
         #region Public properties
@@ -496,6 +499,42 @@ namespace BOSERP
                 {
                     _aPSupplierContactLevel = value;
                     NotifyChanged("APSupplierContactLevel");
+                }
+            }
+        }
+        public string APSupplierContactCCCDNo
+        {
+            get { return _aPSupplierContactCCCDNo; }
+            set
+            {
+                if (value != this._aPSupplierContactCCCDNo)
+                {
+                    _aPSupplierContactCCCDNo = value;
+                    NotifyChanged("APSupplierContactCCCDNo");
+                }
+            }
+        }
+        public DateTime APSupplierContactCCCDDate
+        {
+            get { return _aPSupplierContactCCCDDate; }
+            set
+            {
+                if (value != this._aPSupplierContactCCCDDate)
+                {
+                    _aPSupplierContactCCCDDate = value;
+                    NotifyChanged("APSupplierContactCCCDDate");
+                }
+            }
+        }
+        public string APSupplierContactCCCDAddressLine1
+        {
+            get { return _aPSupplierContactCCCDAddressLine1; }
+            set
+            {
+                if (value != this._aPSupplierContactCCCDAddressLine1)
+                {
+                    _aPSupplierContactCCCDAddressLine1 = value;
+                    NotifyChanged("APSupplierContactCCCDAddressLine1");
                 }
             }
         }

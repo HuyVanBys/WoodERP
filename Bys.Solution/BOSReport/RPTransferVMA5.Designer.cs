@@ -88,14 +88,14 @@ namespace BOSReport
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.xr_lblTransferDate = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xr_lblDebitAccount = new DevExpress.XtraReports.UI.XRLabel();
-            this.xr_lblCreditAccount = new DevExpress.XtraReports.UI.XRLabel();
             this.logoCompany = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xr_lblBRBranchFax = new DevExpress.XtraReports.UI.XRLabel();
             this.xr_lblBRBranchPhone = new DevExpress.XtraReports.UI.XRLabel();
             this.xr_lblBRBranchAddressLine3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xr_lblDebitAccount = new DevExpress.XtraReports.UI.XRLabel();
+            this.xr_lblCreditAccount = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsICTransfers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsICTransferItems)).BeginInit();
@@ -623,7 +623,6 @@ namespace BOSReport
             this.xrLabel18.StylePriority.UseFont = false;
             this.xrLabel18.StylePriority.UsePadding = false;
             this.xrLabel18.StylePriority.UseTextAlignment = false;
-            this.xrLabel18.Text = "xrLabel18";
             this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel16
@@ -931,34 +930,6 @@ namespace BOSReport
             this.ReportHeader.HeightF = 612F;
             this.ReportHeader.Name = "ReportHeader";
             // 
-            // xr_lblDebitAccount
-            // 
-            this.xr_lblDebitAccount.Dpi = 254F;
-            this.xr_lblDebitAccount.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xr_lblDebitAccount.LocationFloat = new DevExpress.Utils.PointFloat(1209.885F, 167.64F);
-            this.xr_lblDebitAccount.Name = "xr_lblDebitAccount";
-            this.xr_lblDebitAccount.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xr_lblDebitAccount.SizeF = new System.Drawing.SizeF(290.7433F, 63.70322F);
-            this.xr_lblDebitAccount.StylePriority.UseFont = false;
-            this.xr_lblDebitAccount.StylePriority.UsePadding = false;
-            this.xr_lblDebitAccount.StylePriority.UseTextAlignment = false;
-            this.xr_lblDebitAccount.Text = "Nợ:";
-            this.xr_lblDebitAccount.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xr_lblCreditAccount
-            // 
-            this.xr_lblCreditAccount.Dpi = 254F;
-            this.xr_lblCreditAccount.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xr_lblCreditAccount.LocationFloat = new DevExpress.Utils.PointFloat(1500.628F, 167.64F);
-            this.xr_lblCreditAccount.Name = "xr_lblCreditAccount";
-            this.xr_lblCreditAccount.Padding = new DevExpress.XtraPrinting.PaddingInfo(13, 5, 0, 0, 254F);
-            this.xr_lblCreditAccount.SizeF = new System.Drawing.SizeF(275.3597F, 63.70326F);
-            this.xr_lblCreditAccount.StylePriority.UseFont = false;
-            this.xr_lblCreditAccount.StylePriority.UsePadding = false;
-            this.xr_lblCreditAccount.StylePriority.UseTextAlignment = false;
-            this.xr_lblCreditAccount.Text = "Có:";
-            this.xr_lblCreditAccount.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
             // logoCompany
             // 
             this.logoCompany.Dpi = 254F;
@@ -1037,6 +1008,34 @@ namespace BOSReport
             this.xrLabel8.Text = "Điện thoại:";
             this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
+            // xr_lblDebitAccount
+            // 
+            this.xr_lblDebitAccount.Dpi = 254F;
+            this.xr_lblDebitAccount.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xr_lblDebitAccount.LocationFloat = new DevExpress.Utils.PointFloat(1209.885F, 167.64F);
+            this.xr_lblDebitAccount.Name = "xr_lblDebitAccount";
+            this.xr_lblDebitAccount.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xr_lblDebitAccount.SizeF = new System.Drawing.SizeF(290.7433F, 63.70322F);
+            this.xr_lblDebitAccount.StylePriority.UseFont = false;
+            this.xr_lblDebitAccount.StylePriority.UsePadding = false;
+            this.xr_lblDebitAccount.StylePriority.UseTextAlignment = false;
+            this.xr_lblDebitAccount.Text = "Nợ:";
+            this.xr_lblDebitAccount.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xr_lblCreditAccount
+            // 
+            this.xr_lblCreditAccount.Dpi = 254F;
+            this.xr_lblCreditAccount.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xr_lblCreditAccount.LocationFloat = new DevExpress.Utils.PointFloat(1500.628F, 167.64F);
+            this.xr_lblCreditAccount.Name = "xr_lblCreditAccount";
+            this.xr_lblCreditAccount.Padding = new DevExpress.XtraPrinting.PaddingInfo(13, 5, 0, 0, 254F);
+            this.xr_lblCreditAccount.SizeF = new System.Drawing.SizeF(275.3597F, 63.70326F);
+            this.xr_lblCreditAccount.StylePriority.UseFont = false;
+            this.xr_lblCreditAccount.StylePriority.UsePadding = false;
+            this.xr_lblCreditAccount.StylePriority.UseTextAlignment = false;
+            this.xr_lblCreditAccount.Text = "Có:";
+            this.xr_lblCreditAccount.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // RPTransferVMA5
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1065,7 +1064,7 @@ namespace BOSReport
             this.EvenStyle,
             this.OddStyle});
             this.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.Version = "19.1";
+            this.Version = "20.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsICTransfers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsICTransferItems)).EndInit();

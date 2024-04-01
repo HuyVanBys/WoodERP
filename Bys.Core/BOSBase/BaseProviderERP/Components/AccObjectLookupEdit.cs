@@ -118,12 +118,12 @@ namespace BOSERP
             List<ACObjectsInfo> objects = new List<ACObjectsInfo>();
             if (!string.IsNullOrEmpty(BOSModuleType))
             {
-                objects = objObjectsController.GetObjectViewPermissionByModule(BOSModuleType);
+                objects = objObjectsController.GetObjectViewPermissionByUseIDAndModule(BOSApp.CurrentUsersInfo.ADUserID, BOSModuleType);
             }
             else
             {
                 if (this.Screen != null && this.Screen.Module != null)
-                    objects = objObjectsController.GetObjectViewPermissionByModule(this.Screen.Module.Name);
+                objects = objObjectsController.GetObjectViewPermissionByUseIDAndModule(BOSApp.CurrentUsersInfo.ADUserID, this.Screen.Module.Name);
             }
             if (BOSAllowDummy)
             {

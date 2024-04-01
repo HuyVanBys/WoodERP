@@ -64,7 +64,8 @@ namespace BOSERP.Modules.Shipment.UI
             BOSLookupEdit lke = (BOSLookupEdit)sender;
             if (lke == null)
                 return;
-            lke.Properties.DataSource = ((ShipmentModule)Module).GetDataSourceForProductLookupEdit();
+            string type = fld_lkeICShipmentProductType.EditValue != null ? fld_lkeICShipmentProductType.EditValue.ToString() : string.Empty;
+            lke.Properties.DataSource = ((ShipmentModule)Module).GetDataSourceForProductLookupEdit(type);
         }
 
         private void fld_lkeFK_MMBatchProductID_Validated(object sender, EventArgs e)

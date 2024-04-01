@@ -519,12 +519,13 @@ namespace BOSERP
                                 DateTime? fromDate,
                                 DateTime? toDate,
                                 string phone,
+                                int? userID,
                                 List<BRBranchsInfo> branchList)
         {
             DataSet rtn = new DataSet();
             foreach (BRBranchsInfo ojbBranchsInfo in branchList)
             {
-                DataSet ds = GetInvoiceListDataset(invoiceNo,
+                DataSet ds = GetInvoiceListDatasetByUser(invoiceNo,
                                                     invoiceReference,
                                                     objectID,
                                                     objectType,
@@ -533,7 +534,8 @@ namespace BOSERP
                                                     fromDate,
                                                     toDate,
                                                     phone,
-                                                    ojbBranchsInfo.BRBranchID);
+                                                    ojbBranchsInfo.BRBranchID,
+                                                    userID);
                 rtn.Merge(ds);
             }
 
@@ -563,6 +565,32 @@ namespace BOSERP
                                 toDate,
                                 phone,
                                 branchID);
+        }
+        public DataSet GetInvoiceListDatasetByUser(
+                                string invoiceNo,
+                                string invoiceReference,
+                                int? objectID,
+                                string objectType,
+                                int? employeeID,
+                                string invoiceType,
+                                DateTime? fromDate,
+                                DateTime? toDate,
+                                string phone,
+                                int? branchID,
+                                int? userID)
+        {
+            return dal.GetDataSet("ARInvoices_GetInvoiceListDatasetByUser",
+                                invoiceNo,
+                                invoiceReference,
+                                objectID,
+                                objectType,
+                                employeeID,
+                                invoiceType,
+                                fromDate,
+                                toDate,
+                                phone,
+                                branchID,
+                                userID);
         }
 
         /// <summary>

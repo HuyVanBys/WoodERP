@@ -557,7 +557,8 @@ namespace BOSERP
                 {
                     case TableName.ARCustomersTableName:
                         {
-                            ds = ((ARCustomersController)objBusinessController).GetAllCustomersForLookupControl();
+                            int ADUserID = BOSApp.CurrentUsersInfo == null ? 0 : BOSApp.CurrentUsersInfo.ADUserID;
+                            ds = ((ARCustomersController)objBusinessController).GetAllCustomersForLookupControlByUser(ADUserID);
                             break;
                         }
                     case TableName.APSuppliersTableName:
@@ -1787,7 +1788,7 @@ namespace BOSERP
             value = ADConfigValueUtility.GetFirstConfigValueByGroup("IsUsedCheckProductCode");
             IsUsedCheckProductCode = bool.Parse(string.IsNullOrEmpty(value) ? "false" : value);
             ModulesListApplyValidateSerial = new List<string>() { ModuleName.SaleOrder, ModuleName.DeliveryPlan, ModuleName.Invoice, ModuleName.Shipment, "BatchShipmentDryLumber" };
-            WoodTypesList = new List<string>() { "Roundwood", "FreshLumber", "DryLumber", "Verneer", "ArtificialBoard", "Lumber", "Reuse", "Material"};
+            WoodTypesList = new List<string>() { "Roundwood", "FreshLumber", "DryLumber", "Verneer", "ArtificialBoard", "Lumber", "Reuse", "Material", "Ingredient" };
         }
 
         public static void InitSystemAliasTable()
@@ -3311,7 +3312,7 @@ namespace BOSERP
                 List<GECurrenciesInfo> CList = CController.GetAllCurrencys();
                 List<string> ListCurrency = new List<string> { "USD", "EUR", "RMB", "SGD", "GBP", "JPY" };
                 XmlDocument xml = new XmlDocument();
-                xml.Load("http://www.vietcombank.com.vn/exchangerates/ExrateXML.aspx");
+                xml.Load("https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx");
                 XmlNodeList noXml;
                 noXml = xml.SelectNodes("/ExrateList/Exrate");
                 for (int i = 0; i <= noXml.Count - 1; i++)

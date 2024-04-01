@@ -62,6 +62,7 @@ namespace BOSERP.Modules.ProductConstant
         public BOSList<ICPerimeterGroupsInfo> ICPerimeterGroupsList { get; set; }
         public BOSList<ICMaterialConfigsInfo> ICMaterialConfigsList { get; set; }
         public BOSList<MMConfigAccountOperationsInfo> ConfigAccountOperationList { get; set; }
+        public BOSList<MMConfigFalseConditionalsInfo> ConfigFalseConditionalList { get; set; }
         public BOSList<ICConfigAccordWoodTypesInfo> ConfigThinkAccordWoodTypeList { get; set; }
         public BOSList<ICConfigAccordWoodTypesInfo> ConfigQualityAccordWoodTypeList { get; set; }
         public BOSList<MMProductionCompletionTimeConfigsInfo> ConfigProductionCompletionTimeList { get; set; }
@@ -115,6 +116,7 @@ namespace BOSERP.Modules.ProductConstant
             ICMaterialConfigsList = new BOSList<ICMaterialConfigsInfo>();
             PackingMaterialMarketDimensionList = new BOSList<MMPackingMaterialMarketDimensionsInfo>();
             ConfigAccountOperationList = new BOSList<MMConfigAccountOperationsInfo>();
+            ConfigFalseConditionalList = new BOSList<MMConfigFalseConditionalsInfo>();
             ConfigThinkAccordWoodTypeList = new BOSList<ICConfigAccordWoodTypesInfo>();
             ConfigQualityAccordWoodTypeList = new BOSList<ICConfigAccordWoodTypesInfo>();
             ConfigProductionCompletionTimeList = new BOSList<MMProductionCompletionTimeConfigsInfo>();
@@ -296,6 +298,10 @@ namespace BOSERP.Modules.ProductConstant
                                                     String.Empty,
                                                     TableName.MMConfigAccountOperationsTableName,
                                                     BOSList<MMConfigAccountOperationsInfo>.cstRelationNone);
+            ConfigFalseConditionalList.InitBOSList(this,
+                                                    String.Empty,
+                                                    TableName.MMConfigFalseConditionalsTableName,
+                                                    BOSList<MMConfigAccountOperationsInfo>.cstRelationNone);
             ConfigThinkAccordWoodTypeList.InitBOSList(this,
                                            String.Empty,
                                            TableName.ICConfigAccordWoodTypesTableName,
@@ -384,6 +390,7 @@ namespace BOSERP.Modules.ProductConstant
             ICMaterialConfigsList.InitBOSListGridControl();
             PackingMaterialMarketDimensionList.InitBOSListGridControl("fld_dgcMMPackingMaterialMarketDimensions");
             ConfigAccountOperationList.InitBOSListGridControl(ProductConstantModule.MMConfigAccountOperationsGridControl);
+            ConfigFalseConditionalList.InitBOSListGridControl(ProductConstantModule.MMConfigFalseConditionalsGridControl);
             ConfigThinkAccordWoodTypeList.InitBOSListGridControl(ProductConstantModule.ConfigThinkAccordWoodTypesGridControl);
             ConfigQualityAccordWoodTypeList.InitBOSListGridControl(ProductConstantModule.ConfigQualityAccordWoodTypesGridControl);
             ConfigProductionCompletionTimeList.InitBOSListGridControl(ProductConstantModule.ProductionCompletionTimeConfigsGridControl);

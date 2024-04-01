@@ -40,6 +40,21 @@ namespace BOSERP
             DataSet ds = dal.GetDataSet("ICTransferProposalItems_GetTransferProposalItemForTransfer", branchID, transferProposalID, fromDate, toDate);
             return (List<ICTransferProposalItemsInfo>)GetListFromDataSet(ds);
         }
+
+        public List<ICTransferProposalItemsInfo> GetTransferProposalItemForReportByTransferProposalID(int transferID)
+        {
+            DataSet ds = dal.GetDataSet("ICTransferProposalItems_GetTransferProposalItemForReportByTransferProposalID", transferID);
+            List<ICTransferProposalItemsInfo> transferItems = new List<ICTransferProposalItemsInfo>();
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    ICTransferProposalItemsInfo objTransferItemsInfo = (ICTransferProposalItemsInfo)GetObjectFromDataRow(row);
+                    transferItems.Add(objTransferItemsInfo);
+                }
+            }
+            return transferItems;
+        }
     }
     #endregion
 }

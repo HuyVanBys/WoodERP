@@ -58,5 +58,15 @@ namespace BOSERP.Modules.BatchReceiptDryLumber.UI
         {
             ((BatchReceiptDryLumberModule)Module).ChangeImportAndExportReason(Convert.ToInt32(e.Value));
         }
+
+        private void fld_lnkChooseProspectCustomer_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
+        {
+
+        }
+
+        private void fld_lkeMMUpdatePositionItemID_CloseUp(object sender, DevExpress.XtraEditors.Controls.CloseUpEventArgs e)
+        {
+
+        }
     }
 }

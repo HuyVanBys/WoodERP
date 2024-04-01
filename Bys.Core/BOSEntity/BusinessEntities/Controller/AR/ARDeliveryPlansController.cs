@@ -70,6 +70,30 @@ namespace BOSERP
                                         productID);
             return ds;
         }
+        public DataSet GetAllDeliveryPlanBayUserDataSet(string arDeliveryPlanNo,
+                                                 string arDeliveryPlanName,
+                                                 int? fk_HREmployeeID,
+                                                 DateTime arDeliveryPlanBeginDateFrom,
+                                                 DateTime arDeliveryPlanBeginDateTo,
+                                                 DateTime arDeliveryPlanEndDateFrom,
+                                                 DateTime arDeliveryPlanEndDateTo,
+                                                 int? productID,
+                                                 int? userID
+            )
+        {
+            DataSet ds = dal.GetDataSet("ARDeliveryPlans_GetAllDeliveryPlanBayUserDataSet",
+                                        arDeliveryPlanNo,
+                                        arDeliveryPlanName,
+                                        fk_HREmployeeID,
+                                        arDeliveryPlanBeginDateFrom,
+                                        arDeliveryPlanBeginDateTo,
+                                        arDeliveryPlanEndDateFrom,
+                                        arDeliveryPlanEndDateTo,
+                                        productID,
+                                        userID
+                                        );
+            return ds;
+        }
 
         public DataSet GetAllTransferPlanDataSet(string arDeliveryPlanNo,
                                                 string arDeliveryPlanName,

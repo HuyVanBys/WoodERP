@@ -2,6 +2,8 @@
 using BOSLib;
 using Localization;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace BOSERP.Modules.UserManagement
@@ -22,6 +24,15 @@ namespace BOSERP.Modules.UserManagement
         private void guiManageUser_Load(object sender, EventArgs e)
         {
             InitializeControls(Controls);
+            DataSet ds = BOSApp.LookupTables["ARCustomerBusinessTypes"] as DataSet;
+            if (ds == null || ds.Tables.Count == 0)
+                ds = BOSApp.GetLookupTableData("ARCustomerBusinessTypes");
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                List<ARCustomerBusinessTypesInfo> TypeData = (List<ARCustomerBusinessTypesInfo>)(new ARCustomerBusinessTypesController()).GetListFromDataSet(ds);
+                TypeData.Insert(0, new ARCustomerBusinessTypesInfo());
+                fld_lkeARCustomerBusinessType.Properties.DataSource = TypeData;
+            }
         }
 
         public override void InitializeControls(Control.ControlCollection controls)
@@ -79,6 +90,19 @@ namespace BOSERP.Modules.UserManagement
             {
                 DialogResult = DialogResult.OK;
                 Close();
+            }
+        }
+
+        private void fld_lkeARCustomerBusinessType_QueryPopUp(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            DataSet ds = BOSApp.LookupTables["ARCustomerBusinessTypes"] as DataSet;
+            if (ds == null || ds.Tables.Count == 0)
+                ds = BOSApp.GetLookupTableData("ARCustomerBusinessTypes");
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                List<ARCustomerBusinessTypesInfo> TypeData = (List<ARCustomerBusinessTypesInfo>)(new ARCustomerBusinessTypesController()).GetListFromDataSet(ds);
+                TypeData.Insert(0, new ARCustomerBusinessTypesInfo());
+                fld_lkeARCustomerBusinessType.Properties.DataSource = TypeData;
             }
         }
     }

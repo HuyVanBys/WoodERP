@@ -141,10 +141,15 @@ namespace BOSERP.Modules.SupplierPriceSheet
             {
                 ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonEdit, true);
                 ParentScreen.SetEnableOfToolbarButton("Approve", true);
+                if (mainObject.APPriceSheetStatus == PriceSheetStatus.New.ToString())
+                {
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, false);
+                }
                 ImportFromExcelButton.Enabled = true;
                 if (mainObject.APPriceSheetStatus == PriceSheetStatus.Approved.ToString())
                 {
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonEdit, false);
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, true);
                     ParentScreen.SetEnableOfToolbarButton("Approve", false);
                     ImportFromExcelButton.Enabled = false;
                 }
@@ -160,7 +165,11 @@ namespace BOSERP.Modules.SupplierPriceSheet
                 {
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, true);
                 }    
-            }    
+            }
+            if (Toolbar.IsEditAction())
+            {
+                ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, false);
+            }
         }
 
         public void ApprovePriceSheet()
@@ -326,6 +335,19 @@ namespace BOSERP.Modules.SupplierPriceSheet
             mainObject.APPriceSheetEndDate = BOSApp.GetCurrentServerDate().AddMonths(1);
             mainObject.FK_BRBranchID = BOSApp.CurrentCompanyInfo.FK_BRBranchID;
             entity.UpdateMainObjectBindingSource();
+        }
+
+        public override bool ActionCancelComplete()
+        {
+            SupplierPriceSheetEntities entity = (SupplierPriceSheetEntities)CurrentModuleEntity;
+            APPriceSheetsInfo mainObject = (APPriceSheetsInfo)entity.MainObject;
+            if (mainObject.APPriceSheetID > 0)
+            {
+                mainObject.APPriceSheetStatus = PriceSheetStatus.New.ToString();
+                entity.UpdateMainObject();
+                InvalidateToolbar();
+            }
+            return true;
         }
 
         #region Export Import Excel

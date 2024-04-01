@@ -245,6 +245,68 @@ namespace BOSERP.Modules.CarcassBOM
                     e.DisplayText = BOSApp.GetDisplayTextFromCatche("MMOperations", "MMOperationID", int.Parse(e.Value.ToString()), "MMOperationName");
                 }
             }
+            else if (e.Value != null && e.Column.FieldName == "MMProductionNormItemOtherColor")
+            {
+                e.DisplayText = GetColorDisplayText(e.Value.ToString());
+            }
+            else if (e.Value != null && (e.Column.FieldName == "MMProductionNormItemPaintAKey" ||
+                e.Column.FieldName == "MMProductionNormItemPaintBKey" ||
+                e.Column.FieldName == "MMProductionNormItemVeneerKey"))
+            {
+                e.DisplayText = GetProductColorDisplayText(e.Value.ToString());
+            }
+            else if (e.Value != null && (e.Column.FieldName == "MMProductionNormItemCode01Combo" ||
+                e.Column.FieldName == "MMProductionNormItemCode02Combo" ||
+                e.Column.FieldName == "MMProductionNormItemCode03Combo"))
+            {
+                e.DisplayText = GetPaintProcessDisplayText(e.Value.ToString());
+            }
+        }
+        private string GetColorDisplayText(string colorRef)
+        {
+            if (string.IsNullOrWhiteSpace(colorRef))
+                return string.Empty;
+
+            List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
+            DataSet ds = BOSApp.LookupTables["ICProductAttributes"] as DataSet;
+            if (ds == null || ds.Tables.Count == 0)
+                ds = BOSApp.GetLookupTableData("ICProductAttributes");
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                List<ICProductAttributesInfo> ColorData = (List<ICProductAttributesInfo>)(new ICProductAttributesController()).GetListFromDataSet(ds);
+                return string.Join(", ", ColorData.Where(o => colorID.Contains(o.ICProductAttributeID)).Select(o => o.ICProductAttributeValue).ToArray());
+            }
+            else return string.Empty;
+        }
+        private string GetProductColorDisplayText(string colorRef)
+        {
+            if (string.IsNullOrWhiteSpace(colorRef))
+                return string.Empty;
+
+            List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
+            List<ICProductsForViewInfo> ColorData = BOSApp.CurrentProductList.Where(p => p.ICProductType == ProductType.IngredientPaint.ToString()).ToList();
+            if (ColorData.Count > 0)
+            {
+                return string.Join(", ", ColorData.Where(o => colorID.Contains(o.ICProductID)).Select(o => o.ICProductName).ToArray());
+            }
+            else return string.Empty;
+        }
+        private string GetPaintProcessDisplayText(string colorRef)
+        {
+            if (string.IsNullOrWhiteSpace(colorRef))
+                return string.Empty;
+
+            List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
+
+            DataSet ds = BOSApp.LookupTables["MMPaintProcessess"] as DataSet;
+            if (ds == null || ds.Tables.Count == 0)
+                ds = BOSApp.GetLookupTableData("MMPaintProcessess");
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                List<MMPaintProcessessInfo> ColorData = (List<MMPaintProcessessInfo>)(new MMPaintProcessessController()).GetListFromDataSet(ds);
+                return string.Join(", ", ColorData.Where(o => colorID.Contains(o.MMPaintProcessesID)).Select(o => o.MMPaintProcessesPaintName).ToArray());
+            }
+            else return string.Empty;
         }
         //public void repMeasureUnitLookUpEdit_QueryPopUp(object sender, System.ComponentModel.CancelEventArgs e)
         //{

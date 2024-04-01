@@ -617,23 +617,28 @@ namespace BOSERP.Modules.Proposal
             decimal qty = Convert.ToDecimal(dbUtil.GetPropertyValue(item, columnName));
 
             //Math Round Qty
-            if (objProductsInfo != null)
+            string strIsBKV = BOSApp.GetDisplayTextFromConfigText("ProjectBKV", "true");
+            bool isBKV = bool.Parse(string.IsNullOrWhiteSpace(strIsBKV) ? "false" : strIsBKV);
+            if (!isBKV)
             {
-                if (objProductsInfo.ICProductType == ProductType.IngredientPaint.ToString() ||
-                              objProductsInfo.ICProductType == ProductType.Roundwood.ToString() ||
-                              objProductsInfo.ICProductType == ProductType.Reuse.ToString() ||
-                              objProductsInfo.ICProductType == ProductType.Lumber.ToString() ||
-                              objProductsInfo.ICProductType == ProductType.ArtificialBoard.ToString() ||
-                              objProductsInfo.ICProductType == ProductType.Verneer.ToString() ||
-                              objProductsInfo.ICProductType == ProductType.ArtificialBoard.ToString())
+                if (objProductsInfo != null)
                 {
-                    qty = Math.Round(qty, 4, MidpointRounding.AwayFromZero);
+                    if (objProductsInfo.ICProductType == ProductType.IngredientPaint.ToString() ||
+                                  objProductsInfo.ICProductType == ProductType.Roundwood.ToString() ||
+                                  objProductsInfo.ICProductType == ProductType.Reuse.ToString() ||
+                                  objProductsInfo.ICProductType == ProductType.Lumber.ToString() ||
+                                  objProductsInfo.ICProductType == ProductType.ArtificialBoard.ToString() ||
+                                  objProductsInfo.ICProductType == ProductType.Verneer.ToString() ||
+                                  objProductsInfo.ICProductType == ProductType.ArtificialBoard.ToString())
+                    {
+                        qty = Math.Round(qty, 4, MidpointRounding.AwayFromZero);
+                    }
+                    else
+                    {
+                        qty = Math.Round(qty, 3, MidpointRounding.AwayFromZero);
+                    }
                 }
-                else
-                {
-                    qty = Math.Round(qty, 3, MidpointRounding.AwayFromZero);
-                }
-            }
+            }   
             //End
 
             //Get Item Unit Cost

@@ -161,7 +161,24 @@ namespace BOSERP.Modules.PaymentOrder
                 MessageBox.Show("Không được chọn tài khoản 341 khi tạo mới thông thường.", CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
-
+            string VATInfo = string.Empty;
+            ACDocumentsController objDocumentsController = new ACDocumentsController();
+            foreach (ACBankTransactionItemsInfo item in entity.BankTransactionItemList)
+            {
+                List<ACDocumentsInfo> transactionList = objDocumentsController.CheckAvailableVATInfo(item.ACBankTransactionItemVoucherNo, item.ACBankTransactionItemInvoiceDate, item.ACBankTransactionItemVATSymbol, item.ACBankTransactionItemTaxNumber);
+                if (transactionList != null && transactionList.Count() > 0)
+                {
+                    VATInfo += String.Format("(Số hoá đơn: {0}, số seri: {1}, mã số thuế: {2})", item.ACBankTransactionItemVoucherNo, item.ACBankTransactionItemVATSymbol, item.ACBankTransactionItemTaxNumber);
+                    VATInfo += Environment.NewLine;
+                }
+            }
+            if (!string.IsNullOrEmpty(VATInfo))
+            {
+                if (MessageBox.Show(String.Format("Hoá đơn kê khai đã tồn tại /n {0}, có lưu lại chứng từ không?", VATInfo), CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                {
+                    return 0;
+                }
+            }
             if (entity.BankTransactionItemList != null && entity.BankTransactionItemList.Count > 0
                 && entity.BankTransactionItemList.Where(x => x.ACBankTransactionItemAmount > 0 && (x.FK_ACCreditAccountID == 0 || x.FK_ACDebitAccountID == 0)).ToList().Count > 0)
             {
@@ -1308,7 +1325,7 @@ namespace BOSERP.Modules.PaymentOrder
                                     pviInfo.ACBankTransactionItemDesc = inv.HRAdvanceRefundItemInvoiceObjectDesc;
                                     pviInfo.ACBankTransactionItemAmount = inv.HRAdvanceRefundItemInvoiceSubTotalAmount - inv.HRAdvanceRefundPaymentTimeSubPaidAmount; ;
                                     pviInfo.ACBankTransactionItemExchangeAmount = pviInfo.ACBankTransactionItemAmount * mainObject.ACBankTransactionExchangeRate;
-                                    pviInfo.ACBankTransactionItemTaxPercent = Convert.ToInt32(inv.HRAdvanceRefundItemInvoiceTaxPercent);
+                                    pviInfo.ACBankTransactionItemTaxPercent = inv.HRAdvanceRefundItemInvoiceTaxPercent;
                                     pviInfo.ACBankTransactionItemTaxAmount = inv.HRAdvanceRefundItemInvoiceTaxAmount - inv.HRAdvanceRefundPaymentTimeTaxPaidAmount;
                                     pviInfo.ACBankTransactionItemTotalAmount = pviInfo.ACBankTransactionItemAmount + pviInfo.ACBankTransactionItemTaxAmount;
                                     pviInfo.ACBankTransactionItemTotalExchangeAmount = pviInfo.ACBankTransactionItemTotalAmount * mainObject.ACBankTransactionExchangeRate;
@@ -1442,6 +1459,7 @@ namespace BOSERP.Modules.PaymentOrder
             ParentScreen.SetEnableOfToolbarButton(ToolbarButtons.PostedTransactions, false);
             ParentScreen.SetEnableOfToolbarButton(ToolbarButtons.UnPostedTransactions, false);
             ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, false);
+            ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, false);
             if (mainObject.ACBankTransactionID > 0)
             {
                 if (mainObject.ACBankTransactionStatus == BankTransactionStatus.Completed.ToString())
@@ -1456,6 +1474,10 @@ namespace BOSERP.Modules.PaymentOrder
                 {
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonEdit, true);
                     ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonComplete, true);
+                }
+                if (Toolbar.IsEditAction())
+                {
+                    ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, true);
                 }
             }
             base.InvalidateToolbar();
@@ -1907,14 +1929,14 @@ namespace BOSERP.Modules.PaymentOrder
                                 , MessageBoxIcon.Error);
                 return false;
             }
-            if (mainObject.ACBankTransactionCreateFrom == BankTransactionCreateFrom.LoanReceipt.ToString())
-            {
-                MessageBox.Show("Không thể thực hiện thao tác này với chứng từ Trả tiền lãi vay và nợ gốc cho khế ước!"
-                                , CommonLocalizedResources.MessageBoxDefaultCaption
-                                , MessageBoxButtons.OK
-                                , MessageBoxIcon.Error);
-                return false;
-            }
+            //if (mainObject.ACBankTransactionCreateFrom == BankTransactionCreateFrom.LoanReceipt.ToString())
+            //{
+            //    MessageBox.Show("Không thể thực hiện thao tác này với chứng từ Trả tiền lãi vay và nợ gốc cho khế ước!"
+            //                    , CommonLocalizedResources.MessageBoxDefaultCaption
+            //                    , MessageBoxButtons.OK
+            //                    , MessageBoxIcon.Error);
+            //    return false;
+            //}
             return true;
         }
 

@@ -335,6 +335,10 @@ namespace BOSERP
         {
             dal.ExecuteStoredProcedure("ICProductSeries_GenerateProductSerieByInvBalanceID", invBalanceID);
         }
+        public void UpdateProductSeriePosition(int UpdatePositionID)
+        {
+            dal.ExecuteStoredProcedure("ICProductSeries_UpdateProductSeriePosition", UpdatePositionID);
+        }
 
         public List<ICProductSeriesInfo> ShowInventoryStockProductSeries(DateTime date, int? departmentID, int? productGroupID, int? productAttributeWoodTypeID, string stockIDs, decimal productHeight, decimal productWidth, decimal productLength)
         {

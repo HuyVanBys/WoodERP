@@ -924,14 +924,14 @@ namespace BOSERP.Modules.Invoice
                     column.Caption = "Khối lượng (m3)";
                     column.VisibleIndex = 11;
                     column.DisplayFormat.FormatType = FormatType.Numeric;
-                    column.DisplayFormat.FormatString = objFieldFormatGroupsInfo != null && string.IsNullOrEmpty(objFieldFormatGroupsInfo.STFieldFormatGroupFormatString) ? objFieldFormatGroupsInfo.STFieldFormatGroupFormatString:"{0:n4}" ;
+                    column.DisplayFormat.FormatString = objFieldFormatGroupsInfo != null && !string.IsNullOrEmpty(objFieldFormatGroupsInfo.STFieldFormatGroupFormatString) ? objFieldFormatGroupsInfo.STFieldFormatGroupFormatString:"{0:n4}" ;
                 }
                 else if (productType == ProductType.Lumber.ToString())
                 {
                     column.Caption = "Khối lượng (m3)";
                     column.VisibleIndex = 16;
                     column.DisplayFormat.FormatType = FormatType.Numeric;
-                    column.DisplayFormat.FormatString = objFieldFormatGroupsInfo != null && string.IsNullOrEmpty(objFieldFormatGroupsInfo.STFieldFormatGroupFormatString) ? objFieldFormatGroupsInfo.STFieldFormatGroupFormatString: "{0:n4}" ;
+                    column.DisplayFormat.FormatString = objFieldFormatGroupsInfo != null && !string.IsNullOrEmpty(objFieldFormatGroupsInfo.STFieldFormatGroupFormatString) ? objFieldFormatGroupsInfo.STFieldFormatGroupFormatString: "{0:n4}" ;
                 }
                 else
                 {

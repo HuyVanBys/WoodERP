@@ -90,10 +90,12 @@ namespace BOSERP.Modules.Product
                         || e.Column.FieldName == "ICProductPackingDetailWidth"
                         || e.Column.FieldName == "ICProductPackingDetailQty")
                     {
-                        item.ICProductPackingDetailVolume = (item.ICProductPackingDetailHeight
-                                                        * item.ICProductPackingDetailLength
-                                                        * item.ICProductPackingDetailWidth)
-                                                        * item.ICProductPackingDetailQty / 1000000000;
+                        if (item.ICProductPackingDetailQty > 0)
+                            item.ICProductPackingDetailVolume = (item.ICProductPackingDetailHeight
+                                                            * item.ICProductPackingDetailLength
+                                                            * item.ICProductPackingDetailWidth)
+                                                            / (1000000000 * item.ICProductPackingDetailQty);
+                        else item.ICProductPackingDetailVolume = 0;
                     }
 
 

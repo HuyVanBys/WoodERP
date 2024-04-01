@@ -362,7 +362,7 @@ namespace BOSERP.Modules.PaymentOrder
                 }
                 else if (gridView.FocusedColumn.FieldName == "ACBankTransactionItemTaxAmount")
                 {
-                    objBankTransactionItemsInfo.ACBankTransactionItemTaxPercent = Convert.ToInt32(objBankTransactionItemsInfo.ACBankTransactionItemTaxAmount / objBankTransactionItemsInfo.ACBankTransactionItemAmount * 100);
+                    objBankTransactionItemsInfo.ACBankTransactionItemTaxPercent = objBankTransactionItemsInfo.ACBankTransactionItemTaxAmount / objBankTransactionItemsInfo.ACBankTransactionItemAmount * 100;
                     ((PaymentOrderModule)Screen.Module).ChangePaymentOrderItemAmount(objBankTransactionItemsInfo);
                 }
                 else if (e.Column.FieldName == "ACObjectAccessKey")

@@ -448,8 +448,9 @@ namespace BOSERP
                 if (BOSApp.CurrentProductList.FirstOrDefault(o => o.ICProductID == productID) != null)
                 {
                     string image = BOSApp.CurrentProductList.FirstOrDefault(o => o.ICProductID == productID).ICProductImageFile;
-
-                    return GetProductPictureImageByLink(image);
+                    if (!string.IsNullOrEmpty(image))
+                        return GetProductPictureImageByLink(image);
+                    else return null;
                 }
                 else
                     return null;

@@ -66,12 +66,12 @@ namespace BOSERP.Modules.Shipment
             ProductLookupEditControl = (BOSLookupEdit)Controls[ProductLookupEditControlName];
             if(ProductLookupEditControl != null)
             {
-                ProductLookupEditControl.Properties.DataSource = GetDataSourceForProductLookupEdit();
+                ProductLookupEditControl.Properties.DataSource = GetDataSourceForProductLookupEdit(string.Empty);
             }
             ProductPicturePictureBox = (BOSPictureEdit)Controls[ProductPicturePictureBoxName];
         }
 
-        public List<ICProductsInfo> GetDataSourceForProductLookupEdit()
+        public List<ICProductsInfo> GetDataSourceForProductLookupEdit(string type)
         {
             ICProductsController objProductsController = new ICProductsController();
             string[] arrProductType = {
@@ -80,7 +80,8 @@ namespace BOSERP.Modules.Shipment
                 ProductType.Work.ToString(),
                 ProductType.Section.ToString()
             };
-            List<ICProductsInfo> productList = objProductsController.GetAllProductNotConstrainProductTypesLookupEdit(string.Join(",", arrProductType));
+            if (string.IsNullOrEmpty(type)) type = string.Join(",", arrProductType);
+            List<ICProductsInfo> productList = objProductsController.GetAllProductNotConstrainProductTypesLookupEdit(type);
             if (productList == null)
                 productList = new List<ICProductsInfo>();
             productList.Insert(0, new ICProductsInfo());
@@ -380,7 +381,7 @@ namespace BOSERP.Modules.Shipment
                     }
                 }
             }
-
+            if (shipment.ICShipmentProductType != ProductType.SemiProduct.ToString() && shipment.ICShipmentProductType != ProductType.Product.ToString())
             if (entity.ShipmentItemList.CheckAvailableQty(TransactionUtil.cstInventoryShipment, this.Name))
             {
                 return 0;
@@ -1626,6 +1627,17 @@ namespace BOSERP.Modules.Shipment
                     }
                     entity.ShipmentItemList.Add(item);
                 }
+            }
+        }
+        public void UpdatePositionItem(ICShipmentItemsInfo item)
+        {
+            ShipmentEntities entity = (ShipmentEntities)CurrentModuleEntity;
+            ICShipmentsInfo objICShipmentsInfo = (ICShipmentsInfo)entity.MainObject;
+            MMUpdatePositionItemsController objUpdatePositionItemsController = new MMUpdatePositionItemsController();
+            MMUpdatePositionItemsInfo objUpdatePositionItemsInfo = (MMUpdatePositionItemsInfo)objUpdatePositionItemsController.GetItemByLocationName(string.Empty, item.FK_ICProductID, item.FK_ICStockID, item.FK_ICProductSerieID);
+            if (objUpdatePositionItemsInfo != null)
+            {
+                item.FK_MMUpdatePositionItemID = objUpdatePositionItemsInfo.MMUpdatePositionItemID;
             }
         }
     }

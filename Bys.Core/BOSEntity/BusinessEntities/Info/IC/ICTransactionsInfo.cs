@@ -1196,6 +1196,7 @@ namespace BOSERP
         public string ICMeasureUnitName { get; set; }
         public decimal ICTransactionNormQty { get; set; }
         public int FK_ICProductSerieID { get; set; }
+        public int FK_MMDiagramPositionID { get; set; }
         #endregion
     }
     #endregion

@@ -23,6 +23,11 @@ namespace BOSERP.Modules.Product
         protected override GridView InitializeGridView()
         {
             GridView gridView = base.InitializeGridView();
+            gridView.OptionsView.ShowGroupPanel = false;
+            gridView.OptionsView.ColumnAutoWidth = false;
+            gridView.OptionsView.ShowDetailButtons = false;
+            gridView.OptionsView.ShowAutoFilterRow = true;
+            gridView.OptionsView.ShowFooter = false;
             foreach (GridColumn col in gridView.Columns)
             {
                 if (col.FieldName != "ICProductContainerType")

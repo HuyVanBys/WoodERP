@@ -32,6 +32,11 @@ namespace BOSERP
 		protected DateTime _iCConversionProposalDate = DateTime.MaxValue;
 		protected string _iCConversionProposalStatus = DefaultAAStatus;
 		protected string _iCConversionProposalEmployeeRecever = string.Empty;
+		protected int _fK_MMWorkShopID;
+		protected int _fK_MMLineID;
+		protected int _fK_HRDepartmentRoomGroupItemID;
+		protected int _fK_MMOperationID;
+
 		#endregion
 
 		#region Public properties
@@ -212,6 +217,54 @@ namespace BOSERP
 				{
 					_iCConversionProposalEmployeeRecever = value;
 					NotifyChanged("ICConversionProposalEmployeeRecever");
+				}
+			}
+		}
+		public int FK_MMWorkShopID
+		{
+			get { return _fK_MMWorkShopID; }
+			set
+			{
+				if (value != this._fK_MMWorkShopID)
+				{
+					_fK_MMWorkShopID = value;
+					NotifyChanged("FK_MMWorkShopID");
+				}
+			}
+		}
+		public int FK_MMLineID
+		{
+			get { return _fK_MMLineID; }
+			set
+			{
+				if (value != this._fK_MMLineID)
+				{
+					_fK_MMLineID = value;
+					NotifyChanged("FK_MMLineID");
+				}
+			}
+		}
+		public int FK_HRDepartmentRoomGroupItemID
+		{
+			get { return _fK_HRDepartmentRoomGroupItemID; }
+			set
+			{
+				if (value != this._fK_HRDepartmentRoomGroupItemID)
+				{
+					_fK_HRDepartmentRoomGroupItemID = value;
+					NotifyChanged("FK_HRDepartmentRoomGroupItemID");
+				}
+			}
+		}
+		public int FK_MMOperationID
+		{
+			get { return _fK_MMOperationID; }
+			set
+			{
+				if (value != this._fK_MMOperationID)
+				{
+					_fK_MMOperationID = value;
+					NotifyChanged("FK_MMOperationID");
 				}
 			}
 		}

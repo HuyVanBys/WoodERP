@@ -103,9 +103,17 @@
         public string ICProductAttributeOtherColor { get; set; }
         public string ICProductAttributeOtherColorID { get; set; }
         public string ICProductColorPaintA { get; set; }
+        public string ICProductColorPaintAText { get; set; }
         public string ICProductColorPaintB { get; set; }
+        public string ICProductColorPaintBText { get; set; }
         public string ICProductColorPaintC { get; set; }
-        public string ICProductPaintProcess { get; set; }
+        public string ICProductColorPaintCText { get; set; }
+        public string ICProductPaintProcessA { get; set; }
+        public string ICProductPaintProcessAText { get; set; }
+        public string ICProductPaintProcessB { get; set; }
+        public string ICProductPaintProcessBText { get; set; }
+        public string ICProductPaintProcessC { get; set; }
+        public string ICProductPaintProcessCText { get; set; }
 
     }
 }

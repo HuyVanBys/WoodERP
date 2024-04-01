@@ -887,10 +887,12 @@ namespace BOSERP.Modules.BatchProductShedule
                     if (item == null || i < 0)
                         continue;
 
-                    if (item.MMAllocationPlanItemStatus != AllocationPlanItemStatus.New.ToString())
-                        continue;
+                    if (item.MMAllocationPlanItemStatus == AllocationPlanItemStatus.New.ToString() || item.MMAllocationPlanItemStatus == AllocationPlanItemStatus.Canceled.ToString())
+                        item.MMAllocationPlanItemStatus = AllocationPlanItemStatus.Planed.ToString();
+                    else
+                    continue;
 
-                    item.MMAllocationPlanItemStatus = AllocationPlanItemStatus.Planed.ToString();
+                    
                 }
                 itemList.GridControl?.RefreshDataSource();
                 itemList.GridControl?.Refresh();

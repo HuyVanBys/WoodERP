@@ -606,8 +606,11 @@ namespace BOSERP.Modules.ProductionPlanning
                                     objProductionPlanningItemsInfo.ARProductionPlanningItemProductQty = item.ARSaleOrderItemRemainedQty;
                                     objProductionPlanningItemsInfo.ARProductionPlanningItemProductBasicQty = item.ARSaleOrderItemRemainedQty;
                                     objProductionPlanningItemsInfo.ARProductionPlanningItemProductQtyOld = item.ARSaleOrderItemProductQty;
+                                    objProductionPlanningItemsInfo.ARProductionPlanningItemProductFactor = item.ARSaleOrderItemProductFactor;
+                                    objProductionPlanningItemsInfo.ARProductionPlanningItemProductExchangeQty = item.ARSaleOrderItemProductFactor * objProductionPlanningItemsInfo.ARProductionPlanningItemProductQty;
                                     objProductionPlanningItemsInfo.ARProductionPlanningItemProductDesc = item.ARSaleOrderItemProductDesc;
                                     objProductionPlanningItemsInfo.ARProductionPlanningItemProductName = item.ARSaleOrderItemProductName;
+                                    objProductionPlanningItemsInfo.ARProductionPlanningItemComment = item.ARSaleOrderItemComment;
                                     objProductionPlanningItemsInfo.FK_ICDepartmentID = item.FK_ICDepartmentID;
                                     objProductionPlanningItemsInfo.FK_ICMeasureUnitID = item.FK_ICMeasureUnitID;
                                     objProductionPlanningItemsInfo.FK_ICProductGroupID = item.FK_ICProductGroupID;
@@ -644,7 +647,7 @@ namespace BOSERP.Modules.ProductionPlanning
                                             objProductionPlanningItemsInfo.ARProductionPlanningItemWidth = objProductsInfo.ICProductWidth;
                                             objProductionPlanningItemsInfo.ARProductionPlanningItemLength = objProductsInfo.ICProductLength;
                                             objProductionPlanningItemsInfo.ARProductionPlanningItemProductNo = objProductsInfo.ICProductNoOfOldSys;
-                                            objProductionPlanningItemsInfo.ARProductionPlanningItemProductRemark = objProductsInfo.ICProductProductionComment;
+                                            objProductionPlanningItemsInfo.ARProductionPlanningItemProductRemark = string.IsNullOrEmpty(item.ARSaleOrderItemRemark) ? objProductsInfo.ICProductProductionComment : item.ARSaleOrderItemRemark;
                                             objProductionPlanningItemsInfo.ARProductionPlanningItemWoodQty = objProductsInfo.ICProductBlock * item.ARSaleOrderItemProductQty;
                                             if (ProductionNormList != null && ProductionNormList.Count > 0 && objProductionPlanningItemsInfo.ARProductionPlanningItemWoodQty == 0)
                                             {
@@ -680,6 +683,9 @@ namespace BOSERP.Modules.ProductionPlanning
                                 objSaleOrderItemsInfo = selectedARSaleOrderItems.FirstOrDefault(p => !string.IsNullOrWhiteSpace(p.ARSaleOrderSaleType));
                                 objProductionPlanningsInfo.ARProductionPlanningSaleType = objSaleOrderItemsInfo != null ? objSaleOrderItemsInfo.ARSaleOrderSaleType : objProductionPlanningsInfo.ARProductionPlanningSaleType;
                                 objProductionPlanningsInfo.ARProductionPlanningSaleOrderName = string.Join(", ", selectedARSaleOrderItems.Where(p => !string.IsNullOrWhiteSpace(p.ARSaleOrderName)).Select(p => p.ARSaleOrderName).Distinct().ToArray());
+                                string strDBH = string.Join(", ", selectedARSaleOrderItems.Where(p => !string.IsNullOrWhiteSpace(p.ARSaleOrderNo)).Select(p => p.ARSaleOrderNo).Distinct().ToArray());
+                                string strObject = string.Join(", ", selectedARSaleOrderItems.Where(p => !string.IsNullOrWhiteSpace(p.ACObjectName)).Select(p => p.ACObjectName).Distinct().ToArray());
+                                objProductionPlanningsInfo.ARProductionPlanningComment = strDBH + ", " + strObject;
                                 DisplayLabelText(objProductionPlanningsInfo);
                                 ChangeSaleType();
                             }
@@ -1002,7 +1008,41 @@ namespace BOSERP.Modules.ProductionPlanning
         {
             if ((Toolbar.IsNullOrNoneAction() && Toolbar.CurrentObjectID > 0))
             {
-                RP_ProductionPlanning report = new RP_ProductionPlanning();
+                string stisBKV = ADConfigValueUtility.GetConfigTextByGroupAndValue("ProjectBKV", "true");
+                bool isBKV = bool.Parse(stisBKV != string.Empty ? stisBKV : "false");
+                if (isBKV)
+                {
+                    RP_ProductionPlanningBKV report = new RP_ProductionPlanningBKV();
+                    InitInvoiceReport(report);
+                    guiReportPreview reviewer = new guiReportPreview(report, BOSCommon.Constants.Report.DevInvoiceItemReportPath, false);
+                    reviewer.Show();
+                }
+                else
+                {
+                    RP_ProductionPlanning report = new RP_ProductionPlanning();
+                    InitInvoiceReport(report);
+                    guiReportPreview reviewer = new guiReportPreview(report, BOSCommon.Constants.Report.DevInvoiceItemReportPath, false);
+                    reviewer.Show();
+                }
+            }
+        }
+
+        public void ActionPrintProductionPlanningNormal()
+        {
+            if ((Toolbar.IsNullOrNoneAction() && Toolbar.CurrentObjectID > 0))
+            {
+                RP_ProductionPlanningBKV report = new RP_ProductionPlanningBKV();
+                InitInvoiceReport(report);
+                guiReportPreview reviewer = new guiReportPreview(report, BOSCommon.Constants.Report.DevInvoiceItemReportPath, false);
+                reviewer.Show();
+            }
+        }
+
+        public void ActionPrintProductionPlanningOrder()
+        {
+            if ((Toolbar.IsNullOrNoneAction() && Toolbar.CurrentObjectID > 0))
+            {
+                RP_ProductionPlanningOrderBKV report = new RP_ProductionPlanningOrderBKV();
                 InitInvoiceReport(report);
                 guiReportPreview reviewer = new guiReportPreview(report, BOSCommon.Constants.Report.DevInvoiceItemReportPath, false);
                 reviewer.Show();

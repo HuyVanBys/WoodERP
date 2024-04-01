@@ -39,7 +39,7 @@ namespace BOSERP
         protected String _aCBankTransactionItemVATInvoiceNo = String.Empty;
         protected String _aCBankTransactionItemVATSymbol = String.Empty;
         protected String _aCBankTransactionItemTaxNumber = String.Empty;
-        protected int _aCBankTransactionItemTaxPercent;
+        protected decimal _aCBankTransactionItemTaxPercent;
         protected decimal _aCBankTransactionItemTaxAmount;
         protected decimal _aCBankTransactionItemTotalAmount;
         protected decimal _aCBankTransactionItemTotalExchangeAmount;
@@ -342,7 +342,7 @@ namespace BOSERP
                 }
             }
         }
-        public int ACBankTransactionItemTaxPercent
+        public decimal ACBankTransactionItemTaxPercent
         {
             get { return _aCBankTransactionItemTaxPercent; }
             set

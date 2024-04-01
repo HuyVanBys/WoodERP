@@ -114,6 +114,8 @@ namespace BOSERP
         protected String _aRProductionPlanningItemPaintRemark = String.Empty;
         protected String _aRProductionPlanningItemGeneralMaterialRemark = String.Empty;
         protected string _aRProductionPlanningItemSaleOrderName = String.Empty;
+        protected decimal _aRProductionPlanningItemProductFactor;
+        protected decimal _aRProductionPlanningItemProductExchangeQty;
         #endregion
 
         #region Public properties
@@ -1305,6 +1307,30 @@ namespace BOSERP
                 }
             }
         }
+        public decimal ARProductionPlanningItemProductFactor
+        {
+            get { return _aRProductionPlanningItemProductFactor; }
+            set
+            {
+                if (value != _aRProductionPlanningItemProductFactor)
+                {
+                    _aRProductionPlanningItemProductFactor = value;
+                    NotifyChanged("ARProductionPlanningItemProductFactor");
+                }
+            }
+        }
+        public decimal ARProductionPlanningItemProductExchangeQty
+        {
+            get { return _aRProductionPlanningItemProductExchangeQty; }
+            set
+            {
+                if (value != _aRProductionPlanningItemProductExchangeQty)
+                {
+                    _aRProductionPlanningItemProductExchangeQty = value;
+                    NotifyChanged("ARProductionPlanningItemProductExchangeQty");
+                }
+            }
+        }
         #endregion
 
         #region Extra Properties
@@ -1342,6 +1368,7 @@ namespace BOSERP
         public string ICProductName2 { get; set; }
         public string ARProductionPlanningSaleOrderName { get; set; }
         public string ARSaleOrderPONo { get; set; }
+        public string HRDepartmentRoomGroupItemName { get; set; }
         #endregion
     }
     #endregion

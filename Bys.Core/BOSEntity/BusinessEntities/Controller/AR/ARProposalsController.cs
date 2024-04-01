@@ -141,6 +141,35 @@ namespace BOSERP
                                                                     productID,
                                                                     branchID);
         }
+        public DataSet GetProposalByBranchIDAndUser(string proposalNo,
+                                         int? fk_ACObjectID,
+                                         string objectType,
+                                         int? fk_HREmployeeID,
+                                         DateTime proposalFromDate,
+                                         DateTime proposalToDate,
+                                         DateTime proposalDeliveryFromDate,
+                                         DateTime proposalDeliveryToDate,
+                                         DateTime proposalValidateFromDate,
+                                         DateTime proposalValidateToDate,
+                                         int? productID,
+                                         int? branchID,
+                                         int? userID)
+        {
+            return dal.GetDataSet("ARProposals_GetProposalByBranchIDAndUser",
+                                                                    proposalNo,
+                                                                    fk_ACObjectID,
+                                                                    objectType,
+                                                                    fk_HREmployeeID,
+                                                                    proposalFromDate,
+                                                                    proposalToDate,
+                                                                    proposalDeliveryFromDate,
+                                                                    proposalDeliveryToDate,
+                                                                    proposalValidateFromDate,
+                                                                    proposalValidateToDate,
+                                                                    productID,
+                                                                    branchID,
+                                                                    userID);
+        }
 
         public DataSet GetProposalByListOfBranchID(string proposalNo,
                                                               int? fk_ACObjectID,
@@ -153,12 +182,13 @@ namespace BOSERP
                                                               DateTime proposalValidateFromDate,
                                                               DateTime proposalValidateToDate,
                                                               int? productID,
+                                                              int? userID,
                                                               List<BRBranchsInfo> branchList)
         {
             DataSet rtn = new DataSet();
             foreach (BRBranchsInfo ojbBranchsInfo in branchList)
             {
-                DataSet ds = GetProposalByBranchID(proposalNo,
+                DataSet ds = GetProposalByBranchIDAndUser(proposalNo,
                                                       fk_ACObjectID,
                                                       objectType,
                                                       fk_HREmployeeID,
@@ -169,6 +199,7 @@ namespace BOSERP
                                                       proposalValidateFromDate,
                                                       proposalValidateToDate,
                                                       productID,
+                                                      userID,
                                                       ojbBranchsInfo.BRBranchID);
                 rtn.Merge(ds);
             }

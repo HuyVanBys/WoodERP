@@ -483,6 +483,11 @@ namespace BOSERP.Modules.MaterialShipment
                 MessageBox.Show("Vui lòng chọn loại hàng!", CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
+            if (objShipmentsInfo.FK_ICImportAndExportReasonID == 0)
+            {
+                MessageBox.Show("Vui lòng chọn Lý do nhập xuất!", CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
             if (entity.ShipmentItemList.Exists(o => o.FK_MMOperationID == 0 || o.FK_MMWorkShopID == 0) && objShipmentsInfo.FK_ICImportAndExportReasonID == 0)
             {
                 MessageBox.Show(MaterialShipmentLocalizedResources.ImportAndExportReasonIsRequier, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);

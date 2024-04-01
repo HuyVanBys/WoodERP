@@ -1309,19 +1309,19 @@ namespace BOSERP
             rp145.distinctList = distinctList;
             return rp145;
         }
-        public void InsertBatchProductProductionNormItem(int productionNormID, int batchProductItemID, int batchProductID, string
-              createdUser, decimal BatchProductQty, int parentID, int productionNormItemID, int ProductForBatchID, string productionNormItemResourceType, string SerialNo)
-        {
-            dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBatchProductProductionNormItem", productionNormID, batchProductItemID, batchProductID
-                , createdUser, BatchProductQty, parentID, productionNormItemID, ProductForBatchID, productionNormItemResourceType, SerialNo);
-        }
+        //public void InsertBatchProductProductionNormItem(int productionNormID, int batchProductItemID, int batchProductID, string
+        //      createdUser, decimal BatchProductQty, int parentID, int productionNormItemID, int ProductForBatchID, string productionNormItemResourceType, string SerialNo)
+        //{
+        //    dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBatchProductProductionNormItem", productionNormID, batchProductItemID, batchProductID
+        //        , createdUser, BatchProductQty, parentID, productionNormItemID, ProductForBatchID, productionNormItemResourceType, SerialNo);
+        //}
 
-        public void InsertBatchProductProductionNormItemHW(int productionNormID, int batchProductItemID, int batchProductID, string
-            createdUser, decimal BatchProductQty, int ProductForBatchID, string SerialNo, DateTime needTime)
-        {
-            dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBatchProductProductionNormItemHW", productionNormID, batchProductItemID, batchProductID
-                , createdUser, BatchProductQty, ProductForBatchID, SerialNo, needTime);
-        }
+        //public void InsertBatchProductProductionNormItemHW(int productionNormID, int batchProductItemID, int batchProductID, string
+        //    createdUser, decimal BatchProductQty, int ProductForBatchID, string SerialNo, DateTime needTime)
+        //{
+        //    dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBatchProductProductionNormItemHW", productionNormID, batchProductItemID, batchProductID
+        //        , createdUser, BatchProductQty, ProductForBatchID, SerialNo, needTime);
+        //}
         public void DeleteBatchProductProductionNormItemByParentID(int batchProductID, int BatchProductItemID, int parentID, string User, string group)
         {
             dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_DeleteBatchProductProductionNormItemByParentID", batchProductID, BatchProductItemID, parentID, User, group);
@@ -1429,20 +1429,20 @@ namespace BOSERP
             dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBatchProductProductionNormItemOld", batchProductProductionNormItemID, productGroup, createdUser);
 
         }
-        public void InsertBatchProductProductionNormItemRootNode(int batchProductItemID, string productGroup, string createdUser)
-        {
-            dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBatchProductProductionNormItemRootNode", batchProductItemID, productGroup, createdUser);
-        }
+        //public void InsertBatchProductProductionNormItemRootNode(int batchProductItemID, string productGroup, string createdUser)
+        //{
+        //    dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBatchProductProductionNormItemRootNode", batchProductItemID, productGroup, createdUser);
+        //}
 
         public void InsertBatchProductProductionNormItemRootNodeCarcass(int batchProductItemID, string productGroup, string createdUser)
         {
             dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBatchProductProductionNormItemRootNodeCarcass", batchProductItemID, productGroup, createdUser);
         }
 
-        public void InsertBatchProductProductionNormItemRootNodePaint(int batchProductItemID, string productGroup, string createdUser)
-        {
-            dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBatchProductProductionNormItemRootNodePaint", batchProductItemID, productGroup, createdUser);
-        }
+        //public void InsertBatchProductProductionNormItemRootNodePaint(int batchProductItemID, string productGroup, string createdUser)
+        //{
+        //    dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBatchProductProductionNormItemRootNodePaint", batchProductItemID, productGroup, createdUser);
+        //}
 
         public List<MMBatchProductProductionNormItemsInfo> GetBPPNParentItems(int batchProductProductionNormItemID)
         {
@@ -1784,25 +1784,25 @@ namespace BOSERP
             return (List<MMBatchProductProductionNormItemsInfo>)GetListFromDataSet(ds);
         }
 
-        public void UpdateBatchProductProductionNormItemFromProductionNormItemRef(string productionNormItemRef, string currentUser)
-        {
-            dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_UpdateBatchProductProductionNormItemFromProductionNormItemRef", productionNormItemRef, currentUser);
-        }
+        //public void UpdateBatchProductProductionNormItemFromProductionNormItemRef(string productionNormItemRef, string currentUser)
+        //{
+        //    dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_UpdateBatchProductProductionNormItemFromProductionNormItemRef", productionNormItemRef, currentUser);
+        //}
 
         public void DeleteBatchProductProductionNormItemFromProductionNormItemRef(string productionNormItemRef, string currentUser)
         {
             dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_DeleteBatchProductProductionNormItemFromProductionNormItemRef", productionNormItemRef, currentUser);
         }
 
-        public void InsertBPProductionNormItemRootNode(int batchProductID, string productionNormItemRef, string createdUser)
-        {
-            dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBPProductionNormItemRootNode", batchProductID, productionNormItemRef, createdUser);
-        }
+        //public void InsertBPProductionNormItemRootNode(int batchProductID, string productionNormItemRef, string createdUser)
+        //{
+        //    dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBPProductionNormItemRootNode", batchProductID, productionNormItemRef, createdUser);
+        //}
 
-        public void InsertBPProductionNormItemChildNode(int batchProductID, string productionNormItemRef, string createdUser)
-        {
-            dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBPProductionNormItemChildNode", batchProductID, productionNormItemRef, createdUser);
-        }
+        //public void InsertBPProductionNormItemChildNode(int batchProductID, string productionNormItemRef, string createdUser)
+        //{
+        //    dal.ExecuteStoredProcedure("MMBatchProductProductionNormItems_InsertBPProductionNormItemChildNode", batchProductID, productionNormItemRef, createdUser);
+        //}
 
         public List<MMBatchProductProductionNormItemsInfo> GetBatchProductProductionNormItemsForTransferOutsourcing(int batchProductID
                                                                                                                     , int operationID

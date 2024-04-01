@@ -2310,7 +2310,16 @@
     <Compile Include="Modules\AD\ImportData\UI\GridControl\CheckCostGridControl.Designer.cs">
       <DependentUpon>CheckCostGridControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\AD\ProductConstant\UI\DMPC119.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AD\ProductConstant\UI\DMPC119.designer.cs">
+      <DependentUpon>DMPC119.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\AD\ProductConstant\UI\GridControl\ICWidthGroupsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AD\ProductConstant\UI\GridControl\MMConfigFalseConditionalsGridControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Modules\AD\ProductConstant\UI\GridControl\MMDefaultAllocationOperationConfigsGridControl.cs">
@@ -2360,18 +2369,6 @@
     </Compile>
     <Compile Include="Modules\AD\Report\UI\RP246.Designer.cs">
       <DependentUpon>RP246.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\AP\Supplier\UI\GridControl\IPSupplierAttributesGridControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Modules\AP\Supplier\UI\GridControl\IPSuppliersGridControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Modules\AP\Supplier\UI\guiImportSuppliers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modules\AP\Supplier\UI\guiImportSuppliers.Designer.cs">
-      <DependentUpon>guiImportSuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\AR\SaleOrder\UI\GridControl\UpdateSaleOrderItemAllocationFeesGridControl.cs">
       <SubType>Component</SubType>
@@ -9883,6 +9880,12 @@
     <Compile Include="Modules\IC\BatchReceiptDryLumber\UI\GridControl\ICReceiptItemsGridControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modules\IC\BatchReceiptDryLumber\UI\guiAddUpdatePositionItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\IC\BatchReceiptDryLumber\UI\guiAddUpdatePositionItems.Designer.cs">
+      <DependentUpon>guiAddUpdatePositionItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\IC\BatchReceiptDryLumber\UI\guiChooseDate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -11558,6 +11561,12 @@
     <Compile Include="Modules\IC\PurchaseReceipt\UI\guiAddProductPackageItemDetails.Designer.cs">
       <DependentUpon>guiAddProductPackageItemDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\IC\PurchaseReceipt\UI\guiAddUpdatePositionItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\IC\PurchaseReceipt\UI\guiAddUpdatePositionItems.Designer.cs">
+      <DependentUpon>guiAddUpdatePositionItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\IC\PurchaseReceipt\UI\guiChoosePurchaseOrderItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -11683,6 +11692,12 @@
     </Compile>
     <Compile Include="Modules\IC\Receipt\UI\GridControl\ReceiptPackageItemDetailsGridControl.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\IC\Receipt\UI\guiAddUpdatePositionItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\IC\Receipt\UI\guiAddUpdatePositionItems.Designer.cs">
+      <DependentUpon>guiAddUpdatePositionItems.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\IC\Receipt\UI\guiAddProductPackageItemDetails.cs">
       <SubType>Form</SubType>
@@ -11828,6 +11843,12 @@
     </Compile>
     <Compile Include="Modules\IC\SemiProductReceipt\UI\guiAddProductPackageItemDetails.Designer.cs">
       <DependentUpon>guiAddProductPackageItemDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\IC\SemiProductReceipt\UI\guiAddUpdatePositionItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\IC\SemiProductReceipt\UI\guiAddUpdatePositionItems.Designer.cs">
+      <DependentUpon>guiAddUpdatePositionItems.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\IC\SemiProductReceipt\UI\guiChooseBatchProductItems.cs">
       <SubType>Form</SubType>
@@ -13554,6 +13575,9 @@
     <EmbeddedResource Include="Modules\AD\ProductConstant\UI\DMPC115.resx">
       <DependentUpon>DMPC115.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AD\ProductConstant\UI\DMPC119.resx">
+      <DependentUpon>DMPC119.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\AD\ProductConstant\UI\DMPC118.resx">
       <DependentUpon>DMPC118.cs</DependentUpon>
     </EmbeddedResource>
@@ -14601,9 +14625,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\AP\Supplier\UI\guiAddStateProvince.resx">
       <DependentUpon>guiAddStateProvince.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\AP\Supplier\UI\guiImportSuppliers.resx">
-      <DependentUpon>guiImportSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\AP\Supplier\UI\SMSP100.resx">
       <DependentUpon>SMSP100.cs</DependentUpon>
@@ -16033,6 +16054,9 @@
     <EmbeddedResource Include="Modules\IC\BatchReceiptDryLumber\UI\GridControl\ICReceiptItemsGridControl.resx">
       <DependentUpon>ICReceiptItemsGridControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\IC\BatchReceiptDryLumber\UI\guiAddUpdatePositionItems.resx">
+      <DependentUpon>guiAddUpdatePositionItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\IC\BatchReceiptDryLumber\UI\guiChooseDate.resx">
       <DependentUpon>guiChooseDate.cs</DependentUpon>
     </EmbeddedResource>
@@ -16597,6 +16621,9 @@
     <EmbeddedResource Include="Modules\IC\PurchaseReceipt\UI\guiAddProductPackageItemDetails.resx">
       <DependentUpon>guiAddProductPackageItemDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\IC\PurchaseReceipt\UI\guiAddUpdatePositionItems.resx">
+      <DependentUpon>guiAddUpdatePositionItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\IC\PurchaseReceipt\UI\guiChoosePurchaseOrderItem.resx">
       <DependentUpon>guiChoosePurchaseOrderItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -16656,6 +16683,9 @@
     <EmbeddedResource Include="Modules\IC\Receipt\UI\GridControl\ICReceiptItemsGridControl.resx">
       <DependentUpon>ICReceiptItemsGridControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\IC\Receipt\UI\guiAddUpdatePositionItems.resx">
+      <DependentUpon>guiAddUpdatePositionItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\IC\Receipt\UI\guiAddProductPackageItemDetails.resx">
       <DependentUpon>guiAddProductPackageItemDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -16709,6 +16739,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\IC\SemiProductReceipt\UI\guiAddProductPackageItemDetails.resx">
       <DependentUpon>guiAddProductPackageItemDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\IC\SemiProductReceipt\UI\guiAddUpdatePositionItems.resx">
+      <DependentUpon>guiAddUpdatePositionItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\IC\SemiProductReceipt\UI\guiChooseBatchProductItems.resx">
       <DependentUpon>guiChooseBatchProductItems.cs</DependentUpon>

@@ -3879,7 +3879,8 @@
     {
         Product,
         LumberOrWood,
-        OtherProduct
+        OtherProduct,
+        Bamboo
     }
 
     public enum ProductionNormPrintType
@@ -3889,8 +3890,8 @@
         Hardware,
         IngredientPaint,
         IngredientPackaging,
-        GeneralMaterial
-    }
+        GeneralMaterial,
+        Material    }
 
     public enum ProductConversionRuleOfAllocationFactorGeneration
     {
@@ -3978,4 +3979,20 @@
         ThueGTGTDuocKhauTru,
         ThueGTGTPhaiNop
     }    
+    public enum PaintProcessesStatus
+    {
+        New,
+        Approve
+    }
+    public enum PositionType
+    {
+        Range,
+        Wire,
+        Line
+    }
+    public enum UpdatePositionStatus
+    {
+        New,
+        Approved
+    }
 }

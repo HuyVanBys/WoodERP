@@ -2347,6 +2347,8 @@ namespace BOSERP.Modules.BatchShipmentDryLumber
             mainObject.ICShipmentSOName = shipmentItemList.FirstOrDefault().ICShipmentItemSOName;
             mainObject.FK_ICStockID = shipmentItemList.FirstOrDefault().FK_ICStockID;
             mainObject.STToolbarActionName = "NewFromAllocationPlanMaterial";
+            base.Toolbar.ModusAction = "New";
+            this.ToolbarNewActionName = "NewFromAllocationPlanMaterial";
             entity.UpdateMainObjectBindingSource();
         }
         public ICShipmentItemsInfo ToShipmentItems(ICProductConversionItemsInfo item)
@@ -2419,6 +2421,17 @@ namespace BOSERP.Modules.BatchShipmentDryLumber
             objShipmentItemsInfo.FK_ICImportAndExportReasonID = mainobject.FK_ICImportAndExportReasonID;
 
             return objShipmentItemsInfo;
+        }
+        public void UpdatePositionItem(ICShipmentItemsInfo item)
+        {
+            BatchShipmentDryLumberEntities entity = (BatchShipmentDryLumberEntities)CurrentModuleEntity;
+            ICShipmentsInfo objICShipmentsInfo = (ICShipmentsInfo)entity.MainObject;
+            MMUpdatePositionItemsController objUpdatePositionItemsController = new MMUpdatePositionItemsController();
+            MMUpdatePositionItemsInfo objUpdatePositionItemsInfo = (MMUpdatePositionItemsInfo)objUpdatePositionItemsController.GetItemByLocationName(string.Empty, item.FK_ICProductID, item.FK_ICStockID, item.FK_ICProductSerieID);
+            if (objUpdatePositionItemsInfo != null)
+            {
+                item.FK_MMUpdatePositionItemID = objUpdatePositionItemsInfo.MMUpdatePositionItemID;
+            }
         }
     }
     #endregion

@@ -202,7 +202,7 @@ namespace BOSERP.Modules.DiscountProgram.UI
             this.fld_dgcARDiscountProgramItems.Name = "fld_dgcARDiscountProgramItems";
             this.fld_dgcARDiscountProgramItems.PrintReport = false;
             this.fld_dgcARDiscountProgramItems.Screen = null;
-            this.fld_dgcARDiscountProgramItems.Size = new System.Drawing.Size(1159, 566);
+            this.fld_dgcARDiscountProgramItems.Size = new System.Drawing.Size(1173, 573);
             this.fld_dgcARDiscountProgramItems.TabIndex = 12;
             this.fld_dgcARDiscountProgramItems.Tag = "DC";
             this.fld_dgcARDiscountProgramItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -297,7 +297,7 @@ namespace BOSERP.Modules.DiscountProgram.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(1308, 821);
+            this.bosPanel1.Size = new System.Drawing.Size(1322, 828);
             this.bosPanel1.TabIndex = 0;
             // 
             // fld_chkARDiscountProgramIsVoucher
@@ -387,7 +387,6 @@ namespace BOSERP.Modules.DiscountProgram.UI
             this.fld_lkeARDiscountProgramApplyOn.BOSSelectType = "";
             this.fld_lkeARDiscountProgramApplyOn.BOSSelectTypeValue = "";
             this.fld_lkeARDiscountProgramApplyOn.CurrentDisplayText = "";
-            this.fld_lkeARDiscountProgramApplyOn.Enabled = false;
             this.fld_lkeARDiscountProgramApplyOn.Location = new System.Drawing.Point(483, 89);
             this.fld_lkeARDiscountProgramApplyOn.Name = "fld_lkeARDiscountProgramApplyOn";
             this.fld_lkeARDiscountProgramApplyOn.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -775,10 +774,10 @@ namespace BOSERP.Modules.DiscountProgram.UI
             this.bosLabel9.Location = new System.Drawing.Point(388, 118);
             this.bosLabel9.Name = "bosLabel9";
             this.bosLabel9.Screen = null;
-            this.bosLabel9.Size = new System.Drawing.Size(41, 13);
+            this.bosLabel9.Size = new System.Drawing.Size(67, 13);
             this.bosLabel9.TabIndex = 124;
             this.bosLabel9.Tag = "";
-            this.bosLabel9.Text = "% CTKM";
+            this.bosLabel9.Text = "Tiền/% CTKM";
             // 
             // fld_lblLabel17
             // 
@@ -1074,7 +1073,7 @@ namespace BOSERP.Modules.DiscountProgram.UI
             this.fld_xtabConfig.Location = new System.Drawing.Point(6, 181);
             this.fld_xtabConfig.Name = "fld_xtabConfig";
             this.fld_xtabConfig.SelectedTabPage = this.fld_tabProductDiscount;
-            this.fld_xtabConfig.Size = new System.Drawing.Size(1294, 637);
+            this.fld_xtabConfig.Size = new System.Drawing.Size(1308, 644);
             this.fld_xtabConfig.TabIndex = 107;
             this.fld_xtabConfig.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tabProductDiscount,
@@ -1087,7 +1086,7 @@ namespace BOSERP.Modules.DiscountProgram.UI
             this.fld_tabProductDiscount.Controls.Add(this.fld_dgcARDiscountProgramItems);
             this.fld_tabProductDiscount.Controls.Add(this.fld_pteARDiscountProgramItemProductPicture);
             this.fld_tabProductDiscount.Name = "fld_tabProductDiscount";
-            this.fld_tabProductDiscount.Size = new System.Drawing.Size(1292, 612);
+            this.fld_tabProductDiscount.Size = new System.Drawing.Size(1306, 619);
             this.fld_tabProductDiscount.Text = "Danh sách sản phẩm";
             // 
             // bosButton1
@@ -1149,7 +1148,7 @@ namespace BOSERP.Modules.DiscountProgram.UI
             this.fld_pteARDiscountProgramItemProductPicture.Cursor = System.Windows.Forms.Cursors.Default;
             this.fld_pteARDiscountProgramItemProductPicture.FileName = null;
             this.fld_pteARDiscountProgramItemProductPicture.FilePath = null;
-            this.fld_pteARDiscountProgramItemProductPicture.Location = new System.Drawing.Point(1168, 42);
+            this.fld_pteARDiscountProgramItemProductPicture.Location = new System.Drawing.Point(1182, 42);
             this.fld_pteARDiscountProgramItemProductPicture.MenuManager = this.screenToolbar;
             this.fld_pteARDiscountProgramItemProductPicture.Name = "fld_pteARDiscountProgramItemProductPicture";
             this.fld_pteARDiscountProgramItemProductPicture.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
@@ -1163,7 +1162,7 @@ namespace BOSERP.Modules.DiscountProgram.UI
             this.fld_tabTargetConfig.Controls.Add(this.fld_dgcARDiscountProgramItemTargets);
             this.fld_tabTargetConfig.Name = "fld_tabTargetConfig";
             this.fld_tabTargetConfig.PageVisible = false;
-            this.fld_tabTargetConfig.Size = new System.Drawing.Size(1278, 605);
+            this.fld_tabTargetConfig.Size = new System.Drawing.Size(1292, 612);
             this.fld_tabTargetConfig.Text = "Cấu hình thưởng doanh số";
             // 
             // fld_dgcARDiscountProgramItemTargets
@@ -1189,7 +1188,7 @@ namespace BOSERP.Modules.DiscountProgram.UI
             this.fld_dgcARDiscountProgramItemTargets.Name = "fld_dgcARDiscountProgramItemTargets";
             this.fld_dgcARDiscountProgramItemTargets.PrintReport = false;
             this.fld_dgcARDiscountProgramItemTargets.Screen = null;
-            this.fld_dgcARDiscountProgramItemTargets.Size = new System.Drawing.Size(1270, 595);
+            this.fld_dgcARDiscountProgramItemTargets.Size = new System.Drawing.Size(1284, 602);
             this.fld_dgcARDiscountProgramItemTargets.TabIndex = 13;
             this.fld_dgcARDiscountProgramItemTargets.Tag = "DC";
             this.fld_dgcARDiscountProgramItemTargets.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1308,7 +1307,7 @@ namespace BOSERP.Modules.DiscountProgram.UI
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(1308, 821);
+            this.ClientSize = new System.Drawing.Size(1322, 828);
             this.Controls.Add(this.bosPanel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMDP100.IconOptions.Icon")));
             this.Name = "DMDP100";

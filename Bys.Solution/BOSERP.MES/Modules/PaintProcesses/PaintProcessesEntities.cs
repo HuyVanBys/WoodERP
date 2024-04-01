@@ -1,6 +1,7 @@
 ﻿using BOSCommon.Constants;
 using System;
 using BOSLib;
+using BOSCommon;
 
 namespace BOSERP.Modules.PaintProcesses
 {
@@ -58,6 +59,7 @@ namespace BOSERP.Modules.PaintProcesses
         {
             base.SetDefaultMainObject();
             MMPaintProcessessInfo mainObject = (MMPaintProcessessInfo)MainObject;
+            mainObject.MMPaintProcessesStatus = Status.New.ToString();
             mainObject.MMPaintProcessesIsActive = true;
             UpdateMainObjectBindingSource();
         }
@@ -152,6 +154,8 @@ namespace BOSERP.Modules.PaintProcesses
 
         public override void DuplicateModuleObjectList()
         {
+            MMPaintProcessessInfo objPaintProcessessInfo = (MMPaintProcessessInfo)MainObject;
+            objPaintProcessessInfo.MMPaintProcessesStatus = PaintProcessesStatus.New.ToString();
             PaintProcessesItemList.Duplicate();
             MMPaintProcessesItemsController objPaintProcessesItemsController = new MMPaintProcessesItemsController();
             foreach (MMPaintProcessesItemsInfo item in PaintProcessesItemList)
@@ -166,8 +170,6 @@ namespace BOSERP.Modules.PaintProcesses
             PaintProcessesItemList.TreeListControl.ExpandAll();
             PaintProcessesItemList.TreeListControl.BestFitColumns();
         }
-
-
         #endregion
 
         #region Delete Object functions

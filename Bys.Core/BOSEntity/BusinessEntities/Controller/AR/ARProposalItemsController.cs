@@ -69,6 +69,11 @@ namespace BOSERP
             DataSet results = dal.GetDataSet("ARProposalItems_GetProposalsForOrdering");
             return (List<ARProposalItemsInfo>)GetListFromDataSet(results);
         }
+        public List<ARProposalItemsInfo> GetProposalsForOrderingBysUser(int userID)
+        {
+            DataSet results = dal.GetDataSet("ARProposalItems_GetProposalsForOrderingBysUser", userID);
+            return (List<ARProposalItemsInfo>)GetListFromDataSet(results);
+        }
 
         public List<ARProposalItemsInfo> GetProposalItemByIDForReportProposalLabel(int proposalID)
         {

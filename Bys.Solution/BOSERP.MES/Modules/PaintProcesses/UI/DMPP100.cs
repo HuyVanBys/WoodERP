@@ -117,6 +117,11 @@ namespace BOSERP.Modules.PaintProcesses.UI
                         ((PaintProcessesModule)Module).AllocationProductQty(objPaintProcessesItemsInfo);
                     }
                     ((PaintProcessesModule)Module).ChangeItemFromPaintProcessesItemsList(objPaintProcessesItemsInfo);
+                    if (e.Column.FieldName == "MMPaintProcessesItemMixRatio")
+                    {
+                        ((PaintProcessesModule)Module).AllocationProductQtyMixRatio(objPaintProcessesItemsInfo);
+                    }
+                    ((PaintProcessesModule)Module).ChangeItemFromPaintProcessesItemsList(objPaintProcessesItemsInfo);
                 }
             }
         }

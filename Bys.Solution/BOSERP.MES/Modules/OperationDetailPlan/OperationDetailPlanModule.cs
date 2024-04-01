@@ -15,6 +15,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using BOSReport;
 
 namespace BOSERP.Modules.OperationDetailPlan
 {
@@ -4271,6 +4272,66 @@ namespace BOSERP.Modules.OperationDetailPlan
             return result;
         }
         #endregion
+        #endregion
+
+        #region Print Job Ticket
+        public void PrintJobTicket()
+        {
+            OperationDetailPlanEntities entity = (OperationDetailPlanEntities)CurrentModuleEntity;
+            if (entity.TicketDetailPlanItemsList == null || entity.TicketDetailPlanItemsList.Where(o => o.Selected).ToList().Count == 0)
+            {
+                BOSApp.ShowMessage("Thẻ giao việc chưa được chọn, vui lòng kiểm tra lại!");
+                return;
+            }
+            if (entity.TicketDetailPlanItemsList.Where(o => o.Selected).ToList().Count > 1)
+            {
+                BOSApp.ShowMessage("Chỉ được chọn 1 thẻ giao việc, vui lòng kiểm tra lại!");
+                return;
+            }
+            guiPrint guiPrintJobTicket = new guiPrint();
+            guiPrintJobTicket.Module = this;
+            guiPrintJobTicket.ShowDialog();
+            if (guiPrintJobTicket.DialogResult == DialogResult.OK)
+            {
+                string printJobTicketType = guiPrintJobTicket.PrintType;
+                MMOperationDetailPlanItemChildsInfo item = entity.TicketDetailPlanItemsList.Where(o => o.Selected).FirstOrDefault();
+                ADConfigValuesController objConfigValuesController = new ADConfigValuesController();
+                ADConfigValuesInfo objConfigValuesInfo = (ADConfigValuesInfo)objConfigValuesController.GetObjectByGroupAndValue("PrintJobTicketType", printJobTicketType);
+                string templateNo = objConfigValuesInfo != null ? objConfigValuesInfo.ADConfigKeyDesc : string.Empty;
+                if (string.IsNullOrWhiteSpace(templateNo))
+                    return;
+                ADTemplatesInfo objADTemplatesInfo = (ADTemplatesInfo)new ADTemplatesController().GetObjectByNo(templateNo);
+                if (objADTemplatesInfo == null)
+                    return;
+                if (string.IsNullOrEmpty(objADTemplatesInfo.ADTemplateStoreProc))
+                    return;
+
+                string rptFile = System.IO.Path.Combine("Reports", objADTemplatesInfo.ADTemplateNo + ".repx");
+                BaseReport report = new BaseReport();
+                guiReportPreview reviewer;
+                bool bExists = System.IO.File.Exists(rptFile);
+                if (!bExists)
+                {
+                    if (MessageBox.Show("Tệp mẫu báo cáo không tồn tại! Bạn có muốn thiết kế ?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        reviewer = new guiReportPreview(report, rptFile, true);
+                        reviewer.Show();
+                        return;
+                    }
+                }
+                report.LoadLayout(rptFile);
+                Utilities.XtraReportHelper.SetFormatField(report);
+
+                DataSet dataSource = SqlDatabaseHelper.RunStoredProcedure(objADTemplatesInfo.ADTemplateStoreProc, item.MMOperationDetailPlanItemChildID);
+                report.DataSource = dataSource;
+                reviewer = new guiReportPreview(report, rptFile, true);
+                reviewer.Show();
+            }
+        }
         #endregion
     }
     public class WeekRange

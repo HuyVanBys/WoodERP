@@ -1494,7 +1494,7 @@ namespace BOSERP.Modules.Invoice
                         objInvoiceItemsInfo.ARInvoiceItemProductQty = objShipmentItemsInfo.ICShipmentItemAcceptanceProductQty;
                         objInvoiceItemsInfo.ARInvoiceItemAcceptanceProductQty = objShipmentItemsInfo.ICShipmentItemAcceptanceProductQty;
                     }
-                    objInvoiceItemsInfo.ARInvoiceItemProductExchangeQty = objInvoiceItemsInfo.ARInvoiceItemProductQty * objInvoiceItemsInfo.ARInvoiceItemProductFactor;
+                    objInvoiceItemsInfo.ARInvoiceItemProductExchangeQty = Math.Round(objInvoiceItemsInfo.ARInvoiceItemProductQty * objInvoiceItemsInfo.ARInvoiceItemProductFactor, 6);
                     objInvoiceItemsInfo.ARInvoiceItemDeliveryDate = objInvoicesInfo.ARInvoiceDeliveryDate;
                     objInvoiceItemsInfo.FK_ICStockID = o.FK_ICStockID;
                     objInvoiceItemsInfo.FK_ICProductSerieID = o.FK_ICProductSerieID;
@@ -1878,7 +1878,7 @@ namespace BOSERP.Modules.Invoice
 
             //Set Item Exchange Qty
             columnName = itemTablePrefix + "ProductExchangeQty";
-            dbUtil.SetPropertyValue(item, columnName, qty * factor);
+            dbUtil.SetPropertyValue(item, columnName, Math.Round(qty * factor,6));
             if (objInvoicesInfo.ActionNewFrom != "Manual")
             {
                 BOSApp.RoundByCurrency(item, currencyID);

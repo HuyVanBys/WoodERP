@@ -199,7 +199,7 @@ namespace BOSERP.Modules.CarcassBOM
                 repositoryItemLookUpEdit.Columns.Add(new LookUpColumnInfo(FormulaConst.MMFormulaName, FormulaConst.MMFormulaNameCaption));
                 repositoryItemLookUpEdit.DataSource = FormulasList.Where(o => o.MMFormulaType == "Paint" || o.MMFormulaID == 0).ToList();
                 column.ColumnEdit = repositoryItemLookUpEdit;
-                column.MinWidth = 150;
+                //column.MinWidth = 150;
             }
 
             column = gridview.Columns["FK_MMFormulaIDPaintB"];
@@ -325,10 +325,16 @@ namespace BOSERP.Modules.CarcassBOM
             {
                 e.DisplayText = GetColorDisplayText(e.Value.ToString());
             }
-            if (e.Value != null && ( e.Column.FieldName == "ICProductColorPaintA" 
-                || e.Column.FieldName == "ICProductColorPaintB" 
-                || e.Column.FieldName == "ICProductColorPaintC"
-                || e.Column.FieldName == "ICProductPaintProcess")
+            if (e.Value != null && (e.Column.FieldName == "ICProductColorPaintA"
+                || e.Column.FieldName == "ICProductColorPaintB"
+                || e.Column.FieldName == "ICProductColorPaintC")
+                )
+            {
+                e.DisplayText = GetProductColorDisplayText(e.Value.ToString());
+            }
+            if (e.Value != null && ( e.Column.FieldName == "ICProductPaintProcessA"
+                || e.Column.FieldName == "ICProductPaintProcessB"
+                || e.Column.FieldName == "ICProductPaintProcessC")
                 )
             {
                 e.DisplayText = GetPaintProcessDisplayText(e.Value.ToString());
@@ -552,6 +558,40 @@ namespace BOSERP.Modules.CarcassBOM
                         item.ICProductHavePaint = false;
                     }
                 }
+                if (e.Column.FieldName == "ICProductPaintProcessDefault")
+                {
+                    if (!string.IsNullOrEmpty(item.ICProductPaintProcessDefault))
+                    {
+                        MMPaintProcessConfigItemsInfo configItem = GetPaitProcessConfig(int.Parse(item.ICProductPaintProcessDefault));
+                        if (configItem != null)
+                        {
+                            item.ICProductPaintProcessA = configItem.ICProductPaintProcessA;
+                            item.ICProductPaintProcessB = configItem.ICProductPaintProcessB;
+                            item.ICProductPaintProcessC = configItem.ICProductPaintProcessC;
+                            item.ICProductColorPaintA = configItem.ICProductColorPaintA;
+                            item.ICProductColorPaintB = configItem.ICProductColorPaintB;
+                            item.ICProductColorPaintC = configItem.ICProductColorPaintC;
+                            item.FK_MMFormulaIDPaintA = configItem.FK_MMFormulaIDPaintA;
+                            item.FK_MMFormulaIDPaintB = configItem.FK_MMFormulaIDPaintB;
+                            item.FK_MMFormulaIDPaintC = configItem.FK_MMFormulaIDPaintC;
+                            item.ICProductHavePaint = true;
+                        }
+                    }
+                    else 
+                    {
+                        item.ICProductPaintProcessA = string.Empty;
+                        item.ICProductPaintProcessB = string.Empty;
+                        item.ICProductPaintProcessC = string.Empty;
+                        item.ICProductColorPaintA = string.Empty;
+                        item.ICProductColorPaintB = string.Empty;
+                        item.ICProductColorPaintC = string.Empty;
+                        item.FK_MMFormulaIDPaintA = 0;
+                        item.FK_MMFormulaIDPaintB = 0;
+                        item.FK_MMFormulaIDPaintC = 0;
+                        item.ICProductHavePaint = false;
+
+                    }
+                }
             }
 
             if (e.Column.FieldName == "ICProductLength"
@@ -607,7 +647,7 @@ namespace BOSERP.Modules.CarcassBOM
                         objProductsInfoList = ((CarcassBOMModule)Screen.Module).GetWoodIngredient(MaterialDepartList);
                     materialLookUpEdit.DataSource = objProductsInfoList;
                     column.ColumnEdit = materialLookUpEdit;
-                    column.MinWidth = 750;
+                    //column.MinWidth = 750;
                 }
                 else if (column.FieldName == "FK_ICMeasureUnitID")
                 {
@@ -622,7 +662,7 @@ namespace BOSERP.Modules.CarcassBOM
                     repositoryItemLookUpEdit.QueryPopUp += new System.ComponentModel.CancelEventHandler(repMeasureUnit_QueryPopUp);
 
                     column.ColumnEdit = repositoryItemLookUpEdit;
-                    column.MinWidth = 150;
+                    //column.MinWidth = 150;
                 }
                 else if (column.FieldName == "FK_MMOperationID")
                 {
@@ -637,7 +677,7 @@ namespace BOSERP.Modules.CarcassBOM
                     repositoryItemLookUpEdit.QueryPopUp += new System.ComponentModel.CancelEventHandler(reqOperation_QueryPopUp);
 
                     column.ColumnEdit = repositoryItemLookUpEdit;
-                    column.MinWidth = 150;
+                    //column.MinWidth = 150;
                 }
 
                 else if (column.FieldName == "FK_MMFormulaID")
@@ -653,7 +693,7 @@ namespace BOSERP.Modules.CarcassBOM
                     repositoryItemLookUpEdit.Columns.Add(new LookUpColumnInfo("MMFormulaDesc", "Mô tả", 300));
                     repositoryItemLookUpEdit.DataSource = FormulasList.Where(o => o.MMFormulaType == "AddMaterial").ToList();
                     column.ColumnEdit = repositoryItemLookUpEdit;
-                    column.MinWidth = 150;
+                    //column.MinWidth = 150;
                 }
                 else if (column.FieldName == "ICProductItemMaterialQty")
                 {
@@ -746,6 +786,7 @@ namespace BOSERP.Modules.CarcassBOM
                 {
                     ((CarcassBOMModule)Screen.Module).RecalDepreciationAllItem();
                 }
+               
             }
         }
 
@@ -955,15 +996,30 @@ namespace BOSERP.Modules.CarcassBOM
 
             column = new GridColumn();
             column.OptionsColumn.AllowEdit = true;
+            column.Caption = "QTS mặc định";
+            column.FieldName = "ICProductPaintProcessDefault";
+            RepositoryItemLookUpEdit ProcessDefault = new RepositoryItemLookUpEdit();
+            ProcessDefault.DisplayMember = "MMPaintProcessConfigName";
+            ProcessDefault.ValueMember = "MMPaintProcessConfigID";
+            ProcessDefault.Columns.Add(new LookUpColumnInfo("MMPaintProcessConfigNo", "Mã"));
+            ProcessDefault.Columns.Add(new LookUpColumnInfo("MMPaintProcessConfigName", "Tên"));
+            ProcessDefault.Columns.Add(new LookUpColumnInfo("MMPaintProcessConfigDesc", "Mô tả"));
+            ProcessDefault.NullText = string.Empty;
+            ProcessDefault.DataSource = GetPaitProcessConfig();
+            column.ColumnEdit = ProcessDefault;
+            view.Columns.Add(column);
+
+            column = new GridColumn();
+            column.OptionsColumn.AllowEdit = true;
             column.Caption = "Màu sơn khác";
             column.FieldName = "ICProductColorAttribute";
-            
-            RepositoryItemCheckedComboBoxEdit rpOhterColor = new RepositoryItemCheckedComboBoxEdit();
-            rpOhterColor.DisplayMember = "ICProductAttributeValue";
-            rpOhterColor.ValueMember = "ICProductAttributeID";
-            rpOhterColor.NullText = string.Empty;
-            rpOhterColor.DataSource = GetProductAttributeDatasource(ProductAttributeGroup.COLOR.ToString());
-            column.ColumnEdit = rpOhterColor;
+            RepositoryItemCheckedComboBoxEdit rpColorC = new RepositoryItemCheckedComboBoxEdit();
+            rpColorC.DisplayMember = "ICProductAttributeValue";
+            rpColorC.ValueMember = "ICProductAttributeID";
+            rpColorC.NullText = string.Empty;
+            rpColorC.IncrementalSearch = true;
+            rpColorC.DataSource = GetProductAttributeDatasource("COLOR");
+            column.ColumnEdit = rpColorC;
             view.Columns.Add(column);
 
             column = new GridColumn();
@@ -971,81 +1027,164 @@ namespace BOSERP.Modules.CarcassBOM
             column.Caption = "Màu sơn A";
             column.FieldName = "ICProductColorPaintA";
 
-            RepositoryItemCheckedComboBoxEdit rpColorA = new RepositoryItemCheckedComboBoxEdit();
-            rpColorA.DisplayMember = "MMPaintProcessesPaintName";
-            rpColorA.ValueMember = "MMPaintProcessesID";
-            rpColorA.NullText = string.Empty;
-            rpColorA.DataSource = GetPaintProcessessDatasource(ProductAttributeGroup.COLOR.ToString());
-            column.ColumnEdit = rpColorA;
+            RepositoryItemButtonEdit colorAEdit = InitColorButtonEdit();
+            column.ColumnEdit = colorAEdit;
             view.Columns.Add(column);
 
             column = new GridColumn();
             column.OptionsColumn.AllowEdit = true;
             column.Caption = "Màu sơn B";
             column.FieldName = "ICProductColorPaintB";
-
-            RepositoryItemCheckedComboBoxEdit rpColorB = new RepositoryItemCheckedComboBoxEdit();
-            rpColorB.DisplayMember = "MMPaintProcessesPaintName";
-            rpColorB.ValueMember = "MMPaintProcessesID";
-            rpColorB.NullText = string.Empty;
-            rpColorB.DataSource = GetPaintProcessessDatasource(ProductAttributeGroup.COLOR.ToString());
-            column.ColumnEdit = rpColorB;
+            RepositoryItemButtonEdit colorBEdit = InitColorButtonEdit();
+            column.ColumnEdit = colorBEdit;
             view.Columns.Add(column);
 
             column = new GridColumn();
             column.OptionsColumn.AllowEdit = true;
             column.Caption = "Màu sơn C";
             column.FieldName = "ICProductColorPaintC";
-
-            RepositoryItemCheckedComboBoxEdit rpColorC = new RepositoryItemCheckedComboBoxEdit();
-            rpColorC.DisplayMember = "MMPaintProcessesPaintName";
-            rpColorC.ValueMember = "MMPaintProcessesID";
-            rpColorC.NullText = string.Empty;
-            rpColorC.DataSource = GetPaintProcessessDatasource(ProductAttributeGroup.COLOR.ToString());
-            column.ColumnEdit = rpColorC;
+            RepositoryItemButtonEdit colorCEdit = InitColorButtonEdit();
+            column.ColumnEdit = colorCEdit;
             view.Columns.Add(column);
 
             column = new GridColumn();
             column.OptionsColumn.AllowEdit = true;
-            column.Caption = "QT Sơn";
-            column.FieldName = "ICProductPaintProcess";
+            column.Caption = "QTS A";
+            column.FieldName = "ICProductPaintProcessA";
 
-            RepositoryItemCheckedComboBoxEdit rpPaintProcess = new RepositoryItemCheckedComboBoxEdit();
-            rpPaintProcess.DisplayMember = "MMPaintProcessesPaintName";
-            rpPaintProcess.ValueMember = "MMPaintProcessesID";
-            rpPaintProcess.NullText = string.Empty;
-            rpPaintProcess.DataSource = GetPaintProcessessDatasource(ProductAttributeGroup.HTType.ToString());
-            column.ColumnEdit = rpPaintProcess;
+            RepositoryItemButtonEdit ProcessAEdit = InitPaintProcessButtonEdit();
+            column.ColumnEdit = ProcessAEdit;
             view.Columns.Add(column);
+
+            column = new GridColumn();
+            column.OptionsColumn.AllowEdit = true;
+            column.Caption = "QTS B";
+            column.FieldName = "ICProductPaintProcessB";
+
+            RepositoryItemButtonEdit ProcessBEdit = InitPaintProcessButtonEdit();
+            column.ColumnEdit = ProcessBEdit;
+            view.Columns.Add(column);
+
+            column = new GridColumn();
+            column.OptionsColumn.AllowEdit = true;
+            column.Caption = "QTS C";
+            column.FieldName = "ICProductPaintProcessC";
+            RepositoryItemButtonEdit ProcessCEdit = InitPaintProcessButtonEdit();
+            column.ColumnEdit = ProcessCEdit;
+            view.Columns.Add(column);
+        }
+        public RepositoryItemButtonEdit InitPaintProcessButtonEdit()
+        {
+            RepositoryItemButtonEdit rep = new RepositoryItemButtonEdit();
+            rep.ButtonClick += new ButtonPressedEventHandler(ShowSelectItemData);
+            return rep;
+        }
+        public RepositoryItemButtonEdit InitColorButtonEdit()
+        {
+            RepositoryItemButtonEdit rep = new RepositoryItemButtonEdit();
+            rep.ButtonClick += new ButtonPressedEventHandler(ShowSelectColorItemData);
+            return rep;
+        }
+        private void ShowSelectItemData(object sender, ButtonPressedEventArgs e)
+        {
+            GridView gridView = (GridView)MainView;
+            string select =  ((CarcassBOMModule)Screen.Module).ShowSelectPaintProcessesData();
+            
+            ICProductsInfo objProductsInfo = (ICProductsInfo)gridView.GetFocusedRow();
+            if (objProductsInfo != null)
+            {
+                if(gridView.FocusedColumn.FieldName == "ICProductPaintProcessA")
+                objProductsInfo.ICProductPaintProcessA = select;
+                if (gridView.FocusedColumn.FieldName == "ICProductPaintProcessB")
+                    objProductsInfo.ICProductPaintProcessB = select;
+                if (gridView.FocusedColumn.FieldName == "ICProductPaintProcessC")
+                    objProductsInfo.ICProductPaintProcessC = select;
+            } 
+            gridView.RefreshData();
+        }
+        private void ShowSelectColorItemData(object sender, ButtonPressedEventArgs e)
+        {
+            string select = ((CarcassBOMModule)Screen.Module).ShowSelectColorData();
+            GridView gridView = (GridView)MainView;
+
+            ICProductsInfo objProductsInfo = (ICProductsInfo)gridView.GetFocusedRow();
+            if (objProductsInfo != null)
+            {
+                if (gridView.FocusedColumn.FieldName == "ICProductColorPaintA")
+                    objProductsInfo.ICProductColorPaintA = select;
+                if (gridView.FocusedColumn.FieldName == "ICProductColorPaintB")
+                    objProductsInfo.ICProductColorPaintB = select;
+                if (gridView.FocusedColumn.FieldName == "ICProductColorPaintC")
+                    objProductsInfo.ICProductColorPaintC = select;
+            }
+            gridView.RefreshData();
         }
 
         private string GetColorDisplayText(string colorRef)
         {
             if (string.IsNullOrWhiteSpace(colorRef))
                 return string.Empty;
-
-            List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
-            DataSet ds = BOSApp.GetLookupTableData("ICProductAttributes");
-            if (ds != null && ds.Tables.Count > 0)
+            try
             {
-                List<ICProductAttributesInfo> ColorData = (List<ICProductAttributesInfo>)(new ICProductAttributesController()).GetListFromDataSet(ds);
-                return string.Join(", ", ColorData.Where(o => colorID.Contains(o.ICProductAttributeID)).Select(o => o.ICProductAttributeValue).ToArray());
+
+                List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
+
+                DataSet ds = BOSApp.LookupTables["ICProductAttributes"] as DataSet;
+                if (ds == null || ds.Tables.Count == 0)
+                    ds = BOSApp.GetLookupTableData("ICProductAttributes");
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    List<ICProductAttributesInfo> ColorData = (List<ICProductAttributesInfo>)(new ICProductAttributesController()).GetListFromDataSet(ds);
+                    return string.Join(", ", ColorData.Where(o => colorID.Contains(o.ICProductAttributeID)).Select(o => o.ICProductAttributeValue).ToArray());
+                }
+                else return string.Empty;
             }
-            else return string.Empty;
+            catch
+            {
+                return colorRef;
+            }
+        }
+        private string GetProductColorDisplayText(string colorRef)
+        {
+            if (string.IsNullOrWhiteSpace(colorRef))
+                return string.Empty;
+            try
+            {
+                List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
+                List<ICProductsForViewInfo> ColorData = BOSApp.CurrentProductList.Where(p => p.ICProductType == ProductType.IngredientPaint.ToString()).ToList();
+                if (ColorData.Count > 0)
+                {
+                    return string.Join(", ", ColorData.Where(o => colorID.Contains(o.ICProductID)).Select(o => o.ICProductName).ToArray());
+                }
+                else return string.Empty;
+            }
+            catch
+            {
+                return colorRef;
+            }
         }
         private string GetPaintProcessDisplayText(string colorRef)
         {
             if (string.IsNullOrWhiteSpace(colorRef))
                 return string.Empty;
-
-            List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
-            DataSet ds = BOSApp.GetLookupTableData("MMPaintProcessess");
-            if (ds != null && ds.Tables.Count > 0)
+            try
             {
-                List<MMPaintProcessessInfo> ColorData = (List<MMPaintProcessessInfo>)(new MMPaintProcessessController()).GetListFromDataSet(ds);
-                return string.Join(", ", ColorData.Where(o => colorID.Contains(o.MMPaintProcessesID)).Select(o => o.MMPaintProcessesPaintName).ToArray());
+                List<int> colorID = colorRef.Split(',').Select(o => Int32.Parse(o)).ToList();
+
+                DataSet ds = BOSApp.LookupTables["MMPaintProcessess"] as DataSet;
+                if (ds == null || ds.Tables.Count == 0)
+                    ds = BOSApp.GetLookupTableData("MMPaintProcessess");
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    List<MMPaintProcessessInfo> ColorData = (List<MMPaintProcessessInfo>)(new MMPaintProcessessController()).GetListFromDataSet(ds);
+                    return string.Join(", ", ColorData.Where(o => colorID.Contains(o.MMPaintProcessesID)).Select(o => o.MMPaintProcessesPaintName).ToArray());
+                }
+                else return string.Empty;
             }
-            else return string.Empty;
+            catch
+            {
+                return colorRef;
+            }
         }
 
         public List<ICProductAttributesInfo> GetProductAttributeDatasource(string group)
@@ -1055,6 +1194,24 @@ namespace BOSERP.Modules.CarcassBOM
             woodTypeList = objProductAttributesController.GetProductAttributesByProductAttributeGroup(group);
             return woodTypeList;
         }
+        public List<MMPaintProcessConfigsInfo> GetPaitProcessConfig()
+        {
+            List<MMPaintProcessConfigsInfo> woodTypeList = new List<MMPaintProcessConfigsInfo>();
+            DataSet ds = BOSApp.LookupTables["MMPaintProcessConfigs"] as DataSet;
+            if (ds == null || ds.Tables.Count == 0)
+                ds = BOSApp.GetLookupTableData("MMPaintProcessConfigs");
+            woodTypeList = (List<MMPaintProcessConfigsInfo>) (new MMPaintProcessConfigsController()).GetListFromDataSet(ds);
+            woodTypeList = (List<MMPaintProcessConfigsInfo>) woodTypeList.Where(o => o.MMPaintProcessConfigStatus == "Approved").ToList();
+            woodTypeList.Insert(0, new MMPaintProcessConfigsInfo());
+            return woodTypeList;
+        }
+
+        public MMPaintProcessConfigItemsInfo GetPaitProcessConfig(int Config)
+        {
+            MMPaintProcessConfigItemsInfo woodTypeList = (new MMPaintProcessConfigItemsController()).GetConfigByParentID(Config);
+            return woodTypeList;
+        }
+
         public List<MMPaintProcessessInfo> GetPaintProcessessDatasource(string type)
         {
             List<MMPaintProcessessInfo> paintList = new List<MMPaintProcessessInfo>();

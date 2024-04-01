@@ -1,5 +1,6 @@
 ﻿using BOSCommon;
 using BOSCommon.Constants;
+using BOSLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -224,7 +225,15 @@ namespace BOSERP.Modules.PaymentOrder
 
             return base.CompleteTransaction();
         }
-
+        public override void DeleteObjectRelations(string strTableName, int iObjectID)
+        {
+            base.DeleteObjectRelations(strTableName, iObjectID);
+            string strMainObjectTableName = BOSUtil.GetTableNameFromBusinessObject(MainObject);
+            if (MainObject != null && strTableName == strMainObjectTableName)
+            {
+                BankTransactionItemList.DeleteItemObjects();
+            }
+        }
         public override bool CancelCompleteTransaction()
         {
             ACBankTransactionsInfo objBankTransactionsInfo = (ACBankTransactionsInfo)MainObject;

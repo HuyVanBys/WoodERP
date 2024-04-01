@@ -64,6 +64,13 @@ namespace BOSERP.Modules.BatchProduct
             column.FieldName = "ICProductName2";
             column.OptionsColumn.AllowEdit = false;
             gridView.Columns.Add(column);
+
+            column = new GridColumn();
+            column.Caption = "SL tồn kho";
+            column.FieldName = "ICInventoryStockQty";
+            column.OptionsColumn.AllowEdit = false;
+            FormatNumbericColumn(column, false, "n3");
+            gridView.Columns.Add(column);
         }
 
         private void rpItemAddNewRow_Click(object sender, EventArgs e)

@@ -224,7 +224,16 @@ namespace BOSERP
             DataSet ds = dal.GetDataSet("ACObjects_GetObjectViewPermissionByModule", moduleName);
             return (List<ACObjectsInfo>)GetListFromDataSet(ds);
         }
-
+        public List<ACObjectsInfo> GetObjectViewPermissionByUse(int userID)
+        {
+            DataSet ds = dal.GetDataSet("ACObjects_GetObjectViewPermissionByUser", userID);
+            return (List<ACObjectsInfo>)GetListFromDataSet(ds);
+        }
+        public List<ACObjectsInfo> GetObjectViewPermissionByUseIDAndModule(int userID, string moduleName)
+        {
+            DataSet ds = dal.GetDataSet("ACObjects_GetObjectViewPermissionByUseIDAndModule", userID, moduleName);
+            return (List<ACObjectsInfo>)GetListFromDataSet(ds);
+        }
         public bool CheckObjectChangeFromDatabase(DateTime lastedUpdate, string moduleName)
         {
             return (bool)dal.GetSingleValue("ACObjects_CheckObjectChangeFromDatabase", lastedUpdate, moduleName);

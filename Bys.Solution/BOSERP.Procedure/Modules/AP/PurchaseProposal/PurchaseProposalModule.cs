@@ -2641,6 +2641,11 @@ namespace BOSERP.Modules.PurchaseProposal
                 proposalItemList.Add(objProposalItemsInfo);
             });
             mainobject.MMBatchProductSOName = string.Join(",", allocationPlanItemList.Select(o => o.MMBatchProductItemSOName).Distinct().ToArray());
+            if (objBatchProductsInfo != null)
+            {
+                mainobject.APProposalReference = objBatchProductsInfo.MMBatchProductNo;
+                mainobject.APProposalDesc = objBatchProductsInfo.MMBatchProductDesc;
+            }    
             entity.PurchaseProposalItemList.AddRange(proposalItemList);
             if (entity.PurchaseProposalItemList.GridControl != null)
             {

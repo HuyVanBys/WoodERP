@@ -84,13 +84,27 @@ namespace BOSERP.Utilities
                 }
                 else
                 {
-                    // Bước 1: Gọi hàm lấy dữ liệu Hóa đơn để gửi lên Webservice eHoadon của Bkav
-                    msg = GetListInvoiceDataWS(CommandType.CreateInvoiceMT, out listInvoiceDataWS, eInvoice);
-                    if (msg.Length > 0) return msg;
+                    if (eInvoice.TotalAmountWithVAT >= 0 && eInvoice.ReferModuleName != ModuleName.SaleReturn)
+                    {
+                        // Bước 1: Gọi hàm lấy dữ liệu Hóa đơn để gửi lên Webservice eHoadon của Bkav
+                        msg = GetListInvoiceDataWS(CommandType.CreateInvoiceMT, out listInvoiceDataWS, eInvoice);
+                        if (msg.Length > 0) return msg;
 
-                    // Bước 2: Gửi lên Webservice và nhận đối tượng Result chứa kết quả trả về
-                    msg = remoteCommand.TransferCommandAndProcessResult(CommandType.CreateInvoiceMT, listInvoiceDataWS, out result);
-                    if (msg.Length > 0) return msg;
+                        // Bước 2: Gửi lên Webservice và nhận đối tượng Result chứa kết quả trả về
+                        msg = remoteCommand.TransferCommandAndProcessResult(CommandType.CreateInvoiceMT, listInvoiceDataWS, out result);
+                        if (msg.Length > 0) return msg;
+                    }
+                    else
+                    {
+                        // Bước 1: Gọi hàm lấy dữ liệu Hóa đơn để gửi lên Webservice eHoadon của Bkav
+                        msg = GetListInvoiceDataWS(CommandType.CreateInvoiceAdjustDiscount, out listInvoiceDataWS, eInvoice);
+                        if (msg.Length > 0) return msg;
+
+                        // Bước 2: Gửi lên Webservice và nhận đối tượng Result chứa kết quả trả về
+                        msg = remoteCommand.TransferCommandAndProcessResult(CommandType.CreateInvoiceAdjustDiscount, listInvoiceDataWS, out result);
+                        if (msg.Length > 0) return msg;
+
+                    }
                 }
             }
             else
@@ -107,13 +121,26 @@ namespace BOSERP.Utilities
                 }
                 else
                 {
-                    // Bước 1: Gọi hàm lấy dữ liệu Hóa đơn để gửi lên Webservice eHoadon của Bkav
-                    msg = GetListInvoiceDataWS(CommandType.CreateInvoiceWithFormSerial, out listInvoiceDataWS, eInvoice);
-                    if (msg.Length > 0) return msg;
+                    if (eInvoice.TotalAmountWithVAT >= 0 && eInvoice.ReferModuleName != ModuleName.SaleReturn)
+                    {
+                        // Bước 1: Gọi hàm lấy dữ liệu Hóa đơn để gửi lên Webservice eHoadon của Bkav
+                        msg = GetListInvoiceDataWS(CommandType.CreateInvoiceWithFormSerial, out listInvoiceDataWS, eInvoice);
+                        if (msg.Length > 0) return msg;
 
-                    // Bước 2: Gửi lên Webservice và nhận đối tượng Result chứa kết quả trả về
-                    msg = remoteCommand.TransferCommandAndProcessResult(CommandType.CreateInvoiceWithFormSerial, listInvoiceDataWS, out result);
-                    if (msg.Length > 0) return msg;
+                        // Bước 2: Gửi lên Webservice và nhận đối tượng Result chứa kết quả trả về
+                        msg = remoteCommand.TransferCommandAndProcessResult(CommandType.CreateInvoiceWithFormSerial, listInvoiceDataWS, out result);
+                        if (msg.Length > 0) return msg;
+                    }
+                    else
+                    {
+                        // Bước 1: Gọi hàm lấy dữ liệu Hóa đơn để gửi lên Webservice eHoadon của Bkav
+                        msg = GetListInvoiceDataWS(CommandType.CreateInvoiceAdjustDiscount, out listInvoiceDataWS, eInvoice);
+                        if (msg.Length > 0) return msg;
+
+                        // Bước 2: Gửi lên Webservice và nhận đối tượng Result chứa kết quả trả về
+                        msg = remoteCommand.TransferCommandAndProcessResult(CommandType.CreateInvoiceAdjustDiscount, listInvoiceDataWS, out result);
+                        if (msg.Length > 0) return msg;
+                    }
                 }
             }
 
@@ -535,18 +562,18 @@ namespace BOSERP.Utilities
                 // Tạo 1 item
                 if (commandType == CommandType.CreateInvoiceAdjust)
                 {
-                    invoiceDetail = GetOneInvoiceDetailsWS(item, eInvoice.TaxOfficeCode, false, true); // Điều chỉnh thì sẽ bổ sung thêm IsIncrease: True là báo tăng, False báo giảm
+                    invoiceDetail = GetOneInvoiceDetailsWS(item, eInvoice.TaxOfficeCode, false, true, eInvoice); // Điều chỉnh thì sẽ bổ sung thêm IsIncrease: True là báo tăng, False báo giảm
                 }
                 else
                 {
-                    invoiceDetail = GetOneInvoiceDetailsWS(item, eInvoice.TaxOfficeCode, false);
+                    invoiceDetail = GetOneInvoiceDetailsWS(item, eInvoice.TaxOfficeCode, false, eInvoice);
                 }
                 // Add item vào list các item
                 invoiceDetails.Add(invoiceDetail);
             }
 
             ////Tạo item Chiết khấu
-            if (eInvoice.DiscountAmount > 0)
+            if (eInvoice.DiscountAmount != 0)
             {
                 decimal vatPercen = 0;
                 try
@@ -561,15 +588,15 @@ namespace BOSERP.Utilities
                 itemDiscount.ItemName = "Chiết khấu";
                 itemDiscount.UnitName = string.Empty;  //eInvoice.CurrencyCode;
                 itemDiscount.Quantity = 1;
-                itemDiscount.UnitPrice = eInvoice.DiscountAmount;
-                itemDiscount.VatAmount = Math.Round(eInvoice.DiscountAmount * vatPercen / 100, 0, MidpointRounding.AwayFromZero);
+                itemDiscount.UnitPrice = Math.Abs(eInvoice.DiscountAmount);
+                itemDiscount.VatAmount = Math.Round(Math.Abs(eInvoice.DiscountAmount) * vatPercen / 100, 0, MidpointRounding.AwayFromZero);
                 if (commandType == CommandType.CreateInvoiceAdjust)
                 {
-                    invoiceDetail = GetOneInvoiceDetailsWS(itemDiscount, eInvoice.TaxOfficeCode, true, true); // Điều chỉnh thì sẽ bổ sung thêm IsIncrease: True là báo tăng, False báo giảm
+                    invoiceDetail = GetOneInvoiceDetailsWS(itemDiscount, eInvoice.TaxOfficeCode, true, true, eInvoice); // Điều chỉnh thì sẽ bổ sung thêm IsIncrease: True là báo tăng, False báo giảm
                 }
                 else
                 {
-                    invoiceDetail = GetOneInvoiceDetailsWS(itemDiscount, eInvoice.TaxOfficeCode, true);
+                    invoiceDetail = GetOneInvoiceDetailsWS(itemDiscount, eInvoice.TaxOfficeCode, true, eInvoice);
                 }
                 // Add item vào list các item
                 invoiceDetail.Qty = 0;
@@ -652,6 +679,10 @@ namespace BOSERP.Utilities
                     invoiceWS.InvoiceNo = 0;
                     invoiceWS.InvoiceForm = eInvoice.TemplateCode;
                     invoiceWS.InvoiceSerial = eInvoice.InvoiceSeries; break;
+                case CommandType.CreateInvoiceAdjustDiscount:
+                    invoiceWS.InvoiceNo = Convert.ToInt32(eInvoice.InvoiceNumber);
+                    invoiceWS.InvoiceForm = eInvoice.TemplateCode;
+                    invoiceWS.InvoiceSerial = eInvoice.InvoiceSeries; break;
                 case CommandType.CreateInvoiceWithFormSerialNo:
                     invoiceWS.InvoiceNo = Convert.ToInt32(eInvoice.InvoiceNumber);
                     invoiceWS.InvoiceForm = eInvoice.TemplateCode;
@@ -685,15 +716,15 @@ namespace BOSERP.Utilities
         /// Khởi tạo dữ liệu InvoiceDetailsWS
         /// </summary>
         /// <returns></returns>
-        InvoiceDetailsWS GetOneInvoiceDetailsWS(ACEInvoiceDetailsInfo eInvoiceDetail, string taxOfficeCode, bool isDiscount)
+        InvoiceDetailsWS GetOneInvoiceDetailsWS(ACEInvoiceDetailsInfo eInvoiceDetail, string taxOfficeCode, bool isDiscount, ACEInvoiceGeneralsInfo eInvoice)
         {
             InvoiceDetailsWS invoiceDetailsWS = new InvoiceDetailsWS();
             invoiceDetailsWS.ItemTypeID = 0;
             invoiceDetailsWS.ItemCode = eInvoiceDetail.ACEInvoiceDetailVATCode;
             invoiceDetailsWS.ItemName = eInvoiceDetail.ItemName;
             invoiceDetailsWS.UnitName = eInvoiceDetail.UnitName;
-            invoiceDetailsWS.Qty = Convert.ToDouble(eInvoiceDetail.Quantity);
-            invoiceDetailsWS.Price = Convert.ToDouble(eInvoiceDetail.UnitPrice);
+            invoiceDetailsWS.Qty = Convert.ToDouble(Math.Abs(eInvoiceDetail.Quantity));
+            invoiceDetailsWS.Price = Convert.ToDouble(Math.Abs(eInvoiceDetail.UnitPrice));
             invoiceDetailsWS.Amount = Math.Round(Convert.ToDouble(invoiceDetailsWS.Qty * invoiceDetailsWS.Price), 0, MidpointRounding.AwayFromZero);
 
             if (taxOfficeCode == "0%")
@@ -716,8 +747,9 @@ namespace BOSERP.Utilities
             {
                 invoiceDetailsWS.TaxRateID = 4;
             }
-            invoiceDetailsWS.TaxAmount = Convert.ToDouble(eInvoiceDetail.VatAmount);
+            invoiceDetailsWS.TaxAmount = Convert.ToDouble(Math.Abs(eInvoiceDetail.VatAmount));
             invoiceDetailsWS.IsDiscount = isDiscount; // Có giảm giá hay không?
+            invoiceDetailsWS.IsIncrease = ((eInvoiceDetail.UnitPrice >= 0) && (eInvoiceDetail.Quantity >= 0)) && eInvoice.ReferModuleName != ModuleName.SaleReturn ? true : false;// Fix mặc định báo tăng
             invoiceDetailsWS.UserDefineDetails = "string đối tượng dạng json hoặc xml";
             return invoiceDetailsWS;
         }
@@ -726,17 +758,17 @@ namespace BOSERP.Utilities
         /// Khởi tạo dữ liệu InvoiceDetailsWS
         /// </summary>
         /// <returns></returns>
-        InvoiceDetailsWS GetOneInvoiceDetailsWS(ACEInvoiceDetailsInfo eInvoiceDetail, string taxOfficeCode, bool isDiscount, bool isIncrease)
+        InvoiceDetailsWS GetOneInvoiceDetailsWS(ACEInvoiceDetailsInfo eInvoiceDetail, string taxOfficeCode, bool isDiscount, bool isIncrease, ACEInvoiceGeneralsInfo eInvoice)
         {
             InvoiceDetailsWS invoiceDetailsWS = new InvoiceDetailsWS();
             invoiceDetailsWS.ItemTypeID = 0;
             invoiceDetailsWS.ItemCode = eInvoiceDetail.ACEInvoiceDetailVATCode;
             invoiceDetailsWS.ItemName = eInvoiceDetail.ItemName;
             invoiceDetailsWS.UnitName = eInvoiceDetail.UnitName;
-            invoiceDetailsWS.Qty = Convert.ToDouble(eInvoiceDetail.Quantity);
-            invoiceDetailsWS.Price = Convert.ToDouble(eInvoiceDetail.UnitPrice);
+            invoiceDetailsWS.Qty =  Convert.ToDouble(Math.Abs(eInvoiceDetail.Quantity));
+            invoiceDetailsWS.Price = Convert.ToDouble(Math.Abs(eInvoiceDetail.UnitPrice));
             invoiceDetailsWS.Amount = Math.Round(Convert.ToDouble(invoiceDetailsWS.Qty * invoiceDetailsWS.Price), 0, MidpointRounding.AwayFromZero);
-            
+
             if (taxOfficeCode == "0%")
             {
                 invoiceDetailsWS.TaxRateID = 1;
@@ -757,10 +789,10 @@ namespace BOSERP.Utilities
             {
                 invoiceDetailsWS.TaxRateID = 4;
             }
-            invoiceDetailsWS.TaxAmount = Convert.ToDouble(eInvoiceDetail.VatAmount);
+            invoiceDetailsWS.TaxAmount = Convert.ToDouble(Math.Abs(eInvoiceDetail.VatAmount));
             invoiceDetailsWS.IsDiscount = isDiscount; // Có giảm giá hay không?
             invoiceDetailsWS.UserDefineDetails = "string đối tượng dạng json hoặc xml";
-            invoiceDetailsWS.IsIncrease = true;// Fix mặc định báo tăng
+            invoiceDetailsWS.IsIncrease = ((eInvoiceDetail.UnitPrice >= 0) && (eInvoiceDetail.Quantity >= 0) ) && eInvoice.ReferModuleName != ModuleName.SaleReturn ? true :false;// Fix mặc định báo tăng
             return invoiceDetailsWS;
         }
         #endregion

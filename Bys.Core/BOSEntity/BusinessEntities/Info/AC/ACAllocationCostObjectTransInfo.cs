@@ -608,6 +608,7 @@ namespace BOSERP
         #region Extra Properties
         public string BRBranchName { get; set; }
         public string ACAllocationCostObjectTranModuleDescription { get; set; }
+        public decimal ACAllocationCostObjectTranTotalAmount { get; set; }
         #endregion
     }
     #endregion

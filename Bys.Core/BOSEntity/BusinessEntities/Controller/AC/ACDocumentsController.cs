@@ -1163,6 +1163,16 @@ namespace BOSERP
             DataSet ds = dal.GetDataSet("ACDocuments_GetRelativeDocumentListByBankTransactionID", bankTransactionID);
             return (List<ACDocumentsInfo>)GetListFromDataSet(ds);
         }
+        public List<ACDocumentsInfo> GetRelativeDocumentListByPaymentCashID(int bankTransactionID)
+        {
+            DataSet ds = dal.GetDataSet("ACDocuments_GetRelativeDocumentListByPaymentCashID", bankTransactionID);
+            return (List<ACDocumentsInfo>)GetListFromDataSet(ds);
+        }
+        public List<ACDocumentsInfo> CheckAvailableVATInfo(string VATNo, DateTime VATDate, string VATSymbol, string taxNumber)
+        {
+            DataSet ds = dal.GetDataSet("ACDocuments_CheckAvailableVATInfo", VATNo, VATDate, VATSymbol, taxNumber);
+            return (List<ACDocumentsInfo>)GetListFromDataSet(ds);
+        }
     }
     #endregion
 }

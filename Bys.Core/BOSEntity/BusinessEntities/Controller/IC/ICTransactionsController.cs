@@ -218,6 +218,16 @@ namespace BOSERP
             DataSet ds = SqlDatabaseHelper.GetDataUsingStringType(Type_SomeParaInventoryStocks, "Type_SomeParaInventoryStocks", "ICTransactions_CheckAvailableQty");
             return (List<ICTransactionsInfo>)GetListFromDataSet(ds);
         }
+        public List<ICTransactionsInfo> GetInventoryStatisticsForUpdatePosition(int? stockID, bool? isCheckStockQty, bool? isExistTreeList)
+        {
+            DataSet ds = dal.GetDataSet("ICTransactions_GetInventoryStatisticsForPosition", stockID, isCheckStockQty, isExistTreeList);
+            return (List<ICTransactionsInfo>)GetListFromDataSet(ds);
+        }
+        public List<ICTransactionsInfo> GetInventoryUpdatePosition(int? stockID, bool? isCheckStockQty, bool? isExistTreeList, int ? productID, decimal ? height, decimal ?width, decimal? lenght, string serialNo)
+        {
+            DataSet ds = dal.GetDataSet("ICTransactions_GetInventoryUpdatePosition", stockID, isCheckStockQty, isExistTreeList, productID, height, width, lenght, serialNo);
+            return (List<ICTransactionsInfo>)GetListFromDataSet(ds);
+        }
     }
     #endregion
 }

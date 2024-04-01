@@ -46,6 +46,11 @@ namespace BOSERP
             DataSet ds = dal.GetDataSet("ARPriceSheetItems_GetAllPriceSheetItemForProposal");
             return (List<ARPriceSheetItemsInfo>)GetListFromDataSet(ds);
         }
+        public List<ARPriceSheetItemsInfo> GetAllPriceSheetItemForProposalBysUser(int userID)
+        {
+            DataSet ds = dal.GetDataSet("ARPriceSheetItems_GetAllPriceSheetItemForProposalBysUser", userID);
+            return (List<ARPriceSheetItemsInfo>)GetListFromDataSet(ds);
+        }
 
         public List<ARPriceSheetItemsInfo> GetAllObjectByICProductParentID(int ParentID)
         {

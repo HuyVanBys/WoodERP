@@ -548,7 +548,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.fld_dgcDocumentEntrys.Name = "fld_dgcDocumentEntrys";
             this.fld_dgcDocumentEntrys.PrintReport = false;
             this.fld_dgcDocumentEntrys.Screen = null;
-            this.fld_dgcDocumentEntrys.Size = new System.Drawing.Size(944, 351);
+            this.fld_dgcDocumentEntrys.Size = new System.Drawing.Size(958, 358);
             this.fld_dgcDocumentEntrys.TabIndex = 0;
             // 
             // bosPanel1
@@ -593,7 +593,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(962, 531);
+            this.bosPanel1.Size = new System.Drawing.Size(976, 538);
             this.bosPanel1.TabIndex = 18;
             // 
             // bosPanel2
@@ -639,7 +639,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.bosPanel2.Location = new System.Drawing.Point(0, 0);
             this.bosPanel2.Name = "bosPanel2";
             this.bosPanel2.Screen = null;
-            this.bosPanel2.Size = new System.Drawing.Size(962, 531);
+            this.bosPanel2.Size = new System.Drawing.Size(976, 538);
             this.bosPanel2.TabIndex = 121;
             // 
             // bosPanel3
@@ -688,7 +688,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.bosPanel3.Location = new System.Drawing.Point(0, 0);
             this.bosPanel3.Name = "bosPanel3";
             this.bosPanel3.Screen = null;
-            this.bosPanel3.Size = new System.Drawing.Size(962, 531);
+            this.bosPanel3.Size = new System.Drawing.Size(976, 538);
             this.bosPanel3.TabIndex = 0;
             // 
             // bosLabel33
@@ -1082,7 +1082,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.fld_tcDetail.Name = "fld_tcDetail";
             this.fld_tcDetail.Screen = null;
             this.fld_tcDetail.SelectedTabPage = this.fld_tpInvoice;
-            this.fld_tcDetail.Size = new System.Drawing.Size(946, 352);
+            this.fld_tcDetail.Size = new System.Drawing.Size(960, 359);
             this.fld_tcDetail.TabIndex = 10;
             this.fld_tcDetail.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tpInvoice,
@@ -1096,7 +1096,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.fld_tpInvoice.Controls.Add(this.fld_dgcAPFeePaymentInvoices);
             this.fld_tpInvoice.Controls.Add(this.bosButton6);
             this.fld_tpInvoice.Name = "fld_tpInvoice";
-            this.fld_tpInvoice.Size = new System.Drawing.Size(944, 327);
+            this.fld_tpInvoice.Size = new System.Drawing.Size(958, 334);
             this.fld_tpInvoice.Text = "Danh sách hóa đơn bán hàng";
             // 
             // fld_dgcAPFeePaymentInvoices
@@ -1120,7 +1120,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.fld_dgcAPFeePaymentInvoices.Name = "fld_dgcAPFeePaymentInvoices";
             this.fld_dgcAPFeePaymentInvoices.PrintReport = false;
             this.fld_dgcAPFeePaymentInvoices.Screen = null;
-            this.fld_dgcAPFeePaymentInvoices.Size = new System.Drawing.Size(934, 285);
+            this.fld_dgcAPFeePaymentInvoices.Size = new System.Drawing.Size(948, 292);
             this.fld_dgcAPFeePaymentInvoices.TabIndex = 5;
             this.fld_dgcAPFeePaymentInvoices.Tag = "DC";
             // 
@@ -1147,7 +1147,7 @@ namespace BOSERP.Modules.SaleCost.UI
             // 
             this.fld_tpPaymentCommissions.Controls.Add(this.fld_dgcARFeePaymentCommissions);
             this.fld_tpPaymentCommissions.Name = "fld_tpPaymentCommissions";
-            this.fld_tpPaymentCommissions.Size = new System.Drawing.Size(930, 320);
+            this.fld_tpPaymentCommissions.Size = new System.Drawing.Size(944, 327);
             this.fld_tpPaymentCommissions.Text = "Hoa hồng người giới thiệu";
             // 
             // fld_dgcARFeePaymentCommissions
@@ -1171,7 +1171,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.fld_dgcARFeePaymentCommissions.Name = "fld_dgcARFeePaymentCommissions";
             this.fld_dgcARFeePaymentCommissions.PrintReport = false;
             this.fld_dgcARFeePaymentCommissions.Screen = null;
-            this.fld_dgcARFeePaymentCommissions.Size = new System.Drawing.Size(924, 314);
+            this.fld_dgcARFeePaymentCommissions.Size = new System.Drawing.Size(938, 321);
             this.fld_dgcARFeePaymentCommissions.TabIndex = 1;
             this.fld_dgcARFeePaymentCommissions.Tag = "DC";
             // 
@@ -1179,7 +1179,7 @@ namespace BOSERP.Modules.SaleCost.UI
             // 
             this.fld_tpFeeConfig.Controls.Add(this.fld_dgcAPFeePaymentFeeConfigs);
             this.fld_tpFeeConfig.Name = "fld_tpFeeConfig";
-            this.fld_tpFeeConfig.Size = new System.Drawing.Size(930, 320);
+            this.fld_tpFeeConfig.Size = new System.Drawing.Size(958, 334);
             this.fld_tpFeeConfig.Text = "Phí làm hàng";
             // 
             // fld_dgcAPFeePaymentFeeConfigs
@@ -1203,7 +1203,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.fld_dgcAPFeePaymentFeeConfigs.Name = "fld_dgcAPFeePaymentFeeConfigs";
             this.fld_dgcAPFeePaymentFeeConfigs.PrintReport = false;
             this.fld_dgcAPFeePaymentFeeConfigs.Screen = null;
-            this.fld_dgcAPFeePaymentFeeConfigs.Size = new System.Drawing.Size(924, 314);
+            this.fld_dgcAPFeePaymentFeeConfigs.Size = new System.Drawing.Size(952, 328);
             this.fld_dgcAPFeePaymentFeeConfigs.TabIndex = 0;
             this.fld_dgcAPFeePaymentFeeConfigs.Tag = "DC";
             // 
@@ -1211,7 +1211,7 @@ namespace BOSERP.Modules.SaleCost.UI
             // 
             this.fld_tpDocumentEntry.Controls.Add(this.fld_dgcDocumentEntry1s);
             this.fld_tpDocumentEntry.Name = "fld_tpDocumentEntry";
-            this.fld_tpDocumentEntry.Size = new System.Drawing.Size(930, 320);
+            this.fld_tpDocumentEntry.Size = new System.Drawing.Size(944, 327);
             this.fld_tpDocumentEntry.Text = "Hạch toán";
             // 
             // fld_dgcDocumentEntry1s
@@ -1233,7 +1233,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.fld_dgcDocumentEntry1s.Name = "fld_dgcDocumentEntry1s";
             this.fld_dgcDocumentEntry1s.PrintReport = false;
             this.fld_dgcDocumentEntry1s.Screen = null;
-            this.fld_dgcDocumentEntry1s.Size = new System.Drawing.Size(930, 320);
+            this.fld_dgcDocumentEntry1s.Size = new System.Drawing.Size(944, 327);
             this.fld_dgcDocumentEntry1s.TabIndex = 0;
             // 
             // bosPictureEdit2
@@ -1939,7 +1939,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.bosTabControl2.Name = "bosTabControl2";
             this.bosTabControl2.Screen = null;
             this.bosTabControl2.SelectedTabPage = this.xtraTabPage3;
-            this.bosTabControl2.Size = new System.Drawing.Size(946, 376);
+            this.bosTabControl2.Size = new System.Drawing.Size(960, 383);
             this.bosTabControl2.TabIndex = 18;
             this.bosTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
@@ -1949,7 +1949,7 @@ namespace BOSERP.Modules.SaleCost.UI
             // 
             this.xtraTabPage3.Controls.Add(this.ACDocumentEntryGridControl1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(944, 351);
+            this.xtraTabPage3.Size = new System.Drawing.Size(958, 358);
             this.xtraTabPage3.Text = "Hạch toán";
             // 
             // ACDocumentEntryGridControl1
@@ -1971,14 +1971,14 @@ namespace BOSERP.Modules.SaleCost.UI
             this.ACDocumentEntryGridControl1.Name = "ACDocumentEntryGridControl1";
             this.ACDocumentEntryGridControl1.PrintReport = false;
             this.ACDocumentEntryGridControl1.Screen = null;
-            this.ACDocumentEntryGridControl1.Size = new System.Drawing.Size(944, 351);
+            this.ACDocumentEntryGridControl1.Size = new System.Drawing.Size(958, 358);
             this.ACDocumentEntryGridControl1.TabIndex = 0;
             // 
             // xtraTabPage4
             // 
             this.xtraTabPage4.Controls.Add(this.bosButton1);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(930, 344);
+            this.xtraTabPage4.Size = new System.Drawing.Size(944, 351);
             this.xtraTabPage4.Text = "Danh sách phiếu nhập";
             // 
             // bosButton1
@@ -2701,7 +2701,7 @@ namespace BOSERP.Modules.SaleCost.UI
             this.bosTabControl1.Name = "bosTabControl1";
             this.bosTabControl1.Screen = null;
             this.bosTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.bosTabControl1.Size = new System.Drawing.Size(946, 376);
+            this.bosTabControl1.Size = new System.Drawing.Size(960, 383);
             this.bosTabControl1.TabIndex = 18;
             this.bosTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -2711,13 +2711,13 @@ namespace BOSERP.Modules.SaleCost.UI
             // 
             this.xtraTabPage1.Controls.Add(this.fld_dgcDocumentEntrys);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(944, 351);
+            this.xtraTabPage1.Size = new System.Drawing.Size(958, 358);
             this.xtraTabPage1.Text = "Hạch toán";
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(930, 344);
+            this.xtraTabPage2.Size = new System.Drawing.Size(944, 351);
             this.xtraTabPage2.Text = "Danh sách phiếu nhập";
             // 
             // bosTextBox1
@@ -2814,7 +2814,7 @@ namespace BOSERP.Modules.SaleCost.UI
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(962, 531);
+            this.ClientSize = new System.Drawing.Size(976, 538);
             this.Controls.Add(this.bosPanel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMSOC100.IconOptions.Icon")));
             this.Name = "DMSOC100";

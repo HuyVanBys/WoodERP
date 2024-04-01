@@ -43,6 +43,7 @@ namespace BOSERP.Modules.SemiProductReceipt
         public const string ProductAddLookupEditControlName = "fld_lkeFK_ICProductID1";
         public const string ShowReceiptButtonName = "fld_btnShowReceiptList";
         public const string DefaultAccountNo = "155";
+        public const string UpdatePositionItemsControlName = "fld_lkeMMUpdatePositionItemID";
         #endregion
 
         #region Variable
@@ -58,6 +59,7 @@ namespace BOSERP.Modules.SemiProductReceipt
         public BOSLookupEdit fld_lkeFK_MMWorkShopID = null;
         public BOSLookupEdit fld_lkeFK_LineID = null;
         public BOSButton ShowReceiptButton = null;
+        public BOSLookupEdit UpdatePositionItemControl;
 
         private Microsoft.Office.Interop.Excel.Workbook WorkBook;
 
@@ -91,6 +93,10 @@ namespace BOSERP.Modules.SemiProductReceipt
 
             fld_lkeFK_MMWorkShopID = (BOSLookupEdit)Controls["fld_lkeFK_MMWorkShopID"];
             fld_lkeFK_LineID = (BOSLookupEdit)Controls["fld_lkeFK_LineID"];
+            UpdatePositionItemControl = (BOSLookupEdit)Controls[UpdatePositionItemsControlName];
+            MMUpdatePositionItemsController objUpdatePosititonsController = new MMUpdatePositionItemsController();
+            List<MMUpdatePositionItemsInfo> listUpdatePositions = objUpdatePosititonsController.GetAllLocationName();
+            UpdatePositionItemControl.Properties.DataSource = listUpdatePositions;
 
         }
 
@@ -2024,7 +2030,7 @@ namespace BOSERP.Modules.SemiProductReceipt
             if (objOperationsInfo != null && objOperationsInfo.MMOperationNo != OperationNo.Thanhpham.ToString())
             {
                 Acronym = objOperationsInfo.MMOperationAcronym;
-                objReceiptsInfo.ICReceiptPackNo = GetSerialNo(PackNo == null? string.Empty: PackNo.FirstOrDefault(), Acronym); ;
+                objReceiptsInfo.ICReceiptPackNo = GetSerialNo(PackNo == null ? string.Empty : PackNo.FirstOrDefault(), Acronym); ;
             }
             if (objReceiptsInfo.ICReceiptTypeCombo != ReceiptType.SemiProductReceiptTransfer.ToString())
             {
@@ -3259,6 +3265,39 @@ namespace BOSERP.Modules.SemiProductReceipt
             {
                 GC.Collect();
             }
+        }
+        public void ChangeUpdatePositionLocation(string updatePositionItemLocationName)
+        {
+            if (!Toolbar.IsNullOrNoneAction())
+            {
+                SemiProductReceiptEntities entity = (SemiProductReceiptEntities)CurrentModuleEntity;
+                ICReceiptsInfo objReceiptsInfo = (ICReceiptsInfo)CurrentModuleEntity.MainObject;
+                objReceiptsInfo.MMUpdatePositionItemPositionName = updatePositionItemLocationName;
+                MMUpdatePositionItemsController objUpdatePositionItemsController = new MMUpdatePositionItemsController();
+                entity.ReceiptItemsList.ForEach(o =>
+                {
+                    MMUpdatePositionItemsInfo objUpdatePositionItemsInfo = (MMUpdatePositionItemsInfo)objUpdatePositionItemsController.GetItemByLocationName(updatePositionItemLocationName, o.FK_ICProductID, o.FK_ICStockID, 0);
+                    if (objUpdatePositionItemsInfo != null)
+                    {
+                        o.FK_MMUpdatePositionItemID = objUpdatePositionItemsInfo.MMUpdatePositionItemID;
+                    }
+                });
+                entity.UpdateMainObjectBindingSource();
+            }
+        }
+        public void CreateUpdatePositionsInfo()
+        {
+            SemiProductReceiptEntities entity = (SemiProductReceiptEntities)CurrentModuleEntity;
+            ICReceiptsInfo objICReceiptsInfo = (ICReceiptsInfo)entity.MainObject;
+            if (objICReceiptsInfo.FK_ICStockID == 0)
+            {
+                BOSApp.ShowMessage("Vui lòng chọn mã kho!");
+                return;
+            }
+            guiAddUpdatePositionItems guiAddUpdatePositionItem = new guiAddUpdatePositionItems(objICReceiptsInfo.FK_ICStockID);
+            guiAddUpdatePositionItem.Module = this;
+            guiAddUpdatePositionItem.ShowDialog();
+
         }
     }
     public class RowInfo

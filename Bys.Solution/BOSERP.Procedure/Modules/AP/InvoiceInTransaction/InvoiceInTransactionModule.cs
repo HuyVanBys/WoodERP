@@ -61,7 +61,17 @@ namespace BOSERP.Modules.InvoiceInTransaction
                                 , MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            entity.InvoiceInTransactionList.ForEach(o =>
+            {
+                o.FK_BRBRanchID = BOSApp.CurrentCompanyInfo.FK_BRBranchID;
+                o.APInvoiceInTransactionReferenceDate = BOSApp.CurrentCompanyInfo.CSCompanyStartDate.AddDays(-1);
+                o.AACreatedUser = BOSApp.CurrentUsersInfo.ADUserName;
+                o.APInvoiceInTransactionModuleName = this.Name;
+                o.APInvoiceInTransactionType = "InvoiceIn";
+                o.APInvoiceInTransactionOrigin = "Balance";
+                o.APInvoiceInTransactionStatus = "New";
+                o.APInvoiceInTransactionPaymentType = "Final Payment";
+            });
             entity.InvoiceInTransactionList.SaveItemObjects();
             MessageBox.Show(CommonLocalizedResources.SaveSuccessful, CommonLocalizedResources.MessageBoxDefaultCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

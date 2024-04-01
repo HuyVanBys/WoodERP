@@ -216,4 +216,7 @@
   <data name="ProductionNormConfig" xml:space="preserve">
     <value>Cấu hình sản xuất chung</value>
   </data>
+  <data name="MMConfigFalseConditionals" xml:space="preserve">
+    <value>Cấu hình danh sách lỗi - Điều kiện - Kết quả</value>
+  </data>
 </root>

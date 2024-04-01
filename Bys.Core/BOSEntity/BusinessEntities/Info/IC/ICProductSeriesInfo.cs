@@ -48,6 +48,7 @@ namespace BOSERP
         protected decimal _iCProductSerieProductWidthMin;
         protected decimal _iCProductSerieProductLengthMin;
         protected DateTime _iCProductSerieExpireDate = DateTime.MaxValue;
+		protected int _fK_MMDiagramPositionID;
         #endregion
 
         #region Public properties
@@ -447,6 +448,18 @@ namespace BOSERP
                 }    
             }
         }
+		public int FK_MMDiagramPositionID
+		{
+			get { return _fK_MMDiagramPositionID; }
+			set
+			{
+				if (value != this._fK_MMDiagramPositionID)
+				{
+					_fK_MMDiagramPositionID = value;
+					NotifyChanged("FK_MMDiagramPositionID");
+				}
+			}
+		}
         #endregion
 
         #region Extra Properties
@@ -468,6 +481,7 @@ namespace BOSERP
         [FormatGroup(FormatGroupAttribute.csFormatGroupQtyN2)]
         public decimal TotalQty { get; set; }
         public string ICProductAttributeQualityName { set; get; }
+        public string ICProductAttributeTTMT { set; get; }
         public string ICProductAttributeWoodTypeName { set; get; }
         [FormatGroup(FormatGroupAttribute.csFormatGroupQtyN2)]
         public decimal ICProductSerieProductPerimeter80 { set; get; }
@@ -483,6 +497,7 @@ namespace BOSERP
         public string WoodTypeName { get; set; }
         public string QualityTypeName { get; set; } 
         public decimal ICInventoryStockCumulative { get; set; }// Tồn lũy kế
+        public string ICProductSeriePositionName { get; set; }
         #endregion
     }
     #endregion

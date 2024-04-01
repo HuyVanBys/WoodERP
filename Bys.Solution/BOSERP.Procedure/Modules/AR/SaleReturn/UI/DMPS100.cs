@@ -111,5 +111,16 @@ namespace BOSERP.Modules.SaleReturn.UI
                 return;
             lke.Properties.DataSource = ((SaleReturnModule)Module).LoadProductList();
         }
+
+        private void fld_lkeAROutputVATDocumentType_CloseUp(object sender, DevExpress.XtraEditors.Controls.CloseUpEventArgs e)
+        {
+            BOSLookupEdit lke = (BOSLookupEdit)sender;
+            int objectID = 0;
+            if (e.Value != null && e.Value != lke.OldEditValue)
+            {
+                Int32.TryParse(e.Value.ToString(), out objectID);
+                ((SaleReturnModule)Module).ChangeACEInvoiceTypeNo(objectID);
+            }
+        }
     }
 }

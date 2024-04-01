@@ -209,12 +209,13 @@ namespace BOSERP
                                                   string customerContactPhone,
                                                   int? branchID,
                                                   string customerContactAddressLine3,
+                                                  int? userID,
                                                   List<BRBranchsInfo> branchList)
         {
             DataSet rtn = new DataSet();
             foreach (BRBranchsInfo ojbBranchsInfo in branchList)
             {
-                DataSet ds = GetCustomerListByBranchID(customerNo, customerName, customerTypeCombo, priceLevelID, customerContactPhone, ojbBranchsInfo.BRBranchID, customerContactAddressLine3);
+                DataSet ds = GetCustomerListByBranchIDAndUser(customerNo, customerName, customerTypeCombo, priceLevelID, customerContactPhone, ojbBranchsInfo.BRBranchID, userID, customerContactAddressLine3);
                 rtn.Merge(ds);
             }
 
@@ -244,11 +245,29 @@ namespace BOSERP
             DataSet ds = dal.GetDataSet("ARCustomers_GetCustomerListByBranchID", customerNo, customerName, customerTypeCombo, priceLevelID, customerContactPhone, branchID, customerContactAddressLine3);
             return ds;
         }
+        public DataSet GetCustomerListByBranchIDAndUser(
+                                                  string customerNo,
+                                                  string customerName,
+                                                  string customerTypeCombo,
+                                                  int? priceLevelID,
+                                                  string customerContactPhone,
+                                                  int? branchID,
+                                                  int? userID,
+                                                  string customerContactAddressLine3)
+        {
+            DataSet ds = dal.GetDataSet("ARCustomers_GetCustomerListByBranchIDAndUser", customerNo, customerName, customerTypeCombo, priceLevelID, customerContactPhone, branchID, customerContactAddressLine3, userID);
+            return ds;
+        }
 
         //[NUThao] [Improve Speed] [2014-09-09]
         public DataSet GetAllCustomersForLookupControl()
         {
             DataSet ds = dal.GetDataSet("ARCustomers_GetAllCustomersForLookupControl");
+            return ds;
+        }
+        public DataSet GetAllCustomersForLookupControlByUser(int userId)
+        {
+            DataSet ds = dal.GetDataSet("ARCustomers_GetAllCustomersForLookupControlByUser", userId);
             return ds;
         }
 

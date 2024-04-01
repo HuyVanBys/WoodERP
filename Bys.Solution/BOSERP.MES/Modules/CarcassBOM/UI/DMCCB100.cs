@@ -71,7 +71,7 @@ namespace BOSERP.Modules.CarcassBOM.UI
         {
             if (!((CarcassBOMModule)Module).GetUsingBOMStatus(ProductionNormItemGroup.SemiProduct.ToString())) return;
             if (!((CarcassBOMModule)Module).GetBOMBlockStatus(ProductionNormItemGroup.SemiProduct.ToString())) return;
-            ((CarcassBOMModule)Module).SaveSemiProductList();
+            ((CarcassBOMModule)Module).SaveSemiProductList(false);
         }
 
         private void fld_btnCreateBOM_Click(object sender, EventArgs e)
@@ -1065,6 +1065,18 @@ namespace BOSERP.Modules.CarcassBOM.UI
             {
                 ((CarcassBOMModule)Module).ChangeConfigProductionComplexityType(e.Value.ToString());
             }
+        }
+
+        private void fld_btnUpdatePaint_Click(object sender, EventArgs e)
+        {
+           // if (!((CarcassBOMModule)Module).GetUsingBOMStatus(ProductionNormItemGroup.IngredientPaint.ToString())) return;
+            if (!((CarcassBOMModule)Module).GetBOMBlockStatus(ProductionNormItemGroup.IngredientPaint.ToString())) return;
+            ((CarcassBOMModule)Module).SaveSemiProductList(true);
+        }
+
+        private void bosButton8_Click(object sender, EventArgs e)
+        {
+            ((CarcassBOMModule)Module).PrintByType(ProductionNormPrintType.Material.ToString());
         }
     }
 }

@@ -9,6 +9,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using Localization;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -236,6 +237,21 @@ namespace BOSERP.Modules.Proposal
             {
                 column.OptionsColumn.AllowEdit = true;
             }
+            column = gridView.Columns["FK_ICMeasureUnitID"];
+            if (column != null)
+            {
+                column.OptionsColumn.AllowEdit = true;
+                RepositoryItemLookUpEdit rpMeasureUnit = new RepositoryItemLookUpEdit();
+                rpMeasureUnit.DisplayMember = "ICMeasureUnitName";
+                rpMeasureUnit.ValueMember = "ICMeasureUnitID";
+                rpMeasureUnit.NullText = string.Empty;
+                rpMeasureUnit.Columns.Add(new LookUpColumnInfo("ICMeasureUnitName", "ĐVT"));
+                DataSet ds1 = BOSApp.LookupTables[TableName.ICMeasureUnitsTableName] as DataSet;
+                rpMeasureUnit.DataSource = ds1.Tables[0];
+                rpMeasureUnit.QueryPopUp += new System.ComponentModel.CancelEventHandler(rpMeasureUnitt_QueryPopUp);
+                rpMeasureUnit.CloseUp += new CloseUpEventHandler(rpMeasureUnit_CloseUp);
+                column.ColumnEdit = rpMeasureUnit;
+            }
             gridView.CellValueChanging += GridView_CellValueChanging;
             return gridView;
         }
@@ -250,6 +266,43 @@ namespace BOSERP.Modules.Proposal
                     ARProposalItemsInfo item = (ARProposalItemsInfo)gridView.GetRow(gridView.FocusedRowHandle);
                     ((ProposalModule)Screen.Module).ChangeForeignItemProductName(item, bool.Parse(e.Value.ToString()));
                 }
+            }
+        }
+
+        private void rpMeasureUnit_CloseUp(object sender, CloseUpEventArgs e)
+        {
+            GridView gridView = (GridView)MainView;
+            if (gridView.FocusedRowHandle >= 0)
+            {
+                ProposalEntities entity = (ProposalEntities)(this.Screen.Module as BaseModuleERP).CurrentModuleEntity;
+                ARProposalItemsInfo item = (ARProposalItemsInfo)gridView.GetRow(gridView.FocusedRowHandle);
+                ICProductMeasureUnitsController objProductMeasureUnitsController = new ICProductMeasureUnitsController();
+                ICProductMeasureUnitsInfo objProductMeasureUnitsInfo = objProductMeasureUnitsController.GetProductMeasureUnitByProductIDAndMeasureUnitID(item.FK_ICProductID, item.FK_ICMeasureUnitID);
+                ICProductsInfo objProductsInfo = BOSApp.GetProductFromCurrentProductList(item.FK_ICProductID);
+                if (objProductsInfo != null && objProductsInfo.FK_ICProductBasicUnitID == item.FK_ICMeasureUnitID)
+                    item.ARProposalItemProductSellFactor = (decimal)1;
+                else
+                    item.ARProposalItemProductSellFactor = objProductMeasureUnitsInfo != null ? objProductMeasureUnitsInfo.ICProductMeasureUnitFactor : 1;
+                item.ARProposalItemProductExchangeQty = item.ARProposalItemProductQty * item.ARProposalItemProductSellFactor;
+            }
+        }
+
+        private void rpMeasureUnitt_QueryPopUp(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GridView gridView = (GridView)MainView;
+            ARProposalItemsInfo item = (ARProposalItemsInfo)gridView.GetRow(gridView.FocusedRowHandle);
+            LookUpEdit lookUpEdit = (LookUpEdit)sender;
+            if (item != null)
+            {
+                ICMeasureUnitsController controller = new ICMeasureUnitsController();
+                DataSet measureUnits = controller.GetMeasureUnitByProductID(item.FK_ICProductID);
+                if (measureUnits != null)
+                {
+                    lookUpEdit.Properties.DataSource = measureUnits.Tables[0];
+                    lookUpEdit.Properties.DisplayMember = "ICMeasureUnitName";
+                    lookUpEdit.Properties.ValueMember = "ICMeasureUnitID";
+                }
+                measureUnits.Dispose();
             }
         }
 

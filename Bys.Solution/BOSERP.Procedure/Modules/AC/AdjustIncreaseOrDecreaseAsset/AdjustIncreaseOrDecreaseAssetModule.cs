@@ -174,7 +174,16 @@ namespace BOSERP.Modules.AdjustIncreaseOrDecreaseAsset
                                                                             searchObject.ACAdjustIODAssetDateTo);
             return ds;
         }
-
+        public override void Invalidate(int iObjectID)
+        {
+            base.Invalidate(iObjectID);
+            CurrentModuleEntity.SetPropertyChangeEventLock(false);
+            AdjustIncreaseOrDecreaseAssetEntities entity = (AdjustIncreaseOrDecreaseAssetEntities)CurrentModuleEntity;
+            CurrentModuleEntity.MainObject = (new ACAdjustIncreaseOrDecreaseAssetsController()).GetObjectByMainID(iObjectID);
+            entity.UpdateMainObjectBindingSource();
+            DisplayLabelText(CurrentModuleEntity.MainObject);
+            CurrentModuleEntity.SetPropertyChangeEventLock(true);
+        }
         public override void ModuleAfterSaved(int iObjectID)
         {
             base.ModuleAfterSaved(iObjectID);

@@ -308,7 +308,8 @@ namespace BOSERP.Modules.PaymentCash.UI
             this.fld_lkeFK_ToCSCompanyBankID.Properties.ColumnName = null;
             this.fld_lkeFK_ToCSCompanyBankID.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CSCompanyBankCode", "Mã ngân hàng"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CSCompanyBankName", "Tên ngân hàng")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CSCompanyBankName", "Tên ngân hàng"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CSCompanyBankAccount", "Số tài khoản")});
             this.fld_lkeFK_ToCSCompanyBankID.Properties.DisplayMember = "CSCompanyBankName";
             this.fld_lkeFK_ToCSCompanyBankID.Properties.NullText = "";
             this.fld_lkeFK_ToCSCompanyBankID.Properties.PopupWidth = 40;

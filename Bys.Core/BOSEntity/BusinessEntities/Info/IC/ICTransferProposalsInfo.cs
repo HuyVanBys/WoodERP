@@ -290,6 +290,8 @@ namespace BOSERP
         public String HREmployeeName { get; set; }
 
         public String BRBranchName { get; set; }
+        public String ICFromStockName { get; set; }
+        public String ICToStockName { get; set; }
 
         #endregion
     }

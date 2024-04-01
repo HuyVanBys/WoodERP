@@ -10,6 +10,9 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using BOSLib;
+using BOSComponent;
+using DevExpress.XtraEditors;
+using System.Collections.Generic;
 
 namespace BOSERP.Modules.SemiProductShipment
 {
@@ -44,6 +47,20 @@ namespace BOSERP.Modules.SemiProductShipment
             column.FieldName = "ICShipmentItemSOName";
             column.OptionsColumn.AllowEdit = true;
             column.Visible = true;
+            gridView.Columns.Add(column);
+
+            column = new GridColumn();
+            column.FieldName = "FK_MMUpdatePositionItemID";
+            column.Caption = "Vị trí";
+            column.OptionsColumn.AllowEdit = true;
+            RepositoryItemLookUpEdit rep = new RepositoryItemLookUpEdit();
+            rep.ValueMember = "MMUpdatePositionItemID";
+            rep.DisplayMember = "MMUpdatePositionItemPositionName";
+            rep.NullText = String.Empty;
+            rep.TextEditStyle = TextEditStyles.Standard;
+            rep.SearchMode = SearchMode.AutoFilter;
+            rep.Columns.Add(new LookUpColumnInfo("MMUpdatePositionItemPositionName", "Vị trí"));
+            rep.QueryPopUp += new System.ComponentModel.CancelEventHandler(rep_QueryPopUp);
             gridView.Columns.Add(column);
         }
 
@@ -185,6 +202,7 @@ namespace BOSERP.Modules.SemiProductShipment
                 if (e.Column.FieldName == "ICShipmentItemProductSerialNo")
                 {
                     ((SemiProductShipmentModule)Screen.Module).ChangeItemSerieNo(item);
+                    ((SemiProductShipmentModule)Screen.Module).UpdatePositionItem(item);
                 }
                 else if (e.Column.FieldName == "FK_ICStockID")
                 {
@@ -232,6 +250,23 @@ namespace BOSERP.Modules.SemiProductShipment
             if (e.KeyCode == Keys.Delete)
             {
                 ((SemiProductShipmentModule)Screen.Module).DeleteItemFromShipmentItemsList();
+            }
+        }
+        private void rep_QueryPopUp(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GridView gridView = (GridView)MainView;
+            ICShipmentItemsInfo item = (ICShipmentItemsInfo)gridView.GetRow(gridView.FocusedRowHandle);
+            LookUpEdit lookUpEdit = (LookUpEdit)sender;
+            if (item != null)
+            {
+                MMUpdatePositionItemsController controller = new MMUpdatePositionItemsController();
+                List<MMUpdatePositionItemsInfo> updatePositionItems = controller.GetAllLocationNameByProduct(item.FK_ICProductID, item.FK_ICStockID, 0);
+                if (updatePositionItems != null)
+                {
+                    lookUpEdit.Properties.DataSource = updatePositionItems;
+                    lookUpEdit.Properties.DisplayMember = "MMUpdatePositionItemPositionName";
+                    lookUpEdit.Properties.ValueMember = "MMUpdatePositionItemID";
+                }
             }
         }
     }

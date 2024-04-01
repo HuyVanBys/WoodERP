@@ -62,6 +62,12 @@ namespace BOSERP.Modules.Report
             gridView.Columns.Add(column);
 
             column = new GridColumn();
+            column.Caption = "Tên thành phẩm";
+            column.FieldName = "ICProductName";
+            column.OptionsColumn.AllowEdit = false;
+            gridView.Columns.Add(column);
+
+            column = new GridColumn();
             column.Caption = ReportLocalizedResources.ICProductSupplierNumber;
             column.FieldName = "ICProductSupplierNumber";
             column.OptionsColumn.AllowEdit = false;
@@ -88,6 +94,14 @@ namespace BOSERP.Modules.Report
             column = new GridColumn();
             column.Caption = ReportLocalizedResources.MMBatchProductProductionNormItemQuantity;
             column.FieldName = "ICReceiptItemBPProductionNormItemQty";
+            column.OptionsColumn.AllowEdit = false;
+            column.DisplayFormat.FormatString = "{0:N5}";
+            column.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridView.Columns.Add(column);
+
+            column = new GridColumn();
+            column.Caption = "SL cần sản xuất";
+            column.FieldName = "SLHoanThanh";
             column.OptionsColumn.AllowEdit = false;
             column.DisplayFormat.FormatString = "{0:N5}";
             column.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;

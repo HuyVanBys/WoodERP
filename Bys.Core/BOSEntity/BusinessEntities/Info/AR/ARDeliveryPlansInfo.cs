@@ -529,6 +529,7 @@ namespace BOSERP
         public string ARLoadContNosList { get; set; }
         public string ARSaleOrderName { get; set; }
         public decimal ARDeliveryPlanTotalAmount { get; set; }
+        public decimal ARDeliveryPlanSOTotalAmount { get; set; }
         public int FK_ICProductID { get; set; }
         #endregion
     }

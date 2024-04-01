@@ -60,7 +60,7 @@ namespace BOSERP.Modules.CompanyConstant
             string measureUnitName = gridView.GetFocusedRowCellValue("ICMeasureUnitName").ToString();
             int measureUnitID = Convert.ToInt32(gridView.GetFocusedRowCellValue("ICMeasureUnitID").ToString());
 
-            if (measureUnitID > 0 && gridView.FocusedColumn.FieldName != "ICMeasureUnitRoundNum" && gridView.FocusedColumn.FieldName != "ICMeasureUnitRoundNumInBatchProduct")
+            if (measureUnitID > 0 && gridView.FocusedColumn.FieldName != "ICMeasureUnitRoundNum" && gridView.FocusedColumn.FieldName != "ICMeasureUnitRoundNumInBatchProduct" && gridView.FocusedColumn.FieldName != "ICMeasureUnitDesc")
             {
                 bool isExist = (new ICMeasureUnitsController()).CheckMeasureUnitExistInICTransaction(measureUnitID);
                 if (isExist)

@@ -285,6 +285,8 @@ namespace BOSERP
         public DateTime ACAdjustIODAssetDateTo { get; set; }
         public string ACAssObjectAccessKey { get; set; }
         public string ACObjectAccessKey { get; set; }
+        public string HREmployeeName { get; set; }
+        public int FK_HREmployeeID { get; set; }
         #endregion
     }
     #endregion

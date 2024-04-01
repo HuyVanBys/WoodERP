@@ -48,10 +48,12 @@
             this.fld_chkUserActiveCheck = new BOSComponent.BOSCheckEdit(this.components);
             this.fld_ckeChooseCustomizeColumn = new BOSComponent.BOSCheckEdit(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.fld_lkeARCustomerBusinessType = new BOSComponent.BOSLookupEdit(this.components);
+            this.bosLabel1 = new BOSComponent.BOSLabel(this.components);
+            this.fld_ckeADUserIsExceptionalSalePermission = new BOSComponent.BOSCheckEdit(this.components);
             this.fld_ckeAllowExportExcel = new BOSComponent.BOSCheckEdit(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bosLine1 = new BOSComponent.BOSLine(this.components);
-            this.fld_ckeADUserIsExceptionalSalePermission = new BOSComponent.BOSCheckEdit(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeUserGroup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_lkeStaff.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtConfirmPassword.Properties)).BeginInit();
@@ -60,9 +62,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.fld_chkUserActiveCheck.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_ckeChooseCustomizeColumn.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeARCustomerBusinessType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_ckeADUserIsExceptionalSalePermission.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_ckeAllowExportExcel.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fld_ckeADUserIsExceptionalSalePermission.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // fld_lkeUserGroup
@@ -144,7 +147,7 @@
             this.fld_btnCancel.BOSPrivilege = null;
             this.fld_btnCancel.BOSPropertyName = null;
             this.fld_btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.fld_btnCancel.Location = new System.Drawing.Point(254, 275);
+            this.fld_btnCancel.Location = new System.Drawing.Point(248, 318);
             this.fld_btnCancel.Name = "fld_btnCancel";
             this.fld_btnCancel.Screen = null;
             this.fld_btnCancel.Size = new System.Drawing.Size(100, 25);
@@ -164,7 +167,7 @@
             this.fld_btnSave.BOSFieldRelation = null;
             this.fld_btnSave.BOSPrivilege = null;
             this.fld_btnSave.BOSPropertyName = null;
-            this.fld_btnSave.Location = new System.Drawing.Point(148, 275);
+            this.fld_btnSave.Location = new System.Drawing.Point(142, 318);
             this.fld_btnSave.Name = "fld_btnSave";
             this.fld_btnSave.Screen = null;
             this.fld_btnSave.Size = new System.Drawing.Size(100, 25);
@@ -365,6 +368,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.fld_lkeARCustomerBusinessType);
+            this.groupBox1.Controls.Add(this.bosLabel1);
             this.groupBox1.Controls.Add(this.fld_ckeADUserIsExceptionalSalePermission);
             this.groupBox1.Controls.Add(this.fld_ckeAllowExportExcel);
             this.groupBox1.Controls.Add(this.fld_ckeChooseCustomizeColumn);
@@ -372,10 +377,90 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 191);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(342, 74);
+            this.groupBox1.Size = new System.Drawing.Size(342, 112);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quyền hạn";
+            // 
+            // fld_lkeARCustomerBusinessType
+            // 
+            this.fld_lkeARCustomerBusinessType.BOSAllowAddNew = false;
+            this.fld_lkeARCustomerBusinessType.BOSAllowDummy = true;
+            this.fld_lkeARCustomerBusinessType.BOSComment = null;
+            this.fld_lkeARCustomerBusinessType.BOSDataMember = "ADProfileDirectory";
+            this.fld_lkeARCustomerBusinessType.BOSDataSource = "ADUsers";
+            this.fld_lkeARCustomerBusinessType.BOSDescription = null;
+            this.fld_lkeARCustomerBusinessType.BOSError = null;
+            this.fld_lkeARCustomerBusinessType.BOSFieldGroup = null;
+            this.fld_lkeARCustomerBusinessType.BOSFieldParent = null;
+            this.fld_lkeARCustomerBusinessType.BOSFieldRelation = null;
+            this.fld_lkeARCustomerBusinessType.BOSPrivilege = null;
+            this.fld_lkeARCustomerBusinessType.BOSPropertyName = "EditValue";
+            this.fld_lkeARCustomerBusinessType.BOSSelectType = null;
+            this.fld_lkeARCustomerBusinessType.BOSSelectTypeValue = null;
+            this.fld_lkeARCustomerBusinessType.CurrentDisplayText = null;
+            this.fld_lkeARCustomerBusinessType.Location = new System.Drawing.Point(122, 71);
+            this.fld_lkeARCustomerBusinessType.Name = "fld_lkeARCustomerBusinessType";
+            this.fld_lkeARCustomerBusinessType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.fld_lkeARCustomerBusinessType.Properties.ColumnName = null;
+            this.fld_lkeARCustomerBusinessType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ARCustomerBusinessTypeName", "Tên nhóm")});
+            this.fld_lkeARCustomerBusinessType.Properties.DisplayMember = "ARCustomerBusinessTypeName";
+            this.fld_lkeARCustomerBusinessType.Properties.NullText = "";
+            this.fld_lkeARCustomerBusinessType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.fld_lkeARCustomerBusinessType.Properties.ValueMember = "ARCustomerBusinessTypeID";
+            this.fld_lkeARCustomerBusinessType.Screen = null;
+            this.fld_lkeARCustomerBusinessType.Size = new System.Drawing.Size(204, 20);
+            this.fld_lkeARCustomerBusinessType.TabIndex = 20;
+            this.fld_lkeARCustomerBusinessType.Tag = "DC";
+            // 
+            // bosLabel1
+            // 
+            this.bosLabel1.BOSComment = null;
+            this.bosLabel1.BOSDataMember = null;
+            this.bosLabel1.BOSDataSource = null;
+            this.bosLabel1.BOSDescription = null;
+            this.bosLabel1.BOSError = null;
+            this.bosLabel1.BOSFieldGroup = null;
+            this.bosLabel1.BOSFieldRelation = null;
+            this.bosLabel1.BOSPrivilege = null;
+            this.bosLabel1.BOSPropertyName = null;
+            this.bosLabel1.Location = new System.Drawing.Point(11, 74);
+            this.bosLabel1.Name = "bosLabel1";
+            this.bosLabel1.Screen = null;
+            this.bosLabel1.Size = new System.Drawing.Size(78, 13);
+            this.bosLabel1.TabIndex = 21;
+            this.bosLabel1.Text = "Xem khách hàng";
+            // 
+            // fld_ckeADUserIsExceptionalSalePermission
+            // 
+            this.fld_ckeADUserIsExceptionalSalePermission.BOSComment = null;
+            this.fld_ckeADUserIsExceptionalSalePermission.BOSDataMember = "ADUserIsExceptionalSalePermission";
+            this.fld_ckeADUserIsExceptionalSalePermission.BOSDataSource = "ADUsers";
+            this.fld_ckeADUserIsExceptionalSalePermission.BOSDescription = null;
+            this.fld_ckeADUserIsExceptionalSalePermission.BOSError = null;
+            this.fld_ckeADUserIsExceptionalSalePermission.BOSFieldGroup = null;
+            this.fld_ckeADUserIsExceptionalSalePermission.BOSFieldRelation = null;
+            this.fld_ckeADUserIsExceptionalSalePermission.BOSPrivilege = null;
+            this.fld_ckeADUserIsExceptionalSalePermission.BOSPropertyName = "EditValue";
+            this.fld_ckeADUserIsExceptionalSalePermission.Location = new System.Drawing.Point(227, 45);
+            this.fld_ckeADUserIsExceptionalSalePermission.MenuManager = this.screenToolbar;
+            this.fld_ckeADUserIsExceptionalSalePermission.Name = "fld_ckeADUserIsExceptionalSalePermission";
+            this.fld_ckeADUserIsExceptionalSalePermission.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fld_ckeADUserIsExceptionalSalePermission.Properties.Appearance.Options.UseFont = true;
+            this.fld_ckeADUserIsExceptionalSalePermission.Properties.Caption = "[SALE] Ngoại lệ ";
+            this.fld_ckeADUserIsExceptionalSalePermission.Screen = null;
+            this.fld_ckeADUserIsExceptionalSalePermission.Size = new System.Drawing.Size(109, 20);
+            toolTipTitleItem1.Text = "Giải thích";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Những user [SALE] Ngoại lệ được xem tât cả chứng từ ĐBH của chi nhánh được phân q" +
+    "uyền.\r\nNgược lại, chỉ xem được ĐBH của khách hàng user đó quản lý/bán";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.fld_ckeADUserIsExceptionalSalePermission.SuperTip = superToolTip1;
+            this.fld_ckeADUserIsExceptionalSalePermission.TabIndex = 3;
+            this.fld_ckeADUserIsExceptionalSalePermission.Tag = "DC";
             // 
             // fld_ckeAllowExportExcel
             // 
@@ -438,42 +523,13 @@
             this.bosLine1.TabIndex = 20;
             this.bosLine1.TabStop = false;
             // 
-            // fld_ckeADUserIsExceptionalSalePermission
-            // 
-            this.fld_ckeADUserIsExceptionalSalePermission.BOSComment = null;
-            this.fld_ckeADUserIsExceptionalSalePermission.BOSDataMember = "ADUserIsExceptionalSalePermission";
-            this.fld_ckeADUserIsExceptionalSalePermission.BOSDataSource = "ADUsers";
-            this.fld_ckeADUserIsExceptionalSalePermission.BOSDescription = null;
-            this.fld_ckeADUserIsExceptionalSalePermission.BOSError = null;
-            this.fld_ckeADUserIsExceptionalSalePermission.BOSFieldGroup = null;
-            this.fld_ckeADUserIsExceptionalSalePermission.BOSFieldRelation = null;
-            this.fld_ckeADUserIsExceptionalSalePermission.BOSPrivilege = null;
-            this.fld_ckeADUserIsExceptionalSalePermission.BOSPropertyName = "EditValue";
-            this.fld_ckeADUserIsExceptionalSalePermission.Location = new System.Drawing.Point(227, 45);
-            this.fld_ckeADUserIsExceptionalSalePermission.MenuManager = this.screenToolbar;
-            this.fld_ckeADUserIsExceptionalSalePermission.Name = "fld_ckeADUserIsExceptionalSalePermission";
-            this.fld_ckeADUserIsExceptionalSalePermission.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fld_ckeADUserIsExceptionalSalePermission.Properties.Appearance.Options.UseFont = true;
-            this.fld_ckeADUserIsExceptionalSalePermission.Properties.Caption = "[SALE] Ngoại lệ ";
-            this.fld_ckeADUserIsExceptionalSalePermission.Screen = null;
-            this.fld_ckeADUserIsExceptionalSalePermission.Size = new System.Drawing.Size(109, 20);
-            toolTipTitleItem1.Text = "Giải thích";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Những user [SALE] Ngoại lệ được xem tât cả chứng từ ĐBH của chi nhánh được phân q" +
-    "uyền.\r\nNgược lại, chỉ xem được ĐBH của khách hàng user đó quản lý/bán";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.fld_ckeADUserIsExceptionalSalePermission.SuperTip = superToolTip1;
-            this.fld_ckeADUserIsExceptionalSalePermission.TabIndex = 3;
-            this.fld_ckeADUserIsExceptionalSalePermission.Tag = "DC";
-            // 
             // guiManageUser
             // 
             this.AcceptButton = this.fld_btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.fld_btnCancel;
-            this.ClientSize = new System.Drawing.Size(391, 326);
+            this.ClientSize = new System.Drawing.Size(388, 373);
             this.ControlBox = true;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -498,10 +554,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.fld_chkUserActiveCheck.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_ckeChooseCustomizeColumn.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_lkeARCustomerBusinessType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fld_ckeADUserIsExceptionalSalePermission.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_ckeAllowExportExcel.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fld_ckeADUserIsExceptionalSalePermission.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,5 +586,7 @@
         private BOSComponent.BOSCheckEdit fld_ckeAllowExportExcel;
         private BOSComponent.BOSLine bosLine1;
         private BOSComponent.BOSCheckEdit fld_ckeADUserIsExceptionalSalePermission;
+        private BOSComponent.BOSLookupEdit fld_lkeARCustomerBusinessType;
+        private BOSComponent.BOSLabel bosLabel1;
     }
 }

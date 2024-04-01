@@ -317,6 +317,46 @@ namespace BOSERP
             DataSet ds = dal.GetDataSet("ICShipments_GetShipmentListAllType", shipmentNo, FK_BRBranchID, objectID, objectType, stockID, employeeID, shipmentType, shipmentStatus, dateFrom, dateTo);
             return ds;
         }
+        public DataSet GetShipmentSaleListAllType(
+                                        string shipmentNo,
+                                        List<BRBranchsInfo> branchList,
+                                        int? objectID,
+                                        string objectType,
+                                        int? stockID,
+                                        int? employeeID,
+                                        string shipmentType,
+                                        string shipmentStatus,
+                                        DateTime? dateFrom,
+                                        DateTime? dateTo,
+                                        int? userID
+                                        )
+        {
+            DataSet rtn = new DataSet();
+            foreach (BRBranchsInfo ojbBranchsInfo in branchList)
+            {
+                DataSet ds = dal.GetDataSet("ICShipments_GetShipmentSaleListAllTypeAndUser", shipmentNo, ojbBranchsInfo.BRBranchID, objectID, objectType, stockID, employeeID, shipmentType, shipmentStatus, dateFrom, dateTo, userID);
+                rtn.Merge(ds);
+            }
+
+            return rtn;
+        }
+        public DataSet GetShipmentSaleListAllTypeAndUser(
+                                      string shipmentNo,
+                                      int? FK_BRBranchID,
+                                      int? objectID,
+                                      string objectType,
+                                      int? stockID,
+                                      int? employeeID,
+                                      string shipmentType,
+                                      string shipmentStatus,
+                                      DateTime? dateFrom,
+                                      DateTime? dateTo,
+                                        int? userID
+                                      )
+        {
+            DataSet ds = dal.GetDataSet("ICShipments_GetShipmentSaleListAllTypeAndUser", shipmentNo, FK_BRBranchID, objectID, objectType, stockID, employeeID, shipmentType, shipmentStatus, dateFrom, dateTo, userID);
+            return ds;
+        }
         public DataSet GetSemiproductShipmentList(
                                        string shipmentNo,
                                        int? FK_BRBranchID,

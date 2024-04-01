@@ -477,6 +477,7 @@ namespace BOSERP.Modules.ClearInvoiceIn
             entity.DocumentList.ForEach(o =>
             {
                 documentAmount = objDocumentsController.GetDocumentAmountBySomeCriteria(o.APClearInvoiceInDocumentID, o.FK_APClearInvoiceInID, o.APClearInvoiceInDocumentNo);
+                documentAmount = Math.Round(documentAmount, BOSApp.GetDecimalNumberByCurrencyID(mainObject.FK_GECurrencyID), MidpointRounding.AwayFromZero);
                 if (o.APClearInvoiceInDocumentAllocationAmount > documentAmount)
                 {
                     InvalidAmount.Add(documentAmount);
@@ -485,6 +486,7 @@ namespace BOSERP.Modules.ClearInvoiceIn
             entity.InvoiceInItemList.ForEach(o =>
             {
                 invoiceInAmount = objInvoiceInsController.GetInvoiceInAmountBySomeCriteria(o.APClearInvoiceInInvoiceInID, o.FK_APClearInvoiceInID, o.APClearInvoiceInInvoiceInNo);
+                invoiceInAmount = Math.Round(invoiceInAmount, BOSApp.GetDecimalNumberByCurrencyID(mainObject.FK_GECurrencyID), MidpointRounding.AwayFromZero);
                 if (o.APClearInvoiceInInvoiceInAllocationAmount > invoiceInAmount)
                 {
                     InvalidAmount.Add(invoiceInAmount);

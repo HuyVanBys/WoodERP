@@ -159,14 +159,18 @@ namespace BOSERP.Modules.DiscountProgram
             ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonEdit, true);
             ParentScreen.SetEnableOfToolbarButton("Approve", true);
             ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDuplicate, true);
+            ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, false);
+            ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, false);
             if (mainobject.ARDiscountProgramStatus == DiscountProgramStatus.Approved.ToString())
             {
                 ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonEdit, false);
+                ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonCancelComplete, true);
                 ParentScreen.SetEnableOfToolbarButton("Approve", false);
             }
             if (!Toolbar.IsNullOrNoneAction())
             {
                 ParentScreen.SetEnableOfToolbarButton("Approve", false);
+                ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDelete, true);
                 ParentScreen.SetEnableOfToolbarButton(BaseToolbar.ToolbarButtonDuplicate, false);
             }
             base.InvalidateToolbar();
@@ -588,6 +592,25 @@ namespace BOSERP.Modules.DiscountProgram
                 item.ARDiscountProgramItemTargetFromDate = new DateTime(toDate.Year, 1, 1, 0, 0, 0);
                 item.ARDiscountProgramItemTargetToDate = new DateTime(toDate.Year, 12, 31, 0, 0, 0);
             }
+        }
+        public override bool ActionCancelComplete()
+        {
+            DiscountProgramEntities entity = (DiscountProgramEntities)CurrentModuleEntity;
+            ARDiscountProgramsInfo mainobject = (ARDiscountProgramsInfo)entity.MainObject;
+            if (mainobject.ARDiscountProgramID > 0)
+            {
+                entity.SetPropertyChangeEventLock(false);
+                mainobject.ARDiscountProgramStatus = DiscountProgramStatus.New.ToString();
+                entity.UpdateMainObject();
+                entity.SetPropertyChangeEventLock(true);
+                InvalidateToolbar();
+            }
+            base.ActionCancelComplete();
+            return true;
+        }
+        public override void ActionDelete()
+        {
+            base.ActionDelete();
         }
     }
 }
