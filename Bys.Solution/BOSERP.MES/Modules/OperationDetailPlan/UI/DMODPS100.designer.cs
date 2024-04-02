@@ -148,6 +148,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_btnTicketZoom = new BOSComponent.BOSButton(this.components);
             this.fld_splTicket = new DevExpress.XtraEditors.SplitContainerControl();
             this.bosLine8 = new BOSComponent.BOSLine(this.components);
+            this.bosButton1 = new BOSComponent.BOSButton(this.components);
             this.fld_btnTicketHumanEdit = new BOSComponent.BOSButton(this.components);
             this.fld_bteTicketOperation = new BOSComponent.BOSButtonEdit(this.components);
             this.bosLabel23 = new BOSComponent.BOSLabel(this.components);
@@ -178,7 +179,6 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.bosLabel20 = new BOSComponent.BOSLabel(this.components);
             this.bosLabel21 = new BOSComponent.BOSLabel(this.components);
             this.fld_dgvMMOperationDetailPlanItems = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.bosButton1 = new BOSComponent.BOSButton(this.components);
             this.bosPanel1.SuspendLayout();
             this.fld_bolEquipment.SuspendLayout();
             this.fld_bolTicket.SuspendLayout();
@@ -302,7 +302,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(1771, 859);
+            this.bosPanel1.Size = new System.Drawing.Size(1316, 680);
             this.bosPanel1.TabIndex = 0;
             // 
             // fld_bolEquipment
@@ -319,10 +319,10 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_bolEquipment.Controls.Add(this.fld_btnCancelEquipment);
             this.fld_bolEquipment.Controls.Add(this.fld_btnRegisEquipment);
             this.fld_bolEquipment.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.fld_bolEquipment.Location = new System.Drawing.Point(1538, 3);
+            this.fld_bolEquipment.Location = new System.Drawing.Point(675, 104);
             this.fld_bolEquipment.Name = "fld_bolEquipment";
             this.fld_bolEquipment.Screen = null;
-            this.fld_bolEquipment.Size = new System.Drawing.Size(108, 95);
+            this.fld_bolEquipment.Size = new System.Drawing.Size(218, 46);
             this.fld_bolEquipment.TabIndex = 123;
             this.fld_bolEquipment.TabStop = false;
             this.fld_bolEquipment.Text = "Quản lý khuôn";
@@ -338,7 +338,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_btnCancelEquipment.BOSFieldRelation = null;
             this.fld_btnCancelEquipment.BOSPrivilege = null;
             this.fld_btnCancelEquipment.BOSPropertyName = null;
-            this.fld_btnCancelEquipment.Location = new System.Drawing.Point(6, 44);
+            this.fld_btnCancelEquipment.Location = new System.Drawing.Point(114, 19);
             this.fld_btnCancelEquipment.Name = "fld_btnCancelEquipment";
             this.fld_btnCancelEquipment.Screen = null;
             this.fld_btnCancelEquipment.Size = new System.Drawing.Size(96, 22);
@@ -380,10 +380,10 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_bolTicket.Controls.Add(this.fld_btnCancelTicket);
             this.fld_bolTicket.Controls.Add(this.fld_btnOpenTicket);
             this.fld_bolTicket.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.fld_bolTicket.Location = new System.Drawing.Point(1424, 3);
+            this.fld_bolTicket.Location = new System.Drawing.Point(331, 104);
             this.fld_bolTicket.Name = "fld_bolTicket";
             this.fld_bolTicket.Screen = null;
-            this.fld_bolTicket.Size = new System.Drawing.Size(108, 95);
+            this.fld_bolTicket.Size = new System.Drawing.Size(333, 46);
             this.fld_bolTicket.TabIndex = 123;
             this.fld_bolTicket.TabStop = false;
             this.fld_bolTicket.Text = "Quản lý thẻ";
@@ -418,7 +418,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_btnCancelTicket.BOSFieldRelation = null;
             this.fld_btnCancelTicket.BOSPrivilege = null;
             this.fld_btnCancelTicket.BOSPropertyName = null;
-            this.fld_btnCancelTicket.Location = new System.Drawing.Point(6, 43);
+            this.fld_btnCancelTicket.Location = new System.Drawing.Point(108, 19);
             this.fld_btnCancelTicket.Name = "fld_btnCancelTicket";
             this.fld_btnCancelTicket.Screen = null;
             this.fld_btnCancelTicket.Size = new System.Drawing.Size(96, 22);
@@ -437,7 +437,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_btnOpenTicket.BOSFieldRelation = null;
             this.fld_btnOpenTicket.BOSPrivilege = null;
             this.fld_btnOpenTicket.BOSPropertyName = null;
-            this.fld_btnOpenTicket.Location = new System.Drawing.Point(6, 69);
+            this.fld_btnOpenTicket.Location = new System.Drawing.Point(210, 19);
             this.fld_btnOpenTicket.Name = "fld_btnOpenTicket";
             this.fld_btnOpenTicket.Screen = null;
             this.fld_btnOpenTicket.Size = new System.Drawing.Size(96, 22);
@@ -460,10 +460,10 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_bolJob.Controls.Add(this.fld_btnJobCreate);
             this.fld_bolJob.Controls.Add(this.fld_btnJobCancel);
             this.fld_bolJob.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.fld_bolJob.Location = new System.Drawing.Point(1311, 3);
+            this.fld_bolJob.Location = new System.Drawing.Point(4, 104);
             this.fld_bolJob.Name = "fld_bolJob";
             this.fld_bolJob.Screen = null;
-            this.fld_bolJob.Size = new System.Drawing.Size(107, 95);
+            this.fld_bolJob.Size = new System.Drawing.Size(321, 46);
             this.fld_bolJob.TabIndex = 122;
             this.fld_bolJob.TabStop = false;
             this.fld_bolJob.Text = "Quản lý chi tiết";
@@ -498,7 +498,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_btnJobCreate.BOSFieldRelation = null;
             this.fld_btnJobCreate.BOSPrivilege = null;
             this.fld_btnJobCreate.BOSPropertyName = null;
-            this.fld_btnJobCreate.Location = new System.Drawing.Point(6, 43);
+            this.fld_btnJobCreate.Location = new System.Drawing.Point(108, 19);
             this.fld_btnJobCreate.Name = "fld_btnJobCreate";
             this.fld_btnJobCreate.Screen = null;
             this.fld_btnJobCreate.Size = new System.Drawing.Size(96, 22);
@@ -517,7 +517,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_btnJobCancel.BOSFieldRelation = null;
             this.fld_btnJobCancel.BOSPrivilege = null;
             this.fld_btnJobCancel.BOSPropertyName = null;
-            this.fld_btnJobCancel.Location = new System.Drawing.Point(6, 69);
+            this.fld_btnJobCancel.Location = new System.Drawing.Point(210, 20);
             this.fld_btnJobCancel.Name = "fld_btnJobCancel";
             this.fld_btnJobCancel.Screen = null;
             this.fld_btnJobCancel.Size = new System.Drawing.Size(96, 22);
@@ -1456,12 +1456,12 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_tabOperationPlanList.BOSFieldRelation = null;
             this.fld_tabOperationPlanList.BOSPrivilege = null;
             this.fld_tabOperationPlanList.BOSPropertyName = null;
-            this.fld_tabOperationPlanList.Location = new System.Drawing.Point(3, 104);
+            this.fld_tabOperationPlanList.Location = new System.Drawing.Point(3, 156);
             this.fld_tabOperationPlanList.Name = "fld_tabOperationPlanList";
             this.fld_tabOperationPlanList.Screen = null;
             this.fld_tabOperationPlanList.SelectedTabPage = this.fld_tabDetailPlan;
             this.ScreenHelper.SetShowHelp(this.fld_tabOperationPlanList, true);
-            this.fld_tabOperationPlanList.Size = new System.Drawing.Size(1765, 755);
+            this.fld_tabOperationPlanList.Size = new System.Drawing.Size(1310, 524);
             this.fld_tabOperationPlanList.TabIndex = 30;
             this.fld_tabOperationPlanList.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tabDetailPlan,
@@ -1490,7 +1490,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_tabDetailPlan.Controls.Add(this.fld_dgcMMOperationDetailPlanItemChilds);
             this.fld_tabDetailPlan.Name = "fld_tabDetailPlan";
             this.ScreenHelper.SetShowHelp(this.fld_tabDetailPlan, true);
-            this.fld_tabDetailPlan.Size = new System.Drawing.Size(1763, 730);
+            this.fld_tabDetailPlan.Size = new System.Drawing.Size(1308, 499);
             this.fld_tabDetailPlan.Text = "DS kế hoạch chi tiết";
             // 
             // fld_btnEditMachine
@@ -1658,7 +1658,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_lblStatusLate.BOSFieldRelation = null;
             this.fld_lblStatusLate.BOSPrivilege = null;
             this.fld_lblStatusLate.BOSPropertyName = null;
-            this.fld_lblStatusLate.Location = new System.Drawing.Point(47, 713);
+            this.fld_lblStatusLate.Location = new System.Drawing.Point(47, 482);
             this.fld_lblStatusLate.Name = "fld_lblStatusLate";
             this.fld_lblStatusLate.Screen = null;
             this.fld_lblStatusLate.Size = new System.Drawing.Size(55, 12);
@@ -1672,7 +1672,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_btnStatusLate.Enabled = false;
             this.fld_btnStatusLate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fld_btnStatusLate.Font = new System.Drawing.Font("Tahoma", 7F);
-            this.fld_btnStatusLate.Location = new System.Drawing.Point(18, 711);
+            this.fld_btnStatusLate.Location = new System.Drawing.Point(18, 480);
             this.fld_btnStatusLate.Name = "fld_btnStatusLate";
             this.fld_btnStatusLate.Size = new System.Drawing.Size(20, 15);
             this.fld_btnStatusLate.TabIndex = 129;
@@ -1815,7 +1815,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_dgcMMOperationDetailPlanItemChilds.Name = "fld_dgcMMOperationDetailPlanItemChilds";
             this.fld_dgcMMOperationDetailPlanItemChilds.PrintReport = false;
             this.fld_dgcMMOperationDetailPlanItemChilds.Screen = null;
-            this.fld_dgcMMOperationDetailPlanItemChilds.Size = new System.Drawing.Size(1759, 670);
+            this.fld_dgcMMOperationDetailPlanItemChilds.Size = new System.Drawing.Size(1304, 439);
             this.fld_dgcMMOperationDetailPlanItemChilds.TabIndex = 1;
             // 
             // fld_tabHumanUnit
@@ -1823,7 +1823,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_tabHumanUnit.Controls.Add(this.fld_btnZoomHuman);
             this.fld_tabHumanUnit.Controls.Add(this.fld_spcHuman);
             this.fld_tabHumanUnit.Name = "fld_tabHumanUnit";
-            this.fld_tabHumanUnit.Size = new System.Drawing.Size(1749, 723);
+            this.fld_tabHumanUnit.Size = new System.Drawing.Size(1763, 730);
             this.fld_tabHumanUnit.Text = "Danh sách nhân công";
             // 
             // fld_btnZoomHuman
@@ -1838,7 +1838,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_btnZoomHuman.BOSFieldRelation = null;
             this.fld_btnZoomHuman.BOSPrivilege = null;
             this.fld_btnZoomHuman.BOSPropertyName = null;
-            this.fld_btnZoomHuman.Location = new System.Drawing.Point(1727, 0);
+            this.fld_btnZoomHuman.Location = new System.Drawing.Point(1741, 0);
             this.fld_btnZoomHuman.Name = "fld_btnZoomHuman";
             this.fld_btnZoomHuman.Screen = null;
             this.fld_btnZoomHuman.Size = new System.Drawing.Size(22, 22);
@@ -1867,7 +1867,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             // 
             this.fld_spcHuman.Panel2.Controls.Add(this.fld_Detail);
             this.fld_spcHuman.Panel2.Text = "Panel2";
-            this.fld_spcHuman.Size = new System.Drawing.Size(1746, 691);
+            this.fld_spcHuman.Size = new System.Drawing.Size(1760, 698);
             this.fld_spcHuman.SplitterPosition = 566;
             this.fld_spcHuman.TabIndex = 415;
             this.fld_spcHuman.Text = "splitContainerControl1";
@@ -1936,7 +1936,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.bosLine4.Location = new System.Drawing.Point(0, 0);
             this.bosLine4.Name = "bosLine4";
             this.bosLine4.Screen = null;
-            this.bosLine4.Size = new System.Drawing.Size(508, 687);
+            this.bosLine4.Size = new System.Drawing.Size(508, 694);
             this.bosLine4.TabIndex = 407;
             this.bosLine4.TabStop = false;
             this.bosLine4.Text = "Danh sách nhân công";
@@ -2079,7 +2079,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_trlHumanUnits.ParentFieldName = "HRDepartmentRoomGroupItemParentID";
             this.fld_trlHumanUnits.ResultList = null;
             this.fld_trlHumanUnits.RoomGroupItemDataList = null;
-            this.fld_trlHumanUnits.Size = new System.Drawing.Size(499, 616);
+            this.fld_trlHumanUnits.Size = new System.Drawing.Size(499, 623);
             this.fld_trlHumanUnits.TabIndex = 101;
             // 
             // fld_Detail
@@ -2107,7 +2107,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_Detail.Location = new System.Drawing.Point(0, 0);
             this.fld_Detail.Name = "fld_Detail";
             this.fld_Detail.Screen = null;
-            this.fld_Detail.Size = new System.Drawing.Size(1166, 687);
+            this.fld_Detail.Size = new System.Drawing.Size(1180, 694);
             this.fld_Detail.TabIndex = 405;
             this.fld_Detail.TabStop = false;
             this.fld_Detail.Text = "Chi tiết công việc theo từng nhân công";
@@ -2290,7 +2290,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_dgcHumanDetailPlanItems.Name = "fld_dgcHumanDetailPlanItems";
             this.fld_dgcHumanDetailPlanItems.PrintReport = false;
             this.fld_dgcHumanDetailPlanItems.Screen = null;
-            this.fld_dgcHumanDetailPlanItems.Size = new System.Drawing.Size(1163, 614);
+            this.fld_dgcHumanDetailPlanItems.Size = new System.Drawing.Size(1177, 621);
             this.fld_dgcHumanDetailPlanItems.TabIndex = 2;
             // 
             // fld_tabMachineUnit
@@ -2298,7 +2298,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_tabMachineUnit.Controls.Add(this.fld_btnZoomMachine);
             this.fld_tabMachineUnit.Controls.Add(this.fld_spcMachine);
             this.fld_tabMachineUnit.Name = "fld_tabMachineUnit";
-            this.fld_tabMachineUnit.Size = new System.Drawing.Size(1749, 723);
+            this.fld_tabMachineUnit.Size = new System.Drawing.Size(1763, 730);
             this.fld_tabMachineUnit.Text = "Danh sách máy móc";
             // 
             // fld_btnZoomMachine
@@ -2313,7 +2313,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_btnZoomMachine.BOSFieldRelation = null;
             this.fld_btnZoomMachine.BOSPrivilege = null;
             this.fld_btnZoomMachine.BOSPropertyName = null;
-            this.fld_btnZoomMachine.Location = new System.Drawing.Point(1719, 2);
+            this.fld_btnZoomMachine.Location = new System.Drawing.Point(1733, 2);
             this.fld_btnZoomMachine.Name = "fld_btnZoomMachine";
             this.fld_btnZoomMachine.Screen = null;
             this.fld_btnZoomMachine.Size = new System.Drawing.Size(22, 22);
@@ -2342,7 +2342,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             // 
             this.fld_spcMachine.Panel2.Controls.Add(this.bosLine6);
             this.fld_spcMachine.Panel2.Text = "Panel2";
-            this.fld_spcMachine.Size = new System.Drawing.Size(1749, 698);
+            this.fld_spcMachine.Size = new System.Drawing.Size(1763, 705);
             this.fld_spcMachine.SplitterPosition = 623;
             this.fld_spcMachine.TabIndex = 408;
             this.fld_spcMachine.Text = "splitContainerControl2";
@@ -2411,7 +2411,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.bosLine5.Location = new System.Drawing.Point(0, 3);
             this.bosLine5.Name = "bosLine5";
             this.bosLine5.Screen = null;
-            this.bosLine5.Size = new System.Drawing.Size(569, 688);
+            this.bosLine5.Size = new System.Drawing.Size(569, 695);
             this.bosLine5.TabIndex = 407;
             this.bosLine5.TabStop = false;
             this.bosLine5.Text = "Danh sách máy móc";
@@ -2551,7 +2551,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_trlMachineUnits.Name = "fld_trlMachineUnits";
             this.fld_trlMachineUnits.ParentFieldName = "HRDepartmentRoomGroupItemParentID";
             this.fld_trlMachineUnits.ResultList = null;
-            this.fld_trlMachineUnits.Size = new System.Drawing.Size(563, 613);
+            this.fld_trlMachineUnits.Size = new System.Drawing.Size(563, 620);
             this.fld_trlMachineUnits.TabIndex = 101;
             // 
             // bosLine6
@@ -2581,7 +2581,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.bosLine6.Location = new System.Drawing.Point(0, 3);
             this.bosLine6.Name = "bosLine6";
             this.bosLine6.Screen = null;
-            this.bosLine6.Size = new System.Drawing.Size(1116, 688);
+            this.bosLine6.Size = new System.Drawing.Size(1130, 695);
             this.bosLine6.TabIndex = 405;
             this.bosLine6.TabStop = false;
             this.bosLine6.Text = "Chi tiết công việc từng theo máy";
@@ -2765,7 +2765,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_dgcMachineDetailPlanItems.Name = "fld_dgcMachineDetailPlanItems";
             this.fld_dgcMachineDetailPlanItems.PrintReport = false;
             this.fld_dgcMachineDetailPlanItems.Screen = null;
-            this.fld_dgcMachineDetailPlanItems.Size = new System.Drawing.Size(1112, 613);
+            this.fld_dgcMachineDetailPlanItems.Size = new System.Drawing.Size(1126, 620);
             this.fld_dgcMachineDetailPlanItems.TabIndex = 2;
             // 
             // fld_xtabEquipment
@@ -2775,7 +2775,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_xtabEquipment.Controls.Add(this.fld_btnEquipmentZoom);
             this.fld_xtabEquipment.Controls.Add(this.fld_dgcMMDetailPlanEquipments);
             this.fld_xtabEquipment.Name = "fld_xtabEquipment";
-            this.fld_xtabEquipment.Size = new System.Drawing.Size(1749, 723);
+            this.fld_xtabEquipment.Size = new System.Drawing.Size(1763, 730);
             this.fld_xtabEquipment.Text = "Dụng cụ sản xuất (khuôn)";
             // 
             // fld_chkAllEquipment
@@ -2831,7 +2831,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_btnEquipmentZoom.BOSFieldRelation = null;
             this.fld_btnEquipmentZoom.BOSPrivilege = null;
             this.fld_btnEquipmentZoom.BOSPropertyName = null;
-            this.fld_btnEquipmentZoom.Location = new System.Drawing.Point(1723, 3);
+            this.fld_btnEquipmentZoom.Location = new System.Drawing.Point(1737, 3);
             this.fld_btnEquipmentZoom.Name = "fld_btnEquipmentZoom";
             this.fld_btnEquipmentZoom.Screen = null;
             this.fld_btnEquipmentZoom.Size = new System.Drawing.Size(22, 22);
@@ -2861,7 +2861,7 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_dgcMMDetailPlanEquipments.Name = "fld_dgcMMDetailPlanEquipments";
             this.fld_dgcMMDetailPlanEquipments.PrintReport = false;
             this.fld_dgcMMDetailPlanEquipments.Screen = null;
-            this.fld_dgcMMDetailPlanEquipments.Size = new System.Drawing.Size(1742, 686);
+            this.fld_dgcMMDetailPlanEquipments.Size = new System.Drawing.Size(1756, 693);
             this.fld_dgcMMDetailPlanEquipments.TabIndex = 3;
             // 
             // fld_tabJobTicket
@@ -2953,6 +2953,25 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.bosLine8.TabIndex = 407;
             this.bosLine8.TabStop = false;
             this.bosLine8.Text = "Danh sách công việc";
+            // 
+            // bosButton1
+            // 
+            this.bosButton1.BOSComment = null;
+            this.bosButton1.BOSDataMember = null;
+            this.bosButton1.BOSDataSource = null;
+            this.bosButton1.BOSDescription = null;
+            this.bosButton1.BOSError = null;
+            this.bosButton1.BOSFieldGroup = null;
+            this.bosButton1.BOSFieldRelation = null;
+            this.bosButton1.BOSPrivilege = null;
+            this.bosButton1.BOSPropertyName = null;
+            this.bosButton1.Location = new System.Drawing.Point(358, 17);
+            this.bosButton1.Name = "bosButton1";
+            this.bosButton1.Screen = null;
+            this.bosButton1.Size = new System.Drawing.Size(88, 22);
+            this.bosButton1.TabIndex = 168;
+            this.bosButton1.Text = "In";
+            this.bosButton1.Click += new System.EventHandler(this.bosButton1_Click);
             // 
             // fld_btnTicketHumanEdit
             // 
@@ -3629,30 +3648,11 @@ namespace BOSERP.Modules.OperationDetailPlan.UI
             this.fld_dgvMMOperationDetailPlanItems.Name = "fld_dgvMMOperationDetailPlanItems";
             this.fld_dgvMMOperationDetailPlanItems.PaintStyleName = "Office2003";
             // 
-            // bosButton1
-            // 
-            this.bosButton1.BOSComment = null;
-            this.bosButton1.BOSDataMember = null;
-            this.bosButton1.BOSDataSource = null;
-            this.bosButton1.BOSDescription = null;
-            this.bosButton1.BOSError = null;
-            this.bosButton1.BOSFieldGroup = null;
-            this.bosButton1.BOSFieldRelation = null;
-            this.bosButton1.BOSPrivilege = null;
-            this.bosButton1.BOSPropertyName = null;
-            this.bosButton1.Location = new System.Drawing.Point(358, 17);
-            this.bosButton1.Name = "bosButton1";
-            this.bosButton1.Screen = null;
-            this.bosButton1.Size = new System.Drawing.Size(88, 22);
-            this.bosButton1.TabIndex = 168;
-            this.bosButton1.Text = "In";
-            this.bosButton1.Click += new System.EventHandler(this.bosButton1_Click);
-            // 
             // DMODPS100
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(1771, 859);
+            this.ClientSize = new System.Drawing.Size(1316, 680);
             this.Controls.Add(this.bosPanel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMODPS100.IconOptions.Icon")));
             this.Name = "DMODPS100";
