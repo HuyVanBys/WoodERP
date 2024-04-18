@@ -106,6 +106,7 @@ namespace BOSERP
         protected bool _isInlandItemProductName = false;
         protected string _aRProposalItemProductNoOfOldSys = string.Empty;
         protected string _aRProposalItemProductCustomerNumber = string.Empty;
+        protected string _iCProductContainerType = string.Empty;
         #endregion
 
         #region Public properties
@@ -1201,6 +1202,18 @@ namespace BOSERP
                 }
             }
         }
+        public string ICProductContainerType
+        {
+            get { return _iCProductContainerType; }
+            set
+            {
+                if (value != this._iCProductContainerType)
+                {
+                    _iCProductContainerType = value;
+                    NotifyChanged("ICProductContainerType");
+                }
+            }
+        }
         #endregion
 
         #region Extra Properties
@@ -1268,6 +1281,7 @@ namespace BOSERP
         public string ICProductCustomerNumber { get; set; }
         public string ICProductName { get; set; }
         public decimal ARProposalItemProductExchangeQty { get; set; }
+        public decimal APProposalItemContainerProductQty { get; set; }
         #endregion
     }
     #endregion

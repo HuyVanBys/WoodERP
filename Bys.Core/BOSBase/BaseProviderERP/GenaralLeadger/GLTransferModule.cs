@@ -68,12 +68,15 @@ namespace BOSERP.GenaralLeadger
         {
             GLTransferEntities entity = (GLTransferEntities)CurrentModuleEntity;
             ICTransfersInfo mainObject = (ICTransfersInfo)entity.MainObject;
+            decimal oldProductFactor = item.ICTransferItemProductFactor;
+            decimal oldExchangeQty = item.ICTransferItemProductExchangeQty;
             ICProductMeasureUnitsController controller = new ICProductMeasureUnitsController();
             ICProductMeasureUnitsInfo measureUnit = controller.GetProductMeasureUnitByProductIDAndMeasureUnitID(item.FK_ICProductID, item.FK_ICMeasureUnitID);
             item.ICTransferItemProductFactor = (measureUnit != null && measureUnit.ICProductMeasureUnitFactor > 0)
                                                 ? measureUnit.ICProductMeasureUnitFactor
                                                 : 1;
-
+            item.ICTransferItemProductQty = oldExchangeQty / (item.ICTransferItemProductFactor > 0 ? item.ICTransferItemProductFactor : 1);
+            item.ICTransferItemProductExchangeQty = item.ICTransferItemProductQty * item.ICTransferItemProductFactor;
             item.ICTransferItemProductUnitCost = AccountHelper.GetProductUnitCost(item.FK_ICFromStockID, item.FK_ICProductID, item.ICTransferItemProductSerialNo, mainObject.ICTransferDate) * item.ICTransferItemProductFactor;
             entity.SetProductPriceByProductUnitPrice(item);
             entity.TransferItemList.GridControl?.RefreshDataSource();
@@ -133,7 +136,7 @@ namespace BOSERP.GenaralLeadger
 
             if (objInventoryStocksInfo != null
                 && !string.IsNullOrEmpty(item.ICTransferItemProductSerialNo)
-                && (product.ICProductType == ProductType.Roundwood.ToString() || product.ICProductType == ProductType.Lumber.ToString()))
+                )
             {
                 item.ICTransferItemProductQty = objInventoryStocksInfo.ICInventoryStockQuantity;
                 item.ICTransferItemProductFactor = 1;

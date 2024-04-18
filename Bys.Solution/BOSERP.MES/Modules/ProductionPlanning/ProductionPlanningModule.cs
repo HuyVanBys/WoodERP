@@ -1165,6 +1165,16 @@ namespace BOSERP.Modules.ProductionPlanning
             });
             entity.ProductionPlanningItemList.GridControl?.RefreshDataSource();
         }
+
+        public override void ActionDuplicate()
+        {
+            base.ActionDuplicate();
+            ProductionPlanningEntities entity = (ProductionPlanningEntities)CurrentModuleEntity;
+            ARProductionPlanningsInfo mainObject = (ARProductionPlanningsInfo)entity.MainObject;
+            mainObject.ARProductionPlanningSaleOrderName = String.Empty;
+            entity.UpdateMainObjectBindingSource();
+        }
+
         #region Mở - Xóa chứng từ
         public override bool ActionCancelComplete()
         {

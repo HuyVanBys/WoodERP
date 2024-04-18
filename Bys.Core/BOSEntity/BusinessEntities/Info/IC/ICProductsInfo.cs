@@ -203,6 +203,7 @@ namespace BOSERP
         protected string _iCConfigProductionComplexityType = string.Empty;
         protected int _fK_ICWidthGroupID;
         protected string _iCProductCollection = string.Empty;
+        protected string _iCProductPackagingDetailEnglish = string.Empty;
         #endregion
 
         #region Public properties
@@ -2293,6 +2294,18 @@ namespace BOSERP
                 {
                     _iCProductCollection = value;
                     NotifyChanged("ICProductCollection");
+                }
+            }
+        }
+        public string ICProductPackagingDetailEnglish
+        {
+            get { return _iCProductPackagingDetailEnglish; }
+            set
+            {
+                if (value != this._iCProductPackagingDetailEnglish)
+                {
+                    _iCProductPackagingDetailEnglish = value;
+                    NotifyChanged("ICProductPackagingDetailEnglish");
                 }
             }
         }

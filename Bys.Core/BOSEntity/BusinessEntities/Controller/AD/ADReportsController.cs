@@ -8747,6 +8747,36 @@ namespace BOSERP
             }
             return listItem;
         }
+        public List<ADReportsInfo> GetRevenueByCustomer(DateTime fromYear, DateTime toYear, int customerID, string customerType, int employeeID, bool isDiscount)
+        {
+            DataSet ds = dal.GetDataSet("RP_GetRevenueByCustomer_1", fromYear, toYear, customerID, employeeID, customerType, isDiscount);
+            List<ADReportsInfo> listItem = new List<ADReportsInfo>();
+            if (ds.Tables.Count > 0)
+            {
+                ADReportsController objInvoicesController = new ADReportsController();
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    ADReportsInfo objInvoicesInfo = (ADReportsInfo)objInvoicesController.GetObjectFromDataRow(row);
+                    listItem.Add(objInvoicesInfo);
+                }
+            }
+            return listItem;
+        }
+        public List<ADReportsInfo> GetRevenueByCustomer_1(DateTime fromYear, DateTime toYear, int customerID, string customerType, int employeeID, bool isDiscount)
+        {
+            DataSet ds = dal.GetDataSet("RP_GetRevenueByCustomer_1", fromYear, toYear, customerID, employeeID, customerType, isDiscount);
+            List<ADReportsInfo> listItem = new List<ADReportsInfo>();
+            if (ds.Tables.Count > 0)
+            {
+                ADReportsController objInvoicesController = new ADReportsController();
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    ADReportsInfo objInvoicesInfo = (ADReportsInfo)objInvoicesController.GetObjectFromDataRow(row);
+                    listItem.Add(objInvoicesInfo);
+                }
+            }
+            return listItem;
+        }
         public List<ADReportsInfo> GetRevenueByProductGroup(DateTime fromYear, DateTime toYear, int customerID)
         {
             DataSet ds = dal.GetDataSet("RP_GetRevenueByProductGroup", fromYear, toYear, customerID);

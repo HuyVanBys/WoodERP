@@ -25,7 +25,7 @@ namespace BOSERP
 		protected DateTime _aAUpdatedDate = DateTime.MaxValue;
 		protected int _fK_ICProductSerieID;
 		protected int _fK_ICProductAttributeQualityID;
-		protected decimal _mMFalseConditionalItemHumidity;
+		protected string _mMFalseConditionalItemHumidity = string.Empty;
 		protected decimal _mMFalseConditionalItemProductLength;
 		protected decimal _mMFalseConditionalItemProductWidth;
 		protected decimal _mMFalseConditionalItemProductHeight;
@@ -137,7 +137,7 @@ namespace BOSERP
 				}
 			}
 		}
-		public decimal MMFalseConditionalItemHumidity
+		public string MMFalseConditionalItemHumidity
 		{
 			get { return _mMFalseConditionalItemHumidity; }
 			set
@@ -293,7 +293,13 @@ namespace BOSERP
 				}
 			}
 		}
-		#endregion
-	}
-	#endregion
+        #endregion
+        #region Extra Properties
+		public IBOSList<MMFalseConditionalDetailsInfo> MMFalseConditionalDetailList { get; set; }
+		public decimal MMFalseConditionalItemTotalPercent { get; set; }
+		public decimal MMFalseConditionalItemHardPercent { get; set; }
+		public decimal MMFalseConditionalItemSoftPercent { get; set; }
+        #endregion
+    }
+    #endregion
 }

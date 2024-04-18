@@ -33,6 +33,16 @@ namespace BOSERP
             }
             return productContainerDetailList;
         }
+        public ICProductContainerDetailsInfo GetContainerDetailByProductIDAndContType(int productID, string contType)
+        {
+            DataSet ds = dal.GetDataSet("ICProductContainerDetails_GetContainerDetailByProductIDAndContType", productID, contType);
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                ICProductContainerDetailsInfo objProductContainerDetailsInfo = (ICProductContainerDetailsInfo)GetObjectFromDataRow(ds.Tables[0].Rows[0]);
+                return objProductContainerDetailsInfo;
+            }
+            return null;
+        }
     }
     #endregion
 }

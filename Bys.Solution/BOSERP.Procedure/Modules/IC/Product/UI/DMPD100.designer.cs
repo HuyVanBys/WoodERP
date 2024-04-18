@@ -35,6 +35,7 @@ namespace BOSERP.Modules.Product.UI
             this.bosPanel1 = new BOSComponent.BOSPanel(this.components);
             this.fld_tabProducts = new BOSComponent.BOSTabControl(this.components);
             this.fld_tabInfomation = new DevExpress.XtraTab.XtraTabPage();
+            this.bosLabel43 = new BOSComponent.BOSLabel(this.components);
             this.bosGroupControl2 = new BOSComponent.BOSGroupControl(this.components);
             this.fld_dgcICProductContainerDetails = new BOSERP.Modules.Product.ICProductContainerDetailsGridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -42,6 +43,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductPackingDetails = new BOSERP.Modules.Product.ICProductPackingDetailsGridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bosGroupControl3 = new BOSComponent.BOSGroupControl(this.components);
+            this.bosMemoEdit3 = new BOSComponent.BOSMemoEdit(this.components);
             this.fld_pbxConverSize = new System.Windows.Forms.PictureBox();
             this.bosMemoEdit2 = new BOSComponent.BOSMemoEdit(this.components);
             this.bosLabel40 = new BOSComponent.BOSLabel(this.components);
@@ -224,6 +226,7 @@ namespace BOSERP.Modules.Product.UI
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bosGroupControl3)).BeginInit();
             this.bosGroupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bosMemoEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_pbxConverSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bosMemoEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtICProductQtyInBox.Properties)).BeginInit();
@@ -382,7 +385,7 @@ namespace BOSERP.Modules.Product.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(1311, 972);
+            this.bosPanel1.Size = new System.Drawing.Size(1381, 1007);
             this.bosPanel1.TabIndex = 333;
             // 
             // fld_tabProducts
@@ -403,7 +406,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_tabProducts.Name = "fld_tabProducts";
             this.fld_tabProducts.Screen = null;
             this.fld_tabProducts.SelectedTabPage = this.fld_tabInfomation;
-            this.fld_tabProducts.Size = new System.Drawing.Size(1311, 969);
+            this.fld_tabProducts.Size = new System.Drawing.Size(1381, 1004);
             this.fld_tabProducts.TabIndex = 0;
             this.fld_tabProducts.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tabInfomation,
@@ -417,6 +420,7 @@ namespace BOSERP.Modules.Product.UI
             // 
             // fld_tabInfomation
             // 
+            this.fld_tabInfomation.Controls.Add(this.bosLabel43);
             this.fld_tabInfomation.Controls.Add(this.bosGroupControl2);
             this.fld_tabInfomation.Controls.Add(this.bosGroupControl6);
             this.fld_tabInfomation.Controls.Add(this.bosGroupControl3);
@@ -424,8 +428,26 @@ namespace BOSERP.Modules.Product.UI
             this.fld_tabInfomation.Controls.Add(this.fld_grcGroupControl1);
             this.fld_tabInfomation.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.fld_tabInfomation.Name = "fld_tabInfomation";
-            this.fld_tabInfomation.Size = new System.Drawing.Size(1309, 944);
+            this.fld_tabInfomation.Size = new System.Drawing.Size(1379, 979);
             this.fld_tabInfomation.Text = "Thông tin";
+            // 
+            // bosLabel43
+            // 
+            this.bosLabel43.BOSComment = null;
+            this.bosLabel43.BOSDataMember = null;
+            this.bosLabel43.BOSDataSource = null;
+            this.bosLabel43.BOSDescription = null;
+            this.bosLabel43.BOSError = null;
+            this.bosLabel43.BOSFieldGroup = null;
+            this.bosLabel43.BOSFieldRelation = null;
+            this.bosLabel43.BOSPrivilege = null;
+            this.bosLabel43.BOSPropertyName = null;
+            this.bosLabel43.Location = new System.Drawing.Point(452, 580);
+            this.bosLabel43.Name = "bosLabel43";
+            this.bosLabel43.Screen = null;
+            this.bosLabel43.Size = new System.Drawing.Size(137, 13);
+            this.bosLabel43.TabIndex = 479;
+            this.bosLabel43.Text = "Thông tin đóng gói tiếng anh";
             // 
             // bosGroupControl2
             // 
@@ -444,7 +466,7 @@ namespace BOSERP.Modules.Product.UI
             this.bosGroupControl2.Location = new System.Drawing.Point(230, 606);
             this.bosGroupControl2.Name = "bosGroupControl2";
             this.bosGroupControl2.Screen = null;
-            this.bosGroupControl2.Size = new System.Drawing.Size(198, 335);
+            this.bosGroupControl2.Size = new System.Drawing.Size(198, 370);
             this.bosGroupControl2.TabIndex = 3;
             this.bosGroupControl2.Text = "Thông tin số lượng Cont";
             // 
@@ -470,7 +492,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductContainerDetails.PrintReport = false;
             this.fld_dgcICProductContainerDetails.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_dgcICProductContainerDetails, true);
-            this.fld_dgcICProductContainerDetails.Size = new System.Drawing.Size(194, 310);
+            this.fld_dgcICProductContainerDetails.Size = new System.Drawing.Size(194, 345);
             this.fld_dgcICProductContainerDetails.TabIndex = 1;
             this.fld_dgcICProductContainerDetails.Tag = "DC";
             this.fld_dgcICProductContainerDetails.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -496,10 +518,10 @@ namespace BOSERP.Modules.Product.UI
             this.bosGroupControl6.BOSPrivilege = null;
             this.bosGroupControl6.BOSPropertyName = null;
             this.bosGroupControl6.Controls.Add(this.fld_dgcICProductPackingDetails);
-            this.bosGroupControl6.Location = new System.Drawing.Point(434, 583);
+            this.bosGroupControl6.Location = new System.Drawing.Point(434, 629);
             this.bosGroupControl6.Name = "bosGroupControl6";
             this.bosGroupControl6.Screen = null;
-            this.bosGroupControl6.Size = new System.Drawing.Size(483, 358);
+            this.bosGroupControl6.Size = new System.Drawing.Size(483, 347);
             this.bosGroupControl6.TabIndex = 2;
             this.bosGroupControl6.Text = "Thông tin đóng thùng";
             // 
@@ -525,7 +547,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductPackingDetails.PrintReport = false;
             this.fld_dgcICProductPackingDetails.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_dgcICProductPackingDetails, true);
-            this.fld_dgcICProductPackingDetails.Size = new System.Drawing.Size(479, 333);
+            this.fld_dgcICProductPackingDetails.Size = new System.Drawing.Size(479, 322);
             this.fld_dgcICProductPackingDetails.TabIndex = 0;
             this.fld_dgcICProductPackingDetails.Tag = "DC";
             this.fld_dgcICProductPackingDetails.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -548,6 +570,7 @@ namespace BOSERP.Modules.Product.UI
             this.bosGroupControl3.BOSFieldRelation = null;
             this.bosGroupControl3.BOSPrivilege = null;
             this.bosGroupControl3.BOSPropertyName = null;
+            this.bosGroupControl3.Controls.Add(this.bosMemoEdit3);
             this.bosGroupControl3.Controls.Add(this.fld_pbxConverSize);
             this.bosGroupControl3.Controls.Add(this.bosMemoEdit2);
             this.bosGroupControl3.Controls.Add(this.bosLabel40);
@@ -593,9 +616,32 @@ namespace BOSERP.Modules.Product.UI
             this.bosGroupControl3.Location = new System.Drawing.Point(434, 3);
             this.bosGroupControl3.Name = "bosGroupControl3";
             this.bosGroupControl3.Screen = null;
-            this.bosGroupControl3.Size = new System.Drawing.Size(483, 574);
+            this.bosGroupControl3.Size = new System.Drawing.Size(483, 620);
             this.bosGroupControl3.TabIndex = 0;
             this.bosGroupControl3.Text = "Thuộc tính";
+            // 
+            // bosMemoEdit3
+            // 
+            this.bosMemoEdit3.BOSComment = "";
+            this.bosMemoEdit3.BOSDataMember = "ICProductPackagingDetail";
+            this.bosMemoEdit3.BOSDataSource = "ICProducts";
+            this.bosMemoEdit3.BOSDescription = null;
+            this.bosMemoEdit3.BOSError = null;
+            this.bosMemoEdit3.BOSFieldGroup = "";
+            this.bosMemoEdit3.BOSFieldRelation = "";
+            this.bosMemoEdit3.BOSPrivilege = "";
+            this.bosMemoEdit3.BOSPropertyName = "Text";
+            this.bosMemoEdit3.EditValue = "";
+            this.bosMemoEdit3.Location = new System.Drawing.Point(216, 574);
+            this.bosMemoEdit3.Name = "bosMemoEdit3";
+            this.bosMemoEdit3.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bosMemoEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bosMemoEdit3.Properties.Appearance.Options.UseBackColor = true;
+            this.bosMemoEdit3.Properties.Appearance.Options.UseForeColor = true;
+            this.bosMemoEdit3.Screen = null;
+            this.bosMemoEdit3.Size = new System.Drawing.Size(200, 37);
+            this.bosMemoEdit3.TabIndex = 480;
+            this.bosMemoEdit3.Tag = "DC";
             // 
             // fld_pbxConverSize
             // 
@@ -2928,7 +2974,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_grcGroupControl1.Location = new System.Drawing.Point(3, 605);
             this.fld_grcGroupControl1.Name = "fld_grcGroupControl1";
             this.fld_grcGroupControl1.Screen = null;
-            this.fld_grcGroupControl1.Size = new System.Drawing.Size(222, 336);
+            this.fld_grcGroupControl1.Size = new System.Drawing.Size(222, 371);
             this.fld_grcGroupControl1.TabIndex = 1;
             this.fld_grcGroupControl1.Tag = "";
             this.fld_grcGroupControl1.Text = "Đơn vị tính && Giá";
@@ -3343,7 +3389,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_tabComponent.Controls.Add(this.fld_dgcICProductComponents);
             this.fld_tabComponent.Controls.Add(this.fld_btnAddProductComponentItem);
             this.fld_tabComponent.Name = "fld_tabComponent";
-            this.fld_tabComponent.Size = new System.Drawing.Size(1295, 937);
+            this.fld_tabComponent.Size = new System.Drawing.Size(1365, 972);
             this.fld_tabComponent.Text = "Thành phần";
             // 
             // fld_dgcICProductComponents
@@ -3367,7 +3413,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductComponents.Name = "fld_dgcICProductComponents";
             this.fld_dgcICProductComponents.PrintReport = false;
             this.fld_dgcICProductComponents.Screen = null;
-            this.fld_dgcICProductComponents.Size = new System.Drawing.Size(1289, 893);
+            this.fld_dgcICProductComponents.Size = new System.Drawing.Size(1359, 928);
             this.fld_dgcICProductComponents.TabIndex = 2;
             // 
             // fld_btnAddProductComponentItem
@@ -3397,7 +3443,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_tabAccountStockHistory.Controls.Add(this.fld_tabProductTask);
             this.fld_tabAccountStockHistory.Controls.Add(this.bosGroupControl1);
             this.fld_tabAccountStockHistory.Name = "fld_tabAccountStockHistory";
-            this.fld_tabAccountStockHistory.Size = new System.Drawing.Size(1295, 937);
+            this.fld_tabAccountStockHistory.Size = new System.Drawing.Size(1365, 972);
             this.fld_tabAccountStockHistory.Text = "Công việc - vật tư - MMTB - Task ";
             // 
             // fld_tabProductTask
@@ -3419,7 +3465,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_tabProductTask.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.fld_tabProductTask.Screen = null;
             this.fld_tabProductTask.SelectedTabPage = this.fld_tabWork;
-            this.fld_tabProductTask.Size = new System.Drawing.Size(1285, 844);
+            this.fld_tabProductTask.Size = new System.Drawing.Size(1355, 879);
             this.fld_tabProductTask.TabIndex = 6;
             this.fld_tabProductTask.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fld_tabWork,
@@ -3436,7 +3482,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_tabWork.Controls.Add(this.fld_btnAddProductWork);
             this.fld_tabWork.Name = "fld_tabWork";
             this.fld_tabWork.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.fld_tabWork.Size = new System.Drawing.Size(1283, 819);
+            this.fld_tabWork.Size = new System.Drawing.Size(1353, 854);
             this.fld_tabWork.Text = "Công việc thực hiện";
             // 
             // fld_dgcICProductWorkItemsGridControl
@@ -3460,7 +3506,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductWorkItemsGridControl.Name = "fld_dgcICProductWorkItemsGridControl";
             this.fld_dgcICProductWorkItemsGridControl.PrintReport = false;
             this.fld_dgcICProductWorkItemsGridControl.Screen = null;
-            this.fld_dgcICProductWorkItemsGridControl.Size = new System.Drawing.Size(1277, 793);
+            this.fld_dgcICProductWorkItemsGridControl.Size = new System.Drawing.Size(1347, 828);
             this.fld_dgcICProductWorkItemsGridControl.TabIndex = 12;
             // 
             // fld_btnAddProductWork
@@ -3489,7 +3535,7 @@ namespace BOSERP.Modules.Product.UI
             // 
             this.fld_tabMaterial.Controls.Add(this.fld_dgcICProductWorkItemMaterialsGridControl);
             this.fld_tabMaterial.Name = "fld_tabMaterial";
-            this.fld_tabMaterial.Size = new System.Drawing.Size(1283, 819);
+            this.fld_tabMaterial.Size = new System.Drawing.Size(1353, 854);
             this.fld_tabMaterial.Text = "Vật tư";
             // 
             // fld_dgcICProductWorkItemMaterialsGridControl
@@ -3513,14 +3559,14 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductWorkItemMaterialsGridControl.Name = "fld_dgcICProductWorkItemMaterialsGridControl";
             this.fld_dgcICProductWorkItemMaterialsGridControl.PrintReport = false;
             this.fld_dgcICProductWorkItemMaterialsGridControl.Screen = null;
-            this.fld_dgcICProductWorkItemMaterialsGridControl.Size = new System.Drawing.Size(1277, 813);
+            this.fld_dgcICProductWorkItemMaterialsGridControl.Size = new System.Drawing.Size(1347, 848);
             this.fld_dgcICProductWorkItemMaterialsGridControl.TabIndex = 13;
             // 
             // fld_tabAsset
             // 
             this.fld_tabAsset.Controls.Add(this.fld_dgcICProductWorkItemAssetsGridControl);
             this.fld_tabAsset.Name = "fld_tabAsset";
-            this.fld_tabAsset.Size = new System.Drawing.Size(1283, 819);
+            this.fld_tabAsset.Size = new System.Drawing.Size(1353, 854);
             this.fld_tabAsset.Text = "MMTB";
             // 
             // fld_dgcICProductWorkItemAssetsGridControl
@@ -3544,14 +3590,14 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductWorkItemAssetsGridControl.Name = "fld_dgcICProductWorkItemAssetsGridControl";
             this.fld_dgcICProductWorkItemAssetsGridControl.PrintReport = false;
             this.fld_dgcICProductWorkItemAssetsGridControl.Screen = null;
-            this.fld_dgcICProductWorkItemAssetsGridControl.Size = new System.Drawing.Size(1277, 813);
+            this.fld_dgcICProductWorkItemAssetsGridControl.Size = new System.Drawing.Size(1347, 848);
             this.fld_dgcICProductWorkItemAssetsGridControl.TabIndex = 0;
             // 
             // fld_tabTask
             // 
             this.fld_tabTask.Controls.Add(this.fld_dgcICProductTasksGridControl);
             this.fld_tabTask.Name = "fld_tabTask";
-            this.fld_tabTask.Size = new System.Drawing.Size(1283, 819);
+            this.fld_tabTask.Size = new System.Drawing.Size(1353, 854);
             this.fld_tabTask.Text = "Task";
             // 
             // fld_dgcICProductTasksGridControl
@@ -3575,14 +3621,14 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductTasksGridControl.Name = "fld_dgcICProductTasksGridControl";
             this.fld_dgcICProductTasksGridControl.PrintReport = false;
             this.fld_dgcICProductTasksGridControl.Screen = null;
-            this.fld_dgcICProductTasksGridControl.Size = new System.Drawing.Size(1277, 813);
+            this.fld_dgcICProductTasksGridControl.Size = new System.Drawing.Size(1347, 848);
             this.fld_dgcICProductTasksGridControl.TabIndex = 14;
             // 
             // fld_tabBatchProductItems
             // 
             this.fld_tabBatchProductItems.Controls.Add(this.fld_dgcMMBatchProductItems);
             this.fld_tabBatchProductItems.Name = "fld_tabBatchProductItems";
-            this.fld_tabBatchProductItems.Size = new System.Drawing.Size(1283, 819);
+            this.fld_tabBatchProductItems.Size = new System.Drawing.Size(1353, 854);
             this.fld_tabBatchProductItems.Text = "Lịch sử sản xuất";
             // 
             // fld_dgcMMBatchProductItems
@@ -3607,7 +3653,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcMMBatchProductItems.PrintReport = false;
             this.fld_dgcMMBatchProductItems.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_dgcMMBatchProductItems, true);
-            this.fld_dgcMMBatchProductItems.Size = new System.Drawing.Size(1277, 813);
+            this.fld_dgcMMBatchProductItems.Size = new System.Drawing.Size(1347, 848);
             this.fld_dgcMMBatchProductItems.TabIndex = 32;
             // 
             // xtraTabPage1
@@ -3616,7 +3662,7 @@ namespace BOSERP.Modules.Product.UI
             this.xtraTabPage1.Controls.Add(this.fld_dgcICProductImagesGridControl);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.xtraTabPage1.Size = new System.Drawing.Size(1283, 819);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1353, 854);
             this.xtraTabPage1.Text = "Hình ảnh";
             // 
             // fld_btnAddProductImage
@@ -3662,7 +3708,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductImagesGridControl.Name = "fld_dgcICProductImagesGridControl";
             this.fld_dgcICProductImagesGridControl.PrintReport = false;
             this.fld_dgcICProductImagesGridControl.Screen = null;
-            this.fld_dgcICProductImagesGridControl.Size = new System.Drawing.Size(1277, 777);
+            this.fld_dgcICProductImagesGridControl.Size = new System.Drawing.Size(1347, 812);
             this.fld_dgcICProductImagesGridControl.TabIndex = 0;
             // 
             // xtraTabPage2
@@ -3670,7 +3716,7 @@ namespace BOSERP.Modules.Product.UI
             this.xtraTabPage2.Controls.Add(this.fld_dgcICProductDetails);
             this.xtraTabPage2.Controls.Add(this.AddProductDetail);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1283, 819);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1353, 854);
             this.xtraTabPage2.Text = "Chi tiết sản phẩm";
             // 
             // fld_dgcICProductDetails
@@ -3694,7 +3740,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductDetails.Name = "fld_dgcICProductDetails";
             this.fld_dgcICProductDetails.PrintReport = false;
             this.fld_dgcICProductDetails.Screen = null;
-            this.fld_dgcICProductDetails.Size = new System.Drawing.Size(1276, 793);
+            this.fld_dgcICProductDetails.Size = new System.Drawing.Size(1346, 828);
             this.fld_dgcICProductDetails.TabIndex = 2;
             // 
             // AddProductDetail
@@ -4225,7 +4271,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_tabProductMeasureUnits.Controls.Add(this.fld_btnSaveProductMeasureUnit);
             this.fld_tabProductMeasureUnits.Controls.Add(this.fld_dgcICProductMeasureUnits);
             this.fld_tabProductMeasureUnits.Name = "fld_tabProductMeasureUnits";
-            this.fld_tabProductMeasureUnits.Size = new System.Drawing.Size(1295, 937);
+            this.fld_tabProductMeasureUnits.Size = new System.Drawing.Size(1365, 972);
             this.fld_tabProductMeasureUnits.Text = "ĐVT quy đổi";
             // 
             // fld_btnSaveProductMeasureUnit
@@ -4240,7 +4286,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_btnSaveProductMeasureUnit.BOSFieldRelation = null;
             this.fld_btnSaveProductMeasureUnit.BOSPrivilege = null;
             this.fld_btnSaveProductMeasureUnit.BOSPropertyName = null;
-            this.fld_btnSaveProductMeasureUnit.Location = new System.Drawing.Point(1223, 908);
+            this.fld_btnSaveProductMeasureUnit.Location = new System.Drawing.Point(1293, 943);
             this.fld_btnSaveProductMeasureUnit.Name = "fld_btnSaveProductMeasureUnit";
             this.fld_btnSaveProductMeasureUnit.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_btnSaveProductMeasureUnit, true);
@@ -4270,7 +4316,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductMeasureUnits.Name = "fld_dgcICProductMeasureUnits";
             this.fld_dgcICProductMeasureUnits.PrintReport = false;
             this.fld_dgcICProductMeasureUnits.Screen = null;
-            this.fld_dgcICProductMeasureUnits.Size = new System.Drawing.Size(1289, 895);
+            this.fld_dgcICProductMeasureUnits.Size = new System.Drawing.Size(1359, 930);
             this.fld_dgcICProductMeasureUnits.TabIndex = 3;
             this.fld_dgcICProductMeasureUnits.Tag = "DC";
             // 
@@ -4278,7 +4324,7 @@ namespace BOSERP.Modules.Product.UI
             // 
             this.fld_tabProductTemplete.Controls.Add(this.fld_dgcICProductTemplates);
             this.fld_tabProductTemplete.Name = "fld_tabProductTemplete";
-            this.fld_tabProductTemplete.Size = new System.Drawing.Size(1295, 937);
+            this.fld_tabProductTemplete.Size = new System.Drawing.Size(1365, 972);
             this.fld_tabProductTemplete.Text = "Khu vực";
             // 
             // fld_dgcICProductTemplates
@@ -4302,7 +4348,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductTemplates.Name = "fld_dgcICProductTemplates";
             this.fld_dgcICProductTemplates.PrintReport = false;
             this.fld_dgcICProductTemplates.Screen = null;
-            this.fld_dgcICProductTemplates.Size = new System.Drawing.Size(1293, 930);
+            this.fld_dgcICProductTemplates.Size = new System.Drawing.Size(1363, 965);
             this.fld_dgcICProductTemplates.TabIndex = 118;
             this.fld_dgcICProductTemplates.Tag = "DC";
             // 
@@ -4310,7 +4356,7 @@ namespace BOSERP.Modules.Product.UI
             // 
             this.fld_tabBranch.Controls.Add(this.fld_dgcICProductBranchs);
             this.fld_tabBranch.Name = "fld_tabBranch";
-            this.fld_tabBranch.Size = new System.Drawing.Size(1295, 937);
+            this.fld_tabBranch.Size = new System.Drawing.Size(1365, 972);
             this.fld_tabBranch.Text = "Chi nhánh của SP";
             // 
             // fld_dgcICProductBranchs
@@ -4332,7 +4378,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductBranchs.Name = "fld_dgcICProductBranchs";
             this.fld_dgcICProductBranchs.PrintReport = false;
             this.fld_dgcICProductBranchs.Screen = null;
-            this.fld_dgcICProductBranchs.Size = new System.Drawing.Size(1295, 937);
+            this.fld_dgcICProductBranchs.Size = new System.Drawing.Size(1365, 972);
             this.fld_dgcICProductBranchs.TabIndex = 119;
             this.fld_dgcICProductBranchs.Tag = "DC";
             // 
@@ -4340,7 +4386,7 @@ namespace BOSERP.Modules.Product.UI
             // 
             this.fld_tabTolenrance.Controls.Add(this.fld_dgcICProductTolenrances);
             this.fld_tabTolenrance.Name = "fld_tabTolenrance";
-            this.fld_tabTolenrance.Size = new System.Drawing.Size(1295, 937);
+            this.fld_tabTolenrance.Size = new System.Drawing.Size(1365, 972);
             this.fld_tabTolenrance.Text = "Dung sai";
             // 
             // fld_dgcICProductTolenrances
@@ -4365,7 +4411,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductTolenrances.PrintReport = false;
             this.fld_dgcICProductTolenrances.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_dgcICProductTolenrances, true);
-            this.fld_dgcICProductTolenrances.Size = new System.Drawing.Size(1295, 937);
+            this.fld_dgcICProductTolenrances.Size = new System.Drawing.Size(1365, 972);
             this.fld_dgcICProductTolenrances.TabIndex = 10;
             this.fld_dgcICProductTolenrances.Tag = "DC";
             this.fld_dgcICProductTolenrances.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -4381,7 +4427,7 @@ namespace BOSERP.Modules.Product.UI
             // 
             this.xtraTabPage3.Controls.Add(this.fld_dgcICProductCustomers);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1295, 937);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1365, 972);
             this.xtraTabPage3.Text = "Thông tin sản phẩm theo khách hàng";
             // 
             // fld_dgcICProductCustomers
@@ -4403,7 +4449,7 @@ namespace BOSERP.Modules.Product.UI
             this.fld_dgcICProductCustomers.Name = "fld_dgcICProductCustomers";
             this.fld_dgcICProductCustomers.PrintReport = false;
             this.fld_dgcICProductCustomers.Screen = null;
-            this.fld_dgcICProductCustomers.Size = new System.Drawing.Size(1295, 937);
+            this.fld_dgcICProductCustomers.Size = new System.Drawing.Size(1365, 972);
             this.fld_dgcICProductCustomers.TabIndex = 120;
             this.fld_dgcICProductCustomers.Tag = "DC";
             // 
@@ -4417,7 +4463,7 @@ namespace BOSERP.Modules.Product.UI
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1311, 972);
+            this.ClientSize = new System.Drawing.Size(1381, 1007);
             this.Controls.Add(this.bosPanel1);
             this.Controls.Add(this.fld_lblLabel11);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMPD100.IconOptions.Icon")));
@@ -4429,6 +4475,7 @@ namespace BOSERP.Modules.Product.UI
             ((System.ComponentModel.ISupportInitialize)(this.fld_tabProducts)).EndInit();
             this.fld_tabProducts.ResumeLayout(false);
             this.fld_tabInfomation.ResumeLayout(false);
+            this.fld_tabInfomation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bosGroupControl2)).EndInit();
             this.bosGroupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fld_dgcICProductContainerDetails)).EndInit();
@@ -4440,6 +4487,7 @@ namespace BOSERP.Modules.Product.UI
             ((System.ComponentModel.ISupportInitialize)(this.bosGroupControl3)).EndInit();
             this.bosGroupControl3.ResumeLayout(false);
             this.bosGroupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bosMemoEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_pbxConverSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bosMemoEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fld_txtICProductQtyInBox.Properties)).EndInit();
@@ -4744,5 +4792,7 @@ namespace BOSERP.Modules.Product.UI
         private PictureBox fld_pbxConverSize;
         private BOSComponent.BOSLookupEdit fld_lkeICProductCollection;
         private BOSComponent.BOSLabel bosLabel42;
+        private BOSComponent.BOSLabel bosLabel43;
+        private BOSComponent.BOSMemoEdit bosMemoEdit3;
     }
 }

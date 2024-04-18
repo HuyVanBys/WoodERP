@@ -85,6 +85,7 @@ namespace BOSERP
         protected int _fK_ACAccountID;
         protected String _iCStockPrefix = String.Empty;
         protected bool _iCStockIsSemiProduct = false;
+        protected String _iCStockNumberType = String.Empty;
         #endregion
 
         #region Public properties
@@ -769,6 +770,18 @@ namespace BOSERP
                 {
                     _iCStockIsSemiProduct = value;
                     NotifyChanged("ICStockIsSemiProduct");
+                }
+            }
+        }
+        public String ICStockNumberType
+        {
+            get { return _iCStockNumberType; }
+            set
+            {
+                if (value != this._iCStockNumberType)
+                {
+                    _iCStockNumberType = value;
+                    NotifyChanged("ICStockNumberType");
                 }
             }
         }

@@ -137,5 +137,6 @@
         public const string PositionRange = "PositionRange";
         public const string UpdatePosition = "UpdatePosition";
         public const string FalseConditional = "FalseConditional";
+        public const string RevenueForecast = "RevenueForecast";
     }
 }

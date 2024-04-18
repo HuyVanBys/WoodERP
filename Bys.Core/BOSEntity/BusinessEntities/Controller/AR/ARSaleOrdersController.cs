@@ -797,11 +797,11 @@ namespace BOSERP
             DataSet ds = dal.GetDataSet("ARSaleOrder_CheckInvalidateToolbarAfterCompleting", saleOrderID);
             if (ds.Tables[0].Rows.Count != 0)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 

@@ -2340,6 +2340,12 @@
     <Compile Include="Modules\AD\Report\UI\RP245.Designer.cs">
       <DependentUpon>RP245.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\AD\Report\UI\RP_RevenueByCustomer 1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AD\Report\UI\RP_RevenueByCustomer 1.Designer.cs">
+      <DependentUpon>RP_RevenueByCustomer 1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\AD\Report\UI\RP_RevenueByCustomerType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2370,6 +2376,18 @@
     <Compile Include="Modules\AD\Report\UI\RP246.Designer.cs">
       <DependentUpon>RP246.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\AR\DeliveryPlan\UI\guiExtraPropertiesPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AR\DeliveryPlan\UI\guiExtraPropertiesPrint.Designer.cs">
+      <DependentUpon>guiExtraPropertiesPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AR\RevenueForecast\UI\guiUpdateRealityComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AR\RevenueForecast\UI\guiUpdateRealityComment.Designer.cs">
+      <DependentUpon>guiUpdateRealityComment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\AR\SaleOrder\UI\GridControl\UpdateSaleOrderItemAllocationFeesGridControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2382,6 +2400,26 @@
     <Compile Include="Modules\AR\SaleOrder\UI\guiUpdateOtherFees.Designer.cs">
       <DependentUpon>guiUpdateOtherFees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\AR\RevenueForecast\UI\DMRF100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AR\RevenueForecast\UI\DMRF100.designer.cs">
+      <DependentUpon>DMRF100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AR\RevenueForecast\UI\GridControl\RevenueForecastItemsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AR\RevenueForecast\UI\GridControl\RevenueForecastItemsGridControl.Designer.cs">
+      <DependentUpon>RevenueForecastItemsGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AR\RevenueForecast\UI\SMRF100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AR\RevenueForecast\UI\SMRF100.designer.cs">
+      <DependentUpon>SMRF100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AR\RevenueForecast\RevenueForecastEntities.cs" />
+    <Compile Include="Modules\AR\RevenueForecast\RevenueForecastModule.cs" />
     <Compile Include="Modules\IC\BarCode\UI\GridControl\ICBarcodeItemGridControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -14284,6 +14322,9 @@
     <EmbeddedResource Include="Modules\AD\Report\UI\RP211.resx">
       <DependentUpon>RP211.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AD\Report\UI\RP_RevenueByCustomer 1.resx">
+      <DependentUpon>RP_RevenueByCustomer 1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\AD\Report\UI\RP_RevenueByCustomerType.resx">
       <DependentUpon>RP_RevenueByCustomerType.cs</DependentUpon>
     </EmbeddedResource>
@@ -14804,6 +14845,9 @@
     <EmbeddedResource Include="Modules\AR\DeliveryPlan\UI\GridControl\ARDeliveryPlansSearchGridControl.resx">
       <DependentUpon>ARDeliveryPlansSearchGridControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AR\DeliveryPlan\UI\guiExtraPropertiesPrint.resx">
+      <DependentUpon>guiExtraPropertiesPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\AR\DeliveryPlan\UI\guiAttributionItemToTruck.resx">
       <DependentUpon>guiAttributionItemToTruck.cs</DependentUpon>
     </EmbeddedResource>
@@ -14966,6 +15010,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\AR\ReceptionEquipment\UI\SMRE100.resx">
       <DependentUpon>SMRE100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AR\RevenueForecast\UI\guiUpdateRealityComment.resx">
+      <DependentUpon>guiUpdateRealityComment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\AR\SaleContract\Localization\SaleContractLocalizedResources.resx" />
     <EmbeddedResource Include="Modules\AR\SaleContract\UI\DMSCS100.resx">
@@ -15171,6 +15218,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\AR\TransferPlan\UI\SMTFP100.resx">
       <DependentUpon>SMTFP100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AR\RevenueForecast\UI\DMRF100.resx">
+      <DependentUpon>DMRF100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AR\RevenueForecast\UI\SMRF100.resx">
+      <DependentUpon>SMRF100.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\BR\BranchServer\UI\DMBR100.resx">
       <DependentUpon>DMBR100.cs</DependentUpon>
@@ -17201,6 +17254,7 @@
     <Folder Include="Modules\AP\ReturnSupplier\BusinessEntities\Controller\" />
     <Folder Include="Modules\AP\ReturnSupplier\BusinessEntities\Info\" />
     <Folder Include="Modules\AR\CreditNote\UI\GridControl\" />
+    <Folder Include="Modules\AR\RevenueForecast\Locolization\" />
     <Folder Include="Modules\BR\BranchServer\UI\GridControl\" />
     <Folder Include="Modules\GE\AccountingFormula\Localization\" />
     <Folder Include="Modules\GE\Common\UI\GridControl\" />

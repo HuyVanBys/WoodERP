@@ -1510,7 +1510,8 @@ namespace BOSERP.Modules.MaterialShipment
             objShipmentItemsInfo.ICShipmentItemWidth = item.MMAllocationPlanItemWidth;
             objShipmentItemsInfo.ICShipmentItemHeight = item.MMAllocationPlanItemHeight;
             objShipmentItemsInfo.ICShipmentItemComment = item.MMAllocationPlanItemComment;
-            objShipmentItemsInfo.ICShipmentItemProductExchangeQty = item.MMAllocationPlanItemQty;
+            objShipmentItemsInfo.ICShipmentItemProductExchangeQty = item.MMAllocationPlanItemQty * item.ICProductMeasureUnitFactor;
+            objShipmentItemsInfo.ICShipmentItemProductFactor = item.ICProductMeasureUnitFactor;
             objShipmentItemsInfo.FK_ICProductAttributeQualityID = item.FK_ICProductAttributeQualityID;
             objShipmentItemsInfo.ICShipmentItemBatchProductItemProductSerial = item.MMAllocationPlanItemBatchProductItemProductSerial;
             objShipmentItemsInfo.ICShipmentItemQty6 = item.MMAllocationPlanItemNormQty;
@@ -1952,6 +1953,7 @@ namespace BOSERP.Modules.MaterialShipment
             MaterialShipmentEntities entity = (MaterialShipmentEntities)CurrentModuleEntity;
             ICShipmentsInfo mainobject = (ICShipmentsInfo)CurrentModuleEntity.MainObject;
             decimal oldProductFactor = item.ICShipmentItemProductFactor;
+            decimal oldExchangeQty = item.ICShipmentItemProductExchangeQty;
             ICMeasureUnitsController objMeasureUnitsController = new ICMeasureUnitsController();
             List<ICMeasureUnitsInfo> measureUnitList = objMeasureUnitsController.GetAllAliveMeasureUnit();
             if (columnName == "FK_ICMeasureUnitID")
@@ -1959,6 +1961,7 @@ namespace BOSERP.Modules.MaterialShipment
                 ICProductMeasureUnitsController controller = new ICProductMeasureUnitsController();
                 ICProductMeasureUnitsInfo measureUnit = controller.GetProductMeasureUnitByProductIDAndMeasureUnitID(item.FK_ICProductID, item.FK_ICMeasureUnitID);
                 item.ICShipmentItemProductFactor = (measureUnit != null && measureUnit.ICProductMeasureUnitFactor > 0) ? measureUnit.ICProductMeasureUnitFactor : 1;
+                item.ICShipmentItemProductQty = oldExchangeQty / (item.ICShipmentItemProductFactor > 0 ? item.ICShipmentItemProductFactor : 1);
                 if (oldProductFactor > 0 && oldProductFactor != item.ICShipmentItemProductFactor && item.ICShipmentItemProductQty > 0)
                 {
                     item.ICShipmentItemProductQty = (item.ICShipmentItemProductQty * oldProductFactor) / item.ICShipmentItemProductFactor;

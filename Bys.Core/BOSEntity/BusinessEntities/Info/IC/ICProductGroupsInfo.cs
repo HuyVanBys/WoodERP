@@ -40,6 +40,7 @@ namespace BOSERP
         protected int _iCProductGroupConfigLength;
         protected int _iCProductGroupConfigGroupNoLength;
         protected int _fK_GEVATID;
+        protected String _iCProductGroupAbbreviation = String.Empty;
         #endregion
 
         #region Public properties
@@ -256,6 +257,18 @@ namespace BOSERP
                 {
                     _fK_GEVATID = value;
                     NotifyChanged("FK_GEVATID");
+                }
+            }
+        }
+        public String ICProductGroupAbbreviation
+        {
+            get { return _iCProductGroupAbbreviation; }
+            set
+            {
+                if (value != this._iCProductGroupAbbreviation)
+                {
+                    _iCProductGroupAbbreviation = value;
+                    NotifyChanged("ICProductGroupAbbreviation");
                 }
             }
         }

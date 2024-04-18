@@ -21,12 +21,12 @@ namespace BOSERP.Modules.FalseConditional
         /// Invalidate data source
         /// </summary>
         /// <param name="dataSource">Data source</param>
-        public override void InitGridControlDataSource()
+        public void InvalidateDataSource(BOSList<MMFalseConditionalDetailsInfo> dataSource)
         {
-            FalseConditionalEntities entity = (FalseConditionalEntities)((BaseModuleERP)Screen.Module).CurrentModuleEntity;
             BindingSource bds = new BindingSource();
-            bds.DataSource = entity.FalseConditionalDetailsList;
-            this.DataSource = bds;
+            bds.DataSource = dataSource;
+            DataSource = bds;
+            RefreshDataSource();
         }
         protected override GridView InitializeGridView()
         {
@@ -43,6 +43,45 @@ namespace BOSERP.Modules.FalseConditional
         protected override void AddColumnsToGridView(string strTableName, GridView gridView)
         {
             base.AddColumnsToGridView(strTableName, gridView);
+
+            GridColumn column = new GridColumn();
+            column.Caption = "Tên lỗi";
+            column.FieldName = "MMFalseConditionalDetailName";
+            column.OptionsColumn.AllowEdit = false;
+            column.VisibleIndex = 0;
+            gridView.Columns.Add(column);
+
+            column = new GridColumn();
+            column.Caption = "Giới hạn % tối đa cho phép";
+            column.FieldName = "MMFalseConditionalDetailLimit";
+            column.OptionsColumn.AllowEdit = false;
+            column.VisibleIndex = 1;
+            gridView.Columns.Add(column);
+
+            column = new GridColumn();
+            column.Caption = "% Lỗi";
+            column.FieldName = "MMFalseConditionalDetailPercent";
+            column.OptionsColumn.AllowEdit = false;
+            column.VisibleIndex = 2;
+            column.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            column.DisplayFormat.FormatString = "{0:n2}";
+            gridView.Columns.Add(column);
+
+            column = new GridColumn();
+            column.Caption = "Số lượng";
+            column.FieldName = "MMFalseConditionalDetailQty";
+            column.OptionsColumn.AllowEdit = false;
+            column.VisibleIndex = 3;
+            column.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            column.DisplayFormat.FormatString = "{0:n0}";
+            gridView.Columns.Add(column);
+
+            column = new GridColumn();
+            column.Caption = "Ghi chú";
+            column.FieldName = "MMFalseConditionalDetailComment";
+            column.OptionsColumn.AllowEdit = false;
+            column.VisibleIndex = 4;
+            gridView.Columns.Add(column);
         }
         protected override void GridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {

@@ -1797,6 +1797,7 @@ namespace BOSERP.Modules.SaleOrder
         {
             ARCustomerPaymentsController objCustomerPaymentsController = new ARCustomerPaymentsController();
             ARSaleOrdersInfo mainObject = (ARSaleOrdersInfo)MainObject;
+            mainObject.ARListOfSalesChannelType = String.Empty;
             string oldReceiptVoucherNo = string.Empty;
             string oldBankTransferNo = string.Empty;
             //Delete all payment data first

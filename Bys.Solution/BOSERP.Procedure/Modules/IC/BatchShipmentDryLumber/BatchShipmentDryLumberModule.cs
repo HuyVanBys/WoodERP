@@ -1615,7 +1615,8 @@ namespace BOSERP.Modules.BatchShipmentDryLumber
             objShipmentItemsInfo.ICShipmentItemWidth = item.MMAllocationPlanItemWidth;
             objShipmentItemsInfo.ICShipmentItemHeight = item.MMAllocationPlanItemHeight;
             objShipmentItemsInfo.ICShipmentItemComment = item.MMAllocationPlanItemComment;
-            objShipmentItemsInfo.ICShipmentItemProductExchangeQty = item.MMAllocationPlanItemQty;
+            objShipmentItemsInfo.ICShipmentItemProductExchangeQty = item.MMAllocationPlanItemQty * item.ICProductMeasureUnitFactor;
+            objShipmentItemsInfo.ICShipmentItemProductFactor = item.ICProductMeasureUnitFactor;
             objShipmentItemsInfo.ICShipmentItemExchangeUnitCost = item.MMAllocationPlanItemUnitCost;
             objShipmentItemsInfo.ICShipmentItemExchangeTotalCost = item.MMAllocationPlanItemUnitCost * item.MMAllocationPlanItemQty;
             objShipmentItemsInfo.ICShipmentItemProductUnitCost = item.MMAllocationPlanItemUnitCost;
@@ -2012,6 +2013,7 @@ namespace BOSERP.Modules.BatchShipmentDryLumber
                 ICProductMeasureUnitsController controller = new ICProductMeasureUnitsController();
                 ICProductMeasureUnitsInfo measureUnit = controller.GetProductMeasureUnitByProductIDAndMeasureUnitID(item.FK_ICProductID, item.FK_ICMeasureUnitID);
                 item.ICShipmentItemProductFactor = (measureUnit != null && measureUnit.ICProductMeasureUnitFactor > 0) ? measureUnit.ICProductMeasureUnitFactor : 1;
+                item.ICShipmentItemProductQty = oldExchangeQty / (item.ICShipmentItemProductFactor > 0 ? item.ICShipmentItemProductFactor : 1);
                 if (oldProductFactor > 0 && oldProductFactor != item.ICShipmentItemProductFactor && item.ICShipmentItemProductUnitCost > 0)
                 {
                     decimal unitCost = (item.ICShipmentItemProductUnitCost / oldProductFactor) * item.ICShipmentItemProductFactor;

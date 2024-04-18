@@ -17,7 +17,6 @@ namespace BOSERP.Modules.FalseConditional
 
         #region Public Properties
         public BOSList<MMFalseConditionalItemsInfo> FalseConditionalItemList { get; set; }
-        public BOSList<MMFalseConditionalDetailsInfo> FalseConditionalDetailsList { get; set; }
         #endregion
 
         #region Constructor
@@ -25,7 +24,6 @@ namespace BOSERP.Modules.FalseConditional
             : base()
         {
             FalseConditionalItemList = new BOSList<MMFalseConditionalItemsInfo>();
-            FalseConditionalDetailsList = new BOSList<MMFalseConditionalDetailsInfo>();
         }
 
         #endregion
@@ -93,6 +91,19 @@ namespace BOSERP.Modules.FalseConditional
             DataSet ds = (DataSet)objFalseConditionalItemsController.GetItemByFalseConditionalID(iObjectID);
             FalseConditionalItemList.Invalidate(ds);
             FalseConditionalItemList.GridControl?.RefreshDataSource();
+            foreach (MMFalseConditionalItemsInfo objFalseConditionalItemsInfo in FalseConditionalItemList)
+            {
+                objFalseConditionalItemsInfo.MMFalseConditionalDetailList = new BOSList<MMFalseConditionalDetailsInfo>();
+                objFalseConditionalItemsInfo.MMFalseConditionalDetailList.InitBOSList(this,
+                                                                                        TableName.MMFalseConditionalItemsTableName,
+                                                                                        TableName.MMFalseConditionalDetailsTableName,
+                                                                                        BOSList<ARClearingDetailsInfo>.cstRelationNone);
+                objFalseConditionalItemsInfo.MMFalseConditionalDetailList.ItemTableForeignKey = "FK_MMFalseConditionalItemID";
+
+                MMFalseConditionalDetailsController objFalseConditionalDetailsController = new MMFalseConditionalDetailsController();
+                List<MMFalseConditionalDetailsInfo> listFalseConditionalDetail = objFalseConditionalDetailsController.GetDetailByFalseConditionalItemID(objFalseConditionalItemsInfo.MMFalseConditionalItemID);
+                objFalseConditionalItemsInfo.MMFalseConditionalDetailList.Invalidate(listFalseConditionalDetail);
+            }
         }
 
         #endregion
@@ -102,6 +113,7 @@ namespace BOSERP.Modules.FalseConditional
         {
             base.SaveModuleObjects();
             FalseConditionalItemList.SaveItemObjects();
+            SaveFalseConditionalDetail(FalseConditionalItemList);
         }
         public override bool CompleteTransaction()
         {
@@ -111,6 +123,25 @@ namespace BOSERP.Modules.FalseConditional
             UpdateMainObject();
             return true;
         }
-            #endregion
+        public void SaveFalseConditionalDetail(BOSList<MMFalseConditionalItemsInfo> falseConditionalItemList)
+        {
+            MMFalseConditionalDetailsController objFalseConditionalDetailsController = new MMFalseConditionalDetailsController();
+            if (falseConditionalItemList != null)
+            {
+                foreach (MMFalseConditionalItemsInfo itemEntity in falseConditionalItemList)
+                {
+                    if (itemEntity.MMFalseConditionalDetailList != null)
+                    {
+                        foreach (MMFalseConditionalDetailsInfo objFalseConditionalDetailsInfo in itemEntity.MMFalseConditionalDetailList)
+                        {
+                            objFalseConditionalDetailsInfo.FK_MMFalseConditionalItemID = itemEntity.MMFalseConditionalItemID;
+                            objFalseConditionalDetailsInfo.FK_MMFalseConditionalID = itemEntity.FK_MMFalseConditionalID;
+                        }
+                        itemEntity.MMFalseConditionalDetailList.SaveItemObjects();
+                    }
+                }
+            }
         }
+        #endregion
+    }
 }

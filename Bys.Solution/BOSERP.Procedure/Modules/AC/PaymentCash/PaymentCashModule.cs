@@ -789,6 +789,21 @@ namespace BOSERP.Modules.PaymentCash
             }
         }
 
+        public void ActionPrintAccountingVoucher()
+        {
+            if (Toolbar.IsNullOrNoneAction() && Toolbar.CurrentObjectID > 0)
+            {
+                ADReportsController objReportsController = new ADReportsController();
+                RPPaymentCashAccountingVoucher report = new RPPaymentCashAccountingVoucher();
+                List<ACBankTransactionItemsInfo> bankTransactionItemList = objReportsController.GetBankTransactionItemList(Toolbar.CurrentObjectID);
+
+                report.DataSource = bankTransactionItemList;
+                InitBankTransactionReport(report);
+                guiReportPreview reviewer = new guiReportPreview(report, BOSCommon.Constants.Report.DevRPPaymentCashPath, true);
+                reviewer.Show();
+            }
+        }
+
         public void ActionPrintPaymentCashPayment()
         {
             if (Toolbar.IsNullOrNoneAction() && Toolbar.CurrentObjectID > 0)
@@ -856,8 +871,15 @@ namespace BOSERP.Modules.PaymentCash
             ACBankTransactionsController objBankTransactionsController = new ACBankTransactionsController();
             ACBankTransactionsInfo objBankTransactionsInfo = objBankTransactionsController.GetBankTransactionByID(Toolbar.CurrentObjectID);
 
-            XRLabel currentCompany = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["rp_xrlCurrentCompany"];
-            currentCompany.Text = BOSApp.CurrentCompanyInfo.CSCompanyDesc;
+            CSCompanyBanksController cbController = new CSCompanyBanksController();
+            CSCompanyBanksInfo cbf = (CSCompanyBanksInfo)cbController.GetObjectByID(objBankTransactionsInfo.FK_CSCompanyBankID);
+            CSCompanyBanksInfo cbt = (CSCompanyBanksInfo)cbController.GetObjectByID(objBankTransactionsInfo.FK_ToCSCompanyBankID);
+
+            XRLabel xrlblDetail = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["xrlblDetail"];
+            if (xrlblDetail != null)
+                xrlblDetail.Text = "Từ Ngân hàng: " + (cbf != null ? cbf.CSCompanyBankName : "...........................") + " Tài khoản ngân hàng: " + (cbf != null ? cbf.CSCompanyBankAccount : "...........................") +
+                    " Đến ngân hàng " + (cbt != null ? cbt.CSCompanyBankName : "...........................") + " Tài khoản ngân hàng " + (cbt != null ? cbt.CSCompanyBankAccount : "...........................");
+            
             if (objBankTransactionsInfo != null)
             {
                 if (objBankTransactionsInfo.ACBankTransactionTotalAmount != 0)
@@ -865,11 +887,16 @@ namespace BOSERP.Modules.PaymentCash
                     XRLabel amountWordTop = (XRLabel)report.Bands[BandKind.ReportFooter].Controls["xr_lblReadAmount"];
                     if (amountWordTop != null)
                     {
-                        amountWordTop.Text = ConvertAmountToWord.ReadAmount(objBankTransactionsInfo.ACBankTransactionTotalAmount.ToString(),
-                                                                            objBankTransactionsInfo.FK_GECurrencyID);
+                        amountWordTop.Text = ConvertAmountToWord.ReadAmount(objBankTransactionsInfo.ACBankTransactionExchangeAmount.ToString(),
+                                                                            100000);
+                        amountWordTop.Text = amountWordTop.Text.Replace("chẵn","");
                     }
                 }
             }
+
+            XRLabel currentCompany = (XRLabel)report.Bands[BandKind.ReportHeader].Controls["rp_xrlCurrentCompany"];
+            if (currentCompany != null)
+                currentCompany.Text = BOSApp.CurrentCompanyInfo.CSCompanyDesc;
         }
 
         public void InitPaymentCashReport(XtraReport report, string reportType)

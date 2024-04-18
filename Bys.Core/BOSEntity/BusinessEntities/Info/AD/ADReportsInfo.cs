@@ -302,10 +302,58 @@ namespace BOSERP
         public string ICProductNoOfOldSys { get; set; }
         public string ARInvoiceItemProductName { get; set; }
         public string ARCustomerTypeCombo { get; set; }
+        public int ARCustomerID { get; set; }
+        public string ARCustomerNo { get; set; }
+        public string ARCustomerDeliveryAddressLine1 { get; set; }
+        public string StateProvince { get; set; }
+        public string LocalArea { get; set; }
+        public string ARCustomerTypeName { get; set; }
+        public string ProductGroupAbbreviation { get; set; }
+        public string ARCustomerContactName { get; set; }
+        public string ARCustomerContactPhone { get; set; }
+        public string ARCustomerContactEmail1 { get; set; }
+        public string ARCustomerDesc { get; set; }
         public string ICProductGroupName { get; set; }
         public string HREmployeeName { get; set; }
+        public string Comment { get; set; }
         public string Nam { get; set; }
         public decimal DoanhThu { get; set; }
+        public decimal DoanhThuLienKeThang1Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang2Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang3Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang4Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang5Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang6Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang7Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang8Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang9Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang10Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang11Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang12Nam1 { get; set; }
+        public decimal DoanhThuLienKeThang1Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang2Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang3Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang4Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang5Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang6Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang7Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang8Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang9Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang10Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang11Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang12Nam2 { get; set; }
+        public decimal DoanhThuLienKeThang1Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang2Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang3Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang4Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang5Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang6Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang7Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang8Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang9Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang10Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang11Nam3 { get; set; }
+        public decimal DoanhThuLienKeThang12Nam3 { get; set; }
         public decimal DoanhThuThang1 { get; set; }
         public decimal DoanhThuThang2 { get; set; }
         public decimal DoanhThuThang3 { get; set; }
@@ -318,6 +366,29 @@ namespace BOSERP
         public decimal DoanhThuThang10 { get; set; }
         public decimal DoanhThuThang11 { get; set; }
         public decimal DoanhThuThang12 { get; set; }
+        public decimal DoanhThuThucTeThang1 { get; set; }
+        public decimal DoanhThuThucTeThang2 { get; set; }
+        public decimal DoanhThuThucTeThang3 { get; set; }
+        public decimal DoanhThuThucTeThang4 { get; set; }
+        public decimal DoanhThuThucTeThang5 { get; set; }
+        public decimal DoanhThuThucTeThang6 { get; set; }
+        public decimal DoanhThuThucTeThang7 { get; set; }
+        public decimal DoanhThuThucTeThang8 { get; set; }
+        public decimal DoanhThuThucTeThang9 { get; set; }
+        public decimal DoanhThuThucTeThang10 { get; set; }
+        public decimal DoanhThuThucTeThang11 { get; set; }
+        public decimal DoanhThuThucTeThang12 { get; set; }
+        public decimal DoanhThuThucTe{ get; set; }
+        public decimal DoanhThuThucTeQuy1 { get; set; }
+        public decimal DoanhThuThucTeQuy2 { get; set; }
+        public decimal DoanhThuThucTeQuy3 { get; set; }
+        public decimal DoanhThuThucTeQuy4 { get; set; }
+        public decimal ARRevenueForecastItemPredictAmount { get; set; }
+        public decimal ARRevenueForecastItemPredictSalePercent { get; set; }
+        public decimal ARRevenueForecastItemPredictSaleAmount { get; set; }
+        public decimal ARRevenueForecastItemPredictAcceptPercent { get; set; }
+        public decimal ARRevenueForecastItemPredictAcceptAmount { get; set; }
+        public decimal TyLeDatDuoc { get; set; }
 
         #endregion
 

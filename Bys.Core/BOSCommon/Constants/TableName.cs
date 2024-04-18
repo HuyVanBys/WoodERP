@@ -868,5 +868,7 @@
         public const string ADDefaultDescConfigsTableName = "ADDefaultDescConfigs";
         public const string ICBarcodeItemsTableName = "ICBarcodeItems";
         public const string ICBarcodesTableName = "ICBarcodes";
+        public const string ARRevenueForecastsTableName = "ARRevenueForecasts";
+        public const string ARRevenueForecastItemsTableName = "ARRevenueForecastItems";
     }
 }

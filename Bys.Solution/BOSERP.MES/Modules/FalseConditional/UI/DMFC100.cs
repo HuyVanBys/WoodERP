@@ -27,7 +27,11 @@ namespace BOSERP.Modules.FalseConditional.UI
 
         private void bosTextBox4_Validated(object sender, EventArgs e)
         {
-            ((FalseConditionalModule)Module).AddItemToFalseConditionalItemList();
+            BOSComponent.BOSTextBox tb = (BOSComponent.BOSTextBox)sender;
+            if (tb.OldEditValue != null && tb.OldEditValue != tb.EditValue)
+            {
+                ((FalseConditionalModule)Module).AddItemToFalseConditionalItemList();
+            }
         }
     }
 }

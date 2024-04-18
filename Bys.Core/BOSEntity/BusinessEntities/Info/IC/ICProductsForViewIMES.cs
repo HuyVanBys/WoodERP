@@ -2064,6 +2064,7 @@ namespace BOSERP
         public DateTime MMProductionNormCreatedDate { get; set; }
         public string HREmployeeName { get; set; }
         public string ACObjectName { get; set; }
+        public string ARCustomerNo { get; set; }
         #endregion
     }
 }

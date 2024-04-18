@@ -92,6 +92,12 @@ namespace BOSERP.Modules.Proposal
             repoItemBtnEdit.ButtonClick += RepoItemBtnEdit_ButtonClick;
             column.ColumnEdit = repoItemBtnEdit;
             gridView.Columns.Add(column);
+
+            column = new DevExpress.XtraGrid.Columns.GridColumn();
+            column.Caption = "Số lượng sp/cont";
+            column.FieldName = "APProposalItemContainerProductQty";
+            column.OptionsColumn.AllowEdit = false;
+            gridView.Columns.Add(column);
         }
 
         protected override DevExpress.XtraGrid.Views.Grid.GridView InitializeGridView()
@@ -253,6 +259,11 @@ namespace BOSERP.Modules.Proposal
                 column.ColumnEdit = rpMeasureUnit;
             }
             gridView.CellValueChanging += GridView_CellValueChanging;
+            column = gridView.Columns["ICProductContainerType"];
+            if (column != null)
+            {
+                column.OptionsColumn.AllowEdit = true;
+            }    
             return gridView;
         }
 
@@ -607,6 +618,13 @@ namespace BOSERP.Modules.Proposal
                         entity.SetProductPriceByProductUnitPrice(item);
                     }
                 }
+                if (e.Column.FieldName == "ICProductContainerType")
+                {
+                    ICProductContainerDetailsController objProductContainerDetailsController  = new ICProductContainerDetailsController();
+                    ICProductContainerDetailsInfo objProductContainerDetailsInfo = (ICProductContainerDetailsInfo)objProductContainerDetailsController.GetContainerDetailByProductIDAndContType(item.FK_ICProductID, item.ICProductContainerType);
+                    if (objProductContainerDetailsInfo != null)
+                        item.APProposalItemContainerProductQty = objProductContainerDetailsInfo.ICProductContainerDetailQty;
+                }    
                 (entity.Module as ProposalModule).ChangeItemFromProposalItemsList();
             }
         }

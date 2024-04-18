@@ -4204,7 +4204,7 @@ namespace BOSERP.Modules.PurchaseReceipt
                             o.ICReceiptItemProductExchangeQty = Math.Round(o.ICReceiptItemProductExchangeQty, RoundingNumber.FormatN6, MidpointRounding.AwayFromZero);
                             entity.ReceiptItemsList.GridControl?.RefreshDataSource();
                         }
-                        o.ICReceiptItemCode01Combo = objFalseConditionalItemsInfo.MMFalseConditionalItemHumidity.ToString("n2");
+                        o.ICReceiptItemCode01Combo = objFalseConditionalItemsInfo.MMFalseConditionalItemHumidity.ToString();
                     }    
                 });
             }

@@ -670,11 +670,11 @@ namespace BOSERP.Modules.SaleOrder
             ADConfigValuesController objConfigValuesController = new ADConfigValuesController();
             List<ADConfigValuesInfo> ConfigValuesList = new List<ADConfigValuesInfo>();
             ADConfigValuesInfo objConfigValuesInfo = new ADConfigValuesInfo();
-            ConfigValuesList = objConfigValuesController.GetADConfigValuesByKeyGroup(ConfigValueGroup.ListOfSalesChannelType);
-            if (ConfigValuesList != null && ConfigValuesList.Count > 0)
-            {
-                mainObject.ARListOfSalesChannelType = ConfigValuesList[0].ADConfigKeyValue;
-            }
+            //ConfigValuesList = objConfigValuesController.GetADConfigValuesByKeyGroup(ConfigValueGroup.ListOfSalesChannelType);
+            //if (ConfigValuesList != null && ConfigValuesList.Count > 0)
+            //{
+            //    mainObject.ARListOfSalesChannelType = ConfigValuesList[0].ADConfigKeyValue;
+            //}
 
             SaleOrderInternalCommentRichEdit.Text = String.Empty;
             SaleOrderCommentEditControl.Text = String.Empty;
@@ -1923,11 +1923,9 @@ namespace BOSERP.Modules.SaleOrder
                 }    
 
                 ARSaleOrdersController objSaleOrdersController = new ARSaleOrdersController();
+                // Chưa làm DNSX
                 bool check = objSaleOrdersController.CheckInvalidateToolbarAfterCompleting(objSaleOrdersInfo.ARSaleOrderID);
-                if (objSaleOrdersInfo.ARSaleOrderBatchStatus == SaleOrderBatchStatus.Proposed.ToString() ||
-                    objSaleOrdersInfo.ARSaleOrderBatchStatus == SaleOrderBatchStatus.Producing.ToString() ||
-                    objSaleOrdersInfo.ARSaleOrderBatchStatus == SaleOrderBatchStatus.Complete.ToString() ||
-                    check == false)
+                if (!check)
                 {
                     ParentScreen.SetEnableOfToolbarButton(SaleOrderModule.ToolbarButtonEditAfterCompleting, false);
                 }

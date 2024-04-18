@@ -4782,7 +4782,7 @@ namespace BOSERP.Modules.Proposal
             if (guiFind.DialogResult == DialogResult.OK)
             {
                 List<ARProposalItemsInfo> dataSource = (List<ARProposalItemsInfo>)guiFind.SelectedObjects;
-                report.DataSource = dataSource;
+                report.DataSource = dataSource.OrderBy(o=> o.ARProposalItemSortOrder).ThenBy(x => x.ARProposalItemID);
                 report.LoadLayout(rptFile);
 
                 reviewer = new guiReportPreview(report, true);

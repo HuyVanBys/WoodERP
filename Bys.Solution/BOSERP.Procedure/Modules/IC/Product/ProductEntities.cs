@@ -1125,7 +1125,23 @@ namespace BOSERP.Modules.Product
             }
 
         }
-
+        public void GenerateProductCustomer()
+        {
+            ICProductsInfo mainObject = (ICProductsInfo)MainObject;
+            ICProductCustomersController objProductCustomersController = new ICProductCustomersController();
+            ICProductCustomersInfo objProductCustomersInfo = new ICProductCustomersInfo();
+            objProductCustomersInfo.AACreatedDate = DateTime.Now;
+            objProductCustomersInfo.AACreatedUser = BOSApp.CurrentUsersInfo.ADUserName;
+            objProductCustomersInfo.FK_ICProductID = mainObject.ICProductID;
+            objProductCustomersInfo.ICProductCustomerNumber = mainObject.ICProductCustomerNumber;
+            objProductCustomersInfo.ICProductCustomerName = mainObject.ICProductName;
+            objProductCustomersInfo.ICProductCustomerPackagingDetail = mainObject.ICProductPackagingDetailEnglish;
+            objProductCustomersInfo.ICProductCustomerPackagingInfoVietnam = mainObject.ICProductPackagingDetail;
+            objProductCustomersInfo.ICProductCustomerProductionComment = string.Format("- Mô tả: {0}" + Environment.NewLine + "- KT: {1}" + Environment.NewLine + "- ĐG: {2}",
+                                                                                            mainObject.ICProductName2,
+                                                                                            string.Format("{0}x{1}x{2}mm", (int)mainObject.ICProductWidth, (int)mainObject.ICProductLength, (int)mainObject.ICProductHeight),
+                                                                                            mainObject.ICProductPackagingDetail);
+        }
         private void InvalidProductTemplate()
         {
             ICProductsInfo mainObject = (ICProductsInfo)this.MainObject;

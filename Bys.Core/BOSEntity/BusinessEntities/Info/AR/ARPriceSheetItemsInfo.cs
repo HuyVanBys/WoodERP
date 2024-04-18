@@ -56,6 +56,10 @@ namespace BOSERP
 		protected decimal _aRPriceSheetItemCostingPrice;
 		protected bool _aRPriceSheetItemSOQ = false;
 		protected int _aRPriceSheetItemSortOrder;
+		protected decimal _aRPriceSheetItemSpecificQty;
+		protected decimal _aRPriceSheetItemSpecificPrice;
+		protected decimal _aRPriceSheetItemLowerSpecificPrice;
+		protected decimal _aRPriceSheetItemUpperSpecificPrice;
 		#endregion
 
 		#region Public properties
@@ -431,6 +435,54 @@ namespace BOSERP
 				}					
             }
         }
+		public decimal ARPriceSheetItemSpecificQty
+		{
+			get { return _aRPriceSheetItemSpecificQty; }
+			set
+			{
+				if (value != this._aRPriceSheetItemSpecificQty)
+				{
+					_aRPriceSheetItemSpecificQty = value;
+					NotifyChanged("ARPriceSheetItemSpecificQty");
+				}
+			}
+		}
+		public decimal ARPriceSheetItemSpecificPrice
+		{
+			get { return _aRPriceSheetItemSpecificPrice; }
+			set
+			{
+				if (value != this._aRPriceSheetItemSpecificPrice)
+				{
+					_aRPriceSheetItemSpecificPrice = value;
+					NotifyChanged("ARPriceSheetItemSpecificPrice");
+				}
+			}
+		}
+		public decimal ARPriceSheetItemLowerSpecificPrice
+		{
+			get { return _aRPriceSheetItemLowerSpecificPrice; }
+			set
+			{
+				if (value != this._aRPriceSheetItemLowerSpecificPrice)
+				{
+					_aRPriceSheetItemLowerSpecificPrice = value;
+					NotifyChanged("ARPriceSheetItemLowerSpecificPrice");
+				}
+			}
+		}
+		public decimal ARPriceSheetItemUpperSpecificPrice
+		{
+			get { return _aRPriceSheetItemUpperSpecificPrice; }
+			set
+			{
+				if (value != this._aRPriceSheetItemUpperSpecificPrice)
+				{
+					_aRPriceSheetItemUpperSpecificPrice = value;
+					NotifyChanged("ARPriceSheetItemUpperSpecificPrice");
+				}
+			}
+		}
 		#endregion
 
 		#region Extra

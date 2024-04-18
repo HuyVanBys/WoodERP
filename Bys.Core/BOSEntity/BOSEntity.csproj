@@ -247,6 +247,8 @@
     <Compile Include="BusinessEntities\Controller\AR\ARAcceptanceItemWorksController.cs" />
     <Compile Include="BusinessEntities\Controller\AR\ARCalculateDiscountItemsController.cs" />
     <Compile Include="BusinessEntities\Controller\AR\ARCalculateDiscountsController.cs" />
+    <Compile Include="BusinessEntities\Controller\AR\ARRevenueForecastItemsController.cs" />
+    <Compile Include="BusinessEntities\Controller\AR\ARRevenueForecastsController.cs" />
     <Compile Include="BusinessEntities\Controller\AR\ARSaleOrderSaleTypeConfigsController.cs" />
     <Compile Include="BusinessEntities\Controller\AR\ARConfigOriginalUnitPricesController.cs" />
     <Compile Include="BusinessEntities\Controller\AR\ARContainerLoaderItemDetailsController.cs" />
@@ -575,6 +577,8 @@
     <Compile Include="BusinessEntities\Info\AR\ARContainerLoaderItemDetailsInfo.cs" />
     <Compile Include="BusinessEntities\Info\AR\ARCreditNoteImportsInfo.cs" />
     <Compile Include="BusinessEntities\Info\AR\ARCreditNoteInvoicesInfo.cs" />
+    <Compile Include="BusinessEntities\Info\AR\ARRevenueForecastItemsInfo.cs" />
+    <Compile Include="BusinessEntities\Info\AR\ARRevenueForecastsInfo.cs" />
     <Compile Include="BusinessEntities\Info\AR\ARCreditNoteItemInvoiceItemsInfo.cs" />
     <Compile Include="BusinessEntities\Info\AR\ARCreditNoteItemsInfo.cs" />
     <Compile Include="BusinessEntities\Info\AR\ARCreditNotesInfo.cs" />

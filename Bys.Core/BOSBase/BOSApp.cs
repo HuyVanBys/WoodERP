@@ -3435,12 +3435,62 @@ namespace BOSERP
             return SqlDatabaseHelper.GetPrimaryKeyColumn(strTableName);
         }
 
+        //public static decimal CalculaterProductUnitPrice(ICProductsInfo product, decimal unitPrice, decimal Qty, int measureUnitID, int customerID, DateTime getDate, int currencyID)
+        //{
+        //    if(product == null)
+        //    {
+        //        return 0;
+        //    }    
+
+        //    decimal calUnitPrice = unitPrice;
+        //    CSCompanysInfo objCompanysInfo = BOSApp.CurrentCompanyInfo;
+        //    string sellingPriceMethod = objCompanysInfo.CSSourceSellingPriceMethod;
+
+        //    if (sellingPriceMethod == ADConfigValueUtility.cstSourceSellingPriceMethodMasterData)
+        //    {
+        //        calUnitPrice = product.ICProductPrice01;
+        //    }
+        //    else if (sellingPriceMethod == ADConfigValueUtility.cstSourceSellingPriceMethodPriceSheet)
+        //    {
+        //        ARPriceSheetItemsController objPriceSheetItemsController = new ARPriceSheetItemsController();
+        //        List<ARPriceSheetItemsInfo> newParams = new List<ARPriceSheetItemsInfo>()
+        //            {
+        //                new ARPriceSheetItemsInfo (customerID, product.ICProductID, measureUnitID, getDate)
+        //            };
+        //        List<ARPriceSheetItemsInfo> listPriceSheets = objPriceSheetItemsController.GetPriceSheetInActiveByProductIDs(newParams);
+        //        ARPriceSheetItemsInfo objPriceSheetItemsInfo = new ARPriceSheetItemsInfo();
+        //        objPriceSheetItemsInfo = listPriceSheets.Where(o => o.ARPriceSheetItemSpecificQty == Qty
+        //                                                            && o.FK_ICProductID == product.ICProductID
+        //                                                            && o.FK_GECurrencyID == currencyID
+        //                                                            && !o.ARPriceSheetItemSOQ).
+        //                                                            OrderByDescending(o => o.FK_ARCustomerID).FirstOrDefault();
+        //        if (objPriceSheetItemsInfo != null)
+        //            calUnitPrice = objPriceSheetItemsInfo.ARPriceSheetItemSpecificPrice;
+        //        if (objPriceSheetItemsInfo == null)
+        //        {
+        //            objPriceSheetItemsInfo = listPriceSheets.Where(o => o.FK_ICProductID == product.ICProductID
+        //                                                                && o.FK_GECurrencyID == currencyID).
+        //                                                                OrderByDescending(o => o.FK_ARCustomerID).
+        //                                                                OrderByDescending(o => o.ARPriceSheetItemQty).FirstOrDefault();
+        //        }
+        //        if (objPriceSheetItemsInfo == null)
+        //            calUnitPrice = 0;
+        //        else
+        //        {
+        //            if (objPriceSheetItemsInfo.ARPriceSheetItemQty < Qty)
+        //                calUnitPrice = objPriceSheetItemsInfo.ARPriceSheetItemUpperSpecificPrice;
+        //            else
+        //                calUnitPrice = objPriceSheetItemsInfo.ARPriceSheetItemLowerSpecificPrice;
+        //        }
+        //    }
+        //    return calUnitPrice;
+        //}
         public static decimal CalculaterProductUnitPrice(ICProductsInfo product, decimal unitPrice, decimal Qty, int measureUnitID, int customerID, DateTime getDate, int currencyID)
         {
-            if(product == null)
+            if (product == null)
             {
                 return 0;
-            }    
+            }
 
             decimal calUnitPrice = unitPrice;
             CSCompanysInfo objCompanysInfo = BOSApp.CurrentCompanyInfo;
@@ -3458,7 +3508,7 @@ namespace BOSERP
                         new ARPriceSheetItemsInfo (customerID, product.ICProductID, measureUnitID, getDate)
                     };
                 List<ARPriceSheetItemsInfo> listPriceSheets = objPriceSheetItemsController.GetPriceSheetInActiveByProductIDs(newParams);
-                ARPriceSheetItemsInfo objPriceSheetItemsInfo = listPriceSheets.Where(o => o.ARPriceSheetItemQty <= Qty 
+                ARPriceSheetItemsInfo objPriceSheetItemsInfo = listPriceSheets.Where(o => o.ARPriceSheetItemQty <= Qty
                                                                                         && o.FK_ICProductID == product.ICProductID
                                                                                         && o.FK_GECurrencyID == currencyID).
                                                                                         OrderByDescending(o => o.FK_ARCustomerID).
