@@ -318,6 +318,9 @@ namespace BOSERP
         public string Comment { get; set; }
         public string Nam { get; set; }
         public decimal DoanhThu { get; set; }
+        public decimal DoanhThuLienKeNam1 { get; set; }
+        public decimal DoanhThuLienKeNam2 { get; set; }
+        public decimal DoanhThuLienKeNam3 { get; set; }
         public decimal DoanhThuLienKeThang1Nam1 { get; set; }
         public decimal DoanhThuLienKeThang2Nam1 { get; set; }
         public decimal DoanhThuLienKeThang3Nam1 { get; set; }

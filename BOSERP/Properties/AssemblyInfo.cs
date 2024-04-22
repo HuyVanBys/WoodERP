@@ -35,8 +35,8 @@ using System.Runtime.InteropServices;
 //[assembly: AssemblyFileVersion("1.0.0.1")]    //Dev
 //[assembly: AssemblyFileVersion("1.6.5.1")]    //Test
 //[assembly: AssemblyFileVersion("1.3.8.0")]  //BKV UAT
-[assembly: AssemblyFileVersion("1.4.6.7")]  //DucThanh UAT
-//[assembly: AssemblyFileVersion("1.4.7.7")]  //Test DucThanh UAT
+//[assembly: AssemblyFileVersion("1.4.6.8")]  //DucThanh UAT
+[assembly: AssemblyFileVersion("1.4.7.9")]  //Test DucThanh UAT
 //[assembly: AssemblyFileVersion("1.3.6.1")]  //TR UAT
 //[assembly: AssemblyFileVersion("1.3.3.1")]  //DGK UAT
 //[assembly: AssemblyFileVersion("1.3.2.7")]  //HA UAT

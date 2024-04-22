@@ -67,56 +67,56 @@ namespace BOSERP.Modules.RevenueForecast
             int i = 0;
             while (i < 3)
             {
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}January", i == 0 ?"":i.ToString()), string.Format("01/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}Febuary", i == 0 ? "" : i.ToString()), string.Format("02/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}March", i == 0 ? "" : i.ToString()), string.Format("03/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}April", i == 0 ? "" : i.ToString()), string.Format("04/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}May", i == 0 ? "" : i.ToString()), string.Format("05/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}June", i == 0 ? "" : i.ToString()), string.Format("06/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}July", i == 0 ? "" : i.ToString()), string.Format("07/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}August", i == 0 ? "" : i.ToString()), string.Format("08/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}September", i == 0 ? "" : i.ToString()), string.Format("09/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}October", i == 0 ? "" : i.ToString()), string.Format("10/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}November", i == 0 ? "" : i.ToString()), string.Format("11/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
-                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}December", i == 0 ? "" : i.ToString()), string.Format("12/{0}", (year - 3 + i).ToString()), sttBand, bandedView);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}January", i == 0 ?"":i.ToString()), string.Format("01/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}Febuary", i == 0 ? "" : i.ToString()), string.Format("02/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}March", i == 0 ? "" : i.ToString()), string.Format("03/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}April", i == 0 ? "" : i.ToString()), string.Format("04/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}May", i == 0 ? "" : i.ToString()), string.Format("05/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}June", i == 0 ? "" : i.ToString()), string.Format("06/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}July", i == 0 ? "" : i.ToString()), string.Format("07/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}August", i == 0 ? "" : i.ToString()), string.Format("08/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}September", i == 0 ? "" : i.ToString()), string.Format("09/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}October", i == 0 ? "" : i.ToString()), string.Format("10/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}November", i == 0 ? "" : i.ToString()), string.Format("11/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
+                CreateBandedNumbericN0GridColumn(string.Format("ARRevenueForecastItemPre{0}December", i == 0 ? "" : i.ToString()), string.Format("12/{0}", (year - 3 + i).ToString()), sttBand, bandedView, false);
                 i++;
             }
             sttBand = CreateGridBand("", GridBandList);
             CreateBandedNumbericN2GridColumn("ARRevenueForecastItemPredictAmount", "Doanh thu dự kiến  (năm)", sttBand, bandedView, true);
             sttBand = CreateGridBand("Doanh thu sales điều chỉnh (năm)", GridBandList);
             CreateBandedNumbericN2GridColumn("ARRevenueForecastItemPredictSalePercent", "%", sttBand, bandedView, true);
-            CreateBandedNumbericN2GridColumn("ARRevenueForecastItemPredictSaleAmount", "Doanh thu", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictSaleAmount", "Doanh thu", sttBand, bandedView, true);
             sttBand = CreateGridBand("Doanh thu duyệt (năm)", GridBandList);
             CreateBandedNumbericN2GridColumn("ARRevenueForecastItemPredictAcceptPercent", "%", sttBand, bandedView, true);
-            CreateBandedNumbericN2GridColumn("ARRevenueForecastItemPredictAcceptAmount", "Doanh thu", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictAcceptAmount", "Doanh thu", sttBand, bandedView, true);
             sttBand = CreateGridBand("Doanh thu dự kiến (tháng)", GridBandList);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictJanuary", "T1", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictFebuary", "T2", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictMarch", "T3", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictApril", "T4", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictMay", "T5", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictJune", "T6", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictJuly", "T7", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictAugust", "T8", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictSeptember", "T9", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictOctober", "T10", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictNovember", "T11", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictDecember", "T12", sttBand, bandedView);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictJanuary", "T1", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictFebuary", "T2", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictMarch", "T3", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictApril", "T4", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictMay", "T5", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictJune", "T6", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictJuly", "T7", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictAugust", "T8", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictSeptember", "T9", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictOctober", "T10", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictNovember", "T11", sttBand, bandedView, true);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemPredictDecember", "T12", sttBand, bandedView, true);
             sttBand = CreateGridBand("", GridBandList);
             CreateBandedGridColumn("ARRevenueForecastItemPredictComment", "Ghi chú", sttBand, bandedView, 50, true);
             sttBand = CreateGridBand("Doanh thu thực tế (tháng)", GridBandList);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemJanuary", "T1", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemFebuary", "T2", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemMarch", "T3", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemApril", "T4", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemMay", "T5", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemJune", "T6", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemJuly", "T7", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemAugust", "T8", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemSeptember", "T9", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemOctober", "T10", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemNovember", "T11", sttBand, bandedView);
-            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemDecember", "T12", sttBand, bandedView);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemJanuary", "T1", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemFebuary", "T2", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemMarch", "T3", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemApril", "T4", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemMay", "T5", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemJune", "T6", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemJuly", "T7", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemAugust", "T8", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemSeptember", "T9", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemOctober", "T10", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemNovember", "T11", sttBand, bandedView, false);
+            CreateBandedNumbericN0GridColumn("ARRevenueForecastItemDecember", "T12", sttBand, bandedView, false);
             sttBand = CreateGridBand("", GridBandList);
             CreateBandedGridColumn("ARRevenueForecastItemPredictRealComment", "Ghi chú thực tế", sttBand, bandedView, 50, mainObject.ARRevenueForecastStatus != "Confirmed");
             CreateBandedHyperLinkGridColum("EditComment", "Sửa ghi chú thực tế", sttBand, bandedView);
@@ -155,14 +155,14 @@ namespace BOSERP.Modules.RevenueForecast
             bandedView.Columns.Add(bandedLocation);
 
         }
-        public void CreateBandedNumbericN0GridColumn(string name, string caption, GridBand ownerBand, BandedGridView bandedView)
+        public void CreateBandedNumbericN0GridColumn(string name, string caption, GridBand ownerBand, BandedGridView bandedView, bool allowEdit)
         {
             BandedGridColumn bandedLocation = new BandedGridColumn();
             bandedLocation.Name = name;
             bandedLocation.Caption = caption;
             bandedLocation.FieldName = name;
             bandedLocation.Visible = true;
-            bandedLocation.OptionsColumn.AllowEdit = false;
+            bandedLocation.OptionsColumn.AllowEdit = allowEdit;
             bandedLocation.OwnerBand = ownerBand;
             bandedLocation.DisplayFormat.FormatType = FormatType.Numeric;
             bandedLocation.DisplayFormat.FormatString = "{0:n0}";
@@ -242,6 +242,36 @@ namespace BOSERP.Modules.RevenueForecast
                 if (e.Column.FieldName == "ARRevenueForecastItemPredictAcceptPercent")
                 {
                     ((RevenueForecastModule)Screen.Module).ChangePredictAcceptPercent(item);
+                }
+                if (e.Column.FieldName == "ARRevenueForecastItemPredictAmount")
+                {
+                    ((RevenueForecastModule)Screen.Module).ChangePredictRevenue(item);
+                    ((RevenueForecastModule)Screen.Module).ChangePredictSalesRevenue(item);
+                    ((RevenueForecastModule)Screen.Module).ChangePredictAcceptRevenue(item);
+                }
+                if (e.Column.FieldName == "ARRevenueForecastItemPredictSaleAmount")
+                {
+                    ((RevenueForecastModule)Screen.Module).ChangePredictSalesRevenue(item);
+                    ((RevenueForecastModule)Screen.Module).ChangePredictAcceptRevenue(item);
+                }
+                if (e.Column.FieldName == "ARRevenueForecastItemPredictAcceptAmount")
+                {
+                    ((RevenueForecastModule)Screen.Module).ChangePredictAcceptRevenue(item);
+                }
+                if (e.Column.FieldName == "ARRevenueForecastItemPredictJanuary"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictFebuary"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictMarch"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictApril"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictMay"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictJune"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictJuly"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictAugust"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictSeptember"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictOctober"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictNovember"
+                    || e.Column.FieldName == "ARRevenueForecastItemPredictDecember")
+                {
+                    ((RevenueForecastModule)Screen.Module).ChangePredictAcceptMonthRevenue(item);
                 }
             }
         }

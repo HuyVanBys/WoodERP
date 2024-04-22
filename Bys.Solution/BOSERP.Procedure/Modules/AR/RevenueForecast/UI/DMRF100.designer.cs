@@ -91,7 +91,7 @@ namespace BOSERP.Modules.RevenueForecast.UI
             this.bosPanel1.Location = new System.Drawing.Point(0, 0);
             this.bosPanel1.Name = "bosPanel1";
             this.bosPanel1.Screen = null;
-            this.bosPanel1.Size = new System.Drawing.Size(1102, 547);
+            this.bosPanel1.Size = new System.Drawing.Size(1158, 575);
             this.bosPanel1.TabIndex = 0;
             // 
             // fld_grcGroupControl
@@ -138,7 +138,7 @@ namespace BOSERP.Modules.RevenueForecast.UI
             this.fld_grcGroupControl.Name = "fld_grcGroupControl";
             this.fld_grcGroupControl.Screen = null;
             this.ScreenHelper.SetShowHelp(this.fld_grcGroupControl, true);
-            this.fld_grcGroupControl.Size = new System.Drawing.Size(1096, 544);
+            this.fld_grcGroupControl.Size = new System.Drawing.Size(1152, 572);
             this.fld_grcGroupControl.TabIndex = 0;
             this.fld_grcGroupControl.Text = "Thông tin chung";
             // 
@@ -197,6 +197,7 @@ namespace BOSERP.Modules.RevenueForecast.UI
             this.fld_lkeRoundingNumber.Size = new System.Drawing.Size(118, 20);
             this.fld_lkeRoundingNumber.TabIndex = 41;
             this.fld_lkeRoundingNumber.Tag = "DC";
+            this.fld_lkeRoundingNumber.CloseUp += new DevExpress.XtraEditors.Controls.CloseUpEventHandler(this.fld_lkeRoundingNumber_CloseUp);
             // 
             // bosLabel7
             // 
@@ -367,6 +368,7 @@ namespace BOSERP.Modules.RevenueForecast.UI
             this.bosTextBox2.Size = new System.Drawing.Size(118, 20);
             this.bosTextBox2.TabIndex = 36;
             this.bosTextBox2.Tag = "DC";
+            this.bosTextBox2.Validated += new System.EventHandler(this.bosTextBox2_Validated);
             // 
             // bosLabel4
             // 
@@ -602,7 +604,7 @@ namespace BOSERP.Modules.RevenueForecast.UI
             this.fld_dgcARRevenueForecastItems.PrintReport = false;
             this.fld_dgcARRevenueForecastItems.RowHandle = 0;
             this.fld_dgcARRevenueForecastItems.Screen = null;
-            this.fld_dgcARRevenueForecastItems.Size = new System.Drawing.Size(1082, 406);
+            this.fld_dgcARRevenueForecastItems.Size = new System.Drawing.Size(1138, 434);
             this.fld_dgcARRevenueForecastItems.TabIndex = 7;
             this.fld_dgcARRevenueForecastItems.Tag = "DC";
             this.fld_dgcARRevenueForecastItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -759,7 +761,7 @@ namespace BOSERP.Modules.RevenueForecast.UI
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseForeColor = true;
-            this.ClientSize = new System.Drawing.Size(1102, 547);
+            this.ClientSize = new System.Drawing.Size(1158, 575);
             this.Controls.Add(this.bosPanel1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("DMRF100.IconOptions.Icon")));
             this.Name = "DMRF100";
